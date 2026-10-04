@@ -4,7 +4,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Now — Fortnight 1, in build
 
-- Page composer: address-or-neighbourhood location step, category step, photo step + takedown, default art, resume fix. *(The gate on Don making his own Page is met — he has made several, Sac Floaters among them, 2026-10-01.)*
+- Page composer: address or neighbourhood/town location step (seeded list covering MSA 40900, shown as a pin at its centre, 2026-10-04), category step, photo step + takedown, default art, resume fix. *(The gate on Don making his own Page is met — he has made several, Sac Floaters among them, 2026-10-01.)*
 - Dead producer page fix — approved, ticketed, buildable today.
 - Producer entry point (`/you/create`, no shop required to host) — reviewed, ticketed.
 - Report path + image takedown — approved; no photo goes to production until this ships.
@@ -26,7 +26,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Follows simplification — one table, three subjects.
 - **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091); narrowing in a modal that writes text (F092). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
 - Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **new launch scope**.
-- Optional public business phone and weekly hours on a Page (F056 criterion 9, 2026-10-01) — **new launch scope**.
+- Optional public business phone and weekly hours on a Page (F056 criterion 9, 2026-10-01) — built (#293, #344); hours are low impact, no further work for launch (2026-10-04).
 - **Home returns as rows that keep going** — Tonight, This weekend, New this week, a wildcard, ending at a stop card (F098, draft, 2026-10-04) — **new launch scope; nothing was removed to make room.**
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - Onboarding, empty states, copy pass — Fortnight 4.

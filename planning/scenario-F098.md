@@ -20,7 +20,7 @@ Sam opens SocialUs on a Friday evening with nothing planned. Home shows a row he
 7. **Below the stop card, older picks appear only after a tap.** Nothing refills on its own.
 8. **Each row's "Show all" opens Explore narrowed to that row's window or category.**
 9. **The wildcard row draws from outside the member's declared interests**; signed out, from the whole metro.
-10. **Signed out, Home follows F093:** withheld announcements show as its "Sign up to see what's happening" card, and the stop card's second line is absent.
+10. **Signed out, Home follows F093:** withheld announcements show as its "Sign in to see what's happening" card, and the stop card's second line is absent.
 
 ## Not this
 

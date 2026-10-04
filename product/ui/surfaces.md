@@ -137,7 +137,7 @@ owns:
 | **Item photos** | ○ | A face on a listing | Deferred — the Page is the unit that carries a face. Upload substrate already built; about half a day when it resumes. |
 | **Retire a Page, retire an Item** | ○ | Taking your own thing down | **No handler for either.** Five read paths already handle a retired Page; nothing writes the state. A producer cannot withdraw their own listing. |
 | **Operator takedown** | ○ | Removing someone else's content | **No operator concept in the code** — no role, no flag, no check. |
-| **Full-screen map** | ○ | The map as a destination rather than a toggle | Deferred. Area rendering is separately scoped [F062]. |
+| **Full-screen map** | ○ | The map as a destination rather than a toggle | Deferred. A neighbourhood-placed Page shows as a pin at the neighbourhood's centre (2026-10-04). |
 
 ---
 

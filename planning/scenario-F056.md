@@ -5,7 +5,7 @@ status: approved
 date: 2026-09-10
 depends: [F061]
 approved: 2026-09-07 — Gate A/B cleared; values statement cut per PM ruling
-amended: 2026-10-01 — Don: Page creation lands on the draft Page, so address, neighbourhood and tags move here from F061 (criteria 6–8).
+amended: 2026-10-01 — Don: Page creation lands on the draft Page, so address, neighbourhood and tags move here from F061 (criteria 6–8). 2026-10-04 — Don: criterion 7, a seeded neighbourhood or town list, shown as a pin at its centre.
 ---
 ## Story
 
@@ -19,7 +19,7 @@ Maya's shop has a name and one product, but nothing she can change once the walk
 4. The shop has a ≤120-char tagline separate from the long description, rendering on card/profile/link-preview.
 5. A shop with every optional field empty still renders correctly, with nothing nagging about the absence.
 6. **On the draft or live Page,** an address search resolves to real coordinates with a confirming map pin before it saves; an unresolvable address refuses loudly rather than defaulting to a placeholder point. *(Moved from F061 criterion 1, 2026-10-01.)*
-7. A "give a neighbourhood instead" option sits beside the address, and a neighbourhood-mode Page exposes no street address anywhere. *(Moved from F061 criterion 2.)*
+7. A "give a neighbourhood or town instead" option sits beside the address: a pick from a seeded list covering MSA 40900. A neighbourhood-mode Page exposes no street address anywhere and shows as a pin at the neighbourhood's centre (Don, 2026-10-04). *(Moved from F061 criterion 2.)*
 8. The owner picks or creates **tags** in their own words, editable at any time; no category is offered and no free-text "Something else" field exists. A Page needs at least one tag to publish. *(Moved from F061 criterion 3.)*
 9. **The owner can add an optional public business phone and optional weekly hours.** The business phone is separate from the member's private phone and shows only if the owner gives it; both show to signed-in visitors, not on the signed-out front door (Don, 2026-10-01).
 

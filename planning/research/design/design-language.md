@@ -149,17 +149,17 @@ Nine templates (T9 Text page added by decision 8) hold 128 of the 152 screens; t
 
 | Band | Layout | Sticky | Primary action |
 | --- | --- | --- | --- |
-| Phone | Cover photo full-bleed 4:3, name block, sections stacked | Floating action bar (64px, radius-xl) above nav | In the bar: Follow / Join / "Sign up to see what's happening" |
+| Phone | Cover photo full-bleed 4:3, name block, sections stacked | Floating action bar (64px, radius-xl) above nav | In the bar: Follow / Join / "Sign in to see what's happening" |
 | Tablet | One 720 column, cover inside it | Same bar, centred, max 480 wide | Same |
 | Laptop+ | 720 main + 360 rail inside 1128, cover across both | Section links (Events · Announcements · About · Products & services) under the header; rail sticky | Top of rail card: Follow plus Get directions, Visit site, Add to calendar as secondary |
 
-- **Signed-out front door** is a variant, not a separate page: name, default photo, description and the withheld card saying "Sign up to see what's happening". No location, tags, founder, map or rail. Production currently also shows Products & services signed out (owner spec ruling 5).
+- **Signed-out front door** is a variant, not a separate page: name, default photo, description and the withheld card saying "Sign in to see what's happening". No location, tags, founder, map or rail. Production currently also shows Products & services signed out (owner spec ruling 5).
 - **Event cards lead with date and time** ("Sat, Oct 4 · 7:30 AM"), then title, place, who's going (never a zero), Add to calendar.
 - Owner never sees Follow or Report on their own Page; their bar and rail are the owner tools (T4).
 
 **What launch is (Don, 2026-10-01):** a rich-context yellow pages of organizations, not people, with pictures. A Page is an organization: a group, a business or an organization. Events are posts a Page makes; there is no separate event page.
 
-**Launch framing (Don, 2026-10-01): "a modern yellow pages with links and contact info."** So the Page leads with a **contact block** for signed-in viewers: address or area (with Get directions), phone (tap to call), website and social links, and hours when the owner has set them. On phone it sits right under the name and description, above Events and Announcements; the floating action bar carries Call and Directions next to Follow. From 1024 it is the top of the rail card. The signed-out front door shows none of it (no location, per the front-door rule) and keeps only name, photo or default art, description and "Sign up to see what's happening".
+**Launch framing (Don, 2026-10-01): "a modern yellow pages with links and contact info."** So the Page leads with a **contact block** for signed-in viewers: address or area (with Get directions), phone (tap to call), website and social links, and hours when the owner has set them. On phone it sits right under the name and description, above Events and Announcements; the floating action bar carries Call and Directions next to Follow. From 1024 it is the top of the rail card. The signed-out front door shows none of it (no location, per the front-door rule) and keeps only name, photo or default art, description and "Sign in to see what's happening".
 
 - **Today (read in code, origin/main @ 5837e85):** the Page shows its placement as one grey line and social links as a row, both mid-page; website is one of the social-link keys (`groups.social_links`).
 - **Phone on a Page: doesn't exist.** The only phone in the code is the member's, collected at signup and private by ruling. **Hours on a Page: don't exist.** The only `hours` column is on service items (`item_services.hours`), which R2 defers.
