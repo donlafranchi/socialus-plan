@@ -147,7 +147,7 @@ dated line in `DECISIONS.md`; the register is `accepted-risks/`.
 ## Open questions
 
 Every open-question marker, found by scanning — nobody maintains this list.
-Oldest first. Rule and grammar: `process/PIPELINE.md` § Open questions.
+Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
 **Waiting on Don** (16)

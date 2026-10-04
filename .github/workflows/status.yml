@@ -9,7 +9,7 @@ name: status
 # stale and named the wrong launch blocker. Don reads it from a phone; anything
 # that needs a laptop and a person remembering is not a fix.
 #
-# ON THE SCHEDULE, because `process/LIVING-DOCS.md` refuses scheduled Actions:
+# ON THE SCHEDULE, because `ops-pattern/process/LIVING-DOCS.md` refuses scheduled Actions:
 # that refusal was aimed at a document that ACCUMULATES and rots between reads,
 # and at a green tick indistinguishable from a job that stopped running. Neither
 # applies here. STATUS.md is overwritten wholesale, so it cannot accumulate —
@@ -53,7 +53,7 @@ jobs:
       - name: Check out the planning repo
         uses: actions/checkout@v5
         with:
-          path: ops-pattern
+          path: socialus-plan
           fetch-depth: 0          # state.sh reads history, not just the tip
 
       # THE ONE THING THAT NEEDS A HUMAN. Both repos are private, so the
@@ -89,7 +89,7 @@ jobs:
           token: ${{ secrets.SOCIALUS_WEB_TOKEN }}
 
       - name: Regenerate STATUS.md
-        working-directory: ops-pattern
+        working-directory: socialus-plan
         env:
           # `gh` reads issues, PRs and workflow runs in the private code repo.
           # The default GITHUB_TOKEN cannot; state.sh refuses to guess and says
@@ -103,13 +103,13 @@ jobs:
       # it is skipped rather than half-written when the token is absent.
       - name: Regenerate README.md
         if: steps.gate.outputs.have == 'true'
-        working-directory: ops-pattern
+        working-directory: socialus-plan
         env:
           GH_TOKEN: ${{ secrets.SOCIALUS_WEB_TOKEN }}
         run: bash scripts/view.sh
 
       - name: Commit, but only if the content changed
-        working-directory: ops-pattern
+        working-directory: socialus-plan
         run: |
           set -euo pipefail
           git config user.name  'status workflow'

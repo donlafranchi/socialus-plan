@@ -1,9 +1,8 @@
 # Product absolutes
 
 What the platform will not do to a member. The process absolutes — production,
-public acts, authority — are in `../process/ABSOLUTES.md`, which also carries
-**the four-harms test** every absolute must pass and the rule for adding a
-seventh. Both are stated once, there, and govern this page too.
+public acts, authority — are in `ops-pattern/process/ABSOLUTES.md`, which also carries
+**the four-harms test** every absolute must pass and the rule for adding another. Both are stated once, there, and govern this page too.
 
 Cite these by slug in brackets — `[member-content-takedown]`, never "rule 1".
 

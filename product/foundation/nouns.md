@@ -74,7 +74,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 ### The user-facing string check — because prose rules have not held
 
-*(2026-09-14, extended 2026-09-15 with the mechanical rules from `voice.md`. Twice a naming ruling has been written wider than Don made it. `LESSONS.md` 17: a rule with no hook is a wish.)*
+*(2026-09-14, extended 2026-09-15 with the mechanical rules from `voice.md`. Twice a naming ruling has been written wider than Don made it. `ops-pattern/process/LESSONS.md` 17: a rule with no hook is a wish.)*
 
 **Scope, for every rule below:** user-facing strings in `socialus-web` — JSX text nodes, and string literals reaching a rendered prop (`label`, `title`, `placeholder`, `alt`, `aria-label`, `children`). **Never** identifiers, table and column names, routes, imports, comments, test fixtures, or these planning docs. The rule is about what a member reads, not what the code calls things.
 

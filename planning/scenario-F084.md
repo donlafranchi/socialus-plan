@@ -52,6 +52,6 @@ Rewriting, shortening, or improving any string — that is F083 and Don's own wr
 
 **Do the vendor-route retirement first.** The three densest files — the old producer signup, the vendor page, the vendor form — hold about **60 strings between them and are already scheduled for removal**. Extracting them would be work thrown away twice.
 
-**Sequence with the lint, don't land them together.** The module first, then the check pointed at it: scanning one typed file is a far simpler and more reliable check than walking every JSX text node and rendered prop. **But if this scenario slips past launch, ship the lint in its broader form anyway** — the person-noun rule has had no hook twice now (`LESSONS.md` 17, 26), and waiting for the easier version is how it goes a third time.
+**Sequence with the lint, don't land them together.** The module first, then the check pointed at it: scanning one typed file is a far simpler and more reliable check than walking every JSX text node and rendered prop. **But if this scenario slips past launch, ship the lint in its broader form anyway** — the person-noun rule has had no hook twice now (`ops-pattern/process/LESSONS.md` 17, 26), and waiting for the easier version is how it goes a third time.
 
 **Launch or right after is Don's call.** It is the enabler for every other copy change, so it wants to be first — but three or four days of mechanical work against a launch plan with ~28% slack is a real bite, and nothing a member sees gets better on the day it lands.

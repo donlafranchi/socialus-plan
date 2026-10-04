@@ -30,7 +30,7 @@ White canvas + photography + one signature accent. The chrome disappears so the 
 
 ## Tokens — the reasons only
 
-**Design tokens live in the app code, the single source of truth** *(Don, 2026-10-01, design decision 7)*: `globals.css` and the components hold every value — colour, type, radius, shadow, motion. This section keeps only why, per `process/LIVING-DOCS.md`; a value written here would be a second description that drifts.
+**Design tokens live in the app code, the single source of truth** *(Don, 2026-10-01, design decision 7)*: `globals.css` and the components hold every value — colour, type, radius, shadow, motion. This section keeps only why, per `ops-pattern/process/LIVING-DOCS.md`; a value written here would be a second description that drifts.
 
 - **One accent, used sparingly.** The chrome steps back so photographs and what people wrote carry the page.
 - **Body text isn't brand-coloured,** because reading comes first.

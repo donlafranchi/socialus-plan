@@ -2,7 +2,7 @@
 
 # accepted-risks/
 
-One JSON file per finding ruled acceptable. Read by scripts, not by people — the ruling itself is a dated line in `../DECISIONS.md`, and that is what settles a question. See `../process/PIPELINE.md` § Accepted risk.
+One JSON file per finding ruled acceptable. Read by scripts, not by people — the ruling itself is a dated line in `../DECISIONS.md`, and that is what settles a question. See `ops-pattern/process/PIPELINE.md` § Accepted risk.
 
 **Two kinds of entry, told apart by `lint`.** Supabase advisor findings carry the advisor's own lint name and are diffed by `scripts/advisor-diff.sh`. **Project risks carry `"lint": "project_accepted_risk"`** — things deliberately deferred that have no advisor to raise them. The register was built for the first kind; the second is the same shape because the problem is identical, and the `source` field already anticipated it.
 

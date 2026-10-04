@@ -1,13 +1,13 @@
-# SocialUs — planning repo
+# SocialUs — planning repo (`socialus-plan`)
 
-Local discovery app: buy, sell, trade, gather. Launching 2026-10-30 to one metro. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`). This repo is planning only.
+Local discovery app: buy, sell, trade, gather. Launching 2026-10-30 to one metro. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
 ## Read first, every session
 
 1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
 2. `ROADMAP.md` — Now / Next / Later / Won't.
-3. `process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits a seventh are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
-4. `process/PIPELINE.md` — the five kinds of work and how each moves.
+3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
+4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
 5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags in `DECISIONS.md`; never edit it.
 
 ## Where truth lives
@@ -15,13 +15,14 @@ Local discovery app: buy, sell, trade, gather. Launching 2026-10-30 to one metro
 - **How the system works:** the code in `socialus-web`. If the code can answer it, read the code, don't write it down.
 - **Why it is that way:** `DECISIONS.md`. One dated line per **live** ruling. A superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest ([newer-decision-wins]).
 - **What is decided but not built:** `planning/` scenarios with `status: approved`, and `ROADMAP.md`.
-- **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `process/LIVING-DOCS.md`.
-- **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
+- **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
+- **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `ops-pattern/process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
 - **What the product is:** `product/foundation/model.md` — Don's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
 - **The product model:** `product/` — nouns, verbs, surfaces, systems. Must match the code and `model.md`. If it doesn't, fix the doc in the same session you notice.
-- **What may never be broken:** `process/ABSOLUTES.md` (process) and `product/ABSOLUTES.md` (member-facing). Two files, one test — the test lives in the process file.
-- **How work moves, and what went wrong before:** `process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (append-only), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`, and `SETUP.md` (standing up a second machine; read once per machine, never per session).
+- **What may never be broken:** `ops-pattern/process/ABSOLUTES.md` (process) and `product/ABSOLUTES.md` (member-facing). Two files, one test — the test lives in the process file.
+- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (append-only), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`. Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
+- **The tooling:** `scripts/` is vendored from `ops-pattern`. A change to how a marker, lint or generated view works is method: make it in `ops-pattern` first, then copy the file here in the same session.
 
 **A concept lives in exactly one place.** Two documents describing the same thing is how this repo has failed before, so routing it is a rule, not a preference:
 
@@ -48,7 +49,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 **Nothing here asks you to remember to run anything.** A skill for this was written and never installed, so it never ran once and `STATUS.md` went stale naming the wrong launch blocker — the whole point is that the refresh does not depend on anyone thinking of it (lesson 27, and lesson 15 before it). To refresh by hand anyway: `bash scripts/status.sh`.
 
-**Both repos are public for now** (2026-10-01, Actions minutes), so anyone — the workflow included — can read `socialus-web`. If they go private, the workflow needs the `SOCIALUS_WEB_TOKEN` secret. Without it `STATUS.md` still regenerates and says, at the top and at the bottom, exactly what is missing.
+**The repos are public for now** (2026-10-01, Actions minutes), so anyone — the workflow included — can read `socialus-web`. If they go private, the workflow needs the `SOCIALUS_WEB_TOKEN` secret. Without it `STATUS.md` still regenerates and says, at the top and at the bottom, exactly what is missing.
 
 ## State
 
@@ -78,9 +79,9 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 ## Commits
 
 - Cowork commits and pushes its own doc changes here. Message: `docs: what`.
-- Code commits in `socialus-web`, branch per ticket. Who merges and when Don looks: `process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
+- Code commits in `socialus-web`, branch per ticket. Who merges and when Don looks: `ops-pattern/process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
 - Anything bigger than a doc touch-up goes by branch and PR here. **Whoever does the work merges it, Code or Cowork** — self-merge is fine, and needs no approval and no second reviewer.
-- Never cross-commit (guideline — the two-repo split enforces it). Never rewrite history ([production-asks-don]).
+- Never cross-commit (guideline — the repo split enforces it). Never rewrite history ([production-asks-don]).
 
 ## Sessions
 
@@ -96,6 +97,6 @@ Schema names are durable; UI labels translate them. The table is in `product/fou
 
 - **Issue title:** `F060 · T142 · plain name`. Bugs/changes/chores: `bug · plain name` (or `change ·`, `chore ·`), with `Scenario: F###|none` in the body.
 - **Branch:** `f060-t142-slug`. **Commit:** `F060/T142: what`.
-- **Bugs/changes/chores carry the Issue number, not a ticket number** — they have no `T###`. Branch `bug-36-slug`, commit `bug #36: what` (likewise `change-`/`chore-`). Process work has no Issue (`process/PIPELINE.md`), so it dates instead: branch `process-YYYY-MM-DD-slug`, commit `docs: what`. Every branch name carries something unique that needs no central counter — dozens of agents must be able to name a branch without asking anything.
+- **Bugs/changes/chores carry the Issue number, not a ticket number** — they have no `T###`. Branch `bug-36-slug`, commit `bug #36: what` (likewise `change-`/`chore-`). Process work has no Issue (`ops-pattern/process/PIPELINE.md`), so it dates instead: branch `process-YYYY-MM-DD-slug`, commit `docs: what`. Every branch name carries something unique that needs no central counter — dozens of agents must be able to name a branch without asking anything.
 - **Provenance is git:** `git log --grep F060` is everything built for that scenario.
 - **No hand-maintained indexes.** A file a person reads to find out what is true goes stale between the moment it is written and the moment it is read, and then it lies — REGISTRY, MAP, TRACE, STAGE-LEDGER and JOURNAL all died of this (lesson 2). The test is *who reads it to be right*, not what format it is in: a file only a script compares is fine, because nothing believes it and drift shows up as diff noise on the next run. `accepted-risks/` is that — generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. `DECISIONS.md` settles questions.

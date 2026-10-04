@@ -2,19 +2,21 @@
 
 Checklist. Verified against both repos on 2026-09-22 — where this disagrees with the repos, the repos are right.
 
-**Git is the handoff.** Both machines clone from GitHub, both push, main is the truth.
+**Git is the handoff.** Every machine clones from GitHub, both push, main is the truth.
 
 ## 1. Clone as siblings
 
 ```
 ~/Projects/
-  ops-pattern/      git@github.com:donlafranchi/ops-pattern.git
+  socialus-plan/    git@github.com:donlafranchi/socialus-plan.git     # this repo
   socialus-web/     git@github.com:donlafranchi/socialus-web.git
+  socialus-design/  git@github.com:donlafranchi/socialus-design.git
+  ops-pattern/      git@github.com:donlafranchi/ops-pattern.git       # the method; scripts/lint.sh reads its absolutes
 ```
 
 **They must be siblings, and the parent folder's name does not matter.** `scripts/state.sh` (run from the repo root) resolves the code repo at `../socialus-web` and `cd`s to it under `set -euo pipefail` — **not siblings, and `bash scripts/status.sh` dies with `FATAL` before printing anything.** You can override it per-run (`bash scripts/state.sh /path/to/socialus-web`), but nothing else knows about the override, so don't.
 
-**Both repos are private.** You need an account with access on each machine.
+**The repos are public for now** (2026-10-01). If they go private, each machine needs an account with access.
 
 ## 2. Tooling
 
@@ -66,7 +68,7 @@ npx vercel env pull .env.local
 
 ## 5. Windows
 
-- **The `BUILD-LOG.md` symlink is gone.** It was removed in the September revamp; there is no symlink anywhere in `ops-pattern` today. **So `core.symlinks=true` and developer mode are not needed** — skip that.
+- **The `BUILD-LOG.md` symlink is gone.** It was removed in the September revamp; there is no symlink anywhere in the planning repo today. **So `core.symlinks=true` and developer mode are not needed** — skip that.
 - **Line endings: neither repo has a `.gitattributes`.** Set `git config --global core.autocrlf input` on the PC before cloning. Without it, Windows checks out CRLF and every `.sh` in `scripts/` fails with `bad interpreter` under WSL or Git Bash.
 - **Run the shell scripts under WSL or Git Bash**, not PowerShell. They are `#!/usr/bin/env bash` and use `set -euo pipefail`.
 - **Paths in the docs are POSIX and relative.** The sibling layout in step 1 works unchanged on Windows as long as both clones share a parent.
@@ -94,13 +96,13 @@ npx vercel env pull .env.local
 - **Main is the truth.** Not the laptop you were last on.
 - **Branches push too.** A branch left local is work the other machine cannot see.
 
-**One convention to drop: "socialus-web commits stay local until Don says so."** It does not survive two machines — it strands app work on whichever laptop it was written on, which is exactly what this setup exists to prevent. **Recommend dropping it**; `CLAUDE.md` § Commits never encoded it, so nothing needs editing, only the habit. `ops-pattern` already pushes its own doc changes and should keep doing so.
+**One convention to drop: "socialus-web commits stay local until Don says so."** It does not survive two machines — it strands app work on whichever laptop it was written on, which is exactly what this setup exists to prevent. **Recommend dropping it**; `CLAUDE.md` § Commits never encoded it, so nothing needs editing, only the habit. `socialus-plan` already pushes its own doc changes and should keep doing so.
 
 ## Verify
 
 ```
-cd ~/Projects/ops-pattern && bash scripts/lint.sh          # expect: lint: clean
-cd ~/Projects/ops-pattern && bash scripts/status.sh >/dev/null && echo ok
+cd ~/Projects/socialus-plan && bash scripts/lint.sh          # expect: lint: clean
+cd ~/Projects/socialus-plan && bash scripts/status.sh >/dev/null && echo ok
 cd ~/Projects/socialus-web && npm ci && npm run test && npm run build
 ```
 
