@@ -7,9 +7,13 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. `DECISIONS.md` holds
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **212 older decisions carry no tag yet and are not listed** — tagging is required from
+> **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-04** · home, explore, ranking, notifications — Home returns as rows that keep going: Tonight, This weekend, New this week and a wildcard from outside a member's declared interests. Nothing plays on its own, and the same organization doesn't appear twice in a row. The rows end at a stop card, "You've seen what's new this week", followed by "things you saved are on tonight". Explore stays the research tool. Ranking currently uses time, place, declared interests and curation, and not time spent
+- **2026-10-04** · home, categories, tags — Home's rows use granular categories that tell businesses and group events apart, not broad buckets
+- **2026-10-04** · process, product — We need to be successful first to help our members, and we want to be successful together
+- **2026-10-04** · design-language, tokens — The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold only as accents on navy. Design-language principle 1 is now "navy for actions, gold as a highlight under 5% of the screen"
 - **2026-10-02** · posts, explore, pages — A post with no event date drops off Explore after 14 days and moves to an "Earlier" section on its Page. The owner can optionally set a "show until" date. Every undated post shows "Posted <date>"
 - **2026-10-02** · gatherings, data — Gatherings saved with the old 7-hour timezone error are throwaway test data and won't be corrected
 - **2026-10-01** · pages, page-edit, contact — A Page may carry an optional public business phone and optional weekly hours, in launch scope. The business phone is separate from the member's private phone and shows only if the owner gives it. Both show to signed-in visitors, not on the signed-out front door

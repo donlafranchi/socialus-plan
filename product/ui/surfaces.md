@@ -41,7 +41,7 @@ owns:
 
 | Slot | Job | The question it answers |
 |---|---|---|
-| **Home** | The locality feed | *What's happening near me?* |
+| **Home** | Rows that keep going, ending at a stop card — paused now; returns per F098 (draft, 2026-10-04) | *What's happening near me?* |
 | **Browse** *(route `/explore`)* | Search, filter, map | *I'm looking for something specific.* |
 | **You** | The Member's own things | *What am I doing here, and what did I follow?* |
 | **+** | Create | *I want to put something up.* |
@@ -71,7 +71,7 @@ owns:
 
 | Route | Surface | What it's for |
 |---|---|---|
-| `/` | Home | ● The anonymous, locality-defaulted feed. Reads `locality_feed_items` → `discoverable_items`. **Takes a place and interest tags. Takes no follow input** — see the announcement gap below. |
+| `/` | Home | ○ Redirects to `/explore` today. Returns as Tonight, This weekend, New this week and a wildcard row, ending at a stop card (2026-10-04, F098). The earlier locality feed: Reads `locality_feed_items` → `discoverable_items`. **Takes a place and interest tags. Takes no follow input** — see the announcement gap below. |
 | `/explore` | Browse | ● Search, kind pills, secondary filters, list and map by width (F059 criterion 5, 2026-10-01) — **the pills and secondary filters are ruled out** *(2026-09-12, search is the filter)*. **A first-class surface, not a mode of Home** *(2026-09-12)* — though whether Browse keeps this address is undecided. **Indexes Items only**, and **its pill row is a ratified defect** — filtering controls move off the results surface (`design-language.md` principle 10). The surface the Pages rewrite lands on. [platform location: the map and the metro pill ask the device for its position (`Map.tsx`, `MarketPill.tsx`); Browse must still work when the member refuses] |
 | `/auth/login` · `/auth/signup` · `/auth/password` | Auth | ● Email-first, with magic link secondary. [platform auth gap: redirects are built from `window.location.origin` and the PKCE verifier is a host-only cookie, so neither a magic link nor a Google sign-in can return to an app] [platform store=sign-in gap: Continue with Google is offered and Sign in with Apple is not] [platform store=age-rating gap: signup asks no age and states no minimum, and there are no terms] |
 | `/onboarding` | Onboarding | ● Hood and metro pick, post-signup. Idempotent re-entry. **A person currently finishes this without ever being told what the product is for** — the copy pass is Fortnight 4. |

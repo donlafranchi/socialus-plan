@@ -7,11 +7,11 @@ status: active
 
 # Design language
 
-White canvas + photography + one signature accent. The chrome disappears so the content speaks.
+White canvas + photography + navy for actions, with a little gold. The chrome disappears so the content speaks.
 
 ## Principles — the why, not derivable from the code
 
-1. **One accent color, used sparingly.** Satin Pistachio marks the brand; core surfaces use only two shades of it. Present enough to register, restrained enough to never compete with photos.
+1. **Navy for actions, gold as a highlight under 5% of the screen** *(Don, 2026-10-04, palette option A "Anodised")*. Navy marks what you can press; gold sits only on navy, as small accents, the way gold parts sit on a dark bike frame. Present enough to register, restrained enough that photos lead. The plan and contrast numbers: `socialus-design/palette/PALETTE-PLAN.md`.
 2. **Dark neutral text, never brand-colored.** The accent never appears on paragraphs or headings — only on interactive surfaces and accents.
 3. **White-dominant canvas.** No tinted backgrounds, no graduated color across components. The feed breathes.
 4. **Photography is sacred.** No color pills, frosted badges, or overlays on photo cards. Metadata lives in the text zone below the image, never on top of it.
@@ -32,7 +32,7 @@ White canvas + photography + one signature accent. The chrome disappears so the 
 
 **Design tokens live in the app code, the single source of truth** *(Don, 2026-10-01, design decision 7)*: `globals.css` and the components hold every value — colour, type, radius, shadow, motion. This section keeps only why, per `ops-pattern/process/LIVING-DOCS.md`; a value written here would be a second description that drifts.
 
-- **One accent, used sparingly.** The chrome steps back so photographs and what people wrote carry the page.
+- **Navy for actions, gold under 5%, and gold only on navy.** Gold on white fails contrast and reads washed out. The chrome steps back so photographs and what people wrote carry the page.
 - **Body text isn't brand-coloured,** because reading comes first.
 - **Semantic colours mean system feedback only** — toasts, validation, alerts. Colour used as decoration stops meaning anything when it has to.
 - **Ownership colour is one axis, on badges and map pins only,** so a reader learns it once.

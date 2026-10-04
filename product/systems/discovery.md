@@ -31,4 +31,4 @@ Every weight change is a code-review event, not a config toggle — a config-dri
 
 ## Anti-patterns — do not build
 
-Watch-time or dwell-time as an objective. Infinite scroll with no daily cap — discovery should feel curated, not endless. Any boost tied to payment, "promoted" status, or business size. Auto-membership in a Group from engagement alone — soft signals (follows, attendance) compute at query time and never write a membership row. Unlogged ranking — every call must log its candidate set and score breakdown, because that log is the only path to a smarter ranker later.
+Watch-time or dwell-time as an objective. Rows that refill on their own, or that run past an honest stop card: Home's rows keep going, then stop at "You've seen what's new this week", and anything older shows only on a tap (2026-10-04). Any boost tied to payment, "promoted" status, or business size. Auto-membership in a Group from engagement alone — soft signals (follows, attendance) compute at query time and never write a membership row. Unlogged ranking — every call must log its candidate set and score breakdown, because that log is the only path to a smarter ranker later.
