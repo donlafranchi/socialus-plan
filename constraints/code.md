@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-04** · process, prs — Before a PR is put in front of Don (`needs-don`), a separate reviewer agent that didn't write the code runs a first pass: screenshots as each relevant persona at phone and laptop width, copy and behaviour checked against the rulings, fixes made, and the review listed in the PR body. Don reviews judgement calls only, not rule violations
 - **2026-10-04** · layout, shell — We design up to about 1440px. Above that, the content cap and centring are enough, and a 27" screen is treated as two side-by-side windows of about 1280px each. There is currently no separate 27" layout
 - **2026-10-04** · home, explore, ranking, notifications — Home returns as rows that keep going: Tonight, This weekend, New this week and a wildcard from outside a member's declared interests. Nothing plays on its own, and the same organization doesn't appear twice in a row. The rows end at a stop card, "You've seen what's new this week", followed by "things you saved are on tonight". Explore stays the research tool. Ranking currently uses time, place, declared interests and curation, and not time spent
 - **2026-10-04** · home, categories, tags — Home's rows use granular categories that tell businesses and group events apart, not broad buckets
