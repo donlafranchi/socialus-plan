@@ -28,6 +28,8 @@ White canvas + photography + navy for actions, with a little gold. The chrome di
 
 11. **Never show someone a zero counter on their own work.** *(Moved here 2026-09-14 from the retired `../foundation/role-language.md`, where it sat among naming rules; it is a UX rule and always was.)* A gathering nobody has joined reads *"No one's in yet. Be first."* to a visitor and *"Nobody's in yet"* to the host — never "0 RSVPs." A zero on your own thing is a small daily failure notice, and the surfaces are nearly all empty at launch. **Confirmed independently by Don in `../foundation/voice.md` 2026-09-15**, in the same words.
 
+12. **Design up to about 1440px** *(Don, 2026-10-04)*. 13–16" laptops are the large screens that matter. Above that, the content cap and centring are enough: someone on a 27" screen is assumed to have two windows side by side, each about 1280px, so there is no separate 27" layout.
+
 ## Tokens — the reasons only
 
 **Design tokens live in the app code, the single source of truth** *(Don, 2026-10-01, design decision 7)*: `globals.css` and the components hold every value — colour, type, radius, shadow, motion. This section keeps only why, per `ops-pattern/process/LIVING-DOCS.md`; a value written here would be a second description that drifts.

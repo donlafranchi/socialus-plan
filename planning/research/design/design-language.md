@@ -6,7 +6,7 @@ Oct 1, 2026 · @don
 
 One shell, nine screen templates and twelve shared components cover all 152 inventoried screens from a 6" phone to a 16" laptop; a 27" monitor gets the same layout capped at 1680px and centred.
 
-- **Mockups:** `socialus-design-language.html`, in Don's local socialus-owner-page-design folder, not in this repo.
+- **Mockups:** `socialus-design-language.html`, in `socialus-design/screens/`, not in this repo.
 - **Tokens for Code:** [`socialus-tokens.css`](socialus-tokens.css) beside this file, a Tailwind v4 `@theme` drop-in for `globals.css`. Compiles clean on Tailwind 4.3.3; holds no colours. Not adopted; the Code session picks it up when Don says so.
 - **Mapping:** [`screen-template-map.csv`](screen-template-map.csv) beside this file holds the 152-row table in section 6 for filtering.
 - **Built on:** the research doc [SocialUs — Who to Copy & Design Resources](../design-references.md), the screen inventory, `owner-page-spec.md`, `socialus-web` origin/main @ 7a78277, `ops-pattern` DECISIONS.md, `design-language.md` and `surfaces.md` on origin/main.
@@ -608,4 +608,4 @@ Don will bring in a professional designer and wants them to change and play with
 
 ## Sources
 
-[SocialUs — Who to Copy & Design Resources](../design-references.md) (precedents, breakpoints, owner panel, List/Map) · `socialus-screen-inventory.xlsx`, `screen-inventory-summary.md`, `owner-page-spec.md` (socialus-owner-page-design folder) · `socialus-web` origin/main @ 7a78277 (`src/app/globals.css`, `src/components/BottomNav.tsx`) · `ops-pattern` origin/main: `DECISIONS.md` (2026-09-30 component, front-door and visibility rulings; 2026-09-19 filter modal; 2026-09-17 Browse showcase), `product/ui/design-language.md`, `product/ui/surfaces.md`, `ops-pattern/process/LIVING-DOCS.md`.
+[SocialUs — Who to Copy & Design Resources](../design-references.md) (precedents, breakpoints, owner panel, List/Map) · `socialus-screen-inventory.xlsx`, `screen-inventory-summary.md`, `owner-page-spec.md` (`socialus-design/screens/`) · `socialus-web` origin/main @ 7a78277 (`src/app/globals.css`, `src/components/BottomNav.tsx`) · `ops-pattern` origin/main: `DECISIONS.md` (2026-09-30 component, front-door and visibility rulings; 2026-09-19 filter modal; 2026-09-17 Browse showcase), `product/ui/design-language.md`, `product/ui/surfaces.md`, `ops-pattern/process/LIVING-DOCS.md`.
