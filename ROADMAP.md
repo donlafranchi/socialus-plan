@@ -34,7 +34,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Later — deferred past beta, priced
 
-- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05).
+- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05). When shown at all, they link out to the business's site or Google Maps rather than being kept here — they fail the value test (2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
