@@ -16,6 +16,7 @@
 - Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for beta (below).
 - **Page kinds and badges** — the kind line (icon · Business or Social group · main collection), Locally owned for businesses only, and a Badges & values section with kind facts; the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
 - **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
+- **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-23. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - The three accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos, browser tests running in CI — **beta scope**.
 - Builder seed-content job — synthetic, display-only content — Fortnight 4.
