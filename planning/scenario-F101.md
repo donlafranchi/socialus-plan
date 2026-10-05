@@ -72,6 +72,8 @@ An ordinary picture of a child is tier 1 because F078 already treats it at the t
 
 ### Size
 
+[platform none]
+
 **About 2.5 build days, in the beta (2026-10-30)**, after F078: the per-subject query, severity and sort (half a day); rows, buttons, swipe, toast and auto-advance (1.5 days); detail, reason codes and the 50-row timing test (half a day).
 
 **Scope signal:** F100, F101 and F102 together are about 8 build days, the sixth launch addition since 2026-10-01 with nothing removed, with feature freeze on 2026-10-23. **Recommend pushing to after beta, in this order:** the Badges & values section; add-to-calendar and end time on dated Posts (F072 criterion 6); repeating series (F074). Or hold F100's harness runner and live-mode gate to after beta (saves about 1 day), since they gate production, not beta.

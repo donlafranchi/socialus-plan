@@ -71,4 +71,6 @@ Hiding is the safe default, so midweek nothing needs a person: content that migh
 
 ### Size
 
+[platform store=ugc: the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content]
+
 **About 2 build days, in the beta (2026-10-30)**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). B adds about half a day. What to push is in F101 § Size.

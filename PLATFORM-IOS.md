@@ -41,6 +41,7 @@ where it is true; the gap is gone when its marker is.
 - **GAP** · Continue with Google is offered and Sign in with Apple is not — [product/ui/surfaces.md](product/ui/surfaces.md)
 
 **ugc** · App Review 1.2: an app with member content needs a filter, a way to report content, a way to block abusive members, and published contact details.
+- the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content — [planning/scenario-F102.md](planning/scenario-F102.md) · *F102, approved — decided, not built*
 - anyone signed in can report a Page, its photo hides at once, and the operator restores or removes it at `/admin/reports` — [product/ui/surfaces.md](product/ui/surfaces.md)
 - **GAP** · announcements and member profiles cannot be reported, and no member can block another — [product/ui/surfaces.md](product/ui/surfaces.md)
 
@@ -82,7 +83,7 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**22 of 23 approved and building scenarios carry no platform marker**, so what they will
+**22 of 26 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 

@@ -58,4 +58,6 @@ The AI hiding or removing anything on its own. Raising a metro's hide bar on the
 
 ### Size
 
+[platform none]
+
 **About 3.5 build days, in the beta (2026-10-30)**, after F078's report shape: the model call, escalation and assessments table (1.5 days); the agreement log (half a day); the harness runner (1 day); the PM's read of the first results (half a day). Builder agents build the test set alongside. Live mode and prompt tuning follow after beta. What to push is in F101 § Size.
