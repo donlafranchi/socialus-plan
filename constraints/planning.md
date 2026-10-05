@@ -10,6 +10,9 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · process, legal — socialus-plan currently holds app and platform features only. Legal and entity work (the Terms and Privacy drafting, the entity roadmap, the operating model, the DMCA agent registration) lives in a separate private repo
+- **2026-10-05** · pages, posts, cards, uploads — Every Page, of every kind, can set one Page picture; a Page without one shows its kind's placeholder. A post can carry one photo, and a post without one shows the Page picture, or the placeholder when there is none. A post's photo stays with the post and never joins the Page. A gallery currently comes after beta
+- **2026-10-05** · launch, roadmap — Beta is 2026-10-30, a soft target for testing in one metro, not a hard deadline. Feature freeze is 2026-10-23, also soft. Production launch is currently April–May 2027. Anything cut from beta is logged in `ROADMAP.md` under the PM's asterisk
 - **2026-10-05** · pages, create, page-settings, badges — Every Page is an organization. Its two primary types are Business (enterprise) and Social group; the use cases are presets and defaults under those two. The type is chosen at Create and changeable in settings
 - **2026-10-05** · cards, pages, explore — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery"
 - **2026-10-05** · values, badges, pages — A Page's values are a curated list of about 12 attributes, each with a "show as badge" switch, off by default. They are not hashtags
