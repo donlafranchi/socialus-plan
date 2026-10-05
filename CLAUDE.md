@@ -91,8 +91,9 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 
 ## Commits
 
-- Cowork commits and pushes its own doc changes here. Message: `docs: what`.
+- Cowork commits its own doc changes here, on a branch. Message: `docs: what`.
 - Code commits in `socialus-web`, branch per ticket. Who merges and when Don looks: `ops-pattern/process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
+- **Every change goes by branch and PR** *(2026-10-05)*: main requires the `lint` check (ruleset "main: merges when green"), so a direct push is rejected. Auto-merge is on: `gh pr merge --auto --squash` merges once lint passes. The STATUS workflow earns the same check on its own commits (`.github/workflows/status.yml`).
 - Anything bigger than a doc touch-up goes by branch and PR here. **Whoever does the work merges it, Code or Cowork** — self-merge is fine, and needs no approval and no second reviewer.
 - Never cross-commit (guideline — the repo split enforces it). Never rewrite history ([production-asks-don]).
 
