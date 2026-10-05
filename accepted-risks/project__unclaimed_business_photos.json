@@ -1,0 +1,14 @@
+{
+  "cache_key": null,
+  "lint": "project_accepted_risk",
+  "object": "unclaimed Pages: businesses' own photos shown without their permission",
+  "severity": "WARN",
+  "source": "project / socialus-web",
+  "decision": "2026-10-05",
+  "evidence": "socialus-web#353, socialus-web#378",
+  "why": "Don chose to show each unclaimed listing's own photo, taken from its own website or social profile, rather than a placeholder (option A on #378). Credit is not a licence, so this is copyright exposure accepted on purpose. Mitigations: the photo is credited and linked to the page it came from; the listing is tagged 'Unclaimed: added from public info'; one picture per listing; anyone can ask for the photo or the whole Page to be removed, signed in or out, and it hides at once, before review; an operator-only source log records where every field came from and when.",
+  "cost_if_forgotten": "A business finds its photo on a site it never agreed to and treats it as theft rather than a listing. One annoyed owner is a removal request; several, or one with a lawyer, is a copyright claim and a story about a platform that took local businesses' work without asking.",
+  "revisit_if": "ANY of: the first removal request or complaint about a photo; any takedown demand or legal letter; the listings grow beyond the first batch of 26 by automation (the daily job).",
+  "owner": "don",
+  "review_by": "2026-11-30"
+}
