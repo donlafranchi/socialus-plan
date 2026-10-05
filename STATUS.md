@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 17:45 UTC
+> ## Generated 2026-10-05 · 21:22 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -13,7 +13,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `0b7e31f` (2026-10-05); `accepted-risks/*.json`;
+> `78c80f2` (2026-10-05); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -43,7 +43,88 @@ branch or a commit.
 
 ## In the code repo
 
-**0 issues open** in `socialus-web`, none launch-blocking.
+**83 issues open** in `socialus-web`, 10 launch-blocking:
+- #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
+- #221 F080 · No pictures of children, from anyone — detection point needs Don
+- #222 F081 · One signup for everyone: four fields, and the zip sets the metro
+- #223 F082 · One self-attestation before a first Page, selling and hosting alike
+- #246 bug · What one member can read about another: the signed-in half of #241, and four member tables open to anyone
+- #328 change · One expanding control at the bottom of Explore: search, filter, metro, map
+- #329 bug · The location pill at the top doesn't remember the member's metro
+- #330 change · The map opens on the chosen metro, searches within it, and remembers it
+- #331 change · Decide what the map shows by default, and with filters on
+- #363 change · Page kinds: Business, Group, Organization — chosen, changeable, and shaping the Page
+
+**85 PRs merged in the last fortnight.** The newest five:
+- #387 2026-10-05 chore #386: skip Vercel previews for docs- and test-only pushes
+- #380 2026-10-05 change #304: the review page to F101 — Approve or Remove in one tap or swipe, with Undo
+- #377 2026-10-05 change #325 + #297: Anodised colours, and the report sheet on the one Sheet
+- #376 2026-10-05 chore #375: Browser CI job under 5 minutes
+- #374 2026-10-05 chore #373: human-review label, readable branch names, a Review section
+
+### Needs a look — not a claim that anything is wrong
+
+*A commit naming a ticket is not proof the ticket is done: partial work
+counts. Each row needs a look, not a close.*
+
+- **#84 open, but T159 appears on main** — chore · T159 is two different tickets — renumber one in ops-pattern
+- **#53 open, but T156 appears on main** — F059 · T156 · Browse renders Pages
+- **#51 open, but T154 appears on main** — F059 · T154 · Browse reads Pages, not Items
+- **#30 open, but T149 appears on main** — chore · T149 · Retire vendor routes for real
+- **#16 open, but T126 appears on main** — F056 · T126 · Edit shop — image, description, values
+- **#15 open, but T125 appears on main** — F057 · T125 · You gains a producer state
+
+### Still on main, meant to be gone
+
+- `/following` still present — src/app/following/page.tsx
+- `members.maker_mode_enabled` still in the schema
+
+## The ontology — what is declared
+
+- **13 link types declared**, 11 built. Registry schema 2.
+- **Declared but not built (2)** - the relationship is named and nothing writes it yet:
+  - a Member supports a Page
+  - an Announcement is at a Location
+- **7 object types declared**: Member (live), Page (live), Item (live), Location (live), Place (live), Announcement (live), Tag (live).
+- **Rejected as nouns (6)** - named so they stay rejected: Person, Creator, Organizer, Follower, Patron, Vendor.
+- **29 handlers, of which 18 write no declared link.**
+  Not a fault on its own - a handler may legitimately touch no relationship -
+  but an undeclared link lives here if it lives anywhere:
+  - group.member_join
+  - group.member_leave
+  - group.post_delete
+  - group.post_edit
+  - item.publish
+  - member.business_jurisdiction.remove
+  - member.business_jurisdiction.set
+  - member.create
+  - member.interests.add
+  - member.place_interest.add
+  - member.place_interest.remove
+  - member.saved_search.remove
+  - member.saved_search.restore
+  - metro.waitlist_join
+  - metro.waitlist_join_anonymous
+  - report.create
+  - report.decide
+  - report.reverse
+
+## What CI last said
+
+- **`deploy-health.yml`** — success, 2026-10-05
+  - Database reachable from the deployment: success
+  - Ontology declarations still match the code: success
+- **`ci.yml`** — failure, 2026-10-05
+  - Migrations applied to production: cancelled
+  - Browser: success
+  - Lint, types, build: cancelled
+  - Unit tests: cancelled
+
+## Measured, not estimated
+
+- Copy: 584 strings across 118 files — source `docs/copy-inventory.md` on origin/main
+- Routes on origin/main: 28
+- Migrations on origin/main: 75
 
 ## Deferred on purpose — and therefore easy to forget
 
@@ -67,6 +148,9 @@ dated line in `DECISIONS.md`; the register is `accepted-risks/`.
 - **schema: reports.reviewed_at/reviewed_by_member_id/outcome duplicate report_decisions** — review by 2026-11-30
   - If forgotten: Two sources of truth drift. A write path that updates the decisions log and forgets the projection leaves a report invisible in the queue or double-counted against a reporter's cap, and the bug looks like a UI fault rather than a schema one.
   - Look again if: ANY of: a third writer of report_decisions appears; delegated reviewers land (more writers, more chances to drift); the queue shows a report whose status disagrees with its history; or 2026-11-30 passes.
+- **unclaimed Pages: businesses' own photos shown without their permission** — review by 2026-11-30
+  - If forgotten: A business finds its photo on a site it never agreed to and treats it as theft rather than a listing. One annoyed owner is a removal request; several, or one with a lawyer, is a copyright claim and a story about a platform that took local businesses' work without asking.
+  - Look again if: ANY of: the first removal request or complaint about a photo; any takedown demand or legal letter; the listings grow beyond the first batch of 26 by automation (the daily job).
 
 ## Open questions
 
@@ -74,7 +158,7 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (19)
+**Waiting on Don** (21)
 
 - 31d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:34](product/foundation/role-language.md#L34)
 - 28d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:46](product/foundation/goals.md#L46)
@@ -91,16 +175,17 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 5d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
 - 5d · Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) Yes, exactly: an imported event is a publi… — [planning/scenario-F096.md:34](planning/scenario-F096.md#L34)
 - 5d · What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) Repor… — [planning/scenario-F096.md:36](planning/scenario-F096.md#L36)
+- 3d · Address-with-pin, neighbourhood list, or both, as recommended? Nothing is built until Don confirms. — [#315](https://github.com/donlafranchi/socialus-web/issues/315)
 - 1d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
 - 1d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
 - 1d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
 - 0d · Apparent child sexual abuse material carries a US provider duty to report to NCMEC "as soon as reasonably possible" (18 U.S.C. 2258A). That sits badly with a… — [planning/scenario-F102.md:62](planning/scenario-F102.md#L62)
+- 0d · Approve the "How we sound" section (subtle California ease, "work to live, not live to work"), its tone-by-context table and the before/after examples, or sa… — [product/foundation/voice-and-tone.md:51](product/foundation/voice-and-tone.md#L51)
 
-**Cowork owes an answer** (1)
+**Cowork owes an answer** (2)
 
 - 4d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:61](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L61)
-
-**Not scanned this run:** open `socialus-web` Issues — `gh` could not read them.
+- 0d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
 
 ## Guard coverage
 
@@ -132,21 +217,22 @@ and files on main, and branches. Frontmatter is a claim; this is the evidence.
 Every scenario whose frontmatter says `gates: launch`, against the `socialus-web` Issues
 naming it. Five approved gating scenarios once had none, and nothing noticed.
 
-- **F058** · not checked — `gh` could not read Issues
-- **F076** · not checked — `gh` could not read Issues
-- **F078** · not checked — `gh` could not read Issues
-- **F080** · not checked — `gh` could not read Issues
-- **F081** · not checked — `gh` could not read Issues
-- **F082** · not checked — `gh` could not read Issues
-- **F093** · not checked — `gh` could not read Issues
-- **F100** · not checked — `gh` could not read Issues
-- **F101** · not checked — `gh` could not read Issues
-- **F102** · not checked — `gh` could not read Issues
+- **F058** (approved) · #62 closed, #61 closed, #13 closed, #12 closed
+- **F076** (approved) · #194 closed, #193 closed, #77 closed
+- **F078** (approved) · #220 open
+- **F080** (approved) · #221 open
+- **F081** (approved) · #222 open
+- **F082** (approved) · #223 open
+- **F093** (approved) · #252 closed, #215 closed
+- **F100** (approved) · **no Issue** — approved and gating launch with nothing to build from
+- **F101** (approved) · **no Issue** — approved and gating launch with nothing to build from
+- **F102** (approved) · **no Issue** — approved and gating launch with nothing to build from
 
-**Rulings that bind code: 124.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 128.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
-- **Nothing to build** (20), by their own tag: 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+- **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
+- **Nothing to build** (21), by their own tag: 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
 
 ## What this run could not verify
 
