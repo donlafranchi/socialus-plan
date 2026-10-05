@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 17:33 UTC
+> ## Generated 2026-10-05 · 17:45 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -74,7 +74,7 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (20)
+**Waiting on Don** (19)
 
 - 31d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:34](product/foundation/role-language.md#L34)
 - 28d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:46](product/foundation/goals.md#L46)
@@ -94,8 +94,7 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 1d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
 - 1d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
 - 1d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
-- 0d · Apparent child sexual abuse material carries a US provider duty to report to NCMEC "as soon as reasonably possible" (18 U.S.C. 2258A). That sits badly with a… — [planning/scenario-F102.md:60](planning/scenario-F102.md#L60)
-- 0d · Should the AI auto-restore spam and other (severity 4) in beta? Shadow mode means a mistaken spam report keeps a fine Post down until the weekend. — [planning/scenario-F102.md:64](planning/scenario-F102.md#L64)
+- 0d · Apparent child sexual abuse material carries a US provider duty to report to NCMEC "as soon as reasonably possible" (18 U.S.C. 2258A). That sits badly with a… — [planning/scenario-F102.md:62](planning/scenario-F102.md#L62)
 
 **Cowork owes an answer** (1)
 
@@ -113,7 +112,7 @@ they leave out; parts never add up to covered. Full map: `python3 scripts/marker
 
 - **F059** · 0 of 12 covered · **partial: 5** · unclaimed: 1, 2, 2b, 2c, 3, 4, 6, 7, 8, 9, 10
 - **F080** · 1 of 5 covered · unclaimed: 1, 2, 3, 4
-- **F081** · 1 of 8 covered · **partial: 1, 5** · unclaimed: 2, 3, 4, 6, 8
+- **F081** · 1 of 9 covered · **partial: 1, 5** · unclaimed: 2, 3, 4, 6, 8, 9
 - **F091** · 3 of 7 covered · **partial: 1, 7** · unclaimed: 5, 6
 - **F093** · 4 of 12 covered · **partial: 4, 5, 6, 8, 9** · unclaimed: 10, 11, 12
 - **Unverified — no marked check at all** (21): F056, F057, F058, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F082, F092, F099, F100, F101, F102
@@ -144,7 +143,7 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F101** · not checked — `gh` could not read Issues
 - **F102** · not checked — `gh` could not read Issues
 
-**Rulings that bind code: 119.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 124.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **Nothing to build** (20), by their own tag: 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
