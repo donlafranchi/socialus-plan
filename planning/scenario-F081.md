@@ -5,8 +5,8 @@ status: approved
 gates: launch
 date: 2026-09-14
 depends: [F076, F077]
-approved: 2026-09-14 — Don's ruling; legal name, email, zip, display name, zip suggests the metro
-amended: 2026-09-30 — Don: every US zip known before launch, an unknown one refused; the metro is the MSA; the zip is kept and changed on /you; every member is verified as a person, method open; no "we never sell" line, a placeholder about what the app is for instead. Story and criteria 1, 4 and 5 restated, 8 added.
+approved: 2026-09-14 — the PM's ruling; legal name, email, zip, display name, zip suggests the metro
+amended: 2026-09-30 — the PM: every US zip known before launch, an unknown one refused; the metro is the MSA; the zip is kept and changed on /you; every member is verified as a person, method open; no "we never sell" line, a placeholder about what the app is for instead. Story and criteria 1, 4 and 5 restated, 8 added. 2026-10-05 — the PM: an 18+ checkbox with a Terms link beside it joins signup; the legal name is seen only by operators. Criterion 1 restated.
 ---
 ## Story
 
@@ -14,11 +14,11 @@ Maya follows a neighbour's link and signs up. One screen: her legal name, her em
 
 ## Acceptance
 
-1. **Signup collects legal name, email, zip and display name, and verifies the email.** Every member is verified as a person; how is open (Why). No other field exists in the flow. The legal name, email and phone are seen only by Don and operators, and are currently disclosed only in response to valid legal process (2026-10-01).
+1. **Signup collects legal name, email, zip and display name, plus a checkbox reading "I'm 18 or older and agree to the Terms" with the Terms link beside it, and verifies the email.** Every member is verified as a person; how is open (Why). No other field exists in the flow. The legal name, email and phone are seen only by operators (2026-10-05).
 2. The zip is stored, and never rendered on any surface another member or visitor can reach — profile, listing, search, map.
-3. **The zip determines the metro**, and the screen shows the person which metro that is. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match. *(Amended 2026-09-27: this read "the zip produces a shortlist… the person selects one"; Don ruled the zip decides.)*
+3. **The zip determines the metro**, and the screen shows the person which metro that is. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match. *(Amended 2026-09-27: this read "the zip produces a shortlist… the person selects one"; the PM ruled the zip decides.)*
 4. **Nobody picks a metro at signup.** A member who moves changes their zip on `/you`, and their metro follows from it. It is not one-and-done.
-5. The screen carries a line saying what the app is for, **and no line about not selling member information.** Placeholder, Don's words ([public-is-draft]): *"This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together."* It states no date, feature, or promise about the future.
+5. The screen carries a line saying what the app is for, **and no line about not selling member information.** Placeholder, the PM's words ([public-is-draft]): *"This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together."* It states no date, feature, or promise about the future.
 6. No field, control, or string in signup asks or records whether the person makes things or finds them.
 7. **Onboarding assigns no place the person did not give.** A member's home is the metro their zip determined; no default place is written on their behalf, seen or unseen. *(Added 2026-09-27. Today `DEFAULT_HOME_PLACE_ID` sets every new member's home to a fictional city whose box sits inside Sacramento, which is why every member resolves to Sacramento.)*
 8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to the MSA that contains it.** A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in no MSA chooses a metro to view; their zip is kept, to tell them when their own MSA opens.
@@ -31,21 +31,21 @@ Choosing the person-verification method, which is open. The waitlist popup and m
 
 ### The zip decides (2026-09-27)
 
-**Don reversed the 2026-09-14 shortlist-and-pick.** A zip is something the person told us, so a metro derived from it is not the platform choosing for them; what F076 criterion 2 forbids is choosing from something they did not give — IP, a default, a nearest match. **The unseen default place was the real violation**, and criterion 7 removes it.
+**The PM reversed the 2026-09-14 shortlist-and-pick.** A zip is something the person told us, so a metro derived from it is not the platform choosing for them; what F076 criterion 2 forbids is choosing from something they did not give — IP, a default, a nearest match. **The unseen default place was the real violation**, and criterion 7 removes it.
 
-**The metro is the MSA** (Don, 2026-09-30): Sacramento is MSA 40900, not CSA 472. Yuba and Sutter are not their own MSA and are not covered at launch. A member whose zip is in no MSA can choose a metro to view; the value is kept for records and to tell them when their own MSA opens.
+**The metro is the MSA** (the PM, 2026-09-30): Sacramento is MSA 40900, not CSA 472. Yuba and Sutter are not their own MSA and are not covered at launch. A member whose zip is in no MSA can choose a metro to view; the value is kept for records and to tell them when their own MSA opens.
 
-**The zip is kept** (Don, 2026-09-30): *"How will we know what's going on in their area without it."* So criterion 2 stands, and changing the zip is how a member changes metro.
+**The zip is kept** (the PM, 2026-09-30): *"How will we know what's going on in their area without it."* So criterion 2 stands, and changing the zip is how a member changes metro.
 
-**Criterion 5's line ships as the placeholder, Don's words** (Don, 2026-10-01). He may change it any time after launch.
+**Criterion 5's line ships as the placeholder, the PM's words** (2026-10-01). It may change any time after launch.
 
 ### Who sees a real name
 
 **Out of scope 2026-09-30; revisit with legal counsel** (F077). Signup says nothing about showing legal names to anyone.
 
-**A person is verified by a text-message code to their phone, at signup** (Don, 2026-10-01). At signup because every member is verified (2026-09-30). Today the code has no phone field, email-only sign-in, and Supabase SMS switched off — that is the build.
+**A person is verified by a text-message code to their phone, at signup** (the PM, 2026-10-01). At signup because every member is verified (2026-09-30). Today the code has no phone field, email-only sign-in, and Supabase SMS switched off — that is the build.
 
-**Terms and Privacy ship as plain-language drafts, marked as drafts, before counsel reviews them; counsel reviews after launch** (Don, 2026-10-01). Privacy discloses that we collect legal names, verified phones (the text-message code, 2026-10-01) and verified emails (California privacy duties), and that we disclose member data only in response to valid legal process (2026-10-01). **Path:** adapt GitHub's site-policy (reusable without conditions) and Basecamp's policies (with attribution); drafts by 2026-10-15, live 2026-10-30, counsel review after launch. Don's 14-fact checklist is due 2026-10-08. Starter kit: [Terms & Privacy starter kit](research/terms-privacy-starter.md).
+**Legal facts live in a private repo.**
 
 ### Settled against F076
 

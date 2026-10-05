@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 05:43 UTC
+> ## Generated 2026-10-05 · 17:03 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -12,16 +12,16 @@
 > moved, so a new revision of this file is never a bare heartbeat. Locally:
 > `bash scripts/status.sh`.
 >
-> **Derived from this repo only** — `accepted-risks/*.json`,
-> `planning/scenario-*.md` frontmatter and `ROADMAP.md`. Everything about
-> the code repo is missing from this run; see the last section.
+> **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
+> `05ff207` (2026-10-05); `accepted-risks/*.json`;
+> `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
 Launch **2026-10-30**, one metro. 25 days out.
 
-**22 of 22 approved and building scenarios are unverified** — no check is marked as discharging any
+**18 of 23 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
 
 **Native apps: 7 gaps for iOS, 6 for Android** — `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md`.
@@ -30,7 +30,7 @@ of their criteria. Unmarked is unverified, not verified. § Guard coverage.
 
 | approved | building | draft | deferred |
 |---|---|---|---|
-| 18 | 4 | 20 | 1 |
+| 19 | 4 | 20 | 1 |
 
 **Building:**
 - F060 (Someone starts something without opening a shop)
@@ -40,6 +40,10 @@ of their criteria. Unmarked is unverified, not verified. § Guard coverage.
 
 **`building` is frontmatter, not evidence** — nothing checks it against a
 branch or a commit.
+
+## In the code repo
+
+**0 issues open** in `socialus-web`, none launch-blocking.
 
 ## Deferred on purpose — and therefore easy to forget
 
@@ -91,29 +95,36 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 1d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
 - 1d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
 
-**Not scanned this run:** the `socialus-web` code at `origin/main` — no checkout; open `socialus-web` Issues — `gh` could not read them.
+**Cowork owes an answer** (1)
+
+- 4d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:61](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L61)
+
+**Not scanned this run:** open `socialus-web` Issues — `gh` could not read them.
 
 ## Guard coverage
 
-**22 of 22 approved and building scenarios are unverified — no check is marked
+**18 of 23 approved and building scenarios are unverified — no check is marked
 as discharging any criterion of theirs, so a contradiction in them cannot surface here.** Unmarked
 is unverified, not verified: nothing says a check exists, and under `[guard-proves-itself]` that
 counts as absent. A **partial** criterion has checks that cover only part of it, named with what
 they leave out; parts never add up to covered. Full map: `python3 scripts/markers.py coverage`.
 
-- **Unverified — no marked check at all** (22): F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F081, F082, F091, F092, F093
-
-**Not scanned this run:** the `socialus-web` code at `origin/main` — no checkout.
+- **F059** · 0 of 12 covered · **partial: 5** · unclaimed: 1, 2, 2b, 2c, 3, 4, 6, 7, 8, 9, 10
+- **F080** · 1 of 5 covered · unclaimed: 1, 2, 3, 4
+- **F081** · 1 of 8 covered · **partial: 1, 5** · unclaimed: 2, 3, 4, 6, 8
+- **F091** · 3 of 7 covered · **partial: 1, 7** · unclaimed: 5, 6
+- **F093** · 4 of 12 covered · **partial: 4, 5, 6, 8, 9** · unclaimed: 10, 11, 12
+- **Unverified — no marked check at all** (18): F056, F057, F058, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F082, F092, F099
 
 ## Is `building` backed by code?
 
 Each scenario whose frontmatter says `building`, against what names it in `socialus-web`: commits
 and files on main, and branches. Frontmatter is a claim; this is the evidence.
 
-- **F060** · not checked — no `socialus-web` checkout
-- **F061** · not checked — no `socialus-web` checkout
-- **F069** · not checked — no `socialus-web` checkout
-- **F070** · not checked — no `socialus-web` checkout
+- **F060** · 0 commits on main · 5 files naming it · 0 branches
+- **F061** · 0 commits on main · 12 files naming it · 0 branches
+- **F069** · **nothing in the code names it** — no commit, file or branch
+- **F070** · 6 commits on main · 14 files naming it · 0 branches
 
 ## Gating launch — does each have an Issue?
 
@@ -128,15 +139,13 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F082** · not checked — `gh` could not read Issues
 - **F093** · not checked — `gh` could not read Issues
 
-**Rulings that bind code: 113.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 115.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
-- **Nothing to build** (18), by their own tag: 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+- **Nothing to build** (19), by their own tag: 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
 
 ## What this run could not verify
 
-- **Everything about `socialus-web`** — open issues, merges, the ontology
-  registry and CI's last word. No `socialus-web` checkout was available to this run.
 - **The 20 drafts.** Status alone does not say which are waiting
   on Don and which are simply unfinished.
 

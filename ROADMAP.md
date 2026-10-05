@@ -8,24 +8,24 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Now — Fortnight 1, in build
 
-- Page composer: address or neighbourhood/town location step (seeded list covering MSA 40900, shown as a pin at its centre, 2026-10-04), category step, photo step + takedown, default art, resume fix. *(The gate on Don making his own Page is met — he has made several, Sac Floaters among them, 2026-10-01.)*
+- Page composer: address or neighbourhood/town location step (seeded list covering MSA 40900, shown as a pin at its centre, 2026-10-04), category step, photo step + takedown, default art, resume fix. *(The gate on the PM making their own Page is met — they have made several, Sac Floaters among them, 2026-10-01.)*
 - Dead producer page fix — approved, ticketed, buildable today.
 - Producer entry point (`/you/create`, no shop required to host) — reviewed, ticketed.
 - Report path + image takedown — approved; no photo goes to production until this ships.
 - Display name in public; flagged content auto-hides with an immediate reason and appeal, anything a member posts is reportable, and the reporter picks a reason the poster can rebut (F078, scope added 2026-09-30); no pictures of children from anyone, stated at posting with reports as the backstop (F080, 2026-09-30) — approved, gates beta alongside the report path.
-- Metro waitlist at signup — pick a metro, say creator or patron, see a count in a popup. **Added 2026-09-14 at Don's direction; nothing was removed to make room.** F076.
-- Patron signup (legal name, verified email, verified as a person — method open, zip; the zip determines the metro, every US zip known before beta; a line on what the app is for, 2026-09-30) and agreeing to the versioned rules before each new Page, selling and hosting alike — F081, F082. **Added 2026-09-14 at Don's direction; nothing was removed to make room. Both approved 2026-09-14.**
+- Metro waitlist at signup — pick a metro, say creator or patron, see a count in a popup. **Added 2026-09-14 at the PM's direction; nothing was removed to make room.** F076.
+- Patron signup (legal name, verified email, verified as a person — method open, zip; the zip determines the metro, every US zip known before beta; a line on what the app is for, 2026-09-30; an 18+ checkbox with the Terms link beside it, 2026-10-05) and agreeing to the versioned rules before each new Page, selling and hosting alike — F081, F082. **Added 2026-09-14 at the PM's direction; nothing was removed to make room. Both approved 2026-09-14.**
 
 ## Next — Fortnights 2–3
 
 - Retired vendor routes redirected or removed.
-- Footer linking About, Terms and Privacy pages, with Terms and Privacy as plain-language drafts (design decision 8, 2026-10-01) — **beta scope**; none of the three pages exists in the app today.
+- Footer linking About, Terms and Privacy pages (design decision 8, 2026-10-01, the PM) — **beta scope**; none of the three pages exists in the app today. Privacy is due before the first signup. The page text is supplied from outside this repo.
 - **Tags on posts, and tag editing any time** (2026-10-01) — **in beta, confirmed 2026-10-01**; **nothing was removed to make room.** Post replaces announcement as the user-facing word; the copy review rides with the copy pass.
 - **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
 - Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **beta scope**.
 - Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for beta (below).
 - **Page kinds and badges** — the kind line (icon · Business or Social group · main collection), Locally owned for businesses only, and a Badges & values section with kind facts; the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
-- **Page logo and Post images** (F099) — **beta scope**; the slice is pending Don's answers.
+- **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - The three accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos, browser tests running in CI — **beta scope**.
 - Builder seed-content job — synthetic, display-only content — Fortnight 4.
@@ -33,11 +33,11 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Later — deferred past beta, priced
 
-- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (Don, 2026-10-05).
+- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
-- Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: Don ruled none is being built, so F080 names no unlock.)*
+- Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
-- Individual product and service listings on a Page — **postponed until after beta** *(Don, 2026-10-01)*.
+- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*.
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
@@ -48,7 +48,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Structured recurring-location scheduling — priced v2 buy-back for the free-text "where they'll be next" line.
 - Paid visibility / advertising mechanic — gated on passing the member-benefit test; not designed.
 - Cooperative coordination tooling (voting, distributions) — waits on documented demand.
-- LLM-enhanced natural-language search ("sourdough near me Saturday") and SEO-structured public pages. **In-app answering is the next version after beta, not backlog for 2026-10-30** *(Don, 2026-09-21: "something I'd like to prepare for for the next version after")*. **What is wanted before beta is not building it but not foreclosing it** — five constraints in `planning/AGENT-ANSWERING.md`, each cheap now and expensive to retrofit. Paired with the crawler-blocking and thin-public-tier work in `socialus-web`.
+- LLM-enhanced natural-language search ("sourdough near me Saturday") and SEO-structured public pages. **In-app answering is the next version after beta, not backlog for 2026-10-30** *(the PM, 2026-09-21: "something I'd like to prepare for for the next version after")*. **What is wanted before beta is not building it but not foreclosing it** — five constraints in `planning/AGENT-ANSWERING.md`, each cheap now and expensive to retrofit. Paired with the crawler-blocking and thin-public-tier work in `socialus-web`.
 - **Values-shaped recommendations** (F097, draft) — private values, a ranked buying list, blended recommendations, opt-in badges, endorsements shown as a meter not a number. **Nobody can search values.**
 - Saved-search subscriptions ("notify me: new products in Oak Park").
 - Richer service-listing fields (appointment availability, scope of work), item lifecycle states (draft/paused/archived), stock indicators, bundled items.
@@ -61,18 +61,18 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Multi-owner/partnership business Pages, staff-confirmation flows, community-stewardship-to-business transition.
 
 **Speculative, not ruled**
-- Price on cards: Free / Donation / Paid *(Don, 2026-09-30)*. F072 criterion 2 stands: an announcement carries no price today.
-- A public member profile, like a TikTok profile *(Don, 2026-10-01)*. You currently isn't visible to anyone else; someone who wants to be followed creates a Page.
-- An event without an organization: a one-time Page for it *(Don, 2026-10-01: "even though that doesn't really make sense")*. Today an event is a post a Page makes.
-- Vouching: a neighbour chooses to vouch for a service provider *(Don, 2026-09-30; F095)*.
-- Page components not offered in beta *(Don, 2026-09-30: a Page is composed of components any owner can add)*: RSVP on a single post; transactions and one-on-one meetings; visibility levels on a Page that isn't a group Page; switching following or joining off.
-- When in-app purchasing exists, producer and purchaser see each other as far as the transaction needs *(Don, 2026-09-30)*.
+- Price on cards: Free / Donation / Paid *(the PM, 2026-09-30)*. F072 criterion 2 stands: an announcement carries no price today.
+- A public member profile, like a TikTok profile *(the PM, 2026-10-01)*. You currently isn't visible to anyone else; someone who wants to be followed creates a Page.
+- An event without an organization: a one-time Page for it *(the PM, 2026-10-01: "even though that doesn't really make sense")*. Today an event is a post a Page makes.
+- Vouching: a neighbour chooses to vouch for a service provider *(the PM, 2026-09-30; F095)*.
+- Page components not offered in beta *(the PM, 2026-09-30: a Page is composed of components any owner can add)*: RSVP on a single post; transactions and one-on-one meetings; visibility levels on a Page that isn't a group Page; switching following or joining off.
+- When in-app purchasing exists, producer and purchaser see each other as far as the transaction needs *(the PM, 2026-09-30)*.
 
 ## Cut — taken off the beta list, dated and reasoned
 
 *Not the same as Won't. A cut thing is still wanted; it lost a trade against the deadline and may come back. A Won't thing is refused on principle and doesn't come back. Recorded here rather than quietly deleted, because a line that vanishes from Next leaves no trace of who decided or why.*
 
-**Cut 2026-10-05 — beta trimmed to what testing needs.** *Asterisk: Don may pull any of these back into beta by judgement.*
+**Cut 2026-10-05 — beta trimmed to what testing needs.** *Asterisk: the PM may pull any of these back into beta by judgement.*
 
 - **Search and Browse rebuild, and popularity ordering** *(cut 2026-10-05)*. **What left:** search over Pages, Browse rebuilt around Pages and gatherings, and popularity ordering with a reserved share for new Pages. **Why:** beta tests making and reading Pages and posts; a beta-sized set of Pages needs no ranking, and latest posts covers reading. **Comes back when:** beta Pages outgrow one scroll, or production scope is set.
 - **RSVP / response path** *(cut 2026-10-05)*. **What left:** one response per person on a gathering. **Why:** beta tests posting, not attendance; a dated post already carries date, time and place. **Comes back when:** beta testers ask to say they're going, or production scope is set.
@@ -85,7 +85,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - **Narrowing in a modal that writes text** *(cut 2026-10-05; F092)*. **What left:** a modal that narrows What's happening and writes the narrowing back as text. **Why:** the time rows (F091) already do the narrowing beta needs; the modal and its parser are extra build. **Comes back when:** testers want to narrow past the time rows, or production scope is set.
 - **Metadata rewrite** *(cut 2026-10-05)*. **What left:** rewriting page titles, descriptions and share previews. **Why:** beta is for testing, not search or sharing reach. **Comes back when:** before production, when public pages need to be found and shared.
 
-- **Bulletins — the member-audience half of a post** *(cut 2026-09-20, Don)*. **What left:** a post being delivered to the feed of everyone who follows a Page or belongs to its group. **What stayed:** the composer, and posts appearing in browse — both are what *What's happening…* runs on. **Why:** recurrence (F074) was ruled in the same day and is what makes the time lens non-empty; the beta list was already over, so something had to pay. **Cost of the cut:** a Page owner has no way to reach people who already follow them, which is the thing followers are for. **It comes back when** the time lens is shipped and the follower graph has enough density that delivery reaches more than a handful of people. **Re-examine this trade if F059 criterion 2b slips.** The cost above is survivable *only* because announcements from followed Pages are meant to surface on Explore for a signed-in reader — that is F059 criterion 2b, item 2 on Don's list, and **it is not built**. If it moves, a Page owner has no route to their own followers at all, and this stops being a deferral and becomes a hole. **Nothing built is discarded** — the subscription link exists in `group_memberships` and nothing reads it yet, so the cut removes unbuilt work. Reflected in F072 criterion 2.
+- **Bulletins — the member-audience half of a post** *(cut 2026-09-20, the PM)*. **What left:** a post being delivered to the feed of everyone who follows a Page or belongs to its group. **What stayed:** the composer, and posts appearing in browse — both are what *What's happening…* runs on. **Why:** recurrence (F074) was ruled in the same day and is what makes the time lens non-empty; the beta list was already over, so something had to pay. **Cost of the cut:** a Page owner has no way to reach people who already follow them, which is the thing followers are for. **It comes back when** the time lens is shipped and the follower graph has enough density that delivery reaches more than a handful of people. **Re-examine this trade if F059 criterion 2b slips.** The cost above is survivable *only* because announcements from followed Pages are meant to surface on Explore for a signed-in reader — that is F059 criterion 2b, item 2 on the PM's list, and **it is not built**. If it moves, a Page owner has no route to their own followers at all, and this stops being a deferral and becomes a hole. **Nothing built is discarded** — the subscription link exists in `group_memberships` and nothing reads it yet, so the cut removes unbuilt work. Reflected in F072 criterion 2.
 
 ## Won't
 
@@ -96,7 +96,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Engagement-optimized ranking, streaks, pull-back notifications.
 - Venture capital funding.
 - Legal or tax language between members or in Page creation; legal-entity information from anyone without a legal entity (2026-09-30).
-- Full e-commerce catalog (variants, SKUs, cart), automated/dynamic pricing, inventory or warehouse management, POS/checkout, appointment-booking or calendar sync, as full-featured products. SocialUs isn't a fully built-out platform of any kind except for discovery and support of locals; basic in-platform versions, so people can transact and connect, are possible (Don, 2026-09-30).
+- Full e-commerce catalog (variants, SKUs, cart), automated/dynamic pricing, inventory or warehouse management, POS/checkout, appointment-booking or calendar sync, as full-featured products. SocialUs isn't a fully built-out platform of any kind except for discovery and support of locals; basic in-platform versions, so people can transact and connect, are possible (the PM, 2026-09-30).
 - Automated government-API verification of producer claims — the trust ladder is human-driven (self-attest → community-attest → document-upload) only.
 - Mass-email marketing tooling, push notifications to non-followers, individual visitor-tracking analytics for a producer.
 - Platform-custodied funds held for the platform's own benefit, lending, or credit.

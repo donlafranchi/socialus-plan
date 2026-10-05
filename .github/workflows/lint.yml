@@ -2,7 +2,8 @@ name: lint
 
 # Runs scripts/lint.sh, including the marker checker and its known-bad fixtures
 # ([guard-proves-itself]). The process absolutes the slug check reads live in
-# ops-pattern, the method repo, so it is checked out beside this one.
+# socialus-ops (formerly ops-pattern), the method repo, so it is checked out
+# beside this one. It is private: the checkout reads it with SOCIALUS_READ_TOKEN.
 
 on:
   push:
@@ -24,7 +25,8 @@ jobs:
           fetch-depth: 0  # the replaces checker reads git history
       - uses: actions/checkout@v5
         with:
-          repository: donlafranchi/ops-pattern
-          path: ops-pattern
+          repository: donlafranchi/socialus-ops
+          path: ops-pattern  # scripts/lint.sh looks for ../ops-pattern
+          token: ${{ secrets.SOCIALUS_READ_TOKEN }}
       - run: bash scripts/lint.sh
         working-directory: socialus-plan
