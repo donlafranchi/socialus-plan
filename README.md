@@ -8,23 +8,18 @@
 
 ## Next
 
-- Person-noun lint in `socialus-web` — fails the build on a person-noun in a user-facing string. Spec in `product/foundation/nouns.md`; a chore, opened as an Issue. **~16 strings fail today, plus the retired vendor routes.**
-
-- Search (Pages only) + Browse rebuilt around Pages and gatherings.
-- Popularity ordering with a reserved share for new Pages.
-- Metadata rewrite; retired vendor routes redirected or removed.
-- RSVP / response path — one per person.
-- Footer linking About, Terms and Privacy pages (design decision 8, 2026-10-01, the PM) — **launch scope**; none of the three pages exists in the app today. Privacy is due before the first signup. The page text is supplied from outside this repo.
-- **Tags on posts, and tag editing any time** (2026-10-01) — **in the launch, the PM confirmed 2026-10-01**; new launch scope, **nothing was removed to make room.** Post replaces announcement as the user-facing word; the copy review rides with the copy pass.
-- Follows simplification — one table, three subjects.
-- **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091); narrowing in a modal that writes text (F092). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
-- Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **new launch scope**.
-- Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for launch (below).
-- **Page kinds and badges** — the kind line (icon · Business or Social group · main collection), Locally owned for businesses only, and a Badges & values section with kind facts; the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **new launch scope; nothing was removed to make room.** The Page values list follows after launch.
-- **Home returns as rows that keep going** — Tonight, This weekend, New this week, a wildcard, ending at a stop card (F098, draft, 2026-10-04) — **new launch scope; nothing was removed to make room.**
+- Retired vendor routes redirected or removed.
+- Footer linking About, Terms and Privacy pages (design decision 8, 2026-10-01, the PM) — **beta scope**; none of the three pages exists in the app today. Privacy is due before the first signup. The page text is supplied from outside this repo.
+- **Tags on posts, and tag editing any time** (2026-10-01) — **in beta, confirmed 2026-10-01**; **nothing was removed to make room.** Post replaces announcement as the user-facing word; the copy review rides with the copy pass.
+- **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
+- Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **beta scope**.
+- Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for beta (below).
+- **Page kinds and badges** — the kind line (icon · Business or Social group · main collection), Locally owned for businesses only, and a Badges & values section with kind facts; the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
+- **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
-- Onboarding, empty states, copy pass — Fortnight 4.
-- Seed content, synthetic and display-only — Fortnight 4.
+- The three accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos, browser tests running in CI — **beta scope**.
+- Builder seed-content job — synthetic, display-only content — Fortnight 4.
+- Onboarding, empty states, copy pass — Fortnight 4, after the 2026-10-23 freeze. The copy pass covers person-nouns by hand.
 
 
 ## Later
@@ -33,7 +28,7 @@
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
-- Individual product and service listings on a Page — **postponed until after launch** *(the PM, 2026-10-01)*.
+- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*.
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
@@ -44,16 +39,16 @@
 - Structured recurring-location scheduling — priced v2 buy-back for the free-text "where they'll be next" line.
 - Paid visibility / advertising mechanic — gated on passing the member-benefit test; not designed.
 - Cooperative coordination tooling (voting, distributions) — waits on documented demand.
-- LLM-enhanced natural-language search ("sourdough near me Saturday") and SEO-structured public pages. **In-app answering is the next version after launch, not backlog for 2026-10-30** *(the PM, 2026-09-21: "something I'd like to prepare for for the next version after")*. **What is wanted before launch is not building it but not foreclosing it** — five constraints in `planning/AGENT-ANSWERING.md`, each cheap now and expensive to retrofit. Paired with the crawler-blocking and thin-public-tier work in `socialus-web`.
+- LLM-enhanced natural-language search ("sourdough near me Saturday") and SEO-structured public pages. **In-app answering is the next version after beta, not backlog for 2026-10-30** *(the PM, 2026-09-21: "something I'd like to prepare for for the next version after")*. **What is wanted before beta is not building it but not foreclosing it** — five constraints in `planning/AGENT-ANSWERING.md`, each cheap now and expensive to retrofit. Paired with the crawler-blocking and thin-public-tier work in `socialus-web`.
 - **Values-shaped recommendations** (F097, draft) — private values, a ranked buying list, blended recommendations, opt-in badges, endorsements shown as a meter not a number. **Nobody can search values.**
 - Saved-search subscriptions ("notify me: new products in Oak Park").
 - Richer service-listing fields (appointment availability, scope of work), item lifecycle states (draft/paused/archived), stock indicators, bundled items.
-- Community-attested (Tier 1) and document-verified (Tier 2) locality/provenance badges — Tier 0 self-attestation is all that ships at launch.
+- Community-attested (Tier 1) and document-verified (Tier 2) locality/provenance badges — Tier 0 self-attestation is all that ships in beta.
 - Follow-stream notifications, item-level customer inquiry, follower-list management for a producer.
 - Producer growth dashboard, weekly digest email, peer benchmarks.
 - Multi-location/ambulatory-route management, sub-venue support (e.g. "Drake's barn" under Drake's).
 - On-platform payments — closed-loop ledger + ACH via a chartered partner, zero platform transaction fees on member commerce (the wealth-circulation rubric), a stablecoin path long-horizon.
-- Treatment-review surface (reviews the treatment, never the person) and member references.
+- Treatment-review surface (reviews the treatment, not the person) and member references.
 - Multi-owner/partnership business Pages, staff-confirmation flows, community-stewardship-to-business transition.
 
 **Speculative, not ruled**
@@ -61,7 +56,7 @@
 - A public member profile, like a TikTok profile *(the PM, 2026-10-01)*. You currently isn't visible to anyone else; someone who wants to be followed creates a Page.
 - An event without an organization: a one-time Page for it *(the PM, 2026-10-01: "even though that doesn't really make sense")*. Today an event is a post a Page makes.
 - Vouching: a neighbour chooses to vouch for a service provider *(the PM, 2026-09-30; F095)*.
-- Page components not offered at launch *(the PM, 2026-09-30: a Page is composed of components any owner can add)*: RSVP on a single post; transactions and one-on-one meetings; visibility levels on a Page that isn't a group Page; switching following or joining off.
+- Page components not offered in beta *(the PM, 2026-09-30: a Page is composed of components any owner can add)*: RSVP on a single post; transactions and one-on-one meetings; visibility levels on a Page that isn't a group Page; switching following or joining off.
 - When in-app purchasing exists, producer and purchaser see each other as far as the transaction needs *(the PM, 2026-09-30)*.
 
 

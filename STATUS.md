@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 17:03 UTC
+> ## Generated 2026-10-05 · 17:17 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -13,13 +13,13 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `05ff207` (2026-10-05); `accepted-risks/*.json`;
+> `3492589` (2026-10-05); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
-Launch **2026-10-30**, one metro. 25 days out.
+Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 25 days out; feature freeze 2026-10-23, also soft. Production launch April–May 2027.
 
 **18 of 23 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
