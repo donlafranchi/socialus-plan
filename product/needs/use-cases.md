@@ -3,42 +3,47 @@ id: what-use-cases
 purpose: Real situations the platform exists to dissolve — not personas, actual local cases. The working test set for any feature.
 layer: what
 status: active
+reviewed: 2026-10-05
 ---
 
 # Use cases
 
-Real situations, drawn from Sacramento and the surrounding region, that the platform exists to dissolve. The Run Club exists. Ferrari Fisheries exists. Every scenario's capabilities trace back here. **MVP** ships at b1. **Deferred (b2+)** — problem statement is canon, design isn't finished. **Deferred (far horizon)** — out of scope for the foreseeable bundle plan, kept so the shape isn't forgotten.
+**What changed (2026-10-05):** each case's status is now `ROADMAP.md`'s (beta, later, cut) instead of the b1/b2 bundles; each names the Page purpose it runs on; the Producer and Convener "roles" are relations to a Page, and selling as an individual with no Page is gone, since a member has no type and no public profile.
 
-## Roles — not account types, activities a Member takes on
+Real situations, drawn from Sacramento and the surrounding region, that the platform exists to dissolve. The Run Club exists. Ferrari Fisheries exists. Every scenario's capabilities trace back here. **Beta** ships 2026-10-30. **Later** — the problem is canon, the design isn't finished or lost a trade against beta. **Cut** — on the beta list until 2026-10-05, may return. **Far horizon** — kept so the shape isn't forgotten.
 
-**Member** — anyone: searches, browses, joins, follows, asks for help, offers it. **Producer** — a Member offering goods or services, spectrum from full professional to casual maker to unpaid steward; UI labels (Seller/Producer/Maker) vary, the role is one role. **Convener** — a Member who creates and runs a Group around a shared interest; coordination tools, not selling tools. Who the platform does *not* serve (corporate-shell franchise, rollup-acquirer, engagement-optimizer) is in `goals.md`.
+## Who does what — relations to a Page, not kinds of people
+
+**A member** is anyone: browses, follows, makes a Page. A member has no type, tier or stored role, and no public profile (2026-10-01). **Running a Page** — selling, convening, teaching, making art — is a relation to that Page, and the Page's **purpose** says which: **Gather**, **Sell**, **Offer a service or teach**, or **Be creative** (Don, 2026-10-05). Business or Social group is derived from the purpose for listing. Someone who wants to be found or followed makes a Page. Who the platform does *not* serve (corporate-shell franchise, rollup-acquirer, engagement-optimizer) is in `goals.md`.
 
 ## Consumer cases
 
-- **C1 — MVP.** A newcomer sets their home locality and two interest tags and immediately sees a candidate feed of nearby things; follows a bakery's Page and a venue so they hear when either posts. This is the baseline member experience every other case builds on.
-- **C2 — substrate MVP, surface b2.** A member tracks a concert series across a dozen parks metro-wide without following each one individually — the place hierarchy does the aggregation work so the member doesn't enumerate. A narrower "follow this venue" saved search is the deferred surface.
-- **C3 — deferred (b2+).** Someone needs a plumber whose business is mostly word-of-mouth — existing tools (Yelp, Angi) charge for visibility and gate trust behind star ratings that hurt small operators. Blocked on a designed trust-signal layer, not on the Item shape.
-- **C4 — deferred (b2+).** "I have extra zucchini" / "I need a truck for an hour" — give and take are one mutual-aid relationship in lived experience. Blocked on an unresolved reciprocity model (does the platform track balance, or stay pure gift-economy?).
-- **C5 — deferred (b2+).** A buyer confirms a producer's Locally Made claim, or an established member vouches for a newcomer. Blocked on undesigned reputation discipline — how attestations age, whether they aggregate into a number (they must not, per the no-ranking-of-people corollary).
-- **C6 — deferred (b2+).** People notice they're all looking for the same thing and want to find each other before any gathering exists to organize around. Stress-tests the "Groups cannot be auto-assigned" boundary — geography is a suggestion, never a placement.
+- **C1 — beta.** A newcomer sets their zip, and with it their metro, and sees what's nearby on Explore and What's happening; follows a bakery's Page and a venue's so their posts show when signed in. The baseline every other case builds on.
+- **C2 — substrate built, surface later.** A member tracks a concert series across a dozen parks metro-wide without following each one — the place hierarchy does the aggregation. A saved search ("notify me") is later.
+- **C3 — later.** Someone needs a plumber whose business is mostly word-of-mouth — existing tools (Yelp, Angi) charge for visibility and gate trust behind star ratings that hurt small operators. The plumber's Page (Offer a service or teach) is beta; the trust signal — vouching, F095 — is later.
+- **C4 — later.** "I have extra zucchini" / "I need a truck for an hour" — give and take are one mutual-aid relationship in lived experience. Offer and Ask are blocked on member-to-member messaging and an unresolved reciprocity model.
+- **C5 — later.** A buyer confirms a Page's Locally Made claim, or an established member vouches for a newcomer. Blocked on undesigned attestation — how it ages, and that it never aggregates into a number (no ranking of people).
+- **C6 — later.** People notice they're all looking for the same thing and want to find each other before any gathering exists. Stress-tests "Groups cannot be auto-assigned" — geography is a suggestion, never a placement. Wonder is the nearest surface.
 
-## Producer cases
+## Page cases — Sell, Offer a service or teach, Be creative
 
-- **P1 — MVP, built.** Any small seller — a coffee shop, a jewelry maker, a piano teacher — creates a Page and lists what they sell. The baseline producer surface every richer case extends. A Member may also sell as an individual with no Page.
-- **P2/bulletins — MVP, not yet built.** A bakery posts "Saturday 8–noon, fresh sourdough," or imports a linked social post as the bulletin body instead of writing twice. The bulletin substrate is what makes following meaningful — a follow with no delivery channel is a bookmark. Now scoped as F066.
-- **P3 — MVP, partial.** Three flavors of variable cadence: a fisherman whose catch (and selling window) is irregular; a producer who shows up at a market some weeks, not on a published schedule; a food truck whose location changes by the day. The platform treats irregular and recurring as the same Item kind, varying only by schedule and location — that flexibility is what makes all three findable on one surface.
-- **P4 — substrate MVP, badge UI deferred.** Locally Owned (does the money go to a local owner — self-attested ZIP) and Locally Made (was the product made here) are two separate badges, deliberately never collapsed — a Sacramento reseller of imported goods gets one, not both. Both store ZIPs and Places, never street addresses.
-- **P5 — deferred (b2+).** A plumber whose only online presence is a Yelp page with three reviews from 2018 wants a page that reflects how real clients describe them. Blocked on the same undesigned trust-signal layer as C3/C5, plus a richer service-Item shape (service area, availability, pricing model).
+- **P1 — beta, built.** Any small seller — a coffee shop, a jewelry maker, a piano teacher — makes a Page with the purpose that fits and posts from it. Listing individual products and services on a Page is **later** (postponed 2026-10-01).
+- **P2 — beta, partial.** A bakery posts "Saturday 8–noon, fresh sourdough." Posts are built (F072), with a date, time and place, and repeating (F074). **Delivering a post to followers (Bulletins) is cut**; followed Pages' posts reach a signed-in follower on Explore (F059 2b). Importing a linked social post is later.
+- **P3 — beta, partial.** Variable cadence: a fisherman whose catch and selling window are irregular; a producer at a market some weeks; a food truck whose spot changes daily. Today: a Page whose location answer is "It moves" with where it's usually around (#348), and dated Posts for each appearance. Structured recurring-location scheduling is later.
+- **P4 — beta (Locally owned), later (Locally made).** Locally owned — does the money go to a local owner — is a badge drawn from the business registration, for businesses only, in the Page header (2026-10-05). Locally made is a separate badge, deliberately never collapsed with it, and comes later with the values list. Both store ZIPs and Places, never street addresses.
+- **P5 — later.** A plumber whose only online presence is a Yelp page with three reviews from 2018 wants a page that reflects how real clients describe them. The Page is beta; client descriptions wait on the same trust layer as C3/C5, plus richer service fields (area, availability, pricing).
+- **P6 — beta.** An artist wants to be followed without a storefront. A Page with purpose Be creative — the answer the platform gives instead of a public member profile (2026-10-01).
 
-## Organizer cases
+## Gather cases
 
-- **O1 — MVP, built.** The Thursday Run Club at Drake's — currently findable only by being there. A public, locality-first page with a recurring schedule and one shareable URL replaces the three-app sprawl an organizer currently maintains for free. A Group only emerges if the regulars choose it.
-- **O2 — MVP, partial.** A venue's own recurring program (Barn Movie Night at Drake's) becomes findable alongside every other nearby thing, not just to people already following that one venue on Instagram. Host is a Page, not an individual.
-- **O3 — substrate MVP, surface b2.** A multi-venue series (Concerts in the Park, a dozen parks, a dozen independent hosts, no shared calendar) surfaces in one feed because place hierarchy and interest tags do the aggregation — no member subscribes to each park individually.
-- **O4 — deferred (b2+).** Someone's thinking about a Sunday coffee walk and doesn't want to commit to hosting before they know anyone would come. This is Wonder (Loop 2) — the signaling mechanic isn't designed yet, though the Item kind exists. **There is no tipping point and no conversion** *(2026-09-15)*: the author creates the gathering the ordinary way and links it from the wonder.
-- **O5 — deferred (b2+).** A community garden lead coordinating volunteer plots and watering rotations, a tool-library volunteer tracking checkouts. Needs shared schedules and inventory tracking beyond a plain Group — the minimum-viable steward toolkit isn't scoped.
-- **O6 — deferred, far horizon.** A beloved local cafe closes; someone in the neighborhood would take it over but lacks capital or certainty the community would back them, and dozens of regulars would back a successor if they could find them. Needs the Initiative + Pledge primitive, a platform/financing boundary (a CDFI partner picks up where pledging ends), and the trust signals from C5 — none of which exist as designs. Kept in the canon because it's load-bearing for the platform's long-term thesis; no build-pipeline work attaches until the prerequisite cases land.
+- **O1 — beta, built.** The Thursday Run Club at Drake's — findable only by being there. A Gather Page with a repeating series and one shareable URL replaces the three-app sprawl an organizer maintains for free. Saying you're going (RSVP) is **cut** for beta.
+- **O2 — beta, partial.** A venue's own recurring program (Barn Movie Night at Drake's) shows in What's happening alongside every other nearby thing. The host is the venue's Page, posting it; Page-level appearances at another Page's venue are later.
+- **O3 — substrate built, surface later.** A multi-venue series (Concerts in the Park, a dozen parks, independent hosts, no shared calendar) surfaces together because place hierarchy and tags aggregate it.
+- **O4 — later.** Someone's thinking about a Sunday coffee walk and doesn't want to commit before they know anyone would come. Wonder (Loop 2) — substrate built, composer not. **No tipping point and no conversion** *(2026-09-15)*: the author makes the Gather Page the ordinary way.
+- **O5 — later.** A community garden lead coordinating plots and watering rotations; a tool-library volunteer tracking checkouts. The garden's Page and its steward are beta; shared schedules and inventory are not scoped.
+- **O6 — far horizon.** A beloved local cafe closes; someone would take it over but lacks capital or certainty the community would back them. There is no Initiative or Pledge object (2026-09-19: the app is a finding mechanism); the financing happens with a CDFI partner, outside the platform. Kept because it's load-bearing for the long-term thesis.
+- **O7 — beta.** A family or a private circle shares plans with its own people only: a private Page, joined rather than followed, invisible to everyone else.
 
 ## What success looks like
 
-Every MVP case ends in a recurring relationship, not a one-off transaction — the newcomer at a venue's event becomes a regular, then hosts something themselves; a producer's followers come back when the next batch is ready. The deferred cases extend the same shape into territory the platform isn't ready to serve yet: a person, declaring a thing, at a place — and other people responding, returning, and over time taking on more of the work themselves.
+Every beta case ends in a recurring relationship, not a one-off transaction — the newcomer at a Gather Page's event becomes a regular, then makes a Page themselves; a Page's followers come back when the next batch is posted. The later cases extend the same shape into territory the platform isn't ready to serve yet: a Page, saying a thing, at a place — and people responding, returning, and over time taking on more of the work themselves.
