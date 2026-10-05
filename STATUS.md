@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 21:22 UTC
+> ## Generated 2026-10-05 · 21:30 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -13,7 +13,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `78c80f2` (2026-10-05); `accepted-risks/*.json`;
+> `a30f91e` (2026-10-05); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -43,7 +43,7 @@ branch or a commit.
 
 ## In the code repo
 
-**83 issues open** in `socialus-web`, 10 launch-blocking:
+**82 issues open** in `socialus-web`, 10 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #221 F080 · No pictures of children, from anyone — detection point needs Don
 - #222 F081 · One signup for everyone: four fields, and the zip sets the metro
@@ -55,12 +55,12 @@ branch or a commit.
 - #331 change · Decide what the map shows by default, and with filters on
 - #363 change · Page kinds: Business, Group, Organization — chosen, changeable, and shaping the Page
 
-**85 PRs merged in the last fortnight.** The newest five:
+**86 PRs merged in the last fortnight.** The newest five:
+- #391 2026-10-05 bug #390: main's types check passes again
 - #387 2026-10-05 chore #386: skip Vercel previews for docs- and test-only pushes
 - #380 2026-10-05 change #304: the review page to F101 — Approve or Remove in one tap or swipe, with Undo
 - #377 2026-10-05 change #325 + #297: Anodised colours, and the report sheet on the one Sheet
 - #376 2026-10-05 chore #375: Browser CI job under 5 minutes
-- #374 2026-10-05 chore #373: human-review label, readable branch names, a Review section
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -111,14 +111,14 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — success, 2026-10-05
+- **`deploy-health.yml`** — , 2026-10-05
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: success
-- **`ci.yml`** — failure, 2026-10-05
-  - Migrations applied to production: cancelled
-  - Browser: success
-  - Lint, types, build: cancelled
-  - Unit tests: cancelled
+  - Ontology declarations still match the code: 
+- **`ci.yml`** — , 2026-10-05
+  - Lint, types, build: 
+  - Migrations applied to production: success
+  - Browser: 
+  - Unit tests: 
 
 ## Measured, not estimated
 
@@ -228,11 +228,11 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F101** (approved) · **no Issue** — approved and gating launch with nothing to build from
 - **F102** (approved) · **no Issue** — approved and gating launch with nothing to build from
 
-**Rulings that bind code: 128.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 131.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
-- **Nothing to build** (21), by their own tag: 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+- **Nothing to build** (23), by their own tag: 2026-10-05 Vercel builds a preview only for main and for a branch whose…; 2026-10-05 Before production (spring 2027) there is a staging site: a s…; 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
 
 ## What this run could not verify
 
