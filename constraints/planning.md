@@ -10,6 +10,11 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · moderation, reports, ai — In beta the AI restores severity-4 reported content on its own, narrowly: only when the poster answered, Claude Haiku and Claude Sonnet both suggest approve at 0.95 or higher, nothing flags coordinated reporting, and the evaluation harness has passed on that slice. Severities 1–3 currently never restore without a person
+- **2026-10-05** · moderation, reports, ai, uploads — Suspected severity-1 content (child safety or illegal) is never sent to an AI provider. Images are first checked against known-CSAM hashes (Cloudflare's CSAM Scanning Tool) and go to a person
+- **2026-10-05** · uploads, posts, privacy, moderation — Every upload and post records the IP address and time it came from, operator-only, kept one year and then deleted
+- **2026-10-05** · signup, verification — Phone verification refuses non-fixed VoIP numbers (Google Voice and the like), checked with Twilio Lookup Line Type Intelligence, with a plain message asking for a mobile number
+- **2026-10-05** · launch, badges, pages — The Badges & values section in Page settings is cut from beta and logged under the asterisk in `ROADMAP.md` § Cut; end time, add-to-calendar and repeating series stay in beta
 - **2026-10-05** · moderation, reports, process — Moderation is designed to run unattended: one person operates the platform alongside a day job and is currently away Tuesday to Thursday, so review work is batched Friday to Monday and nothing midweek asks for attention except severity 1
 - **2026-10-05** · moderation, reports, ai — An AI reads every reported Post first and a person makes the call. In beta it currently runs in shadow: its assessment changes nothing and only shows on the review row; in production its severity can raise a row's order, and remove, restore and strikes stay a person's tap
 - **2026-10-05** · moderation, admin, reports — Reported content is reviewed on one operator page, Posts: one row per reported subject, ordered by severity 1–4 then oldest first, decided with one tap on a full-width Approve or Remove button or a swipe (right approves, left removes), with no confirm dialog and a five-second Undo
@@ -23,7 +28,7 @@
 - **2026-10-05** · badges, explore, search — Practice and fact badges can be filtered (Locally owned, Family-owned, Co-op, Free to join and the like); identity badges cannot
 - **2026-10-05** · badges, pages, cards — Identity badges appear in the Page header only, and only if the owner chooses; not on cards
 - **2026-10-05** · badges, business-registration — Badge claims read "Says …". Locally owned comes from the business registration and is offered to businesses only
-- **2026-10-05** · launch, badges, pages — Launch scope: the kind line, Locally owned limited to businesses, and a Badges & values section in Page settings with the kind facts (Locally owned, Family-owned, Since, Co-op, Nonprofit, Free to join, Everyone welcome). The values list comes after launch, with F097
+- **2026-10-05** · launch, badges, pages — Launch scope: the kind line and Locally owned limited to businesses. The values list comes after launch, with F097
 - **2026-10-05** · copy, posts, pages, explore — The user-facing noun is "Post" everywhere, not "Announcement"
 - **2026-10-05** · pages, posts — A Page shows its latest 2–3 posts, with "See all posts" opening the full list
 - **2026-10-05** · pages, page-edit, contact — Business hours are currently hidden from Pages and from Edit, because they cluttered the Page. The data is kept, and hours are on the Later list. The business phone stays

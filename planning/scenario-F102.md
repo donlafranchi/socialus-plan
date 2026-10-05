@@ -26,6 +26,8 @@ On Tuesday a bakery's Post is reported as spam three times in an hour, twice fro
 9. **Tuesday to Thursday, with no person:** severities 2–4 stay hidden with any answer recorded and wait for the batch. Severity 1 stays hidden and the PM is texted (F078 criterion 5), with no expectation of same-day action.
 10. **Report copy for threat of harm tells the reporter to call 911 if someone is in danger now**, kindly, before sending ([public-is-draft]).
 11. **The PM gets one in-app summary on Friday morning**: waiting rows by severity, answers received, cool-downs started. Nothing else asks for attention midweek except severity 1.
+12. **Severity 4 restores itself in beta, narrowly (ruled B):** only when the poster answered, Haiku and Sonnet both suggest approve at ≥ 0.95 (Sonnet runs on every such candidate, not only below F100's escalation threshold), there is no coordinated-reporting flag, and the harness has cleared F100 criterion 11's targets on the severity-4 slice. The restore is a logged, reversible decision attributed to the AI, and the batch shows it as "Restored by AI" for a one-tap confirm or undo. Severities 1–3 never restore without a person.
+13. **Every upload and every post records the IP address and time it came from**, operator-only, kept one year and then deleted, so abuse and legal requests can be traced. It is shown to no member and used by no feature outside the report path.
 
 ## Not this
 
@@ -61,16 +63,10 @@ Hiding is the safe default, so midweek nothing needs a person: content that migh
 
 ### Shadow mode against an empty Tuesday
 
-[open-question owner=don raised=2026-10-05] **Should the AI auto-restore spam and other (severity 4) in beta?** Shadow mode means a mistaken spam report keeps a fine Post down until the weekend.
-
-- **A — Pure shadow (as ruled).** Nothing restores before the batch. Cost: a fine Post can sit hidden up to four days.
-- **B — Narrow auto-restore, recommended.** Severity 4 only, the poster answered, Haiku and Sonnet both suggest approve at ≥ 0.95, no coordinated-reporting flag, and only once the harness clears F100's targets on the severity-4 slice. Logged, reversible, and shown in the batch as "Restored by AI" for a one-tap confirm or undo. Cost: the AI acts before production on the lowest-harm tier.
-- **C — Rule, not AI.** Severity 4 restores whenever the poster answers. Cost: a spammer restores their own spam by answering.
-
-**Recommend B:** restoring is the reversible, low-harm direction, the gate keeps it off until the harness has measured it, and it removes the most common midweek wait.
+**Ruled B (the PM, 2026-10-05): narrow auto-restore.** A mistaken spam report would otherwise keep a fine Post down until the weekend. The AI restores severity 4 only, and only when the poster answered, Haiku and Sonnet both suggest approve at ≥ 0.95, there is no coordinated-reporting flag, and the harness has cleared F100's targets on the severity-4 slice (criterion 12). A (pure shadow) cost a fine Post up to four days hidden; C (restore on any answer) let a spammer restore their own spam.
 
 ### Size
 
 [platform store=ugc: the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content]
 
-**About 2 build days, in the beta (2026-10-30)**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). B adds about half a day. What to push is in F101 § Size.
+**About 2 build days, in the beta (2026-10-30)**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). Criterion 12 adds about half a day; criterion 13 about half a day. What to push is in F101 § Size.
