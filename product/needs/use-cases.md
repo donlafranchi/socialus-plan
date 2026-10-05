@@ -8,7 +8,7 @@ reviewed: 2026-10-05
 
 # Use cases
 
-**What changed (2026-10-05):** each case's status is now `ROADMAP.md`'s (beta, later, cut) instead of the b1/b2 bundles; each names the Page purpose it runs on; the Producer and Convener "roles" are relations to a Page, and selling as an individual with no Page is gone, since a member has no type and no public profile.
+**What changed (2026-10-05):** each case's status is now `ROADMAP.md`'s (beta, later, cut) instead of the b1/b2 bundles; each names the Page purpose it runs on; the Producer and Convener "roles" are relations to a Page; C4 follows the journey's new Exchange family, and selling as an individual with no Page is gone, since a member has no type and no public profile.
 
 Real situations, drawn from Sacramento and the surrounding region, that the platform exists to dissolve. The Run Club exists. Ferrari Fisheries exists. Every scenario's capabilities trace back here. **Beta** ships 2026-10-30. **Later** — the problem is canon, the design isn't finished or lost a trade against beta. **Cut** — on the beta list until 2026-10-05, may return. **Far horizon** — kept so the shape isn't forgotten.
 
@@ -21,7 +21,7 @@ Real situations, drawn from Sacramento and the surrounding region, that the plat
 - **C1 — beta.** A newcomer sets their zip, and with it their metro, and sees what's nearby on Explore and What's happening; follows a bakery's Page and a venue's so their posts show when signed in. The baseline every other case builds on.
 - **C2 — substrate built, surface later.** A member tracks a concert series across a dozen parks metro-wide without following each one — the place hierarchy does the aggregation. A saved search ("notify me") is later.
 - **C3 — later.** Someone needs a plumber whose business is mostly word-of-mouth — existing tools (Yelp, Angi) charge for visibility and gate trust behind star ratings that hurt small operators. The plumber's Page (Offer a service or teach) is beta; the trust signal — vouching, F095 — is later.
-- **C4 — later.** "I have extra zucchini" / "I need a truck for an hour" — give and take are one mutual-aid relationship in lived experience. Offer and Ask are blocked on member-to-member messaging and an unresolved reciprocity model.
+- **C4 — later; a weak beta path.** "I have extra zucchini" / "I need a truck for an hour" / "I'll fix your bike for a piano lesson" — Exchange without dollars (`member-journey.md` loops 5–8; precedents Buy Nothing, Freecycle, Bunz, hOurworld, Nextdoor Free). Currently a member can post #free, #swap, #lend or #skillswap from a Page; a circle where everyone posts, and replying, need member posting on a group Page and messaging. The reciprocity model is unruled.
 - **C5 — later.** A buyer confirms a Page's Locally Made claim, or an established member vouches for a newcomer. Blocked on undesigned attestation — how it ages, and that it never aggregates into a number (no ranking of people).
 - **C6 — later.** People notice they're all looking for the same thing and want to find each other before any gathering exists. Stress-tests "Groups cannot be auto-assigned" — geography is a suggestion, never a placement. Wonder is the nearest surface.
 
