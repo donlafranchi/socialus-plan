@@ -10,6 +10,15 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · pages, create, page-settings, badges — A Page's kind is Business, Group or Organization. It is chosen at Create, changeable any time in Page settings, and decides which badges, tools and layout appear
+- **2026-10-05** · cards, pages, explore — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery"
+- **2026-10-05** · values, badges, pages — A Page's values are a curated list of about 12 attributes, each with a "show as badge" switch, off by default. They are not hashtags
+- **2026-10-05** · badges, explore, search — Practice and fact badges can be filtered (Locally owned, Family-owned, Co-op, Free to join and the like); identity badges cannot
+- **2026-10-05** · badges, pages, cards — Identity badges appear in the Page header only, and only if the owner chooses; not on cards
+- **2026-10-05** · badges, business-registration — Badge claims read "Says …". Locally owned comes from the business registration and is offered to businesses only
+- **2026-10-05** · launch, badges, pages — Launch scope: the kind line, Locally owned limited to businesses, and a Badges & values section in Page settings with the kind facts (Locally owned, Family-owned, Since, Co-op, Nonprofit, Free to join, Everyone welcome). The values list comes after launch, with F097
+- **2026-10-05** · copy, posts, pages, explore — The user-facing noun is "Post" everywhere, not "Announcement"
+- **2026-10-05** · pages, posts — A Page shows its latest 2–3 posts, with "See all posts" opening the full list
 - **2026-10-05** · pages, page-edit, contact — Business hours are currently hidden from Pages and from Edit, because they cluttered the Page. The data is kept, and hours are on the Later list. The business phone stays
 - **2026-10-04** · process, prs, issues, ui — The decision rule: look at 2–3 established precedents with links before designing or deciding anything; choose the simplest that fits our rulings; a well-worn path the agent decides and builds itself, labelled "Path: well-worn", without waiting for Don; new territory (no well-worn path, conflicting precedents, or a ruling, legal or privacy exposure, money or member trust), labelled "Path: new territory", comes to Don as A/B/C with a recommendation before building; when unsure, say which in one line and lean toward deciding
 - **2026-10-04** · pages, page-edit, map, places — A Page owner can pick a neighbourhood or town from a seeded list covering MSA 40900 instead of giving a street address. Only the neighbourhood shows, as a pin at its centre

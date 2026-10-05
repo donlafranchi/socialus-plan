@@ -10,6 +10,15 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · pages, create, page-settings, badges — A Page's kind is Business, Group or Organization. It is chosen at Create, changeable any time in Page settings, and decides which badges, tools and layout appear
+- **2026-10-05** · cards, pages, explore — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery"
+- **2026-10-05** · values, badges, pages — A Page's values are a curated list of about 12 attributes, each with a "show as badge" switch, off by default. They are not hashtags
+- **2026-10-05** · badges, explore, search — Practice and fact badges can be filtered (Locally owned, Family-owned, Co-op, Free to join and the like); identity badges cannot
+- **2026-10-05** · badges, pages, cards — Identity badges appear in the Page header only, and only if the owner chooses; not on cards
+- **2026-10-05** · badges, business-registration — Badge claims read "Says …". Locally owned comes from the business registration and is offered to businesses only
+- **2026-10-05** · launch, badges, pages — Launch scope: the kind line, Locally owned limited to businesses, and a Badges & values section in Page settings with the kind facts (Locally owned, Family-owned, Since, Co-op, Nonprofit, Free to join, Everyone welcome). The values list comes after launch, with F097
+- **2026-10-05** · copy, posts, pages, explore — The user-facing noun is "Post" everywhere, not "Announcement"
+- **2026-10-05** · pages, posts — A Page shows its latest 2–3 posts, with "See all posts" opening the full list
 - **2026-10-05** · pages, page-edit, contact — Business hours are currently hidden from Pages and from Edit, because they cluttered the Page. The data is kept, and hours are on the Later list. The business phone stays
 - **2026-10-04** · process, prs, issues, ui — The decision rule: look at 2–3 established precedents with links before designing or deciding anything; choose the simplest that fits our rulings; a well-worn path the agent decides and builds itself, labelled "Path: well-worn", without waiting for Don; new territory (no well-worn path, conflicting precedents, or a ruling, legal or privacy exposure, money or member trust), labelled "Path: new territory", comes to Don as A/B/C with a recommendation before building; when unsure, say which in one line and lean toward deciding
 - **2026-10-04** · pages, page-edit, map, places — A Page owner can pick a neighbourhood or town from a seeded list covering MSA 40900 instead of giving a street address. Only the neighbourhood shows, as a pin at its centre
@@ -46,13 +55,11 @@
 - **2026-10-01** · values, badges, pages — Owner-identity badges are allowed: we don't limit how people say what they're about
 - **2026-10-01** · values, recommendations, ownership — Members can tell other members who owns a business or brand — private equity, B Corp and the like — and those notes steer recommendations by people's values
 - **2026-10-01** · tags, pages, posts, composer — Tags are in the launch: tags on Pages and posts, editable at any time
-- **2026-10-01** · values, pages, badges — Values badges and banners are a few high-level categories, each made up of many values tags
 - **2026-10-01** · answering, crawlers, pages — Outside agents currently see who exists and what they offer — a Page's description — until product listings exist on a Page
 - **2026-10-01** · pages, feedback, policy — Feedback on a Page is like a business review: never published, anonymized and aggregated for the Page's owner. The same holds for all feedback
 - **2026-10-01** · values, tags — Values are their own thing, not tags
 - **2026-10-01** · tags, explore, ordering — "A tag never orders results" is redefined: tags decide what matches, not who comes first
 - **2026-10-01** · values — There is no counsel; values are documented as Don described them, and he adds more defensible detail at build
-- **2026-10-01** · values, tags, pages, rls — Values tags are kept separate from other tags and are never shown. A values badge or banner, based on a values tag, may be shown at the Page owner's discretion
 - **2026-10-01** · copy, model, posts, explore — Post is the noun for what a Page says to the metro; an announcement is a kind of post
 - **2026-10-01** · tags, pages, posts, composer — Tags go on Pages and on posts, and can be edited at any time, forever
 - **2026-10-01** · tags, moderation, reports — Tags are moderated after they appear, against a list that marks each tag safe, unsafe or needs review

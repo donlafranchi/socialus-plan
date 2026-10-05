@@ -16,7 +16,7 @@ Priya wants to convene a Tuesday run. Marcus wants to sell hot sauce. Dana is st
 3. **The words shown to the person differ by purpose** — headings, labels, buttons, and the confirmation. Opening a shop, posting a gathering and starting a group read as three different things.
 4. **The tools offered differ by purpose.** A purpose's flow omits steps its thing does not need, rather than showing them disabled or skippable.
 5. **"Shop" never names the general act.** No string outside the shop purpose calls creating a Page opening a shop, and no person reaches a shop-worded step from a non-shop purpose.
-6. **The chosen purpose gates nothing afterwards.** It selects copy and steps at creation and confers no permission, no badge, and no permanent kind — per the Page entry in `product/foundation/nouns.md`.
+6. **The chosen kind — Business, Group or Organization — is stored, changeable any time in Page settings, and decides which badges, tools and layout are offered** (dispatch-decided 2026-10-05; Don can override). It confers no permission.
 
 ## Not this
 
