@@ -6,7 +6,7 @@ date: 2026-09-13
 depends: [F059, F065]
 approved: 2026-09-21 — Don: "I need it built and composed." Composer, time, post address and the audience switch are one piece of work. Absorbs F073.
 supersedes: F066, F073
-amended: 2026-09-30 — Don: an optional end time; add-to-calendar and default alt text are launch scope. Criterion 6 added; the end time leaves Not this.
+amended: 2026-09-30 — Don: an optional end time; add-to-calendar and default alt text are launch scope. Criterion 6 added; the end time leaves Not this. 2026-10-05 — Don (F099): a post may carry one photo of its own; images leave Not this, beyond one per post.
 ---
 ## Story
 
@@ -23,7 +23,7 @@ Maya's bakery has nothing to say until Thursday, when the sourdough is back. She
 
 ## Not this
 
-**Recurrence, which is F074** — approved, separate, and not what is being built today. **No announcement renders on the map, dated or not** — the map shows Pages. Replies, threads, comments or any inbox. Scheduling, or sending to a subset. Images. Responses and any reaction count, which are F063. All-day events or multi-day spans. Timezone *selection* by a creator: times are the metro's, which is what criterion 3 says. An edit history or a visible "edited" marker — not ruled either way.
+**Recurrence, which is F074** — approved, separate, and not what is being built today. **No announcement renders on the map, dated or not** — the map shows Pages. Replies, threads, comments or any inbox. Scheduling, or sending to a subset. More than one photo per post (one is F099). Responses and any reaction count, which are F063. All-day events or multi-day spans. Timezone *selection* by a creator: times are the metro's, which is what criterion 3 says. An edit history or a visible "edited" marker — not ruled either way.
 
 ## Why
 
