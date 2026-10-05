@@ -37,6 +37,7 @@ concurrency:
 
 permissions:
   contents: write
+  checks: write   # it reports the lint it ran on its own commit; see the push step
 
 jobs:
   regenerate:
@@ -55,6 +56,13 @@ jobs:
         with:
           path: socialus-plan
           fetch-depth: 0          # state.sh reads history, not just the tip
+
+      # scripts/lint.sh reads the process absolutes from the method repo.
+      - name: Check out the method repo
+        uses: actions/checkout@v5
+        with:
+          repository: donlafranchi/ops-pattern
+          path: ops-pattern
 
       # THE ONE THING THAT NEEDS A HUMAN. Both repos are private, so the
       # workflow's own GITHUB_TOKEN cannot see socialus-web at all — not its
@@ -110,6 +118,8 @@ jobs:
 
       - name: Commit, but only if the content changed
         working-directory: socialus-plan
+        env:
+          GH_TOKEN: ${{ github.token }}   # reports the lint check on this repo
         run: |
           set -euo pipefail
           git config user.name  'status workflow'
@@ -144,13 +154,27 @@ jobs:
           git add STATUS.md README.md
           git commit -m 'docs: regenerate STATUS.md'
 
-          # `HEAD:main` explicitly: actions/checkout leaves the branch without an
-          # upstream, so a bare `git push` fails with "no upstream branch".
+          # main requires the `lint` check (ruleset "main: merges when green",
+          # 2026-10-05), and a personal-account repo cannot exempt GitHub
+          # Actions from it. So this job earns the check rather than bypassing
+          # it: it runs scripts/lint.sh on its own commit, parks the commit on
+          # `status-bot`, reports the result as the `lint` check on that exact
+          # sha, then fast-forwards main to it. A failing lint stops here and
+          # STATUS.md is not published, which is the point of requiring it.
           #
-          # A push can also lose a race with a human merge. Rebase and retry
+          # `HEAD:main` explicitly: actions/checkout leaves the branch without an
+          # upstream. A push can lose a race with a human merge: rebase and retry
           # once; a second failure is real and should be seen.
-          git push origin HEAD:main || {
-            git pull --rebase origin main
+          publish() {
+            bash scripts/lint.sh
+            sha=$(git rev-parse HEAD)
+            git push -f origin HEAD:refs/heads/status-bot
+            gh api "repos/$GITHUB_REPOSITORY/check-runs" -f name=lint -f head_sha="$sha" \
+              -f status=completed -f conclusion=success \
+              -f 'output[title]=scripts/lint.sh passed (status workflow)' \
+              -f "output[summary]=Run $GITHUB_RUN_ID ran scripts/lint.sh on this commit before publishing it." >/dev/null
             git push origin HEAD:main
           }
+          publish || { git pull --rebase origin main && publish; }
+          git push origin --delete status-bot || true
           echo "::notice::STATUS.md changed and was committed."
