@@ -68,6 +68,7 @@ where it is true; the gap is gone when its marker is.
 - Nothing marked as needing it.
 
 **photos** · PHPicker needs no permission. `NSPhotoLibraryUsageDescription` is needed only for full-library access.
+- the owner picks a Page picture or a post photo from the library; each is resized and re-encoded to WebP on the device, as the Page photo is today — [planning/scenario-F099.md](planning/scenario-F099.md) · *F099, approved — decided, not built*
 - the owner picks a Page photo from the library; it is resized and re-encoded to WebP on the device, which strips its location data — [product/ui/surfaces.md](product/ui/surfaces.md)
 
 **location** · `NSLocationWhenInUseUsageDescription`, and a prompt the member can refuse.
@@ -81,7 +82,7 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**22 of 22 approved and building scenarios carry no platform marker**, so what they will
+**22 of 23 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 
