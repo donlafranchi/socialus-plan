@@ -74,7 +74,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 ### The user-facing string check — because prose rules have not held
 
-*(2026-09-14, extended 2026-09-15 with the mechanical rules from `voice.md`. Twice a naming ruling has been written wider than Don made it. `ops-pattern/process/LESSONS.md` 17: a rule with no hook is a wish.)*
+*(2026-09-14, extended 2026-09-15 with the mechanical rules from `voice-and-tone.md`. Twice a naming ruling has been written wider than Don made it. `ops-pattern/process/LESSONS.md` 17: a rule with no hook is a wish.)*
 
 **Scope, for every rule below:** user-facing strings in `socialus-web` — JSX text nodes, and string literals reaching a rendered prop (`label`, `title`, `placeholder`, `alt`, `aria-label`, `children`). **Never** identifiers, table and column names, routes, imports, comments, test fixtures, or these planning docs. The rule is about what a member reads, not what the code calls things.
 
@@ -83,9 +83,9 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 | Check | What it catches | From |
 |---|---|---|
 | **Person-noun** | `vendor · producer · seller · maker · supporter · consumer · patron · creator` as a whole word | this document |
-| **Em dash** | any `—` character at all | `voice.md` § Writing mechanics — "No em dashes, anywhere" |
-| **"Corner"** | `corner` as a whole word | `voice.md` — reads as forced |
-| **Corporate transitions** | `moreover · furthermore · additionally · essentially · in a world where` | `voice.md` |
+| **Em dash** | any `—` character at all | `voice-and-tone.md` § Rules — "No em dashes, anywhere" |
+| **"Corner"** | `corner` as a whole word | `voice-and-tone.md` — reads as forced |
+| **Corporate transitions** | `moreover · furthermore · additionally · essentially · in a world where` | `voice-and-tone.md` |
 | **Bare vague term, certain cases** | `item` / `items` as an umbrella, and `kind` immediately followed by a noun it does not qualify, in **docs and prose only — never in schema identifiers** | § A vague term is never used by itself |
 
 **Warns, needs a human look — the pattern is real but the false-positive rate is not zero:**
@@ -96,7 +96,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 | **Posting language** | `post · posting · share · sharing` as a verb about a member's own listing | "Share this link" is legitimate; "share a photo" is the failure. Only a reader can tell. |
 | **Bare vague term, general** | Any of `item · kind · group · follower` in prose with no approved qualifier nearby | **Ordinary English is indistinguishable from the technical sense.** *"What kind of gathering"* must not fail a build. |
 
-**Not checkable, and recorded as prose so nobody pretends otherwise:** no forced rule of three · CTAs point outward not inward · tone is warm and plainspoken · state things as fact not promise · no release numbers or internal jargon · no named-competitor comparison · real nouns over abstractions. **These live in `voice.md` and are enforced by reading, not by CI.** Saying so is the point — a rule filed as testable that no test holds is how the person-noun rule went unenforced twice.
+**Not checkable, and recorded as prose so nobody pretends otherwise:** no forced rule of three · CTAs point outward not inward · tone is warm and plainspoken · state things as fact not promise · no release numbers or internal jargon · no named-competitor comparison · real nouns over abstractions. **These live in `voice-and-tone.md` and are enforced by reading, not by CI.** Saying so is the point — a rule filed as testable that no test holds is how the person-noun rule went unenforced twice.
 
 **Escape hatch:** a line comment naming the dated `DECISIONS.md` ruling that permits it. No ruling, no exception — that is the whole point of moving this out of prose.
 
