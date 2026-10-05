@@ -6,7 +6,7 @@ gates: launch
 date: 2026-09-14
 depends: [F076, F077]
 approved: 2026-09-14 — Don's ruling; legal name, email, zip, display name, zip suggests the metro
-amended: 2026-09-30 — Don: every US zip known before launch, an unknown one refused; the metro is the MSA; the zip is kept and changed on /you; every member is verified as a person, method open; no "we never sell" line, a placeholder about what the app is for instead. Story and criteria 1, 4 and 5 restated, 8 added.
+amended: 2026-09-30 — Don: every US zip known before launch, an unknown one refused; the metro is the MSA; the zip is kept and changed on /you; every member is verified as a person, method open; no "we never sell" line, a placeholder about what the app is for instead. Story and criteria 1, 4 and 5 restated, 8 added. 2026-10-05 — Don's Terms & Privacy facts: an 18+ checkbox joins signup; the legal name is seen only by operators. Criterion 1 restated.
 ---
 ## Story
 
@@ -14,7 +14,7 @@ Maya follows a neighbour's link and signs up. One screen: her legal name, her em
 
 ## Acceptance
 
-1. **Signup collects legal name, email, zip and display name, and verifies the email.** Every member is verified as a person; how is open (Why). No other field exists in the flow. The legal name, email and phone are seen only by Don and operators, and are currently disclosed only in response to valid legal process (2026-10-01).
+1. **Signup collects legal name, email, zip and display name, plus a checkbox confirming the person is 18 or older, and verifies the email.** Every member is verified as a person; how is open (Why). No other field exists in the flow. The legal name, email and phone are seen only by operators, and are currently disclosed only in response to valid legal process (2026-10-01); the legal name is used only for verification, safety and legal requests (2026-10-05).
 2. The zip is stored, and never rendered on any surface another member or visitor can reach — profile, listing, search, map.
 3. **The zip determines the metro**, and the screen shows the person which metro that is. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match. *(Amended 2026-09-27: this read "the zip produces a shortlist… the person selects one"; Don ruled the zip decides.)*
 4. **Nobody picks a metro at signup.** A member who moves changes their zip on `/you`, and their metro follows from it. It is not one-and-done.
@@ -43,9 +43,9 @@ Choosing the person-verification method, which is open. The waitlist popup and m
 
 **Out of scope 2026-09-30; revisit with legal counsel** (F077). Signup says nothing about showing legal names to anyone.
 
-**A person is verified by a text-message code to their phone, at signup** (Don, 2026-10-01). At signup because every member is verified (2026-09-30). Today the code has no phone field, email-only sign-in, and Supabase SMS switched off — that is the build.
+**A person is verified by a text-message code to their phone, at signup** (Don, 2026-10-01). At signup because every member is verified (2026-09-30). Today the code has no phone field, email-only sign-in, and Supabase SMS switched off — that is the build. The code is sent by Twilio Verify from a toll-free number (Don, 2026-10-05).
 
-**Terms and Privacy ship as plain-language drafts, marked as drafts, before counsel reviews them; counsel reviews after launch** (Don, 2026-10-01). Privacy discloses that we collect legal names, verified phones (the text-message code, 2026-10-01) and verified emails (California privacy duties), and that we disclose member data only in response to valid legal process (2026-10-01). **Path:** adapt GitHub's site-policy (reusable without conditions) and Basecamp's policies (with attribution); drafts by 2026-10-15, live 2026-10-30, counsel review after launch. Don's 14-fact checklist is due 2026-10-08. Starter kit: [Terms & Privacy starter kit](research/terms-privacy-starter.md).
+**Terms and Privacy ship as plain-language drafts, marked as drafts, before counsel reviews them; counsel reviews after launch** (Don, 2026-10-01). Privacy discloses that we collect legal names, verified phones (the text-message code, 2026-10-01) and verified emails (California privacy duties), and that we disclose member data only in response to valid legal process (2026-10-01). **Path:** adapt GitHub's site-policy (reusable without conditions) and Basecamp's policies (with attribution); drafts by 2026-10-15, live 2026-10-30, counsel review after launch. Don answered the 14-fact checklist on 2026-10-05: no entity yet, so placeholders and role titles; 18+ by checkbox; legal name seen only by operators; arbitration with a class-action waiver. Starter kit: [Terms & Privacy starter kit](research/terms-privacy-starter.md).
 
 ### Settled against F076
 

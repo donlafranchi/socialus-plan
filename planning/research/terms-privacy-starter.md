@@ -1,12 +1,12 @@
 # SocialUs — Terms & Privacy Starter Kit
 
-> **Reference, 2026-10-01 — research, not legal advice.** Rulings live in `DECISIONS.md` (valid legal process; plain-language drafts, counsel after launch); the plan in F081.
+> **Reference, 2026-10-01; facts answered 2026-10-05 — research, not legal advice.** Rulings live in `DECISIONS.md` (valid legal process; plain-language drafts, counsel after launch; the 14 facts, 2026-10-05); the plan in F081.
 
-Oct 1, 2026 · @don
+Oct 1, 2026 · @don · facts answered Oct 5, 2026
 
 ## Read this first
 
-This kit says where SocialUs's launch Terms and Privacy Policy can come from, what they must cover and what Don must decide before drafting. It is research, not legal advice: Claude is not a lawyer, and California counsel should review both documents. Live drafts can go up for the 2026-10-30 launch, with counsel's review to follow.
+This kit says where SocialUs's launch Terms and Privacy Policy can come from, what they must cover and what Don decided before drafting. It is research, not legal advice: Claude is not a lawyer, and California counsel should review both documents. Live drafts can go up for the 2026-10-30 launch, with counsel's review to follow.
 
 ## Template sources
 
@@ -32,17 +32,18 @@ At launch these apply: CalOPPA, Section 230, the DMCA safe harbour (if you regis
 | Law | Applies at launch? | What the policy must say or do |
 | --- | --- | --- |
 | [CalOPPA](https://law.justia.com/codes/california/code-bpc/division-8/chapter-22/section-22575/) (Bus. & Prof. Code 22575) | Yes: any commercial site collecting PII from Californians | Conspicuous link; categories collected; categories of third parties; how users review or change data; how changes are announced; effective date; Do Not Track response; whether third parties track across sites |
-| [CCPA/CPRA](https://cppa.ca.gov/regulations/cpi_adjustment.html) | No: triggers are $26,625,000 revenue (since 1/1/2025), 100,000+ consumers bought, sold or shared, or 50%+ of revenue from selling data | State "we do not sell or share personal information"; revisit when revenue or scale grows |
+| [CCPA/CPRA](https://cppa.ca.gov/regulations/cpi_adjustment.html) | No: triggers are $26,625,000 revenue (since 1/1/2025), 100,000+ consumers bought, sold or shared, or 50%+ of revenue from selling data | State "we currently do not sell or share personal information"; revisit when revenue or scale grows |
 | [COPPA](https://www.ftc.gov/legal-library/browse/rules/childrens-online-privacy-protection-rule-coppa) | No, unless the site targets under-13s or learns a user is under 13 | 18+ attestation at signup; "not directed to children"; delete accounts found to be underage. CA minors' laws (AADC, SB 976) are in litigation (unverified) |
-| TCPA / [CTIA Messaging Principles](https://api.ctia.org/wp-content/uploads/2023/05/230523-CTIA-Messaging-Principles-and-Best-Practices-FINAL.pdf) | Yes, lightly: one requested code per signup is not marketing | Disclosure at the phone field (code by text, msg and data rates, STOP/HELP); never reuse the number for marketing without written consent. Carrier 10DLC registration likely avoided with Twilio Verify (unverified) |
+| TCPA / [CTIA Messaging Principles](https://api.ctia.org/wp-content/uploads/2023/05/230523-CTIA-Messaging-Principles-and-Best-Practices-FINAL.pdf) | Yes, lightly: one requested code per signup is not marketing | Disclosure at the phone field (code by text, msg and data rates, STOP/HELP); the number is not reused for marketing without written consent. Twilio Verify sends from a toll-free number, which needs toll-free verification rather than 10DLC registration (unverified) |
 | [DMCA 512](https://www.copyright.gov/dmca-directory/faq.html) | Yes, to keep safe harbour for user-posted content | Register a designated agent: $6, renew every 3 years; post agent details on site; notice-and-takedown process; repeat-infringer policy |
 | [Section 230](https://www.law.cornell.edu/uscode/text/47/230) | Yes | Protects you for third-party content and good-faith removal (your report-and-hide). Doesn't cover IP, federal crime or FOSTA. Terms need one line on parental-control tools (230(d)) |
-| [Breach notice](https://law.justia.com/codes/california/code-civ/division-3/part-4/title-1-81/section-1798-82/) (Civ. Code 1798.82) and reasonable security (1798.81.5) | Yes, regardless of size | Notify within 30 days of discovery (SB 446, 2026); AG sample if >500 Californians; reasonable security and vendor contracts (Supabase, Vercel) |
+| [Breach notice](https://law.justia.com/codes/california/code-civ/division-3/part-4/title-1-81/section-1798-82/) (Civ. Code 1798.82) and reasonable security (1798.81.5) | Yes, regardless of size | Notify within 30 days of discovery (SB 446, 2026); AG sample if >500 Californians; reasonable security and vendor contracts (Supabase, Vercel, Twilio) |
 | [Delete Act / data broker](https://cppa.ca.gov/data_brokers/) | No: you have a direct relationship with members | Nothing |
 | [Stored Communications Act](https://www.law.cornell.edu/uscode/text/18/2702) and [CalECPA](https://law.justia.com/codes/california/code-pen/part-2/title-12/chapter-3-6/section-1546-1/) | Yes | Disclose to government only under valid legal process, in emergencies involving danger of death or serious injury, or for required child-safety reports |
 | Data retention / deletion | No statute forces it at your size | Say how long each data type is kept and how to delete an account; voluntary but expected |
+| Consumer arbitration: [Code Civ. Proc. 1281.97](https://law.justia.com/codes/california/code-ccp/part-3/title-9/chapter-2/section-1281-97/) and the *McGill* rule | Yes, now that arbitration is chosen (2026-10-05) | The business must pay its arbitration fees within 30 days of the due date or lose the right to arbitrate; a waiver of public injunctive relief is unenforceable in California, so the clause needs a carve-out and severability (both from knowledge, unverified today) |
 
-**Flag on Don's principle:** "Disclose only under a court order" is narrower than the law allows. A valid subpoena can compel subscriber info, and emergency and child-exploitation reports are carve-outs. Promising "court order only" could put SocialUs in breach of its own policy. Ask counsel for the wording; the safer draft is "valid legal process".
+**Law-enforcement wording:** settled 2026-10-01 as "valid legal process", not "court order only". A valid subpoena can compel subscriber info, and emergency and child-exploitation reports are carve-outs, so "court order only" would have put SocialUs in breach of its own policy.
 
 ## How comparable platforms structure theirs
 
@@ -55,7 +56,7 @@ All four use a three-layer setup: Terms, Privacy, and separate Community Guideli
 | [Yelp](https://terms.yelp.com/tos/en_us/20260101_en_us/) (effective Jan 1, 2026) | Consumer Terms plus an appended "Additional Terms for Business Accounts" | [16 sections](https://terms.yelp.com/privacy/en_us/20260101_en_us/) incl. account closure and retention, and US state rights | Business terms appended to one document (closest to SocialUs); dated, versioned URLs |
 | [Eventbrite](https://www.eventbrite.com/help/en-us/articles/251210/eventbrite-terms-of-service/) (updated Aug 20, 2025) | 25 sections incl. copyright takedown, scraping ban, organizer licences | [19 sections](https://www.eventbrite.com/help/en-us/articles/460838/eventbrite-privacy-policy/) incl. a notice for non-users | A single Legal hub page listing every policy; scraping ban; organizers responsible for their own permits |
 
-All four use US binding arbitration with a class-action waiver. Whether SocialUs should is a question for counsel.
+All four use US binding arbitration with a class-action waiver. SocialUs does too (Don, 2026-10-05); the arbitration section below says how it is drafted.
 
 ## Privacy Policy sections
 
@@ -63,20 +64,20 @@ GitHub's Privacy Statement (CC0) is the base because it carries no credit or sha
 
 | # | Section | What it covers for SocialUs | Source | Licence |
 | --- | --- | --- | --- | --- |
-| 1 | Who we are and how to reach us | Legal entity, California address, privacy email | Basecamp Privacy | CC BY 4.0 |
-| 2 | What we collect | Email, SMS-verified phone, ZIP/metro, private legal name; business entity name, state, type; follows, RSVPs, reports; device and log data | GitHub Privacy Statement | CC0 |
-| 3 | Why we collect it | Account security, one-person-one-account, metro matching, platform protection | GitHub Privacy Statement | CC0 |
-| 4 | What is public and what is not | Organisation pages public; member identity and legal name never public | Own (Nextdoor structure) | n/a |
-| 5 | Text messages | One verification code per signup; no marketing texts; STOP/HELP | Own (CTIA guidance) | n/a |
-| 6 | Who we share with | Supabase, Vercel, SMS provider; no sale, no ads | GitHub Privacy Statement | CC0 |
-| 7 | Government and legal requests | Valid legal process only; emergencies; notice to member where lawful | GitHub Privacy Statement + counsel wording | CC0 |
-| 8 | Reports and moderation data | What a report stores, who sees it, how long | Own | n/a |
-| 9 | Retention and deletion | Per-type retention; how to delete an account | Basecamp Privacy | CC BY 4.0 |
+| 1 | Who we are and how to reach us | [ENTITY NAME], [STREET ADDRESS], [PRIVACY EMAIL]; "the operator", no personal name | Basecamp Privacy | CC BY 4.0 |
+| 2 | What we collect | Email, SMS-verified phone, ZIP/metro, private legal name, 18+ confirmation; business entity name, state, type; follows, RSVPs, reports; device and log data; Vercel Analytics | GitHub Privacy Statement | CC0 |
+| 3 | How we use it | Run and protect the platform first, then serve members: account security, one person one account, metro matching, and improving and building features and local insights that benefit members. Broad on purpose; no narrow list | GitHub Privacy Statement | CC0 |
+| 4 | What is public and what is not | Organisation pages public; member identity and legal name are not public | Own (Nextdoor structure) | n/a |
+| 5 | Text messages | One verification code per signup via Twilio Verify, from a toll-free number; no marketing texts; STOP/HELP | Own (CTIA guidance) | n/a |
+| 6 | Who we share with | Supabase, Vercel, Twilio; we currently do not sell data or show ads | GitHub Privacy Statement | CC0 |
+| 7 | Government and legal requests | Valid legal process only; emergencies; we tell the member where the law allows | GitHub Privacy Statement | CC0 |
+| 8 | Reports and moderation data | Operators review reports; the member is told when their content is hidden; kept 4 years | Own | n/a |
+| 9 | Retention and deletion | The fact-7 schedule, with "currently" wording and a legal-hold clause; how to delete an account | Basecamp Privacy | CC BY 4.0 |
 | 10 | Security and breach notice | Reasonable security; notice within 30 days | GitHub Privacy Statement | CC0 |
-| 11 | Your choices | Edit profile, unfollow, delete account, Do Not Track answer | GitHub Privacy Statement | CC0 |
-| 12 | California rights | CalOPPA items; "we do not sell or share"; CCPA not yet triggered | Basecamp CA Notice at Collection | CC BY 4.0 |
-| 13 | Children | 18+ only; delete if underage | GitHub Privacy Statement | CC0 |
-| 14 | Changes to this policy | How members are told; effective date | GitHub Privacy Statement | CC0 |
+| 11 | Your choices | Edit profile, unfollow, delete account; Do Not Track answer; no cross-site tracking | GitHub Privacy Statement | CC0 |
+| 12 | California rights | CalOPPA items; "we currently do not sell or share"; CCPA not yet triggered | Basecamp CA Notice at Collection | CC BY 4.0 |
+| 13 | Children | 18+ only, confirmed by a checkbox at signup; delete if underage | GitHub Privacy Statement | CC0 |
+| 14 | Changes to this policy | How members are told; effective date; new uses (payments, ads, other states) only with notice first | GitHub Privacy Statement | CC0 |
 | 15 | Credits | Licence credit for Basecamp-derived text | Required by CC BY | n/a |
 
 ## Terms of Service sections
@@ -85,24 +86,24 @@ GitHub's Terms (CC0) supply the platform-protection clauses: UGC licence, modera
 
 | # | Section | What it covers for SocialUs | Source | Licence |
 | --- | --- | --- | --- | --- |
-| 1 | Agreement and eligibility | Accepting the Terms; 18+; one account per person | GitHub Terms | CC0 |
+| 1 | Agreement and eligibility | Accepting the Terms; 18+ by checkbox; one account per person | GitHub Terms | CC0 |
 | 2 | Your account | Accurate legal name and phone; keep credentials safe; we may suspend | GitHub Terms | CC0 |
 | 3 | What SocialUs is (and isn't) | A directory; we don't vet or endorse organisations or events | Own (Eventbrite structure) | n/a |
-| 4 | Pages, events and your content | You own it; licence to SocialUs to display it | GitHub Terms | CC0 |
+| 4 | Pages, Posts, events and your content | You own it; licence to SocialUs to display it | GitHub Terms | CC0 |
 | 5 | Community rules | Link to Community Guidelines; prohibited conduct; no scraping | GitHub Acceptable Use | CC0 |
-| 6 | Reports and moderation | We may hide or remove content or accounts at our discretion; no duty to monitor | GitHub Terms | CC0 |
-| 7 | Copyright and DMCA | Designated agent; takedown and counter-notice; repeat-infringer termination | GitHub DMCA Takedown Policy | CC0 |
+| 6 | Reports and moderation | Operators may hide or remove content or accounts at their discretion; no duty to monitor; the member is told when content is hidden | GitHub Terms | CC0 |
+| 7 | Copyright and DMCA | Copyright Agent at [COPYRIGHT AGENT CONTACT]; takedown and counter-notice; repeat-infringer termination | GitHub DMCA Takedown Policy | CC0 |
 | 8 | RSVPs and events | Organisers run events; SocialUs isn't a party; attend at own risk | Own (Eventbrite structure) | n/a |
 | 9 | Text messages | Consent to one verification code; STOP/HELP | Own (CTIA guidance) | n/a |
 | 10 | Privacy | Pointer to the Privacy Policy | Basecamp Terms | CC BY 4.0 |
 | 11 | Termination | Either side can end it; what survives | GitHub Terms | CC0 |
 | 12 | Disclaimers and limitation of liability | As-is service; liability cap | GitHub Terms | CC0 |
 | 13 | Indemnity | Users cover claims from their content and conduct | GitHub Terms | CC0 |
-| 14 | Disputes and governing law | California law; Sacramento County venue or arbitration (counsel decides) | Own, counsel to draft | n/a |
-| 15 | Changes to the Terms | Notice and effective date | GitHub Terms | CC0 |
-| 16 | Additional terms for business pages | Authority to represent the entity; accurate registration details; claim and verification | Own (Yelp structure) | n/a |
+| 14 | Disputes and governing law | California law; arbitration with class-action waiver and the protections below | Own | n/a |
+| 15 | Changes to the Terms | Notice and effective date; payments, ads or other states added only with notice | GitHub Terms | CC0 |
+| 16 | Additional terms for business pages | Owner or staff may claim; verified by phone or by email at the business's own domain; authority to represent the entity | Own (Yelp structure) | n/a |
 | 17 | Parental controls notice | One line, per Section 230(d) | Own | n/a |
-| 18 | Contact and credits | Legal contact; CC BY credit for Basecamp text | Required by CC BY | n/a |
+| 18 | Contact and credits | [LEGAL EMAIL]; CC BY credit for Basecamp text | Required by CC BY | n/a |
 
 ## Recommended path
 
@@ -110,54 +111,79 @@ GitHub's Terms (CC0) supply the platform-protection clauses: UGC licence, modera
 
 | Option | What it is | Cost | Time | Trade-off |
 | --- | --- | --- | --- | --- |
-| **A. Adapt open templates** | Build from GitHub (CC0) plus Basecamp (CC BY), using the section lists above; Claude drafts in plain language | $0 + $6 DMCA agent | ~1 week to draft | Most tailored; needs Don's facts and a careful counsel pass |
+| **A. Adapt open templates** | Build from GitHub (CC0) plus Basecamp (CC BY), using the section lists above; Claude drafts in plain language | $0 + $6 DMCA agent | ~1 week to draft | Most tailored; needs a careful counsel pass |
 | B. Generator | TermsFeed premium (one-time) or GetTerms lifetime ($249) | ~$150–250 (TermsFeed estimate, not quoted) | 1–2 days | Fastest; generic; weak on SMS, reporting and business pages |
 | C. Counsel first | Wait for a lawyer to draft from scratch | Lawyer fees | Unknown; risks 10/30 | Best protection; most likely to miss launch |
 
-The A sequence follows; dates assume Don supplies the facts by 10/8.
+The A sequence follows.
 
-1. Don answers the facts list below by 10/8.
-2. Claude drafts Privacy, Terms and Community Guidelines by 10/15.
-3. Register the DMCA agent and add the phone-field disclosure in the build by 10/22.
+1. Don answered the facts list below on 10/5.
+2. Claude drafts Privacy, Terms and Community Guidelines by 10/15, with placeholders for the entity and contacts.
+3. Add the 18+ checkbox and the phone-field disclosure in the build by 10/22. The DMCA agent waits on Don's entity call (see fact 3).
 4. Publish on 10/30 with an effective date; counsel reviews after launch, and the changes clause covers the update.
 
-## Facts Don must supply
+## Facts Don supplied (2026-10-05)
 
-The drafts can't be finished without these; each is one line.
+Set by Don on 2026-10-05. Standing goals behind every answer: a shoestring budget, so play it safe legally, keep lawsuit exposure low and avoid controversy; plain language; open wherever openness doesn't tie our hands.
 
-- [ ] Legal entity name, entity type and state of formation (or "sole proprietor" for now)
-- [ ] Physical street address for the policies and DMCA agent (a P.O. box needs a Copyright Office waiver)
-- [ ] Privacy and legal contact email; DMCA agent name, phone and email
-- [ ] Minimum age: confirm 18+, and how signup asks for it (checkbox or date of birth)
-- [ ] SMS provider behind Supabase Auth (Twilio Verify, Twilio, MessageBird, other) and its sending number type
-- [ ] Analytics, error tracking, cookies or embeds in use (e.g. Vercel Analytics) and whether any track across sites
-- [ ] Retention per data type: deleted accounts, hidden content, reports, phone numbers, logs
-- [ ] What happens to the legal name: who at SocialUs can see it, and when it is used
-- [ ] Who reviews reports, and whether members are told when their content is hidden
-- [ ] Business pages: who may claim one, and how registration details are verified
-- [ ] Disputes: arbitration with class waiver, or California courts (Sacramento County)
-- [ ] Law-enforcement wording: accept "valid legal process" over "court order only"
-- [ ] Notifying members of legal requests: yes or no, where lawful
-- [ ] Any plans within 12 months for payments, ads or other states (changes the drafts now)
+| # | Fact | Answer |
+| --- | --- | --- |
+| 1 | Legal entity, type, state | None yet, and none for many months. Drafts use [ENTITY NAME]; type and state stay unstated until the entity exists |
+| 2 | Street address | [STREET ADDRESS] |
+| 3 | Contacts and DMCA agent | [LEGAL EMAIL], [PRIVACY EMAIL], [COPYRIGHT AGENT CONTACT]. Role titles only ("the operator", "Copyright Agent"); Don's personal name appears nowhere in the app or drafts unless he puts it there |
+| 4 | Minimum age | 18+, confirmed by a checkbox at signup |
+| 5 | SMS provider | Twilio Verify, sending from a toll-free number |
+| 6 | Analytics and tracking | Vercel Analytics only; no cross-site tracking |
+| 7 | Retention | Deleted accounts and their content: 4 years after closure (California's longest common limitation periods). Reports and moderation decisions: 4 years. Hidden content: 4 years. Phone numbers and legal name: life of the account plus 4 years. Logs: 1 year. Anything under a legal request or dispute: kept until resolved (legal hold). Stated plainly, as what we "currently" do |
+| 8 | Legal name | Seen only by operators; used only for verification, safety and legal requests |
+| 9 | Reports | Operators review them; members are told when their content is hidden |
+| 10 | Business Pages | Claimable by the owner or staff, verified by phone or by email at the business's own domain |
+| 11 | Disputes | Arbitration with a class-action waiver (Don overrode the courts recommendation); protections below |
+| 12 | Law-enforcement wording | "Valid legal process" (ruled 2026-10-01) |
+| 13 | Notify members of legal requests | Yes, where lawful |
+| 14 | Payments, ads, other states | None planned in the drafts; wording lets us add them later with notice |
+
+### How member data may be used
+
+The privacy wording must let SocialUs use what it collects for members' benefit soon. So it names broad purposes (running and protecting the platform, improving and building features, local insights that benefit members) and lists no narrow purposes that box us in. Data is kept longer rather than shorter, especially anything court-related, under the legal-hold clause in fact 7.
+
+### Arbitration clause: cost controls
+
+Added to keep a shoestring operation out of expensive fights; each is standard in consumer terms.
+
+1. **Informal resolution first:** either side sends a written notice, then 60 days to settle before anyone files.
+2. **Small claims carve-out:** either side may take an individual claim to small claims court instead.
+3. **Mass-arbitration batching:** 25 or more similar claims by the same lawyers are heard in batches, with bellwether cases first.
+4. **30-day opt-out:** a new member may opt out of arbitration by emailing [LEGAL EMAIL] within 30 days of signing up.
+5. **Governing law:** California, with the Federal Arbitration Act for the arbitration clause.
+6. **California fit:** a public-injunctive-relief carve-out and a severability line, so one unenforceable piece doesn't sink the whole clause.
+
+### Drafting rules
+
+- Commitments say what we "currently" do or don't do. The only allowed "never" is "never extractive".
+- Platform first, then members.
+- "Post", not "Announcement".
+- [plainlanguage.gov](https://www.plainlanguage.gov/guidelines/) style: short sentences, "we" and "you", common words.
 
 ## What counsel should review
 
 Counsel's time goes furthest on the clauses that protect the platform or set legal exposure.
 
 1. Law-enforcement and legal-request clause (SCA, CalECPA, emergency and child-safety carve-outs).
-2. Dispute resolution: arbitration and class waiver vs. California courts.
+2. The arbitration clause: class waiver, batching, opt-out, *McGill* carve-out, and who pays fees under California law.
 3. Limitation of liability, disclaimers and indemnity, given California's limits on these clauses in consumer contracts.
 4. Moderation and report-hiding language, so Section 230 protection holds.
 5. DMCA policy and repeat-infringer process.
 6. Business-page terms: who may speak for an entity and liability for false claims.
-7. Handling and retention of private legal names.
+7. Handling and retention of private legal names, and the 4-year retention schedule.
 8. SMS consent wording at the phone field.
 9. The CCPA trigger plan: when to add full rights and a notice at collection.
 10. CC BY credit and the CC0 adaptation, so licence terms are met.
+11. Operating with no entity: what to change once one exists.
 
 ## Sources
 
-All opened 2026-10-01; legal rows marked (unverified) above rest on snippets only.
+All opened 2026-10-01; legal rows marked (unverified) above rest on snippets or knowledge only.
 
 - [GitHub site-policy licence](https://github.com/github/site-policy/blob/main/LICENSE.md) · [Basecamp licence](https://github.com/basecamp/policies/blob/master/LICENSE.md) · [Automattic legalmattic](https://github.com/Automattic/legalmattic)
 - [CPPA threshold adjustment](https://cppa.ca.gov/regulations/cpi_adjustment.html) · [Copyright Office DMCA FAQ](https://www.copyright.gov/dmca-directory/faq.html) · [47 USC 230](https://www.law.cornell.edu/uscode/text/47/230) · [18 USC 2702](https://www.law.cornell.edu/uscode/text/18/2702)
