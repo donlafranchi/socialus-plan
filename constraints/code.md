@@ -10,7 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-04** · process, prs, ui — Every UI feature begins with precedent research: what best-in-class products do in that exact situation, with 2–3 named examples and links. Agents adopt the established pattern rather than inventing; the precedent is recorded in the Issue and the PR body, and the reviewer checks against it. Don reviews only judgement calls (tone, conflicting precedents, rulings); precedent-following, reviewed UI merges without him
+- **2026-10-04** · process, prs, issues, ui — The decision rule: look at 2–3 established precedents with links before designing or deciding anything; choose the simplest that fits our rulings; a well-worn path the agent decides and builds itself, labelled "Path: well-worn", without waiting for Don; new territory (no well-worn path, conflicting precedents, or a ruling, legal or privacy exposure, money or member trust), labelled "Path: new territory", comes to Don as A/B/C with a recommendation before building; when unsure, say which in one line and lean toward deciding
 - **2026-10-04** · pages, page-edit, map, places — A Page owner can pick a neighbourhood or town from a seeded list covering MSA 40900 instead of giving a street address. Only the neighbourhood shows, as a pin at its centre
 - **2026-10-04** · business-registration, badges — The local-owner badge's area is the whole MSA: an owner is local when their registration's MSA is the Page's MSA
 - **2026-10-04** · pages, contact — Hours are low impact: no further work on them for launch

@@ -2,6 +2,19 @@
 
 Local discovery app: buy, sell, trade, gather. Launching 2026-10-30 to one metro. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
+## Decision rule
+
+Every agent, every decision, word for word from Don. Method detail: `ops-pattern/process/PIPELINE.md` § Decision rule.
+
+```
+DECISION RULE (2026-10-04, Don)
+1. Look first: before designing or deciding anything, find what established platforms do for this exact use case. Name 2–3 precedents with links (e.g. Google, Apple HIG, Airbnb, Meetup, Yelp, Stripe, Linear).
+2. Choose: pick the most relevant and elegant option for SocialUs, the simplest one that fits our rulings.
+3. Well-worn path: if a clear, established pattern exists, decide and build it yourself. Label the Issue/PR "Path: well-worn", list the precedents, and don't wait for the PM.
+4. New territory: if there's no well-worn path, the precedents conflict, or it touches a ruling, legal or privacy exposure, money, or member trust, label it "Path: new territory" and bring it to the PM as A/B/C with a recommendation before building.
+5. When unsure which it is, say which in one line and lean toward deciding: the PM's time is the scarcest resource.
+```
+
 ## Read first, every session
 
 1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
