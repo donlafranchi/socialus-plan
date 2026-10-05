@@ -10,10 +10,10 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · pages, page-edit, contact — Business hours are currently hidden from Pages and from Edit, because they cluttered the Page. The data is kept, and hours are on the Later list. The business phone stays
 - **2026-10-04** · process, prs, issues, ui — The decision rule: look at 2–3 established precedents with links before designing or deciding anything; choose the simplest that fits our rulings; a well-worn path the agent decides and builds itself, labelled "Path: well-worn", without waiting for Don; new territory (no well-worn path, conflicting precedents, or a ruling, legal or privacy exposure, money or member trust), labelled "Path: new territory", comes to Don as A/B/C with a recommendation before building; when unsure, say which in one line and lean toward deciding
 - **2026-10-04** · pages, page-edit, map, places — A Page owner can pick a neighbourhood or town from a seeded list covering MSA 40900 instead of giving a street address. Only the neighbourhood shows, as a pin at its centre
 - **2026-10-04** · business-registration, badges — The local-owner badge's area is the whole MSA: an owner is local when their registration's MSA is the Page's MSA
-- **2026-10-04** · pages, contact — Hours are low impact: no further work on them for launch
 - **2026-10-04** · signed-out, copy, pages, explore — The signed-out main button reads "Sign in to see what's happening"
 - **2026-10-04** · create, copy — Each Create kind is one question with a one-line purpose, for example "Have a business where you sell products or services?"
 - **2026-10-04** · testing, seed — Builder agents fill the app daily with a varied roster of invented organizations
@@ -26,7 +26,7 @@
 - **2026-10-04** · design-language, tokens — The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold only as accents on navy. Design-language principle 1 is now "navy for actions, gold as a highlight under 5% of the screen"
 - **2026-10-02** · posts, explore, pages — A post with no event date drops off Explore after 14 days and moves to an "Earlier" section on its Page. The owner can optionally set a "show until" date. Every undated post shows "Posted <date>"
 - **2026-10-02** · gatherings, data — Gatherings saved with the old 7-hour timezone error are throwaway test data and won't be corrected
-- **2026-10-01** · pages, page-edit, contact — A Page may carry an optional public business phone and optional weekly hours, in launch scope. The business phone is separate from the member's private phone and shows only if the owner gives it. Both show to signed-in visitors, not on the signed-out front door
+- **2026-10-01** · pages, page-edit, contact — A Page may carry an optional public business phone, in launch scope. The business phone is separate from the member's private phone and shows only if the owner gives it. It shows to signed-in visitors, not on the signed-out front door
 - **2026-10-01** · explore, map — Explore's list and map follow the screen width. Under 1024px, phones and tablets get a floating "Map"/"List" pill at bottom centre that stays visible while scrolling. At 1024px and up, list and map sit side by side with no toggle, and a collapse handle on the divider. With the owner panel open at 1024–1439px, the map collapses and a List | Map switch docks in the sticky filter bar
 - **2026-10-01** · page-create, page-edit, page-publish, tags, copy — Creating a Page is one question: its kind, and the screen says this just starts the process. Creation lands the owner on their draft Page, where they fill in everything else, the name included
 - **2026-10-01** · page-publish, page-photos, default-art — Publishing a Page requires a name, a location (an address or an area) and a description. A photo is optional; a Page without one shows its kind's default image or icon

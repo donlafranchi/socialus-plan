@@ -26,7 +26,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Follows simplification — one table, three subjects.
 - **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091); narrowing in a modal that writes text (F092). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
 - Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **new launch scope**.
-- Optional public business phone and weekly hours on a Page (F056 criterion 9, 2026-10-01) — built (#293, #344); hours are low impact, no further work for launch (2026-10-04).
+- Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for launch (below).
 - **Home returns as rows that keep going** — Tonight, This weekend, New this week, a wildcard, ending at a stop card (F098, draft, 2026-10-04) — **new launch scope; nothing was removed to make room.**
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - Onboarding, empty states, copy pass — Fortnight 4.
@@ -34,6 +34,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Later — deferred past launch, priced
 
+- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (Don, 2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: Don ruled none is being built, so F080 names no unlock.)*
 
