@@ -1,6 +1,6 @@
 # STATUS
 
-> ## Generated 2026-10-05 · 21:19 UTC
+> ## Generated 2026-10-05 · 21:22 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -228,7 +228,7 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F101** (approved) · **no Issue** — approved and gating launch with nothing to build from
 - **F102** (approved) · **no Issue** — approved and gating launch with nothing to build from
 
-**Rulings that bind code: 126.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 128.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
