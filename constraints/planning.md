@@ -10,6 +10,8 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · explore, map, ranking — The map's default is a mix: dated posts (upcoming, soonest first), new Pages, recently active Pages and posts, and curated "interesting" Pages. The proportions and a pin cap are currently one tunable setting (`app_settings.map_mix` in `socialus-web`), an even split to start, changed without a deploy. Revisit with beta data by 2026-11-15
+- **2026-10-05** · create, copy — Create has a fourth answer, "Be creative", with the line "Start anything that helps you find your people.", after the three questions, which stay. It lands on the same draft Page as a group
 - **2026-10-05** · moderation, reports, ai — In beta the AI restores severity-4 reported content on its own, narrowly: only when the poster answered, Claude Haiku and Claude Sonnet both suggest approve at 0.95 or higher, nothing flags coordinated reporting, and the evaluation harness has passed on that slice. Severities 1–3 currently never restore without a person
 - **2026-10-05** · moderation, reports, ai, uploads — Suspected severity-1 content (child safety or illegal) is never sent to an AI provider. Images are first checked against known-CSAM hashes (Cloudflare's CSAM Scanning Tool) and go to a person
 - **2026-10-05** · uploads, posts, privacy, moderation — Every upload and post records the IP address and time it came from, operator-only, kept one year and then deleted
