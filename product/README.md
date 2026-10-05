@@ -32,7 +32,7 @@ One line per doc, then the settled rules with no rationale attached — read the
 - Neither is a stored type — patron is the default state, creator derives from the attestation record plus what the person authored.
 - Functional roles (owner, staff, steward, host, founder) stay scoped to one Group or gathering — never shown as a person-level identity.
 
-**`foundation/voice.md`** — **the voice of the platform and the launch copy. Don's words, verbatim; agents do not edit it.**
+**`foundation/voice-and-tone.md`** — **how copy reads: the rules, what we say, how we sound, and the PM's original voice text kept verbatim. Agents edit it only on the PM's explicit instruction, recording what changed and when.**
 - People are never a category; a person is "you", a group is "people" or named, everything else is a verb.
 - Never a zero count on someone's own work. Job words attach to a thing, never a profile.
 - Writing mechanics: no em dashes, no "not just X but Y" tic, no corporate transitions, no forced rule of three, "corner" banned.

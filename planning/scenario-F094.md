@@ -38,7 +38,7 @@ Choosing replacement copy. Nearness of any kind ("near you", a radius, a distanc
 | Home feed / empty-state copy "near you", "nearby" | copy | same as above |
 | `MarketSelector` "Nearby" 25 mi (reached from `/you`; legacy `markets` table) | **25-mile radius** | **change → remove or metro** |
 | Layout "people near you", `MetroNotCoveredPanel` "what's nearby", onboarding "your neighbors" | copy | **change** (2) |
-| `product/foundation/voice.md` samples ("near you", "Browse nearby", "Someone nearby will see it") | house copy | **ask Don** — the house voice uses these words; criterion 2 may mean amending it |
+| `product/foundation/voice-and-tone.md` samples ("near you", "Browse nearby", "Someone nearby will see it") | house copy | **ask Don** — the house voice uses these words; criterion 2 may mean amending it |
 | Onboarding default home (`DEFAULT_HOME_PLACE_ID`) | fictional city | **removed by F081** |
 | `member_privacy.locality_precision` | unread by any code | no change; note it exists |
 | Local-owner badge (`zip_is_proximal_to_location`, and `page_local_owner_badge` in `socialus-web` #247) | the registration's **zip** re-resolved to an MSA on every render, compared with the Page anchor's MSA | **change** (5): compare a metro resolved once, not the zip; MSA is the right grain (F081) |
