@@ -20,12 +20,13 @@ A Post with a photo is reported as harassment on a Tuesday. It hides at once, as
 3. **Below the escalation threshold (start: confidence < 0.70) Claude Sonnet gives a second opinion**; both reads are stored and the shown suggestion is the second.
 4. **What is sent is the content, the reporter's chosen reason and the poster's rebuttal only**: no member name, handle or email; the rules text sent is versioned.
 5. **Each assessment stores** model, prompt version, category, severity, confidence, suggested outcome, reason, latency and time, in a table with RLS on and no policies, like `reports`.
-6. **Shadow mode (beta): an assessment changes nothing.** It does not hide, restore, remove, notify, text, reorder or move a metro's bar; the operator sees it on the row (F101). The one exception is the PM's answer to F102's A/B/C.
+6. **Shadow mode (beta): an assessment changes nothing.** It does not hide, restore, remove, notify, text, reorder or move a metro's bar; the operator sees it on the row (F101). The one exception is F102's narrow severity-4 auto-restore (ruled B, F102 criterion 12).
 7. **When a person decides, agreement is logged** (AI suggestion vs. decision), so accuracy per category and severity is a query.
 8. **Live mode (production) is a switch the PM flips as data, not a deploy.** Live means the AI's severity can raise a row's severity and order (F101); remove, restore and strikes stay a person's tap.
 9. **An evaluation harness runs the current prompt and models against a labelled test set** and prints recall, false-alarm rate, severity accuracy, latency and cost per case; it runs on every prompt change.
 10. **Builder agents build the test set**: clean, borderline and violating cases, each labelled with category, severity and outcome. Photos only from licensed or stock sources, licence recorded per photo. No real or synthetic image of a minor in any sensitive context; the children rule is tested with ordinary public-setting stock photos. No sexual imagery of anyone; the adult category is tested with text and non-explicit borderline stock.
 11. **Live mode needs the harness to show ≥ 95% recall on violating cases, 100% on severity-1 cases and < 10% false alarms on clean ones**, plus two weeks of shadow agreement the PM has read.
+12. **Suspected severity-1 content is never sent to an AI provider** (the PM, 2026-10-05). A report whose category is severity 1 (child safety or illegal, F101) skips the AI call; any image is first checked against known-CSAM hashes (Cloudflare's CSAM Scanning Tool), and the row goes to a person with the hash result.
 
 ## Not this
 

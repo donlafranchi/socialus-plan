@@ -22,6 +22,7 @@ Maya follows a neighbour's link and signs up. One screen: her legal name, her em
 6. No field, control, or string in signup asks or records whether the person makes things or finds them.
 7. **Onboarding assigns no place the person did not give.** A member's home is the metro their zip determined; no default place is written on their behalf, seen or unseen. *(Added 2026-09-27. Today `DEFAULT_HOME_PLACE_ID` sets every new member's home to a fictional city whose box sits inside Sacramento, which is why every member resolves to Sacramento.)*
 8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to the MSA that contains it.** A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in no MSA chooses a metro to view; their zip is kept, to tell them when their own MSA opens.
+9. **Phone verification refuses a non-fixed VoIP number** (Google Voice and the like), checked with Twilio Lookup's Line Type Intelligence before the code is sent, with a plain message asking for a mobile number ([public-is-draft]). *(the PM, 2026-10-05; Path: well-worn, Twilio's own guidance on blocking VoIP at verification.)*
 
 ## Not this
 
