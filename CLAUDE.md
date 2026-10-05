@@ -1,6 +1,6 @@
 # SocialUs — planning repo (`socialus-plan`)
 
-Local discovery app: buy, sell, trade, gather. Launching 2026-10-30 to one metro. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
+Local discovery app: buy, sell, trade, gather. Beta 2026-10-30 (soft target); production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
 ## Decision rule
 
@@ -67,6 +67,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 ## State
 
 - A scenario's state is its frontmatter `status`: `draft` → `approved` → `building`. Shipped scenarios are deleted at sync.
+- `gates: launch` in scenario frontmatter means the beta (2026-10-30), so the frontmatter stays as written.
 - A ticket's state is its Issue label in `socialus-web`. Tickets never live here.
 - What is approved for build is the scenario frontmatter (`status: approved`) plus the Issues in `socialus-web`. There is no separate bridge document — one existed, restated both sources, and went wrong.
 
