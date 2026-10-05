@@ -35,11 +35,12 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 ## Later — deferred past beta, priced
 
+- **A staging site before production** *(the PM, 2026-10-05; before the production launch, spring 2027)*. A `staging` branch deploys to staging.socialus.org with its own Supabase project; migrations are applied and tested on staging first; changes are promoted to main in batches rather than one PR at a time. Until then, previews build only for PRs labelled for the PM's review (`socialus-web` #394).
 - Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
-- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*.
+- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*. **Starting point when it's due (the PM, 2026-10-05):** the old `/you/sell` flow, moved onto the Page's Add. Its pieces are kept in `socialus-web`, unrouted since #336: the composers `src/components/sell/ProductComposer.tsx`, `ServiceComposer.tsx`, `GatheringComposer.tsx` and the `Add*Button.tsx` triggers; their server actions under `src/app/you/sell/product/`, `service/` and `gathering/` (`actions.ts`, with `action-result.ts`); and the walkthrough's helpers `src/lib/sell/` (`purpose.ts`, `unwrap.ts`). `SellWalkthrough.tsx`, `SellCta.tsx` and `getDraftGroup.ts` belong to the retired walkthrough that Create replaced.
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
