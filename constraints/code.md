@@ -10,7 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-05** · pages, create, page-settings, badges — A Page's kind is Business, Group or Organization. It is chosen at Create, changeable any time in Page settings, and decides which badges, tools and layout appear
+- **2026-10-05** · pages, create, page-settings, badges — Every Page is an organization. Its two primary types are Business (enterprise) and Social group; the use cases are presets and defaults under those two. The type is chosen at Create and changeable in settings
 - **2026-10-05** · cards, pages, explore — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery"
 - **2026-10-05** · values, badges, pages — A Page's values are a curated list of about 12 attributes, each with a "show as badge" switch, off by default. They are not hashtags
 - **2026-10-05** · badges, explore, search — Practice and fact badges can be filtered (Locally owned, Family-owned, Co-op, Free to join and the like); identity badges cannot
