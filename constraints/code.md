@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-06** · page-url — A Page's address is currently its ID only, `socialus.org/g/<id>` (for example `/g/tzsxja`); any other form, including `/g/<name>-<id>`, permanently redirects to it, and `groups.slug` is frozen. Kept option: a cosmetic name tail, `/g/<id>/<name>`, may be added later; it would be ignored on read and redirect to the current name, so no link breaks
+- **2026-10-06** · post-url — A post (announcement, event, later a listing) currently has its own flat address, `socialus.org/p/<id>` (8-char ID), not nested under its Page
 - **2026-10-05** · sign-in, you — Members can currently sign in with email and password as well as an email link; a password is set or reset from You
 - **2026-10-05** · ci, repo, secrets — `socialus-web` is public, so its GitHub Actions minutes are free; `socialus-plan`, `socialus-ops` and `socialus-legal` stay private
 - **2026-10-05** · process, migrations, builds — Economy until beta: migrations are batched into fewer, strictly ordered applies (one migration PR per beta milestone where practical); routine agent work (status, merges, doc sweeps, conflict catch-ups) uses a cheaper model and design and tricky builds the top one; long agent sessions restart daily with a handoff note (`handoff/latest.md`); no new paid tools before beta unless one replaces the PM's time
