@@ -113,3 +113,11 @@ Every entry added from 2026-09-12 carries three things:
 *The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, DECISIONS 2026-10-06) as local-pride measures, once purchases are tracked.
 
 **What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is only an index.
+
+### Civic voice — a pulse of how a community feels about local issues
+
+*The PM, 2026-10-06. An exploration, not a ruling.* A space for public figures, mainly elected officials, as a kind of Page, where the community's view on local issues is visible. Not free-text comments: members choose from framed options on issues, to give a pulse of how people feel and help them engage.
+
+**High-risk territory, flagged:** moderation, political neutrality, legal exposure and brigading. It needs its own research before any scenario is written, and nothing here is approved to build.
+
+**What would make it real:** that research done and the PM ruling on it, and a public figure willing to hold a Page.
