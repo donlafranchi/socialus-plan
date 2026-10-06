@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · sign-in, you — Members can currently sign in with email and password as well as an email link; a password is set or reset from You
 - **2026-10-05** · ci, repo, secrets — `socialus-web` is public, so its GitHub Actions minutes are free; `socialus-plan`, `socialus-ops` and `socialus-legal` stay private
 - **2026-10-05** · process, migrations, builds — Economy until beta: migrations are batched into fewer, strictly ordered applies (one migration PR per beta milestone where practical); routine agent work (status, merges, doc sweeps, conflict catch-ups) uses a cheaper model and design and tricky builds the top one; long agent sessions restart daily with a handoff note (`handoff/latest.md`); no new paid tools before beta unless one replaces the PM's time
 - **2026-10-05** · deploys, previews, process, review — Until the 2026-10-23 feature freeze there are no previews: only `main` builds, and production (socialus.org) is the review surface, since nobody uses it yet. Agents merge on green plus the reviewer's first pass; the PM reviews live and asks for fixes forward; unfinished work hides behind flags. Migrations still go to the PM, in order, before their PR merges. Revisit on 2026-10-23
