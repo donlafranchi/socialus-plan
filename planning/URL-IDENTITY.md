@@ -10,7 +10,7 @@ status: ruled
 
 ## The ruling
 
-**Amended 2026-10-06 (the PM, `planning/research/url-plan-2026-10-06.md` §2, §7.1): a Page's address is its ID only — `socialus.org/g/tzsxja`. Any other form, including `/g/<name>-<id>`, permanently redirects to it, and `groups.slug` is frozen.** Because names go stale on rename and the share preview already carries the name; precedent Airbnb `/rooms/<id>`, Instagram `/p/<code>`. A cosmetic name tail can be added later without breaking links. The 2026-09-21 form was a cosmetic slug plus a short ID (`joes-pizza-7k3x`); where this file still reads that way below, this paragraph governs.
+**Amended 2026-10-06 (the PM, `planning/research/url-plan-2026-10-06.md` §2, §7.1): a Page's address is its ID only — `socialus.org/g/tzsxja`. `groups.slug` is frozen. Old forms are deleted, not redirected (the PM, 2026-10-06, no real members or shared links yet; revisited once real members exist).** Because names go stale on rename and the share preview already carries the name; precedent Airbnb `/rooms/<id>`, Instagram `/p/<code>`. A cosmetic name tail can be added later without breaking links. The 2026-09-21 form was a cosmetic slug plus a short ID (`joes-pizza-7k3x`); where this file still reads that way below, this paragraph governs.
 
 **Originally (2026-09-21):** a cosmetic slug plus a short non-sequential ID. **The ID resolves; the slug may change freely without breaking a link.**
 

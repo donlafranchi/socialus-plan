@@ -10,9 +10,10 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-06** · page-url — A Page's address is currently its ID only, `socialus.org/g/<id>` (for example `/g/tzsxja`); any other form, including `/g/<name>-<id>`, permanently redirects to it, and `groups.slug` is frozen. Kept option: a cosmetic name tail, `/g/<id>/<name>`, may be added later; it would be ignored on read and redirect to the current name, so no link breaks
+- **2026-10-06** · page-url, post-url, location-url, place-url — Old URL shapes are currently deleted, not redirected: no forwarding is built
+- **2026-10-06** · page-url — A Page's address is currently its ID only, `socialus.org/g/<id>` (for example `/g/tzsxja`), and `groups.slug` is frozen. Kept option: a cosmetic name tail, `/g/<id>/<name>`, may be added later; it would be ignored on read and redirect to the current name, so no link breaks
 - **2026-10-06** · post-url — A post (announcement, event, later a listing) currently has its own flat address, `socialus.org/p/<id>` (8-char ID), not nested under its Page
-- **2026-10-06** · location-url, pages — Location ("venue") pages are currently retired; `/p/<place>/l/<slug>` permanently redirects to the hosting Page (`/g/<id>`), or to Explore filtered to that spot when no Page hosts there. A post at an address with no Page shows the address and a map pin
+- **2026-10-06** · location-url, pages — Location ("venue") pages are currently retired, and their address `/p/<place>/l/<slug>` is deleted. A post at an address with no Page shows the address and a map pin
 - **2026-10-06** · place-url, explore — Place pages at `/places/<state>/<city>/<neighborhood>` are currently planned as area landing pages listing the Pages and upcoming posts in that place (Nextdoor, Meetup and Yelp city pages), built before production, not beta. Once purchases are tracked, they also carry local-pride measures (spending kept local, compared across places)
 - **2026-10-06** · member-url, privacy — Members currently have no public link; anyone who wants to be found makes a Page. `/u/` and `/@` are reserved
 - **2026-10-05** · sign-in, you — Members can currently sign in with email and password as well as an email link; a password is set or reset from You
