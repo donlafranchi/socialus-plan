@@ -3,8 +3,30 @@
 # SocialUs — launch 2026-10-30, 24 days left
 
 ## Built
+- F058: A member reports something, and the operator can take a photo down
+- F067: A follower and a member are different things
+- F071: A stranger searches, and finds someone
+- F072: A Page owner announces something, with a time on it
+- F076: A person outside an open metro joins its waitlist
+- F086: Signed in, and the app says so
+- F087: One create flow, and what you call it depends on what you are starting
+- F091: What's happening, today and this week
+- F093: A signed-out visitor sees that something is happening, and is asked in to read it
 
 ## Building
+- F059: A newcomer browses, and finds the neighbourhood
+- F060: Someone starts something without opening a shop
+- F061: Someone creates a Page worth showing people
+- F063: Someone says they're coming
+- F064: Someone asks for something that isn't built
+- F069: A non-business Page resolves everywhere, and holding several is ordinary
+- F070: Every Page has a face, even without a photo
+- F073: F073
+- F077: People who actually interact are not hidden from each other; everyone else sees a display name
+- F078: Flagged content hides itself immediately, and the poster is told why
+- F080: No sensitive content, while we grow into a platform with staff
+- F081: Everyone signs up the same way, and the zip sets the metro
+- F082: Anyone publishing something others show up for takes one step first, and nothing is checked
 
 ## Next
 
@@ -17,6 +39,7 @@
 - **Page kinds and badges** — the kind line (icon · Business or Social group · main collection), Locally owned for businesses only; the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
 - **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
 - **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-23. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
+- **The map's default mix** (#331, 2026-10-05) — four buckets in one tunable setting, an even split to start; **review the mix against beta's bucket counts by 2026-11-15**.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - The three accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos, browser tests running in CI — **beta scope**.
 - Builder seed-content job — synthetic, display-only content — Fortnight 4.
@@ -25,11 +48,12 @@
 
 ## Later
 
+- **A staging site before production** *(the PM, 2026-10-05; before the production launch, spring 2027)*. A `staging` branch deploys to staging.socialus.org with its own Supabase project; migrations are applied and tested on staging first; changes are promoted to main in batches rather than one PR at a time. Until then, previews build only for PRs labelled for the PM's review (`socialus-web` #394).
 - Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
-- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*.
+- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*. **Starting point when it's due (the PM, 2026-10-05):** the old `/you/sell` flow, moved onto the Page's Add. Its pieces are kept in `socialus-web`, unrouted since #336: the composers `src/components/sell/ProductComposer.tsx`, `ServiceComposer.tsx`, `GatheringComposer.tsx` and the `Add*Button.tsx` triggers; their server actions under `src/app/you/sell/product/`, `service/` and `gathering/` (`actions.ts`, with `action-result.ts`); and the walkthrough's helpers `src/lib/sell/` (`purpose.ts`, `unwrap.ts`). `SellWalkthrough.tsx`, `SellCta.tsx` and `getDraftGroup.ts` belong to the retired walkthrough that Create replaced.
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
@@ -82,3 +106,6 @@ Ruled acceptable, with a condition for looking again. Source: `accepted-risks/`.
 - **schema: reports.reviewed_at/reviewed_by_member_id/outcome duplicate report_decisions** — review by 2026-11-30
   - If forgotten: Two sources of truth drift. A write path that updates the decisions log and forgets the projection leaves a report invisible in the queue or double-counted against a reporter's cap, and the bug looks like a UI fault rather than a schema one.
   - Look again if: ANY of: a third writer of report_decisions appears; delegated reviewers land (more writers, more chances to drift); the queue shows a report whose status disagrees with its history; or 2026-11-30 passes.
+- **unclaimed Pages: businesses' own photos shown without their permission** — review by 2026-11-30
+  - If forgotten: A business finds its photo on a site it never agreed to and treats it as theft rather than a listing. One annoyed owner is a removal request; several, or one with a lawyer, is a copyright claim and a story about a platform that took local businesses' work without asking.
+  - Look again if: ANY of: the first removal request or complaint about a photo; any takedown demand or legal letter; the listings grow beyond the first batch of 26 by automation (the daily job).
