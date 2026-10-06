@@ -4,7 +4,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 
 **Beta 2026-10-30, one metro** — for testing; a soft target, not a hard deadline *(2026-10-05)*. **Feature freeze 2026-10-23**, also soft: the last week is fixes and the copy pass. **Production launch April–May 2027.** "Launch" below means production; "beta" means 2026-10-30.
 
-**Beta keeps** *(2026-10-05)*: sign-in; one-question Create; Page types; the Page; Posts (the rename); latest posts; owner tools; edit by section; badges; the location picker; navy/gold anodised colours; Page logo and Post images (F099); What's happening dates, repeating series and time rows (F091); end time, add-to-calendar and default alt text; tags on posts; the report path; the metro waitlist; patron signup; the footer with About/Terms/Privacy drafts; the builder seed-content job; the three accepted-risk fixes due 2026-10-16. What left is in § Cut.
+**Beta keeps** *(2026-10-05)*: sign-in; one-question Create; Page types; the Page; Posts (the rename); latest posts; owner tools; edit by section; badges; the location picker; navy/gold anodised colours; Page logo and Post images (F099); What's happening dates, repeating series and time rows (F091); end time, add-to-calendar and default alt text; tags on posts; the report path; the metro waitlist; patron signup; the footer with About/Terms/Privacy drafts; the builder seed-content job; the two accepted-risk fixes due 2026-10-16 (browser tests in CI done 2026-10-05). What left is in § Cut.
 
 ## Now — Fortnight 1, in build
 
@@ -29,14 +29,14 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-23. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
 - **The map's default mix** (#331, 2026-10-05) — four buckets in one tunable setting, an even split to start; **review the mix against beta's bucket counts by 2026-11-15**.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
-- The three accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos, browser tests running in CI — **beta scope**.
+- The accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos — **beta scope**. Browser tests running in CI is done (2026-10-05).
 - Builder seed-content job — synthetic, display-only content — Fortnight 4.
 - Onboarding, empty states, copy pass — Fortnight 4, after the 2026-10-23 freeze. The copy pass covers person-nouns by hand.
 
 ## Later — deferred past beta, priced
 
 - **A staging site before production** *(the PM, 2026-10-05; before the production launch, spring 2027)*. A `staging` branch deploys to staging.socialus.org with its own Supabase project; migrations are applied and tested on staging first; changes are promoted to main in batches rather than one PR at a time. Until then, previews build only for PRs labelled for the PM's review (`socialus-web` #394).
-- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05).
+- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05). When shown at all, they link out to the business's site or Google Maps rather than being kept here — they fail the value test (2026-10-05).
 - Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
 - Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
 
