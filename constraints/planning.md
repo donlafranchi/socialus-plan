@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-06** · page-url — A Page's address is currently its ID only, `socialus.org/g/<id>` (for example `/g/tzsxja`); any other form, including `/g/<name>-<id>`, permanently redirects to it, and `groups.slug` is frozen
 - **2026-10-05** · sign-in, you — Members can currently sign in with email and password as well as an email link; a password is set or reset from You
 - **2026-10-05** · process, migrations, builds — Economy until beta: migrations are batched into fewer, strictly ordered applies (one migration PR per beta milestone where practical); routine agent work (status, merges, doc sweeps, conflict catch-ups) uses a cheaper model and design and tricky builds the top one; long agent sessions restart daily with a handoff note (`handoff/latest.md`); no new paid tools before beta unless one replaces the PM's time
 - **2026-10-05** · scenarios — Every feature and field passes a value test before it is built: does it already live somewhere better (then link out), is it something only locals know, does it get people together in person (counts double), does it stay fresh on its own, who keeps it current, and does it get better as more people join. Every new scenario — numbered after F102 — answers the six in `## Why`, one line each, and lint checks it; earlier ones are grandfathered
@@ -164,7 +165,7 @@
 - **2026-09-23** · explore, announcements, rls — Who exists is public. What's happening is not — but *that* something is happening is public
 - **2026-09-21** · ci, process — `[guard-proves-itself]` is the sixth process absolute: a check may not be relied on until it has been observed rejecting input that should be rejected
 - **2026-09-21** · answering, crawlers — If agent search replaces keyword search, SocialUs becomes the agent for its own domain rather than the free data layer under someone else's
-- **2026-09-21** · page-url — A Page's canonical URL is a cosmetic slug plus a short non-sequential ID: `joes-pizza-7k3x`. No geography in it, and no member derivable from it
+- **2026-09-21** · page-url — A Page's canonical URL has no geography in it, and no member derivable from it
 - **2026-09-21** · page-url — One canonical address per Page, many indexes onto it. The Place in a URL is never part of a Page's identity
 - **2026-09-21** · copy — plainlanguage.gov governs user-facing copy, alongside `voice.md` and `design-language.md`
 - **2026-09-21** · copy, model — `Bulletin` is refused as a noun: it named a delivery mode, not a thing
