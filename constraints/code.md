@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-05** · ci, repo, secrets — `socialus-web` is public, so its GitHub Actions minutes are free; `socialus-plan`, `socialus-ops` and `socialus-legal` stay private
 - **2026-10-05** · pages, create, page-settings, badges, explore — Purpose first, type for listing. Every Page has ONE primary purpose, what it mainly accomplishes. Beta's purposes are Create's four answers: Gather (find your people, meet regularly), Sell (make and be found), Offer a service or teach (a local pro, or someone who leads a class), Be creative (start or float something). The type, Business or Social group, follows from the purpose by default and can be changed in settings; it is what member browsing, filters and the Locally owned badge (business only) read
 - **2026-10-05** · you, pages, owner-tools, create — Listing products and services, and hosting a gathering, start from a Page, not from You. `/you/sell` and its walkthrough retire to Create; their components and logic are kept, unrouted, for when product and service listings are due
 - **2026-10-05** · deploys, previews — Vercel builds a preview only for main and for a branch whose open PR is labelled for the PM's review (`human-review` or `needs-don`); labelling a PR later builds one. A push that changes only docs, tests, `build-log/`, `.github/` or Markdown never builds a preview. Production always builds
