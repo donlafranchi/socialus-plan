@@ -1,16 +1,18 @@
 ---
 id: url-identity
-purpose: What a Page's canonical address is made of. Ruled by Don 2026-09-21: slug plus a short non-sequential ID, no geography, no member derivable from it. The decision record, its consequences, and the identity audit behind it.
+purpose: What a Page's canonical address is made of. Ruled 2026-09-21: no geography, no member derivable from it; amended 2026-10-06 (the PM): the ID alone, no slug. The decision record, its consequences, and the identity audit behind it.
 status: ruled
 ---
 
 # What a Page's address is made of
 
-**Ruled by Don, 2026-09-21. `socialus-web` #175 is unblocked.** The Place-precedence ruling of the same day stands and is still right about *where a Page appears*; this governs what an address is made of, which is a different question.
+**Ruled by Don, 2026-09-21; the address form amended 2026-10-06 by the PM — the ID alone (below). `socialus-web` #175 is unblocked.** The Place-precedence ruling of the same day stands and is still right about *where a Page appears*; this governs what an address is made of, which is a different question.
 
 ## The ruling
 
-**A Page's canonical URL is a cosmetic slug plus a short non-sequential ID** — `joes-pizza-7k3x`. **The ID resolves; the slug may change freely without breaking a link.**
+**Amended 2026-10-06 (the PM, `planning/research/url-plan-2026-10-06.md` §2, §7.1): a Page's address is its ID only — `socialus.org/g/tzsxja`. Any other form, including `/g/<name>-<id>`, permanently redirects to it, and `groups.slug` is frozen.** Because names go stale on rename and the share preview already carries the name; precedent Airbnb `/rooms/<id>`, Instagram `/p/<code>`. A cosmetic name tail can be added later without breaking links. The 2026-09-21 form was a cosmetic slug plus a short ID (`joes-pizza-7k3x`); where this file still reads that way below, this paragraph governs.
+
+**Originally (2026-09-21):** a cosmetic slug plus a short non-sequential ID. **The ID resolves; the slug may change freely without breaking a link.**
 
 - **No geography in a canonical URL.** Metro today, neighbourhoods later, and an address must survive both.
 - **No member identity derivable from a Page URL.** A safety requirement, not tidiness.
@@ -55,7 +57,7 @@ status: ruled
 
 ## Why this option and not the other two
 
-**Slug-only was rejected** because the slug would then *be* the address, and `verbs.md` bars moving an address — so a member who names a Page after themselves is permanently stuck with their own name in it, by their own hand. **ID-only was rejected** because it forecloses the SEO-structured public pages on the Later list; a local discovery product whose addresses cannot be read aloud is fighting its own purpose.
+**Slug-only was rejected** because the slug would then *be* the address, and `verbs.md` bars moving an address — so a member who names a Page after themselves is permanently stuck with their own name in it, by their own hand. **ID-only was rejected (2026-09-21; reversed 2026-10-06)** because it forecloses the SEO-structured public pages on the Later list; a local discovery product whose addresses cannot be read aloud is fighting its own purpose.
 
 **The chosen scheme resolves a refusal rather than colliding with it.** `verbs.md` forbids renaming an active Page's slug — *"a moved public URL is a broken link someone already shared"* — and that refusal exists **because** the slug is currently the address. Once the ID carries identity, a slug may change and every shared link still resolves. **That rule should be amended when this ships, not deleted:** what stays true is that an address may not move; what changes is that the slug is no longer the address.
 
