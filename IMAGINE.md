@@ -107,3 +107,9 @@ Every entry added from 2026-09-12 carries three things:
 **What it is not:** an Idea (`wonder`) — that is someone putting a *new thing* to the neighbourhood and watching for interest, and it has a noun and substrate already. Not a Page — a Page is *who*. Not a dated post — that is *when*. The occasion would be *what for*, and nothing in the model holds that.
 
 **What would make it real:** an occasion that a Page and a dated post cannot carry between them — something people need to find, join and come back to that is neither an organization nor a moment. Nobody has produced one yet, and until somebody does, the pair is the answer.
+
+### Places compete to keep spending local
+
+*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, DECISIONS 2026-10-06) as local-pride measures, once purchases are tracked.
+
+**What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is only an index.
