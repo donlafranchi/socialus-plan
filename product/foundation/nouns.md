@@ -116,6 +116,8 @@ The launch is a yellow pages of organizations, not a white pages of people (2026
 
 **A residence's address is public too, at launch** *(Don, 2026-09-30)*. The protection is the option to give a neighbourhood instead of a street. **Revisit** withholding a residence address from anyone not invited or responding once RSVPs (F063) and a residence flag exist. The answering layer inherits whatever the Page surface holds.
 
+**Web address (URL):** `/g/<id>` (see DECISIONS 2026-10-06).
+
 ### Page, post and event — how the words relate *(Don, 2026-10-01)*
 
 - **Page** is the platform noun for an organization. **Group, business and organization** are the everyday words for kinds of Page, not separate things: a business Page, a social group's Page, an organization's Page. The `groups` table holds all of them.
