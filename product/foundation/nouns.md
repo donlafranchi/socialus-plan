@@ -93,7 +93,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 | Check | What it catches | Why not a hard fail |
 |---|---|---|
 | **"not just X, but Y"** | `not just` within 60 characters of `but` | Don bans it *as a repeated tic*, not per instance. His own name-sharing line uses it once. |
-| **Posting language** | `post · posting · share · sharing` as a verb about a member's own listing | "Share this link" is legitimate; "share a photo" is the failure. Only a reader can tell. |
+| **Posting language** | `just post · just posts`, `share · sharing` as a verb about a member's own listing, `content` and feed language (`feed`, `scroll`). **The noun "Post"/"Posts" and "Post it" as a button do not warn** (2026-10-06). | "Share this link" is legitimate; "share a photo" is the failure. Only a reader can tell. |
 | **Bare vague term, general** | Any of `item · kind · group · follower` in prose with no approved qualifier nearby | **Ordinary English is indistinguishable from the technical sense.** *"What kind of gathering"* must not fail a build. |
 
 **Not checkable, and recorded as prose so nobody pretends otherwise:** no forced rule of three · CTAs point outward not inward · tone is warm and plainspoken · state things as fact not promise · no release numbers or internal jargon · no named-competitor comparison · real nouns over abstractions. **These live in `voice-and-tone.md` and are enforced by reading, not by CI.** Saying so is the point — a rule filed as testable that no test holds is how the person-noun rule went unenforced twice.

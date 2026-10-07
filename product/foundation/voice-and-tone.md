@@ -3,7 +3,7 @@ id: why-voice-and-tone
 purpose: How SocialUs copy reads. The rules, what we say, how we sound, and the PM's original voice text, kept verbatim.
 layer: why
 status: active
-authored: the PM, 2026-09-15 (voice, verbatim) and 2026-10-05 (tone direction); merged into one file on the PM's instruction, 2026-10-05
+authored: the PM, 2026-09-15 (voice, verbatim) and 2026-10-05 (tone direction), approved 2026-10-06; merged into one file on the PM's instruction, 2026-10-05
 ---
 
 # Voice and tone
@@ -12,7 +12,7 @@ authored: the PM, 2026-09-15 (voice, verbatim) and 2026-10-05 (tone direction); 
 
 Agents edit this file only on the PM's explicit instruction, recording what changed and when. **The name line and subhead are locked** (§ What we say); changing either needs a dated `DECISIONS.md` line. § Source is the PM's own text and is never reworded.
 
-*Changes: 2026-10-05, `voice.md` and `tone.md` merged into this file on the PM's instruction; the core lines are unchanged.*
+*Changes: 2026-10-05, `voice.md` and `tone.md` merged into this file on the PM's instruction; the core lines are unchanged. 2026-10-06, approved by the PM: § 3 "How we sound" and § 4's before/after table are approved and apply to copy (no longer a draft); § 1's posting rule amended: "Post" is the noun for the thing on a Page.*
 
 ## 1. Rules
 
@@ -31,7 +31,7 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
 - **No release numbers, internal jargon or product-team vocabulary.**
 - **No promises:** state things as fact, not as a future we can't back yet.
 - **No forced rule of three,** unless it's how a person would list things.
-- **No posting language:** nobody "just posts" or "shares" here (§ What we say). [checked, warns]
+- **Post is the noun, and the verbs stay outward.** "Post" and "Posts" name the thing on a Page; the verbs around it point out ("Let people know what's on"; "Post it" is fine as a button). "Just posts", "share", "content" and feed language stay out (§ What we say). [checked, warns]
 
 ## 2. What we say
 
@@ -40,15 +40,11 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
   - Name line: "A local discovery and community-building platform."
   - Subhead: "Find the local, the quirky, the one of a kind, and the people behind it."
 - **Point outward.** The app gets people together in person; it is not another feed. CTAs say meet up, show up, join in, not stay, scroll, keep going.
-- **Nobody just posts.** Every listing is a creation: something to trade, something to teach, a meet up, a volunteer ask. Never write about it the way Facebook, Instagram or TikTok write about posting or sharing.
+- **Nobody just posts.** A Post is the plain name for the thing on a Page, and the verbs around it stay outward. Every listing is a creation: something to trade, something to teach, a meet up, a volunteer ask. Never write about it the way Facebook, Instagram or TikTok write about posting or sharing.
 - **Job words attach to things.** Host or owner describes a thing, never a profile.
 - **Sound:** warm, plainspoken, a little wry. Never corporate, never a nonprofit appeal. Short, concrete, verb-led sentences with real nouns (shops, the farmers market, neighbors), not abstractions (community, ecosystem, stakeholders).
 
 ## 3. How we sound
-
-> **Draft — not approved; do not apply to copy until the PM approves.** Status of this section and of § 4's before/after table: draft. Until then, copy follows §§ 1–2 and the copy-by-surface samples in § 4.
-
-[open-question owner=don raised=2026-10-05] Approve the "How we sound" section (subtle California ease, "work to live, not live to work"), its tone-by-context table and the before/after examples, or say what to change.
 
 Plain, with a subtle California ease: **work to live, not live to work** (the PM's direction, 2026-10-05: "a subtle california cruisey language vibe around here"). Unhurried, sunny not loud, life first, outside and in person, laid back but still clear. One light touch per screen at most; most screens need none. Local, not generic: river towns, delta breezes, farm to fork, long summer evenings, never beaches and Hollywood.
 
@@ -67,7 +63,7 @@ Plain, with a subtle California ease: **work to live, not live to work** (the PM
 
 ## 4. Examples
 
-**Before and after (draft, with § 3):**
+**Before and after (with § 3):**
 
 | Instead of | Say |
 |---|---|
