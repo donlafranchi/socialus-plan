@@ -1,6 +1,6 @@
 ---
 id: what-contributions
-purpose: How members contribute to keep the lights on, and the public cost-vs-raised page that shows it.
+purpose: How members contribute, the monthly milestone ladder, the public page per community, and how a community decides its give-back.
 layer: what
 status: draft
 ---
@@ -9,36 +9,55 @@ status: draft
 
 # Contributions
 
-*Index of every product doc and its settled rules: [`../README.md`](../README.md).* Step 2 of the income pathway in `planning/lights-on-cost.md`; the cost and the targets live there.
+*Index of every product doc and its settled rules: [`../README.md`](../README.md).* This is the member-facing spec only. Costs, targets, accounting, tax and entity live in the private `socialus-legal` repo (`finance/lights-on-cost.md`, `finance/give-back-accounting.md`, `entity/counsel-questions-member-payouts.md`).
 
 ## Contribute
 
-- **Sliding amount, $1–$25 a month, suggested $8.** The member picks; nothing is gated behind any amount.
-- **Annual at 10×** the monthly amount (two months free).
-- **Founding contributions open at beta**, so the first contributors are on record before production.
-- **Billing is Stripe Billing**, subject to the payment-rail question below.
-- **Each member has a private ledger** of their own contributions. Only that member sees it.
+- **Voluntary, $1–$25 a month, $8 suggested.** The member picks; nothing is gated behind any amount.
+- **Annual at 10×** the monthly amount.
+- **Founding contributions open at beta.**
+- **A member sees their own contributions, privately.** Nobody else does.
 
-## The public page
+## The milestone ladder
 
-- **A no-login cost-vs-raised page** anyone can open.
-- **Goal 1 — lights on:** services and tools only. **Goal 2 — stretch:** adds part-time development. Both shown with cost against raised (figures in `planning/lights-on-cost.md`).
-- **Raised = contributions + transaction income**, stated as such on the page.
-- **Counts, not names:** the page shows how many contribute, never who.
-- **A per-metro split comes later;** at launch the page is one platform-wide view.
+Funding is counted monthly against a ladder, in order:
+
+1. Lights on — services and tools.
+2. Part-time development.
+3. Support and safety *(proposed)*.
+4. Reserve *(proposed)*.
+5. Community give-back.
+
+The ladder is never "done". The page's headline is always the **next unmet milestone**, so there is always a next step to fund. Once milestones 1–4 are covered in a month, what a community generated goes back to that community.
+
+## The public page, per community
+
+No login. For each community, for the month: what **came in**, what the **platform kept**, what **goes back**, and **how many members are contributing** (counts, never names). Raised is contributions plus transaction income. How the amounts are worked out is in `socialus-legal`.
+
+## Give-back: the community decides
+
+Participatory budgeting, per community:
+
+1. **Propose** — two weeks. Any member may propose a use.
+2. **Vote** — one week. **One member, one vote**, for every member active in the last 90 days, whether or not they contribute.
+3. **Fund in vote order** until the community's give-back runs out.
+4. **Report** — each recipient posts a report on what they did with it.
+
+What a vote may fund, and how money is held and paid, wait on counsel.
 
 ## Copy rules
 
-- No "investor", "returns", "dividend" or "shares" wording anywhere on contribution surfaces. A contribution is support for running costs, not a stake.
-- No guilt prompts: no countdown pressure, no "don't let us down", no nagging after a member declines or lapses.
+- No "investor", "returns", "dividend" or "shares" wording on contribution surfaces. A contribution supports running the platform; it is not a stake.
+- No guilt prompts: no pressure countdowns, no "don't let us down", no nagging after a member declines or lapses.
 
 ## Measures
 
 - At least 3% of active members contributing at launch.
 - Average contribution.
-- Runway (raised against monthly cost).
+- Runway.
 - Churn.
+- Give-back: share of eligible members voting; share of funded recipients who post a report.
 
 ## Open
 
-[open-question owner=don raised=2026-10-07] Which payment rail takes contributions? A) **Stripe Billing** — recurring plans, annual option and a per-member ledger are built in; we own the member relationship and the page's numbers. B) **Open Collective** — public ledger out of the box, but a second account system and a fixed public-by-name model that cuts against counts-not-names. C) **Ko-fi or Patreon** — fastest to open, but the platform owns the supporter relationship and the amounts, fees and pages follow its rules. *Recommend A.*
+[open-question owner=don raised=2026-10-07] Which payment rail takes contributions? A) **Stripe Billing** — recurring plans, annual option and a per-member ledger built in; we own the member relationship and the page's numbers. B) **Open Collective** — public ledger out of the box, but a second account system and by-name display that cuts against counts-not-names. C) **Ko-fi or Patreon** — fastest to open, but the platform owns the supporter relationship and its rules set amounts, fees and pages. *Recommend A.*
