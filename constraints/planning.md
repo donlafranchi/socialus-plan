@@ -10,6 +10,7 @@
 > **208 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-07** · contributions, fees — Lights-on goal 1 is services and tools only (~140 contributors at launch); a stretch goal adds part-time development (~$5k/month, ~1,200); both shown on a public cost-vs-raised page
 - **2026-10-07** · payments, fees — SocialUs takes transaction income on member commerce, like comparable apps; the rate is set in the income plan
 - **2026-10-07** · beta, roadmap, moderation — The beta is an open beta from the waitlist and signup, Sacramento only (council option B): F100–F102 (AI first-pass moderation in shadow, the Posts review page, the poster answering first) stay IN beta; the feature freeze moves from 2026-10-23 to a proposed 2026-10-30 and the beta from 2026-10-30 to 2026-11-06; the built map work (`socialus-web` #479, #482) merges. Everything on the council's CUT list moves to "After beta"
 - **2026-10-07** · ownership, payout — Members are SocialUs's investors: there are no shareholders and no VC/PE investors, and any payout goes only to members. The position "ownership, not profit-share" is rejected for good; it is never raised again
