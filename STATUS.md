@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-07 · 15:30 UTC
+> ## Generated 2026-10-07 · 16:05 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,13 +15,13 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `2a344f6` (2026-10-07); `accepted-risks/*.json`;
+> `325bce4` (2026-10-07); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
-Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 23 days out; feature freeze 2026-10-23, also soft. Production launch April–May 2027.
+Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 23 days out; feature freeze 2026-10-30, also soft. Production launch April–May 2027.
 
 **21 of 26 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
@@ -45,7 +45,7 @@ branch or a commit.
 
 ## In the code repo
 
-**84 issues open** in `socialus-web`, 12 launch-blocking:
+**89 issues open** in `socialus-web`, 17 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #221 F080 · Pictures of children: the uploader confirms, nothing is pre-screened, a report hides at once
 - #222 F081 · One signup for everyone: four fields, and the zip sets the metro
@@ -57,14 +57,19 @@ branch or a commit.
 - #337 bug · The owner's composer offers 'Who sees this: Anyone' on a private Page
 - #363 change · Page kinds: Business, Group, Organization — chosen, changeable, and shaping the Page
 - #475 change · Area markers for places without an exact address, and stacked pins spread apart
-- #477 bug · Duplicate Pages in production: 9 extra copies across 6 names (21 active)
+- #486 F100 · An AI reads every reported Post first, and a person still makes the call
+- #487 F101 · One scannable page of flagged and reviewed Posts, decided in one tap
+- #488 F102 · The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
+- #489 change · About, Terms and Privacy pages live before the first signup
+- #490 change · Error tracking in production
+- #491 change · Removed photos are actually deleted from storage
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #481 2026-10-07 bug #477: the builders wait for /you's list before deciding what to create
 - #474 2026-10-07 bug #439: the remaining read paths of an archived or deleted Page answer only its managers
 - #473 2026-10-07 bug #439: an archived or deleted Page reaches only its managers, by every path
 - #472 2026-10-07 change #458 + batch: the Page tidy and contained; Edit page in five cards; pencils; Posts row; location, email and archived-Page fixes (migration)
 - #471 2026-10-07 chore: the Browser job finds its merge base (every ready PR's Browser check fails)
-- #469 2026-10-07 bug #246: who edited a place and who made a tag are no longer readable by others
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -121,14 +126,14 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — success, 2026-10-07
-  - Ontology declarations still match the code: success
+- **`deploy-health.yml`** — success, 2026-10-05
   - Database reachable from the deployment: success
+  - Ontology declarations still match the code: success
 - **`ci.yml`** — failure, 2026-10-07
   - Lint, types, build: success
   - Unit tests: success
-  - Which suites: success
   - Migrations applied to production: failure
+  - Which suites: success
   - Browser: success
 
 ## Measured, not estimated
@@ -232,31 +237,31 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F081** (approved) · #222 open
 - **F082** (approved) · #223 open
 - **F093** (approved) · #252 closed, #215 closed
-- **F100** (approved) · **no Issue** — approved and gating launch with nothing to build from
-- **F101** (approved) · **no Issue** — approved and gating launch with nothing to build from
-- **F102** (approved) · **no Issue** — approved and gating launch with nothing to build from
+- **F100** (approved) · #486 open
+- **F101** (approved) · #487 open
+- **F102** (approved) · #488 open
 
 **Rulings that bind code: 143.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
-- **Nothing to build** (26), by their own tag: 2026-10-05 socialus-web is public, so its GitHub Actions minutes are fr…; 2026-10-05 Economy until beta: migrations are batched into fewer, stric…; 2026-10-05 Until the 2026-10-23 feature freeze there are no previews: o…; 2026-10-05 The accepted risk "the browser test suite never runs in CI" …; 2026-10-05 Before production (spring 2027) there is a staging site: a s…; 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+- **Nothing to build** (27), by their own tag: 2026-10-07 The beta is an open beta from the waitlist and signup, Sacra…; 2026-10-05 socialus-web is public, so its GitHub Actions minutes are fr…; 2026-10-05 Economy until beta: migrations are batched into fewer, stric…; 2026-10-05 Until the 2026-10-23 feature freeze there are no previews: o…; 2026-10-05 The accepted risk "the browser test suite never runs in CI" …; 2026-10-05 Before production (spring 2027) there is a staging site: a s…; 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
 
 ## Docs by review age
 
-93 authored docs in `product/` and `planning/`; **0 not reviewed in 30 days**, and **90 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+94 authored docs in `product/` and `planning/`; **0 not reviewed in 30 days**, and **91 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/places.md` — 28 days (last commit 2026-09-09)
 - `product/systems/location.md` — 28 days (last commit 2026-09-09)
 - `product/systems/action-layer.md` — 28 days (last commit 2026-09-09)
-- `product/foundation/people-first.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F069.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F068.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F065.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F055.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F049.md` — 28 days (last commit 2026-09-09)
 - `planning/scenario-F048.md` — 28 days (last commit 2026-09-09)
+- `planning/search-dictionary-draft.md` — 24 days (last commit 2026-09-13)
 
 ## What this run could not verify
 

@@ -7,8 +7,8 @@ from datetime import datetime, date, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 REPO = 'donlafranchi/socialus-web'
-MILESTONE = 'Beta 10-30'
-FREEZE = date(2026, 10, 23)
+MILESTONE = 'Beta 11-06'
+FREEZE = date(2026, 10, 30)
 LIVE = 'https://socialus.org'
 AREAS = ['page-editing', 'sign-in-you', 'explore-map', 'create-posts',
          'sharing-links', 'builders-seed', 'moderation', 'ops']
