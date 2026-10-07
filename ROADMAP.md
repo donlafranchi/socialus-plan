@@ -4,9 +4,14 @@
 
 Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issues (was `planning/now/initiative-launch.md`).
 
-**Beta 2026-10-30, one metro** — for testing; a soft target, not a hard deadline *(2026-10-05)*. **Feature freeze 2026-10-23**, also soft: the last week is fixes and the copy pass. **Production launch April–May 2027.** "Launch" below means production; "beta" means 2026-10-30.
+**Beta 2026-11-06, one metro, open from the waitlist and signup** *(council option B, the PM, 2026-10-07; was 2026-10-30)* — for testing; a soft target, not a hard deadline. **Feature freeze 2026-10-30** *(proposed; was 2026-10-23)*, also soft: the last week is fixes and the copy pass. **Production launch April–May 2027.** "Launch" below means production; "beta" means 2026-10-30.
 
 **Beta keeps** *(2026-10-05)*: sign-in; one-question Create; Page types; the Page; Posts (the rename); latest posts; owner tools; edit by section; the location picker; navy/gold anodised colours; Page logo and Post images (F099); What's happening dates, repeating series and time rows (F091); end time, add-to-calendar and default alt text; tags on posts; the report path; the metro waitlist; patron signup; the footer with About/Terms/Privacy drafts; the builder seed-content job; the two accepted-risk fixes due 2026-10-16 (browser tests in CI done 2026-10-05). What left is in § Cut.
+
+**Beta MVP, ruled 2026-10-07** *(council #1, option B; detail, dissents and tripwires: `planning/council/2026-10-07-beta-mvp.md`)*.
+**IN:** signup with zip and 18+ box (#222); About, Terms and Privacy live before the first signup; one self-attestation before a first Page (#223); Page kind and location (#363, #315); a post with one photo, private Pages can't post to "Anyone", owners delete posts (#460, #337, #461); Explore in Sacramento, list and map, no duplicates, the built map work merged (#334, #477/#481, #479, #482); the report path, flagged posts hide with a reason and a one-tap "disagree" for Friday (#221, #220); AI first-pass moderation in shadow, the Posts review page, the poster answering first (F100–F102); member data closed, removed photos deleted, error tracking on, the migration check green, member bug reports (#246, #443); open beta from the waitlist and signup, Sacramento only.
+**CUT → After beta:** tags (#286 #287 #459 #464); contact toggle, Posts-vs-Pages look, Unfinished Pages, password reset, owner tools (#480 #478 #463 #404 #369); place pages, post addresses, retiring Location pages, reserving /u/ and /@ (#421 #414 #420 #422); expiry (#314); a Support button, search, payments.
+**Tripwires** *(proposed, pending the PM)*: photos off if #221/#220 are not merged and checked by 10-27; the report path only if F100–F102 are not running in shadow by 10-30.
 
 ## Now — Fortnight 1, in build
 
@@ -28,12 +33,12 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for beta (below).
 - **Page kinds** — the kind line (icon · Business or Social group · main collection); the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
 - **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
-- **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-23. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
+- **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-30. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
 - **The map's default mix** (#331, 2026-10-05) — four buckets in one tunable setting, an even split to start; **review the mix against beta's bucket counts by 2026-11-15**.
 - Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
 - The accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos — **beta scope**. Browser tests running in CI is done (2026-10-05).
 - Builder seed-content job — synthetic, display-only content — Fortnight 4.
-- Onboarding, empty states, copy pass — Fortnight 4, after the 2026-10-23 freeze. The copy pass covers person-nouns by hand.
+- Onboarding, empty states, copy pass — Fortnight 4, after the 2026-10-30 freeze. The copy pass covers person-nouns by hand.
 
 ## Later — deferred past beta, priced
 
@@ -61,7 +66,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Follow-stream notifications, item-level customer inquiry, follower-list management for a producer.
 - Producer growth dashboard, weekly digest email, peer benchmarks.
 - Multi-location/ambulatory-route management, sub-venue support (e.g. "Drake's barn" under Drake's).
-- On-platform payments — closed-loop ledger + ACH via a chartered partner, zero platform transaction fees on member commerce (the wealth-circulation rubric), a stablecoin path long-horizon.
+- On-platform payments — closed-loop ledger + ACH via a chartered partner, SocialUs takes transaction income on member commerce (the wealth-circulation rubric), a stablecoin path long-horizon.
 - Treatment-review surface (reviews the treatment, not the person) and member references.
 - Multi-owner/partnership business Pages, staff-confirmation flows, community-stewardship-to-business transition.
 
