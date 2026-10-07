@@ -1,3 +1,5 @@
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # SocialUs — planning repo (`socialus-plan`)
 
 Local discovery app: buy, sell, trade, gather. Beta 2026-10-30 (soft target); production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.

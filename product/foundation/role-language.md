@@ -5,6 +5,8 @@ layer: why
 status: retired
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Role language — retired 2026-09-14
 
 **Overruled by Don, 2026-09-14.** His words: *"The other side is patron. That's the closest I think we'll get. This has nothing to do with copy. Also I think this document can go away and the two sides can exist in another doc."*

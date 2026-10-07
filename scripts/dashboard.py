@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Writes DASHBOARD.md (plain text, no colour) and dashboard/index.html (the colour) from socialus-web Issues and PRs (gh).
-Same layout and stage rules every run. Usage: python3 scripts/dashboard.py [repo-root]   (default: cwd)"""
+Same layout and stage rules every run. Each area also lists what happened in the past shift (PRs, issues, migrations, decisions).
+Usage: python3 scripts/dashboard.py [repo-root] [--since 12h]   (defaults: cwd, 12h = one shift)"""
 import json, os, re, subprocess, sys
-from datetime import datetime, date
+from datetime import datetime, date, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 REPO = 'donlafranchi/socialus-web'
@@ -43,7 +44,9 @@ open_bugs = gh('issue', 'list', '-R', REPO, '--state', 'open', '--label', 'bug',
                '--limit', '500', '--json', 'number,title,body')
 prs = gh('pr', 'list', '-R', REPO, '--state', 'all', '--limit', '400',
          '--json', 'number,title,body,state,mergedAt,labels,statusCheckRollup,'
-                   'closingIssuesReferences,headRefName,files,mergeCommit')
+                   'closingIssuesReferences,headRefName,files,mergeCommit,createdAt')
+all_issues = gh('issue', 'list', '-R', REPO, '--state', 'all', '--limit', '300',
+                '--json', 'number,title,state,labels,createdAt,closedAt')
 
 
 def runs_of(workflow):
@@ -156,9 +159,85 @@ for i in issues:
                  'blocking': 'launch-blocking' in labels(i),
                  'review': first_live_url(i.get('body'), (pr or {}).get('body'))})
 
+args = sys.argv[1:]
+since_h = 12
+if '--since' in args:
+    k = args.index('--since')
+    since_h = int(args[k + 1].rstrip('h'))
+    del args[k:k + 2]
+SINCE = datetime.now(timezone.utc) - timedelta(hours=since_h)
+
+
+def recent(ts):
+    return bool(ts) and datetime.fromisoformat(ts.replace('Z', '+00:00')) >= SINCE
+
+
+def area_of(x):
+    return next((l[5:] for l in labels(x) if l.startswith('area:')), None)
+
+
+ISSUE_AREA = {i['number']: area_of(i) for i in all_issues}
+SURFACE_AREA = {'pages': 'page-editing', 'page-edit': 'page-editing', 'contact': 'page-editing',
+                'moderation': 'moderation', 'reports': 'moderation', 'uploads': 'create-posts',
+                'posting': 'create-posts', 'explore': 'explore-map', 'map': 'explore-map',
+                'sign-in': 'sign-in-you', 'signup': 'sign-in-you', 'auth': 'sign-in-you',
+                'sharing': 'sharing-links', 'links': 'sharing-links', 'seed': 'builders-seed'}
+
+
+def pr_area(p):
+    for n in [r['number'] for r in p.get('closingIssuesReferences') or []] + [n for n, ps in by_issue.items() if p in ps]:
+        if ISSUE_AREA.get(n):
+            return ISSUE_AREA[n]
+    return None
+
+
+def decision_area(line):
+    m = re.search(r'surfaces=([\w,-]+)', line)
+    for sf in (m.group(1).split(',') if m else []):
+        if sf in SURFACE_AREA:
+            return SURFACE_AREA[sf]
+    return None
+
+
+SHIFT = {}  # area (or None) -> [(kind, text, url)]
+
+
+def log(area, kind, text, url=None):
+    SHIFT.setdefault(area, []).append((kind, text, url))
+
+
+for p in prs:
+    a = pr_area(p)
+    u = f'https://github.com/{REPO}/pull/{p["number"]}'
+    if recent(p['mergedAt']):
+        log(a, 'PR merged', f'#{p["number"]} {p["title"]}', u)
+        for f in p.get('files') or []:
+            if f['path'].startswith('supabase/migrations/'):
+                log(a, 'Migration', f'{os.path.basename(f["path"])} (PR #{p["number"]})', u)
+    elif recent(p['createdAt']):
+        log(a, 'PR opened', f'#{p["number"]} {p["title"]}', u)
+for i in all_issues:
+    u = f'https://github.com/{REPO}/issues/{i["number"]}'
+    if recent(i['createdAt']):
+        log(area_of(i), 'Issue filed', f'#{i["number"]} {i["title"]}', u)
+    if i['state'] == 'CLOSED' and recent(i['closedAt']):
+        log(area_of(i), 'Issue closed', f'#{i["number"]} {i["title"]}', u)
+try:
+    for line in open(os.path.join(PLAN, 'DECISIONS.md')):
+        m = re.match(r'- \*\*(\d{4}-\d{2}-\d{2}) — (.*?)\*\*', line)
+        if m and m.group(1) >= SINCE.astimezone(ZoneInfo('America/Los_Angeles')).strftime('%Y-%m-%d'):
+            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else ''))
+except OSError:
+    pass
+
+
+def shift_md(items):
+    return [f'- **{k}:** ' + (f'[{t}]({u})' if u else t) for k, t, u in items]
+
+
 COLORS = ['#2563eb', '#0d9488', '#7c3aed', '#ea580c', '#65a30d', '#ca8a04']
 OFF, UNK = '#d1d5db', '#fde68a'
-root = sys.argv[1] if len(sys.argv) > 1 else '.'
+root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
 total = len(rows)
@@ -188,7 +267,7 @@ for a in AREAS:
         if any(r['blocking'] and r['open'] and r['st'][1] != '●' for r in rs):
             behind.append(a)
     areas.append({'name': a, 'rows': rs, 'filled': filled, 'counts': counts, 'note': note,
-                  'done': sum(1 for r in rs if r['done'])})
+                  'done': sum(1 for r in rs if r['done']), 'shift': SHIFT.get(a, [])})
 
 if not behind:
     present = [x for x in areas if x['rows']]
@@ -208,7 +287,7 @@ def issue_url(n):
     return f'https://github.com/{REPO}/issues/{n}'
 
 
-out = [f'# {header}', '',
+out = ['> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.', '', f'# {header}', '',
        '*Generated by `scripts/dashboard.py`; never hand-edited. `▰` is a stage every item in the area has reached; `●` a stage reached, `○` not yet, `?` the data to tell was not found. Colour: `dashboard/index.html`.*', '',
        '| Area | Progress | Done | Note |', '|---|---|---|---|']
 for x in areas:
@@ -220,6 +299,7 @@ if unassigned:
     out += ['', f'*{len(unassigned)} beta item(s) have no `area:` label: ' + ', '.join(f'[#{r["n"]}]({issue_url(r["n"])})' for r in unassigned) + '.*']
 for x in areas:
     out += ['', f'<details><summary><b>{x["name"]}</b> · {len(x["rows"])} item(s)</summary>', '',
+            f'**Past {since_h}h:** ' + ('nothing.' if not x['shift'] else ''), *shift_md(x['shift']), '',
             '| Stages | Feature | Review | Link |', '|---|---|---|---|']
     for r in x['rows']:
         alt = ''.join(r['st'])
@@ -229,6 +309,8 @@ for x in areas:
     if not x['rows']:
         out.append('| | none yet | | |')
     out += ['', '</details>']
+if SHIFT.get(None):
+    out += ['', f'<details><summary><b>No area</b> · past {since_h}h · {len(SHIFT[None])} event(s)</summary>', '', *shift_md(SHIFT[None]), '', '</details>']
 out += ['', '**Behind:** ' + (', '.join(behind) if behind else 'none') +
         ' *(an open launch-blocking item not yet built; else below the overall built share)*', '']
 if nxt:
@@ -239,10 +321,11 @@ out.append(f'**Your next action:** {cta}')
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
+    'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
     'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind,
     'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
     'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
-               'done': x['done'], 'note': x['note'],
+               'done': x['done'], 'note': x['note'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
                'rows': [{'n': r['n'], 'title': r['title'], 'st': r['st'], 'review': r['review'],
                          'issue': issue_url(r['n']), 'pr': pr_url(r), 'prn': r['pr']['number'] if r['pr'] else None}
                         for r in x['rows']]} for x in areas],
@@ -255,7 +338,7 @@ PAGE = """<!doctype html>
 @media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--ink:#e5e7eb;--mute:#94a3b8;--off:#334155;--unk:#854d0e;--line:#1e293b}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
 main{max-width:960px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.25rem;margin:0 0 4px}
-.sub{color:var(--mute);font-size:.85rem;margin:0 0 18px}.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;margin-bottom:18px}
+.settled{margin:0 0 14px;padding:10px 12px;border-radius:8px;background:var(--unk);color:var(--ink);font-size:.85rem}.sub{color:var(--mute);font-size:.85rem;margin:0 0 18px}.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;margin-bottom:18px}
 .legend span{display:inline-flex;align-items:center;gap:6px}.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0}
 summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:6px 14px;align-items:center}
@@ -265,10 +348,11 @@ summary::-webkit-details-marker{display:none}.name{font-weight:650}.note{grid-co
 .row{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:9px 0;border-bottom:1px solid var(--line);align-items:center}.row:last-child{border:0}
 .strip{display:flex;gap:3px}.box{width:16px;height:16px;border-radius:3px;background:var(--off);font-size:.7rem;font-weight:800;color:#92400e;text-align:center;line-height:16px}
 .box.unk{background:var(--unk)}.title{font-size:.92rem}.links{grid-column:2;font-size:.8rem;color:var(--mute)}a{color:#2563eb}
+.shift{margin:8px 0 2px;padding:8px 10px;border-radius:8px;background:var(--bg);font-size:.82rem}.shift b{display:block;margin-bottom:2px}.shift div{padding:1px 0}.shift i{font-style:normal;color:var(--mute)}
 .foot{margin-top:18px;padding:14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.foot p{margin:4px 0}
 @media(max-width:560px){summary{grid-template-columns:1fr}}
 </style></head><body><main>
-<h1 id="h"></h1><p class="sub">Generated by scripts/dashboard.py. Tap an area to open it. A coloured box is a stage reached, grey is not yet, yellow ? is unknown.</p>
+<p class="settled"><b>SETTLED — do not re-raise:</b> members are the investors and the only people paid out. “Ownership, not profit-share” is rejected. Legal/securities questions about this go to socialus-legal for counsel and never come back to the PM as a decision.</p><h1 id="h"></h1><p class="sub">Generated by scripts/dashboard.py. Tap an area to open it. A coloured box is a stage reached, grey is not yet, yellow ? is unknown.</p>
 <div class="legend" id="legend"></div><div id="areas"></div><div class="foot" id="foot"></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
@@ -276,10 +360,11 @@ const D=JSON.parse(document.getElementById('data').textContent);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('h').textContent=D.header;document.title=D.header;
 document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('');
+const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=>`<div><i>${esc(e.k)}:</i> ${e.u?`<a href="${esc(e.u)}">${esc(e.t)}</a>`:esc(e.t)}</div>`).join(''):'<div><i>nothing</i></div>'}</div>`;
 document.getElementById('areas').innerHTML=D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
- const rows=a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>';
- return `<details><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${a.done} of ${a.total} done · ${esc(a.note)}</span></summary><div class="rows">${rows}</div></details>`}).join('');
+ const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
+ return `<details><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${a.done} of ${a.total} done · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
 document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
 </script></main></body></html>
 """

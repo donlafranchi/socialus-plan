@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. `DECISIONS.md` holds
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **209 older decisions carry no tag yet and are not listed** — tagging is required from
+> **208 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-07** · explore, map — On Explore's map, an exact public address is a classic teardrop pin (a round head tapering to a point); a place known only to a metro, city or neighbourhood is an area marker: a soft translucent disc with a count, no point, no tail. The two differ in shape and fill and are distinct from clusters and from any boundary outline. Items sharing a centroid group into one area marker that opens to a list; pins at one address spread apart

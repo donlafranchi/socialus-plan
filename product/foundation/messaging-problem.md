@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # The messaging problem
 
 Anonymous messaging between strangers produces vitriol — not as an edge case, but as what the surface does when built without controls. This platform is for people who care about their place; an unwitnessed channel between strangers gets the internet's behavior regardless of the sign on the door. Controls have to exist before messaging does — every platform that added them after already had a constituency for the bad behavior and had lost the people who'd have made it good.

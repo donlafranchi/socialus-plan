@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # The nouns
 
 > **Agent summary of [`model.md`](model.md), not a ruling. Cite the source or a `DECISIONS.md` line.** *(Marked 2026-09-15: this banner is where the Items drift came from — a paraphrase read as authority. Its claim that "there are no Items" is **disputed by Don and unsettled**; see [`../../planning/ITEMS-QUESTION.md`](../../planning/ITEMS-QUESTION.md).)* Where this document and `model.md` disagree, `model.md` is right — and neither this banner nor any summary of it settles anything.

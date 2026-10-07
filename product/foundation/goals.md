@@ -12,6 +12,8 @@ owns:
   - member-ownership
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Goals
 
 *(Working name, not final branding.)*
@@ -33,8 +35,8 @@ The one thing refused, categorically: **extraction** — taking value from peopl
 1. **Revenue is ordinary; surplus goes back to the community.** We earn money in normal, understandable ways. What's left after running the platform flows back to where it was generated — tracked on the producer side, so a sale generates revenue for the seller's community. *How much, and exactly how, is still open — see `monetization.md`.*
 2. **Every decision is weighed member-benefit against product-benefit.** If it doesn't help the people using it, it doesn't ship — however much it would help growth or retention.
 3. **Not an extractive platform.** No cut that grows with someone's dependence on us. No selling member data. No inserting ourselves into a relationship two people found on their own.
-4. **No outside capital. No traditional corporation.** No venture capital, ever. No outside shareholders. At minimum, a public benefit corporation or a nonprofit — exact form still open.
-5. **Member-owned.** The discovery app is owned by its members — ownership, not a profit-share. Amount and mechanism deliberately undecided for now.
+4. **No outside capital. No traditional corporation.** No shareholders, no VC or PE investors, ever. At minimum, a public benefit corporation or a nonprofit — exact form still open.
+5. **Members are the investors.** Members are SocialUs's investors and the only people paid out; any payout goes only to members (2026-10-07). Amount and mechanism deliberately undecided for now.
 6. **The platform keeps only what it needs to run.** Everything past that goes back out — see promise 1.
 
 Guidelines, a tier below promises — depart only with a dated reason in `DECISIONS.md`:

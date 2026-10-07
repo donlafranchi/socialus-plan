@@ -1,3 +1,5 @@
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Product absolutes
 
 What the platform will not do to a member. The process absolutes — production,

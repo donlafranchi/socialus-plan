@@ -6,6 +6,8 @@ status: active
 last-updated: 2026-09-12
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Policy framework
 
 Every proposed default, opt-in, or exception passes three questions, in order: **(1) Is this helpful, economically or socially, to members? (2) Does it harm anyone else — including non-participants?** Subtle harms (eroded norms, pressure to participate) count, not just obvious ones. **(3) Can this be abused by a bad actor** — a hostile member, a captured operator, a future owner? A policy that depends on good intentions to stay safe fails this filter; mitigations are the policy's burden, not the abused party's. Every prior wave of social platforms passed filters 1 and 2 at launch and failed filter 3 over time — threat-modeling at design time is cheaper by orders of magnitude than retrofitting after an abuse pattern ships.
