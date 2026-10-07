@@ -121,3 +121,17 @@ Every entry added from 2026-09-12 carries three things:
 **High-risk territory, flagged:** moderation, political neutrality, legal exposure and brigading. It needs its own research before any scenario is written, and nothing here is approved to build.
 
 **What would make it real:** that research done and the PM ruling on it, and a public figure willing to hold a Page.
+
+### Badges vs values
+
+*The PM, 2026-10-06. An exploration, not a ruling.* Two different things an owner can say about a Page, both claims the owner makes.
+
+**Badges are facts** about who the owner is: locally owned, women-owned, veteran-owned, family-run, certifications. They are **self-attested**, as Google Business Profile's "identifies as" attributes and Yelp's business attributes are, and **possibly verifiable later**.
+
+**Values are commitments** about how the business operates and what it stands for: pays a living wage, sources locally, gives back, sustainable, welcoming to all. They are **not verifiable**, closer to a mission than a fact.
+
+**Open questions:** how a badge is verified, if it is; how contested or political values are moderated; and whether values become **filters in Explore**.
+
+**Needs research before a scenario.** Beta carries only a "Values & badges" card marked "Coming soon" on the Edit page (`socialus-web` #465); badges stay cut (DECISIONS 2026-10-06).
+
+**What would make it real:** the research done (precedents on verification, a moderation approach for contested values) and the PM ruling on which of the two comes first.
