@@ -91,6 +91,8 @@ One line per doc, then the settled rules with no rationale attached — read the
 - Business names are scoped to a hood/metro — no global namespace.
 - Members are never auto-assigned to a Group; joining is always explicit.
 
+**`systems/contributions.md`** *(new, draft)* — how members contribute to keep the lights on, and the public cost-vs-raised page.
+
 **`systems/item.md`** — the one universal entity for anything declared.
 - One schema, varying only by `kind` (product/service/gathering/idea/offer/ask/initiative) — never separate systems per kind.
 - "Item" is schema-only — the UI always shows the specific kind, never the word "Item."
