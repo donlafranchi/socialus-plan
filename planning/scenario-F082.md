@@ -6,7 +6,7 @@ gates: launch
 date: 2026-09-14
 depends: [F081]
 approved: 2026-09-14 — Don's ruling; self-attestation only, selling and hosting alike
-amended: 2026-09-30 — Don: fixed statements framed as rules, and agreeing is the attestation; the rules are one click away and versioned, and members agree again when they change; every new Page asks, including an existing owner's next one. Story and criteria 1, 2, 4 and 6 restated, 7 added. (2026-09-27: at publish, not at draft.) 2026-10-01 — Don: criterion 8, what publishing requires; photo optional.
+amended: 2026-09-30 — Don: fixed statements framed as rules, and agreeing is the attestation; the rules are one click away and versioned, and members agree again when they change; every new Page asks, including an existing owner's next one. Story and criteria 1, 2, 4 and 6 restated, 7 added. (2026-09-27: at publish, not at draft.) 2026-10-01 — Don: criterion 8, what publishing requires; photo optional. 2026-10-06 — the PM: criterion 9, the rules include no pictures of children (F080 ruled: the uploader's word).
 ---
 ## Story
 
@@ -22,6 +22,7 @@ Devon signed up a month ago like everyone else. He makes hot sauce, and today he
 6. **The rules are versioned.** A member who agreed to an earlier version reads the new one and agrees again before they next publish. **Each agreement is recorded with the rules version and a timestamp**, seen only by Don and operators.
 7. **The rules are viewable with one click**, whether or not the member is taking the step.
 8. **Publishing a Page requires a name, a location (an address or an area) and a description**, with the rules agreement and at least one tag (2026-09-13). **A photo is optional;** a Page without one shows its kind's default image or icon (Don, 2026-10-01).
+9. **One of the rules is the photo rule: the member agrees not to post pictures of children** (F080, ruled 2026-10-06: the uploader's word plus member reports; nothing is pre-screened). Draft wording, for the PM's copy review ([public-is-draft]): *"No pictures of children. Please don't post a photo that shows a child. We can't check every photo, so we count on you."* It is one more rule with its reason, versioned like the rest (criterion 6).
 
 ## Not this
 
@@ -37,7 +38,7 @@ ID plus selfie verification — not planned; F080 no longer names an unlock (202
 
 ### Rules, not an attestation (2026-09-30)
 
-**Don: the app explains the rules and why they exist, and the member agrees to abide by them.** Nothing is framed as a sworn statement about the member. The rules carry the locality-and-provenance promise this step was made for. **F080's photo rule is not enforced here:** it is stated wherever a member posts (F080 criterion 5), because this step does not reach every uploader.
+**Don: the app explains the rules and why they exist, and the member agrees to abide by them.** Nothing is framed as a sworn statement about the member. The rules carry the locality-and-provenance promise this step was made for. **F080's photo rule is one of the rules this step states** (criterion 9, 2026-10-06), and it is also affirmed at each upload (F080 criterion 5), because this step does not reach every uploader.
 
 **Reading, Cowork's, not Don's:** criterion 6's "before they next publish" is when a re-agreement falls due. Don said only that members must re-read and agree.
 

@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-06** · moderation, reports, ai, uploads — Apparent child sexual abuse material (the child-safety tier, severity 1) is a legal requirement, not a moderation judgement: it never auto-restores, never goes back to the poster for an answer, gets no AI processing, and is preserved and reported to NCMEC per the plan
 - **2026-10-06** · uploads, posting, reports, moderation, copy — Pictures of children are currently handled on the uploader's word plus member reports: uploaders confirm a photo shows no children, nothing is pre-screened, and a report hides the photo at once (the existing sensitive-content report hides at any bar, `socialus-web` #284) pending operator review
 - **2026-10-06** · badges, pages, launch — Badges stay cut from beta, Locally owned included; the kind line stays
 - **2026-10-06** · bug-reports, ops, money — Member bug reports are currently triaged by an agent in GitHub Actions, paid by an Anthropic API key with a hard monthly spend cap; it starts on the cheapest capable model (Haiku 4.5) for labelling and dedupe, and escalates to a mid model only for reproduction and draft fixes if Haiku proves too weak
