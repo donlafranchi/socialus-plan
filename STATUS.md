@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-07 · 16:05 UTC
+> ## Generated 2026-10-07 · 16:11 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `325bce4` (2026-10-07); `accepted-risks/*.json`;
+> `3c49027` (2026-10-07); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -45,15 +45,12 @@ branch or a commit.
 
 ## In the code repo
 
-**89 issues open** in `socialus-web`, 17 launch-blocking:
+**85 issues open** in `socialus-web`, 14 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #221 F080 · Pictures of children: the uploader confirms, nothing is pre-screened, a report hides at once
 - #222 F081 · One signup for everyone: four fields, and the zip sets the metro
 - #223 F082 · One self-attestation before a first Page, selling and hosting alike
 - #246 bug · What one member can read about another: the signed-in half of #241, and four member tables open to anyone
-- #328 change · One expanding control at the bottom of Explore: search, filter, metro, map
-- #329 bug · The location pill at the top doesn't remember the member's metro
-- #330 change · The map opens on the chosen metro, searches within it, and remembers it
 - #337 bug · The owner's composer offers 'Who sees this: Anyone' on a private Page
 - #363 change · Page kinds: Business, Group, Organization — chosen, changeable, and shaping the Page
 - #475 change · Area markers for places without an exact address, and stacked pins spread apart
@@ -66,10 +63,10 @@ branch or a commit.
 
 **100 PRs merged in the last fortnight.** The newest five:
 - #481 2026-10-07 bug #477: the builders wait for /you's list before deciding what to create
+- #479 2026-10-07 change #329 #330 #328 #476: Explore remembers the metro, opens on it, one bottom control, neighbourhood search
 - #474 2026-10-07 bug #439: the remaining read paths of an archived or deleted Page answer only its managers
 - #473 2026-10-07 bug #439: an archived or deleted Page reaches only its managers, by every path
 - #472 2026-10-07 change #458 + batch: the Page tidy and contained; Edit page in five cards; pencils; Posts row; location, email and archived-Page fixes (migration)
-- #471 2026-10-07 chore: the Browser job finds its merge base (every ready PR's Browser check fails)
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -94,7 +91,7 @@ counts. Each row needs a look, not a close.*
   - an Announcement is at a Location
 - **7 object types declared**: Member (live), Page (live), Item (live), Location (live), Place (live), Announcement (live), Tag (live).
 - **Rejected as nouns (6)** - named so they stay rejected: Person, Creator, Organizer, Follower, Patron, Vendor.
-- **37 handlers, of which 26 write no declared link.**
+- **38 handlers, of which 27 write no declared link.**
   Not a fault on its own - a handler may legitimately touch no relationship -
   but an undeclared link lives here if it lives anywhere:
   - builder.content_delete_all
@@ -113,6 +110,7 @@ counts. Each row needs a look, not a close.*
   - member.business_jurisdiction.remove
   - member.business_jurisdiction.set
   - member.create
+  - member.default_metro.set
   - member.interests.add
   - member.place_interest.add
   - member.place_interest.remove
@@ -126,21 +124,21 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — success, 2026-10-05
+- **`deploy-health.yml`** — , 2026-10-07
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: success
-- **`ci.yml`** — failure, 2026-10-07
-  - Lint, types, build: success
-  - Unit tests: success
-  - Migrations applied to production: failure
+  - Ontology declarations still match the code: 
+- **`ci.yml`** — , 2026-10-07
+  - Lint, types, build: 
   - Which suites: success
-  - Browser: success
+  - Unit tests: 
+  - Migrations applied to production: success
+  - Browser: 
 
 ## Measured, not estimated
 
 - Copy: 584 strings across 118 files — source `docs/copy-inventory.md` on origin/main
 - Routes on origin/main: 31
-- Migrations on origin/main: 85
+- Migrations on origin/main: 86
 
 ## Deferred on purpose — and therefore easy to forget
 
@@ -241,7 +239,7 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F101** (approved) · #487 open
 - **F102** (approved) · #488 open
 
-**Rulings that bind code: 143.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 144.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
