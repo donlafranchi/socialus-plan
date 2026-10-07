@@ -135,3 +135,11 @@ Every entry added from 2026-09-12 carries three things:
 **Needs research before a scenario.** Beta carries only a "Values & badges" card marked "Coming soon" on the Edit page (`socialus-web` #465); badges stay cut (DECISIONS 2026-10-06).
 
 **What would make it real:** the research done (precedents on verification, a moderation approach for contested values) and the PM ruling on which of the two comes first.
+
+### Tone adapted by region, or per person
+
+*The PM, 2026-10-06. An exploration, not a ruling.* The tone is now one voice for everyone (`product/foundation/voice-and-tone.md` § 3, approved 2026-10-06: a subtle California ease). Later it might adapt, by **region** (a metro's own way of talking, so Sacramento reads differently from another metro) or **per person**, informed by **member feedback** about how the copy lands.
+
+**Open questions:** what a region's voice would be and who writes it; whether per-person tone is a setting or learned, and what it would learn from; how it stays plain and clear where plain is required (errors, safety, reports, legal, sign-in); and whether it fights the platform's one name line and subhead, which are locked.
+
+**What would make it real:** member feedback showing the one voice misses for some people or places, and a metro beyond the first one.
