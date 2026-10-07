@@ -11,7 +11,7 @@ FREEZE = date(2026, 10, 23)
 LIVE = 'https://socialus.org'
 AREAS = ['page-editing', 'sign-in-you', 'explore-map', 'create-posts',
          'sharing-links', 'builders-seed', 'moderation', 'ops']
-STAGES = ['Built', 'Tested', 'Agent-reviewed', 'PM reviewed', 'Bugs clear', 'Done']
+STAGES = ['Scenario approved', 'Built', 'Reviewed', 'Shipped', 'Smoke', 'PM looked']
 GREEN = {'SUCCESS', 'SKIPPED', 'NEUTRAL'}
 RED = {'FAILURE', 'TIMED_OUT', 'CANCELLED', 'ERROR', 'ACTION_REQUIRED', 'STARTUP_FAILURE'}
 
@@ -43,7 +43,27 @@ open_bugs = gh('issue', 'list', '-R', REPO, '--state', 'open', '--label', 'bug',
                '--limit', '500', '--json', 'number,title,body')
 prs = gh('pr', 'list', '-R', REPO, '--state', 'all', '--limit', '400',
          '--json', 'number,title,body,state,mergedAt,labels,statusCheckRollup,'
-                   'closingIssuesReferences,headRefName')
+                   'closingIssuesReferences,headRefName,files,mergeCommit')
+
+
+def runs_of(workflow):
+    # {commit sha: conclusion}; None when the workflow does not exist yet.
+    try:
+        rs = gh('run', 'list', '-R', REPO, '--workflow', workflow, '--limit', '200', '--json', 'headSha,conclusion,status')
+    except subprocess.CalledProcessError:
+        return None
+    return {r['headSha']: (r['conclusion'] or r['status']) for r in rs}
+
+
+DEPLOY = runs_of('Deploy health') or {}
+SMOKE = runs_of('smoke-live.yml')
+PLAN = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+NEEDS_REVIEW = re.compile(r'^(src/(app|components|actions)/|supabase/)')
+TESTISH = re.compile(r'\.test\.tsx?$')
+
+
+def ok(x):
+    return x in ('●', '·')
 
 by_issue = {}
 for p in prs:
@@ -77,39 +97,62 @@ def ci(pr):
     return '●' if all(s in GREEN for s in states) else '○'
 
 
+def scenario_stage(i, built):
+    body = i.get('body') or ''
+    m = re.search(r'Scenario:\**\s*(F\d{3})', body, re.I) or re.match(r'^(F\d{3})\b', i['title'])
+    if not m:
+        return '·'
+    path = os.path.join(PLAN, 'planning', f'scenario-{m.group(1).upper()}.md')
+    if not os.path.exists(path):
+        # A shipped scenario is deleted at sync; before that, a missing file is unknown.
+        return '●' if built else '?'
+    head = open(path).read(600)
+    st = re.search(r'^status:\s*(\w+)', head, re.M)
+    return '●' if st and st.group(1) in ('approved', 'building') else ('○' if st else '?')
+
+
 def stages(i):
     n = i['number']
     pr = best_pr(n)
     is_bug = 'bug' in labels(i)
-    built = '●' if pr and pr['mergedAt'] else '○'
-    if is_bug and i['state'] == 'CLOSED':
-        built = '●'
-    tested = (ci(pr) if built == '●' and pr else '○')
-    if built == '●' and not pr:
-        tested = '?'
+    merged = bool(pr and pr['mergedAt']) or (is_bug and i['state'] == 'CLOSED')
+    built = '●' if merged else '○'
+    scenario = scenario_stage(i, merged)
+    # Reviewed: only a PR that touches screens, data or actions needs the first pass.
     if pr:
-        reviewed = '●' if 'Reviewed by:' in (pr.get('body') or '') and 'review-skipped' not in labels(pr) else '○'
+        files = [f['path'] for f in (pr.get('files') or [])]
+        if not any(NEEDS_REVIEW.match(f) and not TESTISH.search(f) for f in files):
+            reviewed = '·'
+        else:
+            reviewed = '●' if 'Reviewed by:' in (pr.get('body') or '') and 'review-skipped' not in labels(pr) else '○'
     else:
         reviewed = '○'
+    # Shipped: merged, and the deploy-health run for the merge commit is green.
+    if not merged:
+        shipped = smoke = '○'
+    else:
+        sha = ((pr or {}).get('mergeCommit') or {}).get('oid')
+        d = DEPLOY.get(sha) if sha else None
+        shipped = '?' if d is None else ('●' if d == 'success' else '○')
+        sm = SMOKE.get(sha) if (SMOKE is not None and sha) else None
+        smoke = '?' if sm is None else ('●' if sm == 'success' else '○')
     pm = '●' if 'pm-reviewed' in labels(i) or (pr and 'pm-reviewed' in labels(pr)) else '○'
     if is_bug:
-        bugs = '●' if i['state'] == 'CLOSED' else '○'
+        bugs = i['state'] == 'CLOSED'
     else:
         pat = re.compile(rf'#{n}\b')
-        bugs = '○' if any(pat.search((b['title'] or '') + ' ' + (b['body'] or '')) for b in open_bugs) else '●'
-    if built != '●':
-        bugs = '○'
-    s = [built, tested, reviewed, pm, bugs]
-    done = '●' if all(x == '●' for x in s) else ('○' if '○' in s else '?')
-    return s + [done], pr
+        bugs = not any(pat.search((b['title'] or '') + ' ' + (b['body'] or '')) for b in open_bugs)
+    s = [scenario, built, reviewed, shipped, smoke, pm]
+    done = all(ok(x) for x in s) and merged and bugs
+    return s, pr, done
 
 
 rows = []
 for i in issues:
     area = next((l[5:] for l in labels(i) if l.startswith('area:')), None)
-    st, pr = stages(i)
+    st, pr, is_done = stages(i)
     rows.append({'n': i['number'], 'title': re.sub(r'^(change|bug|chore) · ', '', i['title']),
-                 'area': area, 'st': st, 'pr': pr, 'open': i['state'] == 'OPEN',
+                 'area': area, 'st': st, 'done': is_done, 'pr': pr, 'open': i['state'] == 'OPEN',
                  'blocking': 'launch-blocking' in labels(i),
                  'review': first_live_url(i.get('body'), (pr or {}).get('body'))})
 
@@ -119,7 +162,7 @@ root = sys.argv[1] if len(sys.argv) > 1 else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
 total = len(rows)
-done = sum(1 for r in rows if r['st'][5] == '●')
+done = sum(1 for r in rows if r['done'])
 header = f'{MILESTONE} · {days} days to freeze · {done} of {total} beta items done · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
 
 areas = []
@@ -128,32 +171,32 @@ for a in AREAS:
     rs = sorted((r for r in rows if r['area'] == a), key=lambda r: r['n'])
     filled = 0
     for k in range(6):
-        if rs and all(r['st'][k] == '●' for r in rs):
+        if rs and all(ok(r['st'][k]) for r in rs):
             filled += 1
         else:
             break
-    counts = [sum(1 for r in rs if r['st'][k] == '●') for k in range(6)]
+    counts = [sum(1 for r in rs if ok(r['st'][k])) for k in range(6)]
     unknown = sum(1 for r in rs if '?' in r['st'])
     if not rs:
         note = 'no beta items'
     else:
-        note = f'{counts[0]} of {len(rs)} built'
+        note = f'{counts[1]} of {len(rs)} built'
         if filled < 6:
-            note += f'; {sum(1 for r in rs if r["st"][filled] != "●")} waiting on {STAGES[filled]}'
+            note += f'; {sum(1 for r in rs if not ok(r["st"][filled]))} waiting on {STAGES[filled]}'
         if unknown:
             note += f'; {unknown} with a ?'
-        if any(r['blocking'] and r['open'] and r['st'][0] != '●' for r in rs):
+        if any(r['blocking'] and r['open'] and r['st'][1] != '●' for r in rs):
             behind.append(a)
     areas.append({'name': a, 'rows': rs, 'filled': filled, 'counts': counts, 'note': note,
-                  'done': counts[5]})
+                  'done': sum(1 for r in rs if r['done'])})
 
 if not behind:
     present = [x for x in areas if x['rows']]
-    overall = sum(1 for r in rows if r['st'][0] == '●') / max(1, total)
-    behind = [x['name'] for x in present if x['counts'][0] / len(x['rows']) < overall]
+    overall = sum(1 for r in rows if r['st'][1] == '●') / max(1, total)
+    behind = [x['name'] for x in present if x['counts'][1] / len(x['rows']) < overall]
 
 nxt = next((r for r in sorted(rows, key=lambda r: (not r['blocking'], r['n']))
-            if r['open'] and r['st'][:3] == ['●', '●', '●'] and r['st'][3] != '●'), None)
+            if r['open'] and all(ok(x) for x in r['st'][:5]) and r['st'][5] != '●'), None)
 unassigned = [r for r in rows if r['area'] is None]
 
 
@@ -235,7 +278,7 @@ document.getElementById('h').textContent=D.header;document.title=D.header;
 document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('');
 document.getElementById('areas').innerHTML=D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
- const rows=a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:''}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>';
+ const rows=a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>';
  return `<details><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${a.done} of ${a.total} done · ${esc(a.note)}</span></summary><div class="rows">${rows}</div></details>`}).join('');
 document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
 </script></main></body></html>
