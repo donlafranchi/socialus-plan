@@ -223,7 +223,8 @@ Each offered component's explanation, and the way an owner adds one, are new lau
 | A member's interest tags | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
 | Front door, the same for every Page, private ones included: name, default photo, description, withheld-announcements card | ● | ● | ● | ● | ● | ● | ● |
 | The Page's founder or seller, by display name | ✕ | ◐ inside the Page, if its creator shows it | ◐ the same | ◐ the same | ◐ the same | ◐ the same | ● |
-| Business phone, if the owner gives it (weekly hours hidden, data kept, 2026-10-05) | ✕ | ● | ● | ● | ● | ● | ● |
+| Website, and the Page's area-level location, by default; any contact field the owner flips to "everyone" (2026-10-07) | ● | ● | ● | ● | ● | ● | ● |
+| Business phone and Contact email, if the owner gives them, by default; any contact field the owner flips to "members" (weekly hours hidden, data kept, 2026-10-05) | ✕ | ● | ● | ● | ● | ● | ● |
 | Contents (location, tags, posts): a Page with no level | ✕ | ◐ what the owner makes visible to the MSA | ◐ the same, plus followers announcements | ● | ◐ as signed in, plus the gathering or post | ◐ as signed in | ● |
 | Contents: public Page | ✕ | ● | ● | ● | ● | ● | ● |
 | Contents: community-only Page | ✕ | ✕ | ◐ its announcements | ● | ◐ the gathering or post only | ✕ | ● |
