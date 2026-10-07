@@ -23,7 +23,7 @@ Maya runs a Saturday kids' craft table at the farmers market. She writes a post 
 
 ## Not this
 
-Any rule about text, topics, or Pages that serve children. Building any verification tier. An automated image check or human review before a photo is visible — ruled out 2026-09-30 and not for beta (2026-10-06). Known-image hash matching is a separate, later protection, not ruled out.
+Any rule about text, topics, or Pages that serve children. Building any verification tier. An automated image check or human review before a photo is visible — ruled out 2026-09-30 and not for beta (2026-10-06). Known-image hash matching stays planned in `socialus-legal`'s NCMEC plan (step 2); this scenario covers only the broader no-pictures-of-children policy.
 
 ## Why
 
@@ -35,4 +35,4 @@ Any rule about text, topics, or Pages that serve children. Building any verifica
 
 ### Why the uploader's word and reports (2026-10-06)
 
-**The PM, 2026-10-06 (`socialus-web` #221):** pre-screening every upload costs money and adds review work he can't staff before beta, so the protection is the attestation plus an instant hide on report. This reverses 2026-09-30's "the uploader affirms nothing": the upload now asks. **Known-image hash matching** (PhotoDNA or a free scanning service) is a separate, later protection and is not ruled out; it is in `socialus-legal`'s NCMEC plan. Once we are aware of apparent CSAM, through a report or a review, the reporting duty applies.
+**The PM, 2026-10-06 (`socialus-web` #221):** pre-screening every upload costs money and adds review work he can't staff before beta, so the protection is the attestation plus an instant hide on report. This reverses 2026-09-30's "the uploader affirms nothing": the upload now asks. **Known-image hash matching stays planned** in `socialus-legal`'s NCMEC plan (step 2, the Cloudflare CSAM Scanning Tool; open item: put Cloudflare in front of image delivery). This ruling covers only the broader no-pictures-of-children policy. Once we are aware of apparent CSAM, through a report or a review, the reporting duty applies.

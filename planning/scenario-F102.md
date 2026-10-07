@@ -28,6 +28,7 @@ On Tuesday a bakery's Post is reported as spam three times in an hour, twice fro
 11. **The PM gets one in-app summary on Friday morning**: waiting rows by severity, answers received, cool-downs started. Nothing else asks for attention midweek except severity 1.
 12. **Severity 4 restores itself in beta, narrowly (ruled B):** only when the poster answered, Haiku and Sonnet both suggest approve at ≥ 0.95 (Sonnet runs on every such candidate, not only below F100's escalation threshold), there is no coordinated-reporting flag, and the harness has cleared F100 criterion 11's targets on the severity-4 slice. The restore is a logged, reversible decision attributed to the AI, and the batch shows it as "Restored by AI" for a one-tap confirm or undo. Severities 1–3 never restore without a person.
 13. **Every upload and every post records the IP address and time it came from**, operator-only, kept one year and then deleted, so abuse and legal requests can be traced. It is shown to no member and used by no feature outside the report path.
+14. **Child-safety content (severity 1, apparent CSAM) is a legal tier, not a moderation judgement** (18 U.S.C. 2258A; `socialus-legal` `safety/ncmec-plan.md`): it never auto-restores, never goes back to the poster for an answer, gets no AI processing (F100 criterion 12), and is preserved and reported to NCMEC per the plan. The poster-answers-first rule (criteria 1–4) and narrow auto-restore (12) apply to every other tier.
 
 ## Not this
 
@@ -58,8 +59,6 @@ A score, rank or label on a person. Telling a reported member who reported them 
 ### Unattended time
 
 Hiding is the safe default, so midweek nothing needs a person: content that might be bad is already down, and the cost of waiting falls on content that is fine, which the poster's answer and the batch handle.
-
-[open-question owner=don raised=2026-10-05] **Apparent child sexual abuse material carries a US provider duty to report to NCMEC "as soon as reasonably possible" (18 U.S.C. 2258A).** That sits badly with a weekend batch and with the purge path (`socialus-web` `docs/purge-proposal.md`). New territory for the PM and counsel before production; not designed here. Beta's rule (F080: no images of children at all) narrows but does not remove it.
 
 ### Shadow mode against an empty Tuesday
 
