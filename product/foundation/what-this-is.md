@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # What this is
 
 Written by the PM for a physical sign at a farmers market — the clearest statement of the product produced so far, and what every description, pitch, or metadata string is checked against (not the specs, which describe mechanics). Internal until the PM says otherwise — not published anywhere.

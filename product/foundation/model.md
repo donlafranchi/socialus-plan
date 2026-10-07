@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # The model
 
 Stated by Don, 2026-09-10. Where any other document disagrees with this one, this one is right and the other is the thing to fix.

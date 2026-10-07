@@ -7,9 +7,10 @@
 > Every ratified decision whose tag binds the **planning** tier, newest first. `DECISIONS.md` holds
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **209 older decisions carry no tag yet and are not listed** — tagging is required from
+> **208 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-07** · ownership, payout — Members are SocialUs's investors: there are no shareholders and no VC/PE investors, and any payout goes only to members. The position "ownership, not profit-share" is rejected for good; it is never raised again
 - **2026-10-07** · pages, page-edit, contact — A Page's contact details each carry an "everyone" or "members" setting: website, hours (when shown) and the area-level location default to everyone; phone and the new Contact email default to members only. The owner flips a single field with a small globe/lock icon beside it (the (i) explainer sits on the icon); each field exists once, with no big toggles and no second section. Signed-out visitors are "everyone", signed-in members are "members". Free text on a Page is not scanned for email addresses
 - **2026-10-06** · copy, voice — The tone is approved: copy follows `voice-and-tone.md` § 3 "How we sound" (a subtle California ease, "work to live, not live to work") and § 4's before/after table. "Post" is the noun for the thing on a Page (a Post, Posts); the verbs around it stay outward ("Let people know what's on"; "Post it" is fine as a button), and "just posts", "share", "content" and feed language stay out
 - **2026-10-06** · moderation, reports, ai, uploads — Apparent child sexual abuse material (the child-safety tier, severity 1) is a legal requirement, not a moderation judgement: it never auto-restores, never goes back to the poster for an answer, gets no AI processing, and is preserved and reported to NCMEC per the plan

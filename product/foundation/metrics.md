@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Metrics
 
 The platform measures what happens inside the app — did members find each other, did something move them toward Flourishing — never local economic impact or community-health claims the app's own data can't support.

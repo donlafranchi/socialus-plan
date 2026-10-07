@@ -5,6 +5,8 @@ layer: why
 status: active
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # The people-first principle
 
 This platform is about people connecting, not about businesses. We're not anti-business — a person selling sourdough or plumbing houses is running a business and we want it to thrive. Size isn't the issue; **personality is.** A business that stays personal — owned and accountable to a named human or small group — is a person doing work. A business abstracted away from the people doing the work (a corporate shell, a PE rollup, a franchise the operator doesn't control) is a different kind of thing, and the schema refuses to model it.

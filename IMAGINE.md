@@ -1,3 +1,5 @@
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # IMAGINE
 
 Nothing here is a commitment. A heading and a few lines per idea, distilled from `product/exploration/` (23 files, now deleted — git history holds the full drafts). Scenarios may not cite this file.

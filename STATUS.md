@@ -1,6 +1,8 @@
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # STATUS
 
-> ## Generated 2026-10-05 · 21:30 UTC
+> ## Generated 2026-10-07 · 15:30 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -13,13 +15,13 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `a30f91e` (2026-10-05); `accepted-risks/*.json`;
+> `2a344f6` (2026-10-07); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
-Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 25 days out; feature freeze 2026-10-23, also soft. Production launch April–May 2027.
+Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 23 days out; feature freeze 2026-10-23, also soft. Production launch April–May 2027.
 
 **21 of 26 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
@@ -43,32 +45,32 @@ branch or a commit.
 
 ## In the code repo
 
-**82 issues open** in `socialus-web`, 10 launch-blocking:
+**84 issues open** in `socialus-web`, 12 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
-- #221 F080 · No pictures of children, from anyone — detection point needs Don
+- #221 F080 · Pictures of children: the uploader confirms, nothing is pre-screened, a report hides at once
 - #222 F081 · One signup for everyone: four fields, and the zip sets the metro
 - #223 F082 · One self-attestation before a first Page, selling and hosting alike
 - #246 bug · What one member can read about another: the signed-in half of #241, and four member tables open to anyone
 - #328 change · One expanding control at the bottom of Explore: search, filter, metro, map
 - #329 bug · The location pill at the top doesn't remember the member's metro
 - #330 change · The map opens on the chosen metro, searches within it, and remembers it
-- #331 change · Decide what the map shows by default, and with filters on
+- #337 bug · The owner's composer offers 'Who sees this: Anyone' on a private Page
 - #363 change · Page kinds: Business, Group, Organization — chosen, changeable, and shaping the Page
+- #475 change · Area markers for places without an exact address, and stacked pins spread apart
+- #477 bug · Duplicate Pages in production: 9 extra copies across 6 names (21 active)
 
-**86 PRs merged in the last fortnight.** The newest five:
-- #391 2026-10-05 bug #390: main's types check passes again
-- #387 2026-10-05 chore #386: skip Vercel previews for docs- and test-only pushes
-- #380 2026-10-05 change #304: the review page to F101 — Approve or Remove in one tap or swipe, with Undo
-- #377 2026-10-05 change #325 + #297: Anodised colours, and the report sheet on the one Sheet
-- #376 2026-10-05 chore #375: Browser CI job under 5 minutes
+**100 PRs merged in the last fortnight.** The newest five:
+- #474 2026-10-07 bug #439: the remaining read paths of an archived or deleted Page answer only its managers
+- #473 2026-10-07 bug #439: an archived or deleted Page reaches only its managers, by every path
+- #472 2026-10-07 change #458 + batch: the Page tidy and contained; Edit page in five cards; pencils; Posts row; location, email and archived-Page fixes (migration)
+- #471 2026-10-07 chore: the Browser job finds its merge base (every ready PR's Browser check fails)
+- #469 2026-10-07 bug #246: who edited a place and who made a tag are no longer readable by others
 
 ### Needs a look — not a claim that anything is wrong
 
 *A commit naming a ticket is not proof the ticket is done: partial work
 counts. Each row needs a look, not a close.*
 
-- **#84 open, but T159 appears on main** — chore · T159 is two different tickets — renumber one in ops-pattern
-- **#53 open, but T156 appears on main** — F059 · T156 · Browse renders Pages
 - **#51 open, but T154 appears on main** — F059 · T154 · Browse reads Pages, not Items
 - **#30 open, but T149 appears on main** — chore · T149 · Retire vendor routes for real
 - **#16 open, but T126 appears on main** — F056 · T126 · Edit shop — image, description, values
@@ -87,13 +89,21 @@ counts. Each row needs a look, not a close.*
   - an Announcement is at a Location
 - **7 object types declared**: Member (live), Page (live), Item (live), Location (live), Place (live), Announcement (live), Tag (live).
 - **Rejected as nouns (6)** - named so they stay rejected: Person, Creator, Organizer, Follower, Patron, Vendor.
-- **29 handlers, of which 18 write no declared link.**
+- **37 handlers, of which 26 write no declared link.**
   Not a fault on its own - a handler may legitimately touch no relationship -
   but an undeclared link lives here if it lives anywhere:
+  - builder.content_delete_all
+  - builder.content_set_visible
+  - group.archive
+  - group.delete
   - group.member_join
   - group.member_leave
   - group.post_delete
   - group.post_edit
+  - group.restore
+  - group.unclaimed_claim
+  - group.unclaimed_remove
+  - group.unclaimed_restore
   - item.publish
   - member.business_jurisdiction.remove
   - member.business_jurisdiction.set
@@ -111,35 +121,33 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — , 2026-10-05
+- **`deploy-health.yml`** — success, 2026-10-07
+  - Ontology declarations still match the code: success
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: 
-- **`ci.yml`** — , 2026-10-05
-  - Lint, types, build: 
-  - Migrations applied to production: success
-  - Browser: 
-  - Unit tests: 
+- **`ci.yml`** — failure, 2026-10-07
+  - Lint, types, build: success
+  - Unit tests: success
+  - Which suites: success
+  - Migrations applied to production: failure
+  - Browser: success
 
 ## Measured, not estimated
 
 - Copy: 584 strings across 118 files — source `docs/copy-inventory.md` on origin/main
-- Routes on origin/main: 28
-- Migrations on origin/main: 75
+- Routes on origin/main: 31
+- Migrations on origin/main: 85
 
 ## Deferred on purpose — and therefore easy to forget
 
 Ruled acceptable with a condition for looking again. The ruling itself is a
 dated line in `DECISIONS.md`; the register is `accepted-risks/`.
 
-**3 need a look now.**
+**2 need a look now.**
 
-- **observability: no error tracking in production** — **due in 11 days**
+- **observability: no error tracking in production** — **due in 9 days**
   - If forgotten: A runtime error for a real member is invisible. Nobody is paged, nothing is logged where anyone looks, and the first signal is a person giving up and not saying why. The DATABASE_URL outage went four months unnoticed for exactly this reason.
   - Look again if: ANY of: a member outside the team signs up; a bug is reported that nobody can reproduce; or 2026-10-16 passes with this still open.
-- **ci: playwright suite exists but no workflow runs it** — **due in 11 days**
-  - If forgotten: The end-to-end tests rot. Nobody runs them, they drift from the app, and the day someone needs them they no longer pass for reasons unrelated to the bug being chased — at which point they get deleted instead of fixed.
-  - Look again if: ANY of: a regression reaches production that a browser test would have caught; the Playwright suite fails to run locally when someone next tries it; or 2026-10-16 passes with this still open.
-- **storage: removed photo bytes stay fetchable by direct URL** — **due in 11 days**
+- **storage: removed photo bytes stay fetchable by direct URL** — **due in 9 days**
   - If forgotten: A photo the operator removed stays downloadable, indefinitely, by anyone who has or can guess its storage URL. For ordinary bad content that is tolerable. For illegal content it is not, and 'we kept it so it could be reversed' is not a defensible answer to a regulator, a police request, or the person in the photo.
   - Look again if: ANY of: the first report of illegal content reaches the review queue; a member asks for their own photo to be actually deleted rather than taken down; a takedown demand arrives from outside the platform; or 2026-10-16 passes (two weeks before launch) with this still open.
 - **data: two rows in public.places share the slug 'sacramento'** — review by 2026-11-30
@@ -158,34 +166,34 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (21)
+**Waiting on Don** (20)
 
-- 31d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:34](product/foundation/role-language.md#L34)
-- 28d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:46](product/foundation/goals.md#L46)
-- 28d · The flourishing thresholds (40 discretionary hours/week, 1.5× adequacy margin). A) adopt as the literal north-star targets everywhere. B) keep them illustrat… — [product/foundation/metrics.md:16](product/foundation/metrics.md#L16)
-- 23d · What triggers the LLM pass, and who approves its output? A) a scheduled job, proposals landing in a queue Don reviews. B) on demand, run when someone looks.… — [planning/scenario-F071.md:37](planning/scenario-F071.md#L37)
-- 22d · How does the search dictionary grow? A) from tags creators create — every new tag is a word a real person chose for their own thing. B) from logged zero-resu… — [planning/scenario-F071.md:41](planning/scenario-F071.md#L41)
-- 20d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
-- 19d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:254](product/foundation/nouns.md#L254)
-- 16d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
-- 16d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:61](product/ui/surfaces.md#L61)
-- 6d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:64](product/ui/surfaces.md#L64)
-- 5d · When "near me" returns, how does finding by neighbourhood fit "local = the whole metro" and "no distance shown"? A) A place filter the member types, not a ra… — [planning/scenario-F095.md:28](planning/scenario-F095.md#L28)
-- 5d · What does "sends traffic back" mean on a card? A) The card's main action opens the venue's own event page; SocialUs keeps the summary. B) A secondary "from t… — [planning/scenario-F096.md:30](planning/scenario-F096.md#L30)
-- 5d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
-- 5d · Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) Yes, exactly: an imported event is a publi… — [planning/scenario-F096.md:34](planning/scenario-F096.md#L34)
-- 5d · What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) Repor… — [planning/scenario-F096.md:36](planning/scenario-F096.md#L36)
-- 3d · Address-with-pin, neighbourhood list, or both, as recommended? Nothing is built until Don confirms. — [#315](https://github.com/donlafranchi/socialus-web/issues/315)
-- 1d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
-- 1d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
-- 1d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
-- 0d · Apparent child sexual abuse material carries a US provider duty to report to NCMEC "as soon as reasonably possible" (18 U.S.C. 2258A). That sits badly with a… — [planning/scenario-F102.md:62](planning/scenario-F102.md#L62)
-- 0d · Approve the "How we sound" section (subtle California ease, "work to live, not live to work"), its tone-by-context table and the before/after examples, or sa… — [product/foundation/voice-and-tone.md:51](product/foundation/voice-and-tone.md#L51)
+- 33d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
+- 30d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:48](product/foundation/goals.md#L48)
+- 30d · The flourishing thresholds (40 discretionary hours/week, 1.5× adequacy margin). A) adopt as the literal north-star targets everywhere. B) keep them illustrat… — [product/foundation/metrics.md:18](product/foundation/metrics.md#L18)
+- 25d · What triggers the LLM pass, and who approves its output? A) a scheduled job, proposals landing in a queue Don reviews. B) on demand, run when someone looks.… — [planning/scenario-F071.md:37](planning/scenario-F071.md#L37)
+- 24d · How does the search dictionary grow? A) from tags creators create — every new tag is a word a real person chose for their own thing. B) from logged zero-resu… — [planning/scenario-F071.md:41](planning/scenario-F071.md#L41)
+- 22d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
+- 21d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:259](product/foundation/nouns.md#L259)
+- 18d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
+- 18d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:61](product/ui/surfaces.md#L61)
+- 8d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:64](product/ui/surfaces.md#L64)
+- 7d · When "near me" returns, how does finding by neighbourhood fit "local = the whole metro" and "no distance shown"? A) A place filter the member types, not a ra… — [planning/scenario-F095.md:28](planning/scenario-F095.md#L28)
+- 7d · What does "sends traffic back" mean on a card? A) The card's main action opens the venue's own event page; SocialUs keeps the summary. B) A secondary "from t… — [planning/scenario-F096.md:30](planning/scenario-F096.md#L30)
+- 7d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
+- 7d · Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) Yes, exactly: an imported event is a publi… — [planning/scenario-F096.md:34](planning/scenario-F096.md#L34)
+- 7d · What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) Repor… — [planning/scenario-F096.md:36](planning/scenario-F096.md#L36)
+- 5d · Address-with-pin, neighbourhood list, or both, as recommended? Nothing is built until Don confirms. — [#315](https://github.com/donlafranchi/socialus-web/issues/315)
+- 3d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
+- 3d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
+- 3d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
+- 1d · Should a private Page's post be able to reach anyone? The 2026-09-30 ruling says "A public announcement from a community-only or private group Page currently… — [#337](https://github.com/donlafranchi/socialus-web/issues/337)
 
-**Cowork owes an answer** (2)
+**Cowork owes an answer** (3)
 
-- 4d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:61](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L61)
-- 0d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
+- 6d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:61](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L61)
+- 2d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
+- 1d · Badges are cut from beta, Locally owned included (DECISIONS 2026-10-06), but F037's eval still requires this claim card; retire F037 for beta or keep the car… — [socialus-web src/components/group/ShopPublicPage.tsx:394](https://github.com/donlafranchi/socialus-web/blob/main/src/components/group/ShopPublicPage.tsx#L394)
 
 ## Guard coverage
 
@@ -228,11 +236,27 @@ naming it. Five approved gating scenarios once had none, and nothing noticed.
 - **F101** (approved) · **no Issue** — approved and gating launch with nothing to build from
 - **F102** (approved) · **no Issue** — approved and gating launch with nothing to build from
 
-**Rulings that bind code: 131.** Each names its Issue or scenario, or says it has nothing to build;
+**Rulings that bind code: 143.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
 
 - **2026-10-04** The palette is option A, "Anodised": a white base, navy `#24405A` for actions, and gold on — names #24405, **which is no `socialus-web` Issue or PR**
-- **Nothing to build** (23), by their own tag: 2026-10-05 Vercel builds a preview only for main and for a branch whose…; 2026-10-05 Before production (spring 2027) there is a staging site: a s…; 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+- **Nothing to build** (26), by their own tag: 2026-10-05 socialus-web is public, so its GitHub Actions minutes are fr…; 2026-10-05 Economy until beta: migrations are batched into fewer, stric…; 2026-10-05 Until the 2026-10-23 feature freeze there are no previews: o…; 2026-10-05 The accepted risk "the browser test suite never runs in CI" …; 2026-10-05 Before production (spring 2027) there is a staging site: a s…; 2026-10-05 voice.md and tone.md are merged into one file, product/found…; 2026-10-05 Moderation is designed to run unattended: one person operate…; 2026-10-05 Beta is 2026-10-30, a soft target for testing in one metro, …; 2026-10-04 The decision rule: look at 2–3 established precedents with l…; 2026-10-04 Builder agents fill the app daily with a varied roster of in…; 2026-10-04 Build rules for one machine: at most 2 changes building or t…; 2026-10-04 Before a PR is put in front of Don (needs-don), a separate r…; 2026-10-04 We need to be successful first to help our members, and we w…; 2026-10-02 Gatherings saved with the old 7-hour timezone error are thro…; 2026-10-01 Design tokens live in the app code as the single source of t…; 2026-10-01 We disclose member data only in response to valid legal proc…; 2026-09-30 Visibility currently defaults to social norms: what people w…; 2026-09-30 We are careful and supportive of our members, and we ask the…; 2026-09-30 The platform comes first, then its members, and every ruling…; 2026-09-30 Between members, we currently show a display name and avatar…; 2026-09-27 When a newer decision contradicts an older one, the newer on…; 2026-09-27 Cross-cutting documents are generated from inline markers, n…; 2026-09-27 Grep-built, never hand-kept: a fact lives inline where it is…; 2026-09-27 An open question is an inline marker where it was raised, no…; 2026-09-21 [guard-proves-itself] is the sixth process absolute: a check…; 2026-09-21 plainlanguage.gov governs user-facing copy, alongside voice.…
+
+## Docs by review age
+
+93 authored docs in `product/` and `planning/`; **0 not reviewed in 30 days**, and **90 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
+
+- `product/systems/places.md` — 28 days (last commit 2026-09-09)
+- `product/systems/location.md` — 28 days (last commit 2026-09-09)
+- `product/systems/action-layer.md` — 28 days (last commit 2026-09-09)
+- `product/foundation/people-first.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F069.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F068.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F065.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F055.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F049.md` — 28 days (last commit 2026-09-09)
+- `planning/scenario-F048.md` — 28 days (last commit 2026-09-09)
 
 ## What this run could not verify
 

@@ -6,6 +6,8 @@ status: active
 reviewed: 2026-10-05
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # The value test
 
 **Don, 2026-10-05: "go."** Every new scenario answers these in its `## Why`, one line each, before anyone writes acceptance criteria (from F103 on; `scripts/lint.sh` checks it). They ask whether a thing belongs on SocialUs at all, not how to build it.

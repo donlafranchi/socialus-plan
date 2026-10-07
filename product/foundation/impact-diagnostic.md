@@ -10,6 +10,8 @@ owns:
   - benefit-assessment
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Impact Diagnostic — Benefits the Few vs the Many
 
 > Companion to [`goals.md`](goals.md). The constitution names *wealth circulation over wealth extraction* as the single thing the platform holds to. This doc is the diagnostic for assessing impact: how to recognize when an organization's benefits flow to the few at the expense of the many, and the toolkit of Member-aligned treatments the platform can scaffold in response. The point isn't to be against any industry — it's to see clearly who a given arrangement serves, and to scaffold alternatives where the answer is "the few."
