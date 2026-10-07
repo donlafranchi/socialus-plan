@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-07 · 16:11 UTC
+> ## Generated 2026-10-07 · 16:13 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -124,11 +124,11 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — , 2026-10-07
+- **`deploy-health.yml`** — success, 2026-10-07
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: 
+  - Ontology declarations still match the code: success
 - **`ci.yml`** — , 2026-10-07
-  - Lint, types, build: 
+  - Lint, types, build: success
   - Which suites: success
   - Unit tests: 
   - Migrations applied to production: success
@@ -247,7 +247,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-94 authored docs in `product/` and `planning/`; **0 not reviewed in 30 days**, and **91 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+95 authored docs in `product/` and `planning/`; **0 not reviewed in 30 days**, and **92 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/places.md` — 28 days (last commit 2026-09-09)
