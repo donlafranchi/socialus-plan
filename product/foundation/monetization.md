@@ -6,6 +6,8 @@ status: active
 last-updated: 2026-09-12
 ---
 
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision.
+
 # Monetization
 
 No venture capital, ever — an exit-aligned funder is structurally misaligned with Member Flourishing as the north star, and VC pressure on growth metrics pushes toward the engagement-optimization failure modes the platform exists to refuse. No single revenue line may dominate (the working ceiling is 50–60%) — over-reliance on any one source, including member fees, is a lever any one party could pull to redirect the platform's incentives.

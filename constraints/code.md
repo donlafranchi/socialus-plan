@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. `DECISIONS.md` holds
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **209 older decisions carry no tag yet and are not listed** — tagging is required from
+> **208 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-07** · pages, page-edit, contact — A Page's contact details each carry an "everyone" or "members" setting: website, hours (when shown) and the area-level location default to everyone; phone and the new Contact email default to members only. The owner flips a single field with a small globe/lock icon beside it (the (i) explainer sits on the icon); each field exists once, with no big toggles and no second section. Signed-out visitors are "everyone", signed-in members are "members". Free text on a Page is not scanned for email addresses
