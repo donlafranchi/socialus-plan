@@ -7,6 +7,7 @@ date: 2026-09-14
 depends: [F077]
 approved: 2026-09-14 — Don's ruling
 amended: 2026-09-30 — Don: widened from pictures of children to sensitive content (children, animals and pets, anyone who can't fend for themselves), while we grow into a platform with staff. Earlier the same day: no attestation and no detection; a message at posting states the rule; reports are the backstop. (2026-09-27: no unlock; a photo rule, not a topic rule.)
+amended: 2026-10-06 — the PM: the uploader confirms a photo shows no children; still nothing pre-screened; a report hides the photo at once pending operator review.
 ---
 ## Story
 
@@ -14,15 +15,15 @@ Maya runs a Saturday kids' craft table at the farmers market. She writes a post 
 
 ## Acceptance
 
-1. **No image containing a child, an animal or pet, or anyone who can't fend for themselves is permitted, from any member, while we grow into a platform with staff.** The rule is stated, not detected: nothing checks a photo before it is visible, and the uploader affirms nothing.
+1. **No image containing a child, an animal or pet, or anyone who can't fend for themselves is permitted, from any member, while we grow into a platform with staff.** The rule is stated and affirmed, not detected: the uploader confirms a photo shows no children, and nothing checks a photo before it is visible.
 2. **Text is not in scope.** A Page, post or description about a children's activity publishes normally; only an image is not permitted.
 3. **No toggle, setting, tier, request or workaround allows it**, for any member. Lifting it, when there is staff, needs a new ruling, not a configuration change.
-4. A published image reported as containing a child is caught by F078: a children-category flag hides at any bar (F078 criterion 8) and texts Don.
-5. **Wherever a member posts, the app asks them not to post sensitive content, and why.** Placeholder copy in the app's copy module ([public-is-draft]); #221 carries the draft. The tone is the reciprocity principle: *"We are careful and supportive of our members and we ask that they be the same towards us"* (Don, 2026-09-30).
+4. A published image reported as containing a child is caught by F078: a children-category flag hides at any bar (F078 criterion 8, `socialus-web` #284) and texts the operator, pending review.
+5. **Wherever a member posts, the app asks them not to post sensitive content, and why; and each photo upload asks them to confirm it shows no children.** Placeholder copy in the app's copy module ([public-is-draft]); #221 carries the draft. The tone is the reciprocity principle: *"We are careful and supportive of our members and we ask that they be the same towards us"* (Don, 2026-09-30).
 
 ## Not this
 
-Any rule about text, topics, or Pages that serve children. Building any verification tier. An automated image check, human review before a photo is visible, or a per-photo attestation — all considered and ruled out 2026-09-30.
+Any rule about text, topics, or Pages that serve children. Building any verification tier. An automated image check or human review before a photo is visible — ruled out 2026-09-30 and not for beta (2026-10-06). Known-image hash matching is a separate, later protection, not ruled out.
 
 ## Why
 
@@ -31,3 +32,7 @@ Any rule about text, topics, or Pages that serve children. Building any verifica
 ### Why a message and reports, not a check (2026-09-30)
 
 **Nothing in the repo can see what is in a picture**, and every Page photo uploads from the browser to a public bucket. A check therefore meant a person holding every photo, or the uploader's word. Don chose neither: the rule is said where people post, and a report takes a photo down at once, whatever the metro's bar (F078 criterion 8). **What this accepts:** a picture of a child is public until someone reports it.
+
+### Why the uploader's word and reports (2026-10-06)
+
+**The PM, 2026-10-06 (`socialus-web` #221):** pre-screening every upload costs money and adds review work he can't staff before beta, so the protection is the attestation plus an instant hide on report. This reverses 2026-09-30's "the uploader affirms nothing": the upload now asks. **Known-image hash matching** (PhotoDNA or a free scanning service) is a separate, later protection and is not ruled out; it is in `socialus-legal`'s NCMEC plan. Once we are aware of apparent CSAM, through a report or a review, the reporting duty applies.

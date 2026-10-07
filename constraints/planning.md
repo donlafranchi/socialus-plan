@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-06** · uploads, posting, reports, moderation, copy — Pictures of children are currently handled on the uploader's word plus member reports: uploaders confirm a photo shows no children, nothing is pre-screened, and a report hides the photo at once (the existing sensitive-content report hides at any bar, `socialus-web` #284) pending operator review
 - **2026-10-06** · badges, pages, launch — Badges stay cut from beta, Locally owned included; the kind line stays
 - **2026-10-06** · bug-reports, ops, money — Member bug reports are currently triaged by an agent in GitHub Actions, paid by an Anthropic API key with a hard monthly spend cap; it starts on the cheapest capable model (Haiku 4.5) for labelling and dedupe, and escalates to a mid model only for reproduction and draft fixes if Haiku proves too weak
 - **2026-10-06** · page-url, post-url, location-url, place-url — Old URL shapes are currently deleted, not redirected: no forwarding is built
@@ -128,7 +129,6 @@
 - **2026-09-30** · signup, onboarding, you, locality — The zip is kept. Nobody picks a metro: the zip decides it at signup, and a member who moves changes their zip on `/you` and the metro follows
 - **2026-09-30** · reports, moderation — Misusing reports: three strikes
 - **2026-09-30** · copy, explore, venue — "Near you", "Browse nearby" and "mi away" come out. "In Sacramento" stands in until there is a second metro
-- **2026-09-30** · page-photos, posting, moderation — A picture of a child is caught by a message at posting and by reports. There is no attestation and no detection
 - **2026-09-30** · reports, moderation — Anything a member can post that could cause offence is reportable at launch: photos, Pages, announcements and posts
 - **2026-09-30** · reports, moderation — "Threat of harm" is a seventh report category. It hides the content at once, whatever the metro's bar, and texts Don
 - **2026-09-30** · reports, moderation, copy — Don raises a metro's hide bar when his daily review runs past 30 minutes
