@@ -10,6 +10,7 @@
 > **209 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-06** · bug-reports, ops, money — Member bug reports are currently triaged by an agent in GitHub Actions, paid by an Anthropic API key with a hard monthly spend cap; it starts on the cheapest capable model (Haiku 4.5) for labelling and dedupe, and escalates to a mid model only for reproduction and draft fixes if Haiku proves too weak
 - **2026-10-06** · page-url, post-url, location-url, place-url — Old URL shapes are currently deleted, not redirected: no forwarding is built
 - **2026-10-06** · page-url — A Page's address is currently its ID only, `socialus.org/g/<id>` (for example `/g/tzsxja`), and `groups.slug` is frozen. Kept option: a cosmetic name tail, `/g/<id>/<name>`, may be added later; it would be ignored on read and redirect to the current name, so no link breaks
 - **2026-10-06** · post-url — A post (announcement, event, later a listing) currently has its own flat address, `socialus.org/p/<id>` (8-char ID), not nested under its Page
