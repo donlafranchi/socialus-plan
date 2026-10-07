@@ -28,6 +28,8 @@ Regular people are getting squeezed from every direction — wages flat, costs u
 
 We track that as **Member Flourishing**: more time to live (hours not eaten by work, commute, caregiving) and more money to live (income above the cost of getting by). Both have to rise, or a proposal doesn't ship.
 
+*Pointer (PM, 2026-10-07):* the dual mandate is more resources and more time, neither moving negatively, and members set their own balance. The platform makes that possible and does not dictate it. The entity-level principles are in the private `socialus-legal` repo (`entity/principles.md`).
+
 The one thing refused, categorically: **extraction** — taking value from people without giving something back.
 
 ## The promises
