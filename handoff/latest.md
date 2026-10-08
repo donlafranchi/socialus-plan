@@ -1,6 +1,6 @@
 # Handoff — 5pm, 2026-10-07
 
-Built from GitHub, not from memory. Overwrite this file at each handoff. The day's per-area list is in `DASHBOARD.md` (Past 12h under each area); the colour view is `dashboard/index.html`.
+Built from GitHub, not from memory. Overwrite this file at each handoff. The day's per-area list is in `DASHBOARD.md` (Past 12h under each area); the colour view is `dashboard/status-dashboard.html`.
 
 **Beta 11-06: 55 of 68 issues closed. Feature freeze 2026-10-30 (proposed). Beta 2026-11-06, open from the waitlist and signup, Sacramento only (council #1, option B).**
 
