@@ -32,7 +32,7 @@ The wording — Don writes it. Any stored source, referrer, or campaign field. A
 
 ### Copy requirements — not wording
 
-**The heading must not narrow the product to farmers markets.** It currently reads *"Sell at a farmers market? Get listed."* Markets are one example among many; the page's examples are illustrative and must read as illustrative.
+**The heading must not narrow the product to farmers markets.** It currently reads *"Sell at a farmers market? Get a Page."* Markets are one example among many; the page's examples are illustrative and must read as illustrative.
 
 **Three person-noun violations are live on this page today** *(2026-09-15)*: the eyebrow **"For vendors"**, the primary button **"Sign up as a vendor →"**, and the heading **"Share with another vendor."** Each is a user-facing string and each fails criterion 6. *(Four further occurrences are in code comments and identifiers, which the rule does not reach.)*
 
