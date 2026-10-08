@@ -99,7 +99,8 @@ This is new territory. Counsel and Don must decide:
 ### T3 — Future
 
 - **Hidden signals.** Full suite of private signals for identity, health, politics, survivors.
-- Agent-backed question box to discover signals by asking anything.
+- Agent-backed question box to discover signals by asking anything. Answers stay evasive so people figure signals out.
+  - Example: **"What's the blue circle in some Page corners?"** — "For people who like blue dots."
 - Safety guardrails and moderation tools.
 - Counsel approval on data handling.
 
@@ -131,10 +132,9 @@ This is new territory. Counsel and Don must decide:
 
 ## Help and seeker questions (for #534)
 
-See full starter FAQ in the Help system issue. Seeker questions that hint at signals:
+See full starter FAQ in the Help system issue. Seeker questions that hint at signals (T1):
 
 1. **"Is there anything hidden in here?"** — "Maybe. Keep looking."
 2. **"Are there any Easter eggs?"** — "Why do you ask?"
 3. **"How do I find people like me?"** — "Start with what you care about. The rest might surprise you."
-4. **"What's the blue circle in some Page corners?"** — "Something for people who are watching."
-5. **"Are there features I haven't discovered yet?"** — "That's half the fun."
+4. **"Are there features I haven't discovered yet?"** — "That's half the fun."
