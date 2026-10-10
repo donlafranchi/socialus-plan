@@ -480,8 +480,8 @@ Each change gives where it lives, what it says now, what it should say, and why.
 - Why: Em dash and missing contraction.
 
 **5.13.** `components/group/SocialHandleFields.tsx:46, 81` · Where else to find you (links form) · *T3*
-- Now: Just your username — we'll build the link. / aria-label: ${PLATFORM_LABELS[platform]} — ${field.prefix}
-- Change to: Just your username. We'll build the link. / ${PLATFORM_LABELS[platform]}, ${field.prefix}
+- Now: Just your username — we'll build the link. / aria-label: {platform label} — ${field.prefix}
+- Change to: Just your username. We'll build the link. / {platform label}, ${field.prefix}
 - Why: Em dashes.
 
 **5.14.** `components/group/OwnerBar.tsx:32` · Owner strip on a Page · *T3*
