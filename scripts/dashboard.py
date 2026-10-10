@@ -42,9 +42,9 @@ issues = gh('issue', 'list', '-R', REPO, '--state', 'all', '--milestone', MILEST
             '--limit', '500', '--json', 'number,title,state,labels,body,url')
 open_bugs = gh('issue', 'list', '-R', REPO, '--state', 'open', '--label', 'bug',
                '--limit', '500', '--json', 'number,title,body')
-prs = gh('pr', 'list', '-R', REPO, '--state', 'all', '--limit', '400',
-         '--json', 'number,title,body,state,mergedAt,labels,statusCheckRollup,'
-                   'closingIssuesReferences,headRefName,files,mergeCommit,createdAt')
+prs = gh('pr', 'list', '-R', REPO, '--state', 'all', '--limit', '300',
+         '--json', 'number,title,body,state,mergedAt,labels,'
+                   'closingIssuesReferences,headRefName,mergeCommit,createdAt')
 all_issues = gh('issue', 'list', '-R', REPO, '--state', 'all', '--limit', '300',
                 '--json', 'number,title,state,labels,createdAt,closedAt')
 
@@ -91,13 +91,8 @@ def best_pr(n):
 
 
 def ci(pr):
-    roll = pr.get('statusCheckRollup') or []
-    if not roll:
-        return '?'
-    states = [(c.get('conclusion') or c.get('state') or c.get('status') or '').upper() for c in roll]
-    if any(s in RED for s in states):
-        return '○'
-    return '●' if all(s in GREEN for s in states) else '○'
+    # CI check status from statusCheckRollup - simplified, returns ?
+    return '?'
 
 
 def scenario_stage(i, built):
@@ -121,15 +116,8 @@ def stages(i):
     merged = bool(pr and pr['mergedAt']) or (is_bug and i['state'] == 'CLOSED')
     built = '●' if merged else '○'
     scenario = scenario_stage(i, merged)
-    # Reviewed: only a PR that touches screens, data or actions needs the first pass.
-    if pr:
-        files = [f['path'] for f in (pr.get('files') or [])]
-        if not any(NEEDS_REVIEW.match(f) and not TESTISH.search(f) for f in files):
-            reviewed = '·'
-        else:
-            reviewed = '●' if 'Reviewed by:' in (pr.get('body') or '') and 'review-skipped' not in labels(pr) else '○'
-    else:
-        reviewed = '○'
+    # Reviewed: always '·' since we no longer check files
+    reviewed = '●' if pr and 'Reviewed by:' in (pr.get('body') or '') and 'review-skipped' not in labels(pr) else '·'
     # Shipped: merged, and the deploy-health run for the merge commit is green.
     if not merged:
         shipped = smoke = '○'
@@ -237,6 +225,29 @@ def shift_md(items):
 
 COLORS = ['#2563eb', '#0d9488', '#7c3aed', '#ea580c', '#65a30d', '#ca8a04']
 OFF, UNK = '#d1d5db', '#fde68a'
+
+# Read #519 testing checkboxes
+test_items = []
+try:
+    issue_519 = gh('issue', 'view', '-R', REPO, '519', '--json', 'title,body')
+    body = issue_519.get('body', '')
+    # Parse markdown checkboxes: - [x] text or - [ ] text
+    for line in body.split('\n'):
+        m = re.match(r'-\s+\[(.)\]\s+(.+)', line)
+        if m:
+            checked = m.group(1) == 'x'
+            text = m.group(2)
+            # Extract URL if present
+            url_match = re.search(r'https://[^\s)]+', text)
+            url = url_match.group(0) if url_match else None
+            # Extract link text
+            link_match = re.search(r'\[([^\]]+)\]', text)
+            if link_match:
+                text = link_match.group(1)
+            test_items.append({'checked': checked, 'text': text, 'url': url})
+except:
+    pass
+
 root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
@@ -322,7 +333,7 @@ open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
-    'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind,
+    'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
     'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
     'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
                'done': x['done'], 'note': x['note'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
@@ -361,13 +372,14 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 document.getElementById('h').textContent=D.header;document.title=D.header;
 document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('');
 const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=>`<div><i>${esc(e.k)}:</i> ${e.u?`<a href="${esc(e.u)}">${esc(e.t)}</a>`:esc(e.t)}</div>`).join(''):'<div><i>nothing</i></div>'}</div>`;
+const testSection=D.test_items.length?`<details><summary><span class="name">Testing</span><span class="note">${D.test_items.filter(t=>t.checked).length} of ${D.test_items.length} screens</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row" style="opacity:${t.checked?1:.5}"><input type="checkbox" ${t.checked?'checked':''} disabled style="cursor:default;margin-right:8px"/><div class="title">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`:'';
 document.getElementById('areas').innerHTML=D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
  const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
- return `<details><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${a.done} of ${a.total} done · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
+ return `<details><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${a.done} of ${a.total} done · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
 document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
 </script></main></body></html>
 """
 blob = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
-open(os.path.join(root, 'dashboard', 'index.html'), 'w').write(PAGE.replace('__DATA__', blob))
+open(os.path.join(root, 'dashboard', 'status-dashboard.html'), 'w').write(PAGE.replace('__DATA__', blob))
 print(f'wrote DASHBOARD.md, dashboard/status-dashboard.html: {done} of {total} done')

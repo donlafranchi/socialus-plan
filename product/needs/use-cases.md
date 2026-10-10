@@ -10,7 +10,7 @@ reviewed: 2026-10-05
 
 **What changed (2026-10-05):** each case's status is now `ROADMAP.md`'s (beta, later, cut) instead of the b1/b2 bundles; each names the Page purpose it runs on; the Producer and Convener "roles" are relations to a Page; C4 follows the journey's new Exchange family, and selling as an individual with no Page is gone, since a member has no type and no public profile.
 
-Real situations, drawn from Sacramento and the surrounding region, that the platform exists to dissolve. The Run Club exists. Ferrari Fisheries exists. Every scenario's capabilities trace back here. **Beta** ships 2026-10-30. **Later** — the problem is canon, the design isn't finished or lost a trade against beta. **Cut** — on the beta list until 2026-10-05, may return. **Far horizon** — kept so the shape isn't forgotten.
+Real situations, drawn from Sacramento and the surrounding region, that the platform exists to dissolve. The Run Club exists. Ferrari Fisheries exists. Every scenario's capabilities trace back here. **Beta** ships 2026-11-06, feature freeze 2026-10-30. **Later** — the problem is canon, the design isn't finished or lost a trade against beta. **Cut** — on the beta list until 2026-10-05, may return. **Far horizon** — kept so the shape isn't forgotten.
 
 ## Who does what — relations to a Page, not kinds of people
 
