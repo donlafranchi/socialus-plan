@@ -332,6 +332,13 @@ if nxt:
 else:
     cta = 'none: nothing is waiting on you.'
 out.append(f'**Your next action:** {cta}')
+# Meta-layer trial block (TRIAL, started 2026-10-10): tracker link, trial health, next score. Regenerated each run.
+try:
+    th = os.path.join(os.environ.get('PROJECTS', os.path.expanduser('~/Projects')), 'socialus-ops', 'scripts', 'trial_health.py')
+    block = subprocess.run(['python3', th, '--block'], capture_output=True, text=True, timeout=120).stdout.strip()
+except Exception:
+    block = ''
+out += ['', block or '### Meta-layer trial\n\nUnavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89']
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
