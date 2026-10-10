@@ -55,7 +55,7 @@ Also for counsel: the live copy already says members are owners in spirit ("a me
 
 This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that file still applies.
 
-**Who we are.** SocialUs: the people's platform. Built for the people and owned by the members. We use the same tools as everyone else, but for the people they come from, not for shareholders or executives. We collect only what helps the members it comes from, and we use it for them. See `reclaim-standing-rule-2026-10-10.md`. We do not use the word "socialism" in copy.
+**Who we are.** SocialUs: the people's platform. Built for the people and owned by the members. Internal direction only, not copy and not a promise: see `reclaim-standing-rule-2026-10-10.md`. We do not use the word "socialism" in copy.
 
 **How we sound.** Relaxed, plain, unhurried. A friendly person in Sacramento talking, not a brand. The California ease comes from rhythm and word choice (short, easy, no rush), never from slang.
 
@@ -184,8 +184,8 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.20.** `src/lib/landing-copy.ts:93` · /landing/about "What this is for" third paragraph · *T2*
 - Now: SocialUs is never extractive. It doesn’t sell your data. It doesn’t sell placement. It doesn’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run.
-- Change to: SocialUs is never extractive. What we collect is used for the members it comes from, not to enrich anyone else. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s built for the people and owned by the members.
-- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built for / owned by) without any promise about money. Note: we do collect data (name, email, zip, a phone check), so copy says what it is for, never that we collect none. See `reclaim-standing-rule-2026-10-10.md`.
+- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s built for the people and owned by the members.
+- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built for / owned by) without any promise about money. Note: we do collect data (name, email, zip, a phone check), so copy never says we collect none. No public statement about how data is used yet; that is internal direction.
 - For socialus-legal: "Owned by the members" is new on a public page. It makes no promise about money, but counsel should confirm it reads safely next to the settled ruling that members are the investors and the only people paid out.
 
 **1.21.** `src/lib/landing-copy.ts:115` · /landing/about "What we're building" closing line · *T2*
