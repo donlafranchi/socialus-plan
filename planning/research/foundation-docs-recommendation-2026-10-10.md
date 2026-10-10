@@ -29,47 +29,45 @@ date: 2026-10-10
 
 Problems: the same banner is pasted into 18 files; `goals.md` is cited by 8 files; "never" appears in rules where only "never extractive" is allowed; no doc says when it was last true.
 
-## Proposed set: six docs in a new `foundation/` folder
+## Revised: one page, not six (the PM asked for light)
 
-| Doc | What goes in it | Comes from |
-|---|---|---|
-| **Mission** | What we are for and for whom; the sign and the elevator line; the North Star; how we know (what we measure and refuse to) | `goals.md`, `what-this-is.md`, `metrics.md` |
-| **Philosophy** | How we weigh a decision: people first, the member-benefit test, the six questions, who benefits the few vs the many, the look-first decision rule | `people-first.md`, `value-test.md`, `impact-diagnostic.md`, the decision rule |
-| **Rules** | What we currently do and don't do to a member: content takedown, data privacy, the opt-out default, who sees who | `ABSOLUTES.md`, `policy.md`, privacy lines in `DECISIONS.md` |
-| **Promises to Members** | Surplus goes back to the community; members are the investors and the only ones paid out; no outside capital; no selling member data; fees favour no member | `goals.md` promises, `monetization.md`, `DECISIONS.md` |
-| **How We Earn** | How the platform earns, the funding ladder, what the income plan sets | `monetization.md`, `DECISIONS.md` |
-| **Voice** | How copy reads: words we use, words we retire, how we sound | `voice-and-tone.md` |
+**Precedents, fetched 2026-10-10:** all three put mission, principles and commitments on **one page**.
+- Wikipedia's [Five Pillars](https://en.wikipedia.org/wiki/Wikipedia:Five_pillars): five headed statements, including "no firm rules".
+- The co-operative movement's [Statement on the Cooperative Identity](https://www.ica.coop/en/cooperatives/cooperative-identity): a definition, six values, seven principles. The closest match to members who are investors.
+- Mozilla's [Manifesto](https://www.mozilla.org/en-US/about/manifesto/): a short mission, 10 one- or two-sentence principles, and a pledge.
+Path: well-worn. Copy that shape.
 
-Left where they are: the spine (`nouns`, `verbs`, `model`, `systems/`, `ui/`) is schema and mechanics, not philosophy. Method rules (process absolutes, pipeline) stay in `socialus-ops`; Rules links to them. Entity and legal details stay in `socialus-legal` and appear nowhere here.
+**One doc, called the Charter.** (Not "foundation"; rename freely: Commitments, Our Promise.) About 40 lines, five sections:
 
-## How it is organised
+| Section | Holds |
+|---|---|
+| Mission | One sentence on what we are for and for whom; the North Star |
+| What we believe | The few principles we weigh decisions by (members first, look first, who benefits the many) |
+| Promises to members | Surplus goes back; members are the investors and the only ones paid out; no outside capital; no selling member data |
+| What we do and don't | The rules for how the platform treats a member (takedown, data privacy, opt-out default) and how we earn |
+| Where to read more | Links, not copies: Voice guide, the ontology, the method |
 
-```
-socialus-plan/
-  foundation/          six generated docs + an index  (read these)
-  DECISIONS.md         the ledger every statement traces to (edit this)
-  product/             spine and systems, unchanged
-  IMAGINE.md  ROADMAP.md  unchanged
-```
-Each `DECISIONS.md` line gains one tag, `[about: mission|philosophy|rules|promises|earn|voice]`. That tag is how a ruling reaches its doc.
+**Cap:** at most 40 statements. If a regen would go over, it stops and asks which to merge. That is what keeps it light.
 
-## Format
+**Stays separate, not folded in:** `voice-and-tone.md` (a 190-line style guide for writers, not a statement), the spine and ontology (below), `DECISIONS.md` (the ledger the Charter is built from), method rules in `socialus-ops`.
 
-- Top of every doc: **As of YYYY-MM-DD**.
-- Each statement: one line, present tense, dated, no hedging, the newest ruling wins. Example:
-  - We currently take no outside capital. (2026-09-12)
-  - Members are the investors and the only people paid out. (2026-10-07)
-  - We currently take a share of transaction income on member commerce; the income plan sets the rate. (2026-10-07)
-  - We currently don't sell member data. (2026-09-12)
-  - We currently don't sell visibility by default. (2026-09-30)
-- Voice: "we currently do / don't". The only "never" is "never extractive". No personal names, no legal or entity detail.
-- A statement with no ruling behind it is not written. An open question is listed once, under "Open", with its date.
+## Is it a duplicate of the ontology?
+
+No. They answer different questions and do not overlap.
+- **Charter:** *why* and *what we stand for*. Nothing in it defines a noun.
+- **Ontology** (`nouns.md`, `verbs.md`, `src/ontology/*`): *what exists* in the product (Member, Page, post) and how it connects. The Charter links to it and never restates it.
+- Real duplication on the ontology side (`nouns.md` and `objects.ts` and `registry.json`) is already handled: the registry is generated from code.
+- Where the Charter overlaps today is `goals.md` and `what-this-is.md` defining the product in prose; the Charter keeps one sentence and points to the ontology.
+
+## Format (unchanged)
+
+As-of date at the top. One line per statement, present tense, dated, newest wins, "we currently do / don't", the only "never" is "never extractive". No legal or entity detail, no personal names. A line with no ruling behind it is not written.
 
 ## Generated, not maintained
 
-One regen skill per doc: `regen-mission`, `regen-philosophy`, `regen-rules`, `regen-promises-to-members`, `regen-how-we-earn`, `regen-voice`. Each rebuilds its doc whole from tagged `DECISIONS.md` lines (newest wins via `[replaces]`), shows the as-of date, and opens a PR. They run with the Friday launch report and on request. `goals.md` and the docs it absorbs are deleted once the new ones land; git is the archive; the 8 files that cite `goals.md` are repointed.
+One skill, `regen-charter`: reads `DECISIONS.md` lines tagged `[charter: mission|belief|promise|rule]` (newest wins via `[replaces]`), rebuilds the page whole, shows the as-of date, opens a PR. Runs with the Friday launch report and on request. `goals.md` is deleted when it lands and its 8 citations repointed.
 
-What the build would involve: tag the 391 lines (an agent pass, a PM spot-check), write six skills, repoint citations, add a lint check that every `foundation/` line has a date and a source.
+Build: tag the lines that belong (an agent pass; the PM spot-checks), write one skill, repoint citations, add a lint cap and a date-and-source check.
 
 ## Two things to know
 
@@ -78,6 +76,6 @@ What the build would involve: tag the 391 lines (an agent pass, a PM spot-check)
 
 ## Decision for the PM
 
-- **A (recommended):** the new `foundation/` folder, six generated docs, `goals.md` retired, DECISIONS tagged, regen skills on the Friday run.
-- **B:** same six docs, but inside `product/foundation/` (no new folder); only `goals.md` retired, the others stay as sources.
-- **C:** three docs only: Mission and Philosophy, Rules and Promises, Voice.
+- **A (recommended):** one Charter page as above, one regen skill, `goals.md` retired.
+- **B:** keep six separate docs (the earlier version of this note).
+- **C:** the Charter, but keep `goals.md`'s name and make it the generated page.
