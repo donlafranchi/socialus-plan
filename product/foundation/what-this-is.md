@@ -23,6 +23,10 @@ The strikethrough on "nother" is deliberate — the line reads both ways: "Not a
 
 A local discovery and community-building platform — the organizing backbone for decent, caring people to find each other, meet up, trade, volunteer, and buy from and sell to their neighbors. Someone with a new idea — a workshop, something homemade, any idea at all — can put it to the community, and others signal real interest before it exists, turning ideas into local economic activity.
 
+## Direction
+
+*Internal, early, not a promise (Don, 2026-10-10).* SocialUs is the people's platform. We're not taking money from traditional investors. We'd rather be owned by our members, and how that works is still open. We don't want a few people getting rich off our members. When a feature uses member data, ask who it comes from and who gains. If it's someone else, check with Don.
+
 ## The elevator speech
 
 > Better Together helps you find and support the people near you. Meet your neighbors. Trade what you make. Volunteer where it's needed. Got an idea — a workshop, something homemade? Share it. Your neighbors can show they want it before you even start. This is for people who care about each other and the place they live. Join us, and help shape the future — together.
