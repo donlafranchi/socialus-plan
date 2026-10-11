@@ -105,7 +105,7 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 | Tester | Binary criteria; the Sample rules; closed and empty states | Real wish, Sample and closed data | Samples that behave like real ones | A Sample taken for a real offer |
 | Operator | Remove a hostile or off-topic wish fast, with the report path | Low | A person needed midweek; approving every wish first | The Missing-pets pattern: emotional wishes, scams, requests that should not be made |
 | Guardian | A plain list of what may not be requested; no safety warranty on a built thing; replies are public | One paragraph in Terms | Any promise that SocialUs vouches for a builder or the result | A built thing fails or hurts someone |
-| Backer (someone who funds an idea) | To know exactly what they get back and what happens if it falls through, before they chip in | Their amount, held until the terms say it is released | Vague terms; any sense they are buying a stake | A pledge to something that never ships, with no clear way back |
+| Backer (someone who funds an idea) | To know exactly what they get back and what happens if it falls through, before they chip in | Their amount, held until the terms say it is released | Vague terms; any sense they are buying a stake | A pledge to something that does not ship, with no clear way back |
 | Scout | See precedents | none | none | Thumbtack charges the pro to quote; this takes nothing to reply |
 
 **Flag for socialus-legal (no detail):** liability and safety of a built item, payments, what may not be requested, and everything under backing (section 6a).
