@@ -112,6 +112,7 @@ def load():
         rows = parse(text, lb)
         cov = coverage(m.group(1) if m else os.path.basename(p)[:4])
         fid0 = m.group(1) if m else os.path.basename(p)[:4]
+        rep_date = (gh('api', f'repos/{WEB}/commits?path={p}&per_page=1', '-q', '.[0].commit.committer.date') or '').strip()
         lm = last_merge(fid0)
         smoked_feat = bool(green and lm and green > lm)
         pm_parent = bool(parents.get(fid0, set()) & pmset)
@@ -122,7 +123,7 @@ def load():
             r['pm'] = 'yes' if (r['built'] == 'yes' and (pm_parent or any(n in pmset for n in r['issues']))) else 'no'
         met = sum(1 for r in rows if r['built'] == 'yes')
         feats.append({'id': m.group(1) if m else os.path.basename(p)[:4], 'title': (m.group(2) if m else '').strip()[:90], 'area': area,
-                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'last_merge': lm, 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
+                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
                       'url': f'https://github.com/{WEB}/blob/main/{p}'})
     return feats
 

@@ -1,0 +1,62 @@
+name: dashboard
+
+# Regenerates DASHBOARD.md and dashboard/status-dashboard.html from live state every 6 hours, so the roll-up no longer
+# waits for a handoff or a person. It reads the criterion-level feature reports (scripts/criteria.py), the Issues, PRs
+# and runs in socialus-web, and appends the meta-layer trial block. It commits only when the content changed beyond the
+# "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
+on:
+  schedule:
+    - cron: '20 */6 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  regenerate:
+    name: Regenerate DASHBOARD
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the planning repo
+        uses: actions/checkout@v5
+        with:
+          path: socialus-plan
+          fetch-depth: 0
+      # Public repos, so the default token reads them. They sit under _projects/ because the scripts look for siblings.
+      - name: Check out the code repo
+        uses: actions/checkout@v5
+        with:
+          repository: donlafranchi/socialus-web
+          path: _projects/socialus-web
+          fetch-depth: 0
+      - name: Check out the method repo
+        uses: actions/checkout@v5
+        with:
+          repository: donlafranchi/socialus-ops
+          path: _projects/socialus-ops
+          fetch-depth: 0
+      - name: Regenerate
+        working-directory: socialus-plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROJECTS: ${{ github.workspace }}/_projects
+          STATUS_CODE: ${{ github.workspace }}/_projects/socialus-web
+        run: python3 scripts/dashboard.py .
+      - name: Commit, but only if the content changed
+        working-directory: socialus-plan
+        run: |
+          set -euo pipefail
+          git config user.name  'dashboard workflow'
+          git config user.email 'actions@github.com'
+          norm() { sed -E 's/updated [0-9: -]+ PT//' "$1"; }
+          git show HEAD:DASHBOARD.md > /tmp/prev.md 2>/dev/null || { cp /dev/null /tmp/prev.md; }
+          norm /tmp/prev.md > /tmp/a.md; norm DASHBOARD.md > /tmp/b.md
+          if cmp -s /tmp/a.md /tmp/b.md; then echo "No change beyond the time; nothing to commit."; exit 0; fi
+          git add DASHBOARD.md dashboard/status-dashboard.html
+          git commit -m "docs: regenerate dashboard (scheduled)"
+          git push
