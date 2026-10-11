@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 18:45 UTC
+> ## Generated 2026-10-11 · 18:52 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `1ad1838` (2026-10-11); `accepted-risks/*.json`;
+> `ea48b0c` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -45,7 +45,7 @@ branch or a commit.
 
 ## In the code repo
 
-**163 issues open** in `socialus-web`, 30 launch-blocking:
+**162 issues open** in `socialus-web`, 30 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
 - #568 F081 · criterion 4: a member changes their zip on /you and their metro follows
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #677 2026-10-11 chore #676: generated BUILD-LOG and eval table, beta date and repo name, purge note as built
 - #675 2026-10-11 docs: re-rank the phone checklist after each tick
 - #674 2026-10-11 docs: a plain reply on the phone checklist files a note bug
 - #671 2026-10-11 chore #670: a comment on the phone checklist files the bug (PM: not OK)
 - #669 2026-10-11 chore #668: doc inventory generator, as-of dates, dead docs removed
-- #666 2026-10-11 bug #555: the member overflow-menu tap step could not be timed
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -150,18 +150,18 @@ counts. Each row needs a look, not a close.*
 ## What CI last said
 
 - **`deploy-health.yml`** — success, 2026-10-11
-  - Ontology declarations still match the code: success
   - Database reachable from the deployment: success
+  - Ontology declarations still match the code: success
 - **`ci.yml`** — , 2026-10-11
   - Unit tests: 
   - Which suites: success
-  - Lint, types, build: success
   - Migrations applied to production: success
+  - Lint, types, build: success
   - Browser: 
 
 ## Measured, not estimated
 
-- Copy: 584 strings across 118 files — source `docs/copy-inventory.md` on origin/main
+- **No copy inventory found. Do not substitute a grep** — regenerate the inventory instead.
 - Routes on origin/main: 38
 - Migrations on origin/main: 106
 
@@ -202,7 +202,7 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 29d · What triggers the LLM pass, and who approves its output? A) a scheduled job, proposals landing in a queue Don reviews. B) on demand, run when someone looks.… — [planning/scenario-F071.md:37](planning/scenario-F071.md#L37)
 - 28d · How does the search dictionary grow? A) from tags creators create — every new tag is a word a real person chose for their own thing. B) from logged zero-resu… — [planning/scenario-F071.md:41](planning/scenario-F071.md#L41)
 - 26d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
-- 25d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:259](product/foundation/nouns.md#L259)
+- 25d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:265](product/foundation/nouns.md#L265)
 - 22d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
 - 22d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:63](product/ui/surfaces.md#L63)
 - 12d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:66](product/ui/surfaces.md#L66)
@@ -216,9 +216,9 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 7d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
 - 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:65](product/systems/contributions.md#L65)
 - 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
-- 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:46](planning/scenario-F103.md#L46)
-- 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:54](product/systems/places.md#L54)
-- 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:56](product/systems/places.md#L56)
+- 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:48](planning/scenario-F103.md#L48)
+- 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:56](product/systems/places.md#L56)
+- 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:58](product/systems/places.md#L58)
 
 **Cowork owes an answer** (3)
 
