@@ -36,6 +36,8 @@ No login. For each community, for the month: what **came in**, what the **platfo
 
 ## Give-back: the community decides
 
+*"Community" is undefined here. Proposed, not accepted (F103 draft): a community is a town ring, a Census Place or county remainder, and a fund belongs to one; `places.md` § Proposed.*
+
 Participatory budgeting, per community:
 
 1. **Propose** — two weeks. Any member may propose a use.
