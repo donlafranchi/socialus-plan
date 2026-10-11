@@ -8,7 +8,7 @@ authored: Claude agent, 2026-10-10, at Don's request (voice-dictated)
 
 # Copy voice pass: laid-back, plain, the people's platform (2026-10-10)
 
-> **Every change in this report is Draft until Don approves it, one by one** (Don, 2026-10-10). Nothing is applied in `socialus-web`. Ownership wording is softened to "built with members" in 1.8, 1.14, 1.20, 1.23 and 1.26 (Don, 2026-10-10: no commitments yet).
+> **Every change in this report is Draft until Don approves it, one by one** (Don, 2026-10-10). Nothing is applied in `socialus-web`. Ownership wording is replaced in 1.8, 1.14, 1.20, 1.23 and 1.26 (Don, 2026-10-10: no commitments yet). Default: "built to serve its members". Where a line needs more weight (About, mission): "created to benefit its members first and foremost".
 
 **Report only.** No copy in `socialus-web` has changed. Read against `socialus-web` `main` at `3315ec8`. After Don approves, a later pass applies these. Path: well-worn for the plain-voice cleanup (the same plain, human, no-slang approach as [Mailchimp's voice and tone guide](https://styleguide.mailchimp.com/voice-and-tone/), [Apple's HIG on writing](https://developer.apple.com/design/human-interface-guidelines/writing) and [Monzo's tone of voice](https://monzo.com/tone-of-voice/)). The tagline and ownership lines touch locked copy and legal exposure, so they need dated `DECISIONS.md` lines (see *Decisions this needs*).
 
@@ -21,7 +21,7 @@ authored: Claude agent, 2026-10-10, at Don's request (voice-dictated)
 ### The five biggest changes
 
 1. **Say the tagline and ownership where people first meet the name.** Site title, search and share description, share image, footer and the landing headline become "SocialUs: the people's platform", and "near you" goes. (Section 1.)
-2. **Put "built for the people, with its members" on About and the signup screen**, without any promise about money, and move flat claims on data and selling to "we currently don't". (Sections 1 and 3.)
+2. **Put "built to serve its members" on About and the signup screen**, without any promise about money, and move flat claims on data and selling to "we currently don't". (Sections 1 and 3.)
 3. **One error voice.** About 31 different failure lines, some showing developer prefixes like `report.create:` and `group.update:` to members, become "That didn't go through. Mind trying again?" or a plain one-line fix. (Sections 6 and 7, plus the error lines inside every other section.)
 4. **An em dash sweep, led by the browser tab.** Every page title and shared link ends in "— SocialUs" today. It becomes "| SocialUs". About 40 strings in all carry an em dash. (Section 1, and throughout.)
 5. **Absolutes become "we currently don't".** Flat "never", "nothing else, ever", "no charge" and "gone for good" lines on signup, onboarding, the waitlist, Privacy and the delete-Page sheet. "Never extractive" stays as the one allowed "never". (Sections 3, 9, 10.)
@@ -57,7 +57,7 @@ Also for counsel: ownership wording is out of the proposals for now; the live co
 
 This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that file still applies.
 
-**Who we are.** SocialUs: the people's platform. Built for the people, with its members. Internal direction only, not copy and not a promise: see `reclaim-standing-rule-2026-10-10.md`. We do not use the word "socialism" in copy.
+**Who we are.** SocialUs: the people's platform. Built to serve its members. Internal direction only, not copy and not a promise: see `reclaim-standing-rule-2026-10-10.md`. We do not use the word "socialism" in copy.
 
 **How we sound.** Relaxed, plain, unhurried. A friendly person in Sacramento talking, not a brand. The California ease comes from rhythm and word choice (short, easy, no rush), never from slang.
 
@@ -65,7 +65,7 @@ This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that
 |---|---|
 | Short, easy sentences with contractions. "Have a look." "No rush." | Slang: stoked, dude, rad, gnarly, vibes, epic, legit, surf puns. |
 | Invite, don't push. "Come on in." "Mind trying again?" | Hype and urgency. "Don't miss out." "Hurry." "Now!" |
-| Say what it is plainly. "Built for the people, with its members." | Any promise of dividends, payouts, earnings, profit or returns. |
+| Say what it is plainly. "Built to serve its members." | Any promise of dividends, payouts, earnings, profit or returns. |
 | For data, selling and ads, say "we currently don't…". | Absolutes: "never", "always", "guaranteed", "no fees". The one allowed "never" is "never extractive". |
 | Own errors calmly and say what to do next. | Form-speak: "Invalid input", "Submit", "must be", "is required". |
 | One light touch per screen at most. Most strings need none. | Warmth or jokes on errors, safety, reports, legal, and sign-in screens. Those stay plain. |
@@ -133,7 +133,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.8.** `src/lib/landing-copy.ts:13` · /landing three verb lines · *T1*
 - Now: Shape your community, and help build what comes next.
-- Change to: Help build what comes next. It’s built for the people, with its members.
+- Change to: Help build what comes next. It’s built to serve its members.
 - Status: **Draft**
 - Why: Puts the ownership idea on the front door in plain words, with no promise about money.
 
@@ -151,7 +151,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.11.** `src/lib/landing-copy.ts:58` · /landing members line · *T1*
 - Now: Other apps call you users. We call you members. We’re in this together, and this is for us.
-- Change to: Other apps call you users. We call you members, because this is built with the people in it. We’re in this together.
+- Change to: Other apps call you users. We call you members, because it’s built to serve the people in it. We’re in this together.
 - Status: **Draft**
 - Why: Says the ownership idea once, plainly. "Belongs to" is not a promise about money.
 
@@ -169,7 +169,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.14.** `src/lib/copy.ts:28` · Signup and onboarding "what this app is" line · *T1*
 - Now: This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together.
-- Change to: SocialUs is the people's platform, built for the people and with its members. [Don's 2026-10-01 line follows, unchanged.]
+- Change to: SocialUs is the people's platform, built to serve its members. [Don's 2026-10-01 line follows, unchanged.]
 - Status: **Draft**
 - Why: Don's words stay. One line above them carries the tagline on the first screen a new member sees.
 
@@ -205,9 +205,9 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.20.** `src/lib/landing-copy.ts:93` · /landing/about "What this is for" third paragraph · *T2*
 - Now: SocialUs is never extractive. It doesn’t sell your data. It doesn’t sell placement. It doesn’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run.
-- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s built for the people, with its members.
+- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s created to benefit its members first and foremost.
 - Status: **Draft**
-- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built for / built with) without any promise about money. Note: we do collect data (name, email, zip, a phone check), so copy never says we collect none. No public statement about how data is used yet; that is internal direction.
+- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built to serve / created to benefit) without any promise about money. Note: we do collect data (name, email, zip, a phone check), so copy never says we collect none. No public statement about how data is used yet; that is internal direction.
 - Ownership wording is out for now (Don, 2026-10-10: no commitments yet). Nothing here for counsel on this line.
 
 **1.21.** `src/lib/landing-copy.ts:115` · /landing/about "What we're building" closing line · *T2*
@@ -224,7 +224,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.23.** `src/lib/landing-copy.ts:127` · /landing/about company steps (last two) · *T2*
 - Now: A member body, so people have a real say in what happens where they live. / A structure that locks the mission in, so this can’t be sold out from under the people on it.
-- Change to: Built with the members: a member body, so people have a real say in what happens where they live. / A structure that keeps the mission in place, so this can’t be sold out from under the people on it.
+- Change to: Built to serve the members: a member body, so people have a real say in what happens where they live. / A structure that keeps the mission in place, so this can’t be sold out from under the people on it.
 - Status: **Draft**
 - Why: Names the ownership step in plain words.
 - For socialus-legal: Forward-looking structural commitments (public benefit corporation, member body, a "lock" on the mission). They read as promises about future governance; counsel should check them before they go public.
@@ -238,13 +238,13 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.25.** `src/lib/landing-copy.ts:139` · /landing/about "Who this is set up for" last paragraph · *T2*
 - Now: Other apps call you users. A user is someone a product is done to. A member is someone it belongs with. We’re in this together, and this is for us.
-- Change to: Other apps call you users. A user is someone a product is done to. A member is someone it’s built with. We’re in this together.
+- Change to: Other apps call you users. A user is someone a product is done to. A member is someone it’s built to serve. We’re in this together.
 - Status: **Draft**
 - Why: "Belongs to" carries the owned-by-members idea. "Belongs with" is vague.
 
 **1.26.** `src/lib/text-pages.ts:22` · /about page (live today, one paragraph) · *T2*
 - Now: This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together.
-- Change to: SocialUs is the people's platform. Built for the people, with its members. [Don's 2026-10-01 paragraph stays below, unchanged.]
+- Change to: SocialUs is the people's platform. Created to benefit its members first and foremost. [Don's 2026-10-01 paragraph stays below, unchanged.]
 - Status: **Draft**
 - Why: The paragraph is Don's ruled wording, so it is kept. The tagline and the ownership line go above it so the live About page says the new thing.
 
