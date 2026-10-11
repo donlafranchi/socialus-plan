@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 18:52 UTC
+> ## Generated 2026-10-11 · 19:07 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -152,12 +152,12 @@ counts. Each row needs a look, not a close.*
 - **`deploy-health.yml`** — success, 2026-10-11
   - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
-- **`ci.yml`** — , 2026-10-11
-  - Unit tests: 
+- **`ci.yml`** — success, 2026-10-11
+  - Unit tests: success
   - Which suites: success
   - Migrations applied to production: success
   - Lint, types, build: success
-  - Browser: 
+  - Browser: success
 
 ## Measured, not estimated
 
@@ -216,7 +216,7 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 7d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
 - 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:65](product/systems/contributions.md#L65)
 - 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
-- 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:48](planning/scenario-F103.md#L48)
+- 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:50](planning/scenario-F103.md#L50)
 - 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:56](product/systems/places.md#L56)
 - 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:58](product/systems/places.md#L58)
 
@@ -281,7 +281,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-107 authored docs in `product/` and `planning/`; **8 not reviewed in 30 days**, and **104 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+109 authored docs in `product/` and `planning/`; **8 not reviewed in 30 days**, and **106 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/location.md` — 32 days (last commit 2026-09-09)
