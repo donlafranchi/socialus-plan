@@ -2,25 +2,38 @@
 
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any no fee language is retired.
 
-# SocialUs — launch 2026-10-30, 20 days left
+# SocialUs — launch 2026-10-30, 18 days left
 
 ## Built
+
+## Building
+- F044: F044
+- F045: F045
+- F046: F046
+- F056: A producer edits a shop that already exists
+- F057: Someone who isn't selling yet finds the way in
+- F058: A member reports something, and the operator can take a photo down
 - F059: A newcomer browses, and finds the neighbourhood
+- F060: Someone starts something without opening a shop
+- F061: Someone creates a Page worth showing people
+- F065: Someone follows something
+- F069: A non-business Page resolves everywhere, and holding several is ordinary
+- F070: Every Page has a face, even without a photo
 - F072: A Page owner announces something, with a time on it
+- F074: A series repeats
 - F076: A person outside an open metro joins its waitlist
+- F077: People who actually interact are not hidden from each other; everyone else sees a display name
+- F078: Flagged content hides itself immediately, and the poster is told why
 - F080: No sensitive content, while we grow into a platform with staff
 - F081: Everyone signs up the same way, and the zip sets the metro
 - F082: Anyone publishing something others show up for takes one step first, and nothing is checked
 - F091: What's happening, today and this week
+- F092: Narrowing happens in a modal that writes what it did
 - F093: A signed-out visitor sees that something is happening, and is asked in to read it
 - F099: Every post shows a picture, and every Page can have a Page picture
+- F100: An AI reads every reported Post first, and a person still makes the call
 - F101: One scannable page of flagged and reviewed Posts, decided in one tap
 - F102: The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
-
-## Building
-- F077: People who actually interact are not hidden from each other; everyone else sees a display name
-- F078: Flagged content hides itself immediately, and the poster is told why
-- F100: An AI reads every reported Post first, and a person still makes the call
 
 ## Next
 
@@ -85,10 +98,10 @@
 
 Ruled acceptable, with a condition for looking again. Source: `accepted-risks/`.
 
-- **observability: no error tracking in production** — **due in 6 days**
+- **observability: no error tracking in production** — **due in 5 days**
   - If forgotten: A runtime error for a real member is invisible. Nobody is paged, nothing is logged where anyone looks, and the first signal is a person giving up and not saying why. The DATABASE_URL outage went four months unnoticed for exactly this reason.
   - Look again if: ANY of: a member outside the team signs up; a bug is reported that nobody can reproduce; or 2026-10-16 passes with this still open.
-- **storage: removed photo bytes stay fetchable by direct URL** — **due in 6 days**
+- **storage: removed photo bytes stay fetchable by direct URL** — **due in 5 days**
   - If forgotten: A photo the operator removed stays downloadable, indefinitely, by anyone who has or can guess its storage URL. For ordinary bad content that is tolerable. For illegal content it is not, and 'we kept it so it could be reversed' is not a defensible answer to a regulator, a police request, or the person in the photo.
   - Look again if: ANY of: the first report of illegal content reaches the review queue; a member asks for their own photo to be actually deleted rather than taken down; a takedown demand arrives from outside the platform; or 2026-10-16 passes (two weeks before launch) with this still open.
 - **data: two rows in public.places share the slug 'sacramento'** — review by 2026-11-30
