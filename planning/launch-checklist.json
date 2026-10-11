@@ -1,0 +1,13 @@
+[
+  {
+    "id": "ncmec-cybertipline",
+    "text": "Register SocialUs with the NCMEC CyberTipline, switch off the manual form, enable Cloudflare CSAM scanning.",
+    "fires_at": [
+      {"event": "entity setup", "expected": "early 2027", "happened_on": null},
+      {"event": "production launch", "expected": "April-May 2027", "not_before": "2027-04-01"}
+    ],
+    "why": "During beta apparent CSAM is reported through NCMEC's public CyberTipline form, which cannot take images; registration and hash scanning replace it. Entity specifics live in socialus-legal.",
+    "runbook": "https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md",
+    "source": "DECISIONS 2026-10-05 and 2026-10-06 (child-safety tier); the PM, 2026-10-11"
+  }
+]
