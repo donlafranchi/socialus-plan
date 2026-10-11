@@ -226,27 +226,104 @@ def shift_md(items):
 COLORS = ['#2563eb', '#0d9488', '#7c3aed', '#ea580c', '#65a30d', '#ca8a04']
 OFF, UNK = '#d1d5db', '#fde68a'
 
-# Read #519 testing checkboxes
+# Layer 3: live testing, the checkboxes in #519 (body and comments)
+TEST_ISSUE = 519
 test_items = []
 try:
-    issue_519 = gh('issue', 'view', '-R', REPO, '519', '--json', 'title,body')
-    body = issue_519.get('body', '')
-    # Parse markdown checkboxes: - [x] text or - [ ] text
-    for line in body.split('\n'):
-        m = re.match(r'-\s+\[(.)\]\s+(.+)', line)
-        if m:
-            checked = m.group(1) == 'x'
-            text = m.group(2)
-            # Extract URL if present
-            url_match = re.search(r'https://[^\s)]+', text)
-            url = url_match.group(0) if url_match else None
-            # Extract link text
-            link_match = re.search(r'\[([^\]]+)\]', text)
-            if link_match:
-                text = link_match.group(1)
-            test_items.append({'checked': checked, 'text': text, 'url': url})
-except:
-    pass
+    t = gh('issue', 'view', '-R', REPO, str(TEST_ISSUE), '--json', 'body,comments')
+    for text in [t.get('body') or ''] + [c.get('body') or '' for c in t.get('comments') or []]:
+        for line in text.split('\n'):
+            m = re.match(r'\s*[-*]\s+\[([ xX])\]\s+(.+)', line)
+            if m:
+                u = re.search(r'https://[^\s)]+', m.group(2))
+                lt = re.search(r'\[([^\]]+)\]', m.group(2))
+                test_items.append({'checked': m.group(1) != ' ', 'text': lt.group(1) if lt else m.group(2), 'url': u.group(0) if u else None})
+except subprocess.CalledProcessError:
+    test_items = None
+
+# Layer 1: criterion fulfillment. Scenario criteria x the phases a feature report records.
+PHASES = ['built', 'checked', 'reviewed', 'shipped', 'smoked', 'pm']
+PROJECTS = os.environ.get('PROJECTS', os.path.expanduser('~/Projects'))
+REPORTS = os.path.join(PROJECTS, 'socialus-web', 'build-log', 'reports')
+
+
+def meta(path):
+    head = open(path).read(1500)
+    g = lambda k: (re.search(rf'^{k}:\s*(.+)$', head, re.M) or [None, ''])[1].strip()
+    return g('status'), g('gates'), g('title')
+
+
+def n_criteria(path):
+    body = open(path).read().split('## Acceptance', 1)[-1].split('\n## ', 1)[0]
+    return len(re.findall(r'^\d+\.\s', body, re.M))
+
+
+def cells(row):
+    return [c.strip() for c in row.strip().strip('|').split('|')]
+
+
+def yes(v):
+    return v.lower().lstrip('*').startswith('yes')
+
+
+def parse_report(path):
+    txt = open(path).read()
+    roll = {}
+    m = re.search(r'\|\s*\d+ criteria\s*\|(.+)\|', txt)
+    if m:
+        c = [re.match(r'\d+', x.strip()) for x in m.group(1).split('|')]
+        roll = {k: int(v.group(0)) for k, v in zip(PHASES, c) if v}
+    sec = txt.split('## Per criterion', 1)[-1].split('\n## ', 1)[0]
+    lines = [l for l in sec.split('\n') if l.startswith('|')]
+    if len(lines) < 3:
+        return None
+    head = [h.lower() for h in cells(lines[0])]
+    col = lambda name: next((i for i, h in enumerate(head) if h.startswith(name)), None)
+    ix = {k: col(n) for k, n in zip(('built', 'checked', 'smoked', 'pm'), ('built', 'checked', 'smoked', 'pm'))}
+    crits = []
+    for l in lines[2:]:
+        c = cells(l)
+        if not c[0].isdigit():
+            continue
+        g = lambda k: c[ix[k]] if ix[k] is not None and ix[k] < len(c) else 'unknown'
+        built = yes(g('built'))
+        st = {'built': built, 'checked': yes(g('checked')), 'smoked': yes(g('smoked')), 'pm': yes(g('pm'))}
+        n_built = roll.get('built', 0)
+        for k in ('reviewed', 'shipped'):
+            st[k] = built and roll.get(k, 0) >= n_built
+        unknown = any(g(k).lower().startswith('unknown') for k in ('built', 'checked'))
+        crits.append({'n': int(c[0]), 'text': c[1], 'done': sum(st[k] for k in PHASES),
+                      'built': built, 'unknown': unknown})
+    return crits
+
+
+reports = {}
+if os.path.isdir(REPORTS):
+    for d, _, fs in os.walk(REPORTS):
+        for f in fs:
+            m = re.match(r'(F\d{3})-.*\.md$', f)
+            if m:
+                reports[m.group(1)] = os.path.join(d, f)
+
+crit_rows = []
+for f in sorted(os.listdir(os.path.join(PLAN, 'planning'))):
+    m = re.match(r'scenario-(F\d{3})\.md$', f)
+    if not m:
+        continue
+    fid = m.group(1)
+    path = os.path.join(PLAN, 'planning', f)
+    status, gates, title = meta(path)
+    if status not in ('approved', 'building'):
+        continue
+    crits = parse_report(reports[fid]) if fid in reports else None
+    crit_rows.append({'id': fid, 'title': title, 'gates': gates, 'report': crits is not None,
+                      'n': len(crits) if crits else n_criteria(path),
+                      'cells': [{**c, 'blocker': gates == 'launch' and not c['built'] and not c['unknown']} for c in crits] if crits else []})
+no_report = [r['id'] for r in crit_rows if not r['report']]
+unknown_cells = sum(1 for r in crit_rows for c in r['cells'] if c['unknown'])
+for r in crit_rows:
+    for c in r['cells']:
+        c['rank'] = 'blocker' if c['blocker'] else c['done']
 
 root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
@@ -332,18 +409,43 @@ if nxt:
 else:
     cta = 'none: nothing is waiting on you.'
 out.append(f'**Your next action:** {cta}')
-# Meta-layer trial block (TRIAL, started 2026-10-10): tracker link, trial health, next score. Regenerated each run.
+# Layer 2: meta-layer trial block (TRIAL, started 2026-10-10). Regenerated each run.
 try:
-    th = os.path.join(os.environ.get('PROJECTS', os.path.expanduser('~/Projects')), 'socialus-ops', 'scripts', 'trial_health.py')
+    th = os.path.join(PROJECTS, 'socialus-ops', 'scripts', 'trial_health.py')
     block = subprocess.run(['python3', th, '--block'], capture_output=True, text=True, timeout=120).stdout.strip()
 except Exception:
     block = ''
-out += ['', block or '### Meta-layer trial\n\nUnavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89']
+block = block or '### Meta-layer trial\n\nUnavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89'
+
+maxc = max([r['n'] for r in crit_rows] + [1])
+L1 = ['## Criterion fulfillment', '',
+      '*One row per approved or building scenario, one column per criterion. Cell = phases passed of 6 (built, checked, reviewed, shipped, smoked, PM looked): `0` none started, `6` all passed, `X` a launch-gating criterion not built, `?` the report could not tell, `-` no such criterion, `n/r` no feature report yet. Source: `socialus-web/build-log/reports/`.*', '',
+      '| Scenario | Gate | ' + ' | '.join(str(i) for i in range(1, maxc + 1)) + ' |', '|---|---|' + '---|' * maxc]
+for r in crit_rows:
+    if r['report']:
+        cs = [('?' if c['unknown'] else ('X' if c['blocker'] else str(c['done']))) for c in r['cells']]
+    else:
+        cs = ['n/r'] * r['n']
+    cs += ['-'] * (maxc - len(cs))
+    L1.append(f'| {r["id"]} {r["title"][:60]} | {r["gates"] or "-"} | ' + ' | '.join(cs) + ' |')
+L1 += ['', f'**Data gaps:** {len(no_report)} of {len(crit_rows)} scenarios have no feature report ({", ".join(no_report) or "none"}) - run `regen-feature-report`; {unknown_cells} `?` cell(s) in reports that exist. A `?` or `n/r` is a data problem, not progress.', '']
+L3 = ['## Live testing', '']
+if test_items is None:
+    L3.append(f'Could not read #{TEST_ISSUE}.')
+elif not test_items:
+    L3.append(f'No checkboxes found in [#{TEST_ISSUE}](https://github.com/{REPO}/issues/{TEST_ISSUE}) (body or comments): nothing to show. The click-through sheet lives outside the Issue; put one `- [ ] screen` line per screen in the Issue to feed this.')
+else:
+    L3.append(f'{sum(t["checked"] for t in test_items)} of {len(test_items)} screens checked.')
+    L3 += ['', *[f'- [{"x" if t["checked"] else " "}] ' + (f'[{t["text"]}]({t["url"]})' if t['url'] else t['text']) for t in test_items]]
+L3.append('')
+next_line = out.pop()
+final = out[:4] + [next_line, ''] + L1 + L3 + ['<details><summary><b>By ticket</b> · stages per area (the earlier view)</summary>', ''] + out[4:] + ['', '</details>', '', block]
+out = final
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
-    'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
+    'header': header, 'crit': crit_rows, 'maxc': maxc, 'gaps': {'no_report': no_report, 'unknown': unknown_cells}, 'block': block, 'test_issue': TEST_ISSUE, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items or [], 'test_ok': test_items is not None,
     'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
     'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
                'done': x['done'], 'note': x['note'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
@@ -372,6 +474,9 @@ summary::-webkit-details-marker{display:none}.name{font-weight:650}.note{grid-co
 .box.unk{background:var(--unk)}.title{font-size:.92rem}.links{grid-column:2;font-size:.8rem;color:var(--mute)}a{color:#2563eb}
 .shift{margin:8px 0 2px;padding:8px 10px;border-radius:8px;background:var(--bg);font-size:.82rem}.shift b{display:block;margin-bottom:2px}.shift div{padding:1px 0}.shift i{font-style:normal;color:var(--mute)}
 .foot{margin-top:18px;padding:14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.foot p{margin:4px 0}
+table.crit{border-collapse:separate;border-spacing:3px;width:100%;font-size:.78rem}table.crit th{font-weight:600;color:var(--mute);text-align:center}table.crit td.sc{text-align:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:260px}
+table.crit td.c{width:30px;height:26px;text-align:center;border-radius:4px;font-weight:700;color:#fff}.gap{margin:8px 0;padding:8px 10px;border-radius:8px;background:var(--unk);font-size:.82rem}
+.trial{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 14px;margin:14px 0;font-size:.85rem}.trial h3{font-size:.95rem;margin:10px 0 4px}.trial p,.trial li{margin:4px 0}
 @media(max-width:560px){summary{grid-template-columns:1fr}}
 </style></head><body><main>
 <p class="settled"><b>SETTLED — do not re-raise:</b> members are the investors and the only people paid out. “Ownership, not profit-share” is rejected. Legal/securities questions about this go to socialus-legal for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.</p><h1 id="h"></h1><p class="sub">Generated by scripts/dashboard.py. Tap an area to open it. A coloured box is a stage reached, grey is not yet, yellow ? is unknown.</p>
@@ -384,12 +489,17 @@ document.getElementById('h').textContent=D.header;document.title=D.header;
 const RAMP=['#b91c1c','#d97706','#ca8a04','#65a30d','#15803d'];const ramp=f=>RAMP[Math.min(4,Math.floor(f*5))];
 document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('')+`<span>Area edge, mean of the six phases: <span class="ramp">${RAMP.map(c=>`<i style="background:${c}"></i>`).join('')}</span> 0% to 100%</span>`;
 const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=>`<div><i>${esc(e.k)}:</i> ${e.u?`<a href="${esc(e.u)}">${esc(e.t)}</a>`:esc(e.t)}</div>`).join(''):'<div><i>nothing</i></div>'}</div>`;
-const testSection=D.test_items.length?`<details><summary><span class="name">Testing</span><span class="note">${D.test_items.filter(t=>t.checked).length} of ${D.test_items.length} screens</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row" style="opacity:${t.checked?1:.5}"><input type="checkbox" ${t.checked?'checked':''} disabled style="cursor:default;margin-right:8px"/><div class="title">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`:'';
-document.getElementById('areas').innerHTML=D.areas.map(a=>{
+const GREEN=['#e2e8f0','#dbeafe','#bfdbfe','#93c5fd','#60a5fa','#2563eb','#15803d'];
+const cellStyle=c=>c.blocker?'background:#b91c1c':c.unknown?'background:repeating-linear-gradient(45deg,var(--unk),var(--unk) 4px,var(--off) 4px,var(--off) 8px);color:var(--ink)':`background:${GREEN[c.done]};${c.done<3?'color:var(--ink)':''}`;
+const critHtml=`<h2 style="font-size:1.05rem;margin:18px 0 6px">Criterion fulfillment</h2><div class="legend"><span>Pale = none started</span><span>${GREEN.slice(1).map(c=>`<i class="dot" style="background:${c}"></i>`).join('')} full = built, checked, reviewed, shipped, smoked, PM looked</span><span><i class="dot" style="background:#b91c1c"></i>launch-gating criterion not built</span><span><i class="dot" style="background:var(--unk)"></i>? unknown</span></div><div style="overflow-x:auto"><table class="crit"><tr><th></th>${Array.from({length:D.maxc},(_,i)=>`<th>${i+1}</th>`).join('')}</tr>${D.crit.map(r=>`<tr><td class="sc" title="${esc(r.title)}"><b>${esc(r.id)}</b> ${esc(r.title)}${r.gates?' ·'+esc(r.gates):''}</td>${Array.from({length:D.maxc},(_,i)=>{if(!r.report)return i<r.n?`<td class="c" style="background:var(--off);color:var(--mute);font-size:.6rem">n/r</td>`:'<td></td>';const c=r.cells[i];return c?`<td class="c" style="${cellStyle(c)}" title="${esc(c.text)}">${c.unknown?'?':c.blocker?'X':c.done}</td>`:'<td></td>'}).join('')}</tr>`).join('')}</table></div><div class="gap"><b>Data gaps:</b> ${D.gaps.no_report.length} of ${D.crit.length} scenarios have no feature report (${esc(D.gaps.no_report.join(', ')||'none')}); ${D.gaps.unknown} ? cell(s) in reports that exist. n/r and ? are data problems, not progress. Run regen-feature-report.</div>`;
+const md=t=>esc(t).replace(/\[([^\]]+)\]\((https?:[^)\s]+)\)/g,'<a href="$2">$1</a>').replace(/\*\*([^*]+)\*\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>');
+const trialHtml='<div class="trial">'+D.block.split('\n').map(l=>l.startsWith('#')?`<h3>${md(l.replace(/^#+\s*/,''))}</h3>`:l.startsWith('- ')?`<li>${md(l.slice(2))}</li>`:l.trim()?`<p>${md(l)}</p>`:'').join('')+'</div>';
+const testHtml=`<details><summary><span class="name">Live testing</span><span class="note">${!D.test_ok?'could not read #'+D.test_issue:D.test_items.length?D.test_items.filter(t=>t.checked).length+' of '+D.test_items.length+' screens checked':'no checkboxes found in #'+D.test_issue+' (body or comments)'}</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row"><div class="title"><input type="checkbox" ${t.checked?'checked':''} disabled style="margin-right:8px"/>${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`;
+document.getElementById('areas').innerHTML=critHtml+testHtml+'<h2 style="font-size:1.05rem;margin:18px 0 6px">By ticket</h2>'+D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
  const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
- const mean=a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0;return `<details style="border-left-color:${ramp(mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${Math.round(mean*100)}% overall · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
-document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
+ const mean=a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0;return `<details style="border-left-color:${ramp(mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${Math.round(mean*100)}% overall · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
+document.getElementById('foot').insertAdjacentHTML('beforebegin',trialHtml);document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
 </script></main></body></html>
 """
 blob = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')

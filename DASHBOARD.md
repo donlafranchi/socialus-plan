@@ -1,6 +1,49 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 20 days to freeze · 123 beta items · updated 2026-10-10 17:11 PT
+# Beta 11-06 · 20 days to freeze · 123 beta items · updated 2026-10-10 17:23 PT
+
+**Your next action:** none: nothing is waiting on you.
+
+## Criterion fulfillment
+
+*One row per approved or building scenario, one column per criterion. Cell = phases passed of 6 (built, checked, reviewed, shipped, smoked, PM looked): `0` none started, `6` all passed, `X` a launch-gating criterion not built, `?` the report could not tell, `-` no such criterion, `n/r` no feature report yet. Source: `socialus-web/build-log/reports/`.*
+
+| Scenario | Gate | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| F056 A producer edits a shop that already exists | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - |
+| F057 Someone who isn't selling yet finds the way in | - | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F058 A member reports something, and the operator can take a phot | launch | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - |
+| F059 A newcomer browses, and finds the neighbourhood | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - |
+| F060 Someone starts something without opening a shop | - | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F061 Someone creates a Page worth showing people | - | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - | - | - |
+| F063 Someone says they're coming | - | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - | - |
+| F064 Someone asks for something that isn't built | - | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F065 Someone follows something | - | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F069 A non-business Page resolves everywhere, and holding several | - | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - | - |
+| F070 Every Page has a face, even without a photo | - | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F072 A Page owner announces something, with a time on it | - | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - |
+| F074 A series repeats | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - |
+| F076 A person outside an open metro joins its waitlist | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r |
+| F077 People who actually interact are not hidden from each other; | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - |
+| F078 Flagged content hides itself immediately, and the poster is  | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - |
+| F080 No sensitive content, while we grow into a platform with sta | launch | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - | - |
+| F081 Everyone signs up the same way, and the zip sets the metro | launch | 2 | ? | 2 | X | 3 | 2 | 3 | X | X | - | - | - | - | - | - | - |
+| F082 Anyone publishing something others show up for takes one ste | launch | 3 | 4 | ? | 4 | 4 | 4 | X | 3 | 3 | - | - | - | - | - | - | - |
+| F091 What's happening, today and this week | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - |
+| F092 Narrowing happens in a modal that writes what it did | - | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - | - | - | - | - | - | - |
+| F093 A signed-out visitor sees that something is happening, and i | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - |
+| F099 Every post shows a picture, and every Page can have a Page p | - | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - |
+| F100 An AI reads every reported Post first, and a person still ma | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - | - | - |
+| F101 One scannable page of flagged and reviewed Posts, decided in | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - |
+| F102 The poster answers first, report misuse is tracked, and the  | launch | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | n/r | - | - |
+
+**Data gaps:** 24 of 26 scenarios have no feature report (F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F091, F092, F093, F099, F100, F101, F102) - run `regen-feature-report`; 2 `?` cell(s) in reports that exist. A `?` or `n/r` is a data problem, not progress.
+
+## Live testing
+
+No checkboxes found in [#519](https://github.com/donlafranchi/socialus-web/issues/519) (body or comments): nothing to show. The click-through sheet lives outside the Issue; put one `- [ ] screen` line per screen in the Issue to feed this.
+
+<details><summary><b>By ticket</b> · stages per area (the earlier view)</summary>
 
 *Generated by `scripts/dashboard.py`; never hand-edited. `▰` is a stage every item in the area has reached; `●` a stage reached, `○` not yet, `?` the data to tell was not found. Colour: `dashboard/status-dashboard.html`.*
 
@@ -143,17 +186,17 @@ Stages, in order: **Scenario approved** → **Built** → **Reviewed** → **Shi
 - **PR merged:** [#574 chore #223: reports by category; F082 report](https://github.com/donlafranchi/socialus-web/pull/574)
 - **Issue filed:** [#633 F099 · guard criteria 7, 11: hidden or removed images and signed-out post photos never reach the browser](https://github.com/donlafranchi/socialus-web/issues/633)
 - **Issue filed:** [#632 F099 · check criteria 2, 9: mark tests for the placeholder and the upload ask](https://github.com/donlafranchi/socialus-web/issues/632)
-- **Issue filed:** [#603 F074 · criterion 8: editing one occurrence changes only that one](https://github.com/donlafranchi/socialus-web/issues/603)
-- **Issue filed:** [#602 F074 · criterion 7: one row per series in a time-windowed read](https://github.com/donlafranchi/socialus-web/issues/602)
+- **Issue filed:** [#603 F074 · criterion 8: each occurrence is its own dated post](https://github.com/donlafranchi/socialus-web/issues/603)
+- **Issue filed:** [#602 F074 · criterion 7: editing one occurrence changes only that one](https://github.com/donlafranchi/socialus-web/issues/602)
 - **Issue filed:** [#601 F072 · guard criteria 2, 4: no listing chrome, no banned words in any label](https://github.com/donlafranchi/socialus-web/issues/601)
-- **Issue filed:** [#600 F074 · criterion 6: occurrence start in the metro timezone, across daylight saving](https://github.com/donlafranchi/socialus-web/issues/600)
+- **Issue filed:** [#600 F074 · criterion 6: one row per series in a time-windowed read](https://github.com/donlafranchi/socialus-web/issues/600)
 - **Issue filed:** [#599 F072 · check criteria 1, 2, 3, 4, 5, 6: mark and prove the existing tests](https://github.com/donlafranchi/socialus-web/issues/599)
-- **Issue filed:** [#597 F074 · criterion 5: the maintenance job is idempotent](https://github.com/donlafranchi/socialus-web/issues/597)
+- **Issue filed:** [#597 F074 · criterion 5: start in the metro's timezone across daylight saving](https://github.com/donlafranchi/socialus-web/issues/597)
 - **Issue filed:** [#596 F072 · criterion 6: the Page's announcement photo gets alt text from title, date and place](https://github.com/donlafranchi/socialus-web/issues/596)
-- **Issue filed:** [#595 F074 · criterion 4: occurrences always exist three months ahead](https://github.com/donlafranchi/socialus-web/issues/595)
-- **Issue filed:** [#594 F074 · criterion 3: each occurrence is a real page_posts row](https://github.com/donlafranchi/socialus-web/issues/594)
-- **Issue filed:** [#593 F074 · criterion 2: weekly series composer: weekdays, optional start and end](https://github.com/donlafranchi/socialus-web/issues/593)
-- **Issue filed:** [#592 F074 · criterion 1: ](https://github.com/donlafranchi/socialus-web/issues/592)
+- **Issue filed:** [#595 F074 · criterion 4: the window maintenance job is idempotent](https://github.com/donlafranchi/socialus-web/issues/595)
+- **Issue filed:** [#594 F074 · criterion 3: occurrences always exist from today to three months ahead](https://github.com/donlafranchi/socialus-web/issues/594)
+- **Issue filed:** [#593 F074 · criterion 2: every occurrence is a real page_posts row](https://github.com/donlafranchi/socialus-web/issues/593)
+- **Issue filed:** [#592 F074 · criterion 1: weekly series composer with weekday chips, optional start and end](https://github.com/donlafranchi/socialus-web/issues/592)
 - **Issue filed:** [#581 F060 · guard criteria 1, 2, 3: no business, ID, ZIP, self-classification or legal wording in Create](https://github.com/donlafranchi/socialus-web/issues/581)
 - **Issue filed:** [#580 F060 · check criteria 1, 2, 4: mark the tests that prove them](https://github.com/donlafranchi/socialus-web/issues/580)
 - **Issue filed:** [#579 F060 · criterion 5: /you/sell redirect keeps the query string](https://github.com/donlafranchi/socialus-web/issues/579)
@@ -319,8 +362,14 @@ Stages, in order: **Scenario approved** → **Built** → **Reviewed** → **Shi
 
 </details>
 
-<details><summary><b>No area</b> · past 12h · 9 event(s)</summary>
+<details><summary><b>No area</b> · past 12h · 15 event(s)</summary>
 
+- **PR merged:** [#658 docs: feature reports roll-up](https://github.com/donlafranchi/socialus-web/pull/658)
+- **PR merged:** [#657 docs: feature reports for sign-in-you](https://github.com/donlafranchi/socialus-web/pull/657)
+- **PR merged:** [#656 docs: feature reports for page-editing](https://github.com/donlafranchi/socialus-web/pull/656)
+- **PR merged:** [#655 docs: feature reports for moderation](https://github.com/donlafranchi/socialus-web/pull/655)
+- **PR merged:** [#654 docs: feature reports for explore-map](https://github.com/donlafranchi/socialus-web/pull/654)
+- **PR merged:** [#653 docs: feature reports for create-posts](https://github.com/donlafranchi/socialus-web/pull/653)
 - **PR merged:** [#562 bug #556: the loader finds a Page whose address was fixed](https://github.com/donlafranchi/socialus-web/pull/562)
 - **PR merged:** [#561 bug #556: a timeout is not a broken link](https://github.com/donlafranchi/socialus-web/pull/561)
 - **PR merged:** [#560 bug #556: link policy for the two addresses that failed the first run](https://github.com/donlafranchi/socialus-web/pull/560)
@@ -335,7 +384,8 @@ Stages, in order: **Scenario approved** → **Built** → **Reviewed** → **Shi
 
 **Behind:** sign-in-you, explore-map, create-posts, moderation *(an open launch-blocking item not yet built; else below the overall built share)*
 
-**Your next action:** none: nothing is waiting on you.
+
+</details>
 
 ### Meta-layer trial (tuning the scores)
 
