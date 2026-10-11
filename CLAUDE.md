@@ -2,7 +2,7 @@
 
 # SocialUs — planning repo (`socialus-plan`)
 
-Local discovery app: buy, sell, trade, gather. Beta 2026-10-30 (soft target); production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
+Local discovery app: buy, sell, trade, gather. Beta 2026-11-06 (soft target); production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
 ## Decision rule
 
@@ -24,6 +24,7 @@ DECISION RULE (2026-10-04, Don)
 3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
 4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
 5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags in `DECISIONS.md`; never edit it.
+6. `product/foundation/what-this-is.md` § Direction — what kind of platform this is. Read it before building anything that collects or uses member data.
 
 ## Where truth lives
 
@@ -79,8 +80,8 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 | Who | Owns | Never |
 |---|---|---|
 | Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than STATUS + ROADMAP unless he asks |
-| Cowork — `plan` `review` `sync` `trim` | this repo: scenarios, STATUS, ROADMAP, DECISIONS, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
-| Code — `ticket` `build` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
+| Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, ROADMAP, DECISIONS, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
+| Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
 Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. Don sees it only if they disagree.
 
