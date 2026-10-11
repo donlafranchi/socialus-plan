@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 20 days to freeze · 123 beta items · updated 2026-10-10 17:23 PT
+# Beta 11-06 · 20 days to freeze · 123 beta items · updated 2026-10-10 17:24 PT
 
 **Your next action:** none: nothing is waiting on you.
 
