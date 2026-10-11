@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reads the per-criterion feature reports in socialus-web (build-log/reports/<area>/F###-*.md, on main, via gh) and returns one
+"""Reads the criterion reports in socialus-web (build-log/reports/<area>/F###-*.md, on main, via gh) and returns one
 record per feature: criteria met / total, the unmet launch-blocking criteria, and a link to the report.
 Also the reportable universe (approved or building scenarios, plus shipped features whose scenario was retired) so coverage is X of Y.
 Usage: python3 scripts/criteria.py [--json | --capabilities]"""
@@ -217,7 +217,7 @@ if __name__ == '__main__':
     if '--json' in sys.argv:
         print(json.dumps(f, indent=1))
     elif '--capabilities' in sys.argv:
-        out = ['# What the app can and cannot do', '', 'Generated from the per-criterion feature reports (`scripts/criteria.py --capabilities`). Never hand-edited. Built means the code is on main; it says nothing about review or smoke.', '']
+        out = ['# What the app can and cannot do', '', 'Generated from the criterion reports (`scripts/criteria.py --capabilities`). Never hand-edited. Built means the code is on main; it says nothing about review or smoke.', '']
         for x in f:
             can = [r for r in x['criteria'] if r['built'] == 'yes']
             cant = [r for r in x['criteria'] if r['built'] != 'yes']

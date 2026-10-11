@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Compares the phone UAT checklist (the `uat` Issues, mainly #519 in socialus-web) with the built criteria in the feature reports.
+"""Compares the phone UAT checklist (the `uat` Issues, mainly #519 in socialus-web) with the built criteria in the criterion reports.
 Usage: python3 scripts/uat_checklist.py [--json]
 Prints: boxes listed and ticked; built criteria with no box (to write, unless they are rules with no screen); boxes whose criterion is no longer built."""
 import json, os, sys
