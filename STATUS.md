@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 00:11 UTC
+> ## Generated 2026-10-11 · 00:56 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,13 +15,13 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `3315ec8` (2026-10-10); `accepted-risks/*.json`;
+> `cb9ac6e` (2026-10-10); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
-Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 20 days out; feature freeze 2026-10-30, also soft. Production launch April–May 2027.
+Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 19 days out; feature freeze 2026-10-30, also soft. Production launch April–May 2027.
 
 **15 of 26 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
@@ -79,17 +79,19 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
-- #574 2026-10-10 chore #223: reports by category; F082 report
-- #572 2026-10-10 chore #222: F081 report at criterion level
-- #571 2026-10-10 chore #222: F081 report at criterion level
-- #567 2026-10-10 chore #563: sign-in-you feature report
-- #566 2026-10-10 chore #563: issue-lint lets a UAT Issue carry checkboxes
+- #658 2026-10-11 docs: feature reports roll-up
+- #657 2026-10-11 docs: feature reports for sign-in-you
+- #656 2026-10-11 docs: feature reports for page-editing
+- #655 2026-10-11 docs: feature reports for moderation
+- #654 2026-10-11 docs: feature reports for explore-map
 
 ### Needs a look — not a claim that anything is wrong
 
 *A commit naming a ticket is not proof the ticket is done: partial work
 counts. Each row needs a look, not a close.*
 
+- **#84 open, but T159 appears on main** — chore · T159 is two different tickets — renumber one in ops-pattern
+- **#53 open, but T156 appears on main** — F059 · T156 · Browse renders Pages
 - **#51 open, but T154 appears on main** — F059 · T154 · Browse reads Pages, not Items
 - **#30 open, but T149 appears on main** — chore · T149 · Retire vendor routes for real
 - **#16 open, but T126 appears on main** — F056 · T126 · Edit shop — image, description, values
@@ -148,15 +150,15 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — success, 2026-10-10
-  - Ontology declarations still match the code: success
+- **`deploy-health.yml`** — success, 2026-10-11
   - Database reachable from the deployment: success
-- **`ci.yml`** — success, 2026-10-10
-  - Unit tests: success
+  - Ontology declarations still match the code: success
+- **`ci.yml`** — failure, 2026-10-11
   - Which suites: success
+  - Unit tests: success
   - Migrations applied to production: success
   - Lint, types, build: success
-  - Browser: success
+  - Browser: failure
 
 ## Measured, not estimated
 
@@ -171,10 +173,10 @@ dated line in `DECISIONS.md`; the register is `accepted-risks/`.
 
 **2 need a look now.**
 
-- **observability: no error tracking in production** — **due in 6 days**
+- **observability: no error tracking in production** — **due in 5 days**
   - If forgotten: A runtime error for a real member is invisible. Nobody is paged, nothing is logged where anyone looks, and the first signal is a person giving up and not saying why. The DATABASE_URL outage went four months unnoticed for exactly this reason.
   - Look again if: ANY of: a member outside the team signs up; a bug is reported that nobody can reproduce; or 2026-10-16 passes with this still open.
-- **storage: removed photo bytes stay fetchable by direct URL** — **due in 6 days**
+- **storage: removed photo bytes stay fetchable by direct URL** — **due in 5 days**
   - If forgotten: A photo the operator removed stays downloadable, indefinitely, by anyone who has or can guess its storage URL. For ordinary bad content that is tolerable. For illegal content it is not, and 'we kept it so it could be reversed' is not a defensible answer to a regulator, a police request, or the person in the photo.
   - Look again if: ANY of: the first report of illegal content reaches the review queue; a member asks for their own photo to be actually deleted rather than taken down; a takedown demand arrives from outside the platform; or 2026-10-16 passes (two weeks before launch) with this still open.
 - **data: two rows in public.places share the slug 'sacramento'** — review by 2026-11-30
@@ -195,32 +197,32 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 
 **Waiting on Don** (20)
 
-- 36d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
-- 33d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:50](product/foundation/goals.md#L50)
-- 33d · The flourishing thresholds (40 discretionary hours/week, 1.5× adequacy margin). A) adopt as the literal north-star targets everywhere. B) keep them illustrat… — [product/foundation/metrics.md:18](product/foundation/metrics.md#L18)
-- 28d · What triggers the LLM pass, and who approves its output? A) a scheduled job, proposals landing in a queue Don reviews. B) on demand, run when someone looks.… — [planning/scenario-F071.md:37](planning/scenario-F071.md#L37)
-- 27d · How does the search dictionary grow? A) from tags creators create — every new tag is a word a real person chose for their own thing. B) from logged zero-resu… — [planning/scenario-F071.md:41](planning/scenario-F071.md#L41)
-- 25d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
-- 24d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:259](product/foundation/nouns.md#L259)
-- 21d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
-- 21d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:61](product/ui/surfaces.md#L61)
-- 11d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:64](product/ui/surfaces.md#L64)
-- 10d · When "near me" returns, how does finding by neighbourhood fit "local = the whole metro" and "no distance shown"? A) A place filter the member types, not a ra… — [planning/scenario-F095.md:28](planning/scenario-F095.md#L28)
-- 10d · What does "sends traffic back" mean on a card? A) The card's main action opens the venue's own event page; SocialUs keeps the summary. B) A secondary "from t… — [planning/scenario-F096.md:30](planning/scenario-F096.md#L30)
-- 10d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
-- 10d · Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) Yes, exactly: an imported event is a publi… — [planning/scenario-F096.md:34](planning/scenario-F096.md#L34)
-- 10d · What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) Repor… — [planning/scenario-F096.md:36](planning/scenario-F096.md#L36)
-- 6d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
-- 6d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
-- 6d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
-- 3d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:63](product/systems/contributions.md#L63)
-- 2d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
+- 37d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
+- 34d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:50](product/foundation/goals.md#L50)
+- 34d · The flourishing thresholds (40 discretionary hours/week, 1.5× adequacy margin). A) adopt as the literal north-star targets everywhere. B) keep them illustrat… — [product/foundation/metrics.md:18](product/foundation/metrics.md#L18)
+- 29d · What triggers the LLM pass, and who approves its output? A) a scheduled job, proposals landing in a queue Don reviews. B) on demand, run when someone looks.… — [planning/scenario-F071.md:37](planning/scenario-F071.md#L37)
+- 28d · How does the search dictionary grow? A) from tags creators create — every new tag is a word a real person chose for their own thing. B) from logged zero-resu… — [planning/scenario-F071.md:41](planning/scenario-F071.md#L41)
+- 26d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
+- 25d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:259](product/foundation/nouns.md#L259)
+- 22d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
+- 22d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:61](product/ui/surfaces.md#L61)
+- 12d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:64](product/ui/surfaces.md#L64)
+- 11d · When "near me" returns, how does finding by neighbourhood fit "local = the whole metro" and "no distance shown"? A) A place filter the member types, not a ra… — [planning/scenario-F095.md:28](planning/scenario-F095.md#L28)
+- 11d · What does "sends traffic back" mean on a card? A) The card's main action opens the venue's own event page; SocialUs keeps the summary. B) A secondary "from t… — [planning/scenario-F096.md:30](planning/scenario-F096.md#L30)
+- 11d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
+- 11d · Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) Yes, exactly: an imported event is a publi… — [planning/scenario-F096.md:34](planning/scenario-F096.md#L34)
+- 11d · What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) Repor… — [planning/scenario-F096.md:36](planning/scenario-F096.md#L36)
+- 7d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
+- 7d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
+- 7d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
+- 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:63](product/systems/contributions.md#L63)
+- 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
 
 **Cowork owes an answer** (3)
 
-- 9d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:62](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L62)
-- 5d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
-- 4d · Badges are cut from beta, Locally owned included (DECISIONS 2026-10-06), but F037's eval still requires this claim card; retire F037 for beta or keep the car… — [socialus-web src/components/group/ShopPublicPage.tsx:406](https://github.com/donlafranchi/socialus-web/blob/main/src/components/group/ShopPublicPage.tsx#L406)
+- 10d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:62](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L62)
+- 6d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
+- 5d · Badges are cut from beta, Locally owned included (DECISIONS 2026-10-06), but F037's eval still requires this claim card; retire F037 for beta or keep the car… — [socialus-web src/components/group/ShopPublicPage.tsx:406](https://github.com/donlafranchi/socialus-web/blob/main/src/components/group/ShopPublicPage.tsx#L406)
 
 ## Guard coverage
 
@@ -248,10 +250,10 @@ they leave out; parts never add up to covered. Full map: `python3 scripts/marker
 Each scenario whose frontmatter says `building`, against what names it in `socialus-web`: commits
 and files on main, and branches. Frontmatter is a claim; this is the evidence.
 
-- **F060** · 0 commits on main · 5 files naming it · 0 branches
-- **F061** · 0 commits on main · 12 files naming it · 0 branches
-- **F069** · **nothing in the code names it** — no commit, file or branch
-- **F070** · 6 commits on main · 14 files naming it · 0 branches
+- **F060** · 0 commits on main · 9 files naming it · 0 branches
+- **F061** · 0 commits on main · 14 files naming it · 0 branches
+- **F069** · 0 commits on main · 2 files naming it · 0 branches
+- **F070** · 6 commits on main · 17 files naming it · 0 branches
 
 ## Gating launch — does each have an Issue?
 
@@ -280,16 +282,16 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 100 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **97 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
-- `product/systems/places.md` — 31 days (last commit 2026-09-09)
-- `product/systems/location.md` — 31 days (last commit 2026-09-09)
-- `product/systems/action-layer.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F069.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F068.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F065.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F055.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F049.md` — 31 days (last commit 2026-09-09)
-- `planning/scenario-F048.md` — 31 days (last commit 2026-09-09)
-- `planning/search-dictionary-draft.md` — 27 days (last commit 2026-09-13)
+- `product/systems/places.md` — 32 days (last commit 2026-09-09)
+- `product/systems/location.md` — 32 days (last commit 2026-09-09)
+- `product/systems/action-layer.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F069.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F068.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F065.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F055.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F049.md` — 32 days (last commit 2026-09-09)
+- `planning/scenario-F048.md` — 32 days (last commit 2026-09-09)
+- `planning/search-dictionary-draft.md` — 28 days (last commit 2026-09-13)
 
 ## What this run could not verify
 

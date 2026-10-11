@@ -2,7 +2,7 @@
 
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any no fee language is retired.
 
-# SocialUs — launch 2026-10-30, 20 days left
+# SocialUs — launch 2026-10-30, 18 days left
 
 ## Built
 
@@ -98,10 +98,10 @@
 
 Ruled acceptable, with a condition for looking again. Source: `accepted-risks/`.
 
-- **observability: no error tracking in production** — **due in 6 days**
+- **observability: no error tracking in production** — **due in 5 days**
   - If forgotten: A runtime error for a real member is invisible. Nobody is paged, nothing is logged where anyone looks, and the first signal is a person giving up and not saying why. The DATABASE_URL outage went four months unnoticed for exactly this reason.
   - Look again if: ANY of: a member outside the team signs up; a bug is reported that nobody can reproduce; or 2026-10-16 passes with this still open.
-- **storage: removed photo bytes stay fetchable by direct URL** — **due in 6 days**
+- **storage: removed photo bytes stay fetchable by direct URL** — **due in 5 days**
   - If forgotten: A photo the operator removed stays downloadable, indefinitely, by anyone who has or can guess its storage URL. For ordinary bad content that is tolerable. For illegal content it is not, and 'we kept it so it could be reversed' is not a defensible answer to a regulator, a police request, or the person in the photo.
   - Look again if: ANY of: the first report of illegal content reaches the review queue; a member asks for their own photo to be actually deleted rather than taken down; a takedown demand arrives from outside the platform; or 2026-10-16 passes (two weeks before launch) with this still open.
 - **data: two rows in public.places share the slug 'sacramento'** — review by 2026-11-30
