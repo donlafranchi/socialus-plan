@@ -72,7 +72,7 @@ Both open and hidden signals use the same mechanism:
 
 This is new territory. Counsel and Don must decide:
 
-[open-question owner=don raised=2026-10-08]
+[open-question owner=don raised=2026-10-08] Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention (three questions below).
 - **Privacy model:** For hidden signals, who can ever see a holder list? (Don and counsel only? Admins? The signal's founder?)
 - **Leaking membership:** How do we prevent hidden signal membership from leaking through counts, zip codes, or other metadata?
 - **Preventing harm:** How do we stop hidden signals from being used to coordinate harm?
