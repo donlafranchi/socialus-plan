@@ -226,6 +226,14 @@ Docs and process PRs in socialus-plan, socialus-ops and skills, guard-protected 
 
 </details>
 
+<details><summary><b>No area</b> · past 12h · 3 event(s)</summary>
+
+- **PR merged:** [#669 chore #668: doc inventory generator, as-of dates, dead docs removed](https://github.com/donlafranchi/socialus-web/pull/669)
+- **Issue filed:** [#668 chore · doc inventory and stale-doc cleanup](https://github.com/donlafranchi/socialus-web/issues/668)
+- **Issue closed:** [#668 chore · doc inventory and stale-doc cleanup](https://github.com/donlafranchi/socialus-web/issues/668)
+
+</details>
+
 **Behind:** sign-in-you, explore-map, create-posts, moderation *(an open launch-blocking item not yet built; else below the overall built share)*
 
 **Your next action:** none: nothing is waiting on you.
