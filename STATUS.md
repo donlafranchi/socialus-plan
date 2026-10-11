@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-10 · 20:45 UTC
+> ## Generated 2026-10-11 · 00:11 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `7740a59` (2026-10-10); `accepted-risks/*.json`;
+> `3315ec8` (2026-10-10); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -45,17 +45,45 @@ branch or a commit.
 
 ## In the code repo
 
-**79 issues open** in `socialus-web`, 3 launch-blocking:
+**161 issues open** in `socialus-web`, 31 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
 - #552 bug · live: the overnight smoke found a problem
+- #568 F081 · criterion 4: a member changes their zip on /you and their metro follows
+- #569 F081 · criterion 8: every US zip resolves to its MSA; an unknown zip is refused
+- #573 F082 · criterion 7: the rules are one tap away on a phone, outside the Publish card
+- #577 F058 · criterion 4: a removed photo still shows on the map
+- #578 F058 · check criteria 1, 3, 5, 6: mark the tests that prove them
+- #613 F076 · criterion 4: a person who left an email and then signs up counts once
+- #614 F076 · criterion 7: the signed-in popup shows the cached count too
+- #615 F076 · criterion 8: one figure everywhere, the popup and the picker agree
+- #617 F076 · check criteria 1, 5, 6, 9, 10, 11, 13: mark the tests that guard them
+- #618 F076 · guard criteria 2, 3, 12, 14, 16: standing guards for the never-rules
+- #625 F078 · criterion 1: a Page's own words and listings are reportable
+- #628 F078 · check criteria 3, 4, 5, 6, 7: mark the tests that prove them
+- #629 F078 · guard criteria 3, 4: never-email and only-an-answer-creates-work
+- #630 F093 · check criteria 4, 5, 9, 10: mark and complete the withheld-card checks
+- #631 F093 · guard criteria 6, 8, 11: standing guards for the front door, signed-in parity and same-for-everyone
+- #634 F101 · criterion 12: detail history lists every earlier AI read
+- #635 F101 · criterion 13: blurred thumbnail shows only while pressed and held
+- #636 F101 · check criteria 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14: mark and fill the tests
+- #637 F080 · guard criteria 2, 3: text stays unrestricted, nothing lifts the photo rule
+- #638 F100 · criterion 9: the evaluation harness runs on every prompt change
+- #639 F100 · criterion 10: a test set with licensed photos, a children-rule case and an adult case
+- #642 F100 · check criteria 1, 2, 5, 8: tests that claim the whole criterion
+- #643 F100 · guard criteria 4, 6, 12: standing guards over the provider call
+- #645 F102 · criterion 4: a lapsed unanswered hide leaves the batch unless severity 1
+- #646 F102 · criterion 11: the Friday summary shows waiting rows by severity
+- #647 F102 · criterion 13: record the address and time on every write path
+- #649 F102 · check criteria 1, 2, 3, 4, 9, 10, 11: mark the tests that prove them
+- #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
-- #562 2026-10-10 bug #556: the loader finds a Page whose address was fixed
-- #561 2026-10-10 bug #556: a timeout is not a broken link
-- #560 2026-10-10 bug #556: link policy for the two addresses that failed the first run
-- #559 2026-10-10 change #556: photos, sample posts and checked links for every unclaimed Page
-- #558 2026-10-10 change: Explore and the feed lead with different businesses each login
+- #574 2026-10-10 chore #223: reports by category; F082 report
+- #572 2026-10-10 chore #222: F081 report at criterion level
+- #571 2026-10-10 chore #222: F081 report at criterion level
+- #567 2026-10-10 chore #563: sign-in-you feature report
+- #566 2026-10-10 chore #563: issue-lint lets a UAT Issue carry checkboxes
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -124,9 +152,9 @@ counts. Each row needs a look, not a close.*
   - Ontology declarations still match the code: success
   - Database reachable from the deployment: success
 - **`ci.yml`** — success, 2026-10-10
+  - Unit tests: success
   - Which suites: success
   - Migrations applied to production: success
-  - Unit tests: success
   - Lint, types, build: success
   - Browser: success
 
@@ -230,16 +258,16 @@ and files on main, and branches. Frontmatter is a claim; this is the evidence.
 Every scenario whose frontmatter says `gates: launch`, against the `socialus-web` Issues
 naming it. Five approved gating scenarios once had none, and nothing noticed.
 
-- **F058** (approved) · #62 closed, #61 closed, #13 closed, #12 closed
-- **F076** (approved) · #194 closed, #193 closed, #77 closed
-- **F078** (approved) · #220 open
-- **F080** (approved) · #221 closed
-- **F081** (approved) · #222 closed
-- **F082** (approved) · #223 closed
-- **F093** (approved) · #252 closed, #215 closed
-- **F100** (approved) · #486 open
-- **F101** (approved) · #487 closed
-- **F102** (approved) · #488 closed
+- **F058** (approved) · #578 open, #577 open, #62 closed, #61 closed, #13 closed, #12 closed
+- **F076** (approved) · #618 open, #617 open, #616 open, #615 open, #614 open, #613 open, #194 closed, #193 closed, #77 closed
+- **F078** (approved) · #629 open, #628 open, #627 open, #626 open, #625 open, #220 open
+- **F080** (approved) · #637 open, #221 closed
+- **F081** (approved) · #570 open, #569 open, #568 open, #222 closed
+- **F082** (approved) · #573 open, #223 closed
+- **F093** (approved) · #631 open, #630 open, #252 closed, #215 closed
+- **F100** (approved) · #643 open, #642 open, #641 open, #640 open, #639 open, #638 open, #486 open
+- **F101** (approved) · #636 open, #635 open, #634 open, #487 closed
+- **F102** (approved) · #650 open, #649 open, #648 open, #647 open, #646 open, #645 open, #488 closed
 
 **Rulings that bind code: 144.** Each names its Issue or scenario, or says it has nothing to build;
 the lint fails one that does none of the three — the identity leaks sat eight days with no Issue.
