@@ -27,7 +27,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 # Beta is for testing: a soft target, not a hard deadline (2026-10-05).
-BETA=2026-10-30
+BETA=2026-11-06
 FREEZE=2026-10-30
 PRODUCTION="April–May 2027"
 

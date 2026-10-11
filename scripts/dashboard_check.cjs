@@ -15,6 +15,7 @@ const checks = {
   'header leads with criteria': d.getElementById('h').textContent.includes('criteria met'),
   'a card per feature and area': cards >= D.features.length + D.areas.length,
   'one row per criterion': d.querySelectorAll('details .rows .row .title').length >= crit,
+  'launch checklist drawn': !D.launch || D.launch.length === 0 || d.body.textContent.includes('Launch checklist'),
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
 }
