@@ -153,3 +153,22 @@ Every entry added from 2026-09-12 carries three things:
 ### Evidence of deceit, submitted by members
 
 *Don, 2026-10-11. Later; designed ahead of need.* A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop with evidence, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
+
+### Market shopper: a neighbour shops the market for you
+
+*Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment. After beta; not in the Beta milestone.
+
+*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (DECISIONS 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
+
+**What would make it real:** a market that posts a weekly list and two neighbours who ask for a shopper, inside four market weeks. Full brief, three sizes and criteria: `planning/briefs/2026-10-11-market-shopper.md`.
+
+### Market meal plans: a week of meals from what one market carries
+
+*Don, 2026-10-11, in his terms:* recipes for families "that used the ingredients that were at a farmers market ... a week full of meals ... created by members of the community," who can sell their plans, each in reference to a farmers market and what it carries. A possibility, not a commitment. After beta; not in the Beta milestone.
+
+*Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, which keeps the legal weight lower than the shopper. Its weak point is the market's list: a plan is only as good as the list it was written against, so a plan carries its list date and says so when the week moves on. The author is credited through their own Page (there is no public member profile). **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
+
+**What would make it real:** a market that keeps a weekly list for six weeks and three families who cook from a plan. Full brief: `planning/briefs/2026-10-11-market-meal-plans.md`.
+
+**Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
+
