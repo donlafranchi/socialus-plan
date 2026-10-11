@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Reads the criterion reports in socialus-web (build-log/reports/<area>/F###-*.md, on main, via gh) and returns one
+"""Reads the criterion roll-up in socialus-web (build-log/reports/rollup.json, on main, via gh) and returns one
 record per feature: criteria met / total, the unmet launch-blocking criteria, and a link to the report.
 Also the reportable universe (approved or building scenarios, plus shipped features whose scenario was retired) so coverage is X of Y.
 Usage: python3 scripts/criteria.py [--json | --capabilities]"""
@@ -144,8 +144,7 @@ def last_merge(fid):
 
 def load():
     lb = {i['number'] for i in json.loads(gh('issue', 'list', '-R', WEB, '-s', 'open', '-l', 'launch-blocking', '-L', '500', '--json', 'number') or '[]')}
-    tree = json.loads(gh('api', f'repos/{WEB}/git/trees/main?recursive=1') or '{}').get('tree', [])
-    files = [t['path'] for t in tree if re.match(r'^build-log/reports/[^/]+/F\d+-.*\.md$', t['path'])]
+    roll = json.loads(gh('api', f'repos/{WEB}/contents/build-log/reports/rollup.json', '-H', 'Accept: application/vnd.github.raw') or '{}')
     feats = []
     pmset = pm_looked_set()
     ticked, listed = uat_boxes()
@@ -156,17 +155,13 @@ def load():
         mp = re.match(r'^(F\d{3}) · (?!criterion|check|guard)', i['title'], re.I)
         if mp:
             parents.setdefault(mp.group(1), set()).add(i['number'])
-    for p in sorted(files):
-        raw = gh('api', f'repos/{WEB}/contents/{p}')
-        try:
-            text = base64.b64decode(json.loads(raw)['content']).decode()
-        except Exception:
-            continue
-        m = re.match(r'^# (F\d+):?\s*(.*)', text)
-        area = p.split('/')[2]
-        rows = parse(text, lb)
-        cov = coverage(m.group(1) if m else os.path.basename(p)[:4])
-        fid0 = m.group(1) if m else os.path.basename(p)[:4]
+    for rf in roll.get('features', []):
+        p = 'build-log/reports/' + rf['path']
+        area = rf['area']
+        rows = [{'n': c['id'], 'text': c['text'][:160], 'built': c['built'], 'reviewed_txt': c['reviewed'],
+                 'blocking': c['built'] != 'yes' and any(i in lb for i in c['issues']), 'issues': sorted(set(c['issues']))[:4]} for c in rf['criteria']]
+        fid0 = rf['feature']
+        cov = coverage(fid0)
         rep_date = (gh('api', f'repos/{WEB}/commits?path={p}&per_page=1', '-q', '.[0].commit.committer.date') or '').strip()
         lm = last_merge(fid0)
         smoked_feat = bool(green and lm and green > lm)
@@ -180,7 +175,7 @@ def load():
             r['not_ok_text'] = not_ok.get((fid0, r['n']), {}).get('text', '')
             r['uat'] = 'ticked' if (fid0, r['n']) in ticked else ('listed' if (fid0, r['n']) in listed else '')
         met = sum(1 for r in rows if r['built'] == 'yes')
-        feats.append({'id': m.group(1) if m else os.path.basename(p)[:4], 'title': (m.group(2) if m else '').strip()[:90], 'area': area,
+        feats.append({'id': fid0, 'title': rf['title'].strip()[:90], 'area': area,
                       'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'not_ok': sum(1 for r in rows if r['not_ok']), 'uat_ticked': sum(1 for r in rows if r['uat'] == 'ticked'), 'uat_listed': sum(1 for r in rows if r['uat']), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
                       'url': f'https://github.com/{WEB}/blob/main/{p}'})
     return feats
@@ -215,51 +210,12 @@ def universe():
     return ids
 
 
-ROLLUP_NOTE = '*Roll-up generated from the criterion rows below by `scripts/criteria.py --rewrite-reports`; never typed. Built = the row says yes. Checked = a guards marker covers the whole criterion (`markers.py coverage`, the same count as STATUS). Reviewed = the row says yes. Smoked = a green smoke-live run came after the feature\'s last merge (pages load; not behaviour). PM looked = a ticked box in a `uat` Issue (the phone checklist), or a linked Issue or the feature Issue carries pm-reviewed.*'
-
-
-def rewrite_reports(webdir):
-    """Regenerates every report's Roll-up table, and the README Features table, from the per-criterion rows."""
-    changed = 0
-    table = []
-    byid = {f['id']: f for f in load()}
-    for pth in sorted(glob.glob(os.path.join(webdir, 'build-log', 'reports', '*', 'F*.md'))):
-        text = open(pth).read()
-        mt = re.match(r'^# (F\d+):?\s*(.*)', text)
-        fid = mt.group(1) if mt else os.path.basename(pth)[:4]
-        rows = parse(text, set())
-        cov = coverage(fid)
-        b = sum(1 for r in rows if r['built'] == 'yes'); c = sum(1 for r in rows if cov.get(r['n']) == 'yes')
-        ff = byid.get(fid, {})
-        gen = f'| | built | checked | reviewed | smoked | PM looked |\n|---|---|---|---|---|---|\n| {len(rows)} criteria | {b} | {c} | {ff.get("reviewed", 0)} | {ff.get("smoked", 0)} | {ff.get("pm", 0)} |'
-        m = re.search(r'(## Roll-up\n\n)((?:\|.*\n)+)(\n\*Roll-up generated[^\n]*\*\n)?', text)
-        if m:
-            new = text[:m.start(2)] + gen + '\n\n' + ROLLUP_NOTE + '\n' + text[m.end():]
-            if new != text:
-                open(pth, 'w').write(new); changed += 1
-        table.append((pth.split('/')[-2], fid, (mt.group(2) if mt else '')[:60], os.path.relpath(pth, os.path.join(webdir, 'build-log', 'reports')), len(rows), b, c))
-    rd = os.path.join(webdir, 'build-log', 'reports', 'README.md')
-    if os.path.exists(rd):
-        txt = open(rd).read()
-        body = ['| Area | Feature | Criteria | Built | Checked | Reviewed | Smoked | PM looked |', '|---|---|---|---|---|---|---|---|'] + [f'| {a} | [{fid} {t}]({rel}) | {n} | {b} | {c} | {byid.get(fid, {}).get("reviewed", 0)} | {byid.get(fid, {}).get("smoked", 0)} | {byid.get(fid, {}).get("pm", 0)} |' for a, fid, t, rel, n, b, c in table]
-        m = re.search(r'(## Features\n\n)((?:\|.*\n)+)', txt)
-        if m:
-            txt2 = txt[:m.start(2)] + '\n'.join(body) + '\n' + txt[m.end(2):]
-            if txt2 != txt:
-                open(rd, 'w').write(txt2); changed += 1
-    return changed
-
-
-if __name__ == '__main__' and '--rewrite-reports' in sys.argv:
-    print('rewrote', rewrite_reports(sys.argv[sys.argv.index('--rewrite-reports') + 1]), 'files')
-    sys.exit(0)
-
 if __name__ == '__main__':
     f = load()
     if '--json' in sys.argv:
         print(json.dumps(f, indent=1))
     elif '--capabilities' in sys.argv:
-        out = ['# What the app can and cannot do', '', f'**As of {date.today().isoformat()}** · Source: criterion reports in socialus-web · Generated by: `scripts/criteria.py --capabilities`', '', 'Generated from the criterion reports (`scripts/criteria.py --capabilities`). Never hand-edited. Built means the code is on main; it says nothing about review or smoke.', '']
+        out = ['# What the app can and cannot do', '', f'**As of {date.today().isoformat()}** · Source: build-log/reports/rollup.json in socialus-web · Generated by: `scripts/criteria.py --capabilities`', '', 'Generated from the criterion reports (`scripts/criteria.py --capabilities`). Never hand-edited. Built means the code is on main; it says nothing about review or smoke.', '']
         for x in f:
             can = [r for r in x['criteria'] if r['built'] == 'yes']
             cant = [r for r in x['criteria'] if r['built'] != 'yes']
