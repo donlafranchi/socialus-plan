@@ -90,6 +90,36 @@ def uat_boxes():
     return ticked, listed
 
 
+_ID = re.compile(r'\bF\d{3}\.\d+[a-z]?\b')
+_NOT_OK = re.compile(r"not\s*ok\b|✗|✘|\bwrong\b|\bbroken\b|\bfails?\b|\bfailed\b|doesn'?t work", re.I)
+_OK = re.compile(r'\b(?:is |looks? |works? |all )?(?:ok|okay|fine|good|works)\b', re.I)
+
+
+def uat_not_ok(ticked):
+    """The PM's comments on `uat` Issues (the phone checklist). A line naming a criterion id and saying it is not ok marks that criterion
+    `PM: not OK`; a later line saying it is ok, or a ticked box, clears it. Same grammar as socialus-web scripts/uat-comment.cjs, which files
+    the bug. Returns {(fid, n): {'text', 'url'}}."""
+    state = {}
+    for i in json.loads(gh('issue', 'list', '-R', WEB, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,comments') or '[]'):
+        if 'self-check' in i['title']:
+            continue
+        for c in sorted(i.get('comments') or [], key=lambda c: c.get('createdAt', '')):
+            body = c.get('body') or ''
+            if body.startswith('Marked PM: not OK'):
+                continue  # the workflow's own reply, not the PM
+            for line in body.split('\n'):
+                ids = _ID.findall(line)
+                if not ids:
+                    continue
+                for fid_n in set(ids):
+                    fid, n = fid_n.split('.', 1)
+                    if _NOT_OK.search(line):
+                        state[(fid, n)] = {'text': re.sub(r'^[\s>*-]+', '', line).strip()[:160], 'url': c.get('url')}
+                    elif _OK.search(line):
+                        state.pop((fid, n), None)
+    return {k: v for k, v in state.items() if k not in ticked}
+
+
 def smoke_state():
     """(last green smoke-live run time, last run conclusion). Smoke loads pages; it does not test criteria, so it is evidence of
     'still loads after the merge', not of behaviour."""
@@ -110,6 +140,7 @@ def load():
     feats = []
     pmset = pm_looked_set()
     ticked, listed = uat_boxes()
+    not_ok = uat_not_ok(ticked)
     green, last_conc = smoke_state()
     parents = {}
     for i in json.loads(gh('issue', 'list', '-R', WEB, '-s', 'all', '-L', '600', '--json', 'number,title') or '[]'):
@@ -136,10 +167,12 @@ def load():
             r['reviewed'] = r['reviewed_txt'] if r['built'] == 'yes' else 'no'
             r['smoked'] = 'yes' if (r['built'] == 'yes' and smoked_feat) else 'no'
             r['pm'] = 'yes' if (r['built'] == 'yes' and (pm_parent or any(n in pmset for n in r['issues']) or (fid0, r['n']) in ticked)) else 'no'
+            r['not_ok'] = (fid0, r['n']) in not_ok
+            r['not_ok_text'] = not_ok.get((fid0, r['n']), {}).get('text', '')
             r['uat'] = 'ticked' if (fid0, r['n']) in ticked else ('listed' if (fid0, r['n']) in listed else '')
         met = sum(1 for r in rows if r['built'] == 'yes')
         feats.append({'id': m.group(1) if m else os.path.basename(p)[:4], 'title': (m.group(2) if m else '').strip()[:90], 'area': area,
-                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'uat_ticked': sum(1 for r in rows if r['uat'] == 'ticked'), 'uat_listed': sum(1 for r in rows if r['uat']), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
+                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'not_ok': sum(1 for r in rows if r['not_ok']), 'uat_ticked': sum(1 for r in rows if r['uat'] == 'ticked'), 'uat_listed': sum(1 for r in rows if r['uat']), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
                       'url': f'https://github.com/{WEB}/blob/main/{p}'})
     return feats
 
@@ -150,8 +183,8 @@ def rollup(feats):
     areas = {}
     for f in feats:
         a = areas.setdefault(f['area'], {'met': 0, 'total': 0, 'features': 0, 'red': 0})
-        a['met'] += f['met']; a['total'] += f['total']; a['checked'] = a.get('checked', 0) + f['checked']; a['reviewed'] = a.get('reviewed', 0) + f['reviewed']; a['smoked'] = a.get('smoked', 0) + f['smoked']; a['pm'] = a.get('pm', 0) + f['pm']; a['features'] += 1; a['red'] += 1 if f['blocked'] else 0
-    ms = {'reviewed': sum(f['reviewed'] for f in feats), 'smoked': sum(f['smoked'] for f in feats), 'pm': sum(f['pm'] for f in feats), 'checked': sum(f['checked'] for f in feats), 'met': sum(f['met'] for f in feats), 'total': sum(f['total'] for f in feats), 'features': len(feats), 'red': sum(1 for f in feats if f['blocked'])}
+        a['not_ok'] = a.get('not_ok', 0) + f['not_ok']; a['met'] += f['met']; a['total'] += f['total']; a['checked'] = a.get('checked', 0) + f['checked']; a['reviewed'] = a.get('reviewed', 0) + f['reviewed']; a['smoked'] = a.get('smoked', 0) + f['smoked']; a['pm'] = a.get('pm', 0) + f['pm']; a['features'] += 1; a['red'] += 1 if f['blocked'] else 0
+    ms = {'not_ok': sum(f['not_ok'] for f in feats), 'reviewed': sum(f['reviewed'] for f in feats), 'smoked': sum(f['smoked'] for f in feats), 'pm': sum(f['pm'] for f in feats), 'checked': sum(f['checked'] for f in feats), 'met': sum(f['met'] for f in feats), 'total': sum(f['total'] for f in feats), 'features': len(feats), 'red': sum(1 for f in feats if f['blocked'])}
     ms['pct'] = round(100 * ms['met'] / ms['total']) if ms['total'] else 0
     return {'areas': areas, 'milestone': ms}
 

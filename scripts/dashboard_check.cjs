@@ -17,6 +17,9 @@ const checks = {
   'one row per criterion': d.querySelectorAll('details .rows .row .title').length >= crit,
   'launch checklist drawn': !D.launch || D.launch.length === 0 || d.body.textContent.includes('Launch checklist'),
   'waiting on you drawn': d.body.textContent.includes('Waiting on you: ' + D.wait_total) && d.querySelectorAll('summary b').length >= D.wait_areas.length,
+  'one segment per criterion, in every feature and area bar': d.querySelectorAll('.segbar i').length === 2 * crit,
+  'how to read, five lines': d.querySelectorAll('ol.how li').length === 5,
+  'your UAT line': d.body.textContent.includes('Your UAT: ' + D.your_uat.ticked + ' of ' + D.your_uat.total + ' checked'),
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
 }

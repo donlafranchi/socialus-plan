@@ -12,6 +12,12 @@ DECISION = re.compile(r'A/B/C|waits? on the PM|waiting on the PM|for the PM\'s|t
 
 
 ERRORS = []
+UAT = {'total': 0, 'ticked': 0, 'start': None}   # the phone checklist as a whole, and the first sitting with an unticked box
+
+
+def gh_slug(t):
+    """GitHub's heading anchor: lower case, punctuation removed, each space a hyphen."""
+    return re.sub(r'[^\w\- ]', '', t.strip().lower()).replace(' ', '-')
 
 
 def gh(*a):
@@ -79,25 +85,38 @@ def collect(feat_area):
                     'Approve by applying the pm-approved label, or close it.')
             elif repo != WEB and not p['isDraft'] and (DECISION.search(p['body'] or '') or names & {'needs-pm', 'human-review', 'needs-don'}):
                 add(None, 'decision PR', f"{short} #{p['number']} {p['title']}", p['url'], ask(p['body'], p['title']))
-    # 4. unticked boxes in the phone checklist, per area, by sitting
+    # 4. the phone checklist (UAT), per area and sitting, each linking to its sitting's heading
+    UAT.update({'total': 0, 'ticked': 0, 'start': None})
     for i in gh('issue', 'list', '-R', WEB, '-l', 'uat', '-s', 'open', '-L', '50', '--json', 'number,title,body,url'):
-        sitting, per = None, {}
+        if 'self-check' in i['title']:
+            continue
+        sitting, heading, per = None, None, {}
         for l in (i['body'] or '').split('\n'):
-            m = re.match(r'## (Sitting \d+)', l)
+            m = re.match(r'## (Sitting (\d+)\b.*)', l)
             if m:
-                sitting = m.group(1)
+                sitting, heading = m.group(2), m.group(1)
+                per.setdefault(sitting, {'heading': heading})
             b = re.match(r'\s*[-*]\s+\[([ xX])\]\s+(F\d+)\.\d+', l)
-            if b and sitting:
-                a = feat_area.get(b.group(2))
-                d = per.setdefault((sitting, a), {'open': 0, 'all': 0, 'f': set()})
-                d['all'] += 1
-                if b.group(1) == ' ':
-                    d['open'] += 1
+            if b:
+                UAT['total'] += 1
+                done = b.group(1).lower() == 'x'
+                UAT['ticked'] += done
+                if sitting:
+                    d = per[sitting].setdefault(feat_area.get(b.group(2)), {'ticked': 0, 'all': 0, 'f': set()})
+                    d['all'] += 1
+                    d['ticked'] += done
                     d['f'].add(b.group(2))
-        for (sitting, a), d in sorted(per.items(), key=lambda kv: (kv[0][0], str(kv[0][1]))):
-            if d['open']:
-                add(a, 'phone checklist', f"#{i['number']} {sitting}: {d['open']} of {d['all']} boxes unticked ({', '.join(sorted(d['f']))})", i['url'],
-                    'Tick what you looked at; leave a box empty and comment if something is wrong.')
+                    if not done and UAT['start'] is None:
+                        UAT['start'] = {'n': sitting, 'url': f"{i['url']}#{gh_slug(per[sitting]['heading'])}"}
+        for sit, dd in per.items():
+            url = f"{i['url']}#{gh_slug(dd['heading'])}"
+            for a, d in dd.items():
+                if a == 'heading' or d['ticked'] == d['all']:
+                    continue
+                add(a, 'UAT', f"UAT sitting {sit}: {d['ticked']} of {d['all']} checked ({', '.join(sorted(d['f']))})", url,
+                    'Tick what you looked at. If one is wrong, leave it empty and comment "F081.3 not ok: what you saw"; the bug is filed for you.')
+    for items in out.values():   # UAT first in every list
+        items.sort(key=lambda it: it['kind'] != 'UAT')
     return out
 
 
