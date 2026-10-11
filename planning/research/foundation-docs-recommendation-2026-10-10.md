@@ -37,19 +37,38 @@ Problems: the same banner is pasted into 18 files; `goals.md` is cited by 8 file
 - Mozilla's [Manifesto](https://www.mozilla.org/en-US/about/manifesto/): a short mission, 10 one- or two-sentence principles, and a pledge.
 Path: well-worn. Copy that shape.
 
-**One doc, called the Charter.** (Not "foundation"; rename freely: Commitments, Our Promise.) About 40 lines, five sections:
+**Closest match: Mozilla's Manifesto.** A mission-driven product written before any formal structure, to say what it stands for and invite contributors: a short mission, a handful of aspirational principles, a pledge. Those are guidelines, not binding rules, which is where SocialUs is (no members yet, no organization yet). Wikipedia's Five Pillars is the second match for how people behave on the platform. The co-op statement is the *later* match: its "member economic participation" and "concern for community" principles are the shape to move to when the organization is formed, not before.
 
-| Section | Holds |
-|---|---|
-| Mission | One sentence on what we are for and for whom; the North Star |
-| What we believe | The few principles we weigh decisions by (members first, look first, who benefits the many) |
-| Promises to members | Surplus goes back; members are the investors and the only ones paid out; no outside capital; no selling member data |
-| What we do and don't | The rules for how the platform treats a member (takedown, data privacy, opt-out default) and how we earn |
-| Where to read more | Links, not copies: Voice guide, the ontology, the method |
+**Timing rule:** the Charter is **guidelines until the organization is formed**. How members share in what the platform earns, and how they take part in running it, are listed as open and decided then. Nothing here names an entity type or legal term (those live in `socialus-legal`).
 
-**Cap:** at most 40 statements. If a regen would go over, it stops and asks which to merge. That is what keeps it light.
+**Shape (Mozilla's):** Mission, Principles, Pledge. About 15 lines. Cap 40.
 
-**Stays separate, not folded in:** `voice-and-tone.md` (a 190-line style guide for writers, not a statement), the spine and ontology (below), `DECISIONS.md` (the ledger the Charter is built from), method rules in `socialus-ops`.
+## Draft Charter (wording for the PM to approve; new copy goes to the PM first)
+
+> **Charter**, as of 2026-10-10. Guidelines for now: we are early, with no members yet. We firm these up when the organization is formed.
+>
+> **Mission.** Everything serves people. We help regular people earn a decent living and afford to live well. (2026-09-12)
+>
+> **Principles**
+> 1. We currently weigh each decision for the people using it first; if it doesn't help them, it doesn't ship. (2026-09-12)
+> 2. We are never extractive: we don't take value from people without giving something back. (2026-09-12)
+> 3. We currently want to succeed first, so we can help members, and to succeed together. (2026-10-04)
+> 4. People can do more here. They don't have to. (2026-09-12)
+> 5. We currently default to what people would expect socially about who sees what. (2026-09-30)
+>
+> **Pledge**
+> - We currently don't sell member data. (2026-09-12)
+> - We currently don't show a member's data beyond what they chose to show. (2026-09-16)
+> - We currently put nothing a member contributes live without a report-and-takedown path. (2026-09-16)
+> - We currently charge fees that serve the platform and its members and favour no member over another. (2026-09-30)
+> - We currently take transaction income on member commerce, at a rate the income plan sets. (2026-10-07)
+> - We currently take no outside capital. (2026-09-12)
+>
+> **Open until the organization is formed.** How members share in what the platform earns. How members take part in running it.
+>
+> Read more: Voice guide · the ontology · how we build.
+
+Every line traces to a ruling (dates are the ruling's, from `DECISIONS.md`, `goals.md` and `ABSOLUTES.md`). Left out on purpose: the line that members are the investors and the only people paid out. The standing ruling says it, but the PM now says that is decided when the organization forms, so the draft does not state it. The SETTLED banner is a separate, standing ruling and is not touched here.
 
 ## Is it a duplicate of the ontology?
 
@@ -76,6 +95,6 @@ Build: tag the lines that belong (an agent pass; the PM spot-checks), write one 
 
 ## Decision for the PM
 
-- **A (recommended):** one Charter page as above, one regen skill, `goals.md` retired.
-- **B:** keep six separate docs (the earlier version of this note).
-- **C:** the Charter, but keep `goals.md`'s name and make it the generated page.
+- **A (recommended):** approve this Mozilla-shaped draft as worded. Then I build: write it to `product/charter.md`, add `regen-charter` (rebuilds it from the rulings above and runs with the Friday report), retire `goals.md`.
+- **B:** approve it, but also state "members are the investors and the only people paid out" now, as the standing ruling reads.
+- **C:** change the wording; reply with edits and I re-draft.
