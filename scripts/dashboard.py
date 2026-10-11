@@ -478,6 +478,28 @@ try:
 except Exception:
     block = ''
 out += ['', block or '### Meta-layer trial\n\nUnavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89']
+# Pipeline health panel (ruling 2026-10-11, socialus-ops #106): the two numbers the PM owns, at the top. The silent alarms
+# (main green, reviews happen, nothing closes half-built) show only when a metric has read red in its last two readings.
+def pipeline_health():
+    ops = os.path.join(os.environ.get('PROJECTS', os.path.expanduser('~/Projects')), 'socialus-ops')
+    try:
+        undated = json.load(open(os.path.join(ops, 'scores', 'tend-docs', 'latest.json')))['undated']
+        docs = f'**Docs current:** {undated} undated (target under 5) {"🟥" if undated >= 5 else "🟩"}'
+    except Exception:
+        docs = '**Docs current:** unavailable (`socialus-ops/scores/tend-docs/latest.json` unreadable)'
+    lines = ['### Pipeline health', '', docs, '', '**Overrule rate** (how often you reverse an agent\'s plan; lower is better): not measured yet, `score-pm-overrule` is not built.']
+    try:
+        rows = [l.split('\t') for l in open(os.path.join(ops, 'scores', 'history.tsv')).read().splitlines() if l.count('\t') >= 4]
+        for metric, what in (('ci_main_fail_pct', 'main stays green'), ('closed_parent_unmet', 'nothing closes half-built')):
+            last = [r[4] for r in rows if r[2] == metric][-2:]
+            if len(last) == 2 and all(b == 'red' for b in last):
+                lines += ['', f'**Alarm still red after two readings:** {what} (`{metric}`).']
+    except Exception:
+        pass
+    return lines + ['']
+
+_pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
+out[_pi + 1:_pi + 1] = [''] + pipeline_health()
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
