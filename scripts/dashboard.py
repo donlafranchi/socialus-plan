@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Writes DASHBOARD.md (plain text, no colour) and dashboard/status-dashboard.html (the colour) from socialus-web Issues and PRs (gh).
-Same layout and stage rules every run. Each area also lists what happened in the past shift (PRs, issues, migrations, decisions).
-Usage: python3 scripts/dashboard.py [repo-root] [--since 12h]   (defaults: cwd, 12h = one shift)"""
+"""Writes DASHBOARD.md (plain text) and dashboard/status-dashboard.html (colour).
+Criterion fulfillment comes only from socialus-web's build-log/reports/rollup.json (written by criteria.py); never from the reports.
+Usage: python3 scripts/dashboard.py [repo-root] [--rollup PATH] [--since 12h]; then node scripts/dashboard_check.cjs
+  --rollup  read a local rollup.json (e.g. a branch checkout) instead of socialus-web main. Exits 1 if the roll-up is missing or unreadable."""
 import json, os, re, subprocess, sys
 from datetime import datetime, date, timedelta, timezone
 from zoneinfo import ZoneInfo
@@ -9,389 +10,210 @@ from zoneinfo import ZoneInfo
 REPO = 'donlafranchi/socialus-web'
 MILESTONE = 'Beta 11-06'
 FREEZE = date(2026, 10, 30)
-LIVE = 'https://socialus.org'
-AREAS = ['page-editing', 'sign-in-you', 'explore-map', 'create-posts',
-         'sharing-links', 'builders-seed', 'moderation', 'ops']
-STAGES = ['Scenario approved', 'Built', 'Reviewed', 'Shipped', 'Smoke', 'PM looked']
-GREEN = {'SUCCESS', 'SKIPPED', 'NEUTRAL'}
-RED = {'FAILURE', 'TIMED_OUT', 'CANCELLED', 'ERROR', 'ACTION_REQUIRED', 'STARTUP_FAILURE'}
+ROLLUP = 'build-log/reports/rollup.json'
+PHASE_LABEL = {'built': 'Built', 'checked': 'Checked', 'reviewed': 'Reviewed', 'shipped': 'Shipped', 'smoked': 'Smoked', 'pm_looked': 'PM looked'}
+SETTLED = '> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any \'no fee\' language is retired.'
 
 
 def gh(*args):
-    out = subprocess.run(['gh', *args], check=True, capture_output=True, text=True).stdout
-    return json.loads(out)
+    return json.loads(subprocess.run(['gh', *args], check=True, capture_output=True, text=True).stdout)
 
 
-def labels(x):
-    return {l['name'] for l in x.get('labels', [])}
+def fail(msg):
+    print(f'dashboard: {msg}', file=sys.stderr)
+    sys.exit(1)
 
-
-def link(n):
-    return f'[#{n}](https://github.com/{REPO}/issues/{n})'
-
-
-def first_live_url(*texts):
-    for t in texts:
-        m = re.search(r'https://[^\s)>\]]*socialus\.org[^\s)>\]]*', t or '')
-        if m:
-            return m.group(0).rstrip('.,')
-    return None
-
-
-issues = gh('issue', 'list', '-R', REPO, '--state', 'all', '--milestone', MILESTONE,
-            '--limit', '500', '--json', 'number,title,state,labels,body,url')
-open_bugs = gh('issue', 'list', '-R', REPO, '--state', 'open', '--label', 'bug',
-               '--limit', '500', '--json', 'number,title,body')
-prs = gh('pr', 'list', '-R', REPO, '--state', 'all', '--limit', '300',
-         '--json', 'number,title,body,state,mergedAt,labels,'
-                   'closingIssuesReferences,headRefName,mergeCommit,createdAt')
-all_issues = gh('issue', 'list', '-R', REPO, '--state', 'all', '--limit', '300',
-                '--json', 'number,title,state,labels,createdAt,closedAt')
-
-
-def runs_of(workflow):
-    # {commit sha: conclusion}; None when the workflow does not exist yet.
-    try:
-        rs = gh('run', 'list', '-R', REPO, '--workflow', workflow, '--limit', '200', '--json', 'headSha,conclusion,status')
-    except subprocess.CalledProcessError:
-        return None
-    return {r['headSha']: (r['conclusion'] or r['status']) for r in rs}
-
-
-DEPLOY = runs_of('Deploy health') or {}
-SMOKE = runs_of('smoke-live.yml')
-PLAN = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-NEEDS_REVIEW = re.compile(r'^(src/(app|components|actions)/|supabase/)')
-TESTISH = re.compile(r'\.test\.tsx?$')
-
-
-def ok(x):
-    return x in ('●', '·')
-
-by_issue = {}
-for p in prs:
-    refs = {r['number'] for r in p.get('closingIssuesReferences') or []}
-    m = re.match(r'^(?:bug|change|chore|fix)[^#:]*#(\d+)', p['title'], re.I)
-    if m:
-        refs.add(int(m.group(1)))
-    m = re.match(r'^(?:bug-|change-|chore-)?(\d+)-', p['headRefName'] or '')
-    if m:
-        refs.add(int(m.group(1)))
-    for n in refs:
-        by_issue.setdefault(n, []).append(p)
-
-
-def best_pr(n):
-    cands = by_issue.get(n, [])
-    merged = sorted((p for p in cands if p['mergedAt']), key=lambda p: p['mergedAt'])
-    if merged:
-        return merged[-1]
-    opened = [p for p in cands if p['state'] == 'OPEN']
-    return max(opened, key=lambda p: p['number']) if opened else None
-
-
-def ci(pr):
-    # CI check status from statusCheckRollup - simplified, returns ?
-    return '?'
-
-
-def scenario_stage(i, built):
-    body = i.get('body') or ''
-    m = re.search(r'Scenario:\**\s*(F\d{3})', body, re.I) or re.match(r'^(F\d{3})\b', i['title'])
-    if not m:
-        return '·'
-    path = os.path.join(PLAN, 'planning', f'scenario-{m.group(1).upper()}.md')
-    if not os.path.exists(path):
-        # A shipped scenario is deleted at sync; before that, a missing file is unknown.
-        return '●' if built else '?'
-    head = open(path).read(600)
-    st = re.search(r'^status:\s*(\w+)', head, re.M)
-    return '●' if st and st.group(1) in ('approved', 'building') else ('○' if st else '?')
-
-
-def stages(i):
-    n = i['number']
-    pr = best_pr(n)
-    is_bug = 'bug' in labels(i)
-    merged = bool(pr and pr['mergedAt']) or (is_bug and i['state'] == 'CLOSED')
-    built = '●' if merged else '○'
-    scenario = scenario_stage(i, merged)
-    # Reviewed: always '·' since we no longer check files
-    reviewed = '●' if pr and 'Reviewed by:' in (pr.get('body') or '') and 'review-skipped' not in labels(pr) else '·'
-    # Shipped: merged, and the deploy-health run for the merge commit is green.
-    if not merged:
-        shipped = smoke = '○'
-    else:
-        sha = ((pr or {}).get('mergeCommit') or {}).get('oid')
-        d = DEPLOY.get(sha) if sha else None
-        shipped = '?' if d is None else ('●' if d == 'success' else '○')
-        sm = SMOKE.get(sha) if (SMOKE is not None and sha) else None
-        smoke = '?' if sm is None else ('●' if sm == 'success' else '○')
-    pm = '●' if 'pm-reviewed' in labels(i) or (pr and 'pm-reviewed' in labels(pr)) else '○'
-    if is_bug:
-        bugs = i['state'] == 'CLOSED'
-    else:
-        pat = re.compile(rf'#{n}\b')
-        bugs = not any(pat.search((b['title'] or '') + ' ' + (b['body'] or '')) for b in open_bugs)
-    s = [scenario, built, reviewed, shipped, smoke, pm]
-    done = all(ok(x) for x in s) and merged and bugs
-    return s, pr, done
-
-
-rows = []
-for i in issues:
-    area = next((l[5:] for l in labels(i) if l.startswith('area:')), None)
-    st, pr, is_done = stages(i)
-    rows.append({'n': i['number'], 'title': re.sub(r'^(change|bug|chore) · ', '', i['title']),
-                 'area': area, 'st': st, 'done': is_done, 'pr': pr, 'open': i['state'] == 'OPEN',
-                 'blocking': 'launch-blocking' in labels(i),
-                 'review': first_live_url(i.get('body'), (pr or {}).get('body'))})
 
 args = sys.argv[1:]
-since_h = 12
-if '--since' in args:
-    k = args.index('--since')
-    since_h = int(args[k + 1].rstrip('h'))
-    del args[k:k + 2]
-SINCE = datetime.now(timezone.utc) - timedelta(hours=since_h)
-
-
-def recent(ts):
-    return bool(ts) and datetime.fromisoformat(ts.replace('Z', '+00:00')) >= SINCE
-
-
-def area_of(x):
-    return next((l[5:] for l in labels(x) if l.startswith('area:')), None)
-
-
-ISSUE_AREA = {i['number']: area_of(i) for i in all_issues}
-SURFACE_AREA = {'pages': 'page-editing', 'page-edit': 'page-editing', 'contact': 'page-editing',
-                'moderation': 'moderation', 'reports': 'moderation', 'uploads': 'create-posts',
-                'posting': 'create-posts', 'explore': 'explore-map', 'map': 'explore-map',
-                'sign-in': 'sign-in-you', 'signup': 'sign-in-you', 'auth': 'sign-in-you',
-                'sharing': 'sharing-links', 'links': 'sharing-links', 'seed': 'builders-seed'}
-
-
-def pr_area(p):
-    for n in [r['number'] for r in p.get('closingIssuesReferences') or []] + [n for n, ps in by_issue.items() if p in ps]:
-        if ISSUE_AREA.get(n):
-            return ISSUE_AREA[n]
-    return None
-
-
-def decision_area(line):
-    m = re.search(r'surfaces=([\w,-]+)', line)
-    for sf in (m.group(1).split(',') if m else []):
-        if sf in SURFACE_AREA:
-            return SURFACE_AREA[sf]
-    return None
-
-
-SHIFT = {}  # area (or None) -> [(kind, text, url)]
-
-
-def log(area, kind, text, url=None):
-    SHIFT.setdefault(area, []).append((kind, text, url))
-
-
-for p in prs:
-    a = pr_area(p)
-    u = f'https://github.com/{REPO}/pull/{p["number"]}'
-    if recent(p['mergedAt']):
-        log(a, 'PR merged', f'#{p["number"]} {p["title"]}', u)
-        for f in p.get('files') or []:
-            if f['path'].startswith('supabase/migrations/'):
-                log(a, 'Migration', f'{os.path.basename(f["path"])} (PR #{p["number"]})', u)
-    elif recent(p['createdAt']):
-        log(a, 'PR opened', f'#{p["number"]} {p["title"]}', u)
-for i in all_issues:
-    u = f'https://github.com/{REPO}/issues/{i["number"]}'
-    if recent(i['createdAt']):
-        log(area_of(i), 'Issue filed', f'#{i["number"]} {i["title"]}', u)
-    if i['state'] == 'CLOSED' and recent(i['closedAt']):
-        log(area_of(i), 'Issue closed', f'#{i["number"]} {i["title"]}', u)
-try:
-    for line in open(os.path.join(PLAN, 'DECISIONS.md')):
-        m = re.match(r'- \*\*(\d{4}-\d{2}-\d{2}) — (.*?)\*\*', line)
-        if m and m.group(1) >= SINCE.astimezone(ZoneInfo('America/Los_Angeles')).strftime('%Y-%m-%d'):
-            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else ''))
-except OSError:
-    pass
-
-
-def shift_md(items):
-    return [f'- **{k}:** ' + (f'[{t}]({u})' if u else t) for k, t, u in items]
-
-
-COLORS = ['#2563eb', '#0d9488', '#7c3aed', '#ea580c', '#65a30d', '#ca8a04']
-OFF, UNK = '#d1d5db', '#fde68a'
-
-# Read #519 testing checkboxes
-test_items = []
-try:
-    issue_519 = gh('issue', 'view', '-R', REPO, '519', '--json', 'title,body')
-    body = issue_519.get('body', '')
-    # Parse markdown checkboxes: - [x] text or - [ ] text
-    for line in body.split('\n'):
-        m = re.match(r'-\s+\[(.)\]\s+(.+)', line)
-        if m:
-            checked = m.group(1) == 'x'
-            text = m.group(2)
-            # Extract URL if present
-            url_match = re.search(r'https://[^\s)]+', text)
-            url = url_match.group(0) if url_match else None
-            # Extract link text
-            link_match = re.search(r'\[([^\]]+)\]', text)
-            if link_match:
-                text = link_match.group(1)
-            test_items.append({'checked': checked, 'text': text, 'url': url})
-except:
-    pass
-
+opt = lambda k, d=None: (args.pop(args.index(k) + 1), args.remove(k))[0] if k in args else d
+local = opt('--rollup')
+since_h = int(str(opt('--since', '12')).rstrip('h'))
 root = args[0] if args else '.'
+PLAN = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+
+# 1. The roll-up: the only source for criteria.
+try:
+    if local:
+        R, source = json.load(open(local)), 'a local rollup.json (--rollup, not main)'
+    else:
+        raw = subprocess.run(['gh', 'api', '-H', 'Accept: application/vnd.github.raw', f'repos/{REPO}/contents/{ROLLUP}?ref=main'],
+                             check=True, capture_output=True, text=True).stdout
+        R, source = json.loads(raw), f'{REPO}@main:{ROLLUP}'
+except (OSError, ValueError, subprocess.CalledProcessError) as x:
+    fail(f'cannot read the roll-up ({x}). Run `python3 scripts/criteria.py rollup build-log/reports` in socialus-web, merge it, or pass --rollup.')
+if R.get('schema') != 1 or 'features' not in R or R.get('phases') != list(PHASE_LABEL):
+    fail(f'roll-up from {source} is not schema 1 with the six phases; refusing to guess')
+PHASES = R['phases']
+features = R['features']
+live = [f for f in features if not f['retired']]
+reached = max((c['score'] for f in live for c in f['criteria'] if c['status'] != 'retired'), default=0)
+never = [p for p in PHASES if R['all']['totals'][p]['yes'] == 0]
+
+# 2. Planning: approved scenarios with no report are a data problem.
+reported = {f['feature'] for f in features}
+no_report = []
+for fn in sorted(os.listdir(os.path.join(PLAN, 'planning'))):
+    m = re.match(r'scenario-(F\d{3})\.md$', fn)
+    if not m or m.group(1) in reported:
+        continue
+    head = open(os.path.join(PLAN, 'planning', fn)).read(800)
+    st = re.search(r'^status:\s*(\w+)', head, re.M)
+    if st and st.group(1) in ('approved', 'building'):
+        g = re.search(r'^gates:\s*(\w+)', head, re.M)
+        no_report.append({'f': m.group(1), 'status': st.group(1), 'gates': g.group(1) if g else 'none'})
+
+# 3. Live testing: one uat Issue per feature, one box per criterion (record-pm-review).
+uat = []
+for i in gh('issue', 'list', '-R', REPO, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,state,body,url'):
+    m = re.search(r'\b(F\d{3})-', i['body'] or '') or re.search(r'\b(F\d{3})\b', i['title'])
+    boxes = re.findall(r'^\s*- \[([ xX])\]', i['body'] or '', re.M)
+    uat.append({'n': i['number'], 'title': i['title'], 'state': i['state'], 'url': i['url'], 'f': m.group(1) if m else None,
+                'done': sum(1 for b in boxes if b != ' '), 'boxes': len(boxes)})
+
+# 4. The PM's queue and the past shift.
+needs_pm = gh('issue', 'list', '-R', REPO, '-l', 'needs-pm', '-s', 'open', '-L', '100', '--json', 'number,title,url,milestone')
+needs_pm.sort(key=lambda i: (not i['milestone'], i['number']))
+SINCE = datetime.now(timezone.utc) - timedelta(hours=since_h)
+recent = lambda ts: bool(ts) and datetime.fromisoformat(ts.replace('Z', '+00:00')) >= SINCE
+shift = []
+for p in gh('pr', 'list', '-R', REPO, '-s', 'all', '-L', '100', '--json', 'number,title,url,mergedAt,createdAt'):
+    if recent(p['mergedAt']):
+        shift.append(('PR merged', f'#{p["number"]} {p["title"]}', p['url']))
+    elif recent(p['createdAt']):
+        shift.append(('PR opened', f'#{p["number"]} {p["title"]}', p['url']))
+for i in gh('issue', 'list', '-R', REPO, '-s', 'all', '-L', '200', '--json', 'number,title,url,state,createdAt,closedAt'):
+    if recent(i['createdAt']):
+        shift.append(('Issue filed', f'#{i["number"]} {i["title"]}', i['url']))
+    if i['state'] == 'CLOSED' and recent(i['closedAt']):
+        shift.append(('Issue closed', f'#{i["number"]} {i["title"]}', i['url']))
+
+problems = list(R['problems'])
+problems += [f'{x["f"]}: scenario {x["status"]}' + (' (gates: launch)' if x['gates'] == 'launch' else '') + ': no report' for x in no_report]
+problems += [f'UAT #{u["n"]} "{u["title"]}" names no feature; not counted' for u in uat if not u['f']]
+
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
-total = len(rows)
-done = sum(1 for r in rows if r['done'])
-stage_totals = ' · '.join(f'{STAGES[k]} {sum(1 for r in rows if ok(r["st"][k]))}/{total}' for k in range(6))
-header = f'{MILESTONE} · {days} days to freeze · {total} beta items · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
-
-areas = []
-behind = []
-for a in AREAS:
-    rs = sorted((r for r in rows if r['area'] == a), key=lambda r: r['n'])
-    filled = 0
-    for k in range(6):
-        if rs and all(ok(r['st'][k]) for r in rs):
-            filled += 1
-        else:
-            break
-    counts = [sum(1 for r in rs if ok(r['st'][k])) for k in range(6)]
-    unknown = sum(1 for r in rs if '?' in r['st'])
-    if not rs:
-        note = 'no beta items'
-    else:
-        note = f'{counts[1]} of {len(rs)} built'
-        if filled < 6:
-            note += f'; {sum(1 for r in rs if not ok(r["st"][filled]))} waiting on {STAGES[filled]}'
-        if unknown:
-            note += f'; {unknown} with a ?'
-        if any(r['blocking'] and r['open'] and r['st'][1] != '●' for r in rs):
-            behind.append(a)
-    areas.append({'name': a, 'rows': rs, 'filled': filled, 'counts': counts, 'note': note,
-                  'done': sum(1 for r in rs if r['done']), 'shift': SHIFT.get(a, [])})
-
-if not behind:
-    present = [x for x in areas if x['rows']]
-    overall = sum(1 for r in rows if r['st'][1] == '●') / max(1, total)
-    behind = [x['name'] for x in present if x['counts'][1] / len(x['rows']) < overall]
-
-nxt = next((r for r in sorted(rows, key=lambda r: (not r['blocking'], r['n']))
-            if r['open'] and all(ok(x) for x in r['st'][:5]) and r['st'][5] != '●'), None)
-unassigned = [r for r in rows if r['area'] is None]
-
-
-def pr_url(r):
-    return f'https://github.com/{REPO}/pull/{r["pr"]["number"]}' if r['pr'] else None
-
-
-def issue_url(n):
-    return f'https://github.com/{REPO}/issues/{n}'
-
-
-out = ['> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any \'no fee\' language is retired.', '', f'# {header}', '',
-       '*Generated by `scripts/dashboard.py`; never hand-edited. `▰` is a stage every item in the area has reached; `●` a stage reached, `○` not yet, `?` the data to tell was not found. Colour: `dashboard/status-dashboard.html`.*', '',
-       '| Area | ' + ' | '.join(STAGES) + ' | Note |', '|---|' + '---|' * 7]
-for x in areas:
-    n = len(x['rows'])
-    cells = ' | '.join(f'{c}/{n}' for c in x['counts'])
-    out.append(f'| {x["name"]} | {cells} | {x["note"]} |')
-out.append(f'| **All** | ' + ' | '.join(f'**{sum(1 for r in rows if ok(r["st"][k]))}/{total}**' for k in range(6)) + ' | each phase counted on its own |')
-out.append('')
-out.append('Stages, in order: ' + ' → '.join(f'**{s}**' for s in STAGES) + '.')
-if unassigned:
-    out += ['', f'*{len(unassigned)} beta item(s) have no `area:` label: ' + ', '.join(f'[#{r["n"]}]({issue_url(r["n"])})' for r in unassigned) + '.*']
-for x in areas:
-    out += ['', f'<details><summary><b>{x["name"]}</b> · {len(x["rows"])} item(s)</summary>', '',
-            f'**Past {since_h}h:** ' + ('nothing.' if not x['shift'] else ''), *shift_md(x['shift']), '',
-            '| Stages | Feature | Review | Link |', '|---|---|---|---|']
-    for r in x['rows']:
-        alt = ''.join(r['st'])
-        pr = f' · [PR #{r["pr"]["number"]}]({pr_url(r)})' if r['pr'] else ''
-        rv = f'[Review]({r["review"]})' if r['review'] else '?'
-        out.append(f'| `{alt}` | {r["title"]} | {rv} | [#{r["n"]}]({issue_url(r["n"])}){pr} |')
-    if not x['rows']:
-        out.append('| | none yet | | |')
-    out += ['', '</details>']
-if SHIFT.get(None):
-    out += ['', f'<details><summary><b>No area</b> · past {since_h}h · {len(SHIFT[None])} event(s)</summary>', '', *shift_md(SHIFT[None]), '', '</details>']
-out += ['', '**Behind:** ' + (', '.join(behind) if behind else 'none') +
-        ' *(an open launch-blocking item not yet built; else below the overall built share)*', '']
+A = R['all']
+header = f'{MILESTONE} · {days} days to freeze · {A["n"]} criteria in {A["features"]} features · {A["red"]} launch blockers · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
+frac = lambda t, n: f'{t["yes"]}/{n}' + (f' ({t["unknown"]}?)' if t['unknown'] else '')
+ceiling = (f'Best any criterion reaches today: {reached} of 6.'
+           + (f' {", ".join(PHASE_LABEL[p] for p in never)} {"is" if len(never) == 1 else "are"} 0 everywhere, so no cell can be full yet.' if never else ''))
+nxt = next((i for i in needs_pm if i['milestone']), needs_pm[0] if needs_pm else None)
+blocker = next(((f, c) for f in live for c in f['criteria'] if c['red']), None)
 if nxt:
-    cta = f'Review {nxt["title"]} ([#{nxt["n"]}]({issue_url(nxt["n"])}))' + (f' at [the live page]({nxt["review"]})' if nxt['review'] else '') + ', then label it `pm-reviewed`.'
+    cta_md = f'answer [#{nxt["number"]}]({nxt["url"]}) {nxt["title"]}' + (' (launch)' if nxt['milestone'] else '') + '.'
+elif blocker:
+    cta_md = f'nothing needs you; agents take {blocker[0]["feature"]}.{blocker[1]["id"]} next.'
 else:
-    cta = 'none: nothing is waiting on you.'
-out.append(f'**Your next action:** {cta}')
-# Meta-layer trial block (TRIAL, started 2026-10-10): tracker link, trial health, next score. Regenerated each run.
+    cta_md = 'none: nothing is waiting on you.'
+
+
+def strip(f):
+    out = []
+    for c in f['criteria']:
+        if c['status'] == 'retired':
+            out.append('-')
+        else:
+            out.append(f'{c["score"]}' + ('!' if c['red'] else '') + ('?' if c['built'] == 'unknown' else ''))
+    return ' '.join(out)
+
+
+md = [SETTLED, '', f'# {header}', '',
+      f'*Generated by `scripts/dashboard.py` from `{source}` (as-of {R["as_of"]}); never hand-edited. Colour: `dashboard/status-dashboard.html`.*', '',
+      '## 1. Criterion fulfillment', '',
+      'Each cell is criteria at `yes` out of criteria counted; `(n?)` are `unknown`, never counted as yes. ' + ceiling, '',
+      '| Area | Criteria | ' + ' | '.join(PHASE_LABEL[p] for p in PHASES) + ' | Launch blockers |', '|---' * (len(PHASES) + 3) + '|']
+for a, x in sorted(R['areas'].items()):
+    md.append(f'| {a} | {x["n"]} | ' + ' | '.join(frac(x['totals'][p], x['n']) for p in PHASES) + f' | {x["red"]} |')
+md.append(f'| **All** | {A["n"]} | ' + ' | '.join(f'**{frac(A["totals"][p], A["n"])}**' for p in PHASES) + f' | **{A["red"]}** |')
+md += ['', 'Per criterion, the number is phases passed out of 6 (0 none started, 6 all passed); `!` a launch blocker (gates: launch and not built, or an invariant with no guard); `?` built unknown; `-` retired.', '']
+for a in sorted({f['area'] for f in features}):
+    fs = [f for f in features if f['area'] == a]
+    md += [f'<details><summary><b>{a}</b> · {sum(f["n"] for f in fs if not f["retired"])} criteria · {sum(f["red"] for f in fs)} launch blockers</summary>', '',
+           '| Feature | Gates | Built | Criteria (phases passed) |', '|---|---|---|---|']
+    for f in fs:
+        name = f'{f["feature"]} {f["title"]}' + (' (retired, not counted)' if f['retired'] else '')
+        md.append(f'| {name} | {f["gates"]} | {frac(f["totals"]["built"], f["n"])} | `{strip(f)}` |')
+    md += ['', '</details>']
+md += ['', '**Gaps by type** (computed from the cells): ' + ' · '.join(f'{g} {len(v)}' for g, v in R['gaps'].items()) + '.', '',
+       '**PM queue** (`needs-pm`, launch first): ' + ('; '.join(f'[#{i["number"]}]({i["url"]}) {i["title"]}' for i in needs_pm) if needs_pm else 'empty') + '.', '',
+       f'**Your next action:** {cta_md}', '']
 try:
     th = os.path.join(os.environ.get('PROJECTS', os.path.expanduser('~/Projects')), 'socialus-ops', 'scripts', 'trial_health.py')
     block = subprocess.run(['python3', th, '--block'], capture_output=True, text=True, timeout=120).stdout.strip()
 except Exception:
     block = ''
-out += ['', block or '### Meta-layer trial\n\nUnavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89']
-open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
+block = block or 'Unavailable: `socialus-ops/scripts/trial_health.py` did not run. Tracker: https://github.com/donlafranchi/socialus-ops/issues/89'
+md += ['## 2. Meta-layer trial', '', re.sub(r'^### .*\n+', '', block), '']
+md += ['## 3. Live testing', '',
+       'Source: one `uat` Issue per feature with a box per criterion (`record-pm-review`); a ticked box is that criterion\'s PM looked. '
+       'The click-through sheet (#519) checks controls, not criteria, so it is linked from UAT Issues and not counted here.', '']
+tied = [u for u in uat if u['f']]
+md += [f'- [#{u["n"]}]({u["url"]}) {u["f"]}: {u["done"]} of {u["boxes"]} boxes ({u["state"].lower()})' for u in tied] or ['- No UAT Issue names a feature yet: live testing is 0 for every feature.']
+md += ['', '## Data problems', '', 'Every `?` and every missing report, so none is mistaken for progress.', ''] + [f'- {p}' for p in problems] + ['']
+md += [f'<details><summary><b>Past {since_h}h</b> · {len(shift)} event(s)</summary>', ''] + [f'- **{k}:** [{t}]({u})' for k, t, u in shift] + ['', '</details>']
+os.makedirs(os.path.join(root, 'dashboard'), exist_ok=True)
+open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(md) + '\n')
 
-data = {
-    'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
-    'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
-    'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
-    'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
-               'done': x['done'], 'note': x['note'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
-               'rows': [{'n': r['n'], 'title': r['title'], 'st': r['st'], 'review': r['review'],
-                         'issue': issue_url(r['n']), 'pr': pr_url(r), 'prn': r['pr']['number'] if r['pr'] else None}
-                        for r in x['rows']]} for x in areas],
-}
+data = {'header': header, 'source': source, 'as_of': R['as_of'], 'phases': [PHASE_LABEL[p] for p in PHASES], 'keys': PHASES,
+        'ceiling': ceiling, 'areas': R['areas'], 'all': A, 'gaps': {g: len(v) for g, v in R['gaps'].items()},
+        'features': [{k: f[k] for k in ('feature', 'title', 'area', 'gates', 'retired', 'n', 'red', 'totals', 'path')}
+                     | {'criteria': [{k: c[k] for k in ('id', 'text', 'status', 'score', 'red', 'built', 'issues', *PHASES)} for c in f['criteria']]}
+                     for f in features],
+        'needs_pm': [{'n': i['number'], 't': i['title'], 'u': i['url'], 'launch': bool(i['milestone'])} for i in needs_pm],
+        'cta': {'n': nxt['number'], 't': nxt['title'], 'u': nxt['url']} if nxt else None,
+        'trial': block, 'uat': tied, 'problems': problems, 'since': since_h, 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in shift],
+        'report_base': f'https://github.com/{REPO}/blob/main/build-log/reports/'}
 PAGE = """<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Beta dashboard</title>
 <style>
-:root{--bg:#f8fafc;--card:#fff;--ink:#0f172a;--mute:#64748b;--off:#d1d5db;--unk:#fde68a;--line:#e2e8f0}
-@media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--ink:#e5e7eb;--mute:#94a3b8;--off:#334155;--unk:#854d0e;--line:#1e293b}}
+:root{--bg:#f8fafc;--card:#fff;--ink:#0f172a;--mute:#64748b;--line:#e2e8f0;--fill:37,99,235;--red:#dc2626;--warn:#fde68a}
+@media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--ink:#e5e7eb;--mute:#94a3b8;--line:#1e293b;--fill:96,165,250;--red:#f87171;--warn:#854d0e}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-main{max-width:960px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.25rem;margin:0 0 4px}
-.settled{margin:0 0 14px;padding:10px 12px;border-radius:8px;background:var(--unk);color:var(--ink);font-size:.85rem}.sub{color:var(--mute);font-size:.85rem;margin:0 0 18px}.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;margin-bottom:18px}
-.legend span{display:inline-flex;align-items:center;gap:6px}.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
-details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;border-left-width:6px}
-.ramp{display:inline-flex;gap:2px;vertical-align:middle}.ramp i{width:18px;height:10px;display:inline-block;border-radius:2px}
-summary{list-style:none;cursor:pointer;padding:12px 14px;display:grid;grid-template-columns:minmax(110px,150px) 1fr;gap:6px 14px;align-items:center}
-summary::-webkit-details-marker{display:none}.name{font-weight:650}.note{grid-column:1/-1;color:var(--mute);font-size:.82rem}
-.bar{display:grid;grid-template-columns:repeat(6,1fr);gap:3px}.seg{height:26px;border-radius:5px;background:var(--off);color:var(--ink);font-size:.72rem;font-weight:650;display:flex;align-items:center;justify-content:center}
-.seg.on{color:#fff}.rows{border-top:1px solid var(--line);padding:4px 14px 10px}
-.row{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:9px 0;border-bottom:1px solid var(--line);align-items:center}.row:last-child{border:0}
-.strip{display:flex;gap:3px}.box{width:16px;height:16px;border-radius:3px;background:var(--off);font-size:.7rem;font-weight:800;color:#92400e;text-align:center;line-height:16px}
-.box.unk{background:var(--unk)}.title{font-size:.92rem}.links{grid-column:2;font-size:.8rem;color:var(--mute)}a{color:#2563eb}
-.shift{margin:8px 0 2px;padding:8px 10px;border-radius:8px;background:var(--bg);font-size:.82rem}.shift b{display:block;margin-bottom:2px}.shift div{padding:1px 0}.shift i{font-style:normal;color:var(--mute)}
-.foot{margin-top:18px;padding:14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.foot p{margin:4px 0}
-@media(max-width:560px){summary{grid-template-columns:1fr}}
+main{max-width:980px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.2rem;margin:0 0 4px}h2{font-size:1.05rem;margin:26px 0 8px}
+.settled{margin:0 0 14px;padding:10px 12px;border-radius:8px;background:var(--warn);font-size:.85rem}.sub{color:var(--mute);font-size:.85rem;margin:0 0 12px}
+table{border-collapse:collapse;width:100%;font-size:.85rem;background:var(--card)}th,td{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left}th{font-weight:600;color:var(--mute)}
+.scroll{overflow-x:auto}details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:8px 0}summary{cursor:pointer;padding:10px 14px;font-weight:600}summary span{font-weight:400;color:var(--mute);font-size:.85rem}
+.feat{display:grid;grid-template-columns:minmax(160px,260px) 1fr;gap:6px 12px;padding:8px 14px;border-top:1px solid var(--line);align-items:center}.feat.retired{opacity:.45}
+.fname{font-size:.88rem}.fname small{display:block;color:var(--mute)}.cells{display:flex;flex-wrap:wrap;gap:3px}
+.c{width:22px;height:22px;border-radius:4px;border:1px solid rgba(var(--fill),.35);font-size:.62rem;display:flex;align-items:center;justify-content:center;color:var(--ink)}
+.c.red{border:2px solid var(--red)}.c.unk{background-image:repeating-linear-gradient(45deg,transparent 0 3px,rgba(127,127,127,.35) 3px 5px)}.c.ret{border-style:dashed;opacity:.5}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.8rem;margin:8px 0}.legend span{display:inline-flex;align-items:center;gap:6px}
+.box{padding:12px 14px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:.9rem}.box p{margin:6px 0}ul{margin:6px 0;padding-left:20px;font-size:.88rem}a{color:rgb(var(--fill))}
+@media(max-width:560px){.feat{grid-template-columns:1fr}}
 </style></head><body><main>
-<p class="settled"><b>SETTLED — do not re-raise:</b> members are the investors and the only people paid out. “Ownership, not profit-share” is rejected. Legal/securities questions about this go to socialus-legal for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.</p><h1 id="h"></h1><p class="sub">Generated by scripts/dashboard.py. Tap an area to open it. A coloured box is a stage reached, grey is not yet, yellow ? is unknown.</p>
-<div class="legend" id="legend"></div><div id="areas"></div><div class="foot" id="foot"></div>
+<p class="settled"><b>SETTLED — do not re-raise:</b> members are the investors and the only people paid out. “Ownership, not profit-share” is rejected. Legal/securities questions about this go to socialus-legal for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.</p>
+<h1 id="h"></h1><p class="sub" id="src"></p>
+<h2>1. Criterion fulfillment</h2><p class="sub" id="ceiling"></p><div class="scroll" id="areas"></div><div class="legend" id="legend"></div><div id="grid"></div><div class="box" id="queue"></div>
+<h2>2. Meta-layer trial</h2><div class="box" id="trial"></div>
+<h2>3. Live testing</h2><div class="box" id="uat"></div>
+<h2>Data problems</h2><div class="box"><ul id="problems"></ul></div>
+<details id="shift"></details>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 const D=JSON.parse(document.getElementById('data').textContent);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const md=s=>esc(s).replace(/\\*\\*(.+?)\\*\\*/g,'<b>$1</b>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\\[([^\\]]+)\\]\\((https?:[^)]+)\\)/g,'<a href="$2">$1</a>').replace(/(^|\\s)(https:\\/\\/\\S+)/g,'$1<a href="$2">$2</a>');
+const frac=(t,n)=>`${t.yes}/${n}`+(t.unknown?` <small>(${t.unknown}?)</small>`:'');
 document.getElementById('h').textContent=D.header;document.title=D.header;
-const RAMP=['#b91c1c','#d97706','#ca8a04','#65a30d','#15803d'];const ramp=f=>RAMP[Math.min(4,Math.floor(f*5))];
-document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('')+`<span>Area edge, mean of the six phases: <span class="ramp">${RAMP.map(c=>`<i style="background:${c}"></i>`).join('')}</span> 0% to 100%</span>`;
-const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=>`<div><i>${esc(e.k)}:</i> ${e.u?`<a href="${esc(e.u)}">${esc(e.t)}</a>`:esc(e.t)}</div>`).join(''):'<div><i>nothing</i></div>'}</div>`;
-const testSection=D.test_items.length?`<details><summary><span class="name">Testing</span><span class="note">${D.test_items.filter(t=>t.checked).length} of ${D.test_items.length} screens</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row" style="opacity:${t.checked?1:.5}"><input type="checkbox" ${t.checked?'checked':''} disabled style="cursor:default;margin-right:8px"/><div class="title">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`:'';
-document.getElementById('areas').innerHTML=D.areas.map(a=>{
- const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
- const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
- const mean=a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0;return `<details style="border-left-color:${ramp(mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${Math.round(mean*100)}% overall · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
-document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
+document.getElementById('src').textContent=`Generated by scripts/dashboard.py from ${D.source} (as-of ${D.as_of}). Never hand-edited.`;
+document.getElementById('ceiling').textContent='Each cell is criteria at yes; (n?) are unknown, never counted as yes. '+D.ceiling;
+const row=(name,x)=>`<tr><td>${name}</td><td>${x.n}</td>${D.keys.map(k=>`<td>${frac(x.totals[k],x.n)}</td>`).join('')}<td>${x.red?`<b style="color:var(--red)">${x.red}</b>`:0}</td></tr>`;
+document.getElementById('areas').innerHTML=`<table><tr><th>Area</th><th>Criteria</th>${D.phases.map(p=>`<th>${p}</th>`).join('')}<th>Launch blockers</th></tr>${Object.keys(D.areas).sort().map(a=>row(esc(a),D.areas[a])).join('')}${row('<b>All</b>',D.all)}</table>`;
+const shade=s=>s?`background:rgba(var(--fill),${(0.12+0.88*s/6).toFixed(2)});color:${s>=4?'#fff':'inherit'}`:'';
+document.getElementById('legend').innerHTML='<span>Each square is one criterion (its number). Phases passed: 0 '+[0,1,2,3,4,5,6].map(s=>`<i class="c" style="${shade(s)}"></i>`).join('')+' 6</span>'+'<span><i class="c red"></i>launch blocker</span><span><i class="c unk"></i>built unknown</span><span><i class="c ret"></i>retired</span>';
+const tip=c=>`${c.id}: ${c.text}\\n`+D.keys.map((k,i)=>`${D.phases[i]}: ${c[k]}`).join(' · ')+(c.issues.length?`\\nIssues: ${c.issues.map(n=>'#'+n).join(', ')}`:'')+(c.status!=='active'?`\\n${c.status}`:'');
+document.getElementById('grid').innerHTML=Object.keys(D.areas).concat([...new Set(D.features.filter(f=>!D.areas[f.area]).map(f=>f.area))]).sort().map(a=>{
+ const fs=D.features.filter(f=>f.area===a),x=D.areas[a];
+ return `<details ${x&&x.red?'open':''}><summary>${esc(a)} <span>${x?x.n:0} criteria · ${x?x.red:0} launch blockers</span></summary>${fs.map(f=>`<div class="feat ${f.retired?'retired':''}"><div class="fname"><a href="${esc(D.report_base+f.path)}">${esc(f.feature)}</a> ${esc(f.title)}<small>${f.gates==='launch'?'gates launch · ':''}built ${frac(f.totals.built,f.n)}${f.retired?' · retired, not counted':''}</small></div><div class="cells">${f.criteria.map(c=>`<i class="c ${c.red?'red':''} ${c.built==='unknown'?'unk':''} ${c.status==='retired'||f.retired?'ret':''}" style="${shade(c.score)}" title="${esc(tip(c))}">${esc(c.id)}</i>`).join('')}</div></div>`).join('')}</details>`}).join('');
+document.getElementById('queue').innerHTML=`<p><b>Gaps by type:</b> ${Object.entries(D.gaps).map(([g,n])=>`${esc(g)} ${n}`).join(' · ')}</p><p><b>PM queue</b> (needs-pm, launch first): ${D.needs_pm.length?D.needs_pm.map(i=>`<a href="${esc(i.u)}">#${i.n}</a> ${esc(i.t)}${i.launch?' <b>(launch)</b>':''}`).join('; '):'empty'}</p><p><b>Your next action:</b> ${D.cta?`answer <a href="${esc(D.cta.u)}">#${D.cta.n}</a> ${esc(D.cta.t)}.`:'none: nothing is waiting on you.'}</p>`;
+document.getElementById('trial').innerHTML=D.trial.split(/\\n\\n+/).filter(p=>!p.startsWith('### ')).map(p=>p.startsWith('- ')||p.includes('\\n- ')?`<ul>${p.split('\\n').map(l=>l.startsWith('- ')?`<li>${md(l.slice(2))}</li>`:`</ul><p>${md(l)}</p><ul>`).join('')}</ul>`:`<p>${md(p)}</p>`).join('');
+document.getElementById('uat').innerHTML='<p>Source: one <code>uat</code> Issue per feature with a box per criterion; a ticked box is that criterion\\'s PM looked. The click-through sheet (#519) checks controls, not criteria, so it is linked from UAT Issues and not counted here.</p>'+(D.uat.length?`<ul>${D.uat.map(u=>`<li><a href="${esc(u.url)}">#${u.n}</a> ${esc(u.f)}: ${u.done} of ${u.boxes} boxes (${esc(u.state.toLowerCase())})</li>`).join('')}</ul>`:'<p><b>No UAT Issue names a feature yet:</b> live testing is 0 for every feature.</p>');
+document.getElementById('problems').innerHTML=D.problems.map(p=>`<li>${esc(p)}</li>`).join('')||'<li>none</li>';
+document.getElementById('shift').innerHTML=`<summary>Past ${D.since}h <span>${D.shift.length} event(s)</span></summary><ul>${D.shift.map(e=>`<li><i>${esc(e.k)}:</i> <a href="${esc(e.u)}">${esc(e.t)}</a></li>`).join('')||'<li>nothing</li>'}</ul>`;
 </script></main></body></html>
 """
 blob = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
 open(os.path.join(root, 'dashboard', 'status-dashboard.html'), 'w').write(PAGE.replace('__DATA__', blob))
-print(f'wrote DASHBOARD.md, dashboard/status-dashboard.html: {total} items; ' + stage_totals)
+print(f'wrote DASHBOARD.md, dashboard/status-dashboard.html from {source}: {A["n"]} criteria, {A["red"]} launch blockers, {len(problems)} data problems')
