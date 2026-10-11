@@ -185,6 +185,12 @@ The launch is a yellow pages of organizations, not a white pages of people (2026
   - **Never** — an operator role stored on a member. **There is still no roles table and no flag** — that part of the old line was right and survives. The singular, definite "the operator" in F058 is what the env var encodes.
 - **Poll** ○ — `page_posts.kind='poll'` + `page_post_options`. Deliberately separate substrate from demand signals: a poll option is a row with a foreign key; a demand signal's subject has none, by design.
 
+- **Vantage** `○ proposed, not accepted` *(Don, 2026-10-11; F103 draft)* — the place a member is looking from. Today it is the metro (`members.default_metro_id`, the Explore pill). Proposed: any town, the home town by default, changed for the moment by typing a place into search; the rings (hood, town, area) rebuild around it and Home and Explore re-centre. Session state, not a stored travel plan; the give-back and the local badge read the seller's town, never the viewer's vantage. How: `product/systems/places.md` § Proposed.
+  - **Now** — the metro pill; one open metro, so it is one choice.
+  - **Later** — a typed place, any open area or a waiting one; a waiting one shows what is waiting, not hidden Pages.
+  - **Trigger** — F103 approved.
+  - **Never** — a vantage the platform sets from IP or GPS without the member typing or choosing it; a stored log of where a member looked.
+
 ## Refused, and why
 
 | Not a noun | Why |

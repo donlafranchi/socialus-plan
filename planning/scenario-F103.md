@@ -17,6 +17,8 @@ Priya in Davis signs up. Her zip puts her in Yolo County, and Yolo is one of the
 4. **A market opens by a person's act, never on its own,** once its waitlist has enough makers and enough finders (F076's split thresholds, per market, starting 50/250, tunable without a deploy) and the operator confirms it is affordable. The member sees one number and no date.
 5. **A maker in a closed market can build a Page now.** It is absent from Explore until the market opens and appears the day it does. MSA/CSA survives only as a code on the market row for reports; nothing member-facing reads it.
 
+6. **The rings are a starting point, not a fence.** A member types a place into search and, for that moment, looks from there: Home and Explore re-centre and the rings rebuild around it; home stays the default and nothing about the member is stored. A closed market shows what is waiting, never Pages hidden until it opens.
+
 ## Not this
 
 Rings sized by density, drive time or behaviour (data first, later). Agent-drafted Pages from a maker's website or social profile (new territory, its own scenario). Funds, payouts or fees (Later). Changing what a Page shows about where it is.

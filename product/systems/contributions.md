@@ -36,7 +36,7 @@ No login. For each community, for the month: what **came in**, what the **platfo
 
 ## Give-back: the community decides
 
-*"Community" is undefined here. Proposed, not accepted (F103 draft): a community is a town ring, a Census Place or county remainder, and a fund belongs to one; `places.md` § Proposed.*
+*"Community" is undefined here. Proposed, not accepted (F103 draft): a community is a town ring, a Census Place or county remainder, and a fund belongs to one. A Page owner chooses the fund; choosing one outside the business's own town costs the local badge (DECISIONS 2026-10-11). `places.md` § Proposed.*
 
 Participatory budgeting, per community:
 
