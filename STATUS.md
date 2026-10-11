@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 13:41 UTC
+> ## Generated 2026-10-11 · 13:47 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -21,7 +21,7 @@
 > **Answers "where is this project", not "what tickets exist."** The ticket
 > list is `gh issue list`, which is always right; this is not a copy of it.
 
-Beta **2026-10-30**, one metro — a soft target for testing, not a hard deadline. 19 days out; feature freeze 2026-10-30, also soft. Production launch April–May 2027.
+Beta **2026-11-06**, one metro — a soft target for testing, not a hard deadline. 26 days out; feature freeze 2026-10-30, also soft. Production launch April–May 2027.
 
 **15 of 26 approved and building scenarios are unverified** — no check is marked as discharging any
 of their criteria. Unmarked is unverified, not verified. § Guard coverage.
@@ -45,7 +45,7 @@ branch or a commit.
 
 ## In the code repo
 
-**161 issues open** in `socialus-web`, 30 launch-blocking:
+**162 issues open** in `socialus-web`, 30 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
 - #568 F081 · criterion 4: a member changes their zip on /you and their metro follows
