@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 17:45 UTC
+> ## Generated 2026-10-11 · 18:03 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -32,7 +32,7 @@ of their criteria. Unmarked is unverified, not verified. § Guard coverage.
 
 | approved | building | draft | deferred |
 |---|---|---|---|
-| 22 | 4 | 20 | 1 |
+| 22 | 4 | 21 | 1 |
 
 **Building:**
 - F060 (Someone starts something without opening a shop)
@@ -194,7 +194,7 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (20)
+**Waiting on Don** (21)
 
 - 37d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
 - 34d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:50](product/foundation/goals.md#L50)
@@ -216,6 +216,7 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 7d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
 - 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:63](product/systems/contributions.md#L63)
 - 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
+- 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:46](planning/scenario-F103.md#L46)
 
 **Cowork owes an answer** (3)
 
@@ -278,7 +279,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-105 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **102 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+107 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **104 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/places.md` — 32 days (last commit 2026-09-09)
@@ -294,6 +295,6 @@ Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in
 
 ## What this run could not verify
 
-- **The 20 drafts.** Status alone does not say which are waiting
+- **The 21 drafts.** Status alone does not say which are waiting
   on Don and which are simply unfinished.
 
