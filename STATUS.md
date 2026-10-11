@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 16:55 UTC
+> ## Generated 2026-10-11 · 17:45 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `8d9b77c` (2026-10-11); `accepted-risks/*.json`;
+> `914b3ce` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #671 2026-10-11 chore #670: a comment on the phone checklist files the bug (PM: not OK)
 - #669 2026-10-11 chore #668: doc inventory generator, as-of dates, dead docs removed
 - #666 2026-10-11 bug #555: the member overflow-menu tap step could not be timed
 - #665 2026-10-11 bug #555: Explore card to Page and the Page edit screen are faster
 - #664 2026-10-11 chore #663: tap speed gets its own workflow so the live smoke means what it says
-- #662 2026-10-11 docs: report roll-ups with reviewed, smoked and PM looked per criterion (generated)
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -150,13 +150,13 @@ counts. Each row needs a look, not a close.*
 ## What CI last said
 
 - **`deploy-health.yml`** — success, 2026-10-11
-  - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
+  - Database reachable from the deployment: success
 - **`ci.yml`** — success, 2026-10-11
-  - Migrations applied to production: success
-  - Unit tests: success
-  - Lint, types, build: success
   - Which suites: success
+  - Unit tests: success
+  - Migrations applied to production: success
+  - Lint, types, build: success
   - Browser: success
 
 ## Measured, not estimated
