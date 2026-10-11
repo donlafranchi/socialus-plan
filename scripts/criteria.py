@@ -76,6 +76,20 @@ def pm_looked_set():
     return out
 
 
+def uat_boxes():
+    """Every `uat` Issue (the phone checklist #519 and any per-feature UAT Issue): lines like `- [x] F081.3 · ...`.
+    A ticked box is the PM looking at that criterion. Returns ({(fid, n)}, {(fid, n)}) = (ticked, listed)."""
+    ticked, listed = set(), set()
+    for i in json.loads(gh('issue', 'list', '-R', WEB, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,body') or '[]'):
+        if 'self-check' in i['title']:
+            continue
+        for m in re.finditer(r'^\s*[-*]\s+\[([ xX])\]\s+(F\d+)\.(\d+)\b', i.get('body') or '', re.M):
+            listed.add((m.group(2), m.group(3)))
+            if m.group(1).lower() == 'x':
+                ticked.add((m.group(2), m.group(3)))
+    return ticked, listed
+
+
 def smoke_state():
     """(last green smoke-live run time, last run conclusion). Smoke loads pages; it does not test criteria, so it is evidence of
     'still loads after the merge', not of behaviour."""
@@ -95,6 +109,7 @@ def load():
     files = [t['path'] for t in tree if re.match(r'^build-log/reports/[^/]+/F\d+-.*\.md$', t['path'])]
     feats = []
     pmset = pm_looked_set()
+    ticked, listed = uat_boxes()
     green, last_conc = smoke_state()
     parents = {}
     for i in json.loads(gh('issue', 'list', '-R', WEB, '-s', 'all', '-L', '600', '--json', 'number,title') or '[]'):
@@ -120,10 +135,11 @@ def load():
             r['checked'] = cov.get(r['n'], 'no')
             r['reviewed'] = r['reviewed_txt'] if r['built'] == 'yes' else 'no'
             r['smoked'] = 'yes' if (r['built'] == 'yes' and smoked_feat) else 'no'
-            r['pm'] = 'yes' if (r['built'] == 'yes' and (pm_parent or any(n in pmset for n in r['issues']))) else 'no'
+            r['pm'] = 'yes' if (r['built'] == 'yes' and (pm_parent or any(n in pmset for n in r['issues']) or (fid0, r['n']) in ticked)) else 'no'
+            r['uat'] = 'ticked' if (fid0, r['n']) in ticked else ('listed' if (fid0, r['n']) in listed else '')
         met = sum(1 for r in rows if r['built'] == 'yes')
         feats.append({'id': m.group(1) if m else os.path.basename(p)[:4], 'title': (m.group(2) if m else '').strip()[:90], 'area': area,
-                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
+                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'uat_ticked': sum(1 for r in rows if r['uat'] == 'ticked'), 'uat_listed': sum(1 for r in rows if r['uat']), 'last_merge': lm, 'report_date': rep_date, 'stale': bool(lm and rep_date and lm > rep_date), 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
                       'url': f'https://github.com/{WEB}/blob/main/{p}'})
     return feats
 
@@ -157,7 +173,7 @@ def universe():
     return ids
 
 
-ROLLUP_NOTE = '*Roll-up generated from the criterion rows below by `scripts/criteria.py --rewrite-reports`; never typed. Built = the row says yes. Checked = a guards marker covers the whole criterion (`markers.py coverage`, the same count as STATUS). Reviewed = the row says yes. Smoked = a green smoke-live run came after the feature\'s last merge (pages load; not behaviour). PM looked = a linked Issue or the feature Issue carries pm-reviewed.*'
+ROLLUP_NOTE = '*Roll-up generated from the criterion rows below by `scripts/criteria.py --rewrite-reports`; never typed. Built = the row says yes. Checked = a guards marker covers the whole criterion (`markers.py coverage`, the same count as STATUS). Reviewed = the row says yes. Smoked = a green smoke-live run came after the feature\'s last merge (pages load; not behaviour). PM looked = a ticked box in a `uat` Issue (the phone checklist), or a linked Issue or the feature Issue carries pm-reviewed.*'
 
 
 def rewrite_reports(webdir):
