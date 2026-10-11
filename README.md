@@ -21,11 +21,11 @@
 - F070: Every Page has a face, even without a photo
 - F072: A Page owner announces something, with a time on it
 - F074: A series repeats
-- F076: A person outside an open metro joins its waitlist
+- F076: A person outside an open market joins its waitlist
 - F077: People who actually interact are not hidden from each other; everyone else sees a display name
 - F078: Flagged content hides itself immediately, and the poster is told why
 - F080: No sensitive content, while we grow into a platform with staff
-- F081: Everyone signs up the same way, and the zip sets the metro
+- F081: Everyone signs up the same way, and the zip sets the market
 - F082: Anyone publishing something others show up for takes one step first, and nothing is checked
 - F091: What's happening, today and this week
 - F092: Narrowing happens in a modal that writes what it did
@@ -64,7 +64,7 @@
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
-- Metro scoping — ticket written, returns with a second metro.
+- The feed reads the market and orders by the rings, and the vantage (F104, F105) — first fortnight after beta; the give-back town and the local badge (F106) with badges' return. Sequence: `planning/research/local-inventory-2026-10-11.md` § 4.
 - Page-level appearances at venues — ~1.5 days, scoped.
 - Follow-substrate merge and the map's area rendering — both scoped.
 - Member-to-member messaging — no substrate at all; blocks a volunteering reply channel.
