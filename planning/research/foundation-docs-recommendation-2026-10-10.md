@@ -1,100 +1,80 @@
 ---
 id: foundation-docs-recommendation
-title: Foundation docs, a recommendation (nothing built)
+title: Charter, draft 2 (recommendation only, nothing built)
 status: draft
-date: 2026-10-10
+date: 2026-10-11
 ---
 
-# Foundation docs: recommendation
+# Charter: draft 2
 
-**As of 2026-10-10. Recommendation only. Nothing is built until the PM picks A, B or C at the bottom.**
+**As of 2026-10-11. A work in progress. Recommendation only; nothing is built and nothing here is ruled until the PM says so.** Lines marked **[ruled date]** come from a ruling; lines marked **[proposed]** are new and need the PM's yes. Redrafted from the PM's reply on #64.
 
-## What exists today [V: read this run]
+**Shape:** one page, three parts (Mission, Principles and pledges, Pledge), as Mozilla's manifesto does; guidelines until the organization is formed. It replaces `goals.md` once approved, as the Charter, generated from `DECISIONS.md`.
 
-`goals.md` (58 lines) mixes four things: the mission, the promises, a guideline tier, and two open questions. Its name says little. The same ground is also spread across:
+## Mission (work in progress)
 
-| Holds | Where | Lines |
-|---|---|---|
-| Mission, what this is | `product/foundation/what-this-is.md`, `goals.md` | 40, 58 |
-| How we think | `people-first.md`, `value-test.md`, `impact-diagnostic.md`, `policy.md` (all in `product/foundation/`) | 26, 42, 75, 51 |
-| What the platform won't do to a member | `product/ABSOLUTES.md` | 26 |
-| How we earn, what we measure | `monetization.md`, `metrics.md` | 28, 30 |
-| How we sound | `voice-and-tone.md` | 190 |
-| Rulings, one dated line each | `DECISIONS.md` | 391 lines |
-| Parked ideas, the Won't list | `IMAGINE.md`, `ROADMAP.md` | 147, 114 |
-| Per-tier rulings, generated | `constraints/code.md`, `constraints/planning.md` | 156, 183 |
-| Agent instructions that restate rules | `CLAUDE.md` in plan, web, ops, and the global one | 120, 181, 53, 89 |
-| Method rules (not product) | `socialus-ops/process/ABSOLUTES.md`, `PIPELINE.md` | 149, — |
-| Rules in code and copy | `socialus-web/src/lib/creator-rules.ts`, `moderation/rules.ts` | — |
+**SocialUs: the people's platform. Members first, always.** [ruled 2026-10-10]
 
-Problems: the same banner is pasted into 18 files; `goals.md` is cited by 8 files; "never" appears in rules where only "never extractive" is allowed; no doc says when it was last true.
+SocialUs exists to serve its members, not shareholders, and to give them a platform to build a better future. [the PM, 2026-10-11; "built to serve its members" ruled 2026-10-10]
 
-## Revised: one page, not six (the PM asked for light)
+## Three flips
 
-**Precedents, fetched 2026-10-10:** all three put mission, principles and commitments on **one page**.
-- Wikipedia's [Five Pillars](https://en.wikipedia.org/wiki/Wikipedia:Five_pillars): five headed statements, including "no firm rules".
-- The co-operative movement's [Statement on the Cooperative Identity](https://www.ica.coop/en/cooperatives/cooperative-identity): a definition, six values, seven principles. The closest match to members who are investors.
-- Mozilla's [Manifesto](https://www.mozilla.org/en-US/about/manifesto/): a short mission, 10 one- or two-sentence principles, and a pledge.
-Path: well-worn. Copy that shape.
+We are trying to flip how technology gets used.
 
-**Closest match: Mozilla's Manifesto.** A mission-driven product written before any formal structure, to say what it stands for and invite contributors: a short mission, a handful of aspirational principles, a pledge. Those are guidelines, not binding rules, which is where SocialUs is (no members yet, no organization yet). Wikipedia's Five Pillars is the second match for how people behave on the platform. The co-op statement is the *later* match: its "member economic participation" and "concern for community" principles are the shape to move to when the organization is formed, not before.
+**1. Bring people together in person, not stand in for it.** Technology here points people at each other and at a place and a time. It does not replace meeting.
+- We currently order what you see by where it is and how recent it is, never by what holds your attention or what someone paid for. [ruled 2026-09-12; F059]
+- We currently build no feed meant to keep you scrolling. Browse is complete, not ranked by your interests. [ruled 2026-09-12]
+- Every Page, post and event is built around something people do together: a gathering, a place, a neighbour. [proposed]
+- We measure whether neighbours met, not how long they stayed. [proposed]
 
-**Timing rule:** the Charter is **guidelines until the organization is formed**. How members share in what the platform earns, and how they take part in running it, are listed as open and decided then. Nothing here names an entity type or legal term (those live in `socialus-legal`).
+**2. Spread wealth among the many, not concentrate it among the few.** The platform exists so what people earn here stays with the people who earned it and the places they live.
+- We are never extractive: we take no value from people without giving something back. [ruled 2026-09-12]
+- We currently take a share of transaction income on member commerce at a rate the income plan sets, and our fees favour no member over another. [ruled 2026-10-07; 2026-09-30]
+- No member can pay to rank above another: visibility is not sold by default. [ruled; guideline in `goals.md`]
+- Everyone who makes or hosts something here starts on equal footing: a Page costs nothing to create. [ruled 2026-10-08]
+- We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out. [ruled 2026-10-11]
 
-**Shape (Mozilla's):** Mission, Principles, Pledge. About 15 lines. Cap 40.
+**3. Design for kindness; make cruelty hard.** We use social norms, not only rules, to keep people good to each other. Three ways to say it, for the PM to choose or mix:
+- *"We design for kindness: it's easy to be good to each other here and hard to be cruel."*
+- *"Here, kindness is the easy path. We build the app so being good to each other takes no effort."*
+- *"We help each other be good to one another."* (the PM's own words on F078, 2026-09-14)
 
-## Draft Charter (wording for the PM to approve; new copy goes to the PM first)
+What that means in the product:
+- A report hides the content at once and tells the poster why, kindly, in the app, never by email. [ruled; F078]
+- Reporting is for real problems: misused reports carry a visible consequence for the reporter, and reports never become a score on a person. [ruled 2026-10-05; F078, F102]
+- We currently default to what people would expect socially about who sees what. [ruled 2026-09-30]
+- A gentle pause before posting something that is likely to hurt ("Are you sure?"), so people can change their mind. [proposed; reads drafts, so it needs its own ruling (`ai-moderation-scoring.md`)]
 
-> **Charter**, as of 2026-10-10. Guidelines for now: we are early, with no members yet. We firm these up when the organization is formed.
->
-> **Mission.** Everything serves people. We help regular people earn a decent living and afford to live well. (2026-09-12)
->
-> **Principles**
-> 1. We currently weigh each decision for the people using it first; if it doesn't help them, it doesn't ship. (2026-09-12)
-> 2. We are never extractive: we don't take value from people without giving something back. (2026-09-12)
-> 3. We currently want to succeed first, so we can help members, and to succeed together. (2026-10-04)
-> 4. People can do more here. They don't have to. (2026-09-12)
-> 5. We currently default to what people would expect socially about who sees what. (2026-09-30)
->
-> **Pledge**
-> - We currently don't sell member data. (2026-09-12)
-> - We currently don't show a member's data beyond what they chose to show. (2026-09-16)
-> - We currently put nothing a member contributes live without a report-and-takedown path. (2026-09-16)
-> - We currently charge fees that serve the platform and its members and favour no member over another. (2026-09-30)
-> - We currently take transaction income on member commerce, at a rate the income plan sets. (2026-10-07)
-> - We currently take no outside capital. (2026-09-12)
->
-> **Open until the organization is formed.** How members share in what the platform earns. How members take part in running it.
->
-> Read more: Voice guide · the ontology · how we build.
+## Real examples, a few good ones
 
-Every line traces to a ruling (dates are the ruling's, from `DECISIONS.md`, `goals.md` and `ABSOLUTES.md`). Left out on purpose: the line that members are the investors and the only people paid out. The standing ruling says it, but the PM now says that is decided when the organization forms, so the draft does not state it. The SETTLED banner is a separate, standing ruling and is not touched here.
+Sources: Wikipedia pages are third-party summaries; REI's and Stocksy's own pages blocked my fetch.
 
-## Is it a duplicate of the ontology?
+- **Front Porch Forum** ([Wikipedia](https://en.wikipedia.org/wiki/Front_Porch_Forum)): geographic forums, posts reviewed by human moderators, a Vermont public benefit corporation paid by local business ads and a fundraiser; a 2023 survey says 80% of respondents think people treat each other with respect there. *Teaches: staying local and keeping a person in the loop makes respect the norm.*
+- **Nextdoor's Kindness Reminder** ([Nextdoor, 2019](https://blog.nextdoor.com/2019/09/18/announcing-our-new-feature-to-promote-kindness-in-neighborhoods)): a prompt before posting a likely-unkind reply; in the early test 1 in 5 reminded neighbours edited and negative comments fell by 20%. *Teaches: a nudge beats a ban.*
+- **Instagram's "Are you sure you want to post this?"** ([NPR via MPR, 2019-07-10](https://www.mprnews.org/story/2019/07/10/npr-instagram-to-flag-hateful-comments-before-you-send-them)): the head of Instagram said some users post fewer harmful comments after a chance to reflect. *Teaches: a pause works without removing anyone.*
+- **REI** ([Wikipedia](https://en.wikipedia.org/wiki/REI)): owned by its members, who pay a $30 lifetime fee and get a yearly dividend normally 10% of what they spent on regular-priced goods, and vote for the board. *Teaches: wealth can flow back in proportion to taking part.*
+- **Stocksy United** ([Wikipedia](https://en.wikipedia.org/wiki/Stocksy_United)): a platform cooperative whose artists co-own it with one vote each, with 50% royalties and year-end profit sharing. *Teaches: the people who make the content can share the platform's profit.*
 
-No. They answer different questions and do not overlap.
-- **Charter:** *why* and *what we stand for*. Nothing in it defines a noun.
-- **Ontology** (`nouns.md`, `verbs.md`, `src/ontology/*`): *what exists* in the product (Member, Page, post) and how it connects. The Charter links to it and never restates it.
-- Real duplication on the ontology side (`nouns.md` and `objects.ts` and `registry.json`) is already handled: the registry is generated from code.
-- Where the Charter overlaps today is `goals.md` and `what-this-is.md` defining the product in prose; the Charter keeps one sentence and points to the ontology.
+None of these is a promise for us. They show it can be done; how we do it is open until the organization is formed.
 
-## Format (unchanged)
+## Helping members not feel squeezed, and see a bright future
 
-As-of date at the top. One line per statement, present tense, dated, newest wins, "we currently do / don't", the only "never" is "never extractive". No legal or entity detail, no personal names. A line with no ruling behind it is not written.
+**The worry.** For children born in the 1980s only about half earn more than their parents, down from about 90% for those born in 1940, and spreading growth as evenly as in the 1940 cohort would reverse more than 70% of that fall ([Chetty and others, Science 2017](https://www.nber.org/papers/w22910)). The news says Gen Z may be the first generation worse off than its parents; that study stops at the 1980s cohort, so I have no source for Gen Z itself.
 
-## Generated, not maintained
+Five things the product can do, each tied to what is already ruled or built:
+1. **Earning.** Put a member's own skill in front of neighbours for free: Pages for makers and services, with no pay-to-rank. [builds on Pages and the Browse ordering ruling]
+2. **Lower costs.** Make what is free, cheap or shared nearby easy to find: swaps, borrowing, volunteering, group buys. [the "free things" lens is an open question, F059]
+3. **Skills.** Classes, workshops and repeating series from neighbours, and Pages for "teach what you know". [F072 and F074; built in part]
+4. **Connections.** Meet the people who lead to work, tools and mentors, in person; "I'm coming" makes a gathering real. [F063, not built]
+5. **Prove it.** Track the North Star, Member Flourishing: more time to live and more money to live, both rising. Report it in aggregate, never per person. [`goals.md`, `metrics.md`; reporting is proposed]
 
-One skill, `regen-charter`: reads `DECISIONS.md` lines tagged `[charter: mission|belief|promise|rule]` (newest wins via `[replaces]`), rebuilds the page whole, shows the as-of date, opens a PR. Runs with the Friday launch report and on request. `goals.md` is deleted when it lands and its 8 citations repointed.
+## Left out on purpose
 
-Build: tag the lines that belong (an agent pass; the PM spot-checks), write one skill, repoint citations, add a lint cap and a date-and-source check.
-
-## Two things to know
-
-1. **Owners vs investors.** The message said members are "the owners". The standing ruling says members are *the investors* and rejects "ownership". The drafts use **investors** until the PM says otherwise.
-2. **Voice keeps its original text.** The founder's original voice text is kept verbatim as a source file, not in the generated doc.
+No entity or legal terms; no payout promises ("members are the investors" stays a standing ruling, not a Charter line, until the organization forms); no "outside capital" line; no promise on an unbuilt feature. "Never" appears only as "never extractive" and inside the PM's verbatim data line.
 
 ## Decision for the PM
 
-- **A (recommended):** approve this Mozilla-shaped draft as worded. Then I build: write it to `product/charter.md`, add `regen-charter` (rebuilds it from the rulings above and runs with the Friday report), retire `goals.md`.
-- **B:** approve it, but also state "members are the investors and the only people paid out" now, as the standing ruling reads.
-- **C:** change the wording; reply with edits and I re-draft.
+**Decision for the PM:** read this draft and pick one.
+- **A (recommended):** approve the wording. I then write it to `product/charter.md`, add `regen-charter` (rebuilds it from tagged rulings, runs with the Friday report), and retire `goals.md`; each [proposed] line waits for your yes before it goes in.
+- **B:** change the wording; reply with edits and I redraft.
+- **C:** a shorter Charter: Mission and the three flips only, with no examples or prospects section.
