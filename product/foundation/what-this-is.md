@@ -25,7 +25,7 @@ A local discovery and community-building platform — the organizing backbone fo
 
 ## Direction
 
-*Internal, early, not a promise (Don, 2026-10-10).* SocialUs is the people's platform. We're not taking money from traditional investors. We'd rather be owned by our members, and how that works is still open. We don't want a few people getting rich off our members. When a feature uses member data, ask who it comes from and who gains. If it's someone else, check with Don.
+*Internal, early, not a promise (Don, 2026-10-10).* SocialUs is the people's platform. We're not taking money from traditional investors. We'd rather be owned by our members, and how that works is still open. We don't want a few people getting rich off our members. SocialUs collects data. We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out (Don, 2026-10-11). When a feature uses member data, ask who it comes from and who gains. If it's someone else, check with Don.
 
 ## The elevator speech
 
