@@ -8,26 +8,30 @@ area: market-commerce (proposed; it also touches create-posts and discovery)
 horizon: after beta, outside the Beta milestone
 date: 2026-10-11
 criteria:
-  - W1.1 A member can post a wish: a title, a description, an optional picture, an optional budget in their own words, and tags
-  - W1.2 Anyone signed in can reply to a wish with a public offer: what they would build, a price or fee in words, and a way to be reached that the replier chooses
-  - W1.3 The member who posted sees every reply on their wish, in order, with the replier's name
-  - W1.4 A reply shows no button to pay, hire or message; the two people arrange the rest outside the app
-  - W1.5 Starter examples sit in their own bounded block with a heading and a "Sample" mark, are not returned by search, and have no reply, follow or link control
-  - W1.6 A real wish and a Sample are not shown in the same list
-  - W1.7 A wish can be closed by the member who posted it; a closed wish says so and takes no new replies
-  - W1.8 A wish can be reported with the existing report control
-  - W1.9 Tags let a replier find wishes in their kind of work
-  - W1.10 Empty states: no wishes yet, no replies yet, and a closed wish each say so in plain words
-  - W1.11 Until payments exist, money moves only between the people; SocialUs holds none and the screen does not suggest otherwise
-  - W2.1 A wish can carry a terms card made from SocialUs's one standard template, and the card is shown before anyone backs
-  - W2.2 The terms card has these fields: what is funded, who is party, the amount, what the backer gets back, milestones, delivery, what happens if it falls through, who owns the result, and SocialUs's part
-  - W2.3 A backer picks one of three variants in plain words: gift, reward, or pre-purchase
-  - W2.4 Each party accepts the card before any pledge counts, and each can see the accepted card later
-  - W2.5 No screen, field or word offers a backer money back, a share, a return, a payout or a profit; the highest backing level is not offered until socialus-legal has cleared it
-  - W2.6 Until payments exist, a pledge is words between people and the screen says money moves outside the app
-  - W2.7 Once payments exist, pledged funds are held by the chartered partner, not by SocialUs, and released or returned as the card says
-  - W2.8 The card states SocialUs's part (its transaction income on the sale) before anyone backs
-  - W2.9 A wish with no backers, or whose goal was not met, says so in plain words and tells each person what happens next
+  - W1.1 [launch] A member can post a wish: a title, a description, an optional picture, an optional budget in their own words, and tags
+  - W1.2 [if popular] Anyone signed in can reply to a wish with a public offer: what they would build, a price or fee in words, and a way to be reached that the replier chooses
+  - W1.3 [if popular] The member who posted sees every reply on their wish, in order, with the replier's name
+  - W1.4 [if popular] A reply shows no button to pay, hire or message; the two people arrange the rest outside the app
+  - W1.5 [launch] Starter examples sit in their own bounded block with a heading and a "Sample" mark, are not returned by search, and have no reply, follow or link control
+  - W1.6 [launch] A real wish and a Sample are not shown in the same list
+  - W1.7 [launch] A wish can be closed by the member who posted it; a closed wish says so and takes no new replies
+  - W1.8 [launch] A wish can be reported with the existing report control
+  - W1.9 [if popular] Tags let a replier find wishes in their kind of work
+  - W1.10 [launch] Empty states: no wishes yet, no replies yet, and a closed wish each say so in plain words
+  - W1.11 [if popular] Until payments exist, money moves only between the people; SocialUs holds none and the screen does not suggest otherwise
+  - W1.12 [launch] A wish quiet for 90 days sorts after the rest and stays readable; nothing is hidden or deleted for being old
+  - W1.13 [launch] Any reply, edit or "still wanted" tap from the requester, or a member showing interest, brings a wish back up; a view does not
+  - W1.14 [launch] A member can show interest in a wish, and the count is said in words, with "Nobody's shown interest yet" at zero
+  - W1.15 [launch] The requester can link the finished thing to the wish once it exists
+  - W2.1 [if popular] A wish can carry a terms card made from SocialUs's one standard template, and the card is shown before anyone backs
+  - W2.2 [if popular] The terms card has these fields: what is funded, who is party, the amount, what the backer gets back, milestones, delivery, what happens if it falls through, who owns the result, and SocialUs's part
+  - W2.3 [if popular] A backer picks one of three variants in plain words: gift, reward, or pre-purchase
+  - W2.4 [if popular] Each party accepts the card before any pledge counts, and each can see the accepted card later
+  - W2.5 [if popular] No screen, field or word offers a backer money back, a share, a return, a payout or a profit; the highest backing level is not offered until socialus-legal has cleared it
+  - W2.6 [if popular] Until payments exist, a pledge is words between people and the screen says money moves outside the app
+  - W2.7 [if popular] Once payments exist, pledged funds are held by the chartered partner, not by SocialUs, and released or returned as the card says
+  - W2.8 [if popular] The card states SocialUs's part (its transaction income on the sale) before anyone backs
+  - W2.9 [if popular] A wish with no backers, or whose goal was not met, says so in plain words and tells each person what happens next
 ---
 
 # Feature Brief: Wish it existed
@@ -35,6 +39,13 @@ criteria:
 **Goal:** A member can ask the neighbourhood for something they want that may not exist locally, and neighbours can answer "I can build that" with a price, team up, or back the idea together, when they have a want like a small frog habitat.
 **Date / run by / PM context:** 2026-10-11 · plan-feature, one pass on a light model, chair merge · Don, voice-dictated: "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment.
 **Scope line:** After beta. Not in the Beta milestone.
+
+**Phase rule (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase."
+
+- **Launch phase (SocialUs not involved):** a wish is an **Idea** (`wonder`): a member posts it, other members show interest, the requester links the finished thing when it exists. No offers channel, no terms card, no backing, no money, no mediation. People find each other and work out the rest on their own, outside the app.
+- **If it becomes popular:** expand in this order, each only when the one before is used: public offers ("I can build that, for this"); then the standard terms card with backers (words only); then, only once payments exist and socialus-legal has cleared it, pledges that carry money. The highest backing level stays held for counsel throughout.
+- **Criteria are tagged `[launch]` or `[if popular]`.** Only the `[launch]` ones belong to the first phase. The sections on offers, the terms card and backing below are the plan for expansion, not for launch.
+- **No expiry; old wishes go stale.** This is already ruled (DECISIONS 2026-09-15: a wonder has no expiry; everything carries a last-interaction date, and anything quiet for 90 days sorts last rather than being hidden; a view does not count as interaction). `verbs.md` still said "expires 90 days"; it is corrected in the same change. Open from that ruling: whether 90 days is one number everywhere.
 
 *Don, 2026-10-11.* A third concept, separate from the two market concepts. It connects to them (see [Market listings](2026-10-11-market-listings.md) for the map) but needs nothing from them.
 
@@ -61,7 +72,7 @@ So the honest answer to "is this new?" is: **mostly no.** It is the undesigned h
 | Fact | Verified / assumed | Source |
 |---|---|---|
 | Idea has substrate only; the signalling mechanic is undesigned | Verified | `nouns.md`, `verbs.md` |
-| `nouns.md` says an Idea has no expiry; `verbs.md` says it expires at 90 days | Verified (an open inconsistency) | the two files |
+| An Idea has no expiry and sorts last after 90 quiet days (DECISIONS 2026-09-15); `verbs.md` wrongly said it expires at 90 days, now corrected | Verified | DECISIONS 2026-09-15; `verbs.md` |
 | No messaging, no reply channel; Volunteering (offer/ask) is blocked on it | Verified | `nouns.md`, ROADMAP Later |
 | No public member profile; a member who wants to be found makes a Page | Verified | ROADMAP Speculative (2026-10-01) |
 | The platform handles no money; payments are Later; no auctions or dynamic pricing | Verified | ROADMAP Later, Won't |
@@ -75,7 +86,7 @@ So the honest answer to "is this new?" is: **mostly no.** It is the undesigned h
 |---|---|---|
 | A one-level reply on a wish (the Discussion message, in its smallest form) | Architect, then Don (it is the messaging question in its smallest form) | T1 |
 | A composer for Idea / Ask | Architect | T1 |
-| Don's ruling on expiry (none, per `nouns.md`, or 90 days, per `verbs.md`) | Don | T1 |
+| Don's ruling on expiry | none needed: no expiry, stale after 90 quiet days, already ruled | done |
 | Terms wording for what may be requested | socialus-legal | T1 |
 
 ## 4. Area → Feature → Journey → Criterion
@@ -176,9 +187,11 @@ New ideas Don thinks of are added to this table, dated.
 
 **Open for Don:** how many real wishes to seed. Option A: Don's frog wish real, four Samples to show the shape (recommended). B: five real wishes from Don and people he knows (more honest response, more asking of friends). C: Samples only (shows the shape; learns nothing about response).
 
-## 8. T0 / T1 / T2 / T3
+## 8. Launch phase, then T1 / T2 / T3 if it becomes popular
 
-| | **T0 Pilot** | **T1** | **T2 (recommended)** | **T3** |
+The launch phase is Don's "only offering it as an idea": what the old T0 pilot described, using the Idea entry type, with SocialUs not involved. T1 to T3 are the expansion, in order.
+
+| | **Launch phase (was T0)** | **T1 if popular** | **T2 (recommended)** | **T3** |
 |---|---|---|---|---|
 | Ships | Nothing built. A Page for wishes posts each as an ordinary Post; replies happen outside the app, the Page's contact links say where | A wish composer (Idea or Ask), a one-level public reply, a close action, the report control | T1 plus the bounded Sample block, tags to find wishes by kind of work, and a small operator view of new wishes and replies | A replier's own Page linked on the reply; team-up display; wishes linked to listings |
 | Hours (estimate) | 0 to 6 | about 30 (the committee said 12; there is no reply surface to reuse, so the chair's estimate is higher) | about 50 | about 80 |
@@ -216,4 +229,4 @@ Looked up this run:
 
 **A. Run the pilot (T0): a Page for wishes, your frog habitat first, replies outside the app, with no code** (recommended; it tests the one thing nobody knows, whether neighbours answer). B. Wait and build T1 after beta, once the reply surface is decided with messaging. C. Fold it into the Idea design now. Also: expiry (none, or 90 days) and how many real wishes to seed (section 7).
 
-**On backing: Don chose A (2026-10-11).** Backers are words-only terms in T2; no money moves until payments exist and counsel has cleared it. He added that the highest backing level is an investor, held for socialus-legal (section 6a). Still open: expiry (none, or 90 days) and how many real wishes to seed.
+**Decided (Don, 2026-10-11):** option A on backing (words-only terms, no money until payments exist and counsel has cleared it); the highest backing level is held for socialus-legal; at launch it is offered only as an Idea and SocialUs is not involved; no expiry, old wishes go stale. **Still open:** how many real wishes to seed (section 7), and whether 90 quiet days is the right number for wishes.
