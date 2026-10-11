@@ -1,21 +1,16 @@
 name: dashboard
 
-# Regenerates DASHBOARD.md and dashboard/status-dashboard.html from live state every 6 hours, so the roll-up no longer
+# Regenerates DASHBOARD.md and dashboard/status-dashboard.html from live state once a day, so the roll-up no longer
 # waits for a handoff or a person. It reads the criterion-level feature reports (scripts/criteria.py), the Issues, PRs
 # and runs in socialus-web, and appends the meta-layer trial block. It commits only when the content changed beyond the
 # "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
-# Why it also runs on every push to main: GitHub's `schedule` trigger is best-effort. On 2026-10-11 no scheduled run of this
-# workflow fired at all (06:20 and 12:20 UTC missing), and smoke-live and tap-speed ran hours late or not at all. A merge to
-# main is when the numbers actually move, so each merge regenerates the dashboard; the 6-hourly schedule stays as a backstop.
-# The workflow's own push uses GITHUB_TOKEN, which does not retrigger workflows, and the generated files are ignored below.
+# Daily at 11:30 UTC (4:30am Pacific while daylight time lasts, 3:30am after 2026-11-01), ahead of the 5am handoff, as the PM asked
+# on 2026-10-11; the manual trigger stays. It was every 6 hours with a push trigger; one run a day keeps the history quiet.
+# GitHub's schedule trigger is best-effort and can start late or not at all (it missed runs on 2026-10-11): if the dashboard
+# header's "updated" time is more than a day old, run Actions > dashboard > Run workflow.
 on:
   schedule:
-    - cron: '20 */6 * * *'
-  push:
-    branches: [main]
-    paths-ignore:
-      - DASHBOARD.md
-      - dashboard/**
+    - cron: '30 11 * * *'
   workflow_dispatch:
 
 concurrency:
