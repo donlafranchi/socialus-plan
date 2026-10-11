@@ -71,7 +71,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ○
 - **Venue** — meaningless.
 - **Announcement** ✕
-- **Idea** ○ — expires 90 days.
+- **Idea** ○ — no expiry (2026-09-15); quiet for 90 days it sorts last, and the author revives it by doing something ordinary.
 
 ## Follow
 
