@@ -1,5 +1,7 @@
 # SocialUs screen inventory: summary
 
+**As of 2026-10-02** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 2026-10-01 · Cowork (design) · Read-only. Source: `socialus-web` origin/main @ b362559. Production: www.socialus.org, signed out, measured at 360–1920px. Full detail: `socialus-screen-inventory.xlsx` (same folder). Owner Page: see `owner-page-spec.md`.
 
 **Verified vs assumed:** 23 of 152 rows were seen in production (signed-out pages, redirects, 404s, dev gate). Everything else (signed-in, follower, member, owner, operator, every sheet/modal/wizard step) is read from code. Member (`/m/*`) and item pages couldn't be reached signed out: nothing links to them.

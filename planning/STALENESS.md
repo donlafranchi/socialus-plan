@@ -7,6 +7,8 @@ date: 2026-09-17
 
 # Staleness — one rule for everything
 
+**As of 2026-09-17** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Draft, 2026-09-15.** Don: **"We should date these things and not display things that haven't had any interaction in 90 days. Or show them last."**
 
 **A general rule, not a wonder rule.** It answers the same problem for every entry that can go quiet.

@@ -7,6 +7,8 @@ date: 2026-10-10
 
 # Worked runs
 
+**As of 2026-10-10** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Facts tagged **verified** were read this run (scenario text, issue text, `IMAGINE.md`, `STATUS.md`). **Assumed** means not checked. Hours are estimates. Precedents are recalled, not looked up this run.
 
 ## Run 1: back-test on a built scenario, F091 "What's happening, today and this week"

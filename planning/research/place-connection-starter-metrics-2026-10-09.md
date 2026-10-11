@@ -1,5 +1,7 @@
 # Place-connection starter metrics for beta (2026-10-09)
 
+**As of 2026-10-10** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Status: proposal, awaiting PM yes/no. Source idea: the full place-connection metric set (person / place / outcome layers), a Claude project doc not in any repo. Canonical metrics home stays `product/foundation/metrics.md`; if approved, the chosen set moves there and this note becomes the record of why.
 
 ## The finding that decides it

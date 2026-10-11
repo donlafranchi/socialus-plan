@@ -18,7 +18,7 @@ owns:
 >
 > **This document is where things show. `nouns.md` is what things are.** Conflating them is how the Sell door became the only create path.
 
-**Evidence base:** [`../../planning/backlog/audit-route-inventory.md`](../../planning/backlog/audit-route-inventory.md) — the route-by-route read of `web/src/app` against the migrations. **That file is evidence and goes stale on every route change; this file is the spec and says what each surface is *for*.**
+**Evidence base:** `../../planning/backlog/audit-route-inventory.md` (page removed) — the route-by-route read of `web/src/app` against the migrations. **That file is evidence and goes stale on every route change; this file is the spec and says what each surface is *for*.**
 
 ## Status vocabulary
 
@@ -184,10 +184,10 @@ Carried forward with their ratification intact. **These bind whatever the surfac
 | § T1 Home · § Home | § Surface roles, and the `/` row |
 | § T1 Explore · § Explore T1 | § Surface roles, and the `/explore` row. **The filter and control detail is in the tickets** [T114–T118] and in the shipped code, which is the source of truth for it |
 | § You · § You T1 | The `/you` row — **and read it as a defect report, not a spec** |
-| § Distance is out · § Ranking · § Location resolution · § Online is a location option · § Metro is the feed's vantage point · § The Member picks a hood and a metro at signup | § Commitments that live on these surfaces. **Full entries with their reasoning remain in [`../../planning/backlog/decision-surfaces.md`](../../planning/backlog/decision-surfaces.md)**, which is untouched |
-| § Build note — this is a default, not inheritance | [`../../planning/backlog/decision-surfaces.md`](../../planning/backlog/decision-surfaces.md) § Location is entered at creation |
+| § Distance is out · § Ranking · § Location resolution · § Online is a location option · § Metro is the feed's vantage point · § The Member picks a hood and a metro at signup | § Commitments that live on these surfaces. **Full entries with their reasoning remain in `../../planning/backlog/decision-surfaces.md` (page removed)**, which is untouched |
+| § Build note — this is a default, not inheritance | `../../planning/backlog/decision-surfaces.md` (page removed) § Location is entered at creation |
 | § Venue page pattern | Not carried. The venue surface's layout lives in [`design-language.md`](design-language.md) and [`../systems/location.md`](../systems/location.md) |
-| C1–C13 capability IDs | **Not carried.** The capability table was six-thirteenths struck through and tracked nothing the tickets did not. Retired copy: [`../archive/2026-09-09-nouns-surfaces-rewrite/community-platform.md`](../archive/2026-09-09-nouns-surfaces-rewrite/community-platform.md) |
+| C1–C13 capability IDs | **Not carried.** The capability table was six-thirteenths struck through and tracked nothing the tickets did not. Retired copy: `../archive/2026-09-09-nouns-surfaces-rewrite/community-platform.md` (page removed) |
 | § T2 · § T3 tier lists | **Not carried as tiers.** What survives is in § The surfaces that are coming, with the postponed reason rather than a tier letter |
 
 **Why the tiers went.** T1/T2/T3 said *when* without saying *whether*, and by 2026-09-07 the tier list and the launch plan disagreed in four places. **A status per surface says the same thing and cannot drift from itself.**

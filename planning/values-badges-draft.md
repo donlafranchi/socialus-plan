@@ -9,6 +9,8 @@ date: 2026-10-01
 
 # Values badge categories — research for SocialUs
 
+**As of 2026-10-01** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Researched 2026-10-01. Web sources listed at the end. Marked **[unverified]** where I could not confirm from a fetched page.
 
 SocialUs rules this research assumes:

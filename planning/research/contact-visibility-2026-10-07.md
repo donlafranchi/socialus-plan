@@ -1,5 +1,7 @@
 # Contact fields: who sees them (2026-10-07)
 
+**As of 2026-10-07** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 PM ruled option B. Decision line: `DECISIONS.md` 2026-10-07. Matrix: `product/foundation/nouns.md`. Issue: `socialus-web` (change · Page contact email…). Path: well-worn.
 
 ## Rule

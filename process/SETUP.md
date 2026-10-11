@@ -1,5 +1,7 @@
 # Setting up a second machine
 
+**As of 2026-10-04** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Checklist. Verified against both repos on 2026-09-22 — where this disagrees with the repos, the repos are right.
 
 **Git is the handoff.** Every machine clones from GitHub, both push, main is the truth.
