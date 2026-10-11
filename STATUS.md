@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 12:05 UTC
+> ## Generated 2026-10-11 · 13:38 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `8a94492` (2026-10-10); `accepted-risks/*.json`;
+> `bf40b30` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #666 2026-10-11 bug #555: the member overflow-menu tap step could not be timed
+- #665 2026-10-11 bug #555: Explore card to Page and the Page edit screen are faster
 - #664 2026-10-11 chore #663: tap speed gets its own workflow so the live smoke means what it says
 - #662 2026-10-11 docs: report roll-ups with reviewed, smoked and PM looked per criterion (generated)
 - #661 2026-10-11 docs: report roll-ups generated from criterion rows; one Checked definition
-- #658 2026-10-11 docs: feature reports roll-up
-- #657 2026-10-11 docs: feature reports for sign-in-you
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -90,7 +90,6 @@ branch or a commit.
 counts. Each row needs a look, not a close.*
 
 - **#84 open, but T159 appears on main** — chore · T159 is two different tickets — renumber one in ops-pattern
-- **#53 open, but T156 appears on main** — F059 · T156 · Browse renders Pages
 - **#51 open, but T154 appears on main** — F059 · T154 · Browse reads Pages, not Items
 - **#30 open, but T149 appears on main** — chore · T149 · Retire vendor routes for real
 - **#16 open, but T126 appears on main** — F056 · T126 · Edit shop — image, description, values
@@ -153,10 +152,10 @@ counts. Each row needs a look, not a close.*
   - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
 - **`ci.yml`** — success, 2026-10-11
-  - Lint, types, build: success
   - Unit tests: success
-  - Which suites: success
   - Migrations applied to production: success
+  - Lint, types, build: success
+  - Which suites: success
   - Browser: success
 
 ## Measured, not estimated
@@ -204,8 +203,8 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 26d · Where do the premise strings live, given Don expects to update them often? Copy is inline in the components today — roughly 458 user-facing strings across 50… — [planning/scenario-F083.md:37](planning/scenario-F083.md#L37)
 - 25d · Which noun does the paused ontology spike model first — Item or Page? The spike lives outside this repo, at `../socialus-ontology-spike/INTENT.md`. — [product/foundation/nouns.md:259](product/foundation/nouns.md#L259)
 - 22d · What makes a thing "free", now that the free-things lens has nowhere to read from? Surfaced by the browse query rewrite (`socialus-web` T156, 2026-09-19), wh… — [planning/scenario-F059.md:46](planning/scenario-F059.md#L46)
-- 22d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:61](product/ui/surfaces.md#L61)
-- 12d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:64](product/ui/surfaces.md#L64)
+- 22d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:63](product/ui/surfaces.md#L63)
+- 12d · Are the store apps the site in a native shell, or native screens on the same database? A) A shell around the site (Capacitor-style): every screen and server… — [product/ui/surfaces.md:66](product/ui/surfaces.md#L66)
 - 11d · When "near me" returns, how does finding by neighbourhood fit "local = the whole metro" and "no distance shown"? A) A place filter the member types, not a ra… — [planning/scenario-F095.md:28](planning/scenario-F095.md#L28)
 - 11d · What does "sends traffic back" mean on a card? A) The card's main action opens the venue's own event page; SocialUs keeps the summary. B) A secondary "from t… — [planning/scenario-F096.md:30](planning/scenario-F096.md#L30)
 - 11d · How is a member-shared event marked until claimed? A) "Shared by a neighbour, not yet confirmed by the venue", with no RSVP until claimed. B) The same, with… — [planning/scenario-F096.md:32](planning/scenario-F096.md#L32)
@@ -219,7 +218,7 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 
 **Cowork owes an answer** (3)
 
-- 10d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:62](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L62)
+- 10d · Nothing opens an owner panel on Explore yet; what should, if anything? — [socialus-web src/components/browse/BrowseSurface.tsx:64](https://github.com/donlafranchi/socialus-web/blob/main/src/components/browse/BrowseSurface.tsx#L64)
 - 6d · People by name: the spec shows followers by name to the owner (2026-09-30), while bug #246 closed member-field reads; this ships the count only until dispatc… — [#369](https://github.com/donlafranchi/socialus-web/issues/369)
 - 5d · Badges are cut from beta, Locally owned included (DECISIONS 2026-10-06), but F037's eval still requires this claim card; retire F037 for beta or keep the car… — [socialus-web src/components/group/ShopPublicPage.tsx:406](https://github.com/donlafranchi/socialus-web/blob/main/src/components/group/ShopPublicPage.tsx#L406)
 
@@ -278,7 +277,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-103 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **100 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+104 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **101 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/places.md` — 32 days (last commit 2026-09-09)
