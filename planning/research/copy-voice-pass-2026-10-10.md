@@ -59,6 +59,25 @@ This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that
 
 **Who we are.** SocialUs: the people's platform. Built to serve its members. Internal direction only, not copy and not a promise: see `reclaim-standing-rule-2026-10-10.md`. We do not use the word "socialism" in copy.
 
+**Core lines (Draft until Don approves each use).**
+- **SocialUs: the people's platform.** The tagline.
+- **Members first, always.** Approved by Don, 2026-10-10, as a SocialUs line. Inspired by USAA's "Members first, mission always".
+- **Built to serve its members.** The default wording wherever ownership or purpose is touched. For About and mission copy: "created to benefit its members first and foremost."
+
+"Members first, always." is the one place "always" is allowed in copy, as a Don-approved line. The one allowed "never" stays "never extractive". The locked name line and subhead are unchanged by this guide.
+
+**Where "Members first, always." appears (proposal, Draft).** One light touch per screen. Each pairs with an item below; none changes the "built to serve its members" lines (1.8, 1.11, 1.14, 1.20, 1.23, 1.25, 1.26).
+
+| Surface | Proposal | Why |
+|---|---|---|
+| Live About page (item 1.26) | Closing line, under the paragraph: "Members first, always." | The one place that states the mission in full. |
+| Signup and onboarding card (item 1.14) | Last line under the "what this is" paragraph | The first thing a new member reads. |
+| Landing members block (item 1.11) | Replaces "We're in this together" as the last line of the block | It says the same thing and says it as the line. |
+| Desktop footer (item 1.5) | "© SocialUs · Members first, always." | Quiet, on every page. Tagline stays in the About and the title. |
+| Not used | Errors, safety, reports, legal pages, sign-in, page titles | Those are plain only. |
+
+For socialus-legal: the line sits close to USAA's "Members first, mission always". It differs, but counsel may want a quick trademark check before it is public.
+
 **How we sound.** Relaxed, plain, unhurried. A friendly person in Sacramento talking, not a brand. The California ease comes from rhythm and word choice (short, easy, no rush), never from slang.
 
 | Do | Don't |
@@ -66,7 +85,7 @@ This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that
 | Short, easy sentences with contractions. "Have a look." "No rush." | Slang: stoked, dude, rad, gnarly, vibes, epic, legit, surf puns. |
 | Invite, don't push. "Come on in." "Mind trying again?" | Hype and urgency. "Don't miss out." "Hurry." "Now!" |
 | Say what it is plainly. "Built to serve its members." | Any promise of dividends, payouts, earnings, profit or returns. |
-| For data, selling and ads, say "we currently don't…". | Absolutes: "never", "always", "guaranteed", "no fees". The one allowed "never" is "never extractive". |
+| For data, selling and ads, say "we currently don't…". | Absolutes: "never", "always", "guaranteed", "no fees". The one allowed "never" is "never extractive"; the one allowed "always" is "Members first, always." |
 | Own errors calmly and say what to do next. | Form-speak: "Invalid input", "Submit", "must be", "is required". |
 | One light touch per screen at most. Most strings need none. | Warmth or jokes on errors, safety, reports, legal, and sign-in screens. Those stay plain. |
 | Keep the house rules: no em dashes, people are never a category, no "near you" with one metro, no zero counts on someone's own work. | Vendors, customers, sellers, makers, creators. Corporate words: utilize, leverage, onboarding, users, content. |
