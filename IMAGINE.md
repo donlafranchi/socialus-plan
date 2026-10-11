@@ -145,3 +145,11 @@ Every entry added from 2026-09-12 carries three things:
 **Open questions:** what a region's voice would be and who writes it; whether per-person tone is a setting or learned, and what it would learn from; how it stays plain and clear where plain is required (errors, safety, reports, legal, sign-in); and whether it fights the platform's one name line and subhead, which are locked.
 
 **What would make it real:** member feedback showing the one voice misses for some people or places, and a metro beyond the first one.
+
+### Community funds a seller designates
+
+*Don, 2026-10-11. Later; nothing built, payments are cut from beta.* A community holds several funds (a general fund, a library, youth sports, main street). A seller designates the fund their give-back goes to, and may change it once a year, like open enrollment. Money leaves the chartered partner only to a verified legal payee the community already has; a fund with no payee accrues as pending, visibly, and that is what prompts a community to organise. Communities form their own entities, alone or with help; SocialUs creates none and pools nothing top-down. *Analysis:* precedents are Open Collective's fiscal hosts and pending balances, payroll-giving designations, co-op patronage declarations; tax treatment of a designation is unknown and goes to `socialus-legal` when due. **What would make this real:** the first payout period with a positive surplus in one community.
+
+### Evidence of deceit, submitted by members
+
+*Don, 2026-10-11. Later; designed ahead of need.* A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop with evidence, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
