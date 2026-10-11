@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 19:14 UTC
+> ## Generated 2026-10-11 · 19:27 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `ea48b0c` (2026-10-11); `accepted-risks/*.json`;
+> `85c2622` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #679 2026-10-11 docs: standard header check in the doc inventory; Level field in the Issue template
 - #677 2026-10-11 chore #676: generated BUILD-LOG and eval table, beta date and repo name, purge note as built
 - #675 2026-10-11 docs: re-rank the phone checklist after each tick
 - #674 2026-10-11 docs: a plain reply on the phone checklist files a note bug
 - #671 2026-10-11 chore #670: a comment on the phone checklist files the bug (PM: not OK)
-- #669 2026-10-11 chore #668: doc inventory generator, as-of dates, dead docs removed
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -152,12 +152,12 @@ counts. Each row needs a look, not a close.*
 - **`deploy-health.yml`** — success, 2026-10-11
   - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
-- **`ci.yml`** — success, 2026-10-11
-  - Unit tests: success
+- **`ci.yml`** — , 2026-10-11
   - Which suites: success
+  - Unit tests: 
+  - Lint, types, build: 
   - Migrations applied to production: success
-  - Lint, types, build: success
-  - Browser: success
+  - Browser: 
 
 ## Measured, not estimated
 
@@ -281,7 +281,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-111 authored docs in `product/` and `planning/`; **8 not reviewed in 30 days**, and **108 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+113 authored docs in `product/` and `planning/`; **8 not reviewed in 30 days**, and **110 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/location.md` — 32 days (last commit 2026-09-09)
