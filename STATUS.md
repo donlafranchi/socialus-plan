@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 18:38 UTC
+> ## Generated 2026-10-11 · 18:45 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `44ed66c` (2026-10-11); `accepted-risks/*.json`;
+> `1ad1838` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -45,7 +45,7 @@ branch or a commit.
 
 ## In the code repo
 
-**162 issues open** in `socialus-web`, 30 launch-blocking:
+**163 issues open** in `socialus-web`, 30 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
 - #568 F081 · criterion 4: a member changes their zip on /you and their metro follows
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #675 2026-10-11 docs: re-rank the phone checklist after each tick
 - #674 2026-10-11 docs: a plain reply on the phone checklist files a note bug
 - #671 2026-10-11 chore #670: a comment on the phone checklist files the bug (PM: not OK)
 - #669 2026-10-11 chore #668: doc inventory generator, as-of dates, dead docs removed
 - #666 2026-10-11 bug #555: the member overflow-menu tap step could not be timed
-- #665 2026-10-11 bug #555: Explore card to Page and the Page edit screen are faster
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -150,14 +150,14 @@ counts. Each row needs a look, not a close.*
 ## What CI last said
 
 - **`deploy-health.yml`** — success, 2026-10-11
-  - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
-- **`ci.yml`** — success, 2026-10-11
-  - Unit tests: success
+  - Database reachable from the deployment: success
+- **`ci.yml`** — , 2026-10-11
+  - Unit tests: 
   - Which suites: success
-  - Migrations applied to production: success
   - Lint, types, build: success
-  - Browser: success
+  - Migrations applied to production: success
+  - Browser: 
 
 ## Measured, not estimated
 
