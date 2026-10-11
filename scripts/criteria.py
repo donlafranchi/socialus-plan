@@ -4,6 +4,8 @@ record per feature: criteria met / total, the unmet launch-blocking criteria, an
 Also the reportable universe (approved or building scenarios, plus shipped features whose scenario was retired) so coverage is X of Y.
 Usage: python3 scripts/criteria.py [--json | --capabilities]"""
 import base64, glob, json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import uat_journeys
 
 WEB = 'donlafranchi/socialus-web'
 PLAN = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
@@ -77,9 +79,11 @@ def pm_looked_set():
 
 
 def uat_boxes():
-    """Every `uat` Issue (the phone checklist #519 and any per-feature UAT Issue): lines like `- [x] F081.3 · ...`.
+    """Every `uat` Issue (the phone checklist #519 and any per-feature UAT Issue): journey lines `- [x] J01 · ...` (each expands to its
+    criteria via planning/uat-journeys.json) and criterion lines like `- [x] F081.3 · ...`.
     A ticked box is the PM looking at that criterion. Returns ({(fid, n)}, {(fid, n)}) = (ticked, listed)."""
     ticked, listed = set(), set()
+    journeys = uat_journeys.load()
     for i in json.loads(gh('issue', 'list', '-R', WEB, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,body') or '[]'):
         if 'self-check' in i['title']:
             continue
@@ -87,6 +91,10 @@ def uat_boxes():
             listed.add((m.group(2), m.group(3)))
             if m.group(1).lower() == 'x':
                 ticked.add((m.group(2), m.group(3)))
+        for jid in uat_journeys.ticks(i.get('body')):   # one tick on a journey = PM looked on every criterion under it
+            ticked.update(uat_journeys.criteria_of(jid, journeys))
+    for j in journeys:
+        listed.update(tuple(c.split('.', 1)) for c in j['criteria'])
     return ticked, listed
 
 

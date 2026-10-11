@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Everything on GitHub that is waiting on the PM, grouped by area, each with a one-line "what you're deciding".
 Sources: needs-pm Issues and open human-review / needs-don PRs in socialus-web; open meta-change PRs awaiting pm-approved and open
-decision PRs in socialus-plan, socialus-ops and skills; unticked boxes in the phone checklist (the `uat` Issues, mainly #519).
+decision PRs in socialus-plan, socialus-ops and skills; the next unticked journeys of the phone checklist (the `uat` Issue #519).
 Usage: python3 scripts/waiting.py [--json]"""
-import json, re, subprocess, sys
+import json, os, re, subprocess, sys
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import uat_journeys
 
 OWNER = 'donlafranchi'
 WEB, PLAN, OPS, SKILLS = (f'{OWNER}/{r}' for r in ('socialus-web', 'socialus-plan', 'socialus-ops', 'skills'))
@@ -12,7 +14,7 @@ DECISION = re.compile(r'A/B/C|waits? on the PM|waiting on the PM|for the PM\'s|t
 
 
 ERRORS = []
-UAT = {'total': 0, 'ticked': 0, 'start': None}   # the phone checklist as a whole, and the first sitting with an unticked box
+UAT = {'total': 0, 'ticked': 0, 'start': None, 'next': []}   # the phone checklist as a whole, and the first sitting with an unticked box
 
 
 def gh_slug(t):
@@ -85,36 +87,23 @@ def collect(feat_area):
                     'Approve by applying the pm-approved label, or close it.')
             elif repo != WEB and not p['isDraft'] and (DECISION.search(p['body'] or '') or names & {'needs-pm', 'human-review', 'needs-don'}):
                 add(None, 'decision PR', f"{short} #{p['number']} {p['title']}", p['url'], ask(p['body'], p['title']))
-    # 4. the phone checklist (UAT), per area and sitting, each linking to its sitting's heading
-    UAT.update({'total': 0, 'ticked': 0, 'start': None})
+    # 4. the phone checklist (UAT): journeys, only the next few unticked, launch-blocking first
+    UAT.update({'total': 0, 'ticked': 0, 'start': None, 'next': []})
+    js = uat_journeys.load()
+    done, url = set(), None
     for i in gh('issue', 'list', '-R', WEB, '-l', 'uat', '-s', 'open', '-L', '50', '--json', 'number,title,body,url'):
         if 'self-check' in i['title']:
             continue
-        sitting, heading, per = None, None, {}
-        for l in (i['body'] or '').split('\n'):
-            m = re.match(r'## (Sitting (\d+)\b.*)', l)
-            if m:
-                sitting, heading = m.group(2), m.group(1)
-                per.setdefault(sitting, {'heading': heading})
-            b = re.match(r'\s*[-*]\s+\[([ xX])\]\s+(F\d+)\.\d+', l)
-            if b:
-                UAT['total'] += 1
-                done = b.group(1).lower() == 'x'
-                UAT['ticked'] += done
-                if sitting:
-                    d = per[sitting].setdefault(feat_area.get(b.group(2)), {'ticked': 0, 'all': 0, 'f': set()})
-                    d['all'] += 1
-                    d['ticked'] += done
-                    d['f'].add(b.group(2))
-                    if not done and UAT['start'] is None:
-                        UAT['start'] = {'n': sitting, 'url': f"{i['url']}#{gh_slug(per[sitting]['heading'])}"}
-        for sit, dd in per.items():
-            url = f"{i['url']}#{gh_slug(dd['heading'])}"
-            for a, d in dd.items():
-                if a == 'heading' or d['ticked'] == d['all']:
-                    continue
-                add(a, 'UAT', f"UAT sitting {sit}: {d['ticked']} of {d['all']} checked ({', '.join(sorted(d['f']))})", url,
-                    'Tick what you looked at. If one is wrong, leave it empty and comment "F081.3 not ok: what you saw"; the bug is filed for you.')
+        done |= uat_journeys.ticks(i['body'])
+        url = url or i['url']
+    UAT.update({'total': len(js), 'ticked': len(done & {j['id'] for j in js})})
+    for j in uat_journeys.nxt(done, js):
+        item = {'id': j['id'], 'title': j['title'], 'role': j['role'], 'minutes': j['minutes'], 'link': j['link'], 'look': j['look'], 'launch': j['launch'], 'url': url}
+        UAT['next'].append(item)
+        a = feat_area.get(j['criteria'][0].split('.')[0])
+        add(a, 'UAT', f"{j['title']} (as {j['role']}, about {j['minutes']} min)", url,
+            'Tick it when it matches. If not, reply with one sentence on what you saw; the bug is filed for you.')
+    UAT['start'] = UAT['next'][0] if UAT['next'] else None
     for items in out.values():   # UAT first in every list
         items.sort(key=lambda it: it['kind'] != 'UAT')
     return out

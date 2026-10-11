@@ -1,0 +1,379 @@
+[
+ {
+  "id": "J01",
+  "title": "Report a post on your test Page and watch it hide",
+  "role": "a member",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "Send stays off until you pick a reason and type words",
+   "A plain note says misuse counts against you",
+   "Picking \"threat of harm\" shows a call-911-first note",
+   "After Send the sheet closes with a thank-you",
+   "Open the Page signed out: it is already hidden"
+  ],
+  "criteria": [
+   "F078.9",
+   "F078.10",
+   "F102.10",
+   "F078.8",
+   "F058.1",
+   "F080.4"
+  ]
+ },
+ {
+  "id": "J02",
+  "title": "Answer the notice about your hidden post",
+  "role": "the owner of your test Page",
+  "link": "https://socialus.org/you",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "The notice names the category, the reporter's reason and a kind explanation",
+   "\"Fix it and repost\" puts the post back at once, and a second repost is not offered",
+   "\"This is wrong\" asks for a reason and a note that stops at 280",
+   "A second answer is refused; the item stays hidden until a person decides"
+  ],
+  "criteria": [
+   "F078.3",
+   "F102.1",
+   "F102.2",
+   "F102.3",
+   "F078.4"
+  ]
+ },
+ {
+  "id": "J03",
+  "title": "See your report in the review list",
+  "role": "the operator",
+  "link": "https://socialus.org/admin/reports",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "Your report text is in the list, in one easy phone view",
+   "Open its detail: the AI line shows an outcome, a confidence number and a short reason",
+   "A low-risk report keeps its status; the AI note does not hide or restore it",
+   "You are offered Remove photo on a Page with a photo; the owner and a member are not",
+   "Change a decision: it takes effect and the earlier ones stay listed in order"
+  ],
+  "criteria": [
+   "F058.5",
+   "F078.5",
+   "F100.3",
+   "F100.6",
+   "F058.3",
+   "F058.6",
+   "F102.12"
+  ]
+ },
+ {
+  "id": "J04",
+  "title": "Clear the review list with one tap each",
+  "role": "the operator",
+  "link": "https://socialus.org/admin/reports",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "Signed out, the review page says \"couldn't find that\" and nothing else",
+   "Most serious comes first and the counts at the top match",
+   "Approve and Remove are two wide thumb-sized buttons; drag right = Approve, left = Remove",
+   "Most serious asks once more; lower ones just decide; Undo within five seconds brings the row back",
+   "After a decision the next row slides up; the reason is already filled in"
+  ],
+  "criteria": [
+   "F101.1",
+   "F101.4",
+   "F101.5",
+   "F101.6",
+   "F101.7",
+   "F101.8",
+   "F101.9",
+   "F101.10"
+  ]
+ },
+ {
+  "id": "J05",
+  "title": "Add a photo to your Page and meet the no-children check",
+  "role": "the owner of your test Page",
+  "link": "https://socialus.org/g/08ppyj/edit",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "You cannot use the photo until you tick that it has no children",
+   "A sensitive-content question shows while you upload",
+   "The \"add something to sell\" screen opens with a short kind note asking for nothing sensitive",
+   "The Page picture is optional"
+  ],
+  "criteria": [
+   "F080.1",
+   "F099.9",
+   "F080.5",
+   "F099.1"
+  ]
+ },
+ {
+  "id": "J06",
+  "title": "Join the waitlist for a city that is not open yet",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "The city list is long, open cities first under their own heading",
+   "A closed city shows how many more people are needed, with no date and no promise",
+   "Creator and patron both start unselected",
+   "You join with only an email: no password, no name",
+   "Cities with more people waiting sit higher"
+  ],
+  "criteria": [
+   "F076.1",
+   "F076.9",
+   "F076.3",
+   "F076.13",
+   "F076.16",
+   "F076.2"
+  ]
+ },
+ {
+  "id": "J07",
+  "title": "Look at Explore as a visitor who has not signed in",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "One card per Page; the count says \"this week\", never \"0\"",
+   "Cards show no post text, time or place",
+   "A Page shows name, photo, description and a sign-in card; no location, tags or founder",
+   "Tapping around a card only ever asks you to sign in",
+   "Only display names show; no real full names anywhere"
+  ],
+  "criteria": [
+   "F093.5",
+   "F093.7",
+   "F093.8",
+   "F093.10",
+   "F093.9",
+   "F077.3"
+  ]
+ },
+ {
+  "id": "J08",
+  "title": "Sign up from a Sacramento zip",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/auth/login",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "Four fields only, and you must check your email",
+   "The Sacramento zip names your metro and says the zip chose it",
+   "A short line says what the app is for, with nothing about never selling",
+   "Nobody asks whether you make things or look for things"
+  ],
+  "criteria": [
+   "F081.1",
+   "F081.3",
+   "F081.5",
+   "F081.6"
+  ]
+ },
+ {
+  "id": "J09",
+  "title": "Publish a Page and agree to the rules",
+  "role": "a member",
+  "link": "https://socialus.org/create",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "The rules are fixed sentences; one box is all, no upload or ID; \"No pictures of children.\" is on the rules page",
+   "A draft saves fine; only Publish needs the box ticked",
+   "A blank draft lists what is needed; the photo says optional",
+   "No business, legal or tax words anywhere",
+   "Starting a second Page asks you to agree again"
+  ],
+  "criteria": [
+   "F082.2",
+   "F082.9",
+   "F082.4",
+   "F082.8",
+   "F082.5",
+   "F082.1"
+  ]
+ },
+ {
+  "id": "J10",
+  "title": "Find your way around Explore",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Explore is its own screen; a Map switch is within reach and works both ways",
+   "One filter icon, no chip rows; a dot shows while a filter is on",
+   "Each card shows the name people know that Page by",
+   "Search, open a result, go back: same city, same search, same scroll place",
+   "A group or gathering Page opens normally"
+  ],
+  "criteria": [
+   "F059.1",
+   "F059.5",
+   "F044.2",
+   "F044.3",
+   "F045.2",
+   "F045.9",
+   "F092.1",
+   "F059.9",
+   "F059.10",
+   "F069.1"
+  ]
+ },
+ {
+  "id": "J11",
+  "title": "See what is happening today and this week",
+  "role": "a member",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Today and this-week rows hold only posts starting in that window, soonest first",
+   "Empty rows do not show, and a quiet city drops the whole heading",
+   "Your own items show for you, and change when you change the metro",
+   "Signed out, each posting Page gives one \"sign in to see\" card"
+  ],
+  "criteria": [
+   "F091.1",
+   "F091.3",
+   "F091.4",
+   "F059.2b",
+   "F059.7",
+   "F091.7"
+  ]
+ },
+ {
+  "id": "J12",
+  "title": "Scroll and watch the bottom bar",
+  "role": "a member",
+  "link": "https://socialus.org/explore",
+  "minutes": 2,
+  "launch": false,
+  "look": [
+   "Scrolling down slides the bar away smoothly; scrolling up a little brings it back",
+   "At the very top it is showing, and on a fresh tab load",
+   "Content does not jump",
+   "Home and You behave the same way"
+  ],
+  "criteria": [
+   "F046.1",
+   "F046.2",
+   "F046.3",
+   "F046.4",
+   "F046.5",
+   "F046.6"
+  ]
+ },
+ {
+  "id": "J13",
+  "title": "Start something without opening a shop",
+  "role": "a member",
+  "link": "https://socialus.org/create",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "You is free of \"vendor\", \"market\" and \"business owner\"; a Start something link shows",
+   "Create asks one question, picking a kind lands you on a draft, and nobody asks legal, tax or ID questions",
+   "After your first Page, one tap starts another and the first is untouched",
+   "Every Page you started is listed, drafts too",
+   "The old Following address lands on the Following list"
+  ],
+  "criteria": [
+   "F057.1",
+   "F061.1",
+   "F061.2",
+   "F060.1",
+   "F060.2",
+   "F060.3",
+   "F060.4",
+   "F069.3",
+   "F070.1",
+   "F057.5"
+  ]
+ },
+ {
+  "id": "J14",
+  "title": "Fill in your Page: address, tags and phone",
+  "role": "the owner of your test Page",
+  "link": "https://socialus.org/you",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "A real address shows a pin; a nonsense one is refused with a message",
+   "A neighbourhood shows a pin mid-area with no street address",
+   "Your own tag saves, there is no category list, and zero tags cannot publish",
+   "A public phone shows signed in but not signed out"
+  ],
+  "criteria": [
+   "F056.6",
+   "F056.7",
+   "F056.8",
+   "F056.9"
+  ]
+ },
+ {
+  "id": "J15",
+  "title": "Post an announcement with a time on it",
+  "role": "the owner of your test Page",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Edit works in place, no delete, and visitors see no edit",
+   "The time shows in local time; no date means no time",
+   "The audience switch defaults to Anyone and says Nobody yet at zero"
+  ],
+  "criteria": [
+   "F072.1",
+   "F072.3",
+   "F072.4"
+  ]
+ },
+ {
+  "id": "J16",
+  "title": "Follow a Page and unfollow it",
+  "role": "a member",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 2,
+  "launch": false,
+  "look": [
+   "Follow turns into following and the Page shows in your list",
+   "Unfollow then follow again: back once, no duplicate"
+  ],
+  "criteria": [
+   "F065.1",
+   "F065.4"
+  ]
+ },
+ {
+  "id": "J17",
+  "title": "Add pictures to posts and see them everywhere",
+  "role": "the owner of your test Page",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "One photo per post is kept; a second is refused with a message",
+   "The Page picture does not change when a post gets a photo",
+   "Each card shows one image: post photo, else Page picture, else placeholder",
+   "Reporting one image hides only that image, and the notice says which",
+   "Removing a picture and reloading: it is gone"
+  ],
+  "criteria": [
+   "F099.3",
+   "F099.4",
+   "F099.6",
+   "F099.8",
+   "F099.12",
+   "F099.2"
+  ]
+ }
+]
