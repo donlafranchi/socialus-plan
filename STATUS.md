@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 03:33 UTC
+> ## Generated 2026-10-11 · 12:05 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `781c836` (2026-10-10); `accepted-risks/*.json`;
+> `8a94492` (2026-10-10); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -45,10 +45,9 @@ branch or a commit.
 
 ## In the code repo
 
-**162 issues open** in `socialus-web`, 31 launch-blocking:
+**161 issues open** in `socialus-web`, 30 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
-- #552 bug · live: the overnight smoke found a problem
 - #568 F081 · criterion 4: a member changes their zip on /you and their metro follows
 - #569 F081 · criterion 8: every US zip resolves to its MSA; an unknown zip is refused
 - #573 F082 · criterion 7: the rules are one tap away on a phone, outside the Publish card
@@ -79,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #664 2026-10-11 chore #663: tap speed gets its own workflow so the live smoke means what it says
 - #662 2026-10-11 docs: report roll-ups with reviewed, smoked and PM looked per criterion (generated)
 - #661 2026-10-11 docs: report roll-ups generated from criterion rows; one Checked definition
 - #658 2026-10-11 docs: feature reports roll-up
 - #657 2026-10-11 docs: feature reports for sign-in-you
-- #656 2026-10-11 docs: feature reports for page-editing
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -156,8 +155,8 @@ counts. Each row needs a look, not a close.*
 - **`ci.yml`** — success, 2026-10-11
   - Lint, types, build: success
   - Unit tests: success
-  - Migrations applied to production: success
   - Which suites: success
+  - Migrations applied to production: success
   - Browser: success
 
 ## Measured, not estimated
