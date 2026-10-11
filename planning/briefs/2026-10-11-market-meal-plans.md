@@ -9,13 +9,14 @@ horizon: after beta, outside the Beta milestone
 date: 2026-10-11
 criteria:
   - M1.1 A market's Page can post what it carries this week, dated, readable signed out
-  - M2.1 A member can write a week of meals (five to seven recipes with ingredient lists) tied to one named market
+  - M2.1 A member can write a plan of one meal, a couple of days, or a week, tied to one named market; each length is complete on its own
   - M2.2 The plan shows which ingredients are on that market's list for the week and which are not
   - M2.3 A plan is saved with the date of the list it was written against
   - M2.4 The author's name on a plan leads to the author's own Page, not a public member profile
   - M3.1 A plan appears on its market's Page, newest first, and a family can read the whole plan and its shopping list before choosing it
   - M3.2 A family keeps a plan after getting it; it is not removed when the market's list changes
   - M3.3 The shopping list can be printed or saved as plain text, not only seen in the app
+  - M3.4 A family can choose one meal without taking a whole week
   - M4.1 When the market's list changes, a plan written against an older list says so in plain words
   - M4.2 A plan older than 14 days is marked as written for an earlier week
   - M5.1 An author can see how many families chose their plan, and says "Nobody's chosen it yet" at zero
@@ -53,8 +54,8 @@ criteria:
 
 | Missing | Owner | Needed by |
 |---|---|---|
-| A market's weekly carry list (a Post, or a thing) | Architect, then Don | T2 |
-| A plan and a recipe (nouns), and "tied to a market and a list date" | Architect | T2 |
+| **Market listings** (what a market's producers carry this week): the shared foundation, see [Market listings](2026-10-11-market-listings.md). Its weekly view is the list a plan is written against | Architect | T1 (it is T1) |
+| A plan and a recipe (nouns), tied to a market and a list date, in three lengths | Architect | T2 |
 | A way for a family to get and keep a plan | Architect | T2 |
 | Payments, if plans are sold in-app | Don (Later) | T3 |
 
@@ -65,7 +66,7 @@ criteria:
 | Journey | Who and what | Zero state |
 |---|---|---|
 | **M1 The market posts its week** | A market's manager (or a producer) posts what is here, dated | "Nothing posted for this week. Post what's here." |
-| **M2 An author writes a plan** | A member writes five to seven meals against the week's list; the plan flags what is off the list | "No market named yet. Pick the market this plan is for." |
+| **M2 An author writes a plan** | A member writes one meal, a couple of days, or a week against the week's list; the plan flags what is off the list | "No market named yet. Pick the market this plan is for." |
 | **M3 A family finds and keeps a plan** | Reads the whole plan first, then keeps it | "No plans for this market yet. Want to write one?" |
 | **M4 The week moves on** | The list changes; the plan says it was written for an earlier week | n/a |
 | **M5 The author sees it was used** | A count of families, in words | "Nobody's chosen it yet." |
@@ -94,16 +95,18 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 - The producers, through the sales the plan sends them at their own prices.
 - SocialUs, transaction income on a sale per DECISIONS 2026-10-07. Nothing else is promised to any member.
 
-## 6. T1 / T2 / T3 (the three sizes)
+## 6. T0 / T1 / T2 / T3 (pilot, then the three sizes)
 
-| | **T1 Smallest** | **T2 Right-sized (recommended)** | **T3 Full** |
-|---|---|---|---|
-| Ships | Nothing built. A pilot with what exists: the market's Page posts its week; one member's Page posts a week of meals as a Post tagged with the market | A plan and recipe form tied to a market and a list date; plans listed on the market's Page; a printable shopping list; money outside the app | Plans sold in-app; plan versions; search across markets; recommendations by ingredient |
-| Hours (estimate) | 0 to 8 | about 50 | about 100 or more |
-| Existing data only? | Yes | No: three new nouns | No: payments, recommendation |
-| Proves | Whether a family cooks from a neighbour's plan and a market posts a list | The plan-to-market link works and authors find families | The economics hold with payments |
-| Leaves out | Anything in-app: tying, flags, a printable list | Payments, search, versions, dietary variants | Delivery, point-of-sale or inventory sync (Won't) |
-| Trigger to move up | Four weeks with a posted list and three plans used | Five plans for one market and a list kept current for six weeks | Payments exist (Later) and authors in a second market |
+Don, 2026-10-11: the listing foundation is likely T1 for both market concepts, so T1 is shared and the no-build pilot becomes T0. **Plans come in three lengths: one meal, a couple of days, a week**, so authors and families can start small. One meal is the starting point everywhere below.
+
+| | **T0 Pilot** | **T1 Listings foundation (shared)** | **T2 Right-sized (recommended)** | **T3 Full** |
+|---|---|---|---|---|
+| Ships | Nothing built. The market's Page posts its week; one member's Page posts **one meal** as a Post tagged with the market, then a few days, then a week | Producers list items (optional price, availability, which market); the market's Page shows the week's listings | A plan and recipe form in three lengths, tied to a market and a list date; plans on the market's Page; a printable list; money outside the app | Plans sold in-app; versions; search across markets; recommendations |
+| Hours (estimate) | 0 to 8 | about 24 to 30, see the listings brief | about 40 on top of T1 | about 100 or more |
+| Existing data only? | Yes | Mostly (reuses the kept composer) | No: plan and recipe nouns | No: payments, recommendation |
+| Proves | A family cooks from a neighbour's one-meal plan; a market posts a list | Producers list and a plan can be written against real listings | The plan-to-market link works at all three lengths | The economics hold with payments |
+| Leaves out | Tying, flags, a printable list | Plans | Payments, search, versions, dietary variants | Delivery, inventory sync (Won't) |
+| Trigger to move up | Four weeks with a posted list and three plans used | Ten producers listing in one market for four weeks | Five plans for one market and a list kept current for six weeks | Payments exist (Later) and authors in a second market |
 
 ## 7. Gates
 
@@ -112,7 +115,7 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 - [x] Zero states defined (section 3)
 - [ ] Copy written to voice rules: not yet (post-beta)
 - [x] Guardian: no promise broken; legal flagged for counsel without detail
-- [x] **Kill criterion:** in the pilot (T1), fewer than three families use a plan across four market weeks: stop, and ask the author and two families why
+- [x] **Kill criterion:** in the pilot (T0), fewer than three families use a plan across four market weeks: stop, and ask the author and two families why
 - [x] **Metric:** families who shop the market with a plan in a week (the plan author asks "did you use it?"). Real-world meetings, not attention.
 - [ ] Tickets: none until Don approves a size
 - [ ] Assumed facts verified as ticket 1: whether a Sacramento market will post a weekly list

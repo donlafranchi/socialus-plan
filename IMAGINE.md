@@ -160,6 +160,8 @@ Every entry added from 2026-09-12 carries three things:
 
 *Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (DECISIONS 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
+**Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (ROADMAP Later), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
+
 **What would make it real:** a market that posts a weekly list and two neighbours who ask for a shopper, inside four market weeks. Full brief, three sizes and criteria: `planning/briefs/2026-10-11-market-shopper.md`.
 
 ### Market meal plans: a week of meals from what one market carries
@@ -168,7 +170,19 @@ Every entry added from 2026-09-12 carries three things:
 
 *Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, which keeps the legal weight lower than the shopper. Its weak point is the market's list: a plan is only as good as the list it was written against, so a plan carries its list date and says so when the week moves on. The author is credited through their own Page (there is no public member profile). **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
 
+**Sizes (Don, 2026-10-11):** a plan can be one meal, a couple of days, or a week, so authors and families start small. Listings are the foundation (see the shopper entry).
+
 **What would make it real:** a market that keeps a weekly list for six weeks and three families who cook from a plan. Full brief: `planning/briefs/2026-10-11-market-meal-plans.md`.
 
 **Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
+
+### Wish it existed: ask for what may not exist locally
+
+*Don, 2026-10-11, in his terms:* "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment. After beta; not in the Beta milestone.
+
+*Analysis, agent, 2026-10-11:* this is mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply that says "I can build that, for this". The reply channel does not exist (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
+
+**Connects to:** the market listings (a wish can ask for a shopper or a plan; an answer that is for sale becomes a listing) and to F089 (wishes show producers what to bring).
+
+**What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
 
