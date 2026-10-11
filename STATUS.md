@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 02:35 UTC
+> ## Generated 2026-10-11 · 03:13 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -45,7 +45,7 @@ branch or a commit.
 
 ## In the code repo
 
-**161 issues open** in `socialus-web`, 31 launch-blocking:
+**162 issues open** in `socialus-web`, 31 launch-blocking:
 - #220 F078 · Flagged content hides itself on the agent's call, and the poster is told why
 - #486 F100 · An AI reads every reported Post first, and a person still makes the call
 - #552 bug · live: the overnight smoke found a problem
