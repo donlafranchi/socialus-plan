@@ -60,7 +60,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 |---|---|---|
 | `STATUS.md` | `scripts/status.sh`, wrapping `scripts/state.sh` and `scripts/markers.py` | `.github/workflows/status.yml` — push to `main`, daily 13:05 UTC, and *Actions → status → Run workflow*, which works from a phone |
 | `README.md` | `scripts/view.sh` | the same workflow |
-| `DASHBOARD.md` (plain text), `dashboard/status-dashboard.html` (colour) | `scripts/dashboard.py`, reading `socialus-web` Issues and PRs | by hand at each 5am/5pm handoff (`ops-pattern/process/DISPATCH.md`); no workflow, the repo has no Actions minutes |
+| `DASHBOARD.md` (plain text), `dashboard/status-dashboard.html` (colour) | `scripts/dashboard.py`, reading the criteria roll-up (`socialus-web` `build-log/reports/rollup.json` on main, from `criteria.py`) | by hand at each 5am/5pm handoff (`ops-pattern/process/DISPATCH.md`); no workflow, the repo has no Actions minutes |
 | `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a `DECISIONS.md` change — `scripts/lint.sh` fails until it is run |
 | `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md` | `python3 scripts/markers.py platform`, from `[platform …]` markers | by hand after a marker changes — `scripts/lint.sh` fails until it is run |
 
