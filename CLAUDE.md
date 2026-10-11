@@ -24,6 +24,7 @@ DECISION RULE (2026-10-04, Don)
 3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
 4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
 5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags in `DECISIONS.md`; never edit it.
+6. `product/foundation/what-this-is.md` § Direction — what kind of platform this is. Read it before building anything that collects or uses member data.
 
 ## Where truth lives
 

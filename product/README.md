@@ -129,6 +129,11 @@ One line per doc, then the settled rules with no rationale attached — read the
 - 10+ table names referenced in shipped code have no migration behind them — any surface reading one is silently broken.
 - This file is the spec; `audit-route-inventory.md` is only the evidence trail behind it and goes stale on every route change.
 
+## Directions — exploration/
+
+Where the PM has pointed but nothing is ruled or scoped. Not scope; it tells today's work which way to lean.
+- **`exploration/search-direction.md`** — Explore search in plain words like Google, no hashtags, natural-language search later; how today's grammar and reader (F092) grow into it.
+
 ## Why it matters — needs/
 
 **`needs/use-cases.md`** — the real scenarios.

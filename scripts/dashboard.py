@@ -138,6 +138,21 @@ def stages(i):
     return s, pr, done
 
 
+# Criterion-level results: read from the criterion reports in socialus-web (scripts/criteria.py), not derived from Issues.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import criteria
+    import launch_checklist
+    import waiting
+    FEATS = criteria.load()
+    UNIVERSE = criteria.universe()
+except Exception as e:
+    FEATS, UNIVERSE = [], set()
+    launch_checklist = None
+    waiting = None
+    print('criteria: could not read criterion reports:', e)
+COVER = (len({f['id'] for f in FEATS}), len(UNIVERSE | {f['id'] for f in FEATS}))
+
 rows = []
 for i in issues:
     area = next((l[5:] for l in labels(i) if l.startswith('area:')), None)
@@ -245,16 +260,40 @@ try:
             if link_match:
                 text = link_match.group(1)
             test_items.append({'checked': checked, 'text': text, 'url': url})
-except:
-    pass
+except Exception as e:
+    test_items = []
+    TEST_NOTICE = f'Testing list unavailable: could not read #519 ({e}).'
+if not test_items and not globals().get('TEST_NOTICE'):
+    TEST_NOTICE = 'Testing list is empty: Issue #519 has no checkboxes (- [ ] / - [x] lines), so there is nothing to tick or count.'
+
+# Live testing (ported from the superseded #67): one `uat` Issue per feature, one box per criterion (record-pm-review).
+# #519 is a control sheet: linked, not counted.
+uat_items = []
+try:
+    for i in gh('issue', 'list', '-R', REPO, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,state,body,url'):
+        if 'self-check' in i['title']:
+            continue
+        bx = [(m.group(1).lower() == 'x', m.group(2)) for m in (re.match(r'\s*[-*]\s+\[([ xX])\]\s+(.+)', l) for l in (i.get('body') or '').split('\n')) if m]
+        mf = re.search(r'\b(F\d{3})\b', i['title'])
+        uat_items.append({'n': i['number'], 'title': i['title'], 'state': i['state'], 'url': i['url'], 'feature': mf.group(1) if mf else None,
+                          'done': sum(1 for c, _ in bx if c), 'total': len(bx)})
+except Exception as e:
+    UAT_ERR = str(e)
+if globals().get('UAT_ERR'):
+    TEST_NOTICE = f'UAT Issues unavailable: {UAT_ERR}'
+elif not uat_items:
+    TEST_NOTICE = (globals().get('TEST_NOTICE', '') + ' ' if globals().get('TEST_NOTICE') else '') + 'No UAT Issue exists yet (one per feature, from record-pm-review), so PM looked cannot move from these; it counts only pm-reviewed labels.'
 
 root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
 total = len(rows)
 done = sum(1 for r in rows if r['done'])
-stage_totals = ' · '.join(f'{STAGES[k]} {sum(1 for r in rows if ok(r["st"][k]))}/{total}' for k in range(6))
-header = f'{MILESTONE} · {days} days to freeze · {total} beta items · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
+stage_totals = ' · '.join(f'{STAGES[k]} {sum(1 for r in rows if (r["st"][k] == "●" if k == 2 else ok(r["st"][k])))}/{total}' for k in range(6))
+ROLL = criteria.rollup(FEATS) if FEATS else {'areas': {}, 'milestone': {'met': 0, 'total': 0, 'features': 0, 'red': 0, 'pct': 0}}
+MS = ROLL['milestone']
+issues_closed = sum(1 for r in rows if not r['open'])
+header = f'{MILESTONE} · {days} days to freeze · criterion roll-up: {MS["met"]}/{MS["total"]} criteria met ({MS["pct"]}%), checked {MS.get("checked", 0)}, reviewed {MS.get("reviewed", 0)}, smoked {MS.get("smoked", 0)}, PM looked {MS.get("pm", 0)} across {MS["features"]} features, {MS["red"]} red, {sum(1 for f in FEATS if f.get("stale"))} reports stale · Issues closed {issues_closed}/{total} (alongside, not the headline) · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
 
 areas = []
 behind = []
@@ -266,7 +305,7 @@ for a in AREAS:
             filled += 1
         else:
             break
-    counts = [sum(1 for r in rs if ok(r['st'][k])) for k in range(6)]
+    counts = [sum(1 for r in rs if (r['st'][k] == '●' if k == 2 else ok(r['st'][k]))) for k in range(6)]
     unknown = sum(1 for r in rs if '?' in r['st'])
     if not rs:
         note = 'no beta items'
@@ -278,7 +317,7 @@ for a in AREAS:
             note += f'; {unknown} with a ?'
         if any(r['blocking'] and r['open'] and r['st'][1] != '●' for r in rs):
             behind.append(a)
-    areas.append({'name': a, 'rows': rs, 'filled': filled, 'counts': counts, 'note': note,
+    areas.append({'name': a, 'rows': rs, 'filled': filled, 'counts': counts, 'note': note, 'crit': ROLL['areas'].get(a),
                   'done': sum(1 for r in rs if r['done']), 'shift': SHIFT.get(a, [])})
 
 if not behind:
@@ -299,32 +338,93 @@ def issue_url(n):
     return f'https://github.com/{REPO}/issues/{n}'
 
 
+# Everything waiting on the PM, by area (scripts/waiting.py): needs-pm Issues, human-review and needs-don PRs, meta-change PRs, decision PRs, unticked checklist boxes.
+try:
+    WAIT = waiting.collect({f['id']: f['area'] for f in FEATS})
+except Exception as e:
+    WAIT = {}
+    print('waiting: could not read GitHub:', e)
+WAIT_AREAS = AREAS + [waiting.OPS_PLAN if waiting else 'Ops & plan']
+WAIT_TOTAL = sum(len(v) for v in WAIT.values())
+_slug = lambda n: re.sub(r'[^a-z0-9 -]', '', n.lower()).replace(' ', '-')
 out = ['> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any \'no fee\' language is retired.', '', f'# {header}', '',
        '*Generated by `scripts/dashboard.py`; never hand-edited. `▰` is a stage every item in the area has reached; `●` a stage reached, `○` not yet, `?` the data to tell was not found. Colour: `dashboard/status-dashboard.html`.*', '',
-       '| Area | ' + ' | '.join(STAGES) + ' | Note |', '|---|' + '---|' * 7]
+       '| Area | Criteria met | ' + ' | '.join(STAGES) + ' | Note |', '|---|---|' + '---|' * 7]
+_ti = next(i for i, l in enumerate(out) if l.startswith('| Area | Criteria met'))
+out[_ti:_ti] = ['', f'**Waiting on you: {WAIT_TOTAL}** · ' + ' · '.join(f'[{n} ({len(WAIT.get(n, []))})](#{_slug(n)})' for n in WAIT_AREAS), '']
 for x in areas:
     n = len(x['rows'])
     cells = ' | '.join(f'{c}/{n}' for c in x['counts'])
-    out.append(f'| {x["name"]} | {cells} | {x["note"]} |')
-out.append(f'| **All** | ' + ' | '.join(f'**{sum(1 for r in rows if ok(r["st"][k]))}/{total}**' for k in range(6)) + ' | each phase counted on its own |')
+    cr = x['crit']
+    crit_cell = (f"{cr['met']}/{cr['total']} ({round(100 * cr['met'] / cr['total'])}%)" + (f" RED {cr['red']}" if cr['red'] else '') + f" · {cr['features']} features") if cr and cr['total'] else 'no criterion reports'
+    out.append(f'| {x["name"]} | {crit_cell} | {cells} | {x["note"]} |')
+out.append(f'| **All** | **{MS["met"]}/{MS["total"]} ({MS["pct"]}%)** · {MS["features"]} features | ' + ' | '.join(f'**{sum(1 for r in rows if (r["st"][k] == "●" if k == 2 else ok(r["st"][k])))}/{total}**' for k in range(6)) + ' | each phase counted on its own |')
 out.append('')
 out.append('Stages, in order: ' + ' → '.join(f'**{s}**' for s in STAGES) + '.')
+# Launch checklist: dated reminders that fire at an event or a date (planning/launch-checklist.json).
+try:
+    LAUNCH = launch_checklist.load()
+except Exception as e:
+    LAUNCH = []
+    problems_launch = f'launch checklist could not be read: {e}'
+if LAUNCH:
+    out += ['', '## Launch checklist', ''] + [(f"- **DUE ({', '.join(i['fired_by'])}):** {i['text']} [Runbook]({i['runbook']})" if i['due'] else f"- Fires at {i['waiting_on']}, whichever comes first: {i['text']}" + (f" ({i['days_to_date']} days to the date trigger.)" if i['days_to_date'] is not None else '')) for i in LAUNCH]
+# Data problems (ported from #67): every unknown and every missing report, so none is mistaken for progress.
+problems = []
+for f in FEATS:
+    unk = sum(1 for r in f['criteria'] if r['built'] == 'unknown')
+    if unk:
+        problems.append(f"{f['id']} {f['title']}: {unk} criteria have Built unknown and count as unmet")
+    if f.get('stale'):
+        problems.append(f"{f['id']} {f['title']}: its report is older than its last merged PR")
+for _m in sorted(UNIVERSE - {f['id'] for f in FEATS}):
+    problems.append(f'{_m}: reportable but has no criterion report')
+for x in areas:
+    nq = sum(1 for r in x['rows'] if '?' in r['st'])
+    if nq:
+        problems.append(f"{x['name']}: {nq} Issues have a ? stage (data not found)")
+for _e in (waiting.ERRORS if waiting else ['waiting.py could not be loaded']):
+    problems.append('Waiting on you may be incomplete: ' + _e)
+if not FEATS:
+    problems.append('no criterion reports could be read; the criterion roll-up is empty')
+if globals().get('TEST_NOTICE'):
+    out += ['', '## Testing', '', f'**{TEST_NOTICE}**']
+if uat_items:
+    out += ['', '## Live testing (UAT Issues)', '', '| Issue | State | Boxes ticked |', '|---|---|---|'] + [f"| [#{u['n']} {u['title'][:70]}]({u['url']}) | {u['state']} | {u['done']}/{u['total']} |" for u in uat_items]
+out += ['', '## Data problems', ''] + ([f'- {p}' for p in problems] or ['- none'])
+out += ['', '## Criterion roll-up: by phase (each phase counted on its own, per criterion)', '', '| Area | Criteria | Built | Checked | Reviewed | Smoked | PM looked |', '|---|---|---|---|---|---|---|']
+for _a, _c in sorted(ROLL['areas'].items()):
+    out.append(f"| {_a} | {_c['total']} | {_c['met']} | {_c.get('checked', 0)} | {_c.get('reviewed', 0)} | {_c.get('smoked', 0)} | {_c.get('pm', 0)} |")
+out.append(f"| **All** | **{MS['total']}** | **{MS['met']}** | **{MS.get('checked', 0)}** | **{MS.get('reviewed', 0)}** | **{MS.get('smoked', 0)}** | **{MS.get('pm', 0)}** |")
+out += ['', f'*Smoked = a green smoke-live run came after the feature\'s last merge. The last green smoke run was {(FEATS[0]["last_green_smoke"] or "never")[:10] if FEATS else "n/a"}; the latest run is {FEATS[0]["last_smoke"] if FEATS else "n/a"}. Smoke loads pages; it does not test criteria.*']
+out += ['', f'## Criterion roll-up: features, {COVER[0]} of {COVER[1]} reporting', '',
+        '*Read from the criterion reports in socialus-web (`build-log/reports/`), one row per acceptance criterion in each report; not derived from Issues. Met = the code is on main. RED = a launch-blocking criterion is unmet. The colour view with the criterion lists is `dashboard/status-dashboard.html`.*', '',
+        '| Area | Feature | Met | Checked | Reviewed | Smoked | PM looked | Unmet launch-blocking | Report |', '|---|---|---|---|---|---|---|---|---|']
+for f in sorted(FEATS, key=lambda f: (f['area'], f['id'])):
+    red = f"RED: {len(f['blocked'])}" if f['blocked'] else ''
+    out.append(f"| {f['area']} | {f['id']} {f['title']} | {f['met']}/{f['total']} | {f['checked']}/{f['total']} | {f['reviewed']}/{f['total']} | {f['smoked']}/{f['total']} | {f['pm']}/{f['total']} | {red} | [report]({f['url']}){' STALE: merged after the report' if f.get('stale') else ''} |")
+_miss = sorted(UNIVERSE - {f['id'] for f in FEATS})
+if _miss:
+    out += ['', 'No criterion report yet: ' + ', '.join(_miss) + '.']
 if unassigned:
     out += ['', f'*{len(unassigned)} beta item(s) have no `area:` label: ' + ', '.join(f'[#{r["n"]}]({issue_url(r["n"])})' for r in unassigned) + '.*']
-for x in areas:
-    out += ['', f'<details><summary><b>{x["name"]}</b> · {len(x["rows"])} item(s)</summary>', '',
-            f'**Past {since_h}h:** ' + ('nothing.' if not x['shift'] else ''), *shift_md(x['shift']), '',
-            '| Stages | Feature | Review | Link |', '|---|---|---|---|']
-    for r in x['rows']:
-        alt = ''.join(r['st'])
-        pr = f' · [PR #{r["pr"]["number"]}]({pr_url(r)})' if r['pr'] else ''
-        rv = f'[Review]({r["review"]})' if r['review'] else '?'
-        out.append(f'| `{alt}` | {r["title"]} | {rv} | [#{r["n"]}]({issue_url(r["n"])}){pr} |')
-    if not x['rows']:
-        out.append('| | none yet | | |')
-    out += ['', '</details>']
-if SHIFT.get(None):
-    out += ['', f'<details><summary><b>No area</b> · past {since_h}h · {len(SHIFT[None])} event(s)</summary>', '', *shift_md(SHIFT[None]), '', '</details>']
+def waiting_md(items):
+    body = [f"- [{i['title']}]({i['url']}) ({i['kind']}): {i['ask']}" for i in items] or ['- Nothing waiting on you here.']
+    return ['<details>', f'<summary><b>Waiting on you ({len(items)})</b></summary>', '', *body, '', '</details>']
+
+_by_area = {x['name']: x for x in areas}
+for name in WAIT_AREAS:
+    items = WAIT.get(name, [])
+    x = _by_area.get(name)
+    out += ['', f'## {name}', '']
+    if x and x['crit'] and x['crit']['total']:
+        cr = x['crit']
+        out.append(f"Criterion roll-up: {cr['met']}/{cr['total']} criteria met ({round(100 * cr['met'] / cr['total'])}%) across {cr['features']} features" + (f", {cr['red']} red (a launch-blocking criterion is unmet)" if cr['red'] else '') + '.')
+    elif x:
+        out.append(f"No criterion reports for this area yet ({len(x['rows'])} Issues in the milestone).")
+    else:
+        out.append('Docs and process PRs in socialus-plan, socialus-ops and skills, guard-protected meta changes, and anything with no area.')
+    out += ['', *waiting_md(items)]
 out += ['', '**Behind:** ' + (', '.join(behind) if behind else 'none') +
         ' *(an open launch-blocking item not yet built; else below the overall built share)*', '']
 if nxt:
@@ -343,10 +443,11 @@ open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
-    'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
+    'features': [{'id': f['id'], 'title': f['title'], 'area': f['area'], 'met': f['met'], 'total': f['total'], 'checked': f['checked'], 'reviewed': f['reviewed'], 'smoked': f['smoked'], 'pm': f['pm'], 'blocked': len(f['blocked']), 'stale': f.get('stale', False), 'url': f['url'], 'criteria': [{'n': r['n'], 'text': r['text'], 'built': r['built'], 'checked': r['checked'], 'reviewed': r['reviewed'], 'smoked': r['smoked'], 'pm': r['pm'], 'uat': r['uat'], 'blocking': r['blocking'], 'issues': r['issues']} for r in f['criteria']]} for f in sorted(FEATS, key=lambda f: (f['area'], f['id']))], 'cover': COVER,
+    'waiting': WAIT, 'wait_areas': WAIT_AREAS, 'wait_total': WAIT_TOTAL, 'launch': LAUNCH, 'test_notice': globals().get('TEST_NOTICE', ''), 'uat': uat_items, 'problems': problems, 'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
     'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
     'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
-               'done': x['done'], 'note': x['note'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
+               'done': x['done'], 'note': x['note'], 'crit': x['crit'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
                'rows': [{'n': r['n'], 'title': r['title'], 'st': r['st'], 'review': r['review'],
                          'issue': issue_url(r['n']), 'pr': pr_url(r), 'prn': r['pr']['number'] if r['pr'] else None}
                         for r in x['rows']]} for x in areas],
@@ -381,14 +482,23 @@ summary::-webkit-details-marker{display:none}.name{font-weight:650}.note{grid-co
 const D=JSON.parse(document.getElementById('data').textContent);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 document.getElementById('h').textContent=D.header;document.title=D.header;
+const HUES={'page-editing':'#2563eb','sign-in-you':'#7c3aed','explore-map':'#0d9488','create-posts':'#d97706','sharing-links':'#65a30d','builders-seed':'#a16207','moderation':'#c026d3','ops':'#475569','Ops & plan':'#475569'};const hue=n=>HUES[n]||'#475569';const slug=n=>n.toLowerCase().replace(/[^a-z0-9 -]/g,'').replace(/ /g,'-');
+const tint=(hex,f)=>{const t=0.18+0.82*Math.max(0,Math.min(1,f));const c=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));return '#'+c.map(v=>Math.round(255-(255-v)*t).toString(16).padStart(2,'0')).join('')};
+const waitList=n=>{const w=(D.waiting[n]||[]);return w.length?w.map(i=>`<div class="row"><div class="title"><a href="${esc(i.url)}">${esc(i.title)}</a> <i style="color:var(--mute);font-style:normal">(${esc(i.kind)})</i><br>${esc(i.ask)}</div></div>`).join(''):'<div class="row"><div class="title">Nothing waiting on you here.</div></div>'};
+const waitCard=n=>`<details id="card-${slug(n)}" style="border-left-color:${hue(n)}"><summary><span class="name">${esc(n)}</span><span class="note">Waiting on you (${(D.waiting[n]||[]).length})</span></summary><div class="rows">${waitList(n)}</div></details>`;
 const RAMP=['#b91c1c','#d97706','#ca8a04','#65a30d','#15803d'];const ramp=f=>RAMP[Math.min(4,Math.floor(f*5))];
-document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('')+`<span>Area edge, mean of the six phases: <span class="ramp">${RAMP.map(c=>`<i style="background:${c}"></i>`).join('')}</span> 0% to 100%</span>`;
+document.getElementById('legend').innerHTML=D.stages.map((s,i)=>`<span><i class="dot" style="background:${D.colors[i]}"></i>${esc(s)}</span>`).join('')+`<span>Colour: one hue per area, pale to full as criteria met approaches 100%; <b style="color:#b91c1c">red</b> = a launch-blocking criterion is unmet.</span>`;
 const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=>`<div><i>${esc(e.k)}:</i> ${e.u?`<a href="${esc(e.u)}">${esc(e.t)}</a>`:esc(e.t)}</div>`).join(''):'<div><i>nothing</i></div>'}</div>`;
 const testSection=D.test_items.length?`<details><summary><span class="name">Testing</span><span class="note">${D.test_items.filter(t=>t.checked).length} of ${D.test_items.length} screens</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row" style="opacity:${t.checked?1:.5}"><input type="checkbox" ${t.checked?'checked':''} disabled style="cursor:default;margin-right:8px"/><div class="title">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`:'';
-document.getElementById('areas').innerHTML=D.areas.map(a=>{
+const featSection=`<h2 style="font-size:1rem;margin:22px 0 4px">Criterion roll-up: features, ${D.cover[0]} of ${D.cover[1]} reporting</h2><p class="sub">Read from the criterion reports, not from Issues. Bar and edge = criteria met / total, in the area's colour, pale to full. Red = a launch-blocking criterion is unmet. Tap a feature for its criteria: green = built, T = a marked test covers it, R = reviewed, S = a green smoke run came after the last merge, P = the PM looked (ticked on the phone checklist); a dot = on the checklist, not yet ticked.</p>`+D.features.map(f=>{const fr=f.total?f.met/f.total:0;const col=f.blocked?'#b91c1c':tint(hue(f.area),fr);return `<details style="border-left-color:${col}"><summary><span class="name">${esc(f.id)} ${esc(f.title)}</span><div class="bar" style="grid-template-columns:1fr"><div class="seg" style="background:linear-gradient(90deg,${col} ${fr*100}%,var(--off) ${fr*100}%);color:var(--ink)">${f.met}/${f.total}</div></div><span class="note">${esc(f.area)} · ${Math.round(fr*100)}% met${f.blocked?` · <b style="color:#b91c1c">${f.blocked} launch-blocking unmet</b>`:''} · <a href="${esc(f.url)}">full report</a>${f.stale?' · <b style="color:#b45309">report stale: merged after it was written</b>':''}</span></summary><div class="rows">${f.criteria.map(c=>`<div class="row"><div class="strip"><span class="box" style="background:${c.built==='yes'?'#15803d':(c.blocking?'#b91c1c':'var(--off)')};color:#fff">${c.built==='yes'?'✓':(c.built==='unknown'?'?':'✕')}</span><span class="box" title="checked: a marked test covers this whole criterion" style="background:${c.checked==='yes'?'#2563eb':'var(--off)'};color:#fff">${c.checked==='yes'?'T':''}</span><span class="box" title="reviewed" style="background:${c.reviewed==='yes'?'#7c3aed':'var(--off)'};color:#fff">${c.reviewed==='yes'?'R':''}</span><span class="box" title="smoked: a green smoke run came after the last merge (pages load)" style="background:${c.smoked==='yes'?'#0d9488':'var(--off)'};color:#fff">${c.smoked==='yes'?'S':''}</span><span class="box" title="PM looked" style="background:${c.pm==='yes'?'#ca8a04':'var(--off)'};color:#fff;${c.uat==='listed'?'outline:2px solid #ca8a04':''}">${c.pm==='yes'?'P':(c.uat==='listed'?'·':'')}</span></div><div class="title">${esc(c.n)}. ${esc(c.text)}${c.blocking?' <b style="color:#b91c1c">launch-blocking</b>':''}${c.issues.length?' · '+c.issues.map(n=>`<a href="https://github.com/donlafranchi/socialus-web/issues/${n}">#${n}</a>`).join(' '):''}</div></div>`).join('')}</div></details>`}).join('');
+const launchSec=D.launch.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Launch checklist</h2><div class="foot">${D.launch.map(i=>`<p style="${i.due?'color:#b91c1c;font-weight:700':''}">${i.due?'DUE ('+esc(i.fired_by.join(', '))+'): ':'Fires at '+esc(i.waiting_on)+', whichever comes first: '}${esc(i.text)} <a href="${esc(i.runbook)}">Runbook</a>${(!i.due&&i.days_to_date!==null)?` (${i.days_to_date} days to the date trigger)`:''}</p>`).join('')}</div>`:'';
+const testNote=D.test_notice?`<p class="settled" style="background:#fecaca"><b>Testing:</b> ${esc(D.test_notice)}</p>`:'';
+const uatSec=(D.uat.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Live testing (UAT Issues)</h2><div class="foot">${D.uat.map(u=>`<p><a href="${esc(u.url)}">#${u.n} ${esc(u.title)}</a> · ${esc(u.state)} · ${u.done}/${u.total} boxes ticked</p>`).join('')}</div>`:'')+`<h2 style="font-size:1rem;margin:22px 0 4px">Data problems</h2><div class="foot">${D.problems.length?D.problems.map(p=>`<p>${esc(p)}</p>`).join(''):'<p>none</p>'}</div>`;
+const waitTop=`<p class="settled" style="background:var(--card);border:1px solid var(--line)"><b>Waiting on you: ${D.wait_total}</b> · ${D.wait_areas.map(n=>`<a href="#card-${slug(n)}">${esc(n)} (${(D.waiting[n]||[]).length})</a>`).join(' · ')}</p>`;
+document.getElementById('areas').innerHTML=waitTop+testNote+launchSec+featSection+uatSec+D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
- const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
- const mean=a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0;return `<details style="border-left-color:${ramp(mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${Math.round(mean*100)}% overall · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
+ const rows=waitList(a.name);
+ const cm=a.crit&&a.crit.total?a.crit.met/a.crit.total:null;const mean=cm!==null?cm:(a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0);return `<details id="card-${slug(a.name)}" style="border-left-color:${a.crit&&a.crit.red?'#b91c1c':tint(hue(a.name),mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note"><b>Waiting on you (${(D.waiting[a.name]||[]).length})</b> · ${cm!==null?`${a.crit.met}/${a.crit.total} criteria met (${Math.round(cm*100)}%)${a.crit.red?` · ${a.crit.red} red`:''}`:`${Math.round(mean*100)}% of Issue stages (no criterion reports)`} · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+waitCard(D.wait_areas[D.wait_areas.length-1])+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
 document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
 </script></main></body></html>
 """

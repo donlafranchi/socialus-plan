@@ -1,0 +1,90 @@
+name: dashboard
+
+# Regenerates DASHBOARD.md and dashboard/status-dashboard.html from live state once a day, so the roll-up no longer
+# waits for a handoff or a person. It reads the criterion-level feature reports (scripts/criteria.py), the Issues, PRs
+# and runs in socialus-web, and appends the meta-layer trial block. It commits only when the content changed beyond the
+# "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
+# Daily at 11:30 UTC (4:30am Pacific while daylight time lasts, 3:30am after 2026-11-01), ahead of the 5am handoff, as the PM asked
+# on 2026-10-11; the manual trigger stays. It was every 6 hours with a push trigger; one run a day keeps the history quiet.
+# GitHub's schedule trigger is best-effort and can start late or not at all (it missed runs on 2026-10-11): if the dashboard
+# header's "updated" time is more than a day old, run Actions > dashboard > Run workflow.
+on:
+  schedule:
+    - cron: '30 11 * * *'
+  workflow_dispatch:
+
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  checks: write   # it reports the lint it ran on its own commit; main requires `lint` (see status.yml)
+
+jobs:
+  regenerate:
+    name: Regenerate DASHBOARD
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - name: Check out the planning repo
+        uses: actions/checkout@v5
+        with:
+          path: socialus-plan
+          fetch-depth: 0
+      # Public repos, so the default token reads them. They sit under _projects/ because the scripts look for siblings.
+      - name: Check out the code repo
+        uses: actions/checkout@v5
+        with:
+          repository: donlafranchi/socialus-web
+          path: _projects/socialus-web
+          fetch-depth: 0
+      - name: Check out the method repo
+        uses: actions/checkout@v5
+        with:
+          repository: donlafranchi/socialus-ops
+          path: _projects/socialus-ops
+          fetch-depth: 0
+      - name: Regenerate
+        working-directory: socialus-plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PROJECTS: ${{ github.workspace }}/_projects
+          STATUS_CODE: ${{ github.workspace }}/_projects/socialus-web
+        run: python3 scripts/dashboard.py .
+      # A page whose script throws still commits and silently shows nothing. Run its script in jsdom and refuse to publish on any error.
+      - name: Check the page script
+        working-directory: socialus-plan
+        run: |
+          mkdir -p /tmp/jsdom && (cd /tmp/jsdom && npm init -y >/dev/null && npm i jsdom >/dev/null 2>&1)
+          JSDOM_PATH=/tmp/jsdom/node_modules/jsdom node scripts/dashboard_check.cjs
+      - name: Commit, but only if the content changed
+        working-directory: socialus-plan
+        env:
+          GH_TOKEN: ${{ github.token }}
+          METHOD_REPO: ${{ github.workspace }}/_projects/socialus-ops
+        run: |
+          set -euo pipefail
+          git config user.name  'dashboard workflow'
+          git config user.email 'actions@github.com'
+          norm() { sed -E 's/updated [0-9: -]+ PT//' "$1"; }
+          git show HEAD:DASHBOARD.md > /tmp/prev.md 2>/dev/null || { cp /dev/null /tmp/prev.md; }
+          norm /tmp/prev.md > /tmp/a.md; norm DASHBOARD.md > /tmp/b.md
+          if cmp -s /tmp/a.md /tmp/b.md; then echo "No change beyond the time; nothing to commit."; exit 0; fi
+          git add DASHBOARD.md dashboard/status-dashboard.html
+          git commit -m "docs: regenerate dashboard (scheduled)"
+          # main requires the `lint` check, and Actions cannot be exempted. Same pattern as status.yml: run scripts/lint.sh
+          # on this commit, park it on `dashboard-bot`, report `lint` on that sha, then fast-forward main. A failing lint
+          # stops here and the dashboard is not published. Retry once after a rebase if a merge landed in between.
+          publish() {
+            bash scripts/lint.sh
+            sha=$(git rev-parse HEAD)
+            git push -f origin HEAD:refs/heads/dashboard-bot
+            gh api "repos/$GITHUB_REPOSITORY/check-runs" -f name=lint -f head_sha="$sha" \
+              -f status=completed -f conclusion=success \
+              -f 'output[title]=scripts/lint.sh passed (dashboard workflow)' \
+              -f "output[summary]=Run $GITHUB_RUN_ID ran scripts/lint.sh on this commit before publishing it." >/dev/null
+            git push origin HEAD:main
+          }
+          publish || { git pull --rebase origin main && publish; }
+          git push origin --delete dashboard-bot || true
