@@ -54,11 +54,10 @@ criteria:
 
 | Missing | Owner | Needed by |
 |---|---|---|
-| A market's list of what it carries this week (a "carry list") | Architect, then Don's ruling on whether it is a Post or a thing | T2 |
-| An ask (a member's request for items) and its states | Architect | T2 |
+| **Market listings** (a producer lists an item, optional price, availability, tied to their Page and the market). This is the shared foundation: see [Market listings](2026-10-11-market-listings.md). Its combined weekly view is the market's "carry list", so no separate carry-list noun is needed | Architect | T1 (it is T1) |
+| An ask (a member's request for items from a listing) and its states | Architect | T2 |
 | Messaging between members, or an in-ask status line that replaces it | Don (messaging is Later) | T2 |
 | On-platform payments | Don (Later) | T3 |
-| Listings on a Page | Don (postponed) | T3 |
 
 ## 3. Area → Feature → Journey → Criterion
 
@@ -97,16 +96,18 @@ Criteria are in the frontmatter, each tagged to its journey (S1.1 and so on). Al
 - The producers whose goods are bought (their full price, no markup).
 - SocialUs, transaction income on the sale per DECISIONS 2026-10-07. Nothing is promised to any member beyond what each earns on their own sale.
 
-## 6. T1 / T2 / T3 (the three sizes)
+## 6. T0 / T1 / T2 / T3 (pilot, then the three sizes)
 
-| | **T1 Smallest** | **T2 Right-sized (recommended)** | **T3 Full** |
-|---|---|---|---|
-| Ships | Nothing built. A pilot with what exists: the market's Page posts "what's here this week"; one member makes an Offer-a-service Page "I shop the Saturday market" and arranges asks outside the app | A carry list, an ask with four states, a shopper's claim; handoff place from the market's post; money outside the app | Payments through the chartered partner; a shopper working several markets; order history |
-| Hours (estimate) | 0 to 8 (setup and a few posts) | about 60 | about 120 or more |
-| Existing data only? | Yes | No: three new nouns | No: payments, messaging |
-| Proves | Whether any producer posts a weekly list and any neighbour asks | The ask-claim-handoff loop works for strangers | The economics hold with money in the app |
-| Leaves out | Anything in-app: asks, states | Messaging, payments, listings | Delivery routing, inventory sync, checkout (Won't) |
-| Trigger to move up | Four market weeks with a posted list and at least two real asks | Ten completed handoffs in one market | Payments exist (Later) and a second market asks |
+Don, 2026-10-11: the listing foundation is likely T1 for both market concepts, so T1 is shared and the no-build pilot becomes T0.
+
+| | **T0 Pilot** | **T1 Listings foundation (shared)** | **T2 Right-sized (recommended)** | **T3 Full** |
+|---|---|---|---|---|
+| Ships | Nothing built. The market's Page posts "what's here this week"; one member's Page offers to shop it; asks arranged outside the app | Producers list items (optional price, availability, which market) from their Page; the market's Page shows the week's listings | An ask on a listing, a shopper's claim, four states; handoff place from the market's post; money outside the app | Payments through the chartered partner; a shopper working several markets; order history |
+| Hours (estimate) | 0 to 8 | about 24 to 30, see the listings brief | about 40 on top of T1 | about 120 or more |
+| Existing data only? | Yes | Mostly: reuses the kept composer and item.create; availability and the market link are new | No: two new nouns (ask, claim) | No: payments, messaging |
+| Proves | Whether anyone posts a weekly list and asks | Producers will list; neighbours read the week | The ask, claim, handoff loop works for strangers | The economics hold with money in the app |
+| Leaves out | Anything in-app | Asks, shoppers | Messaging, payments | Delivery routing, inventory sync, checkout (Won't) |
+| Trigger to move up | Four market weeks with a posted list and two real asks | Ten producers listing in one market for four weeks | Ten completed handoffs in one market | Payments exist (Later) and a second market asks |
 
 ## 7. Gates
 
@@ -115,7 +116,7 @@ Criteria are in the frontmatter, each tagged to its journey (S1.1 and so on). Al
 - [x] Zero states defined (section 3)
 - [ ] Copy written to voice rules: not yet (post-beta)
 - [x] Guardian: no promise broken; legal flagged for counsel without detail
-- [x] **Kill criterion:** in the pilot (T1), fewer than two real asks across four market weeks: stop, and ask the market's manager and three producers why
+- [x] **Kill criterion:** in the pilot (T0), fewer than two real asks across four market weeks: stop, and ask the market's manager and three producers why
 - [x] **Metric:** completed handoffs per market per week (an ask picked and handed over in person). Real-world meetings, not attention.
 - [ ] Tickets: none until Don approves a size
 - [ ] Assumed facts verified as ticket 1: whether a Sacramento market will post a weekly list
