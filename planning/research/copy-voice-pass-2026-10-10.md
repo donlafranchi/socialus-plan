@@ -91,7 +91,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.1.** `src/app/layout.tsx:27` · Search result and every shared link (site description) · *T1*
 - Now: Find and support the people near you. Meet your neighbors, trade what you make, volunteer where it's needed, and share an idea before you build it.
-- Change to (Don, 2026-10-10, replaces my first draft): either **A:** "Find and support people and events near you." or **B:** "SocialUs, a local discovery platform. Find and support people near you." Both keep "near you", which the house rules ban while there is one metro; Don's call overrides.
+- Change to (Don's wording, 2026-10-10, option B without its second sentence): "SocialUs, a local discovery platform." Still Draft until he approves.
 - Status: **Draft**
 - Why: Most-read string in the product. Drops "near you" (banned with one metro) and says what it is. Its code comment says wording is the PM's call.
 
