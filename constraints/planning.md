@@ -10,6 +10,7 @@
 > **208 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-11** · contributions, places, badges — Local means money comes back to the community where it was generated: a seller's give-back goes to the town where the business is, never to a place the seller would prefer, and a seller who wants proceeds to go elsewhere is not a local business. A consumer can see where their money goes when they spend it; that is the purpose of an anti-extraction local discovery app
 - **2026-10-11** · privacy, copy, signup — SocialUs collects data. We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out
 - **2026-10-08** · copy, pages — Member-facing copy says Page and post, not listing: members create Pages (no charge to create one) and post announcements or messages; listing products and services comes later
 - **2026-10-07** · contributions, fees — Funding uses a monthly milestone ladder (lights on → part-time development → further milestones → community give-back) and the page always headlines the next milestone, never "done". Once the platform's milestones are covered, money generated in a community goes back to it, and that community decides its use (one member, one vote)
