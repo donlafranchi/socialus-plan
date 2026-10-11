@@ -4,9 +4,18 @@ name: dashboard
 # waits for a handoff or a person. It reads the criterion-level feature reports (scripts/criteria.py), the Issues, PRs
 # and runs in socialus-web, and appends the meta-layer trial block. It commits only when the content changed beyond the
 # "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
+# Why it also runs on every push to main: GitHub's `schedule` trigger is best-effort. On 2026-10-11 no scheduled run of this
+# workflow fired at all (06:20 and 12:20 UTC missing), and smoke-live and tap-speed ran hours late or not at all. A merge to
+# main is when the numbers actually move, so each merge regenerates the dashboard; the 6-hourly schedule stays as a backstop.
+# The workflow's own push uses GITHUB_TOKEN, which does not retrigger workflows, and the generated files are ignored below.
 on:
   schedule:
     - cron: '20 */6 * * *'
+  push:
+    branches: [main]
+    paths-ignore:
+      - DASHBOARD.md
+      - dashboard/**
   workflow_dispatch:
 
 concurrency:
