@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 03:26 UTC
+> ## Generated 2026-10-11 · 03:30 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -150,15 +150,15 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — , 2026-10-11
+- **`deploy-health.yml`** — success, 2026-10-11
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: 
+  - Ontology declarations still match the code: success
 - **`ci.yml`** — , 2026-10-11
-  - Lint, types, build: 
+  - Lint, types, build: success
   - Unit tests: 
   - Migrations applied to production: success
   - Which suites: success
-  - Browser: 
+  - Browser: success
 
 ## Measured, not estimated
 
