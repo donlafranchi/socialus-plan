@@ -165,6 +165,8 @@ Carried forward with their ratification intact. **These bind whatever the surfac
 
 **Metro is the feed's vantage point.** *(Ratified 2026-09-03; amended 2026-09-04 — v1 filters by metro.)* The feed is scoped to one metro at a time. **No cross-metro union feed.** The browse switcher is a metro switcher. **Metro scoping is written and unbuilt** — displaced by neighbourhood mode, which carries the launch market on its own; it returns when there is a second metro.
 
+*Proposed, not accepted (Don, 2026-10-11; F103 draft): the vantage becomes any town, home by default, changed for the moment by typing a place into search; the feed scopes to that vantage's area and orders hood → town → area → online, with towns inside the area ordered by adjacency (towns crossed, never miles, never shown). The metro switcher becomes the vantage. `product/foundation/nouns.md` § Vantage; `product/systems/places.md` § Proposed.*
+
 **A Member picks a hood *and* a metro at signup.** *(Ratified 2026-09-03.)* The metro explicitly, not derived from the hood — an unambiguous default that handles both the near-a-boundary hood and the Member who wants a different metro.
 
 **Create is first class.** The `+` sits in the navigation between the tabs. *(A bet about nav placement serving a commitment about declaring things — not itself binding.)*

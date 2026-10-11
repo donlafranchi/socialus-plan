@@ -11,7 +11,7 @@ A "locally owned and operated" claim needs to anchor to something more than self
 
 **Locality is separated from address by design.** The platform stores a ZIP (or ZIP-equivalent), never a street address, as locality evidence — the test is whether that ZIP's MSA is the Page's MSA — the badge's area is the whole MSA (Don, 2026-10-04) — but a safety-conscious owner can declare an accountant's ZIP or a PO box instead of their kitchen. This is the same reasoning already ratified twice elsewhere in the project (the locality-vs-address separation on Pages, the findability-follows-publication rule) — one commitment, applied a third time.
 
-*Proposed, not accepted (F103 draft): the MSA test becomes "the owner's home community is inside the viewer's area"; the ladder below is unchanged. How: `places.md` § Proposed.*
+*Proposed, not accepted (F103 draft): the MSA test becomes two conditions, the owner is local by the ladder below **and** the Page's give-back goes to the town where the business is (DECISIONS 2026-10-11); the ladder is unchanged. How: `places.md` § Proposed.*
 
 **OR-aggregation across all active owners, no founder privilege.** A business Group qualifies as locally owned if *any* active owner's jurisdiction record passes the MSA test — not all owners, not a designated "owner of record." A partnership with one local and two non-local owners is still locally-owned in the way that matters for a "should I support this" decision, and privileging the founder specifically would break the moment ownership transfers. The rule survives owner additions and removals automatically, because it's computed, not stored as a flag.
 
