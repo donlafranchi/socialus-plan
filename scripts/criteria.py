@@ -36,6 +36,7 @@ def parse(text, launch_blocking):
         return rows
     head = [strip(c) for c in cells(lines[0])]
     bi = next((i for i, h in enumerate(head) if h.startswith('built')), None)
+    ri = next((i for i, h in enumerate(head) if h.startswith('reviewed')), None)
     if bi is None:
         return rows
     for l in lines[2:]:
@@ -46,6 +47,7 @@ def parse(text, launch_blocking):
         met = built.startswith('yes')
         refs = [int(n) for n in re.findall(r'#(\d+)', l)]
         rows.append({'n': c[0], 'text': re.sub(r'[*`]', '', c[1])[:160], 'built': 'yes' if met else ('unknown' if built.startswith('unk') else 'no'),
+                     'reviewed_txt': (('yes' if strip(c[ri]).startswith('yes') else ('unknown' if strip(c[ri]).startswith('unk') else 'no')) if ri is not None and len(c) > ri else 'unknown'),
                      'blocking': (not met) and any(r in launch_blocking for r in refs), 'issues': sorted(set(refs))[:4]})
     return rows
 
@@ -65,11 +67,40 @@ def coverage(fid):
     return res
 
 
+def pm_looked_set():
+    """Issue and PR numbers carrying pm-reviewed (the PM's own look, recorded by record-pm-review or a closed UAT Issue)."""
+    out = set()
+    for kind in ('issue', 'pr'):
+        for i in json.loads(gh(kind, 'list', '-R', WEB, '-s', 'all', '-l', 'pm-reviewed', '-L', '500', '--json', 'number') or '[]'):
+            out.add(i['number'])
+    return out
+
+
+def smoke_state():
+    """(last green smoke-live run time, last run conclusion). Smoke loads pages; it does not test criteria, so it is evidence of
+    'still loads after the merge', not of behaviour."""
+    runs = json.loads(gh('run', 'list', '-R', WEB, '-w', 'smoke-live.yml', '-L', '60', '--json', 'conclusion,createdAt') or '[]')
+    green = max((r['createdAt'] for r in runs if r['conclusion'] == 'success'), default=None)
+    return green, (runs[0]['conclusion'] if runs else None)
+
+
+def last_merge(fid):
+    prs = json.loads(gh('pr', 'list', '-R', WEB, '-s', 'merged', '-S', f'{fid} in:title,body', '-L', '40', '--json', 'mergedAt') or '[]')
+    return max((p['mergedAt'] for p in prs if p.get('mergedAt')), default=None)
+
+
 def load():
     lb = {i['number'] for i in json.loads(gh('issue', 'list', '-R', WEB, '-s', 'open', '-l', 'launch-blocking', '-L', '500', '--json', 'number') or '[]')}
     tree = json.loads(gh('api', f'repos/{WEB}/git/trees/main?recursive=1') or '{}').get('tree', [])
     files = [t['path'] for t in tree if re.match(r'^build-log/reports/[^/]+/F\d+-.*\.md$', t['path'])]
     feats = []
+    pmset = pm_looked_set()
+    green, last_conc = smoke_state()
+    parents = {}
+    for i in json.loads(gh('issue', 'list', '-R', WEB, '-s', 'all', '-L', '600', '--json', 'number,title') or '[]'):
+        mp = re.match(r'^(F\d{3}) · (?!criterion|check|guard)', i['title'], re.I)
+        if mp:
+            parents.setdefault(mp.group(1), set()).add(i['number'])
     for p in sorted(files):
         raw = gh('api', f'repos/{WEB}/contents/{p}')
         try:
@@ -80,11 +111,18 @@ def load():
         area = p.split('/')[2]
         rows = parse(text, lb)
         cov = coverage(m.group(1) if m else os.path.basename(p)[:4])
+        fid0 = m.group(1) if m else os.path.basename(p)[:4]
+        lm = last_merge(fid0)
+        smoked_feat = bool(green and lm and green > lm)
+        pm_parent = bool(parents.get(fid0, set()) & pmset)
         for r in rows:
             r['checked'] = cov.get(r['n'], 'no')
+            r['reviewed'] = r['reviewed_txt'] if r['built'] == 'yes' else 'no'
+            r['smoked'] = 'yes' if (r['built'] == 'yes' and smoked_feat) else 'no'
+            r['pm'] = 'yes' if (r['built'] == 'yes' and (pm_parent or any(n in pmset for n in r['issues']))) else 'no'
         met = sum(1 for r in rows if r['built'] == 'yes')
         feats.append({'id': m.group(1) if m else os.path.basename(p)[:4], 'title': (m.group(2) if m else '').strip()[:90], 'area': area,
-                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
+                      'total': len(rows), 'met': met, 'checked': sum(1 for r in rows if r['checked'] == 'yes'), 'reviewed': sum(1 for r in rows if r['reviewed'] == 'yes'), 'smoked': sum(1 for r in rows if r['smoked'] == 'yes'), 'pm': sum(1 for r in rows if r['pm'] == 'yes'), 'last_merge': lm, 'last_green_smoke': green, 'last_smoke': last_conc, 'blocked': [r for r in rows if r['blocking']], 'criteria': rows,
                       'url': f'https://github.com/{WEB}/blob/main/{p}'})
     return feats
 
@@ -95,8 +133,8 @@ def rollup(feats):
     areas = {}
     for f in feats:
         a = areas.setdefault(f['area'], {'met': 0, 'total': 0, 'features': 0, 'red': 0})
-        a['met'] += f['met']; a['total'] += f['total']; a['features'] += 1; a['red'] += 1 if f['blocked'] else 0
-    ms = {'checked': sum(f['checked'] for f in feats), 'met': sum(f['met'] for f in feats), 'total': sum(f['total'] for f in feats), 'features': len(feats), 'red': sum(1 for f in feats if f['blocked'])}
+        a['met'] += f['met']; a['total'] += f['total']; a['checked'] = a.get('checked', 0) + f['checked']; a['reviewed'] = a.get('reviewed', 0) + f['reviewed']; a['smoked'] = a.get('smoked', 0) + f['smoked']; a['pm'] = a.get('pm', 0) + f['pm']; a['features'] += 1; a['red'] += 1 if f['blocked'] else 0
+    ms = {'reviewed': sum(f['reviewed'] for f in feats), 'smoked': sum(f['smoked'] for f in feats), 'pm': sum(f['pm'] for f in feats), 'checked': sum(f['checked'] for f in feats), 'met': sum(f['met'] for f in feats), 'total': sum(f['total'] for f in feats), 'features': len(feats), 'red': sum(1 for f in feats if f['blocked'])}
     ms['pct'] = round(100 * ms['met'] / ms['total']) if ms['total'] else 0
     return {'areas': areas, 'milestone': ms}
 
@@ -118,13 +156,14 @@ def universe():
     return ids
 
 
-ROLLUP_NOTE = '*Roll-up generated from the criterion rows below by `scripts/criteria.py --rewrite-reports`; never typed. Built = the row says yes. Checked = a guards marker covers the whole criterion (`markers.py coverage`, the same count as STATUS).*'
+ROLLUP_NOTE = '*Roll-up generated from the criterion rows below by `scripts/criteria.py --rewrite-reports`; never typed. Built = the row says yes. Checked = a guards marker covers the whole criterion (`markers.py coverage`, the same count as STATUS). Reviewed = the row says yes. Smoked = a green smoke-live run came after the feature\'s last merge (pages load; not behaviour). PM looked = a linked Issue or the feature Issue carries pm-reviewed.*'
 
 
 def rewrite_reports(webdir):
     """Regenerates every report's Roll-up table, and the README Features table, from the per-criterion rows."""
     changed = 0
     table = []
+    byid = {f['id']: f for f in load()}
     for pth in sorted(glob.glob(os.path.join(webdir, 'build-log', 'reports', '*', 'F*.md'))):
         text = open(pth).read()
         mt = re.match(r'^# (F\d+):?\s*(.*)', text)
@@ -132,7 +171,8 @@ def rewrite_reports(webdir):
         rows = parse(text, set())
         cov = coverage(fid)
         b = sum(1 for r in rows if r['built'] == 'yes'); c = sum(1 for r in rows if cov.get(r['n']) == 'yes')
-        gen = f'| | built | checked |\n|---|---|---|\n| {len(rows)} criteria | {b} | {c} |'
+        ff = byid.get(fid, {})
+        gen = f'| | built | checked | reviewed | smoked | PM looked |\n|---|---|---|---|---|---|\n| {len(rows)} criteria | {b} | {c} | {ff.get("reviewed", 0)} | {ff.get("smoked", 0)} | {ff.get("pm", 0)} |'
         m = re.search(r'(## Roll-up\n\n)((?:\|.*\n)+)(\n\*Roll-up generated[^\n]*\*\n)?', text)
         if m:
             new = text[:m.start(2)] + gen + '\n\n' + ROLLUP_NOTE + '\n' + text[m.end():]
@@ -142,7 +182,7 @@ def rewrite_reports(webdir):
     rd = os.path.join(webdir, 'build-log', 'reports', 'README.md')
     if os.path.exists(rd):
         txt = open(rd).read()
-        body = ['| Area | Feature | Criteria | Built | Checked |', '|---|---|---|---|---|'] + [f'| {a} | [{fid} {t}]({rel}) | {n} | {b} | {c} |' for a, fid, t, rel, n, b, c in table]
+        body = ['| Area | Feature | Criteria | Built | Checked | Reviewed | Smoked | PM looked |', '|---|---|---|---|---|---|---|---|'] + [f'| {a} | [{fid} {t}]({rel}) | {n} | {b} | {c} | {byid.get(fid, {}).get("reviewed", 0)} | {byid.get(fid, {}).get("smoked", 0)} | {byid.get(fid, {}).get("pm", 0)} |' for a, fid, t, rel, n, b, c in table]
         m = re.search(r'(## Features\n\n)((?:\|.*\n)+)', txt)
         if m:
             txt2 = txt[:m.start(2)] + '\n'.join(body) + '\n' + txt[m.end(2):]
