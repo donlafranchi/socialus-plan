@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 03:19 UTC
+> ## Generated 2026-10-11 · 03:26 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `fd78a6a` (2026-10-10); `accepted-risks/*.json`;
+> `781c836` (2026-10-10); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -79,11 +79,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #662 2026-10-11 docs: report roll-ups with reviewed, smoked and PM looked per criterion (generated)
 - #661 2026-10-11 docs: report roll-ups generated from criterion rows; one Checked definition
 - #658 2026-10-11 docs: feature reports roll-up
 - #657 2026-10-11 docs: feature reports for sign-in-you
 - #656 2026-10-11 docs: feature reports for page-editing
-- #655 2026-10-11 docs: feature reports for moderation
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -151,13 +151,13 @@ counts. Each row needs a look, not a close.*
 ## What CI last said
 
 - **`deploy-health.yml`** — , 2026-10-11
-  - Ontology declarations still match the code: 
   - Database reachable from the deployment: success
+  - Ontology declarations still match the code: 
 - **`ci.yml`** — , 2026-10-11
   - Lint, types, build: 
-  - Which suites: success
-  - Migrations applied to production: success
   - Unit tests: 
+  - Migrations applied to production: success
+  - Which suites: success
   - Browser: 
 
 ## Measured, not estimated
