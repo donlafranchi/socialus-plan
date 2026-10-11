@@ -1,6 +1,6 @@
 ---
 id: F076
-title: A person outside an open metro joins its waitlist
+title: A person outside an open market joins its waitlist
 status: approved
 gates: launch
 date: 2026-09-14
@@ -9,6 +9,7 @@ approved: 2026-09-14 — Don's ruling; threshold 50 creators / 250 patrons, gate
 amended: 2026-09-21 — Don: someone may leave an email to be told when a metro opens, without signing up. Criterion 4 reopened, 13-15 added, the Not-this line struck.
 amended: 2026-09-22 — criterion 14 cannot be met by a live count at all; an anonymous submitter is shown none. Found by running the handler against a real database while the unit test stayed green.
 amended: 2026-09-23 — Don reverses the line above: the count comes back, CACHED rather than live, and metros sort by it. The oracle was real and the stakes were overstated. Criteria 7, 8 and 14 restated; criterion 16 added.
+amended: 2026-10-11 — the PM (F103): the unit is the market, a set of towns and county subdivisions, not the metro; read "metro" as "market" throughout; criteria 1, 2 and 16 restated. Mechanism, thresholds, cache and criterion 14 unchanged.
 amended: 2026-09-27 — Don (with F081): a member's zip determines their metro. Criterion 2 annotated.
 ---
 ## Story
@@ -17,8 +18,8 @@ Someone in Boise signs up. Boise is not open yet, so they pick it from the list 
 
 ## Acceptance
 
-1. Every US metro is present and selectable at signup, before launch. A person cannot reach a state where their metro is absent from the list.
-2. A person outside an open metro picks one. The platform **may suggest** a shortlist, derived from the person's zip, and **never selects for them** — no IP-derived metro, no pre-filled default, no auto-assignment on a nearest match. *(Criterion amended 2026-09-14 to permit suggestion; auto-selection stays forbidden.)* **Amended 2026-09-27 (F081): a signing-up member's zip determines their metro.** A metro derived from the person's own zip is not a selection made for them; IP, a default, and a nearest match stay forbidden.
+1. Every US zip resolves to a market before launch (F103 criterion 2): every county is in an open market or a waiting one, so a person cannot reach a state with no market. Nothing is selected from a list. *(Restated 2026-10-11; this read "every US metro is present and selectable".)*
+2. A person whose zip is in a waiting market joins that market's waitlist; the zip decides which (F103 criterion 3). The platform **never selects for them**: no IP-derived market, no pre-filled default, no nearest match, no shortlist. A market derived from the person's own zip is not a selection made for them. *(Restated 2026-10-11; 2026-09-14 permitted a suggested shortlist, 2026-09-27 made the zip decide.)*
 3. The waitlist entry records whether the person is here to make things or to find them. Neither is pre-selected. **This is a property of the waitlist entry, not of the account** — no role is stored on the member, and the answer is discarded when the metro opens. *(Amended 2026-09-14: this read "Signup records exactly one of two roles for that person," which stored a role the platform refuses to store.)*
 4. Joining is idempotent: **one person counts once in one metro, whether they signed up or only left an email.** Re-signup, re-visit or a second device does not increment anything. *(Amended 2026-09-21: `member_id unique` no longer carries this, because an anonymous entry has no member. The uniqueness key becomes the identity the entry actually has — the normalised email, per metro.)*
 5. Changing the selected metro moves that person's count from the old metro to the new one, leaving neither double-counted nor stranded.
@@ -32,8 +33,7 @@ Someone in Boise signs up. Boise is not open yet, so they pick it from the list 
 13. **A person who picks a metro that is not open can leave an email address to be told when it opens, without creating an account.** No password, no name, no second step. Signing up stays available and is not the price of being told.
 14. **The response is identical whether or not that address was already on the list** — same words, same status, **and the same number**. A person who submits twice cannot tell that they had already submitted, and neither can anyone else. **This is met by the number not being a function of the submission**, not by there being no number: the count shown is a cached figure, at most an hour old, shared with the metro picker's ordering, and a submission does not move it. *(Amended 2026-09-22 to "no count at all"; **that amendment is reversed 2026-09-23 by Don** — see the Why section. The mechanism the 2026-09-22 reading identified is real; what it discloses is that an address expressed interest in a local app before launch, which does not justify removing the count.)*
 15. **An address left this way is used to say that the metro opened, and for nothing else.** Not marketing, not a newsletter, not a second message about something else. It is discarded when the metro opens and the message has been sent.
-
-16. **Metros are ordered by how many people are waiting**, using that same cached figure. Ordering is the strictest test of criterion 14 — a sorted list exposes every metro at once — so a live count anywhere in the ordering path fails this criterion rather than merely being wasteful.
+16. ~~Metros are ordered by how many people are waiting.~~ *Struck 2026-10-11: there is no list of markets to order, since the zip decides. The cached figure shows for the person's own waiting market and at a waiting vantage (F105 criterion 4), and criterion 14 still governs it.*
 
 ## Why
 
