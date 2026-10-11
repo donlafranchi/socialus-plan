@@ -7,10 +7,10 @@
 > Every ratified decision whose tag binds the **planning** tier, newest first. `DECISIONS.md` holds
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **208 older decisions carry no tag yet and are not listed** — tagging is required from
+> **206 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-11** · explore, home, search, places — The metro rulings (local means the whole metro, 2026-09-27; the MSA as the unit of signup and badge) were build scaffolding to keep one launch simple, and the three rings (hood, town, area) are the better method if they can be carried out simply. The rings are a starting point, not a fence: a member can look from any place, the rings re-centre there for that moment, and home stays the default
+- **2026-10-11** · signup, onboarding, you, explore, home, search, places, waitlist, badges, contributions — The MSA is replaced. A market is a named set of whole counties and county subdivisions (a `region` row in the place tree); the zip decides a person's market and home town; Explore scopes to the vantage's market and orders hood → town → market by town adjacency → online, never by distance; a member may look from any typed town for the session, home by default; and a Page is local when its declared give-back town is its own town. Approved for build as F103–F106
 - **2026-10-11** · contributions, places, badges — Local means money comes back to the community where it was generated. A Page owner chooses where their give-back goes; an owner who sends it to the town where the business is counts as local and may carry the local badge, and an owner who sends it anywhere else is not a local business and gets no badge. A consumer can see where their money goes when they spend it; that is the purpose of an anti-extraction local discovery app
 - **2026-10-11** · privacy, copy, signup — SocialUs collects data. We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out
 - **2026-10-08** · copy, pages — Member-facing copy says Page and post, not listing: members create Pages (no charge to create one) and post announcements or messages; listing products and services comes later
@@ -60,7 +60,6 @@
 - **2026-10-05** · pages, posts — A Page shows its latest 2–3 posts, with "See all posts" opening the full list
 - **2026-10-04** · process, prs, issues, ui — The decision rule: look at 2–3 established precedents with links before designing or deciding anything; choose the simplest that fits our rulings; a well-worn path the agent decides and builds itself, labelled "Path: well-worn", without waiting for Don; new territory (no well-worn path, conflicting precedents, or a ruling, legal or privacy exposure, money or member trust), labelled "Path: new territory", comes to Don as A/B/C with a recommendation before building; when unsure, say which in one line and lean toward deciding
 - **2026-10-04** · pages, page-edit, map, places — A Page owner can pick a neighbourhood or town from a seeded list covering MSA 40900 instead of giving a street address. Only the neighbourhood shows, as a pin at its centre
-- **2026-10-04** · business-registration, badges — The local-owner badge's area is the whole MSA: an owner is local when their registration's MSA is the Page's MSA
 - **2026-10-04** · signed-out, copy, pages, explore — The signed-out main button reads "Sign in to see what's happening"
 - **2026-10-04** · create, copy — Each Create kind is one question with a one-line purpose, for example "Have a business where you sell products or services?"
 - **2026-10-04** · layout, shell — We design up to about 1440px. Above that, the content cap and centring are enough, and a 27" screen is treated as two side-by-side windows of about 1280px each. There is currently no separate 27" layout
@@ -147,7 +146,6 @@
 - **2026-09-30** · page-publish, copy — The become-a-creator step is fixed statements, framed as rules rather than an attestation
 - **2026-09-30** · page-publish — The rules agreement comes before every new Page, including an existing owner's next one
 - **2026-09-30** · signup, onboarding — Every US zip is known before launch, and an unrecognised zip gets "We don't recognize that zip, try again."
-- **2026-09-30** · signup, onboarding, locality — The metro for a zip is the MSA: Sacramento is MSA 40900, not CSA 472
 - **2026-09-30** · signup, copy — Signup does not say "we never sell". It says what the app is for
 - **2026-09-30** · pages, venue, locality — "Local" means where a thing is, not who may see it. A Page's own settings decide whether it is open to the public
 - **2026-09-30** · venue, map, pages — No distance is shown anywhere
@@ -162,7 +160,6 @@
 - **2026-09-30** · rsvp, purchases, names — A completed sale or attendance is a purchase or RSVP that the seller or organiser has confirmed, with a date and both members on it
 - **2026-09-30** · pages, location — A residence's address is public if given, at launch. The protection is the existing option to give a neighbourhood instead of a street
 - **2026-09-29** · pages, membership, announcements — A member is a more involved follower. The difference is involvement, not Page kind
-- **2026-09-29** · signup, onboarding, business-registration, locality — The metro is what determines "local"; a zip is only the lookup that finds it
 - **2026-09-29** · rls, business-registration — A business registration is collected and never displayed; its public artifact is a badge
 - **2026-09-27** · explore, announcements, copy — The signed-out announcement card is one card per Page, and it shows the Page's photo
 - **2026-09-27** · process — A ruling that changes because of something a member did or said carries an `[evidence …]` tag; a ruling Don makes on judgement carries none
@@ -170,7 +167,6 @@
 - **2026-09-27** · process — Cross-cutting documents are generated from inline markers, never kept by hand, and authored documents are pruned rather than annotated. Neither accumulates; history is git, read on demand
 - **2026-09-27** · process, ci — Grep-built, never hand-kept: a fact lives inline where it is true, and anything that spans the project is generated from markers, never maintained
 - **2026-09-27** · process — An open question is an inline marker where it was raised, not an entry in a register. The index is generated
-- **2026-09-27** · explore, venue, onboarding, copy — "Local" means the whole metro, not a neighbourhood or anything tighter
 - **2026-09-27** · signup, onboarding — Onboarding stops silently assigning a place
 - **2026-09-27** · reports, moderation — The F078 hide bar is not a fixed number. It is per-metro configuration that starts at zero — every report hides — and tightens as volume grows, without a code change
 - **2026-09-27** · page-publish — The creator attestation comes before publishing a first Page, not before creating a draft

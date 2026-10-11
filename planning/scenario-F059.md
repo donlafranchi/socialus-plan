@@ -4,6 +4,7 @@ title: A newcomer browses, and finds the neighbourhood
 status: approved
 date: 2026-09-13
 depends: [F061]
+amended: 2026-10-11 — the PM (F103–F105): results scope to the vantage's market, not a picked metro; criteria 6 and 7 restated.
 approved: 2026-09-14 — criterion 8 cut, 10 reworded, 6 changed from a named fallback to member choice, address settled at /explore; amended 2026-09-17 — Browse is a showcase, curated lenses replace the ban on category controls; amended 2026-10-01 — Don: criterion 5, list and map by width
 ---
 ## Story
@@ -19,8 +20,8 @@ A newcomer opens Browse and sees what is actually here — the Pages near them a
 3. Ordering is locality and recency, and may carry community response. **It doesn't favour a member because of payment, size or follower count, and doesn't use what keeps someone scrolling** (2026-09-30). Lenses vary what is shown so the surface is not the same every visit — **variety without compulsion**, which is the bar: not addicting, and not boring.
 4. **Browse is a showcase, not a catalogue.** It carries **curated lenses** — a small, varying set such as what is on today, local food, household things, art, or free things — each a way to change what is discoverable rather than a filter over one list. A lens is not a taxonomy of item kinds and there is no exhaustive kind picker. **Typed search remains a separate job**: search is for finding something specific, lenses are for being shown something.
 5. **List and map, by width** (Don, 2026-10-01; Airbnb's pattern). **Under 1024px:** a floating "Map"/"List" pill at bottom centre, visible while scrolling. **1024px and up:** list and map side by side, no toggle, with a collapse handle on the divider. **With the owner panel open at 1280–1439px** (the panel appears from 1280px): the map collapses and a List | Map switch docks in the sticky filter bar. **Signed out, Explore is list only:** the Map pill opens sign-in. Nothing is inserted between rows of results.
-6. Results are scoped to the active metro. A member outside every seeded metro picks one and no metro is picked for them — every US metro is seeded before launch, which is what makes choosing possible.
-7. The metro switcher moves a signed-in member's results, not only a signed-out visitor's.
+6. Results are scoped to the vantage's market (F104 criterion 1, F105): the member's home market by default, a typed place for the session. Nobody picks a market and none is picked from IP; a visitor with no vantage sees the one open market while exactly one is open (F105 criterion 5). *(Restated 2026-10-11; this read "scoped to the active metro… every US metro is seeded before launch".)*
+7. The place control (F105) moves a signed-in member's results, not only a signed-out visitor's.
 8. Past-dated posts drop out on their own.
 9. Each result carries the name the people behind it are actually known by. A brand label that conceals who owns the Page does not satisfy this.
 10. A shared link reopens the same metro and the same search; back-navigation restores scroll position.

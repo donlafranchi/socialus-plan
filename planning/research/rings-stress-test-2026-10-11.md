@@ -1,6 +1,6 @@
 # The three rings in four other places (2026-10-11)
 
-Stress test of `product/systems/places.md` § Proposed, asked for by the PM. Two dense, two sparse. Facts about places are general knowledge [A] unless marked; verify against Census TIGER before seeding anything.
+Stress test of `product/systems/places.md` § The three rings, asked for by the PM. Two dense, two sparse. Facts about places are general knowledge [A] unless marked; verify against Census TIGER before seeding anything.
 
 ## Williamsburg, Brooklyn (dense, car-free)
 - **Breaks first:** the town ring. New York city is one Census Place of 8.3 million across five counties. "Town = Census Place" gives every New Yorker the same home community, which is useless for money and for order.

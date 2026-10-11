@@ -26,7 +26,7 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
 - **No corporate transitions:** moreover, furthermore, additionally, essentially, "in a world where". [checked]
 - **No "not just X, but Y"** as a repeated tic. [checked, warns]
 - **No zero counts on someone's own work.** "Nobody's in yet", not "0 RSVPs".
-- **No "near you" or "nearby"** while there is one metro. Say "here", "in Sacramento", or name the thing.
+- **No "near you" or "nearby"** as scoping, ever. Say "here", name the town or market the member is looking from ("in Sacramento", "in Davis"), or name the thing (F104, F105; 2026-10-11).
 - **No hustle words:** grow, scale, level up, crush it, grind, productivity.
 - **No caricature words:** dude, gnarly, stoked, surf puns, emoji palm trees.
 - **No competitor comparisons,** and no "why us" section.

@@ -1,11 +1,12 @@
 ---
 id: F081
-title: Everyone signs up the same way, and the zip sets the metro
+title: Everyone signs up the same way, and the zip sets the market
 status: approved
 gates: launch
 date: 2026-09-14
 depends: [F076, F077]
 approved: 2026-09-14 — the PM's ruling; legal name, email, zip, display name, zip suggests the metro
+amended: 2026-10-11 — the PM (F103): the market replaces the metro and the MSA; criteria 3, 4, 7 and 8 restated; the zip still decides, nobody picks.
 amended: 2026-09-30 — the PM: every US zip known before launch, an unknown one refused; the metro is the MSA; the zip is kept and changed on /you; every member is verified as a person, method open; no "we never sell" line, a placeholder about what the app is for instead. Story and criteria 1, 4 and 5 restated, 8 added. 2026-10-05 — the PM: an 18+ checkbox with a Terms link beside it joins signup; the legal name is seen only by operators. Criterion 1 restated.
 ---
 ## Story
@@ -16,12 +17,12 @@ Maya follows a neighbour's link and signs up. One screen: her legal name, her em
 
 1. **Signup collects legal name, email, zip and display name, plus a checkbox reading "I'm 18 or older and agree to the Terms" with the Terms link beside it, and verifies the email.** Every member is verified as a person; how is open (Why). No other field exists in the flow. The legal name, email and phone are seen only by operators (2026-10-05).
 2. The zip is stored, and never rendered on any surface another member or visitor can reach — profile, listing, search, map.
-3. **The zip determines the metro**, and the screen shows the person which metro that is. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match. *(Amended 2026-09-27: this read "the zip produces a shortlist… the person selects one"; the PM ruled the zip decides.)*
-4. **Nobody picks a metro at signup.** A member who moves changes their zip on `/you`, and their metro follows from it. It is not one-and-done.
+3. **The zip determines the market** (F103 criterion 2), and the screen shows the person which market that is, by name. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match. *(Amended 2026-09-27: this read "the zip produces a shortlist… the person selects one"; the PM ruled the zip decides.)*
+4. **Nobody picks a market at signup.** A member who moves changes their zip on `/you`, and their market and home town follow from it. It is not one-and-done.
 5. The screen carries a line saying what the app is for, **and no line about not selling member information.** Placeholder, the PM's words ([public-is-draft]): *"This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together."* It states no date, feature, or promise about the future.
 6. No field, control, or string in signup asks or records whether the person makes things or finds them.
-7. **Onboarding assigns no place the person did not give.** A member's home is the metro their zip determined; no default place is written on their behalf, seen or unseen. *(Added 2026-09-27. Today `DEFAULT_HOME_PLACE_ID` sets every new member's home to a fictional city whose box sits inside Sacramento, which is why every member resolves to Sacramento.)*
-8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to the MSA that contains it.** A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in no MSA chooses a metro to view; their zip is kept, to tell them when their own MSA opens.
+7. **Onboarding assigns no place the person did not give.** A member's home is the market and the town their zip determined (F103 criterion 5); no default place is written on their behalf, seen or unseen. *(Added 2026-09-27. Today `DEFAULT_HOME_PLACE_ID` sets every new member's home to a fictional city whose box sits inside Sacramento, which is why every member resolves to Sacramento.)*
+8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to its county and so to its market** (F103 criterion 2). A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in a waiting market joins its waitlist (F076); their zip is kept, to tell them when their market opens. *(Restated 2026-10-11; this read "to the MSA that contains it".)*
 9. **Phone verification refuses a non-fixed VoIP number** (Google Voice and the like), checked with Twilio Lookup's Line Type Intelligence before the code is sent, with a plain message asking for a mobile number ([public-is-draft]). *(the PM, 2026-10-05; Path: well-worn, Twilio's own guidance on blocking VoIP at verification.)*
 
 ## Not this

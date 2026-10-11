@@ -20,7 +20,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Producer entry point (`/you/create`, no shop required to host) — reviewed, ticketed.
 - Report path + image takedown — approved; no photo goes to production until this ships.
 - Display name in public; flagged content auto-hides with an immediate reason and appeal, anything a member posts is reportable, and the reporter picks a reason the poster can rebut (F078, scope added 2026-09-30); no pictures of children from anyone, stated at posting with reports as the backstop (F080, 2026-09-30) — approved, gates beta alongside the report path.
-- Metro waitlist at signup — pick a metro, say creator or patron, see a count in a popup. **Added 2026-09-14 at the PM's direction; nothing was removed to make room.** F076.
+- Market waitlist at signup — the zip decides the market (F103, 2026-10-11; was a picked metro), say creator or patron, see a count in a popup. **Added 2026-09-14 at the PM's direction; nothing was removed to make room.** F076.
 - Patron signup (legal name, verified email, verified as a person — method open, zip; the zip determines the metro, every US zip known before beta; a line on what the app is for, 2026-09-30; an 18+ checkbox with the Terms link beside it, 2026-10-05) and agreeing to the versioned rules before each new Page, selling and hosting alike — F081, F082. **Added 2026-09-14 at the PM's direction; nothing was removed to make room. Both approved 2026-09-14.**
 
 ## Next — Fortnights 2–3
@@ -51,7 +51,7 @@ Now / Next / Later / Won't, one line each. Detail and days: `socialus-web` Issue
 - Item-level photos — substrate built, ~half a day when resumed.
 - Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
 - The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
-- Metro scoping — ticket written, returns with a second metro.
+- The feed reads the market and orders by the rings, and the vantage (F104, F105) — first fortnight after beta; the give-back town and the local badge (F106) with badges' return. Sequence: `planning/research/local-inventory-2026-10-11.md` § 4.
 - Page-level appearances at venues — ~1.5 days, scoped.
 - Follow-substrate merge and the map's area rendering — both scoped.
 - Member-to-member messaging — no substrate at all; blocks a volunteering reply channel.

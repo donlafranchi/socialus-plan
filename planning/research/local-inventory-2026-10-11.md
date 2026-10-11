@@ -1,9 +1,9 @@
 # Where "local" is defined and how it works — inventory (2026-10-11)
 
-For F103 (draft). Read from `socialus-web` main `ea48b0c` and `socialus-plan` main today. Nothing here is a ticket; when F103 is approved, Code turns the **Change** rows into Issues. Supersedes F094's 2026-09-27 scope table for this purpose.
+For F103–F106 (approved 2026-10-11). § 1 was read from `socialus-plan` main; § 2 was re-verified against `socialus-web` main `85c2622` the same day, file by file, and corrected where the first pass was wrong. Nothing here is a ticket; Code turns the **Change** rows into Issues in the order of § 4. Supersedes F094's 2026-09-27 scope table.
 
 ## 1. Definitions of "local" that exist, newest first
-| Where | Says | Under F103 |
+| Where | Says | Under F103–F106 |
 |---|---|---|
 | DECISIONS 2026-10-11 (two lines) | money comes back to the community where it was generated; owner chooses, badge follows; the metro rulings were scaffolding, rings are the method | the definition |
 | DECISIONS 2026-10-04 | the local-owner badge's area is the whole MSA | **replace**: owner local by the ladder **and** give-back to the business's town |
@@ -21,33 +21,56 @@ For F103 (draft). Read from `socialus-web` main `ea48b0c` and `socialus-plan` ma
 | `planning/values-badges-draft.md` | Locally owned borrows AMIBA's test (≥50% owned by area residents) | **amend**: add the give-back condition |
 | `socialus-design/research/BADGES-VALUES-KINDS-PLAN.md`, `screens/owner-page-spec.md` | badge section, kind line | **note** the two-condition badge; no mockup change until badges return |
 
-## 2. Code that reads the metro or MSA as the unit (103 files match; the load-bearing ones)
-| Path | Does | Under F103 |
+## 2. Code that reads the metro or MSA as the unit (verified 2026-10-11 against `85c2622`)
+
+**Two grains, joined by hand.** `metro_polygons` is a CSA catalog (296 rows; one, `sacramento-roseville-ca`, open and with a polygon). `places.msa_code`, `boundaries.msa_code` and `zip_metro_crosswalk` use CBSA 40900. Two string bridges connect them: `MSA_METRO_SLUG` in `src/lib/signup/zip-metro.ts` and `METRO_MSA` in `src/app/explore/actions.ts`. Both go with the MSA.
+
+| Path | Does | Under F103–F106 |
 |---|---|---|
-| `supabase/migrations/031_metro_polygons.sql`, `resolve_home_metro()` | CSA polygon overlay; home metro from a point | **Change**: area row in `places` replaces the overlay; keep `csa_code`/`msa_code` as report columns |
-| `025_zip_metro_crosswalk.sql`, `src/lib/signup/zip-metro.ts` (`MSA_METRO_SLUG` bridge) | zip → MSA → metro at signup | **Change**: zip → town/subdivision (Census ZCTA relationship files) → area |
-| `20260914204920_metro_waitlist.sql`, `src/actions/metro/*`, `src/lib/metro/waitlist-*.ts`, `MetroWaitlistStep.tsx` | per-metro waitlist, thresholds, `is_open` | **Change**: key by area row; logic unchanged |
-| `browse_feed(p_metro_id, p_place_id)` (`20260930230000_front_door_no_pins.sql`), `src/lib/feed/browse-feed.ts`, `src/lib/browse/scope.ts`, `src/lib/feed/feed-metro.ts` (`DEFAULT_METRO_SLUG`), `src/app/explore/load.ts`, `withheld-announcements.ts` | one polygon scope; metro resolution chain (requested → remembered → default → zip) | **Change**: scope to the vantage's area; order by town adjacency; vantage replaces the metro chain |
-| `members.home_metro_id`, `members.default_metro_id`, `member.default_metro.set` | home and chosen metro | **Change**: home town already exists (primary-home Place); `default_metro_id` becomes the default vantage |
-| `page_local_owner_badge()`, `zip_is_proximal_to_location()` (`20260930090000_registration_never_displayed.sql`, `024_member_business_jurisdictions.sql`) | same-MSA test | **Change**: same-town-or-area test plus give-back condition; badges are cut from beta so no deadline |
-| `venue_nearby_items` (5 km), `venue_distance_meters` (`032_venue_distance.sql`), `VenuePublicPage.tsx` "What's happening nearby" | radius and distance | **Change → remove** (already F094's finding; venue pages are retired 2026-10-06) |
-| `MarketSelector.tsx` (haversine 25 mi, "Near You"), `MarketPill.tsx`, `AreaPicker.tsx` "Choose your area", `ExploreSearchBar.tsx`, `src/lib/explore/place-label.ts` | metro picker and pill | **Change**: the pill becomes the vantage; `MarketSelector` **remove** |
-| `src/components/cards/location.ts` (`neighbourhood: 'Nearby'`, `metro: 'Across the metro'`, `wider: 'Further out'`) | scale labels on cards | **Change** copy: name the town or area; Don's copy |
-| `src/lib/metro/metro-time.ts`, `metro-week.ts`, `happening.ts` | one timezone, "the metro's time" | **Change** when the second area opens in another zone; Sacramento and Tahoe share one |
-| `MetroNotCoveredPanel.tsx` "I'm looking for what's nearby", `landing-copy.ts` ("near you", "your area opens"), `layout.tsx`/`og-default` "the people near you", `HomeFeed.tsx`, `FeedEmptyState.tsx`, `useMapPages.ts` | copy | **Change** copy to the vantage's name; "near you" stays out as scoping |
-| `OwnershipBadge.tsx`, `LocallyOwnedClaim.tsx`, `resolve-shop.ts` ("Claimed local owner", "not locally owned"), `types.ts` 'Local owner, national brand', `(dev)/card-gallery` | badge display and claim | **Change** when badges return: two conditions, "Says locally owned" wording stands |
-| `src/lib/unclaimed/*` ("outside the metro", 'Local business') | unclaimed listings bounded by metro | **Change**: bounded by area |
-| `scripts/build-metro-catalog.ts`, `scripts/boundaries/load.ts`, `src/app/api/boundaries/route.ts` | metro catalog and boundary serving | **Change**: areas and subdivisions from TIGER |
-| `src/ontology/registry.json`, `objects.ts`, `links.ts` | ontology names metro | **Change**: add area, town, vantage |
-| `evals/features/F035*`, `evals/fixtures/F037-claim.ts`, `evals/phase-1/members-augmentation.spec.ts` | tests assume metro | **Change** with their features |
+| `031_metro_polygons.sql` + `20260914204920_metro_waitlist.sql` + `20260922034637` + `20261007210000` | `metro_polygons(slug, csa_code, code_kind, geography, is_open, creator/patron_threshold, creator/patron_count, hide_bar)`; `resolve_home_metro()` (dormant: its two callers are never called); `metro_waitlist(member_id \| email, metro_id, role)` | **Replace**: a `markets` state table keyed by the market's `places` row (is_open, thresholds, counts, hide_bar, timezone, msa_code for reports); the waitlist keys by it. `metro_polygons` and `resolve_home_metro` **delete** once no reader is left |
+| `025_zip_metro_crosswalk.sql`, `src/lib/signup/zip-metro.ts`, `src/app/onboarding/actions.ts`, `src/app/landing/actions.ts`, `signup-profile-set.ts` (the live writer of `members.home_metro_id`) | zip → MSA → slug → metro at signup; 93 Sacramento zips plus the loader's ZCTA rows | **Replace**: zip → county (HUD-USPS, national) → market; inside a split county zip → subdivision; home town from the ZCTA→Place file (F103 crit. 2, 5). `members.home_metro_id` → `home_market_id`; the primary-home Place becomes the home town. `socialus-web` #569 and #568 are rewritten to this unit |
+| `src/actions/metro/*`, `src/lib/metro/waitlist-*.ts`, `MetroWaitlistStep.tsx`, `MetroNotCoveredPanel.tsx`, `src/app/onboarding/page.tsx` (lists all 296 metros), `OnboardingFlow.tsx` ("It decides your metro") | per-metro waitlist, cached counts, the tell-me email promise; nothing opens a metro, nothing sends mail | **Change**: key by market; the metro list goes (the zip decides); copy names the market. Mechanism, thresholds, cache and criterion 14 unchanged. #616 (open + message + discard) stays open, re-keyed |
+| `browse_feed(p_metro_id, p_place_id, …)` — current definition `20261009010000_browse_feed_hides_removed_unclaimed.sql` (13 params, redefined 9 times); `src/lib/feed/browse-feed.ts`, `src/lib/browse/scope.ts`, `src/lib/feed/feed-metro.ts` (`DEFAULT_METRO_SLUG`), `src/app/explore/load.ts`, `withheld-announcements.ts` (`announcements_withheld`, `20261001100000`), `src/lib/map/load-mix.ts` | one polygon scope (CSA or a neighbourhood); metro chain requested → remembered → default → zip | **Replace**: scope to the vantage's market by place ancestry of the anchor Location; order hood → town → adjacency hops → online (F104); the chain becomes the vantage (F105) |
+| `members.default_metro_id` (`20261007170000`), `member.default_metro.set`, `DefaultMetro.tsx`, the `su_metro` cookie (`remembered-metro.ts`), `?metro=` (`explore/page.tsx`, `browse/query.ts`, `snapshot.ts`, `BrowseSurface.tsx`, `ExploreDock.tsx`), `AreaPicker.tsx`, `ExploreSearchBar.tsx`, `place-label.ts` | chosen metro, remembered metro, the pill | **Replace** with the place control and a URL param; nothing stored (F105 crit. 3). `default_metro_id`, the cookie and `member.default_metro.set` **delete** |
+| `page_local_owner_badge()`, `zip_is_proximal_to_location()` — current definition `20261004110000_local_badge_msa.sql` (crosswalk MSA joined to `boundaries` county rows) | same-MSA test | **Replace** when badges return: the give-back town test (F106); the residence ladder's unit becomes the market. No deadline |
+| `20261004120000_page_where.sql`, `page_service_areas`, `where-save.ts`, `WhereFields.tsx`, `page-where.ts`, `src/actions/group/where.ts` | "travel" with no towns and "roaming" mean the whole metro; copy "anywhere in the Sacramento area" | **Change**: mean the Page's market; copy names it (the PM's words). Missed by the first pass |
+| `src/actions/report/create.ts` (`BAR_OF_LOCATION`: `min(hide_bar)` over intersecting metros) | per-metro hide bar | **Change**: per-market bar on the state table; #626 unchanged in substance |
+| `admin_metrics_weekly()` (`20261009030000`), `src/app/admin/metrics/page.tsx`, `MetricsView.tsx` ("Sacramento metro") | the one metro dashboard: members by `home_metro_id`, the metro found by a city named Sacramento | **Change**: per market. Missed by the first pass |
+| `map_mix_log.metro_id` (`20261005150000`) | the map's mix log keyed by metro | **Change**: key by market |
+| `src/lib/metro/metro-time.ts` (`METRO_TIME_ZONE` constant), `metro-week.ts`, `happening.ts`, `page-removal.ts` | one timezone, a constant | **Change**: a timezone column on the market (#173, #597). Sacramento and Tahoe share one |
+| `src/components/cards/location.ts` (`metro: 'Across the metro'`; `browse/card.ts` defaults to it), `src/lib/text-pages.ts:68` ("place you in your metro"), `src/lib/map-config.ts` (`METRO_VIEW.fallbackCenter`, Sacramento coordinates), `src/app/you/page.tsx` (`Row label="Metro"`) | copy and a default centre | **Change** copy to the town or market name (the PM's words); the map's fallback centre becomes the vantage's |
+| `src/lib/unclaimed/load.ts` (metro ∩ a place named Sacramento), `plan.ts` (hard-coded town regexes) | unclaimed listings bounded by metro | **Change**: bounded by market; towns from the place tree |
+| `src/lib/places/neighborhood-search.ts`, `searchNeighborhoodsAction`, `metroAnchorPlaceAction`, `searchAreasAction` (`location-actions.ts`, `explore/actions.ts`), `AreaPickMap.tsx` (`?msa=40900`), `src/app/api/boundaries/route.ts` (`?msa=`) | neighbourhood and town search inside the MSA | **Change**: inside the market (place ancestry), no MSA code |
+| `scripts/boundaries/load.ts` + `metros.ts` (TIGER counties, Places/CDPs, neighbourhoods, tracts → `boundaries` → `places`; ZCTA→county → crosswalk), `.github/workflows/boundaries.yml`, `scripts/build-metro-catalog.ts` | the loader; the CSA catalog builder | **Change** the loader: a market's counties from the market row, plus COUSUB and ZCTA→Place files; it already does most of the data work. The catalog builder **delete** |
+| `src/components/MarketSelector.tsx`, `MarketPill.tsx`, `HomeFeed.tsx` (+ `RecruitmentGrid.tsx`), `FeedEmptyState.tsx` → `LocalityFeed.tsx`, `Map.tsx` + `useMapPages.ts` | legacy `markets` table; no importers | **Delete**: dead already |
+| `venue_nearby_items` (5 km), `venue_distance_meters` | distance from the member's home place | Not metro-dependent; venue pages are retired (2026-10-06). **Delete** with them |
+| `src/ontology/registry.json`, `objects.ts`, `links.ts` | no Metro object; three metro-named actions; one prose note | **Change**: a Market link (Place region → its counties and subdivisions), a home-town link on Member, the give-back-town link on Page (F106); verbs renamed with their handlers |
+| Tests: ~25 Vitest/DB tests (`feed-metro-db`, `local-badge-msa-db`, `boundaries-db`, `migrations-metro-waitlist*`, `staff-roles-db`, `unclaimed-load-db`, `neighborhood-search-db`, `supabase/tests/resolve_home_metro.sql`, `zip_is_proximal_to_location.sql`); evals `F030`, `F037` + fixture, `F059`, `speed/steps.ts`, `phase-1/places.spec.ts`, `screens/routes.ts` | assume metro or MSA 40900 | **Change** with their features |
 
-**Stands as is:** `places` tree and geographies, `locations.place_id`, member primary-home Place, `member_location_affinities`, the floor of 10, "Distance is out", "local means where a thing is", the report path's per-metro hide bar (becomes per-area, same rule).
+**Stands as is:** the `places` tree (`region/state/county/city/neighborhood`, polygons, centroids, `boundary_id`), the `boundaries` table and loader, `locations.place_id`, the member's primary-home Place, `member_location_affinities`, the cached count and F076 criterion 14, the 50/250 thresholds and "opening is a person's act", "Distance is out", "local means where a thing is", signed-out sees no pins, the map markers (2026-10-07), place pages (#421, after beta), the hide-bar mechanism.
 
-## 3. Order of work, when F103 is approved
-1. Data only, no behaviour (beta-safe): area row, subdivision rows, zip → subdivision table, `csa_code` on the area row.
-2. Gate and waitlist read the area row; `zip-metro.ts` becomes `zip-area.ts`.
-3. Feed scope reads the vantage's area; adjacency table; order by hops.
-4. Vantage: the pill accepts a typed place; session state.
-5. Copy pass on the rows above (Don's words).
-6. Retire `metro_polygons` readers; keep the codes for reports.
-7. Badge, when badges return.
+**Found on the way, not F103's:** `supabase/seeds/the-good-place.sql` keys the demo badge on MSA `99999`, which has no `boundaries` county row since #349, so that demo badge probably no longer shows; `supabase/config.toml` points `sql_paths` at a `seed.sql` that does not exist. Both go to Code as bugs.
+
+## 3. What is replaced, what is deleted, what holds
+
+**Replaced (the unit changes, the mechanism stays).** The signup gate and crosswalk (#569, #568 rewritten to zip → county → market); the waitlist, its counts and the "metro opened" message (#616, still unbuilt, now "your market opened"); Explore and Home scope; the area pill (becomes the place control, F105; answers #588); the per-market hide bar (#626); the timezone (#173, #597); the weekly admin metrics; the map mix log; Page "where" modes travel and roaming; unclaimed listings; neighbourhood and town search. In planning: F081 criteria 3, 4, 7, 8; F076 criteria 1, 2, 16; F059 criteria 6, 7; the rulings of 2026-09-27 (local is the metro), 2026-09-29 (the metro determines local), 2026-09-30 (the metro for a zip is the MSA), 2026-10-04 (the badge's area is the MSA), 2026-09-10 and 2026-09-14 (a member outside every metro picks one).
+
+**Deleted.** `metro_polygons` and `resolve_home_metro`; `zip_metro_crosswalk` and both MSA→slug bridges; `places.msa_code` and `boundaries.msa_code` as scoping keys (an MSA code survives only on the market row, for reports); `members.default_metro_id`, the `su_metro` cookie, `member.default_metro.set` and the stored-metro chain; the onboarding metro list; the same-MSA badge test; "Across the metro" and every "metro" string; `MarketSelector`, `MarketPill`, `HomeFeed`, `LocalityFeed`, `Map.tsx` (dead); `build-metro-catalog.ts`; F094 (draft) and the metro switcher idea in `surfaces.md`.
+
+**Holds.** Everything under *Stands as is* above. Also: cross-market trends roll up (F089 criterion 4; the stored grain becomes the market); contributions' public page per community (`contributions.md`) is per **town**, a different grain from the market, and stays so; "no cross-metro union feed" becomes "no cross-market union feed"; the people-first rule against leaderboards (F076 § Not this, `people-first.md`) is untouched, so any "cross-market competition" page would need its own scenario and would have to be about markets, never people. Nothing of that kind is decided or built; the only market dashboard is `admin_metrics_weekly`, operator-only.
+
+## 4. Order of work
+
+**Before the freeze (2026-10-30), inside the launch-blocking zip tickets (#569, #568), about 2–3 build days:**
+1. **Data, no behaviour change.** The Sacramento market row (`region`) with its four county rows; COUSUB rows for Placer and El Dorado with the Tahoe subdivisions outside the market, which makes the Tahoe market, waiting; every other US county its own waiting market by rule, not by rows; the national HUD-USPS zip → county table; ZCTA → subdivision for the two split counties; ZCTA → Place for the four counties; the market state table (is_open, thresholds, counts, hide_bar, timezone, msa_code) seeded from `metro_polygons`. One batched migration, applied by the PM before merge.
+2. **The gate reads the market.** Signup resolves zip → market → open or waiting; the waitlist keys by market; the member gets `home_market_id` and a home town; onboarding copy names the market. Beta-visible difference: a Tahoe-basin zip waits for Tahoe instead of joining Sacramento, and no screen says "metro". The feed keeps reading the CSA polygon through beta: the two differ only for Tahoe-basin Pages, of which there are none.
+
+**First fortnight after beta (from 2026-11-07):**
+3. **The feed reads the market and orders by the rings** (F104): scope by place ancestry; the adjacency table from TIGER Place polygons plus a bridge table; hood → town → hops → online; Pages in a waiting market hidden; Home, search, unclaimed, the report bar, the metrics and the mix log re-keyed.
+4. **The vantage** (F105): the place control with typeahead over towns and markets; a URL param replaces `?metro=` and the cookie; `default_metro_id` goes; a waiting vantage shows the count and the tell-me control.
+5. **Copy pass** on every string above, the PM's words.
+6. **Retire** `metro_polygons`, the crosswalk, the bridges, the dead components, the catalog builder; the ontology gains Market and home-town links; the timezone moves to the market row.
+
+**When badges return (no date):** 7. F106: the give-back town on the Page, the local badge as its receipt, the residence ladder re-keyed to the market.
+
+**Alternatives the PM may prefer.** Everything after beta, with #569 built on the MSA as written: safest for the freeze, about a day of crosswalk work thrown away, and Tahoe-basin sign-ups land in Sacramento for beta. Everything before the freeze, feed and vantage included: 6–8 days, colliding with F100–F102's 8.

@@ -163,11 +163,9 @@ Carried forward with their ratification intact. **These bind whatever the surfac
 
 **Online is a first-class location option, and the warning rides with it.** *(Ratified 2026-09-03.)* The composer **must warn at the point of choice that online ranks last**, and **online Items never render on the map** — no pin, no fallback coordinate. **The warning is the honesty mechanism that makes ranking-last acceptable**, not a nice-to-have.
 
-**Metro is the feed's vantage point.** *(Ratified 2026-09-03; amended 2026-09-04 — v1 filters by metro.)* The feed is scoped to one metro at a time. **No cross-metro union feed.** The browse switcher is a metro switcher. **Metro scoping is written and unbuilt** — displaced by neighbourhood mode, which carries the launch market on its own; it returns when there is a second metro.
+**The market is the feed's scope, the vantage its centre.** *(Ratified 2026-09-03 as the metro; replaced 2026-10-11 by F104 and F105.)* The feed is scoped to one market at a time, the vantage's: home by default, a typed town or market for the session. Inside it, hood → town → market by adjacency → online. **No cross-market union feed.** The place control replaces the metro switcher. **Built: the metro scope.** The market scope and the vantage follow in the first fortnight after beta (`planning/research/local-inventory-2026-10-11.md` § 4).
 
-*Proposed, not accepted (Don, 2026-10-11; F103 draft): the vantage becomes any town, home by default, changed for the moment by typing a place into search; the feed scopes to that vantage's area and orders hood → town → area → online, with towns inside the area ordered by adjacency (towns crossed, never miles, never shown). The metro switcher becomes the vantage. `product/foundation/nouns.md` § Vantage; `product/systems/places.md` § Proposed.*
-
-**A Member picks a hood *and* a metro at signup.** *(Ratified 2026-09-03.)* The metro explicitly, not derived from the hood — an unambiguous default that handles both the near-a-boundary hood and the Member who wants a different metro.
+**A Member gives a zip at signup, and it decides the market and the home town.** *(F081, F103; replaces the 2026-09-03 hood-and-metro pick.)* No hood is picked; the hood band is empty until a member can choose one (F104 criterion 5).
 
 **Create is first class.** The `+` sits in the navigation between the tabs. *(A bet about nav placement serving a commitment about declaring things — not itself binding.)*
 
