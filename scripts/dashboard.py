@@ -262,6 +262,24 @@ except Exception as e:
 if not test_items and not globals().get('TEST_NOTICE'):
     TEST_NOTICE = 'Testing list is empty: Issue #519 has no checkboxes (- [ ] / - [x] lines), so there is nothing to tick or count.'
 
+# Live testing (ported from the superseded #67): one `uat` Issue per feature, one box per criterion (record-pm-review).
+# #519 is a control sheet: linked, not counted.
+uat_items = []
+try:
+    for i in gh('issue', 'list', '-R', REPO, '-l', 'uat', '-s', 'all', '-L', '200', '--json', 'number,title,state,body,url'):
+        if 'self-check' in i['title']:
+            continue
+        bx = [(m.group(1).lower() == 'x', m.group(2)) for m in (re.match(r'\s*[-*]\s+\[([ xX])\]\s+(.+)', l) for l in (i.get('body') or '').split('\n')) if m]
+        mf = re.search(r'\b(F\d{3})\b', i['title'])
+        uat_items.append({'n': i['number'], 'title': i['title'], 'state': i['state'], 'url': i['url'], 'feature': mf.group(1) if mf else None,
+                          'done': sum(1 for c, _ in bx if c), 'total': len(bx)})
+except Exception as e:
+    UAT_ERR = str(e)
+if globals().get('UAT_ERR'):
+    TEST_NOTICE = f'UAT Issues unavailable: {UAT_ERR}'
+elif not uat_items:
+    TEST_NOTICE = (globals().get('TEST_NOTICE', '') + ' ' if globals().get('TEST_NOTICE') else '') + 'No UAT Issue exists yet (one per feature, from record-pm-review), so PM looked cannot move from these; it counts only pm-reviewed labels.'
+
 root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
 days = (FREEZE - now.date()).days
@@ -328,8 +346,27 @@ for x in areas:
 out.append(f'| **All** | **{MS["met"]}/{MS["total"]} ({MS["pct"]}%)** · {MS["features"]} features | ' + ' | '.join(f'**{sum(1 for r in rows if (r["st"][k] == "●" if k == 2 else ok(r["st"][k])))}/{total}**' for k in range(6)) + ' | each phase counted on its own |')
 out.append('')
 out.append('Stages, in order: ' + ' → '.join(f'**{s}**' for s in STAGES) + '.')
+# Data problems (ported from #67): every unknown and every missing report, so none is mistaken for progress.
+problems = []
+for f in FEATS:
+    unk = sum(1 for r in f['criteria'] if r['built'] == 'unknown')
+    if unk:
+        problems.append(f"{f['id']} {f['title']}: {unk} criteria have Built unknown and count as unmet")
+    if f.get('stale'):
+        problems.append(f"{f['id']} {f['title']}: its report is older than its last merged PR")
+for _m in sorted(UNIVERSE - {f['id'] for f in FEATS}):
+    problems.append(f'{_m}: reportable but has no criterion report')
+for x in areas:
+    nq = sum(1 for r in x['rows'] if '?' in r['st'])
+    if nq:
+        problems.append(f"{x['name']}: {nq} Issues have a ? stage (data not found)")
+if not FEATS:
+    problems.append('no feature reports could be read; the criterion roll-up is empty')
 if globals().get('TEST_NOTICE'):
     out += ['', '## Testing', '', f'**{TEST_NOTICE}**']
+if uat_items:
+    out += ['', '## Live testing (UAT Issues)', '', '| Issue | State | Boxes ticked |', '|---|---|---|'] + [f"| [#{u['n']} {u['title'][:70]}]({u['url']}) | {u['state']} | {u['done']}/{u['total']} |" for u in uat_items]
+out += ['', '## Data problems', ''] + ([f'- {p}' for p in problems] or ['- none'])
 out += ['', '## Criteria by phase (each phase counted on its own, per criterion)', '', '| Area | Criteria | Built | Checked | Reviewed | Smoked | PM looked |', '|---|---|---|---|---|---|---|']
 for _a, _c in sorted(ROLL['areas'].items()):
     out.append(f"| {_a} | {_c['total']} | {_c['met']} | {_c.get('checked', 0)} | {_c.get('reviewed', 0)} | {_c.get('smoked', 0)} | {_c.get('pm', 0)} |")
@@ -379,7 +416,7 @@ open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 data = {
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
     'features': [{'id': f['id'], 'title': f['title'], 'area': f['area'], 'met': f['met'], 'total': f['total'], 'checked': f['checked'], 'reviewed': f['reviewed'], 'smoked': f['smoked'], 'pm': f['pm'], 'blocked': len(f['blocked']), 'stale': f.get('stale', False), 'url': f['url'], 'criteria': [{'n': r['n'], 'text': r['text'], 'built': r['built'], 'checked': r['checked'], 'reviewed': r['reviewed'], 'smoked': r['smoked'], 'pm': r['pm'], 'blocking': r['blocking'], 'issues': r['issues']} for r in f['criteria']]} for f in sorted(FEATS, key=lambda f: (f['area'], f['id']))], 'cover': COVER,
-    'test_notice': globals().get('TEST_NOTICE', ''), 'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
+    'test_notice': globals().get('TEST_NOTICE', ''), 'uat': uat_items, 'problems': problems, 'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
     'next': ({'title': nxt['title'], 'url': issue_url(nxt['n']), 'n': nxt['n'], 'review': nxt['review']} if nxt else None),
     'areas': [{'name': x['name'], 'filled': x['filled'], 'counts': x['counts'], 'total': len(x['rows']),
                'done': x['done'], 'note': x['note'], 'crit': x['crit'], 'shift': [{'k': k, 't': t, 'u': u} for k, t, u in x['shift']],
@@ -423,7 +460,8 @@ const shiftBox=l=>`<div class="shift"><b>Past ${D.since}h</b>${l.length?l.map(e=
 const testSection=D.test_items.length?`<details><summary><span class="name">Testing</span><span class="note">${D.test_items.filter(t=>t.checked).length} of ${D.test_items.length} screens</span></summary><div class="rows">${D.test_items.map(t=>`<div class="row" style="opacity:${t.checked?1:.5}"><input type="checkbox" ${t.checked?'checked':''} disabled style="cursor:default;margin-right:8px"/><div class="title">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div></div>`).join('')}</div></details>`:'';
 const featSection=`<h2 style="font-size:1rem;margin:22px 0 4px">Features, per acceptance criterion: ${D.cover[0]} of ${D.cover[1]} reporting</h2><p class="sub">Read from the feature reports, not from Issues. Bar and edge = criteria met / total, on the red-to-green ramp. Red edge with a flag = a launch-blocking criterion is unmet. Tap a feature for its criteria: green = built, T = a marked test covers it, R = reviewed, S = a green smoke run came after the last merge, P = the PM looked.</p>`+D.features.map(f=>{const fr=f.total?f.met/f.total:0;const col=f.blocked?'#b91c1c':ramp(fr);return `<details style="border-left-color:${col}"><summary><span class="name">${esc(f.id)} ${esc(f.title)}</span><div class="bar" style="grid-template-columns:1fr"><div class="seg" style="background:linear-gradient(90deg,${col} ${fr*100}%,var(--off) ${fr*100}%);color:var(--ink)">${f.met}/${f.total}</div></div><span class="note">${esc(f.area)} · ${Math.round(fr*100)}% met${f.blocked?` · <b style="color:#b91c1c">${f.blocked} launch-blocking unmet</b>`:''} · <a href="${esc(f.url)}">full report</a>${f.stale?' · <b style="color:#b45309">report stale: merged after it was written</b>':''}</span></summary><div class="rows">${f.criteria.map(c=>`<div class="row"><div class="strip"><span class="box" style="background:${c.built==='yes'?'#15803d':(c.blocking?'#b91c1c':'var(--off)')};color:#fff">${c.built==='yes'?'✓':(c.built==='unknown'?'?':'✕')}</span><span class="box" title="checked: a marked test covers this whole criterion" style="background:${c.checked==='yes'?'#2563eb':'var(--off)'};color:#fff">${c.checked==='yes'?'T':''}</span><span class="box" title="reviewed" style="background:${c.reviewed==='yes'?'#7c3aed':'var(--off)'};color:#fff">${c.reviewed==='yes'?'R':''}</span><span class="box" title="smoked: a green smoke run came after the last merge (pages load)" style="background:${c.smoked==='yes'?'#0d9488':'var(--off)'};color:#fff">${c.smoked==='yes'?'S':''}</span><span class="box" title="PM looked" style="background:${c.pm==='yes'?'#ca8a04':'var(--off)'};color:#fff">${c.pm==='yes'?'P':''}</span></div><div class="title">${esc(c.n)}. ${esc(c.text)}${c.blocking?' <b style="color:#b91c1c">launch-blocking</b>':''}${c.issues.length?' · '+c.issues.map(n=>`<a href="https://github.com/donlafranchi/socialus-web/issues/${n}">#${n}</a>`).join(' '):''}</div></div>`).join('')}</div></details>`}).join('');
 const testNote=D.test_notice?`<p class="settled" style="background:#fecaca"><b>Testing:</b> ${esc(D.test_notice)}</p>`:'';
-document.getElementById('areas').innerHTML=testNote+featSection+D.areas.map(a=>{
+const uatSec=(D.uat.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Live testing (UAT Issues)</h2><div class="foot">${D.uat.map(u=>`<p><a href="${esc(u.url)}">#${u.n} ${esc(u.title)}</a> · ${esc(u.state)} · ${u.done}/${u.total} boxes ticked</p>`).join('')}</div>`:'')+`<h2 style="font-size:1rem;margin:22px 0 4px">Data problems</h2><div class="foot">${D.problems.length?D.problems.map(p=>`<p>${esc(p)}</p>`).join(''):'<p>none</p>'}</div>`;
+document.getElementById('areas').innerHTML=testNote+featSection+uatSec+D.areas.map(a=>{
  const bar=[0,1,2,3,4,5].map(k=>{const f=a.total?a.counts[k]/a.total:0;return `<div class="seg ${f===1?'on':''}" style="${f?'background:linear-gradient(90deg,'+D.colors[k]+' '+f*100+'%,var(--off) '+f*100+'%)':''}">${a.total?a.counts[k]+'/'+a.total:'-'}</div>`}).join('');
  const rows=shiftBox(a.shift)+(a.rows.length?a.rows.map(r=>`<div class="row"><div class="strip">${r.st.map((v,k)=>`<span class="box ${v==='?'?'unk':''}" style="${v==='●'?'background:'+D.colors[k]:(v==='·'?'background:'+D.colors[k]+';opacity:.35':'')}">${v==='?'?'?':''}</span>`).join('')}</div><div class="title">${esc(r.title)}</div><div class="links">${r.review?`<a href="${esc(r.review)}">Review</a>`:'Review ?'} · <a href="${esc(r.issue)}">#${r.n}</a>${r.pr?` · <a href="${esc(r.pr)}">PR #${r.prn}</a>`:''}</div></div>`).join(''):'<div class="row"><div class="title">none yet</div></div>');
  const cm=a.crit&&a.crit.total?a.crit.met/a.crit.total:null;const mean=cm!==null?cm:(a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0);return `<details style="border-left-color:${a.crit&&a.crit.red?'#b91c1c':ramp(mean)}"><summary><span class="name">${esc(a.name)}</span><div class="bar">${bar}</div><span class="note">${cm!==null?`${a.crit.met}/${a.crit.total} criteria met (${Math.round(cm*100)}%)${a.crit.red?` · ${a.crit.red} red`:''}`:`${Math.round(mean*100)}% of Issue stages (no criterion reports)`} · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');

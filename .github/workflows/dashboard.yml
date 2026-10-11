@@ -48,6 +48,12 @@ jobs:
           PROJECTS: ${{ github.workspace }}/_projects
           STATUS_CODE: ${{ github.workspace }}/_projects/socialus-web
         run: python3 scripts/dashboard.py .
+      # A page whose script throws still commits and silently shows nothing. Run its script in jsdom and refuse to publish on any error.
+      - name: Check the page script
+        working-directory: socialus-plan
+        run: |
+          mkdir -p /tmp/jsdom && (cd /tmp/jsdom && npm init -y >/dev/null && npm i jsdom >/dev/null 2>&1)
+          JSDOM_PATH=/tmp/jsdom/node_modules/jsdom node scripts/dashboard_check.cjs
       - name: Commit, but only if the content changed
         working-directory: socialus-plan
         env:
