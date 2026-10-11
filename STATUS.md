@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 18:31 UTC
+> ## Generated 2026-10-11 · 18:38 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -152,8 +152,8 @@ counts. Each row needs a look, not a close.*
 - **`deploy-health.yml`** — success, 2026-10-11
   - Database reachable from the deployment: success
   - Ontology declarations still match the code: success
-- **`ci.yml`** — , 2026-10-11
-  - Unit tests: 
+- **`ci.yml`** — success, 2026-10-11
+  - Unit tests: success
   - Which suites: success
   - Migrations applied to production: success
   - Lint, types, build: success
@@ -194,7 +194,7 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (24)
+**Waiting on Don** (23)
 
 - 37d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
 - 34d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:50](product/foundation/goals.md#L50)
@@ -217,9 +217,8 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:65](product/systems/contributions.md#L65)
 - 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
 - 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:46](planning/scenario-F103.md#L46)
-- 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:50](product/systems/places.md#L50)
-- 0d · May a seller designate a fund outside their home community? A) Any fund inside their area, with the home community's funds first (recommended: an Apple Hill… — [product/systems/places.md:52](product/systems/places.md#L52)
-- 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:54](product/systems/places.md#L54)
+- 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:54](product/systems/places.md#L54)
+- 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:56](product/systems/places.md#L56)
 
 **Cowork owes an answer** (3)
 
