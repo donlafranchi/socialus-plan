@@ -18,4 +18,4 @@ Internal and early. No public commitment, copy, absolute or legal wording. There
 
 **Name, if one is wanted:** "Reclaim" (a verb; the tools are the same, the aim differs). Alternatives: "Common Use", "Same Tools, Our Side". Internal only.
 
-**Old docs that read as flat refusals of a tool** (`monetization.md` § Refused outright, `model.md` § Personalized means interests, `metrics.md`, the ROADMAP Won't list) are now judgment calls to raise with Don, not settled yeses. The first voice pass (`copy-voice-pass-2026-10-10.md`) says nothing public about data use.
+**Old docs that read as flat refusals of a tool** (`monetization.md` § Refused outright, `model.md` § Personalized means interests, `metrics.md`, the ROADMAP Won't list) are now judgment calls to raise with Don, not settled yeses. SocialUs collects data (Don, 2026-10-10): to benefit members, not to enrich investors, with an easy opt-out. The voice pass carries that as a draft data line (`copy-voice-pass-2026-10-10.md`).

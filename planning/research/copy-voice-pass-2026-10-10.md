@@ -62,6 +62,7 @@ This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that
 **Core lines (Draft until Don approves each use).**
 - **SocialUs: the people's platform.** The tagline.
 - **Members first, always.** Approved by Don, 2026-10-10, as a SocialUs line. Inspired by USAA's "Members first, mission always".
+- **Data line (Don, 2026-10-10).** SocialUs collects data. It is collected to benefit members, not to enrich investors, and opting out is easy. In copy: "We collect data to benefit our members, not to enrich investors. Opting out is easy." (Don said "never to enrich investors"; copy uses "not to" because "never extractive" is the one allowed "never". Don can restore it.) Not "we collect no data", "we reject data collection" or anything that implies it.
 - **Built to serve its members.** The default wording wherever ownership or purpose is touched. For About and mission copy: "created to benefit its members first and foremost."
 
 "Members first, always." is the one place "always" is allowed in copy, as a Don-approved line. The one allowed "never" stays "never extractive". The locked name line and subhead are unchanged by this guide.
@@ -224,9 +225,10 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.20.** `src/lib/landing-copy.ts:93` · /landing/about "What this is for" third paragraph · *T2*
 - Now: SocialUs is never extractive. It doesn’t sell your data. It doesn’t sell placement. It doesn’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run.
-- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s created to benefit its members first and foremost.
+- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s created to benefit its members first and foremost. We collect data to benefit our members, not to enrich investors. Opting out is easy.
 - Status: **Draft**
-- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built to serve / created to benefit) without any promise about money. Note: we do collect data (name, email, zip, a phone check), so copy never says we collect none. No public statement about how data is used yet; that is internal direction.
+- Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built to serve / created to benefit) without any promise about money, and the data line: we do collect data, for members' benefit, and opting out is easy.
+- For socialus-legal: "Opting out is easy" is a claim about what members can do. Confirm what a member can opt out of today (the `policy.md` default is off for non-essential sharing) and that the path is easy to find before this is public.
 - Ownership wording is out for now (Don, 2026-10-10: no commitments yet). Nothing here for counsel on this line.
 
 **1.21.** `src/lib/landing-copy.ts:115` · /landing/about "What we're building" closing line · *T2*
