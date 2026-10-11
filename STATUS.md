@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 18:03 UTC
+> ## Generated 2026-10-11 · 18:38 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `914b3ce` (2026-10-11); `accepted-risks/*.json`;
+> `44ed66c` (2026-10-11); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -78,11 +78,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #674 2026-10-11 docs: a plain reply on the phone checklist files a note bug
 - #671 2026-10-11 chore #670: a comment on the phone checklist files the bug (PM: not OK)
 - #669 2026-10-11 chore #668: doc inventory generator, as-of dates, dead docs removed
 - #666 2026-10-11 bug #555: the member overflow-menu tap step could not be timed
 - #665 2026-10-11 bug #555: Explore card to Page and the Page edit screen are faster
-- #664 2026-10-11 chore #663: tap speed gets its own workflow so the live smoke means what it says
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -150,11 +150,11 @@ counts. Each row needs a look, not a close.*
 ## What CI last said
 
 - **`deploy-health.yml`** — success, 2026-10-11
-  - Ontology declarations still match the code: success
   - Database reachable from the deployment: success
+  - Ontology declarations still match the code: success
 - **`ci.yml`** — success, 2026-10-11
-  - Which suites: success
   - Unit tests: success
+  - Which suites: success
   - Migrations applied to production: success
   - Lint, types, build: success
   - Browser: success
@@ -194,7 +194,7 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on Don** (21)
+**Waiting on Don** (23)
 
 - 37d · "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only —… — [product/foundation/role-language.md:36](product/foundation/role-language.md#L36)
 - 34d · Promise 1 — what "surplus returns to the community" actually means. A) a fixed percentage, decided annually by the founder. B) a member vote or board process… — [product/foundation/goals.md:50](product/foundation/goals.md#L50)
@@ -214,9 +214,11 @@ Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questi
 - 7d · How granular are Home's row categories, so businesses and group events read as different things? — [planning/scenario-F098.md:33](planning/scenario-F098.md#L33)
 - 7d · What does "things you saved" mean at launch? There is no save today. — [planning/scenario-F098.md:38](planning/scenario-F098.md#L38)
 - 7d · Do F091's time rows stay on Explore once Home carries them? — [planning/scenario-F098.md:41](planning/scenario-F098.md#L41)
-- 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:63](product/systems/contributions.md#L63)
+- 4d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:65](product/systems/contributions.md#L65)
 - 3d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
 - 0d · May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) Yes, for discovery only; money stays per state — Explore… — [planning/scenario-F103.md:46](planning/scenario-F103.md#L46)
+- 0d · What is a community, for money? A) The town ring: a Census Place or county remainder, the seller's by default, adjacent allowed (recommended: discrete, audit… — [product/systems/places.md:54](product/systems/places.md#L54)
+- 0d · "Community" is also the proposed merged Page kind (DECISIONS 2026-09-15, not ruled). Two meanings of one word in one product. A) Keep "community" for the mon… — [product/systems/places.md:56](product/systems/places.md#L56)
 
 **Cowork owes an answer** (3)
 
@@ -279,10 +281,9 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-107 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **104 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+107 authored docs in `product/` and `planning/`; **8 not reviewed in 30 days**, and **104 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
-- `product/systems/places.md` — 32 days (last commit 2026-09-09)
 - `product/systems/location.md` — 32 days (last commit 2026-09-09)
 - `product/systems/action-layer.md` — 32 days (last commit 2026-09-09)
 - `planning/scenario-F069.md` — 32 days (last commit 2026-09-09)
@@ -292,6 +293,7 @@ Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in
 - `planning/scenario-F049.md` — 32 days (last commit 2026-09-09)
 - `planning/scenario-F048.md` — 32 days (last commit 2026-09-09)
 - `planning/search-dictionary-draft.md` — 28 days (last commit 2026-09-13)
+- `planning/scenario-F075.md` — 28 days (last commit 2026-09-13)
 
 ## What this run could not verify
 
