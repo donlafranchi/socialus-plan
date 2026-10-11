@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 03:13 UTC
+> ## Generated 2026-10-11 · 03:19 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -15,7 +15,7 @@
 > `bash scripts/status.sh`.
 >
 > **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`
-> `cb9ac6e` (2026-10-10); `accepted-risks/*.json`;
+> `fd78a6a` (2026-10-10); `accepted-risks/*.json`;
 > `planning/scenario-*.md` frontmatter; `ROADMAP.md`.
 >
 > **Answers "where is this project", not "what tickets exist."** The ticket
@@ -79,11 +79,11 @@ branch or a commit.
 - #650 F102 · guard criteria 5, 13, 14: standing guards for the never-rules
 
 **100 PRs merged in the last fortnight.** The newest five:
+- #661 2026-10-11 docs: report roll-ups generated from criterion rows; one Checked definition
 - #658 2026-10-11 docs: feature reports roll-up
 - #657 2026-10-11 docs: feature reports for sign-in-you
 - #656 2026-10-11 docs: feature reports for page-editing
 - #655 2026-10-11 docs: feature reports for moderation
-- #654 2026-10-11 docs: feature reports for explore-map
 
 ### Needs a look — not a claim that anything is wrong
 
@@ -91,6 +91,7 @@ branch or a commit.
 counts. Each row needs a look, not a close.*
 
 - **#84 open, but T159 appears on main** — chore · T159 is two different tickets — renumber one in ops-pattern
+- **#53 open, but T156 appears on main** — F059 · T156 · Browse renders Pages
 - **#51 open, but T154 appears on main** — F059 · T154 · Browse reads Pages, not Items
 - **#30 open, but T149 appears on main** — chore · T149 · Retire vendor routes for real
 - **#16 open, but T126 appears on main** — F056 · T126 · Edit shop — image, description, values
@@ -149,15 +150,15 @@ counts. Each row needs a look, not a close.*
 
 ## What CI last said
 
-- **`deploy-health.yml`** — success, 2026-10-11
+- **`deploy-health.yml`** — , 2026-10-11
+  - Ontology declarations still match the code: 
   - Database reachable from the deployment: success
-  - Ontology declarations still match the code: success
-- **`ci.yml`** — success, 2026-10-11
-  - Browser: success
+- **`ci.yml`** — , 2026-10-11
+  - Lint, types, build: 
   - Which suites: success
-  - Unit tests: success
-  - Lint, types, build: success
   - Migrations applied to production: success
+  - Unit tests: 
+  - Browser: 
 
 ## Measured, not estimated
 
