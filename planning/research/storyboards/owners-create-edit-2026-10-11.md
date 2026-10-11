@@ -8,7 +8,7 @@ authored: Claude agent, 2026-10-11, at Don's request (copy report §10)
 
 # Storyboard: owners, creating, editing and joining (2026-10-11)
 
-**Draft, not shipped.** Every line of copy here is a draft on a branch (branch `copy/owners-create-edit-draft`, draft PR [socialus-web#TBD-WEB](https://github.com/donlafranchi/socialus-web/pull/TBD-WEB), not merged). Don reviews it in context first. Phone width (390px), a local database seeded with test members, so names like "QA Corner Bakery" are test data. The dev server's round "N" badge is hidden in these shots; it is not part of the app.
+**Draft, not shipped.** Every line of copy here is a draft on a branch (branch `copy/owners-create-edit-draft`, draft PR [socialus-web#692](https://github.com/donlafranchi/socialus-web/pull/692), not merged). Don reviews it in context first. Phone width (390px), a local database seeded with test members, so names like "QA Corner Bakery" are test data. The dev server's round "N" badge is hidden in these shots; it is not part of the app.
 
 The product, service and gathering composers and the old Page walkthrough are kept but not linked from the app today (the /you/sell route redirects to Create). They were shown through a throwaway dev page with stub saves, not committed, so the words are real and nothing was saved. The report's 41 changes are all applied.
 
