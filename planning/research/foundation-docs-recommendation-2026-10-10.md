@@ -23,7 +23,7 @@ We are trying to flip how technology gets used.
 
 **1. Bring people together in person, not stand in for it.** Technology here points people at each other and at a place and a time. It does not replace meeting.
 - We currently order what you see by where it is and how recent it is, never by what holds your attention or what someone paid for. [ruled 2026-09-12; F059]
-- We currently build no feed meant to keep you scrolling. Browse is complete, not ranked by your interests. [ruled 2026-09-12]
+- Ranking is a place, time and relationship engine, not a watch-time optimizer. Browse is complete, not ranked by your interests. [ruled 2026-09-12; `systems/discovery.md`]
 - Every Page, post and event is built around something people do together: a gathering, a place, a neighbour. [proposed]
 - We measure whether neighbours met, not how long they stayed. [proposed]
 
