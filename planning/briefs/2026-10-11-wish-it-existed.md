@@ -23,7 +23,7 @@ criteria:
   - W2.2 The terms card has these fields: what is funded, who is party, the amount, what the backer gets back, milestones, delivery, what happens if it falls through, who owns the result, and SocialUs's part
   - W2.3 A backer picks one of three variants in plain words: gift, reward, or pre-purchase
   - W2.4 Each party accepts the card before any pledge counts, and each can see the accepted card later
-  - W2.5 No screen, field or word offers a backer money back, a share, a return, a payout or a profit; an investment-style variant is not offered
+  - W2.5 No screen, field or word offers a backer money back, a share, a return, a payout or a profit; the highest backing level is not offered until socialus-legal has cleared it
   - W2.6 Until payments exist, a pledge is words between people and the screen says money moves outside the app
   - W2.7 Once payments exist, pledged funds are held by the chartered partner, not by SocialUs, and released or returned as the card says
   - W2.8 The card states SocialUs's part (its transaction income on the sale) before anyone backs
@@ -145,9 +145,16 @@ The member who builds, from the price they state. SocialUs, transaction income o
 | **Reward** | A defined reward: the thing, a credit, a discount | Kickstarter all-or-nothing | The reward is stated, not a share of anything |
 | **Pre-purchase** | The thing itself, paid for in advance | Etsy custom order | Refund if not delivered, per the card |
 
-### Backing is not investing
+### Backing is not investing, with one level held back
 
-A backer funds an idea and receives a thing, a reward or thanks. **A variant where the backer gets money back, a share, a return or a payout is an investment, and is not offered.** No screen or word may suggest one. Anything of that kind goes to **socialus-legal**, with no detail here: crowdfunding rules, securities rules, and money handling may all apply to backing in any form, and counsel decides what is possible. (This is separate from the settled ruling that members are SocialUs's own investors.)
+A backer funds an idea and receives a thing, a reward or thanks. **Gift, reward and pre-purchase are not investments.** No screen or word may suggest money back, a share, a return or a payout in any of them.
+
+**The highest backing level (Don, 2026-10-11):** "a backer at the highest level is an investor. We want to be an economic engine for our members." This is Don's direction and it is recorded as that, nothing more:
+
+- **Not designed and not offered.** The brief carries no terms, amounts or conditions for it. Whatever it is, it sits **above** the three variants and is **held for socialus-legal**: crowdfunding rules, securities rules, and money handling may all apply, and counsel decides what is possible and how it could be said. No detail here.
+- **The aim is a member benefit.** SocialUs as an economic engine for its members: the template, the structure and the revenue stay with members (see the purpose above).
+- **Kept apart from the settled ruling.** That members are SocialUs's own investors (and the only people paid out) is a ruling about SocialUs itself. Backing a member's wish is member to member. Counsel should read the two together, because the words overlap.
+- **Until counsel clears it,** criterion W2.5 stands: the three variants only, and no investment-style wording anywhere.
 
 ### The commerce-income tie
 
@@ -209,4 +216,4 @@ Looked up this run:
 
 **A. Run the pilot (T0): a Page for wishes, your frog habitat first, replies outside the app, with no code** (recommended; it tests the one thing nobody knows, whether neighbours answer). B. Wait and build T1 after beta, once the reply surface is decided with messaging. C. Fold it into the Idea design now. Also: expiry (none, or 90 days) and how many real wishes to seed (section 7).
 
-**On backing:** A. Keep backers as words-only terms in T2 and wait for payments and counsel before any money moves (recommended). B. Ask socialus-legal now whether any form of backing is possible, before more design. C. Drop backing and keep wishes to offers only.
+**On backing: Don chose A (2026-10-11).** Backers are words-only terms in T2; no money moves until payments exist and counsel has cleared it. He added that the highest backing level is an investor, held for socialus-legal (section 6a). Still open: expiry (none, or 90 days) and how many real wishes to seed.
