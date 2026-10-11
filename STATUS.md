@@ -2,7 +2,7 @@
 
 # STATUS
 
-> ## Generated 2026-10-11 · 00:56 UTC
+> ## Generated 2026-10-11 · 00:58 UTC
 >
 > **Disposable. Regenerating replaces this file wholesale** — nothing here is
 > hand-maintained, and a hand-edit is lost on the next run. `git log -p
@@ -279,7 +279,7 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 
 ## Docs by review age
 
-100 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **97 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
+101 authored docs in `product/` and `planning/`; **9 not reviewed in 30 days**, and **98 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `DECISIONS.md` and setting `reviewed:` in its frontmatter.
 
 - `product/systems/places.md` — 32 days (last commit 2026-09-09)
