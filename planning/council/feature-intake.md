@@ -8,6 +8,8 @@ owner: Don
 
 # Feature intake
 
+**As of 2026-10-10** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Turns "someone wants to do X" into one **Feature Brief** a builder can execute with no questions. Runs **before** a scenario is written.
 
 Not a debate. Every role fills its own section in parallel and a chair merges them. Not the beta-scope council (`2026-10-07-beta-mvp.md`), which decides *what ships*; this decides *how one thing is shaped*.

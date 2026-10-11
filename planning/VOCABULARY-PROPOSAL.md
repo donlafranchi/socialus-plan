@@ -7,6 +7,8 @@ date: 2026-09-17
 
 # Naming the model so it stops drifting
 
+**As of 2026-09-17** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **2026-09-15. A proposal. Nothing renamed, nothing migrated.**
 
 Don's brief: *"Item is too vague of a word. Creators will create pages for whatever Kind they are creating. The page is the organizing entity for other tools and features. If a person has a business where they sell products they could potentially list those as 'Items' etc. What do we need to change to remove this confusion so it never happens again when we have hundreds of employees."*

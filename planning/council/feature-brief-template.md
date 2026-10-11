@@ -7,6 +7,8 @@ date: 2026-10-10
 
 # Feature Brief: [name in plain words]
 
+**As of 2026-10-10** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Goal:** [who] can [outcome] when [situation].
 **Date / run by / PM context:**
 **Scope line:** [what leaves if this enters, or "After beta"]

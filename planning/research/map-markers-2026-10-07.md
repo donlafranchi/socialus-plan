@@ -1,5 +1,7 @@
 # Map markers: pins for addresses, discs for areas (2026-10-07)
 
+**As of 2026-10-07** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 PM ruled option A and added: "make sure it looks different than the rest", with the classic teardrop pin for exact addresses. Decision line: `DECISIONS.md` 2026-10-07. Issue: `socialus-web` #475. Path: new territory (brought as A/B/C).
 
 ## Rule

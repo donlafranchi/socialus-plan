@@ -96,7 +96,7 @@ def collect(feat_area):
             continue
         done |= uat_journeys.ticks(i['body'])
         url = url or i['url']
-    UAT.update({'total': len(js), 'ticked': len(done & {j['id'] for j in js})})
+    UAT.update({'total': len(js), 'ticked': len(done & {j['id'] for j in js}), 'done': sorted(done)})
     for j in uat_journeys.nxt(done, js, issues=uat_journeys.open_issues()):
         item = {'id': j['id'], 'title': j['title'], 'role': j['role'], 'minutes': j['minutes'], 'link': j['link'], 'look': j['look'], 'launch': j['launch'], 'url': url, 'unlock': uat_journeys.unlock_line(j['unlock'])}
         UAT['next'].append(item)

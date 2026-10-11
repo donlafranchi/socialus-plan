@@ -8,6 +8,8 @@ horizon: the version after launch (launch is 2026-10-30)
 
 # Answering, inside the app — prepare, don't build
 
+**As of 2026-09-30** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 > **Not for launch.** Don, 2026-09-21, verbatim: *"This isn't something we're adding for [launch], but it is something I'd like to prepare for for the next version after [launch]."* And on why it is written down at all: *"I also want the information captured so we can build off of it when the time comes. Lastly date it so we have a reference for where we were when it was discussed."*
 >
 > **The version after 2026-10-30, and not backlog for it.** Nothing here is a ticket and nothing here competes for the launch list. **The post-launch milestone in `socialus-web` is where the work will hang; its name is pending and belongs in this line once it exists.**
