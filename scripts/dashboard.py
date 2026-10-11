@@ -138,7 +138,7 @@ def stages(i):
     return s, pr, done
 
 
-# Criterion-level results: read from the criterion reports in socialus-web (scripts/criteria.py), not derived from Issues.
+# Criterion-level results: read from build-log/reports/rollup.json in socialus-web (scripts/criteria.py), not derived from Issues.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 try:
     import criteria
