@@ -62,7 +62,7 @@ This replaces § 3 of `voice-and-tone.md` once approved. Everything else in that
 **Core lines (Draft until Don approves each use).**
 - **SocialUs: the people's platform.** The tagline.
 - **Members first, always.** Approved by Don, 2026-10-10, as a SocialUs line. Inspired by USAA's "Members first, mission always".
-- **Data line (Don, 2026-10-10).** SocialUs collects data. It is collected to benefit members, not to enrich investors, and opting out is easy. In copy: "We collect data to benefit our members, not to enrich investors. Opting out is easy." (Don said "never to enrich investors"; copy uses "not to" because "never extractive" is the one allowed "never". Don can restore it.) Not "we collect no data", "we reject data collection" or anything that implies it.
+- **Data line (Don's stance, 2026-10-11, now `DECISIONS.md`).** "We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out." SocialUs collects data. Copy never says we collect none, reject collection, or track nothing. Note: this wording carries a second "never", beyond "never extractive"; the `never.py` check is off by default, and Don can approve it or ask for "not to enrich" in public copy.
 - **Built to serve its members.** The default wording wherever ownership or purpose is touched. For About and mission copy: "created to benefit its members first and foremost."
 
 "Members first, always." is the one place "always" is allowed in copy, as a Don-approved line. The one allowed "never" stays "never extractive". The locked name line and subhead are unchanged by this guide.
@@ -225,7 +225,7 @@ Each change gives where it lives, what it says now, what it should say, and why.
 
 **1.20.** `src/lib/landing-copy.ts:93` · /landing/about "What this is for" third paragraph · *T2*
 - Now: SocialUs is never extractive. It doesn’t sell your data. It doesn’t sell placement. It doesn’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run.
-- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s created to benefit its members first and foremost. We collect data to benefit our members, not to enrich investors. Opting out is easy.
+- Change to: SocialUs is never extractive. We currently don’t sell your data or sell placement, and we don’t keep you scrolling. It makes its money in plain ways, from what happens on it, and keeps what it needs to run. It’s created to benefit its members first and foremost. We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out.
 - Status: **Draft**
 - Why: "Never extractive" is the one allowed "never". The rest moves to "currently". Adds the tagline idea (built to serve / created to benefit) without any promise about money, and the data line: we do collect data, for members' benefit, and opting out is easy.
 - For socialus-legal: "Opting out is easy" is a claim about what members can do. Confirm what a member can opt out of today (the `policy.md` default is off for non-essential sharing) and that the path is easy to find before this is public.
@@ -897,6 +897,13 @@ Each change gives where it lives, what it says now, what it should say, and why.
 - Why: Same swap; "always" to a plain verb.
 - For socialus-legal: Same: a data-handling commitment about the automated review. Counsel should approve.
 
+
+**9.3.** `src/lib/text-pages.ts:61` · /privacy, opening line (live page, a draft itself) · *T2*
+- Now: This is what SocialUs collects and who can see it. It describes the beta.
+- Change to: We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out. This is what SocialUs collects and who can see it. It describes the beta.
+- Status: **Draft**
+- Why: Puts Don's 2026-10-11 stance where people read about their data.
+- For socialus-legal: A public data-use and opt-out statement. Confirm what a member can opt out of today and that the path is easy to find.
 
 ## 10. Owners: creating, editing and joining
 
