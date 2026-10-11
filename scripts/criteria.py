@@ -71,6 +71,18 @@ def load():
     return feats
 
 
+def rollup(feats):
+    """criterion -> feature -> area -> milestone. A criterion counts as met only when Built is yes (unknown is unmet).
+    Area and milestone are plain sums of criteria, never averages of features, and never counts of Issues."""
+    areas = {}
+    for f in feats:
+        a = areas.setdefault(f['area'], {'met': 0, 'total': 0, 'features': 0, 'red': 0})
+        a['met'] += f['met']; a['total'] += f['total']; a['features'] += 1; a['red'] += 1 if f['blocked'] else 0
+    ms = {'met': sum(f['met'] for f in feats), 'total': sum(f['total'] for f in feats), 'features': len(feats), 'red': sum(1 for f in feats if f['blocked'])}
+    ms['pct'] = round(100 * ms['met'] / ms['total']) if ms['total'] else 0
+    return {'areas': areas, 'milestone': ms}
+
+
 def universe():
     ids = set()
     pdir = os.path.join(PLAN, 'planning')
