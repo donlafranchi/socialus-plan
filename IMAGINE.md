@@ -112,7 +112,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Places compete to keep spending local
 
-*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, DECISIONS 2026-10-06) as local-pride measures, once purchases are tracked.
+*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, the 2026-10-06 ruling) as local-pride measures, once purchases are tracked.
 
 **What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is only an index.
 
@@ -134,7 +134,7 @@ Every entry added from 2026-09-12 carries three things:
 
 **Open questions:** how a badge is verified, if it is; how contested or political values are moderated; and whether values become **filters in Explore**.
 
-**Needs research before a scenario.** Beta carries only a "Values & badges" card marked "Coming soon" on the Edit page (`socialus-web` #465); badges stay cut (DECISIONS 2026-10-06).
+**Needs research before a scenario.** Beta carries only a "Values & badges" card marked "Coming soon" on the Edit page (`socialus-web` #465); badges stay cut (ruling 2026-10-06).
 
 **What would make it real:** the research done (precedents on verification, a moderation approach for contested values) and the PM ruling on which of the two comes first.
 
@@ -158,7 +158,7 @@ Every entry added from 2026-09-12 carries three things:
 
 *Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment. After beta; not in the Beta milestone.
 
-*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (DECISIONS 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
+*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (ruling 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
 **Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
 
@@ -182,7 +182,7 @@ Every entry added from 2026-09-12 carries three things:
 
 *Analysis, agent, 2026-10-11:* this is mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply that says "I can build that, for this". The reply channel does not exist (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
 
-**Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So the first phase is a wish as an Idea: post it, show interest, link the finished thing, nothing more, SocialUs not involved. **No expiry:** old wishes go stale (sorted last after 90 quiet days, per DECISIONS 2026-09-15), they are not removed. Everything below (offers, the terms card, backers) is the plan *if it becomes popular*.
+**Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So the first phase is a wish as an Idea: post it, show interest, link the finished thing, nothing more, SocialUs not involved. **No expiry:** old wishes go stale (sorted last after 90 quiet days, per the 2026-09-15 ruling), they are not removed. Everything below (offers, the terms card, backers) is the plan *if it becomes popular*.
 
 **Backers (Don, 2026-10-11):** "Maybe we also offer others to become backers and we provide the structure so that the parties don't have to figure this out for themselves." A backer funds an idea; one standard terms card, vetted once by counsel at the platform level, is what the requester, maker and backers accept: what is funded, the amount, what the backer gets back (the thing, a defined reward, or thanks), milestones, delivery, what happens if it falls through, who owns the result. Three variants: gift, reward, pre-purchase. **The purpose, in Don's words:** "We want to generate revenue for our members and not let outside lawyers take advantage of our members": the template is a member benefit and the revenue stays with members. **Backing is not investing, with one level held back:** gift, reward and pre-purchase give a backer a thing, a reward or thanks, and no money back, share or return. Don, 2026-10-11: "a backer at the highest level is an investor. We want to be an economic engine for our members." That level is not designed or offered; it is held for socialus-legal (crowdfunding, securities and money-handling rules), kept apart from the settled ruling that members are SocialUs's own investors. Don chose option A: words-only terms until payments exist and counsel clears it.
 

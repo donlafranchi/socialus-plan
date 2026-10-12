@@ -10,7 +10,7 @@ none running. Idle, not closed: "Copy 3: storyboards §8–§11" (socialus-web, 
 2. Draft copy waits for the PM before any of it ships: storyboard PRs plan #104–#106, #108–#110 and web #681–#684, #687–#688 (all draft, do not merge).
 
 ## 3. Decided but not built
-- Markets replace the MSA; F103–F106 approved (DECISIONS 2026-10-11). No Issues for F103–F106 yet. Goes to socialus-web, Beta 10-30, once call 1 is answered.
+- Markets replace the MSA; F103–F106 approved (ruling 2026-10-11). No Issues for F103–F106 yet. Goes to socialus-web, Beta 10-30, once call 1 is answered.
 - Wish it existed launches as an Idea only; backing is words-only with the top level held for counsel (two DECISIONS lines, 2026-10-11, added in this PR). Build none; after beta.
 - Pipeline guard trimmed: bookkeeping meta PRs merge on green, the PM sees real measure changes (README § Governance, LESSONS 59). The Pipeline health panel (docs current, overrule rate) is not built: socialus-ops #106.
 

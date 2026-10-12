@@ -32,19 +32,19 @@ criteria:
 ## Why it fits (members first)
 
 - **Flip 1, toward in-person.** Walmart and Instacart shopping replaces the visit. Here the handoff happens at the market, between neighbours, so it brings a person to the market instead of keeping them home.
-- **Flip 2, spreading wealth among the many.** The money goes to the member who shops and the producers who grow, not to one corporation or one gig platform. SocialUs takes transaction income on member commerce (DECISIONS 2026-10-07) and keeps what it needs to run.
+- **Flip 2, spreading wealth among the many.** The money goes to the member who shops and the producers who grow, not to one corporation or one gig platform. SocialUs takes transaction income on member commerce (ruling 2026-10-07) and keeps what it needs to run.
 - **Who it serves first:** the person who cannot get to the market (no car, a new baby, a bad week), and the producer whose regulars cannot come every Saturday.
 
 ## 1. Facts (Stage 0)
 
 | Fact | Verified / assumed | Source |
 |---|---|---|
-| A farmers market is a Page that convenes people (a gathering Page); a given Saturday is a dated post with a time and place | Verified | DECISIONS 2026-09-15; `model.md` |
+| A farmers market is a Page that convenes people (a gathering Page); a given Saturday is a dated post with a time and place | Verified | the 2026-09-15 ruling; `model.md` |
 | A Page's managers post; a Post can carry a date, a place and tags | Verified | `member-journey.md`; capabilities F072 |
 | There is no messaging between members and no substrate for it | Verified | `member-journey.md`; the After beta milestone |
 | The platform handles no money; on-platform payments are Later (closed-loop ledger, ACH via a chartered partner) | Verified | the After beta milestone; Terms draft |
 | Product and service listings on a Page are postponed past beta | Verified | the After beta milestone |
-| SocialUs takes transaction income on member commerce | Verified | DECISIONS 2026-10-07 |
+| SocialUs takes transaction income on member commerce | Verified | the 2026-10-07 ruling |
 | Won't: cart, checkout, inventory management as full products; funds held for the platform's benefit; pull-back notifications | Verified | what-this-is § Won't |
 | A role is a relation, not a member type | Verified | `nouns.md` |
 | One metro (Sacramento) at beta | Verified | ROADMAP |
@@ -94,7 +94,7 @@ Criteria are in the frontmatter, each tagged to its journey (S1.1 and so on). Al
 
 - The member who shops (a fee they set, shown before claiming).
 - The producers whose goods are bought (their full price, no markup).
-- SocialUs, transaction income on the sale per DECISIONS 2026-10-07. Nothing is promised to any member beyond what each earns on their own sale.
+- SocialUs, transaction income on the sale per the 2026-10-07 ruling. Nothing is promised to any member beyond what each earns on their own sale.
 
 ## 6. T0 / T1 / T2 / T3 (pilot, then the three sizes)
 

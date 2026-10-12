@@ -6,7 +6,7 @@ The junk drawer: things with no home yet. One dated line each, ending `[unplaced
 - 2026-10-12 — `planning/ONE-MODEL.md` (on hold): fold what is still true into the spine (`product/foundation/nouns.md`), delete the rest. [unplaced raised=2026-10-12 owner=planning]
 - 2026-10-12 — `planning/PAGE-KINDS.md` (draft): overlaps `product/systems/page-kinds.md` and `page-kind-tools.md`; merge into the spine or delete. [unplaced raised=2026-10-12 owner=planning]
 - 2026-10-12 — `planning/STALENESS.md` (draft): a rule for everything; a principle, a ruling, or deleted. [unplaced raised=2026-10-12 owner=planning]
-- 2026-10-12 — `planning/URL-IDENTITY.md`: ruled 2026-09-21 and amended 2026-10-06; the rulings are in `RULINGS.md`, so keep only the why in the spine and delete the file. [unplaced raised=2026-10-12 owner=planning]
+- 2026-10-12 — `planning/URL-IDENTITY.md`: ruled 2026-09-21 and amended 2026-10-06; the rulings now sit in the spine, so keep only the why in the spine and delete the file. [unplaced raised=2026-10-12 owner=planning]
 - 2026-10-12 — `planning/VOCABULARY-PROPOSAL.md` (draft): naming belongs in `product/foundation/nouns.md`; move what is ruled, delete the rest. [unplaced raised=2026-10-12 owner=planning]
 - 2026-10-12 — `planning/AGENT-ANSWERING.md`: an argument for a future feature; `IMAGINE.md` if it has no noun yet, otherwise the spine. [unplaced raised=2026-10-12 owner=planning]
 - 2026-10-12 — `planning/search-dictionary-draft.md` (draft for the PM to edit): the seed tag list; once edited it lives with the tags in code, and the file goes. [unplaced raised=2026-10-12 owner=planning]

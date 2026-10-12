@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The dashboard's "Where we're going" section, from scenario frontmatter (`horizon: now|next|later`, `rank`)
-and the socialus-web milestones. Replaces ROADMAP.md (RULINGS.md, 2026-10-12).
+and the socialus-web milestones. Replaces ROADMAP.md (the 2026-10-12 docs ruling).
   going.py --check             proves the section on scripts/fixtures/going (run from lint.sh)
   going.py --list <horizon>    one line per scenario in that horizon, by rank (README)"""
 import glob, os, re, sys

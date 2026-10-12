@@ -8,6 +8,6 @@
     ],
     "why": "During beta apparent CSAM is reported through NCMEC's public CyberTipline form, which cannot take images; registration and hash scanning replace it. Entity specifics live in socialus-legal.",
     "runbook": "https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md",
-    "source": "DECISIONS 2026-10-05 and 2026-10-06 (child-safety tier); the PM, 2026-10-11"
+    "source": "the 2026-10-05 ruling and 2026-10-06 (child-safety tier); the PM, 2026-10-11"
   }
 ]

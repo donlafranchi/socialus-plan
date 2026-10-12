@@ -28,3 +28,6 @@ Discovery converting to relationship (search → landing → follow/save/message
 Daily active users as a goal in itself. Time-on-platform or session length as a goal. Scroll depth. Notification open/click-through rate. Streaks or gamified retention. Anything resembling social-media engagement metrics applied to local commerce. Once a number is on a dashboard, "improve the chart" makes the underlying principle unenforceable — naming these here is the only defense.
 
 The rule: measure interactions that produce real-world meetings, transactions, fulfillment, and movement toward Flourishing. Do not measure attention.
+
+## Rulings
+- **2026-09-07 — Seed content is synthetic and display-only.** No real-producer recruitment before launch; not reportable as traction.

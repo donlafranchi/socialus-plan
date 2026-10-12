@@ -22,3 +22,6 @@ Priya convenes a Tuesday run; she's never sold anything. Today the only path to 
 ## Not this
 
 The business-claim surface itself. Converting one Page into another — rejected outright, not deferred. The standing/activity badge (paused).
+
+## Rulings
+- **2026-09-07 — Correction: nothing gates selling.** Any Page may list an Item; a business record is a claim, not a permission.

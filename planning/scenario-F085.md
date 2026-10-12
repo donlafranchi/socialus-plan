@@ -41,3 +41,7 @@ The wording — Don writes it. Any stored source, referrer, or campaign field. A
 **The page also describes a product that no longer exists** — booths, market schedules, follow-for-market-updates. Broadening the heading alone does not fix that.
 
 **F087 changes what the page can honestly invite.** Once there is one create flow with a purpose chosen up front, `/join` can invite hosting and organizing without landing anyone in a selling flow. Until then it cannot.
+
+## Rulings
+- **2026-09-15 — `/join` is kept. It is a pitch page, not a second way into membership.** Don values that it is blunt where the rest of the app is not. **One signup, one creator step, unchanged** — what arriving via `/join` changes is sequence and framing, not mechanics: the creator question is offered right after signup instead of waiting for a first Page. **The intent is a property of the visit, never a stored field**, the same shape as F076's waitlist answer, which is what keeps "no stored role, mode, or account type" intact. Settles item 2 of `socialus-web` #95: kept, not deleted, and not deferred to the copy pass. Written as F085.
+- **2026-09-15 — The `/join` heading must not narrow the product to farmers markets.** Don: the examples are illustrative and *"Sell at a farmers market"* is too narrow. A copy requirement, not wording — he writes the language. Three person-noun violations on the page are recorded in F085 and fail the rule in `product/foundation/nouns.md`.

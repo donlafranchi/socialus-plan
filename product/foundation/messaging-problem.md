@@ -45,3 +45,6 @@ A state column on every utterance (not a boolean — the platform must distingui
 - **Who may initiate contact with a stranger at launch** — nobody (all contact runs through a public Item/Page), anyone in-metro, or a request the recipient must accept? *Recommend: nobody, for launch — matches the current shape and costs nothing today.*
 - **Does a block ship with the first surface that lets one member address another**, rather than being added later? *Recommend yes — it's the cheapest control in this document.*
 - **Is an operator concept in scope before rung 3 (member-initiated posts)?** If not, is "Page managers moderate their own boards" the ruling?
+
+## Rulings
+- **2026-09-12 — Direct messaging is coming, with safeguards, between creators and followers and within the community.** Don, explicitly. No longer hypothetical and no longer to be written about as merely possible; still unscheduled and undesigned. The safeguards are required, not optional — `product/foundation/messaging-problem.md` is where the reasoning lives.

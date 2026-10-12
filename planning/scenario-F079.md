@@ -20,3 +20,6 @@ Once there's real report volume, opening one item at a time doesn't scale for on
 ## Not this
 
 Building this before there's volume to justify it — deliberately unscheduled; F078 ships without it.
+
+## Rulings
+- **2026-09-14 — Bulk actions on the review queue are Later, not launch scope.** One metro's report volume doesn't justify it yet. Written as F079, deliberately unscheduled.

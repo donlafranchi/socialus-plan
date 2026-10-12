@@ -15,7 +15,7 @@ name: status
 # applies here. STATUS.md is overwritten wholesale, so it cannot accumulate —
 # and this job commits ONLY when the content actually changed, so a fresh date
 # on the file always means a real change rather than a heartbeat. See the
-# 2026-09-19 line in DECISIONS.md.
+# 2026-09-19 ruling.
 
 on:
   push:
