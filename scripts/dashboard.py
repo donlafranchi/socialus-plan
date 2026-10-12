@@ -228,7 +228,7 @@ for i in all_issues:
     if i['state'] == 'CLOSED' and recent(i['closedAt']):
         log(area_of(i), 'Issue closed', f'#{i["number"]} {i["title"]}', u)
 try:
-    for line in open(os.path.join(PLAN, 'DECISIONS.md')):
+    for line in open(os.path.join(PLAN, 'RULINGS.md')):
         m = re.match(r'- \*\*(\d{4}-\d{2}-\d{2}) — (.*?)\*\*', line)
         if m and m.group(1) >= SINCE.astimezone(ZoneInfo('America/Los_Angeles')).strftime('%Y-%m-%d'):
             log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else ''))
