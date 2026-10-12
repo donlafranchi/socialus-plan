@@ -45,6 +45,8 @@
 - F065: Someone follows something
 - F093: A signed-out visitor sees that something is happening, and is asked in to read it
 
+## Considering
+
 ## Later
 - F077: People who actually interact are not hidden from each other; everyone else sees a display name
 - F079: The review queue handles many reports at once
