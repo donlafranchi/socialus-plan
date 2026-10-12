@@ -3,6 +3,7 @@ id: what-groups
 purpose: Self-selected sets of people organized to do things together — why it's people, never a corporate shape.
 layer: what
 status: active
+under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, tool side only] 'no engagement-ranked Group discovery feed'"
 ---
 
 # Groups (Pages)

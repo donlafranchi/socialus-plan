@@ -16,7 +16,7 @@ Sam opens SocialUs on a Friday evening with nothing planned. Home shows a row he
 1. **Home at `/` shows rows in this order: Tonight, This weekend, New this week, then a wildcard row.** A row with nothing in it is absent. Every row is scoped to the active metro.
 2. **Rows hold posts and Pages, and each row and card says what kind of thing it is** at the granularity the open question below settles. A business's sale and a group's ride don't share an unlabelled bucket.
 3. **No organization appears in two adjacent cards of a row, or first in two consecutive rows.**
-4. **Ordering uses time, place, the member's declared interests, curation and community response, and nothing else.** No input measures time spent, dwell, scroll depth or opens.
+4. **Ordering uses time, place, the member's declared interests, curation and community response, and nothing else.** No input measures time spent, dwell, scroll depth or opens. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 5. **Nothing plays, advances or opens on its own.** Cards open on a tap; rows arrive a few at a time as the member scrolls.
 6. **When the new rows run out, a stop card reads "You've seen what's new this week".** Signed in, with things of theirs on tonight, it adds "things you saved are on tonight" and links to each; with none, that line is absent.
 7. **Below the stop card, older picks appear only after a tap.** Nothing refills on its own.

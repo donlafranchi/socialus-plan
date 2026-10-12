@@ -25,7 +25,7 @@ Not launch. Not approved. No scraping of listings without consent (C). No ticket
 
 ## Why
 
-**Recommend for members before things happen,** from their declared interests: the member works with the platform, not an algorithm (Don, 2026-09-30). It sits inside the existing ordering rule — place, declared interests and genuine community response (`product/ui/surfaces.md` § ordering; the 2026-09-12 ruling) — and ranks nobody for payment, size or follower count (2026-09-30).
+**Recommend for members before things happen,** from their declared interests: the member works with the platform, not an algorithm (Don, 2026-09-30). It sits inside the existing ordering rule — place, declared interests and genuine community response (`product/ui/surfaces.md` § ordering; the 2026-09-12 ruling) — and ranks nobody for payment, size or follower count (2026-09-30). [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 
 **Links back are the owner's own:** a venue's consented connection counts as links the owner typed, so F090 criterion 7 holds (Don, 2026-09-30).
 

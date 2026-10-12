@@ -6,6 +6,7 @@ status: active
 owns:
   - surface-index
   - surface-roles
+under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, tool side only] 'Browse is complete and not ranked by the member's interests'; the ordering rule (no favour for payment), for paid promotion on the fun side"
 ---
 
 # The surfaces
