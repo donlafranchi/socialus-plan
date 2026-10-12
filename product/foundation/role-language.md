@@ -31,6 +31,4 @@ The full prior text, including the argument against the pair and its copy exampl
 
 **This document is not a voice or copy guide and never was** — Don is right about that. Its copy examples were illustrations of the naming rules, not a house voice. No voice guide exists yet.
 
-## Open
-
-[open-question owner=don raised=2026-09-04] "Neighbours, not strangers or creators" vs. "everyone who posts is a creator." A) the north star's refusal is scoped to the word "creator" as a label only — the feeling is fine, just don't call anyone a creator. B) it bars the aspiration too — no reach chrome, no creator-shaped feature, ever. *No recommendation — genuinely a values call.*
+**The 2026-09-04 question ("Neighbours, not strangers or creators" against "everyone who posts is a creator") is retired, 2026-10-12.** The PM: the framing is outdated. SocialUs is less about literal neighbours and more about communities, people choosing to gather, and wealth that circulates; the question no longer applies.
