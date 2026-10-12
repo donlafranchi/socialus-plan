@@ -28,15 +28,23 @@ def scenarios(d):
     return out
 
 
+BULLET = re.compile(r'^- \*\*(.+?)\*\*')
+
+
 def imagine(path):
-    """(lane, title) per IMAGINE.md `###` entry carrying a `[lane: …]` marker; entries without one are not on the roadmap."""
+    """(lane, title) per IMAGINE.md entry (a `###` heading or a `- **Title.**` bullet) carrying a `[lane: …]` marker; others are not on the roadmap."""
     if not os.path.exists(path):
         return []
     out, title = [], None
     for l in open(path).read().split('\n'):
+        b = BULLET.match(l)
         if l.startswith('### '):
             title = l[4:].strip()
-        elif title:
+        elif b:
+            title = b.group(1).strip().rstrip('.')
+        elif l.startswith('## '):
+            title = None
+        if title:
             for m in LANE_MARK.finditer(l):
                 out.append((m.group(1).strip(), title))
     return out
@@ -82,13 +90,14 @@ def lint(d, imagine_path):
     if os.path.exists(imagine_path):
         title, seen = None, 0
         for n, l in enumerate(open(imagine_path).read().split('\n'), 1):
-            if l.startswith('## ') or l.startswith('### '):
-                title, seen = l, 0
+            b = BULLET.match(l)
+            if l.startswith('## ') or l.startswith('### ') or b:
+                title, seen = (l if not b else b.group(1)), 0
             for m in LANE_MARK.finditer(l):
                 lane = m.group(1).strip()
                 seen += 1
-                if not title or not title.startswith('### '):
-                    errs.append(f'{imagine_path}:{n}: a lane marker belongs under an entry heading (###)')
+                if not title or l.startswith('## '):
+                    errs.append(f'{imagine_path}:{n}: a lane marker belongs under an entry (a ### heading or a - **Title.** bullet)')
                 elif lane not in IMAGINE_LANES:
                     errs.append(f'{imagine_path}:{n}: IMAGINE lane `{lane}` must be one of {", ".join(IMAGINE_LANES)}')
                 if seen > 1:

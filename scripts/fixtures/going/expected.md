@@ -16,6 +16,7 @@
 ### Later · an eventual part of the platform · After beta (1 open Issue)
 1. F903 A later draft *(draft)*
 - An eventual thing *(IMAGINE)*
+- A bullet idea *(IMAGINE)*
 - [#7 A deferred thing](https://github.com/x/y/issues/7)
 
 ### Not sorted yet (no `horizon`)
