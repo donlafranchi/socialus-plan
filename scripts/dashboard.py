@@ -231,12 +231,13 @@ try:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import markers
     _cwd = os.getcwd(); os.chdir(PLAN)
-    _rulings = [e['line'] for e in markers.decisions()]
+    _rulings = [e['line'] + (f" [{e['lasts']}]" if e['lasts'] and f"[{e['lasts']}]" not in e['line'] else '') for e in markers.decisions()]
     os.chdir(_cwd)
     for line in _rulings:
         m = re.match(r'- \*\*(\d{4}-\d{2}-\d{2}) — (.*?)\*\*', line)
         if m and m.group(1) >= SINCE.astimezone(ZoneInfo('America/Los_Angeles')).strftime('%Y-%m-%d'):
-            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else ''))
+            _t = re.search(r'\[(always|for now)\]', line)
+            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else '') + (f' [{_t.group(1)}]' if _t else ''))
 except OSError:
     pass
 
