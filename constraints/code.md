@@ -10,7 +10,7 @@
 > **180 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-12** · principles, explore, discovery — The app has two sides: the tool, where a person finds something specific, and the fun, where a person explores with nothing in mind and an algorithm may serve what interests them. [always]
+- **2026-10-12** · principles, explore, discovery — The app has two sides: Find (the tool), where a person looks for something specific, and Discover (the fun), where a person explores with nothing in mind and an algorithm may serve what interests them. [always]
 - **2026-10-12** · principles — Everything the platform touches serves the people it touches
 - **2026-10-12** · principles, fees — Wealth circulates; it is not extracted
 - **2026-10-12** · principles, fees — The platform is the technology layer, never the bank

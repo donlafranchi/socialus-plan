@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """The dashboard's "Where we're going" section, from scenario frontmatter (`horizon: now|next|later`, `rank`)
-and the socialus-web milestones. Replaces ROADMAP.md (the 2026-10-12 docs ruling).
+the socialus-web milestones and IMAGINE.md's `[eventual: …]` items. Replaces ROADMAP.md (the 2026-10-12 docs ruling).
   going.py --check             proves the section on scripts/fixtures/going (run from lint.sh)
   going.py --list <horizon>    one line per scenario in that horizon, by rank (README)"""
 import glob, os, re, sys
@@ -18,18 +18,24 @@ def scenarios(d):
     return out
 
 
-def section(scen, now_open, later_issues, now_name='Beta 11-06', later_name='After beta'):
+def eventual(path):
+    """IMAGINE.md items marked `[eventual: text]` (an eventual part of the platform): the longer-term lane."""
+    return re.findall(r'\[eventual: ([^\]]+)\]', open(path).read()) if os.path.exists(path) else []
+
+
+def section(scen, now_open, later_issues, now_name='Beta 11-06', later_name='After beta', imagine=()):
     def lst(h):
         rows = sorted((s for s in scen if s['horizon'] == h), key=lambda s: (s['rank'], s['id']))
         return [f"{i}. {s['id']} {s['title']} *({s['status']})*" for i, s in enumerate(rows, 1)]
     n = len(later_issues)
     o = ['## Where we\'re going', '',
-         '*Generated from each scenario\'s `horizon` and `rank` and the socialus-web milestones. To change it, change those; never this section.*', '',
+         '*Generated from each scenario\'s `horizon` and `rank`, the socialus-web milestones and IMAGINE.md\'s `[eventual: …]` items. To change it, change those; never this section.*', '',
          f'### Now · {now_name} ({now_open} open Issues)', *(lst('now') or ['- none']), '',
          '### Next', *(lst('next') or ['- none']), '',
          f'### Later · {later_name} ({n} open Issue{"" if n == 1 else "s"})', *lst('later'),
-         *[f"- [#{i['number']} {i['title']}]({i['url']})" for i in sorted(later_issues, key=lambda i: i['number'])]]
-    if not lst('later') and not later_issues:
+         *[f"- [#{i['number']} {i['title']}]({i['url']})" for i in sorted(later_issues, key=lambda i: i['number'])],
+         *([ '', '#### Eventual parts of the platform *(from IMAGINE.md, `[eventual: …]`; not scheduled)*', *[f'- {e}' for e in imagine]] if imagine else [])]
+    if not lst('later') and not later_issues and not imagine:
         o.append('- none')
     loose = [s for s in scen if s['horizon'] not in ('now', 'next', 'later')]
     if loose:
@@ -42,7 +48,7 @@ if __name__ == '__main__' and sys.argv[1:2] == ['--list']:
         print(f"- {s['id']}: {s['title']}")
 elif __name__ == '__main__' and sys.argv[1:] == ['--check']:
     d = os.path.join(os.path.dirname(__file__), 'fixtures', 'going')
-    got = '\n'.join(section(scenarios(d), 3, [{'number': 7, 'title': 'A deferred thing', 'url': 'https://github.com/x/y/issues/7'}])) + '\n'
+    got = '\n'.join(section(scenarios(d), 3, [{'number': 7, 'title': 'A deferred thing', 'url': 'https://github.com/x/y/issues/7'}], imagine=eventual(os.path.join(d, 'IMAGINE.md')))) + '\n'
     want = open(os.path.join(d, 'expected.md')).read()
     if got != want:
         sys.exit('going: section does not match scripts/fixtures/going/expected.md\n' + got)

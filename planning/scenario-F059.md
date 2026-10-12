@@ -8,7 +8,7 @@ date: 2026-09-13
 depends: [F061]
 amended: 2026-10-11 — the PM (F103–F105): results scope to the vantage's market, not a picked metro; criteria 6 and 7 restated.
 approved: 2026-09-14 — criterion 8 cut, 10 reworded, 6 changed from a named fallback to member choice, address settled at /explore; amended 2026-09-17 — Browse is a showcase, curated lenses replace the ban on category controls; amended 2026-10-01 — Don: criterion 5, list and map by width
-under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, tool side only] 'Ranking by what holds attention' and 'Personal content as a private feed' in Not this; the 2026-09-12 Home/Browse ruling (Browse not ranked by interests); criterion 3 ('doesn't favour a member because of payment') for paid promotion on the fun side"
+under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, Find only] 'Ranking by what holds attention' and 'Personal content as a private feed' in Not this; the 2026-09-12 Home/Browse ruling (Browse not ranked by interests); criterion 3 ('doesn't favour a member because of payment') for paid promotion on Discover"
 ---
 ## Story
 

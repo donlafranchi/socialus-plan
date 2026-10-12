@@ -45,7 +45,7 @@ It's not a marketplace — meeting, volunteering, and floating an idea sit along
 
 ## Won't
 
-- Engagement-optimized ranking, streaks, pull-back notifications. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
+- Engagement-optimized ranking, streaks, pull-back notifications. [for now — Find only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 - Automated government-API verification of producer claims — the trust ladder is human-driven (self-attest → community-attest → document-upload) only.
 - Mass-email marketing tooling, push notifications to non-followers, individual visitor-tracking analytics for a producer.
 - Payroll, HR, or employee management — the platform records who's associated with a Page, it doesn't manage employment.
