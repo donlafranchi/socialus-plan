@@ -104,7 +104,7 @@ Precedents for the dollar-free half:
 
 ## Family 3 — Pooling (community ownership)
 
-Members become stakeholders; capital is pooled, businesses founded, resources shared. Ownership concentration is the squeeze; collective ownership is the answer (the wealth-circulation absolute lives in `goals.md`). **The app is a finding mechanism** (2026-09-19): the organizing happens in real life, and where it needs a legal form, in entities formed outside the platform.
+Members become stakeholders; capital is pooled, businesses founded, resources shared. Ownership concentration is the squeeze; collective ownership is the answer (the wealth-circulation absolute lives in `charter.md`). **The app is a finding mechanism** (2026-09-19): the organizing happens in real life, and where it needs a legal form, in entities formed outside the platform.
 
 12. **Start something.** *Who and why:* someone with an idea that would grow the community's capacity — a tool library, a co-op grocery.
     - **Currently:** makes a Page and posts from it; there is no goal or Initiative object (2026-09-19).

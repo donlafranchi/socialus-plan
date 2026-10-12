@@ -26,3 +26,5 @@ Engagement-shaped advertising (click-optimized, behaviorally targeted, attention
 
 - **How are member dues structured** — flat, tiered, voluntary, community-set? *No recommendation.*
 - **What forms of sponsorship or advertising count as "non-engagement-shaped" and pass the visibility guideline** — community gathering sponsorship? Verified-local badges? *No recommendation — needs a concrete mechanic proposed and tested against the guideline, not decided in the abstract.*
+
+[open-question owner=don raised=2026-09-07] What "surplus returns to the community" actually means (moved here from the retired `goals.md`). A) a fixed percentage, decided annually by the founder. B) a member vote or board process decides the number and the mechanism. C) stays internal-only indefinitely; never published as a specific commitment. *Recommend C for now: nothing forces a decision before launch, and a vague public promise is worse than a deferred one.*

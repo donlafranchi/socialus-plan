@@ -28,7 +28,7 @@ One sentence: **"[who] can [outcome] when [situation]."**
 Check, then tag every line **verified** (read in the repo this run) or **assumed**:
 
 - What exists in `socialus-web` main, and in the spine (`nouns.md`, `verbs.md`, `surfaces.md`).
-- What a ruling forbids: `DECISIONS.md`, `ROADMAP.md` § Won't, `IMAGINE.md`, `goals.md`.
+- What a ruling forbids: `DECISIONS.md`, `ROADMAP.md` § Won't, `IMAGINE.md`, `charter.md`.
 - Open questions in `STATUS.md` that touch it.
 - **Prerequisites**: anything the feature needs that has no noun, verb or surface yet is a *prerequisite*, listed first, never a task inside the feature.
 
@@ -40,12 +40,12 @@ Each role: **Needs** (what it must be true for them), **Cost** (effort or harm t
 |---|---|---|
 | Person | The member the feature is for. Moment of use, job to be done, what makes them bail. | Anything that makes them wait, scroll or guess. |
 | Maker | The Page owner or venue who supplies the content. What they must enter, how much effort, what is in it for them. | More than two new fields, or paid reach. |
-| Money | Who pays, who earns, when. Fee, grant-fund flow, nothing. Not "payer": it can be the member, a venue, or the community fund. | Visibility sold, or a cut that grows with dependence (goals promise 3). |
+| Money | Who pays, who earns, when. Fee, grant-fund flow, nothing. Not "payer": it can be the member, a venue, or the community fund. | Visibility sold, or a cut that grows with dependence (Charter flip 2). |
 | Architect | Data, events, reads and writes needed vs what exists. Names every missing noun, verb, surface. | Anything that needs a second source of truth. |
 | Developer | Order of work, hours (estimate, labelled), what ships first, what is independently shippable. | A first slice that is not shippable alone. |
 | Tester | Pass/fail criteria written before building, including every empty state. | A criterion that is not binary. |
 | Operator | Day 2: runs unattended Tue to Thu, cost, failure, cold start in one metro, what breaks at 10 users. | Anything needing a person midweek (except child safety). |
-| Guardian | Checks `goals.md` promises, privacy, third-party statements about Pages, inference the discovery doc refuses, outward CTAs, voice rules. | Any promise broken. Blocks, does not advise. |
+| Guardian | Checks `charter.md` pledges, privacy, third-party statements about Pages, inference the discovery doc refuses, outward CTAs, voice rules. | Any promise broken. Blocks, does not advise. |
 | Scout | Prior art: who solved it, what failed, what to copy, what extracts. Says which precedents were looked up this run vs recalled. | None. Advises only. |
 
 ### Shared lens (from council-roles.md, unchanged)
