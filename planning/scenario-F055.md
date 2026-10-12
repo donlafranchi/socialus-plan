@@ -2,6 +2,8 @@
 id: F055
 title: A producer puts a photo on what they're selling
 status: deferred
+horizon: later
+rank: 30
 date: 2026-09-10
 depends: [F061]
 ---

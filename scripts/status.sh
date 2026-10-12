@@ -132,10 +132,10 @@ w(">")
 if cross and sha:
     w(f"> **Derived from:** `scripts/state.sh` against `socialus-web` @ `origin/main`")
     w(f"> `{sha.group(1)}` ({sha.group(2)}); `accepted-risks/*.json`;")
-    w("> `planning/scenario-*.md` frontmatter; `ROADMAP.md`.")
+    w("> `planning/scenario-*.md` frontmatter.")
 else:
     w("> **Derived from this repo only** — `accepted-risks/*.json`,")
-    w("> `planning/scenario-*.md` frontmatter and `ROADMAP.md`. Everything about")
+    w("> `planning/scenario-*.md` frontmatter. Everything about")
     w("> the code repo is missing from this run; see the last section.")
 w(">")
 w("> **Answers \"where is this project\", not \"what tickets exist.\"** The ticket")

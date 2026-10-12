@@ -2,6 +2,8 @@
 id: F069
 title: A non-business Page resolves everywhere, and holding several is ordinary
 status: building
+horizon: now
+rank: 30
 date: 2026-09-10
 depends: [F060]
 ---

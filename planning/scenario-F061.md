@@ -2,6 +2,8 @@
 id: F061
 title: Someone creates a Page worth showing people
 status: building
+horizon: now
+rank: 10
 date: 2026-09-10
 depends: []
 amended: 2026-10-01 — Don: creation is one question, the kind; it lands on the draft Page. Criteria 1–3 moved to F056 (editing); criterion 5 (resume returns to review) retired. 2026-10-04 — Don: each kind is a question with a one-line purpose.

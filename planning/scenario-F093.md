@@ -2,6 +2,8 @@
 id: F093
 title: A signed-out visitor sees that something is happening, and is asked in to read it
 status: approved
+horizon: next
+rank: 150
 gates: launch
 date: 2026-09-23
 depends: [F059, F072]

@@ -2,6 +2,8 @@
 id: F092
 title: Narrowing happens in a modal that writes what it did
 status: approved
+horizon: later
+rank: 90
 date: 2026-09-19
 depends: [F091]
 approved: 2026-09-19 — Don ruled filtering lives in a modal that writes its selection into the search box as text, Gmail-style.

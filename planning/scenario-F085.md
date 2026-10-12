@@ -2,6 +2,8 @@
 id: F085
 title: /join is a pitch, not a second door
 status: draft
+horizon: later
+rank: 190
 date: 2026-09-15
 depends: [F081, F082]
 ---

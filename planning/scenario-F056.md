@@ -2,6 +2,8 @@
 id: F056
 title: A producer edits a shop that already exists
 status: approved
+horizon: now
+rank: 150
 date: 2026-09-10
 depends: [F061]
 approved: 2026-09-07 — Gate A/B cleared; values statement cut per PM ruling

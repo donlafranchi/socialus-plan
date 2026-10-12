@@ -42,3 +42,10 @@ It's not a marketplace — meeting, volunteering, and floating an idea sit along
 ## The call to action is participatory — a copy constraint, not decoration
 
 "Help shape a better future" — the PM wants people to feel that they can, and that it's done together. Everything user-facing should read as an invitation to build the thing, not an announcement of a finished product. The test: an empty state that apologizes for being empty contradicts this; one that invites you to be first serves it. Nearly every surface is empty at launch, so the empty states *are* the product on day one — the same argument as the default Page art. A participatory promise made at a market and then broken by the interface is worse than not making it at all; someone told "help shape the future" who then meets copy that treats them as a consumer has been told two different things, and will believe the interface.
+
+## Won't
+
+- Engagement-optimized ranking, streaks, pull-back notifications.
+- Automated government-API verification of producer claims — the trust ladder is human-driven (self-attest → community-attest → document-upload) only.
+- Mass-email marketing tooling, push notifications to non-followers, individual visitor-tracking analytics for a producer.
+- Payroll, HR, or employee management — the platform records who's associated with a Page, it doesn't manage employment.

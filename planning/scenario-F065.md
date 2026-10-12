@@ -2,6 +2,8 @@
 id: F065
 title: Someone follows something
 status: approved
+horizon: next
+rank: 140
 date: 2026-09-10
 depends: []
 approved: 2026-09-07 — guard rails settled, unscheduled build

@@ -2,6 +2,8 @@
 id: F108
 title: A gentle pause before posting something likely to hurt
 status: draft
+horizon: later
+rank: 270
 date: 2026-10-11
 depends: [F078]
 ---

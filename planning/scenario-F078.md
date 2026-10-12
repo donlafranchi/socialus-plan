@@ -2,6 +2,8 @@
 id: F078
 title: Flagged content hides itself immediately, and the poster is told why
 status: approved
+horizon: now
+rank: 60
 gates: launch
 date: 2026-09-14
 depends: [F058, F077]

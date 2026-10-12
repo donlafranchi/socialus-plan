@@ -52,7 +52,7 @@ done
 #     excluded from the count — see the note at the top of this file.
 for f in planning/scenario-*.md; do
   [ -f "$f" ] || continue
-  spec=$(awk '/^## Why$/{skip=1; next} /^## /{skip=0} !skip' "$f" | wc -l | tr -d ' ')
+  spec=$(awk 'NR==1 && /^---$/{fm=1; next} fm{if(/^---$/)fm=0; next} /^## Why$/{skip=1; next} /^## /{skip=0} !skip' "$f" | wc -l | tr -d ' ')
   if [ "$spec" -gt 40 ]; then
     echo "lint: scenario spec over 40 lines ($spec, excluding ## Why) — $f"
     fail=1
@@ -101,7 +101,7 @@ vt=scripts/fixtures/value-test
 #    README.md (scripts/view.sh), PLATFORM-*.md (scripts/markers.py platform) and
 #    DASHBOARD.md (scripts/dashboard.py),
 #    never hand-edited, so not link-checked below.
-allowed="CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
+allowed="CLAUDE.md STATUS.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
 for f in *.md; do
   [ -f "$f" ] || continue
   case " $allowed " in
@@ -133,7 +133,7 @@ check_links() {
   done
 }
 
-for f in CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
+for f in CLAUDE.md STATUS.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
   [ -f "$f" ] || continue
   out="$(check_links "$f")"
   if [ -n "$out" ]; then
@@ -193,11 +193,15 @@ python3 scripts/never.py scripts/fixtures/never/good.md >/dev/null || { echo "li
 if [ "${NEVER_LINT:-0}" = "1" ] && ! out="$(python3 scripts/never.py)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
+# Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
+python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
 # Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
 [ "$got" -eq 4 ] || { echo "lint: budget checker is inert — rejected $got of 4 bad fixtures"; fail=1; }
 BUDGETS_BASE_DIR="$bf/good-base" python3 scripts/budgets.py check --root "$bf/good" >/dev/null || { echo "lint: budget checker rejects the good fixture"; fail=1; }
+got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
+[ "$got" -eq 3 ] || { echo "lint: budget checker does not let a docs: move PR grow a doc (got $got of 3)"; fail=1; }
 if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi

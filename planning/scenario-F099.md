@@ -2,6 +2,8 @@
 id: F099
 title: Every post shows a picture, and every Page can have a Page picture
 status: approved
+horizon: now
+rank: 160
 date: 2026-10-05
 depends: [F070, F072, F078, F080, F093]
 approved: 2026-10-05 — Don's answers, "keep it simple": one Page picture for every kind; the kind placeholder when none is set; the beta slice, gallery after beta; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty. Same fields, flow and copy for every kind.

@@ -2,6 +2,8 @@
 id: F063
 title: Someone says they're coming
 status: approved
+horizon: later
+rank: 70
 date: 2026-09-10
 depends: []
 approved: 2026-09-07

@@ -23,7 +23,7 @@ A Member is the platform's record of one real human — one row, lifetime-stable
 
 ## There is no second, stronger-verified tier
 
-Every Member is self-attested, and that is the only identity tier. An ID-plus-selfie tier was once named as the unlock for F080; **Don ruled 2026-09-27 that none is being built**, so F080 (no pictures of children) has no unlock. The producer trust ladder in `ROADMAP.md` (self-attest → community-attest → document-verify) is about a *business's* claims, not a person's identity; don't conflate the two.
+Every Member is self-attested, and that is the only identity tier. An ID-plus-selfie tier was once named as the unlock for F080; **Don ruled 2026-09-27 that none is being built**, so F080 (no pictures of children) has no unlock. The producer trust ladder in `product/foundation/what-this-is.md` § Won't (self-attest → community-attest → document-verify) is about a *business's* claims, not a person's identity; don't conflate the two.
 
 ## Discoverability defaults to off; a member's outputs don't
 

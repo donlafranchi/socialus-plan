@@ -2,6 +2,8 @@
 id: F097
 title: Values shape what's recommended, and nobody can search them
 status: draft
+horizon: later
+rank: 50
 date: 2026-10-01
 depends: [F071, F096]
 ---

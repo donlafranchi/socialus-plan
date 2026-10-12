@@ -2,6 +2,8 @@
 id: F107
 title: A searched place is searched as what it is, a town or a county
 status: draft
+horizon: later
+rank: 260
 date: 2026-10-11
 depends: [F104, F105]
 ---

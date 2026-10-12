@@ -51,12 +51,12 @@ criteria:
 |---|---|---|
 | `/you/sell` is retired and redirects to Create; the list-a-product flow is kept, unrouted | Verified | `socialus-web` `src/app/you/sell/page.tsx` |
 | The kept composer takes title, description, price or Free, unit and pickup location; `item.create` and a public product page exist; `items` link to a Page | Verified | `ProductComposer.tsx`, `you/sell/product/actions.ts` |
-| Listings on a Page are postponed past beta; the starting point is the old sell flow moved onto the Page's Add | Verified | ROADMAP Later (2026-10-01, 2026-10-05) |
-| There is no availability or in-season field; stock indicators are Later | Verified | the composer; ROADMAP Later |
-| An Appearance (a Page at a Venue for a bounded time) is a noun, scoped at about 1.5 days and Later | Verified | `nouns.md`; ROADMAP Later |
+| Listings on a Page are postponed past beta; the starting point is the old sell flow moved onto the Page's Add | Verified | the After beta milestone (2026-10-01, 2026-10-05) |
+| There is no availability or in-season field; stock indicators are Later | Verified | the composer; the After beta milestone |
+| An Appearance (a Page at a Venue for a bounded time) is a noun, scoped at about 1.5 days and Later | Verified | `nouns.md`; the After beta milestone |
 | A farmers market is a Page that convenes people | Verified | DECISIONS 2026-09-15 |
-| Won't: cart, checkout, SKUs, inventory management as full products | Verified | ROADMAP Won't |
-| Price on cards (Free, Donation, Paid) is speculative, not ruled | Verified | ROADMAP Speculative (2026-09-30) |
+| Won't: cart, checkout, SKUs, inventory management as full products | Verified | what-this-is § Won't |
+| Price on cards (Free, Donation, Paid) is speculative, not ruled | Verified | After beta, speculative |
 | The kept composer still builds and runs after the retirement | **Assumed** | ticket 1 settles it |
 | Producers will list weekly if it takes about a minute | **Assumed** | the pilot (T0) of the other briefs |
 

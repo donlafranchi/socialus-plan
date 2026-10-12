@@ -2,6 +2,8 @@
 id: F057
 title: Someone who isn't selling yet finds the way in
 status: approved
+horizon: next
+rank: 110
 date: 2026-09-10
 depends: [F060]
 approved: 2026-09-07 — PM approved the six table removals and one repurpose

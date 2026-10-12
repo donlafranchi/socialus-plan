@@ -2,6 +2,8 @@
 id: F067
 title: A follower and a member are different things
 status: draft
+horizon: later
+rank: 130
 date: 2026-09-10
 depends: [F065]
 ---

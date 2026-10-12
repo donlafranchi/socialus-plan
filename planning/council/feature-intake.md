@@ -28,7 +28,7 @@ One sentence: **"[who] can [outcome] when [situation]."**
 Check, then tag every line **verified** (read in the repo this run) or **assumed**:
 
 - What exists in `socialus-web` main, and in the spine (`nouns.md`, `verbs.md`, `surfaces.md`).
-- What a ruling forbids: `DECISIONS.md`, `ROADMAP.md` § Won't, `IMAGINE.md`, `charter.md`.
+- What a ruling forbids: `DECISIONS.md`, `RULINGS.md`, `product/foundation/what-this-is.md` § Won't, `IMAGINE.md`, `charter.md`.
 - Open questions in `STATUS.md` that touch it.
 - **Prerequisites**: anything the feature needs that has no noun, verb or surface yet is a *prerequisite*, listed first, never a task inside the feature.
 

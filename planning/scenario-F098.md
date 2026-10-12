@@ -2,6 +2,8 @@
 id: F098
 title: Home is rows that keep going, and an honest place to stop
 status: draft
+horizon: later
+rank: 80
 date: 2026-10-04
 depends: [F059, F091, F093]
 ---

@@ -88,7 +88,7 @@ Every entry added from 2026-09-12 carries three things:
 1. **A vocabulary for attributes**, distinct from the tags a creator types about themselves — quiet, patio, cheap, worth-the-price. Nothing exists. Tags are the nearest substrate and are creator-owned by rule.
 2. **Member-supplied attributes** — the third-party surface above. Gated by [member-content-takedown]; the report path (F058) now exists, so the gate is passable for the first time.
 3. **Reviewer segmentation** — knowing what a reviewer optimizes for. Either a declared axis on the member, or inferred from behaviour. **Inference is close to what `product/systems/discovery.md` refuses**, and a declared axis is a profile field nobody fills in.
-4. **Reviews at all.** There is no review noun. `ROADMAP.md` § Won't bars star ratings and reputation scores **for people**; a treatment-review surface that reviews the treatment and never the person sits in § Later, unbuilt and unscoped.
+4. **Reviews at all.** There is no review noun. A principle bars star ratings and reputations **for people**; a treatment-review surface that reviews the treatment and never the person sits in § Later, unbuilt and unscoped.
 
 **Cold start is the quiet killer.** One metro at launch means roughly zero reviews, and a review system segmented by reviewer type needs several times the volume of an unsegmented one to say anything at all. **A segmented review surface with no reviews is worse than none** — it advertises a promise the data cannot keep, which is the specific failure Don is describing in Yelp, arrived at from the opposite direction.
 
@@ -160,7 +160,7 @@ Every entry added from 2026-09-12 carries three things:
 
 *Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (DECISIONS 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
-**Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (ROADMAP Later), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
+**Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
 
 **What would make it real:** a market that posts a weekly list and two neighbours who ask for a shopper, inside four market weeks. Full brief, three sizes and criteria: `planning/briefs/2026-10-11-market-shopper.md`.
 

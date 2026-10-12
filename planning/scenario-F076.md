@@ -2,6 +2,8 @@
 id: F076
 title: A person outside an open market joins its waitlist
 status: approved
+horizon: now
+rank: 90
 gates: launch
 date: 2026-09-14
 depends: [F059]

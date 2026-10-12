@@ -2,6 +2,8 @@
 id: F101
 title: One scannable page of flagged and reviewed Posts, decided in one tap
 status: approved
+horizon: now
+rank: 180
 gates: launch
 date: 2026-10-05
 depends: [F078, F080, F099, F100, F102]

@@ -421,6 +421,10 @@ JR = {}
 for _j in uat_journeys.load():
     _x = JR.setdefault(_fa.get(_j['criteria'][0].split('.')[0], 'ops'), {'total': 0, 'looked': 0, 'crit': 0})
     _x['total'] += 1; _x['crit'] += len(_j['criteria']); _x['looked'] += _j['id'] in set(_u.get('done', []))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import going
+_later = gh('issue', 'list', '-R', REPO, '--state', 'open', '--milestone', 'After beta', '--limit', '200', '--json', 'number,title,url')
+out += [''] + going.section(going.scenarios(os.path.join(root, 'planning')), sum(1 for i in issues if i['state'] == 'OPEN'), _later, MILESTONE)
 out += ['', '## Your review: journeys, by area', '', 'A journey is your 3-minute human check; each sits over the criteria the agents test. Feature progress above is by criteria; this is by journeys. A journey belongs to the area of its first feature.', '', '| Area | Journeys looked | Criteria under them |', '|---|---|---|']
 out += [f"| {_a} | {_c['looked']}/{_c['total']} | {_c['crit']} |" for _a, _c in sorted(JR.items())]
 out += [f"| **All** | **{sum(c['looked'] for c in JR.values())}/{sum(c['total'] for c in JR.values())}** | **{sum(c['crit'] for c in JR.values())}** |"]

@@ -2,6 +2,8 @@
 id: F109
 title: Explore shows the top results per category, nearest first by rings, each card naming its town
 status: draft
+horizon: later
+rank: 280
 date: 2026-10-11
 depends: [F104, F105, F107]
 ---

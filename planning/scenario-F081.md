@@ -2,6 +2,8 @@
 id: F081
 title: Everyone signs up the same way, and the zip sets the market
 status: approved
+horizon: now
+rank: 100
 gates: launch
 date: 2026-09-14
 depends: [F076, F077]

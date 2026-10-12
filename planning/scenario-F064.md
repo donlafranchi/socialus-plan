@@ -2,6 +2,8 @@
 id: F064
 title: Someone asks for something that isn't built
 status: approved
+horizon: next
+rank: 130
 date: 2026-09-10
 depends: []
 approved: 2026-09-07

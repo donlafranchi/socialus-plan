@@ -73,9 +73,9 @@ So the honest answer to "is this new?" is: **mostly no.** It is the undesigned h
 |---|---|---|
 | Idea has substrate only; the signalling mechanic is undesigned | Verified | `nouns.md`, `verbs.md` |
 | An Idea has no expiry and sorts last after 90 quiet days (DECISIONS 2026-09-15); `verbs.md` wrongly said it expires at 90 days, now corrected | Verified | DECISIONS 2026-09-15; `verbs.md` |
-| No messaging, no reply channel; Volunteering (offer/ask) is blocked on it | Verified | `nouns.md`, ROADMAP Later |
-| No public member profile; a member who wants to be found makes a Page | Verified | ROADMAP Speculative (2026-10-01) |
-| The platform handles no money; payments are Later; no auctions or dynamic pricing | Verified | ROADMAP Later, Won't |
+| No messaging, no reply channel; Volunteering (offer/ask) is blocked on it | Verified | `nouns.md`, the After beta milestone |
+| No public member profile; a member who wants to be found makes a Page | Verified | After beta, speculative |
+| The platform handles no money; payments are Later; no auctions or dynamic pricing | Verified | the After beta milestone; what-this-is § Won't |
 | IMAGINE's "Missing pets" worries about request-shaped posts that become rants or scams | Verified | `IMAGINE.md` |
 | A `page_posts` kind `sample` exists | Verified | `socialus-web` migration `20261010010000` |
 | Locals will answer a wish with a real offer | **Assumed** | the pilot (T0) |
@@ -169,7 +169,7 @@ A backer funds an idea and receives a thing, a reward or thanks. **Gift, reward 
 
 ### The commerce-income tie
 
-Backing is member commerce. SocialUs's part is its transaction income on the sale (DECISIONS 2026-10-07), stated on the card before anyone backs; nothing is charged to post a wish, reply or back. Holding pledged money until a goal is met is custody of funds, so it can only be done for the members' benefit through the chartered partner's closed-loop ledger (ROADMAP Later); the Won't against funds held for the platform's own benefit still stands. **Until payments exist, a pledge is words between people** and the card says money moves outside the app.
+Backing is member commerce. SocialUs's part is its transaction income on the sale (DECISIONS 2026-10-07), stated on the card before anyone backs; nothing is charged to post a wish, reply or back. Holding pledged money until a goal is met is custody of funds, so it can only be done for the members' benefit through the chartered partner's closed-loop ledger (the After beta milestone); the Won't against funds held for the platform's own benefit still stands. **Until payments exist, a pledge is words between people** and the card says money moves outside the app.
 
 ## 7. Starter requests and the sample rule
 
