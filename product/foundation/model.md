@@ -3,7 +3,7 @@ id: why-model
 purpose: The model, in Don's words. The document every other document answers to.
 layer: why
 status: active
-under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, tool side only] Browse 'not ranked by the member's interests'; 'Never: what keeps someone scrolling'; 'not licence for a feed algorithm'"
+under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, tool side only] Browse 'not ranked by the member's interests'; 'Never: what keeps someone scrolling'; 'not licence for a feed algorithm'; 'Ranking doesn't favour a member because of payment' and the 'What 'don't sell visibility' actually forbids' section, for paid promotion on the fun side"
 ---
 
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.

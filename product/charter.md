@@ -28,7 +28,7 @@ We are trying to flip how technology gets used.
 **2. Spread wealth among the many, not concentrate it among the few.** What people earn here stays with the people who earned it and the places they live.
 - We are never extractive: we take no value from people without giving something back.
 - We currently take a share of transaction income on member commerce at a rate the income plan sets, and our fees favour no member over another.
-- No member can pay to rank above another: visibility is not sold by default.
+- No member can pay to rank above another: visibility is not sold by default. [for now — the tool side only; paid promotion on the fun side is open for design after beta (Don, 2026-10-12); under review]
 - Everyone who makes or hosts something here starts on equal footing: a Page costs nothing to create.
 - We collect data to benefit our members, never to enrich shareholders or investors, and we make it easy to opt out.
 
@@ -51,7 +51,7 @@ Third-party summaries; none is a promise for us. They show it can be done.
 
 For children born in the 1980s only about half earn more than their parents, down from about 90% for those born in 1940 ([Chetty and others, Science 2017](https://www.nber.org/papers/w22910)). The product can help in five ways:
 
-1. **Earning.** Put a member's own skill in front of neighbours for free: Pages for makers and services, no pay-to-rank.
+1. **Earning.** Put a member's own skill in front of neighbours for free: Pages for makers and services, no pay-to-rank. [for now — the tool side only; paid promotion on the fun side is open for design after beta (Don, 2026-10-12); under review]
 2. **Lower costs.** Make what is free, cheap or shared nearby easy to find: swaps, borrowing, volunteering, group buys.
 3. **Skills.** Classes, workshops and series from neighbours, and Pages for "teach what you know".
 4. **Connections.** Meet in person the people who lead to work, tools and mentors; "I'm coming" makes a gathering real.

@@ -19,10 +19,10 @@ Don, 2026-10-12: the app has two sides, "the tool" (finding something specific, 
 9. `product/foundation/verbs.md`: the "not-addicting constraint".
 10. `product/systems/groups.md`: no engagement-ranked Group discovery feed.
 11. `product/exploration/search-direction.md`: ranking uses no attention.
-12. `product/foundation/monetization.md`: no attention-capture advertising.
+12. `product/foundation/monetization.md`: no attention-capture advertising; "Don't sell visibility" (2026-09-12).
+13. No pay-to-rank, which Don (2026-10-12) says does not apply to the fun side; paid promotion there is open for design after beta: `product/charter.md` flip 2 ("No member can pay to rank above another") and "no pay-to-rank" in the squeeze section; `planning/scenario-F059.md` criterion 3; `product/foundation/model.md` (payment, size or follower count; the "don't sell visibility" section); `product/ui/surfaces.md` ordering rule; `product/systems/discovery.md` (no favour for payment, size or follower count). `PRINCIPLES.md` "Paid visibility passes a member-benefit gate" already allows it and is unchanged.
 
-[open-question owner=don raised=2026-10-12] Review the twelve groups above. A) Update each when the fun side is scoped, keeping the tool side as written. B) Update now. Recommend A: the fun side is after beta and undesigned.
+[open-question owner=don raised=2026-10-12] Review the thirteen groups above. A) Update each when the fun side is scoped, keeping the tool side as written. B) Update now. Recommend A: the fun side is after beta and undesigned.
 
-[open-question owner=don raised=2026-10-12] Does "no pay-to-rank" (Charter flip 2: no member can pay to rank above another) still hold on the fun side? Assumed yes, not decided.
+Settled by Don, 2026-10-12: "no pay-to-rank" does not apply to the fun side (item 13). Naming for the two sides is pending his call; "the tool" and "the fun" are working names.
 
-[platform none]

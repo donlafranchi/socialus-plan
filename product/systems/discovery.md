@@ -13,7 +13,7 @@ One scoring core powers the home feed, Explore, search, related-items, and notif
 
 ## Hard constraints — load-bearing, not tuning knobs
 
-**Ranking doesn't favour a member because of payment, size or follower count, or amplify corporate shells over Members** (2026-09-30). This is the single highest-leverage place a chains-vs-locals bias could enter the platform — once a size-correlated signal is in the score, it's in every surface that uses the score. The constraint lives in the scoring formula itself, not in review process, so "just rank by popularity" is structurally unavailable without modifying the scorer — which is exactly the point where policy review has to happen.
+**Ranking doesn't favour a member because of payment, size or follower count, or amplify corporate shells over Members** (2026-09-30). This is the single highest-leverage place a chains-vs-locals bias could enter the platform — once a size-correlated signal is in the score, it's in every surface that uses the score. The constraint lives in the scoring formula itself, not in review process, so "just rank by popularity" is structurally unavailable without modifying the scorer — which is exactly the point where policy review has to happen. [for now — the tool side only; paid promotion on the fun side is open for design after beta (Don, 2026-10-12); under review]
 
 **Personal businesses are first-class; no "verified business" boost.** **Communities are emergent — never auto-assign a Member to a Community-scoped feed.**
 
