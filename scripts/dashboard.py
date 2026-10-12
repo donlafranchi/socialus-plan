@@ -231,12 +231,13 @@ try:
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import markers
     _cwd = os.getcwd(); os.chdir(PLAN)
-    _rulings = [e['line'] for e in markers.decisions()]
+    _rulings = [e['line'] + (f" [{e['lasts']}]" if e['lasts'] and f"[{e['lasts']}]" not in e['line'] else '') for e in markers.decisions()]
     os.chdir(_cwd)
     for line in _rulings:
         m = re.match(r'- \*\*(\d{4}-\d{2}-\d{2}) — (.*?)\*\*', line)
         if m and m.group(1) >= SINCE.astimezone(ZoneInfo('America/Los_Angeles')).strftime('%Y-%m-%d'):
-            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else ''))
+            _t = re.search(r'\[(always|for now)\]', line)
+            log(decision_area(line), 'Decision', m.group(2)[:140] + ('…' if len(m.group(2)) > 140 else '') + (f' [{_t.group(1)}]' if _t else ''))
 except OSError:
     pass
 
@@ -429,7 +430,15 @@ for _j in uat_journeys.load():
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import going
 _later = gh('issue', 'list', '-R', REPO, '--state', 'open', '--milestone', 'After beta', '--limit', '200', '--json', 'number,title,url')
-out += [''] + going.section(going.scenarios(os.path.join(root, 'planning')), sum(1 for i in issues if i['state'] == 'OPEN'), _later, MILESTONE)
+import lost
+_cap = os.path.join(root, 'dashboard', 'capabilities.json')
+_prev = json.load(open(_cap)) if os.path.exists(_cap) else None
+_now = lost.snapshot(FEATS) if FEATS else None
+if _now is not None:
+    out += [''] + lost.section(_prev, _now)
+    os.makedirs(os.path.dirname(_cap), exist_ok=True)
+    json.dump(_now, open(_cap, 'w'), indent=0, sort_keys=True)
+out += [''] + going.section(going.scenarios(os.path.join(root, 'planning')), sum(1 for i in issues if i['state'] == 'OPEN'), _later, MILESTONE, ideas=going.imagine(os.path.join(root, 'IMAGINE.md')))
 out += ['', '## Your review: journeys, by area', '', 'A journey is your 3-minute human check; each sits over the criteria the agents test. Feature progress above is by criteria; this is by journeys. A journey belongs to the area of its first feature.', '', '| Area | Journeys looked | Criteria under them |', '|---|---|---|']
 out += [f"| {_a} | {_c['looked']}/{_c['total']} | {_c['crit']} |" for _a, _c in sorted(JR.items())]
 out += [f"| **All** | **{sum(c['looked'] for c in JR.values())}/{sum(c['total'] for c in JR.values())}** | **{sum(c['crit'] for c in JR.values())}** |"]

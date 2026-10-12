@@ -1,0 +1,5 @@
+[{"id": "F901", "criteria": [
+ {"n": "1", "text": "Kept and fine", "built": "yes", "checked": "yes"},
+ {"n": "3", "text": "Was built", "built": "no", "checked": "no"},
+ {"n": "4", "text": "Had a test", "built": "yes", "checked": "no"},
+ {"n": "5", "text": "New one", "built": "no", "checked": "no"}]}]

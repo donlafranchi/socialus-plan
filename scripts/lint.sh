@@ -183,17 +183,15 @@ echo "$cov" | grep -q '^- \*\*1\*\* — \[' && echo "$cov" | grep -q '^- \*\*2\*
   { echo "lint: coverage map is inert — it does not tell a partial claim from a full one"; fail=1; }
 mk lint "$fx/good.md" "$fx/binds-good/PRINCIPLES.md" "$fx/binds-good/scenario-F997.md" >/dev/null && mk risks "$fx/risks-good" >/dev/null ||
   { echo "lint: marker checker rejects a good fixture"; fail=1; }
-# The "never" lint (Don, 2026-09-30: the only approved "never" is "never extractive").
-# The checker proves itself on every run; the scan of real docs is off until Don approves
-# the rewording. Turn it on with NEVER_LINT=1.
-got=$(python3 scripts/never.py scripts/fixtures/never/bad.md | grep -c '^never:')
-[ "$got" -eq 3 ] || { echo "lint: never checker is inert — rejected $got of 3 bad fixture uses"; fail=1; }
-python3 scripts/never.py scripts/fixtures/never/good.md >/dev/null || { echo "lint: never checker rejects the good fixture"; fail=1; }
-if [ "${NEVER_LINT:-0}" = "1" ] && ! out="$(python3 scripts/never.py)"; then
-  echo "$out" | sed 's/^/lint: /'; fail=1
-fi
 # Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
 python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
+# Lanes: four fixed words, one lane per item (Don, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
+python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is inert or rejects its good fixture"; fail=1; }
+if ! out="$(python3 scripts/going.py --lint)"; then
+  echo "$out" | sed 's/^/lint: lanes: /'; fail=1
+fi
+# Lost since last look (the PM's one safety view) proves itself on its fixture.
+python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
 # Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
@@ -204,6 +202,21 @@ got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py 
 if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
+# Inline rulings: constraints/ index every ruling wherever it sits (principles, scenarios, product docs), with its
+# file and whether it is [always] or [for now]; an untagged never/won't/always fails; a deleted scenario may not take a ruling with it.
+ir=$(for t in planning code for-now; do MARKERS_ROOT="$fx/inline-root" python3 scripts/markers.py constraints-print $t; done)
+for want in '[for now] · fixtures — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)' \
+  '[always] · fixtures — Fixture system ruling: a thing is never sold (product/systems/thing.md)' \
+  '[always] · principles — Fixture principle: people come first (PRINCIPLES.md)' \
+  '- **2026-10-12** — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)'; do
+  echo "$ir" | grep -qF -- "$want" || { echo "lint: constraints index misses an inline ruling: $want"; fail=1; }
+done
+got=$(mk lint "$fx/lasts-bad/scenario-F994.md" "$fx/lasts-bad/PRINCIPLES.md" | grep -c '^markers:')
+[ "$got" -eq 4 ] || { echo "lint: [always]/[for now] checker is inert — rejected $got of 4 planted faults"; fail=1; }
+got=$(python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current/product/systems/kept.md" | grep -c '^markers:')
+[ "$got" -eq 1 ] || { echo "lint: deleted-scenario guard is inert — caught $got of 1 lost ruling"; fail=1; }
+python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-good/product/systems/kept.md" >/dev/null ||
+  { echo "lint: deleted-scenario guard rejects a scenario whose rulings all moved"; fail=1; }
 # PRINCIPLES.md holds principles only: the checker names the home of each planted non-principle.
 got=$(python3 scripts/markers.py principles "$fx/principles-bad/PRINCIPLES.md" | grep -c '^markers:')
 [ "$got" -eq 6 ] || { echo "lint: principles checker is inert — rejected $got of 6 planted non-principles"; fail=1; }

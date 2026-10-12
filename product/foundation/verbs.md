@@ -168,7 +168,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 | Replaces | nothing | **promotional email from businesses** |
 | Built? | **○ unbuilt** — no column, no handler, no control | **● the existing `group.follow`**, minus a reader |
 
-**Support produces no notifications. If it ever does, it has stopped being support and become a subscription** — that single test is what keeps the ribbon compatible with the not-addicting constraint instead of being a pull-back loop in softer clothing. It sits under *no engagement optimization, anywhere* and under `metrics.md`'s refusal of notification open-rate.
+**Support produces no notifications. If it ever does, it has stopped being support and become a subscription** — that single test is what keeps the ribbon compatible with the not-addicting constraint instead of being a pull-back loop in softer clothing. It sits under *no engagement optimization, anywhere* and under `metrics.md`'s refusal of notification open-rate. [for now — Find only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 
 **Get-updates is a privacy posture as much as a feature.** Its purpose is that a Page owner reaches subscribers **without holding their email address** — which answers the hatch `messaging-problem.md` names, an organizer publishing a contact address that is *"scrapeable, not revocable."*
 
