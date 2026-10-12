@@ -2,7 +2,7 @@
 id: growing-docs-audit-2026-10-12
 purpose: Every doc that grows, across the five repos, measured. Principles for keeping docs few, current and clear. A plan (merge, generate, delete, refine) with A/B/C, and a proposed ruling.
 layer: why
-status: draft
+status: ruled
 last-updated: 2026-10-12
 ---
 
@@ -115,7 +115,7 @@ About 146 entries spend words on who ruled and how. About 231 carry no `[binds]`
 - **B — Strict on-demand.** As A, but no human doc is ever committed; STATUS and README are built only when asked. *Trade-off: fewest files, but the phone view on GitHub goes away and every status check costs a run.*
 - **C — Budgets only.** Keep today's docs, add budgets and the refine pass, with no merges, deletes or generation changes. *Trade-off: least disruption, but the count stays high and history keeps living in the build log and LESSONS.*
 
-## 6. Proposed ruling (draft, for the PM's yes)
+## 6. The ruling (PM said yes, 2026-10-12)
 
 ```
 - **2026-10-12 — Docs hold current understanding and its why, never history, and the fewer the better.** Agent docs are the only maintained docs; each has a size budget the lint enforces and a weekly refine pass that condenses and clarifies it, and no doc grows past its budget unrefined. Human docs are generated snapshots on request, committed only where a workflow rebuilds them. Git is the only history. Principles in DECISIONS.md are reworded in place as they sharpen; dated rulings are not. Because docs that only grew buried what was true: DECISIONS.md reached 273k and the build log 1.7MB in weeks. Rationale: `planning/research/growing-docs-audit-2026-10-12.md`. (tags on landing: replaces none; binds tiers planning,code, surfaces process,docs)
