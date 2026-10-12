@@ -16,7 +16,7 @@ Rae wants to hear from a bakery, a repair collective, and the Saturday market â€
 2. A follow never grants membership, a role, or read access to anything unlisted â€” checked directly against every authorization/roster path.
 3. A Member who follows a business and owns no shop still sees the Sell control offer to help them start something.
 4. Unfollowing then re-following revives the original row rather than duplicating it.
-5. The following list reads from one table, not three.
+5. The following list has one reader (the table layout is unchanged; see DECISIONS 2026-10-11, #605).
 
 ## Not this
 
