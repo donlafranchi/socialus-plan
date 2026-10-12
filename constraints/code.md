@@ -10,6 +10,7 @@
 > **206 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-12** · process, docs — Docs hold current understanding and its why, never history, and the fewer the better
 - **2026-10-12** · explore, search, home — Explore shows the top N results per category, nearest first in F104's ring order, each card naming its town ("in Folsom") and showing no miles or minutes. Starting guesses: 10 coffee, 20 restaurants, 5 hardware, and a default row for the rest, held in a config table a person edits
 - **2026-10-12** · explore, privacy, metrics — From beta day one we log which Page a member opens from Explore, with the member id, staff-side only, for the benefit of members, with an easy opt-out; member-to-member privacy stays strict
 - **2026-10-11** · reports, moderation — The second report that hides an item must come from a different member than the first
