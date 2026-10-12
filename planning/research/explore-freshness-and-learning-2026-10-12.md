@@ -1,6 +1,6 @@
 # Explore freshness, learning about a member, a test profile and a regional seed (2026-10-12)
 
-Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Draft scenarios: F112 (Find freshness, beta), F113 (what we learn), F114 (test profile), F115 (regional seed). The Discover feed is designed here only, after beta, and is not a scenario.
+Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Sections 6–9: how Find and Discover look and feel, the switch, a categorization engine, and why TikTok's feed works. Draft scenarios: F112 (Find freshness, beta), F113 (what we learn), F114 (test profile), F115 (regional seed). The Discover feed is designed here only, after beta, and is not a scenario.
 
 **How sources are marked.** **[V]**: the page was read this session. **[S]**: only a search snippet or a secondary write-up was seen. **[A]**: assumed, verify before building. **[C]**: read in `socialus-web` main at `0e5ee14`.
 
@@ -66,12 +66,12 @@ Find keeps place and time as the order. Freshness acts only inside a ring band a
 ### Member-first design (proposal)
 - **Cold start from what the member says**: interests picked at signup or first visit (TikTok's picker), plus Find's place and time, plus newly opened Pages. No popular-feed fallback.
 - **Interests shown and editable**: every interest, declared or inferred, listed with its reason ("from 4 RSVPs"), removable, with a slider for more or less (TikTok Manage Topics); one-tap reset (TikTok Refresh, Instagram Reset); "Why this?" on every card. Facebook's 2019 "Why am I seeing this?" without real controls did not build trust [S], so the reason always comes with the control.
-- **Rank on what members value, not on time**: weights tuned to "I'm coming", saves, follows and "more like this", checked against a short monthly question, "Did SocialUs help you find something good or meet people?" (YouTube's survey-based valued watch time [S]; Facebook's "worth your time" survey [S]).
+- **Rank on what members value**: weights tuned to "I'm coming", saves, follows and "more like this", checked against a short monthly question, "Did SocialUs help you find something good or meet people?" (YouTube's survey-based valued watch time [S]; Facebook's "worth your time" survey [S]).
 - **A finite batch and a stop card**: about 20 cards, then "You've seen what's new" (Instagram's "You're all caught up", 2018 [S]; already ruled for Home 2026-10-04). No autoplay, no infinite scroll, no push to return.
 - **Exploration by rule**: a fixed share of slots, about 15% [A], from outside the member's interests, spread across topics; at most one card per Page in any five (TikTok's rule).
 - **Fair exposure**: a floor of showings for new and small Pages (Singh and Joachims 2018 [V]). **Paid promotion is open for design** (above); whatever it becomes, the floor for unpaid new and small Pages stays, and a promoted card says so.
 - **Member's choice of feed**: the Discover feed, or Following newest first, or a lens (Bluesky's chosen feeds [V]); off means Find, nothing blank (YouTube's blank Home criticised [S]).
-- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: dwell, scroll depth, session length, completion, comment counts, spread velocity. Payment: open, with paid promotion (§ 2, above). Time spent is a warning light: up is a question, not a win.
+- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: scroll depth, comment counts, spread velocity; dwell and session length are the open time-spent choice (§ 9). Payment: open, with paid promotion (below). Under § 9 option B, a capped per-card time term joins it.
 
 ### Paid promotion (open, after beta)
 The PM removed no-pay-to-rank from Discover (2026-10-12); how it works is a design after beta, not decided here. What a design would have to answer, from the rules that stand:
@@ -172,9 +172,105 @@ About 1,230 Pages. **Split per town**: food and drink 35%, shops and makers 25%,
 `scripts/unclaimed/overture.ts` pulls a bbox from the Overture release with DuckDB, filters (confidence 0.7 or more, open, consumer categories, deduplicated by name and 50 m [A]), caps by the table, and writes the listings JSON the existing loader reads. `scripts/unclaimed/load.ts --apply` does the rest. The Overture `id` and release go into `page_sources`. Monthly refresh: an Overture `permanently_closed` hides an unclaimed Page; a claimed Page is the owner's and is not touched.
 
 
-## Order to bring to the PM
-1. **What we learn about a member (A/B/C, § 3).** It decides what F113, the F109 log and the test profile's history hold, and the store Discover will read.
-2. **Where the test profile lives (A/B/C, § 4).**
-3. Copy for the credit line, the suggestion prompt and the preview banner, with the builds.
+## 6. How Find and Discover look and feel (after beta)
 
-Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover waits for the PM to scope it after beta.
+The PM, 2026-10-12: "One needs to be party and the other needs to be business like a mullet, business up front party in the back." **Find is business up front; Discover is the party in the back.**
+
+### Find: business up front
+**Feels like** checking a well-kept noticeboard: type, see what is on today and in which town, done in seconds.
+- **Precedents.** Yelp: map and list together, one strip of filter and sort under the map [S] ([TechCrunch 2022](https://techcrunch.com/2022/08/02/yelp-updates-its-android-app-with-a-redesigned-home-feed-and-map-based-search/)). Airbnb: list and map split on desktop, a floating Map pill on a phone, the pattern F059 criterion 5 already follows [S]. Apple's HIG: search where people expect it, results as you type, scopes rather than complex filters, no blank empty state [S] ([HIG, Searching](https://developer.apple.com/design/human-interface-guidelines/searching); the page did not render here). Google Maps keeps its feed of business posts apart from search and the map [V] ([Google, 2020](https://blog.google/products/maps/discover-more-with-google-maps-community-feed)).
+- **Look.** Light. An off-white ground, white cards, near-black text, grey second lines, one accent for pins, links and the selected chip. System fonts; body about 15px, meta 13px, card titles 17px semibold.
+- **Cards.** Dense: about 90px tall, a 64–72px square photo on the left; three lines: name, "Town · category", "Today 7pm" or "Open till 9". No distance (2026-09-30). Thin dividers, small corners, no heavy shadows.
+- **Behaviour.** Sticky search, results as you type, skeleton rows the exact shape of the cards so nothing jumps, a row of text chips (today, this weekend, events, makers, free), fades of 150ms at most. List and map by width as ruled.
+
+### Discover: the party in the back
+**Feels like** walking into the party: a dark room, one thing at a time filling the screen, one thumb to say "I'm coming."
+- **Precedents.** TikTok, Reels and Shorts: one item full screen, vertical swipe, a rail of actions on the right, caption bottom-left over a dark gradient [S]. Spotify's 2023 Home feed: short vertical previews that lead to the real thing, with save, share and go to the artist [V] ([MusicTech](https://musictech.com/news/music/spotify-launches-tiktok-style-scrolling-feed-discovery-music)), the nearest model: a preview card that leads to a Page or a gathering. Airbnb Icons (2024): playful, in-house 3D illustration [S].
+- **Look.** Dark, whatever the device setting: black ground, a bottom gradient, white type, one bright accent kept for "I'm coming". A bold display face for titles over the media.
+- **Card.** One item per screen, full height; photo or video edge to edge; caption: Page, town, when, then two lines of the post, expandable. Rail: I'm coming, Save, Follow, Share; Not interested under "⋯". Touch targets 44px or more.
+- **Motion.** Spring transitions, a small burst on "I'm coming". Video muted, `playsinline`, paused off screen, one sound control for the feed [V] ([WebKit](https://webkit.org/blog/6784/new-video-policies-for-ios/), [Chrome](https://developer.chrome.com/blog/autoplay)). Snap one card per flick: `scroll-snap-type: y mandatory` [V] ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/scroll-snap-type)) with `scroll-snap-stop: always` [A].
+- **Access.** A pause control on anything that moves for over 5 seconds (WCAG 2.2.2) [V] ([W3C](https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html)); with reduced motion, cross-fades, no autoplay, a still and a play button [V] ([MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)); captions on; named buttons; arrow keys on desktop, where the feed is a centred 9:16 column on dark.
+
+### How the two meet
+- **Two tabs, not one surface.** Instagram, Pinterest and Apple Music each give the immersive mode its own tab and turn it dark [S]. Snap merged its tabs in 2024, lost about a million North American users, and went back to five, saying its most engaged users preferred them [V] ([Engadget](https://engadget.com/apps/snap-is-seemingly-rethinking-that-simplified-app-154628101.html)).
+- **The bottom nav stays visible on both**, so the way back to Find is always one tap. Tab labels and icons are copy, to the PM.
+
+## 7. Switching today's Explore to Find, and opening Discover (after beta)
+
+**Trigger, not a date: the first Discover slice passes the PM's phone check.** Until then nothing members see changes.
+
+### Preconditions
+1. **The in-flight branches land first**: F103's markets as rows and zip-picks-the-market (`socialus-web` branches `693-markets-are-rows`, `694-zip-picks-the-market`) and the home town (#695), so the feed reads `markets` before anything is split; and the copy drafts #681–#692 merge or close, so no string is drafted twice (the Explore wording draft is #683) [C].
+2. **Beta has shipped.** F112 and F113 are on Find by then.
+
+### Steps
+1. **Discover slice 1, behind a flag.** A `/discover` route visible to staff and builder accounts only (the builder switch is the precedent [C]). Full-screen cards from existing Pages and posts, ordered by § 9's small-scale ranking, with categories from § 8; the rail's actions write to the § 3 store. No change to `/explore`.
+2. **The phone check.** The PM tries it on a phone as the F114 test member; the UAT checklist gains a Discover journey.
+3. **The switch, one PR.**
+   - **Routes.** Find keeps `/explore` until its tab label is decided; if the label is "Find", `/find` becomes canonical and `/explore` 308-redirects with its query kept, so shared links still work (F059 criterion 10). `/map` follows Find. `/discover` opens to everyone signed in; signed out, a short preview and sign-in [A, the PM's call]. Which tab `/` lands on stays Find until data says otherwise, a later PM call.
+   - **Server.** Find keeps `browse_feed` and `browseFeedAction` as they are. Discover gets its own `discover_feed` and `discoverFeedAction`; nothing on Find calls them, so Find's place-and-time order stays testable on its own. One card model is shared.
+   - **Nav.** `BottomNav` goes from Explore and You (plus Create) to Find, Discover and You (plus Create) [C]. Labels and icons to the PM.
+   - **Tests** [C]: `BottomNav.test.tsx`'s label arrays; the about 33 unit files and 17 source files that name `/explore`, through one route constant; the Playwright evals (F059's spec, `smoke/live.spec.ts`, `screens/routes.ts`, `speed/steps.ts` with a Discover step and budget); `_guard/must-fail`; `tests/changed-routes.test.ts`; the UAT checklist regenerated. New: a guard that Find never calls `discover_feed`, a reduced-motion test, and one for the stop card.
+   - **Redirects.** `next.config.ts` entries for `/explore`, `/map` and `/business/:slug` follow Find [C].
+   - **Events.** None exist for Explore today [C]. Add, under the learning switch and with builder accounts excluded: `find.search` (query, result count, market), `find.open` (F109), `discover.shown`, `discover.action` (I'm coming, save, follow, share, not interested, open), `discover.stop_card`, `nav.switch` (from, to; counts only), and `discover.dwell` only if the PM picks B in § 9.
+4. **After the switch.** Watch the `nav.switch` counts and the § 9 measures for four weeks; Find's personal rows (following, coming up) stay on Find until then.
+
+## 8. A categorization engine (after beta; the seed may use it earlier)
+
+**What it does.** Gives every Page and post up to three categories from one shared list, from its own text, photo, tags and any hashtags, so members' interests (§ 3) and Discover (§ 9) read the same keys.
+
+**What exists** [C]: creator-typed tags (`tags`, `page_tags`, `post_tags`, with a safety review column); a fixed interest list (`INTEREST_VOCAB`); a `#` typed into a tag is ignored and post bodies are not parsed; unclaimed Pages' categories are used only to pick a stock photo and not stored; pgvector is enabled with unused `vector(1536)` tables; AI calls are raw `fetch` to the Messages API, run after a report with `after()` (F100's moderation, Haiku first with a Sonnet second opinion).
+
+**Design.**
+- **One list**: about ten top categories and sixty under them [A], the same keys as `INTEREST_VOCAB`, extended by a person, not by the model.
+- **Hashtags become tags**: a `#word` in a post body is added to its tags, normalized as tags are; the engine maps tags to categories, so creators keep their words and the list stays small.
+- **When**: on create or edit, after the save, like F100 (`after()`); the seed and any backfill through the Batch API at half price.
+- **Input and output**: name, description or body, tags, hashtags, Overture's category for seeded Pages, and the first photo at 512px; out comes up to three categories with a confidence each, structured JSON.
+- **Correction, members first**: the owner sees "Listed under: bakery, coffee" with Change; an owner's choice is pinned and a re-run does not overwrite it; on an unclaimed Page, staff fix it from a count of "wrong category" taps. Nothing needs ongoing operator work.
+- **Similarity later**: embeddings into the existing pgvector tables when Discover needs "more like this" (§ 9); the embedding provider is a later choice [A].
+
+**Cost per 1,000 items**, list prices (cached 2026-09-25): Haiku 4.5 $1 in / $5 out per million tokens, Sonnet 5.5 $2 / $10, Opus 5.5 $4 / $20; Batch API half. Assumed per item [A]: 1,500 tokens of instructions and list, cached; 300 tokens of text; about 350 for a 512px photo; 100 out.
+
+| Model | Text only | With photo | Batch, with photo |
+|---|---|---|---|
+| Haiku 4.5 | $0.95 | $1.30 | $0.65 |
+| Sonnet 5.5 | $1.90 | $2.60 | $1.30 |
+| Opus 5.5 | $3.80 | $5.20 | $2.60 |
+
+So the whole seed (about 2,700 Pages) costs about $2 to $14, and a year of posts at beta scale stays in the tens of dollars on any model [A]. Sonnet and Opus think by default and add tokens beyond this at higher effort. **Which model is the PM's call after a bake-off** on 100 hand-labelled items, the way bug triage was decided (2026-10-06).
+
+## 9. Why TikTok's feed works, and what we can copy
+
+### Why it works
+1. **Interest graph, not social graph.** Nobody has to follow anyone first; the app learns from what you watch, so the feed is never empty [V] ([Wei, "TikTok and the Sorting Hat"](https://www.eugenewei.com/blog/2020/8/3/tiktok-and-the-sorting-hat)).
+2. **Many clear signals per item.** Short items, so every minute yields dozens of judgments; finishing a video outweighs weak signals, and follower count is not a direct factor [V] ([TikTok](https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you)). The WSJ's 100 bots were read in under 40 minutes, from watch time and rewatches [S].
+3. **An objective built for daily use.** The leaked "TikTok Algo 101" scores predicted likes, comments, playtime and plays, toward time spent and retention, and docks categories already watched that day [S] (NYT, December 2021, via [The Batch](https://www.deeplearning.ai/the-batch/what-makes-tiktok-tick)).
+4. **New items tried small, then widened.** A new video goes to a few hundred viewers and widens if they finish, like and share it [S] (Brennan, *Attention Factory*); staff can also "heat" videos by hand [S] (Forbes 2023, via [Tubefilter](https://tubefilter.com/2023/01/23/tiktok-for-you-page-heating-recommend-videos-algorithm/)).
+5. **It learns in near real time.** ByteDance's Monolith trains and serves in one loop, keeps one embedding per id without collisions, expires stale ids and filters rare ones; fresher syncs kept improving accuracy [V] ([arXiv 2209.07663](https://arxiv.org/abs/2209.07663), RecSys 2022 workshop, in BytePlus Recommend).
+6. **It understands content before anyone reacts.** Vision, text and speech models describe each upload, so a new video can be placed with no history [V] (ByteDance's LEMUR, [arXiv 2511.10962](https://arxiv.org/html/2511.10962v1)).
+7. **The format is the sensor.** One full-screen item, autoplay, swipe on: every swipe is a clean yes or no about one thing, with no grid to choose from [V] ([Wei, "Seeing Like an Algorithm"](https://www.eugenewei.com/blog/2020/9/18/seeing-like-an-algorithm)). Plus rules: no two in a row from one creator, and items from outside your interests mixed in [V] (TikTok, above).
+
+### What we can copy, at our size (best value for effort first)
+1. **The format** (§ 6): one card, clear actions. No data needed; this is most of TikTok's advantage.
+2. **Content-based cold start**: categories (§ 8) now, embeddings of text and photo later; a member's taste is a recency-weighted mix of what they acted on. Works from the first day; Zalando's CLIP version lifted half-completed views 39% [V] ([arXiv 2507.19346](https://arxiv.org/html/2507.19346v1)).
+3. **A market prior**: recent saves and "I'm coming" in the member's market, decaying over days. Needs tens of actions a week.
+4. **Variety rules**: one Page per five cards, a cap per category per session, less of what was seen today. No data.
+5. **Thompson sampling over categories**, with cautious priors from the market down to the member [V] ([Eugene Yan, "Bandits for Recommender Systems"](https://eugeneyan.com/writing/bandits/)). Needs hundreds of actions per category.
+6. **Small-batch tests for new Pages**: show a new Page to 20–50 matched members, widen if saves or "I'm coming" beat its category [A, our design]. Needs a few hundred weekly members. It is also how a new maker gets seen.
+7. **Session re-ranking**: nudge the next card toward what was just saved, from precomputed vectors [V] ([Huyen 2022](https://huyenchip.com/2022/01/02/real-time-machine-learning-challenges-and-solutions.html)).
+8. **Later**: a learned two-tower model once there are tens of thousands of logged actions [S] ([Eugene Yan](https://eugeneyan.com/writing/system-design-for-discovery/)). **Skip**: Monolith-style real-time training; a nightly job plus session re-ranking is enough at a few thousand items.
+
+### Time spent: an open choice for the PM
+The PM lifted the attention rule for Discover, so whether time counts is a choice, not a rule. Evidence against: the European Commission's preliminary finding (2026-02-06) names infinite scroll, autoplay, push and the personalised recommender as addictive design [V] ([Commission](https://digital-strategy.ec.europa.eu/en/news/commission-preliminarily-finds-tiktoks-addictive-design-breach-digital-services-act)); engagement ranking amplified content users said they did not want [V] ([arXiv 2305.16941](https://arxiv.org/abs/2305.16941)).
+- **A) Time as the goal** (session length, return visits): TikTok's way; the strongest signal; works against meeting in person and invites the Commission's findings.
+- **B) Time per card only**: how long a card held someone counts as one signal about that card, capped, weighted below saves and "I'm coming"; session length is not a goal; a finite batch and a stop card stay. Keeps the densest signal for cold start.
+- **C) No time at all**: rank on saves, follows and "I'm coming" only. Simplest to explain; thin signals at low volume, so new Pages are learned slowly.
+
+Recommend B. § 2's draft objective is written without time; under B it gains one capped per-card term.
+
+## Order to bring to the PM
+1. **What we learn about a member (A/B/C, § 3)**, with the PM now.
+2. **Where the test profile lives (A/B/C, § 4)**, next.
+3. Then, one at a time: time spent on Discover (A/B/C, § 9); the categorization model after its bake-off (§ 8); Discover's tab labels, icons and signed-out preview (§ 6, § 7); copy for the credit line, the suggestion prompt, the preview banner and the stop card.
+
+Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover, the switch and the categorization engine are after beta; the seed may use the engine earlier, on the Batch API.
