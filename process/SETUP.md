@@ -70,7 +70,7 @@ npx vercel env pull .env.local
 
 ## 5. Windows
 
-- **The `BUILD-LOG.md` symlink is gone.** It was removed in the September revamp; there is no symlink anywhere in the planning repo today. **So `core.symlinks=true` and developer mode are not needed** — skip that.
+- **No symlinks in the planning repo**, so `core.symlinks=true` and developer mode are not needed.
 - **Line endings: neither repo has a `.gitattributes`.** Set `git config --global core.autocrlf input` on the PC before cloning. Without it, Windows checks out CRLF and every `.sh` in `scripts/` fails with `bad interpreter` under WSL or Git Bash.
 - **Run the shell scripts under WSL or Git Bash**, not PowerShell. They are `#!/usr/bin/env bash` and use `set -euo pipefail`.
 - **Paths in the docs are POSIX and relative.** The sibling layout in step 1 works unchanged on Windows as long as both clones share a parent.
