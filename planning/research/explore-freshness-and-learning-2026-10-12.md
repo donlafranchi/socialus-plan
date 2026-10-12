@@ -71,7 +71,7 @@ Find keeps place and time as the order. Freshness acts only inside a ring band a
 - **Exploration by rule**: a fixed share of slots, about 15% [A], from outside the member's interests, spread across topics; at most one card per Page in any five (TikTok's rule).
 - **Fair exposure**: a floor of showings for new and small Pages (Singh and Joachims 2018 [V]). **Paid promotion is open for design** (above); whatever it becomes, the floor for unpaid new and small Pages stays, and a promoted card says so.
 - **Member's choice of feed**: the Discover feed, or Following newest first, or a lens (Bluesky's chosen feeds [V]); off means Find, nothing blank (YouTube's blank Home criticised [S]).
-- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: scroll depth, comment counts, spread velocity; dwell and session length are the open time-spent choice (§ 9). Payment: open, with paid promotion (below). Under § 9 option B, a capped per-card time term joins it.
+- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P(opens a photo or video) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: scroll depth, comment counts, spread velocity; dwell and session length are the open time-spent choice (§ 9). Payment: open, with paid promotion (below). Under § 9 option B, a capped per-card time term joins it.
 
 ### Paid promotion (open, after beta)
 The PM removed no-pay-to-rank from Discover (2026-10-12); how it works is a design after beta, not decided here. What a design would have to answer, from the rules that stand:
@@ -103,6 +103,7 @@ The PM removed no-pay-to-rank from Discover (2026-10-12); how it works is a desi
 | "I'm coming" / RSVP | strong | 90 days after the date [A] | suggestions | ranking, the objective |
 | A save, "more like this", "not interested" | strong | 90 days [A] | — | ranking |
 | A search | weak | 90 days [A] | recent searches; suggestions; staff "found nothing" counts | inferred interests |
+| A photo or video tapped or opened, counted per Page and per category (the PM, 2026-10-12) | medium: deliberate, one tap per item | counts by day, 90 days [A] | suggestions; which Pages lead with media | inferred interests; a key ranking term; more photo and short-video cards where members open them |
 | A Page open from Explore (F109) | weak | 90 days [A] | suggestions; N per category (staff, aggregate) | inferred interests |
 | Seen (§ 1) | — | 30 days | not seen yet first | not seen yet first |
 
@@ -212,7 +213,7 @@ The PM, 2026-10-12: "One needs to be party and the other needs to be business li
    - **Nav.** `BottomNav` goes from Explore and You (plus Create) to Find, Discover and You (plus Create) [C]. Labels and icons to the PM.
    - **Tests** [C]: `BottomNav.test.tsx`'s label arrays; the about 33 unit files and 17 source files that name `/explore`, through one route constant; the Playwright evals (F059's spec, `smoke/live.spec.ts`, `screens/routes.ts`, `speed/steps.ts` with a Discover step and budget); `_guard/must-fail`; `tests/changed-routes.test.ts`; the UAT checklist regenerated. New: a guard that Find never calls `discover_feed`, a reduced-motion test, and one for the stop card.
    - **Redirects.** `next.config.ts` entries for `/explore`, `/map` and `/business/:slug` follow Find [C].
-   - **Events.** None exist for Explore today [C]. Add, under the learning switch and with builder accounts excluded: `find.search` (query, result count, market), `find.open` (F109), `discover.shown`, `discover.action` (I'm coming, save, follow, share, not interested, open), `discover.stop_card`, `nav.switch` (from, to; counts only), and `discover.dwell` only if the PM picks B in § 9.
+   - **Events.** None exist for Explore today [C]. Add, under the learning switch and with builder accounts excluded: `find.search` (query, result count, market), `find.open` (F109), `discover.shown`, `discover.action` (I'm coming, save, follow, share, not interested, open), `media.open` (photo or video, Page, category; on Find and Discover), `discover.stop_card`, `nav.switch` (from, to; counts only), and `discover.dwell` only if the PM picks B in § 9.
 4. **After the switch.** Watch the `nav.switch` counts and the § 9 measures for four weeks; Find's personal rows (following, coming up) stay on Find until then.
 
 ## 8. A categorization engine (after beta; the seed may use it earlier)
@@ -251,7 +252,7 @@ So the whole seed (about 2,700 Pages) costs about $2 to $14, and a year of posts
 7. **The format is the sensor.** One full-screen item, autoplay, swipe on: every swipe is a clean yes or no about one thing, with no grid to choose from [V] ([Wei, "Seeing Like an Algorithm"](https://www.eugenewei.com/blog/2020/9/18/seeing-like-an-algorithm)). Plus rules: no two in a row from one creator, and items from outside your interests mixed in [V] (TikTok, above).
 
 ### What we can copy, at our size (best value for effort first)
-1. **The format** (§ 6): one card, clear actions. No data needed; this is most of TikTok's advantage.
+1. **The format** (§ 6): one card, clear actions; a photo or video open is a tap per item, the signal the PM named (§ 3), and Discover leans to photo and short video where members open them. No data needed; this is most of TikTok's advantage.
 2. **Content-based cold start**: categories (§ 8) now, embeddings of text and photo later; a member's taste is a recency-weighted mix of what they acted on. Works from the first day; Zalando's CLIP version lifted half-completed views 39% [V] ([arXiv 2507.19346](https://arxiv.org/html/2507.19346v1)).
 3. **A market prior**: recent saves and "I'm coming" in the member's market, decaying over days. Needs tens of actions a week.
 4. **Variety rules**: one Page per five cards, a cap per category per session, less of what was seen today. No data.

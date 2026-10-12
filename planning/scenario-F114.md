@@ -23,6 +23,7 @@ Not final until the PM picks where it lives (options below). Written to A:
    - 10 RSVPs: 6 past, 4 upcoming, from 3 or more towns;
    - 40 searches: repeats of 3 themes, plus 6 that find nothing;
    - 150 Explore opens, half in the 3 themes, half spread;
+   - 120 photo and video opens across 30 Pages, weighted to 2 categories;
    - 2 pending interest suggestions (F113, if A).
 4. **Builder rule holds**: none of it counts in staff counts, the F109 report or a Page's numbers, and `delete_builder_content()` removes it.
 5. **A checklist in the Issue** says what to try and what to expect: two visits a day apart, with a card not seen yet leading (F112), a suggestion (F113), a deleted search, the learning switch off, a Napa vantage (F105 criterion 4), a staff preview of Napa (F115).

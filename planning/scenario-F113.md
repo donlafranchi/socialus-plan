@@ -9,7 +9,7 @@ depends: [F109, F112]
 ---
 ## Story
 
-A member has searched "trivia" twice and said "I'm coming" to three trivia nights. Home asks once: "Add trivia to your interests?" They tap Add, and Home's rows start carrying trivia nights. In You, "What SocialUs knows about you" lists their interests, follows, RSVPs, recent searches and what they have been shown; they delete one search. Later they turn off "Learn from what I do": suggestions stop, the Explore open log and the seen record stop, and the raw signals are gone.
+A member has searched "trivia" twice and said "I'm coming" to three trivia nights. Home asks once: "Add trivia to your interests?" They tap Add, and Home's rows start carrying trivia nights. In You, "What SocialUs knows about you" lists their interests, follows, RSVPs, recent searches, the photos and videos they opened (counted per Page and per category) and what they have been shown; they delete one search. Later they turn off "Learn from what I do": suggestions stop, the Explore open log and the seen record stop, and the raw signals are gone.
 
 ## Acceptance
 
@@ -17,6 +17,7 @@ Not written. Brought to the PM first (options below); criteria follow the call. 
 
 - **One store, both sides.** What beta learns is what Discover reads later; nothing is kept that the member cannot see once the store's page exists.
 - **Every signal is listed to the member and deletable one at a time.** One switch stops all learning, including the F109 log and F112's seen record, and deletes raw signals.
+- **Photo and video opens count as a signal**, per Page and per category, on Find and Discover (the PM, 2026-10-12).
 - **Raw signals expire on their own** (searches, opens, RSVPs past their date: 90 days [guess]). No operator step.
 - **Nothing changes what another member sees or what a Page owner sees about a member.** On Find, search relevance and place-and-time order do not change.
 - **Builder accounts' signals count nowhere** (F114).
