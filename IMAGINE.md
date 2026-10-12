@@ -28,24 +28,24 @@ Every entry added from 2026-09-12 carries three things:
 
 
 
-- **Affinity-derived Group suggestions.** Group suggestions from Member taste-overlap on Items, without crossing the auto-assignment refusal. Needs Saves at real density and a mature overlap index; b2+.
-- **Apple platform integration.** What a native iOS build would use from Apple's platform (Sign in with Apple, App Clips, widgets) beyond what the web MVP covers.
-- **Brand strategy & naming.** A narrative spine, voice, mascot and naming-territory brief: the target a name has to hit, not the name.
-- **Bulletin intelligence.** Prompting business Pages to post timely bulletins from what is happening nearby (weather, events, seasons).
-- **Local stays.** Short-term rentals as a surface: an anti-Airbnb thesis on the existing Location/Group primitives, not a new booking stack.
-- **Locally Made badge.** A provenance badge distinct from Locally Owned, from self-attestation to verified, varying by category. A proximity model was shelved (branch `t-f039`) pending the trust-model question.
-- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vetting & vouching below.
-- **The mighty oak.** A candidate visual symbol for the platform — "an oak tree is not a tree, it is a neighborhood."
-- **Missing pets.** Whether "help me find my pet" has a shape that rallies the community without a freeform posting surface that invites rants and scams. Pushes against accountable participation; unresolved.
-- **Project arc overview.** A one-page brief on the platform's story and mascot candidates, for design-tool briefing, not product spec.
-- **Reciprocity & goodwill.** How Offer/Ask exchanges track, or deliberately don't track, reciprocity.
-- **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build.
-- **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped.
-- **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed.
-- **Social integration.** How TikTok/Instagram could be distribution, credibility or discovery channels into the platform. Not before b2; needs feed, follows and item surfaces.
-- **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating.
-- **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed.
-- **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling.
+- **Affinity-derived Group suggestions.** Group suggestions from Member taste-overlap on Items, without crossing the auto-assignment refusal. Needs Saves at real density and a mature overlap index; b2+. [lane: later]
+- **Apple platform integration.** What a native iOS build would use from Apple's platform (Sign in with Apple, App Clips, widgets) beyond what the web MVP covers. [lane: later]
+- **Brand strategy & naming.** A narrative spine, voice, mascot and naming-territory brief: the target a name has to hit, not the name. [lane: later]
+- **Bulletin intelligence.** Prompting business Pages to post timely bulletins from what is happening nearby (weather, events, seasons). [lane: later]
+- **Local stays.** Short-term rentals as a surface: an anti-Airbnb thesis on the existing Location/Group primitives, not a new booking stack. [lane: later]
+- **Locally Made badge.** A provenance badge distinct from Locally Owned, from self-attestation to verified, varying by category. A proximity model was shelved (branch `t-f039`) pending the trust-model question. [lane: later]
+- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vetting & vouching below. [lane: later]
+- **The mighty oak.** A candidate visual symbol for the platform — "an oak tree is not a tree, it is a neighborhood." [lane: later]
+- **Missing pets.** Whether "help me find my pet" has a shape that rallies the community without a freeform posting surface that invites rants and scams. Pushes against accountable participation; unresolved. [lane: later]
+- **Project arc overview.** A one-page brief on the platform's story and mascot candidates, for design-tool briefing, not product spec. [lane: later]
+- **Reciprocity & goodwill.** How Offer/Ask exchanges track, or deliberately don't track, reciprocity. [lane: later]
+- **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build. [lane: later]
+- **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped. [lane: later]
+- **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed. [lane: later]
+- **Social integration.** How TikTok/Instagram could be distribution, credibility or discovery channels into the platform. Not before b2; needs feed, follows and item surfaces. [lane: later]
+- **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating. [lane: later]
+- **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed. [lane: later]
+- **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling. [lane: later]
 
 ---
 
@@ -53,21 +53,21 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Ticketing, and what RSVPs have to do with Ticketmaster
 
-*Don's thesis, 2026-09-12, in his terms:* Ticketmaster holds a monopoly over ticketing and events. **RSVPs are a way to lessen that.**
+*Don's thesis, 2026-09-12, in his terms:* Ticketmaster holds a monopoly over ticketing and events. **RSVPs are a way to lessen that.** [lane: later]
 
 *Analysis, agent, 2026-09-12:*
 
 **An RSVP is not a ticket.** No payment, no allocation, no scarcity, no guaranteed entry, no recourse if you turn up and it's full. Today it is the free end of the same need, not a substitute for the paid end, and describing it as competing with Ticketmaster head-on would be a claim the product cannot cash.
 
-**What it does compete with is the reason a small organizer reaches for a ticketing platform at all.** For a run club, a market, a workshop, a supper, the requirement is usually *knowing who is coming*. Ticketing is what was for sale, so they pay a fee and hand over the relationship with their own attendees to get a headcount. **That is the thing worth displacing**, and it is displaceable now rather than after a payments stack.
+**What it does compete with is the reason a small organizer reaches for a ticketing platform at all.** For a run club, a market, a workshop, a supper, the requirement is usually *knowing who is coming*; they pay a fee and hand over the relationship with their own attendees to get a headcount. **That is the thing worth displacing**, and it is displaceable now rather than after a payments stack.
 
-**Where it connects to what's already promised:** it is a direct instance of *not an extractive platform* — the fee and the surrendered attendee relationship are the extraction. It is also the clearest case of *not pricing out the small*: a per-ticket fee is regressive against exactly the neighbourhood-scale organizer this platform is for. The thesis is not a new commitment; it is an application of two that exist.
+**Where it connects to what's already promised:** the fee and the surrendered attendee relationship are the extraction, so this applies *not an extractive platform*; a per-ticket fee is regressive against the neighbourhood-scale organizer, so it also applies *not pricing out the small*. Not a new commitment.
 
-**What would have to become true for this to be more than a thesis:** capacity limits · payment · transfer between people · proof of entry at the door. Each is a real build, and the platform has none of them. A future reader can measure the distance by how many of those four exist.
+**What would have to become true for this to be more than a thesis:** capacity limits · payment · transfer between people · proof of entry at the door. The platform has none of them.
 
 ### Blog posts and emails that explain what's what
 
-*Don, 2026-09-15.* A channel for helping people understand the kinds of thing they can start, and what the product is for, alongside the in-app explainer, not instead of it.
+*Don, 2026-09-15.* A channel for helping people understand the kinds of thing they can start, and what the product is for, alongside the in-app explainer, not instead of it. [lane: later]
 
 **Unscoped, and deliberately so.** This is a marketing and education question, not a product surface, and it is **outside launch scope**. Recorded here so it is not lost.
 
@@ -75,7 +75,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Discovery that knows what a person is optimizing for
 
-**Priority: higher.**
+**Priority: higher.** [lane: considering]
 
 *Don's framing, 2026-09-19, in his terms:* *"I tend to regularly search for bars and restaurants with nice outdoor environments as opposed to outdoor tables next to a busy street. Whereas other times I don't really care about the ambiance and only want the best enchilada in the city."* And on reviews: *"yelp and google... lump all reviews from all people and that isn't really a useful way to do reviews when people have different expectations. For example some people are value oriented and want maximum say food for their dollar whereas I am willing to pay for quality and it'd be nice to be able to differentiate this."*
 
@@ -90,19 +90,19 @@ Every entry added from 2026-09-12 carries three things:
 3. **Reviewer segmentation** — knowing what a reviewer optimizes for. Either a declared axis on the member, or inferred from behaviour. **Inference is close to what `product/systems/discovery.md` refuses**, and a declared axis is a profile field nobody fills in.
 4. **Reviews at all.** There is no review noun. A principle bars star ratings and reputations **for people**; a treatment-review surface that reviews the treatment and never the person sits in § Later, unbuilt and unscoped.
 
-**Cold start is the quiet killer.** One metro at launch means roughly zero reviews, and a review system segmented by reviewer type needs several times the volume of an unsegmented one to say anything at all. **A segmented review surface with no reviews is worse than none** — it advertises a promise the data cannot keep, which is the specific failure Don is describing in Yelp, arrived at from the opposite direction.
+**Cold start is the quiet killer.** One metro at launch means roughly zero reviews, and a segmented review system needs several times the volume of an unsegmented one. **A segmented review surface with no reviews is worse than none**: it advertises a promise the data cannot keep, the failure Don describes in Yelp.
 
-**The smallest honest first step is not to build any of it.** F064 — the not-built-yet signal capture — is approved and exists for exactly this: a person taps something marked not built yet, it is recorded once, no count, no date implied. Pointing that at *narrow by what I care about* costs approximately nothing and answers whether anyone but Don wants it. **The first real build afterwards is creator-declared attribute tags, and Don should know before it starts that it does not solve his stated problem** — self-reported attributes cannot make the distinction he opened with.
+**The smallest honest first step is not to build any of it.** F064, the approved not-built-yet signal capture (a tap, recorded once, no count), pointed at *narrow by what I care about* costs almost nothing and shows whether anyone but Don wants it. **The first real build afterwards is creator-declared attribute tags, and Don should know before it starts that it does not solve his stated problem** — self-reported attributes cannot make the distinction he opened with.
 
-**What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density in one metro that a second reader would see a first reader's words. Neither exists on 2026-09-19.
+**What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density in one metro that a second reader sees a first reader's words.
 
-**Reframed in part, 2026-09-21, by the in-app answering strategy** (`planning/AGENT-ANSWERING.md`). **System 1 above largely dissolves**: nobody has to enumerate *quiet*, *patio*, *worth-the-price* as a vocabulary if a person can simply say it, so natural language is how this intent gets expressed without a taxonomy. **The obstacle is untouched.** An answering layer can only answer over what is written, and the load-bearing problem here is that **nothing lets anyone say anything about a Page they do not own**. A brewery will tag itself *patio* and will never write *patio beside a four-lane road*. **The entry stays, and its trigger is unchanged** — the interface half is answered, the data half is not.
+**Reframed in part, 2026-09-21, by the in-app answering strategy** (`planning/AGENT-ANSWERING.md`). **System 1 largely dissolves**: nobody must enumerate *quiet* or *patio* as a vocabulary if a person can say it, so natural language carries the intent. **The obstacle is untouched**: an answering layer can only answer over what is written, and nothing lets anyone write about a Page they do not own. **The entry stays, trigger unchanged**: the interface half is answered, the data half is not.
 
-**Related and deliberately not folded in:** *what's on* — the time-based half of the same conversation — is not here, because it has a noun, a verb and a surface already and belongs in the spine.
+**Not folded in:** *what's on*, the time-based half, already has a noun, verb and surface and belongs in the spine.
 
 ### The occasion — a thing people organize around, with no row of its own
 
-*Don's ruling, 2026-09-19, recorded here because the ruling was that it stays here:* **there is no goal object type.** The app is a **finding mechanism**. The organizing happens in real life, and where it needs a legal form it happens in entities formed outside the platform.
+*Don's ruling, 2026-09-19, recorded here because the ruling was that it stays here:* **there is no goal object type.** The app is a **finding mechanism**. The organizing happens in real life, and where it needs a legal form it happens in entities formed outside the platform. [lane: later]
 
 **Why this is in the waiting room and not the spine.** It has no noun — that is the ruling. It has no verb of its own: what people actually do is make a Page and post a date, and both already exist. It has no surface. **It fails all three parts of the test at the top of this file**, which is the whole reason it stays rather than moving.
 
@@ -112,13 +112,13 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Places compete to keep spending local
 
-*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, the 2026-10-06 ruling) as local-pride measures, once purchases are tracked.
+*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, the 2026-10-06 ruling) as local-pride measures, once purchases are tracked. [lane: later]
 
 **What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is only an index.
 
 ### Civic voice — a pulse of how a community feels about local issues
 
-*The PM, 2026-10-06. An exploration, not a ruling.* A space for public figures, mainly elected officials, as a kind of Page, where the community's view on local issues is visible. Not free-text comments: members choose from framed options on issues, to give a pulse of how people feel and help them engage.
+*The PM, 2026-10-06. An exploration, not a ruling.* A space for public figures, mainly elected officials, as a kind of Page, where the community's view on local issues is visible. Not free-text comments: members choose from framed options on issues, to give a pulse of how people feel and help them engage. [lane: later]
 
 **High-risk territory, flagged:** moderation, political neutrality, legal exposure and brigading. It needs its own research before any scenario is written, and nothing here is approved to build.
 
@@ -126,7 +126,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Badges vs values
 
-*The PM, 2026-10-06. An exploration, not a ruling.* Two things an owner can say about a Page, both owner claims.
+*The PM, 2026-10-06. An exploration, not a ruling.* Two things an owner can say about a Page, both owner claims. [lane: later]
 
 **Badges are facts** about who the owner is (locally owned, women-owned, veteran-owned, family-run, certifications): **self-attested**, as on Google Business Profile and Yelp, **possibly verifiable later**.
 
@@ -140,7 +140,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Tone adapted by region, or per person
 
-*The PM, 2026-10-06. An exploration, not a ruling.* The tone is one voice for everyone (`product/foundation/voice-and-tone.md` § 3, 2026-10-06: a subtle California ease). Later it might adapt by **region** (a metro's own way of talking) or **per person**, informed by **member feedback** on how the copy lands.
+*The PM, 2026-10-06. An exploration, not a ruling.* The tone is one voice for everyone (`product/foundation/voice-and-tone.md` § 3, 2026-10-06: a subtle California ease). Later it might adapt by **region** (a metro's own way of talking) or **per person**, informed by **member feedback** on how the copy lands. [lane: later]
 
 **Open questions:** what a region's voice would be and who writes it; whether per-person tone is a setting or learned, and what it would learn from; how it stays plain and clear where plain is required (errors, safety, reports, legal, sign-in); and whether it fights the platform's one name line and subhead, which are locked.
 
@@ -156,9 +156,9 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Market shopper: a neighbour shops the market for you
 
-*Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment. After beta; not in the Beta milestone.
+*Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, with the handoff in person, the money going to the members who shop and grow, and SocialUs taking transaction income on the sale (ruling 2026-10-07). The producer-side version is a producer shopping for their own regulars. Nothing exists to build on yet: no list of what a market carries, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
+*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, handing off in person, the money going to the members who shop and grow, SocialUs taking transaction income (ruling 2026-10-07). The producer version is a producer shopping for their own regulars. Nothing exists to build on: no market list, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
 **Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
 
@@ -166,9 +166,9 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Market meal plans: a week of meals from what one market carries
 
-*Don, 2026-10-11, in his terms:* recipes for families "that used the ingredients that were at a farmers market ... a week full of meals ... created by members of the community," who can sell their plans, each in reference to a farmers market and what it carries. A possibility, not a commitment. After beta; not in the Beta milestone.
+*Don, 2026-10-11, in his terms:* recipes for families "that used the ingredients that were at a farmers market ... a week full of meals ... created by members of the community," who can sell their plans, each in reference to a farmers market and what it carries. A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, which keeps the legal weight lower than the shopper. Its weak point is the market's list: a plan is only as good as the list it was written against, so a plan carries its list date and says so when the week moves on. The author is credited through their own Page (there is no public member profile). **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
+*Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, so the legal weight is lower than the shopper's. Its weak point is the market's list, so a plan carries its list date and says so when the week moves on. The author is credited through their own Page (there is no public member profile). **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
 
 **Sizes (Don, 2026-10-11):** a plan can be one meal, a couple of days, or a week, so authors and families start small. Listings are the foundation (see the shopper entry).
 
@@ -178,9 +178,9 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Wish it existed: ask for what may not exist locally
 
-*Don, 2026-10-11, in his terms:* "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment. After beta; not in the Beta milestone.
+*Don, 2026-10-11, in his terms:* "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* this is mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply that says "I can build that, for this". The reply channel does not exist (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
+*Analysis, agent, 2026-10-11:* mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply "I can build that, for this", and there is no reply channel (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
 
 **Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So the first phase is a wish as an Idea: post it, show interest, link the finished thing, nothing more, SocialUs not involved. **No expiry:** old wishes go stale (sorted last after 90 quiet days, per the 2026-09-15 ruling), they are not removed. Everything below (offers, the terms card, backers) is the plan *if it becomes popular*.
 
@@ -200,3 +200,5 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 ### Member-facing names for Find and Discover
 
 *Don, 2026-10-12.* The copy names are to be more interesting than the internal ones. A later item. [lane: later]
+
+[open-question owner=don raised=2026-10-12] Every other IMAGINE entry is laned Later. Recommended for Considering (laned so now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (marked Priority: higher; the report path now exists).
