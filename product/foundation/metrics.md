@@ -25,7 +25,7 @@ Discovery converting to relationship (search → landing → follow/save/message
 
 ## Anti-metrics — named so they can't install themselves by default
 
-Daily active users as a goal in itself. Time-on-platform or session length as a goal. Scroll depth. Notification open/click-through rate. Streaks or gamified retention. Anything resembling social-media engagement metrics applied to local commerce. Once a number is on a dashboard, "improve the chart" makes the underlying principle unenforceable — naming these here is the only defense.
+Daily active users as a goal in itself. Time-on-platform or session length as a goal. Scroll depth. Notification open/click-through rate. Streaks or gamified retention. Anything resembling social-media engagement metrics applied to local commerce. Once a number is on a dashboard, "improve the chart" makes the underlying principle unenforceable — naming these here is the only defense. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 
 The rule: measure interactions that produce real-world meetings, transactions, fulfillment, and movement toward Flourishing. Do not measure attention.
 

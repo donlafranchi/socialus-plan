@@ -18,34 +18,34 @@ Every entry added from 2026-09-12 carries three things:
 2. **One line: what would make this real.** The observable thing that would move it out of here. Not "when we have time" — a fact about the world or the product that would change the answer.
 3. **A separation of claim from analysis** where both exist. Don's framing is recorded in his terms; anything an agent adds is marked as analysis. A thesis that overstates itself is worse than no thesis.
 
-**A `Priority: higher` line, where an entry has one.** It means Don has said this matters more than the rest of the room — nothing more. **Its absence says nothing**: most entries here have never been ranked against each other, and inventing a full ordering would be a hand-maintained index of the kind this repo keeps killing. Added 2026-09-19 at Don's direction.
+**A `Priority: higher` line, where an entry has one.** It means Don has said this matters more than the rest of the room, nothing more. **Its absence says nothing**: most entries were never ranked, and a full ordering would be a hand-kept index. Added 2026-09-19 at Don's direction.
 
-**Retiring is the normal outcome.** An entry leaves when it ships, when its trigger fires, or when someone reads it and says it's dead — and the last of those is a good day, not a failure. Entries above this line predate the rule and are distillations with git history behind them; they are not retro-fitted.
+**Retiring is the normal outcome.** An entry leaves when it ships, when its trigger fires, or when someone says it's dead, which is a good day, not a failure. Entries above this line predate the rule and are not retro-fitted.
 
 ## Ideas
 
-*Every entry below was distilled from `product/exploration/` on **2026-09-09** (commits `b75cfbb`, `66ddc9b`, `c4226d0`) — dated by the distillation, not by when each idea was first had, which git does not record per-entry. None predates the house rules above, so none is retro-fitted with a trigger; each stays until someone gives it a shape or retires it.*
+*Distilled from `product/exploration/` on **2026-09-09**; dated by the distillation, not by when each idea was had. None is retro-fitted with a trigger; each stays until someone gives it a shape or retires it.*
 
 
 
-- **Affinity-derived Group suggestions.** Surface emergent Group suggestions from Member taste-overlap on Items — without crossing the auto-assignment refusal. Needs Saves at real density and a mature discovery-overlap index first; earliest plausible b2+.
-- **Apple platform integration.** What a native iOS build would want to use from Apple's platform strategy (Sign in with Apple, App Clips, widgets, etc.) versus what the web MVP already covers.
-- **Brand strategy & naming.** A narrative spine, voice, mascot, and naming-territory brief — defines the target a name has to hit, not the name itself.
-- **Bulletin intelligence.** The platform proactively prompts business Pages to post timely bulletins by surfacing what's happening nearby (weather, local events, seasonal cues).
-- **Local stays.** Short-term rentals as a platform surface — an anti-Airbnb thesis built on the platform's existing Location/Group primitives instead of a new booking stack.
-- **Locally Made badge.** A provenance badge distinct from Locally Owned, graduating from self-attestation to verified; varies by product category. A proximity model was built and shelved (branch `t-f039`) pending the trust-model question.
-- **MEHKO home kitchens.** Microenterprise Home Kitchen Operations as an early-adopter producer segment; permit verification links to the vetting-and-vouching idea below.
+- **Affinity-derived Group suggestions.** Group suggestions from Member taste-overlap on Items, without crossing the auto-assignment refusal. Needs Saves at real density and a mature overlap index; b2+.
+- **Apple platform integration.** What a native iOS build would use from Apple's platform (Sign in with Apple, App Clips, widgets) beyond what the web MVP covers.
+- **Brand strategy & naming.** A narrative spine, voice, mascot and naming-territory brief: the target a name has to hit, not the name.
+- **Bulletin intelligence.** Prompting business Pages to post timely bulletins from what is happening nearby (weather, events, seasons).
+- **Local stays.** Short-term rentals as a surface: an anti-Airbnb thesis on the existing Location/Group primitives, not a new booking stack.
+- **Locally Made badge.** A provenance badge distinct from Locally Owned, from self-attestation to verified, varying by category. A proximity model was shelved (branch `t-f039`) pending the trust-model question.
+- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vetting & vouching below.
 - **The mighty oak.** A candidate visual symbol for the platform — "an oak tree is not a tree, it is a neighborhood."
-- **Missing pets.** Whether there's a structural shape for "help me find my pet" that captures the community-rallying value without opening a freeform posting surface that becomes a vector for rants and scams. Pushes against the accountable-participation commitment; unresolved.
-- **Project arc overview.** A durable one-page brief on the platform's story and mascot candidates, meant for design-tool briefing rather than product spec.
-- **Reciprocity & goodwill.** Open question on how Offer/Ask exchanges track (or deliberately don't track) reciprocity between members.
-- **Recruitment plan.** A solo-founder playbook for hiring, once AI agents stop covering most of the build.
-- **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped design space, no decisions made.
-- **Social capital.** Recognition earned through participation — hosting, fulfilling, sharing, showing up — Member-owned and portable, never a ranking signal that changes what others see, always optionally surfaced. Standing intent only; the shape was never designed. Pulled out of `product/systems/member.md` 2026-09-09.
-- **Social integration.** How TikTok/Instagram/etc. could serve as distribution, credibility, or discovery channels into the platform. Not before b2 — needs feed, follows, and item surfaces first.
-- **Vetting & vouching.** A community-powered trust signal for producer claims — "can I trust what this producer says, and is there something better nearby" — distinct from a behavior/accountability rating.
-- **A scored community-health rubric.** A 0–3, five-section scoring instrument (Dunbar layers, Ostrom's commons governance, Oldenburg's third places, etc.) for periodically auditing platform decisions against community-health theory, as a complement to the binary Decision Test. Working defaults only — never load-bearing as written; whether it's actually used or purely aspirational was never confirmed.
-- **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance as a worked example, and "AI serves the people" as the guiding constraint on all four. Practical-to-begin, ambitious-for-the-goal; each sketch is near-term-shippable with a multi-year payoff. Waits on documented member demand per the standing decision against speculative cooperative tooling.
+- **Missing pets.** Whether "help me find my pet" has a shape that rallies the community without a freeform posting surface that invites rants and scams. Pushes against accountable participation; unresolved.
+- **Project arc overview.** A one-page brief on the platform's story and mascot candidates, for design-tool briefing, not product spec.
+- **Reciprocity & goodwill.** How Offer/Ask exchanges track, or deliberately don't track, reciprocity.
+- **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build.
+- **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped.
+- **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed.
+- **Social integration.** How TikTok/Instagram could be distribution, credibility or discovery channels into the platform. Not before b2; needs feed, follows and item surfaces.
+- **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating.
+- **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed.
+- **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling.
 
 ---
 
@@ -190,3 +190,9 @@ Every entry added from 2026-09-12 carries three things:
 
 **What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
 
+
+### Two sides: the tool and the fun
+
+*Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
+
+After beta; not ready for council; an eventual part of the platform. The newer direction (PRINCIPLES.md); conflicting stances are tagged `[for now]` and listed in `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for the fun side to be scoped.

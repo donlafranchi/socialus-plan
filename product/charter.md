@@ -21,8 +21,8 @@ SocialUs exists to serve its members, not shareholders, and to give them a platf
 We are trying to flip how technology gets used.
 
 **1. Bring people together in person, not stand in for it.** Technology here points people at each other and at a place and a time. It does not replace meeting.
-- We currently order what you see by where it is and how recent it is, never by what holds your attention or what someone paid for.
-- Ranking is a place, time and relationship engine, not a watch-time optimizer. Browse is complete, not ranked by your interests.
+- We currently order what you see by where it is and how recent it is, never by what holds your attention or what someone paid for. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
+- Ranking is a place, time and relationship engine, not a watch-time optimizer. Browse is complete, not ranked by your interests. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 - We build for meeting in person, and we measure whether neighbours actually met.
 
 **2. Spread wealth among the many, not concentrate it among the few.** What people earn here stays with the people who earned it and the places they live.

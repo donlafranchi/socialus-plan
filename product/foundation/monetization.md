@@ -20,7 +20,7 @@ Voluntary/tiered member dues (specced in `product/systems/contributions.md`). Su
 
 ## Refused outright
 
-Engagement-shaped advertising (click-optimized, behaviorally targeted, attention-capture). Data sales or licensing. Anything charged at signup or before a first sale. Paid placement as a primary revenue line.
+Engagement-shaped advertising (click-optimized, behaviorally targeted, attention-capture). Data sales or licensing. Anything charged at signup or before a first sale. Paid placement as a primary revenue line. [for now — the tool side only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 
 ## Open — Don rules
 
