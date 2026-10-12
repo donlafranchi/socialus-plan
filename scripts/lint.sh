@@ -194,6 +194,11 @@ if [ "${NEVER_LINT:-0}" = "1" ] && ! out="$(python3 scripts/never.py)"; then
 fi
 # Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
 python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
+# Lanes: four fixed words, one lane per item (Don, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
+python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is inert or rejects its good fixture"; fail=1; }
+if ! out="$(python3 scripts/going.py --lint)"; then
+  echo "$out" | sed 's/^/lint: lanes: /'; fail=1
+fi
 # Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
