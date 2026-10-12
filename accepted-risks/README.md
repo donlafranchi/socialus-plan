@@ -2,7 +2,7 @@
 
 # accepted-risks/
 
-One JSON file per finding ruled acceptable. Read by scripts, not by people — the ruling itself is a dated line in `../DECISIONS.md`, and that is what settles a question. See `ops-pattern/process/PIPELINE.md` § Accepted risk.
+One JSON file per finding ruled acceptable. Read by scripts, not by people — the ruling itself is a dated line in `../RULINGS.md`, and that is what settles a question. See `ops-pattern/process/PIPELINE.md` § Accepted risk.
 
 **Two kinds of entry, told apart by `lint`.** Supabase advisor findings carry the advisor's own lint name and are diffed by `scripts/advisor-diff.sh`. **Project risks carry `"lint": "project_accepted_risk"`** — things deliberately deferred that have no advisor to raise them. The register was built for the first kind; the second is the same shape because the problem is identical, and the `source` field already anticipated it.
 
@@ -16,6 +16,6 @@ One JSON file per finding ruled acceptable. Read by scripts, not by people — t
 
 One file per finding is also why dozens of agents can work here at once: nobody appends to a shared list.
 
-**Fields:** `cache_key`, `lint`, `object`, `severity`, `source`, `decision` (the `DECISIONS.md` date), `evidence`, `why`, `revisit_if`, `review_by`, `owner`.
+**Fields:** `cache_key`, `lint`, `object`, `severity`, `source`, `decision` (the `RULINGS.md` date), `evidence`, `why`, `revisit_if`, `review_by`, `owner`.
 
 **`owner` and `review_by` are enforced, not advisory.** `owner` is who must argue it again — `don`, `cowork` or `code`. **`scripts/lint.sh` fails the day `review_by` passes**: an accepted risk nobody revisits is the same failure as an inert guard. Argue it again (a new `DECISIONS.md` line and a new date) or delete the entry. A `cache_key_pending` note means the key is still null — fill it verbatim from the first export that reports it and rename the file to match. Never derive a key from the naming pattern: one that looks right but never matches stops suppressing silently, which is worse than null.

@@ -16,8 +16,8 @@ written assuming a web client that hands the key to anyone, and **they apply to 
 The only boundary is what `anon` and `authenticated` may select in SQL. No app, like no component, is
 a place to enforce privacy. The same publishable key ships inside the app bundle and is as extractable as it is from the web bundle.
 
-- the withheld card is enforced in SQL against anyone holding the publishable key, and a native client holds it too — [DECISIONS.md](DECISIONS.md)
-- both leaks are reads open to the publishable key; a native binary ships the same key, so the exposure and the fix are unchanged — [DECISIONS.md](DECISIONS.md)
+- the withheld card is enforced in SQL against anyone holding the publishable key, and a native client holds it too — [RULINGS.md](RULINGS.md)
+- both leaks are reads open to the publishable key; a native binary ships the same key, so the exposure and the fix are unchanged — [RULINGS.md](RULINGS.md)
 
 ## Gaps: 7
 
