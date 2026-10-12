@@ -2,6 +2,8 @@
 id: F086
 title: Signed in, and the app says so
 status: draft
+horizon: later
+rank: 200
 date: 2026-09-15
 depends: [F069, F081]
 ---
@@ -31,5 +33,9 @@ Editing anything. This scenario makes `/you` say who you are; it does not make i
 ### Open — nobody has ruled on these
 
 - **Can a person change their photo here?** Criterion 2 only requires it be shown. There is no write path for `avatar_url` anywhere in the app, so "show it" and "let them set it" are different sizes of work and only one is in scope.
-- **Does the metro shown here do anything?** F081 has a person pick a metro at signup. Whether `/you` displays it, or is where it gets changed, is unanswered — and changing it is the switcher that `ROADMAP.md` parks until there is a second metro.
+- **Does the metro shown here do anything?** F081 has a person pick a metro at signup. Whether `/you` displays it, or is where it gets changed, is unanswered — and changing it is the switcher parked until there is a second metro.
 - **Saved and Following.** Both are tabs on `/you` today, both fed by dead reads. Whether they survive here is tied up with the `/you/sell` and `/you/following` question, which is an options note, not a ruling.
+
+## Rulings
+- **2026-09-15 — `/you` is the signed-in identity surface: who you are, where you are, what you have made.** Don: nothing in the app tells a person they are in — no name, no profile photo, no metro. Written as F086 (`draft`). Answers item 1 of `socialus-web` #95 in principle: the retired half of `/you` goes, because criterion 5 forbids reading a table that does not exist, and that retires the four vendor-era components the page is the last thing keeping alive.
+- **2026-09-12 — Members need an avatar, and that is new work upstream of responses.** `members.display_name` exists and is always populated. `members.avatar_url` exists as a column and is read by the member page, but **nothing writes it** — there is no upload surface, so every avatar is empty. Names and faces on a response list cannot ship before it does. [for now]

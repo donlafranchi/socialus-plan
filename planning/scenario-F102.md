@@ -2,6 +2,8 @@
 id: F102
 title: The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
 status: approved
+horizon: now
+rank: 190
 gates: launch
 date: 2026-10-05
 depends: [F078, F100, F101]
@@ -42,7 +44,7 @@ A score, rank or label on a person. Telling a reported member who reported them 
 
 ### Counters on the act, not a score on the person
 
-**ROADMAP § Won't: the platform currently doesn't rate, rank or label a person.** So nothing here is a reputation: no score, no badge, no tier on a member. What exists is counts of reports filed and how each ended, and caps and cool-downs on *the act of reporting*, exactly like today's per-reporter caps in `report.create` (5 open hiding reports, 20 open in total, 2 per subject). The counts are visible to the operator only and feed nothing outside the report path.
+**A principle: the platform never rates, ranks or labels a person.** So nothing here is a reputation: no score, no badge, no tier on a member. What exists is counts of reports filed and how each ended, and caps and cool-downs on *the act of reporting*, exactly like today's per-reporter caps in `report.create` (5 open hiding reports, 20 open in total, 2 per subject). The counts are visible to the operator only and feed nothing outside the report path.
 
 ### What changes against today (read in `socialus-web` main, 2026-10-05)
 
@@ -69,3 +71,11 @@ Hiding is the safe default, so midweek nothing needs a person: content that migh
 [platform store=ugc: the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content]
 
 **About 2 build days, in the beta (2026-10-30)**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). Criterion 12 adds about half a day; criterion 13 about half a day. What to push is in F101 § Size.
+
+## Rulings
+- **2026-10-11 — Apparent CSAM is reported through NCMEC's manual CyberTipline web form for beta, and through registration with the CyberTipline when the entity structure is set up and we go public (entity questions go to `socialus-legal`). Preservation is built now either way. A staff runbook (apparent CSAM, threats of harm, other severities: step by step, phone-readable, linked from the admin reports page) and a reminder tied to entity setup ("register with the CyberTipline and switch from the manual form") are in scope. We collect enough member information (verified phone, legal name, F077/F081) to act on abusive or harmful content and say plainly that we do not tolerate it; per policy it is collected for the platform's protection and not shown member to member.** The PM, 2026-10-11, option B for beta and A at public launch, on `socialus-web` #648 (F102 criterion 14). [replaces none] [binds tiers=planning,code surfaces=moderation,reports,uploads,privacy] Issue: #648.
+- **2026-10-06 — Apparent child sexual abuse material (the child-safety tier, severity 1) is a legal requirement, not a moderation judgement: it never auto-restores, never goes back to the poster for an answer, gets no AI processing, and is preserved and reported to NCMEC per the plan.** Because a US provider must report apparent CSAM to NCMEC's CyberTipline "as soon as reasonably possible" once aware (18 U.S.C. 2258A) and preserve it (`socialus-legal` `safety/ncmec-plan.md`, ruled 2026-10-05). F102's poster-answers-first rule and narrow auto-restore apply to every other tier. Scenario: F102 (criterion 14). The weekend batch does not govern this tier; counsel is asked whether the plan's 72-hour target meets the duty. [always] [binds tiers=planning,code surfaces=moderation,reports,ai,uploads]
+- **2026-10-05 — In beta the AI restores severity-4 reported content on its own, narrowly: only when the poster answered, Claude Haiku and Claude Sonnet both suggest approve at 0.95 or higher, nothing flags coordinated reporting, and the evaluation harness has passed on that slice. Severities 1–3 currently never restore without a person.** The restore is logged, reversible and shown in the weekend batch for a one-tap confirm or undo. Option B of F102's A/B/C. Scenario: F102. [for now] [binds tiers=planning,code surfaces=moderation,reports,ai]
+- **2026-10-05 — Every upload and post records the IP address and time it came from, operator-only, kept one year and then deleted.** For tracing abuse and answering legal requests; no member sees it and no feature outside the report path reads it. The privacy policy must disclose it. Scenario: F102. [binds tiers=planning,code surfaces=uploads,posts,privacy,moderation]
+- **2026-10-05 — Moderation is designed to run unattended: one person operates the platform alongside a day job and is currently away Tuesday to Thursday, so review work is batched Friday to Monday and nothing midweek asks for attention except severity 1.** The constraint behind F100, F101 and F102; a design that needs a person midweek fails it. Scenarios: F100, F101, F102. [binds tiers=planning,code surfaces=moderation,reports,process build=none]
+- **2026-10-05 — When content hides, the poster answers first: fix and repost, or say the report is wrong. Report misuse is tracked as counters on the act of reporting (filed, upheld, dismissed, open), never as a score, rank or label on a person.** Dismissed reports tighten a reporter's hiding cap and can start a cool-down; coordinated reporting is flagged for the operator, not acted on automatically. Whether the AI may auto-restore severity-4 content in beta is open in F102. Scenario: F102. [always] [binds tiers=planning,code surfaces=moderation,reports,members]

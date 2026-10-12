@@ -48,18 +48,18 @@ for f in planning/*.md; do
 done
 
 # 1b. Every planning/scenario-*.md keeps its SPEC under 40 lines and uses only
-#     the four allowed sections, in any subset. `## Why` is rationale and is
-#     excluded from the count — see the note at the top of this file.
+#     the five allowed sections, in any subset. `## Why` (rationale), `## Rulings`
+#     (the dated rulings that govern it, inline) and frontmatter are excluded from the count.
 for f in planning/scenario-*.md; do
   [ -f "$f" ] || continue
-  spec=$(awk '/^## Why$/{skip=1; next} /^## /{skip=0} !skip' "$f" | wc -l | tr -d ' ')
+  spec=$(awk 'NR==1 && /^---$/{fm=1; next} fm{if(/^---$/)fm=0; next} /^## (Why|Rulings)$/{skip=1; next} /^## /{skip=0} !skip' "$f" | wc -l | tr -d ' ')
   if [ "$spec" -gt 40 ]; then
-    echo "lint: scenario spec over 40 lines ($spec, excluding ## Why) — $f"
+    echo "lint: scenario spec over 40 lines ($spec, excluding ## Why and ## Rulings) — $f"
     fail=1
   fi
-  bad=$(grep -E '^## ' "$f" | grep -Ev '^## (Story|Acceptance|Why|Not this)$')
+  bad=$(grep -E '^## ' "$f" | grep -Ev '^## (Story|Acceptance|Why|Not this|Rulings)$')
   if [ -n "$bad" ]; then
-    echo "lint: scenario has a section outside Story/Acceptance/Why/Not this — $f"
+    echo "lint: scenario has a section outside Story/Acceptance/Why/Not this/Rulings — $f"
     echo "$bad" | sed 's/^/  /'
     fail=1
   fi
@@ -101,7 +101,7 @@ vt=scripts/fixtures/value-test
 #    README.md (scripts/view.sh), PLATFORM-*.md (scripts/markers.py platform) and
 #    DASHBOARD.md (scripts/dashboard.py),
 #    never hand-edited, so not link-checked below.
-allowed="CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
+allowed="CLAUDE.md STATUS.md PRINCIPLES.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
 for f in *.md; do
   [ -f "$f" ] || continue
   case " $allowed " in
@@ -133,7 +133,7 @@ check_links() {
   done
 }
 
-for f in CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
+for f in CLAUDE.md STATUS.md PRINCIPLES.md UNPLACED.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
   [ -f "$f" ] || continue
   out="$(check_links "$f")"
   if [ -n "$out" ]; then
@@ -145,10 +145,9 @@ done
 # 4. Every bracketed absolute-slug citation resolves to a heading in one of the
 #    two ABSOLUTES files. This is the point of slugs: a renamed or deleted
 #    absolute breaks the build instead of leaving a citation that reads fine and
-#    points at nothing. DECISIONS.md is exempt: its older lines cite absolutes
-#    by number, and the 2026-09-16 line there maps those numbers to these slugs.
+#    points at nothing.
 slugs="$(grep -hoE '^### [a-z][a-z0-9-]+$' $absolutes | sed 's/^### //')"
-for hit in $(grep -roE '\[[a-z][a-z0-9]*(-[a-z0-9]+)+\]' --include='*.md' --exclude=DECISIONS.md --exclude-dir=fixtures . | sort -u); do
+for hit in $(grep -roE '\[[a-z][a-z0-9]*(-[a-z0-9]+)+\]' --include='*.md' --exclude-dir=fixtures . | sort -u); do
   slug="${hit##*:[}"; slug="${slug%]}"
   if ! printf '%s\n' "$slugs" | grep -qx "$slug"; then
     echo "lint: [$slug] cites an absolute that does not exist — ${hit%%:*}"
@@ -165,14 +164,14 @@ done
 #    repo it never really checked.
 fx=scripts/fixtures/markers
 mk() { MARKERS_PLANNING="$fx/planning" python3 scripts/markers.py "$@"; }
-EXPECT_BAD=26 EXPECT_RISKS=4 EXPECT_REP=8 EXPECT_PLAT=10
-got=$(mk lint "$fx/open-question-bad.md" "$fx/guards-bad.md" "$fx/binds-bad/DECISIONS.md" "$fx/gating-bad/scenario-F998.md" | grep -c '^markers:')
+EXPECT_BAD=27 EXPECT_RISKS=4 EXPECT_REP=8 EXPECT_PLAT=10
+got=$(mk lint "$fx/open-question-bad.md" "$fx/guards-bad.md" "$fx/binds-bad/PRINCIPLES.md" "$fx/binds-bad/scenario-F996.md" "$fx/gating-bad/scenario-F998.md" | grep -c '^markers:')
 [ "$got" -eq "$EXPECT_BAD" ] || { echo "lint: marker checker is inert — rejected $got of $EXPECT_BAD bad fixture lines"; fail=1; }
 got=$(mk risks "$fx/risks-bad" | grep -c '^markers:')
 [ "$got" -eq "$EXPECT_RISKS" ] || { echo "lint: accepted-risk checker is inert — rejected $got of $EXPECT_RISKS bad fixtures"; fail=1; }
-got=$(MARKERS_PLANNING="$fx/replaces-bad/planning" python3 scripts/markers.py lint "$fx/replaces-bad/DECISIONS.md" | grep -c '^markers:')
+got=$(MARKERS_PLANNING="$fx/replaces-bad/planning" python3 scripts/markers.py lint "$fx/replaces-bad/PRINCIPLES.md" | grep -c '^markers:')
 [ "$got" -eq "$EXPECT_REP" ] || { echo "lint: replaces/evidence checker is inert — rejected $got of $EXPECT_REP bad fixtures"; fail=1; }
-MARKERS_PLANNING="$fx/replaces-good/planning" python3 scripts/markers.py lint "$fx/replaces-good/DECISIONS.md" >/dev/null ||
+MARKERS_PLANNING="$fx/replaces-good/planning" python3 scripts/markers.py lint "$fx/replaces-good/PRINCIPLES.md" >/dev/null ||
   { echo "lint: replaces/evidence checker rejects the good fixture"; fail=1; }
 got=$(mk lint "$fx"/platform-bad/product/*.md "$fx"/platform-bad/planning/*.md | grep -c '^markers:')
 [ "$got" -eq "$EXPECT_PLAT" ] || { echo "lint: platform marker checker is inert — rejected $got of $EXPECT_PLAT bad fixtures"; fail=1; }
@@ -182,7 +181,7 @@ cov=$(MARKERS_SOURCES="$fx/good.md" mk coverage F999; MARKERS_SOURCES="$fx/good.
 echo "$cov" | grep -q '^- \*\*1\*\* — \[' && echo "$cov" | grep -q '^- \*\*2\*\* — \*\*partial\*\*' &&
   echo "$cov" | grep -q '1 of 2 covered · \*\*partial: 2\*\*' ||
   { echo "lint: coverage map is inert — it does not tell a partial claim from a full one"; fail=1; }
-mk lint "$fx/good.md" "$fx/binds-good/DECISIONS.md" >/dev/null && mk risks "$fx/risks-good" >/dev/null ||
+mk lint "$fx/good.md" "$fx/binds-good/PRINCIPLES.md" "$fx/binds-good/scenario-F997.md" >/dev/null && mk risks "$fx/risks-good" >/dev/null ||
   { echo "lint: marker checker rejects a good fixture"; fail=1; }
 # The "never" lint (Don, 2026-09-30: the only approved "never" is "never extractive").
 # The checker proves itself on every run; the scan of real docs is off until Don approves
@@ -193,7 +192,45 @@ python3 scripts/never.py scripts/fixtures/never/good.md >/dev/null || { echo "li
 if [ "${NEVER_LINT:-0}" = "1" ] && ! out="$(python3 scripts/never.py)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
-if [ -f DECISIONS.md ] && ! out="$(python3 scripts/markers.py lint)"; then
+# Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
+python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
+# Lanes: four fixed words, one lane per item (Don, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
+python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is inert or rejects its good fixture"; fail=1; }
+if ! out="$(python3 scripts/going.py --lint)"; then
+  echo "$out" | sed 's/^/lint: lanes: /'; fail=1
+fi
+# Lost since last look (the PM's one safety view) proves itself on its fixture.
+python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
+# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
+bf=scripts/fixtures/budgets
+got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
+[ "$got" -eq 4 ] || { echo "lint: budget checker is inert — rejected $got of 4 bad fixtures"; fail=1; }
+BUDGETS_BASE_DIR="$bf/good-base" python3 scripts/budgets.py check --root "$bf/good" >/dev/null || { echo "lint: budget checker rejects the good fixture"; fail=1; }
+got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
+[ "$got" -eq 3 ] || { echo "lint: budget checker does not let a docs: move PR grow a doc (got $got of 3)"; fail=1; }
+if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
+  echo "$out" | sed 's/^/lint: /'; fail=1
+fi
+# Inline rulings: constraints/ index every ruling wherever it sits (principles, scenarios, product docs), with its
+# file and whether it is [always] or [for now]; an untagged never/won't/always fails; a deleted scenario may not take a ruling with it.
+ir=$(for t in planning code for-now; do MARKERS_ROOT="$fx/inline-root" python3 scripts/markers.py constraints-print $t; done)
+for want in '[for now] · fixtures — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)' \
+  '[always] · fixtures — Fixture system ruling: a thing is never sold (product/systems/thing.md)' \
+  '[always] · principles — Fixture principle: people come first (PRINCIPLES.md)' \
+  '- **2026-10-12** — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)'; do
+  echo "$ir" | grep -qF -- "$want" || { echo "lint: constraints index misses an inline ruling: $want"; fail=1; }
+done
+got=$(mk lint "$fx/lasts-bad/scenario-F994.md" "$fx/lasts-bad/PRINCIPLES.md" | grep -c '^markers:')
+[ "$got" -eq 4 ] || { echo "lint: [always]/[for now] checker is inert — rejected $got of 4 planted faults"; fail=1; }
+got=$(python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current/product/systems/kept.md" | grep -c '^markers:')
+[ "$got" -eq 1 ] || { echo "lint: deleted-scenario guard is inert — caught $got of 1 lost ruling"; fail=1; }
+python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-good/product/systems/kept.md" >/dev/null ||
+  { echo "lint: deleted-scenario guard rejects a scenario whose rulings all moved"; fail=1; }
+# PRINCIPLES.md holds principles only: the checker names the home of each planted non-principle.
+got=$(python3 scripts/markers.py principles "$fx/principles-bad/PRINCIPLES.md" | grep -c '^markers:')
+[ "$got" -eq 6 ] || { echo "lint: principles checker is inert — rejected $got of 6 planted non-principles"; fail=1; }
+python3 scripts/markers.py principles "$fx/principles-good/PRINCIPLES.md" >/dev/null || { echo "lint: principles checker rejects the good fixture"; fail=1; }
+if [ -f PRINCIPLES.md ] && ! out="$(python3 scripts/markers.py lint)"; then
   echo "$out" | sed 's/^/lint: /'
   fail=1
 fi

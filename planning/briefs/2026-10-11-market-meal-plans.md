@@ -34,19 +34,19 @@ criteria:
 ## Why it fits (members first)
 
 - **Flip 1, toward in-person.** A plan sends a family to the market with a list. Unlike a plan tied to a chain's sale items, the shopping happens in person, with the people who grew the food.
-- **Flip 2, spreading wealth among the many.** The author is a neighbour who earns on their own work; the producers sell their own goods at their own prices; no corporation sits between. SocialUs takes transaction income on member commerce (DECISIONS 2026-10-07) and keeps what it needs to run.
+- **Flip 2, spreading wealth among the many.** The author is a neighbour who earns on their own work; the producers sell their own goods at their own prices; no corporation sits between. SocialUs takes transaction income on member commerce (ruling 2026-10-07) and keeps what it needs to run.
 - **Who it serves first:** the family who does not know what to cook with a bag of kale; the neighbour who loves to cook and wants to be paid for it; the producer whose unusual crop finally has a recipe.
 
 ## 1. Facts (Stage 0)
 
 | Fact | Verified / assumed | Source |
 |---|---|---|
-| A farmers market is a Page that convenes people; a given Saturday is a dated post | Verified | DECISIONS 2026-09-15 |
-| A Page's managers post; a Post carries a date, place and tags; the search dictionary is seeded with farmers-market items | Verified | `member-journey.md`; DECISIONS 2026-09-12 |
-| No messaging between members; the platform handles no money; payments are Later | Verified | `member-journey.md`; ROADMAP Later |
-| Listings on a Page are postponed past beta | Verified | ROADMAP Later |
-| No public member profile; someone who wants to be found makes a Page | Verified | ROADMAP Speculative (2026-10-01) |
-| Won't: full e-commerce, checkout, inventory management as products | Verified | ROADMAP Won't |
+| A farmers market is a Page that convenes people; a given Saturday is a dated post | Verified | the 2026-09-15 ruling |
+| A Page's managers post; a Post carries a date, place and tags; the search dictionary is seeded with farmers-market items | Verified | `member-journey.md`; the 2026-09-12 ruling |
+| No messaging between members; the platform handles no money; payments are Later | Verified | `member-journey.md`; the After beta milestone |
+| Listings on a Page are postponed past beta | Verified | the After beta milestone |
+| No public member profile; someone who wants to be found makes a Page | Verified | After beta, speculative |
+| Won't: full e-commerce, checkout, inventory management as products | Verified | what-this-is § Won't |
 | A plan is information (recipes and a list), not food | Chair's reading of Don's words | this brief |
 | A market, or its producers, would keep a weekly list current | **Assumed** | none; the first thing a pilot answers |
 
@@ -93,7 +93,7 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 
 - The author, for each plan a family chooses (price set by the author, once payments exist).
 - The producers, through the sales the plan sends them at their own prices.
-- SocialUs, transaction income on a sale per DECISIONS 2026-10-07. Nothing else is promised to any member.
+- SocialUs, transaction income on a sale per the 2026-10-07 ruling. Nothing else is promised to any member.
 
 ## 6. T0 / T1 / T2 / T3 (pilot, then the three sizes)
 

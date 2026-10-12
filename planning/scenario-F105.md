@@ -2,6 +2,8 @@
 id: F105
 title: A member looks from a typed place, and home stays the default
 status: approved
+horizon: next
+rank: 20
 date: 2026-10-11
 depends: [F104]
 approved: 2026-10-11 — the PM: the rings are a starting point, not a fence; the vantage is session state; a waiting market shows what is waiting, never hidden Pages.
@@ -16,7 +18,7 @@ Marcus is driving to Davis on Saturday. On Explore he types Davis into the place
 2. **Choosing a place sets the vantage for the session, and a place is taken as the area type it is** (F107). A town or neighbourhood re-centres Explore and Home on it: the rings rebuild there (hood none, town the typed town, market its market) in F104's order. A county or market is looked at as that area, with no town band.
 3. **Nothing about the member changes.** The vantage is session state: never written to the member row, never logged, never derived from IP or GPS. A new session opens at home. A shared link reopens the same vantage and search (F059 criterion 10), which is the URL, not storage.
 4. **A vantage in a waiting market shows that market's cached waiting count and the tell-me-when-it-opens control** (F076 criteria 7 and 13), and no Pages or posts. A vantage in another open market shows that market in full.
-5. **A signed-out visitor with no vantage sees the one open market while exactly one is open, named in the control.** Once more than one market is open, the visitor is asked to type a place before results show; nothing is picked for them.
+5. **A visitor with no location is prompted to enter a location or choose a market, with an arrow pointing to the market selector.** Nothing is picked for them, whether one market is open or several.
 
 ## Not this
 
@@ -36,3 +38,6 @@ Saved places, a travel plan, or remembering the last vantage across sessions. A 
 **Precedents.** Yelp and Google Maps: a typed "near" place beside the search, current location as the default; Airbnb and Eventbrite put "Where" beside "What"; Nextdoor locks a member to home and shows nothing else. Conflict: Nextdoor's lock is right for money and wrong for looking; the vantage follows Yelp for looking and Nextdoor for home.
 
 [platform none]
+
+## Rulings
+- **2026-10-12 — A visitor with no location is prompted to enter a location or choose a market, with an arrow pointing to the market selector.** The PM, 2026-10-12, answering the visitor-with-no-vantage question in plan #698/#699. Because nothing is picked silently (F103 criterion 3). [for now] [replaces none] [binds tiers=planning,code surfaces=explore,home,onboarding build=none]

@@ -37,61 +37,46 @@
 - F103: A market is a set of towns, and the zip decides which one a person is in
 
 ## Next
+- F104: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency
+- F105: A member looks from a typed place, and home stays the default
+- F057: Someone who isn't selling yet finds the way in
+- F059: A newcomer browses, and finds the neighbourhood
+- F064: Someone asks for something that isn't built
+- F065: Someone follows something
+- F093: A signed-out visitor sees that something is happening, and is asked in to read it
 
-- Retired vendor routes redirected or removed.
-- Footer linking About, Terms and Privacy pages (design decision 8, 2026-10-01, the PM) — **beta scope**; none of the three pages exists in the app today. Privacy is due before the first signup. The page text is supplied from outside this repo.
-- **Tags on posts, and tag editing any time** (2026-10-01) — **in beta, confirmed 2026-10-01**; **nothing was removed to make room.** Post replaces announcement as the user-facing word; the copy review rides with the copy pass.
-- **What's happening…** — a date, a time and a post-level address on an announcement (F072); **a series that repeats, weekly with optional bounds (F074, ruled 2026-09-20)**; the time lens rows (F091). The browse query shipped 2026-09-19 **and nothing calls it** — Explore still reads the old Item-grain view client-side. So it needs **two** things, a caller and a de-duplication rule, not the one change this line claimed until 2026-09-20. **The new cost is F073, recurrence, and the parser.** Recurrence is what makes the lens non-empty; Bulletins was cut to pay for it — see § Cut.
-- Optional end time, add-to-calendar, and default alt text from title, date and place on dated announcements and gatherings (F072 criterion 6, 2026-09-30) — **beta scope**.
-- Optional public business phone on a Page (F056 criterion 9, 2026-10-01) — built (#293). Hours are hidden for beta (below).
-- **Page kinds** — the kind line (icon · Business or Social group · main collection); the latest 2–3 posts on a Page with "See all posts"; "Post" everywhere in copy (2026-10-05, dispatch-decided) — **beta scope; nothing was removed to make room.** The Page values list follows after beta.
-- **Page logo and Post images** (F099) — **beta scope**; slice approved 2026-10-05: one Page picture per Page, one photo per post, gallery after beta.
-- **AI first-pass review, the Posts review page, and the poster answering first** (F100, F101, F102, approved 2026-10-05) — **beta scope, nothing removed to make room**; about 8 build days with the freeze on 2026-10-30. The AI runs in shadow in beta. F101's scope signal recommends what to push past beta if the freeze is at risk. Auto-restore of severity-4 content stays open in F102.
-- **The map's default mix** (#331, 2026-10-05) — four buckets in one tunable setting, an even split to start; **review the mix against beta's bucket counts by 2026-11-15**.
-- Anodised palette tokens: navy actions, gold highlight (2026-10-04, `socialus-web` #325).
-- The accepted risks due 2026-10-16: error tracking in production, real deletion of removed photos — **beta scope**. Browser tests running in CI is done (2026-10-05).
-- Builder seed-content job — synthetic, display-only content — Fortnight 4.
-- Onboarding, empty states, copy pass — Fortnight 4, after the 2026-10-30 freeze. The copy pass covers person-nouns by hand.
-
+## Considering
 
 ## Later
-
-- **A staging site before production** *(the PM, 2026-10-05; before the production launch, spring 2027)*. A `staging` branch deploys to staging.socialus.org with its own Supabase project; migrations are applied and tested on staging first; changes are promoted to main in batches rather than one PR at a time. Until then, previews build only for PRs labelled for the PM's review (`socialus-web` #394).
-- Weekly business hours on a Page — built (#293, #344) and currently hidden from the Page and Edit because they cluttered it; the data is kept (the PM, 2026-10-05). When shown at all, they link out to the business's site or Google Maps rather than being kept here — they fail the value test (2026-10-05).
-- Real names between people who dealt with each other (F077, `socialus-web` #219) — **out of scope 2026-09-30; revisit with legal counsel.**
-- Bulk actions on the review queue (F079) — written, unscheduled; waits on real volume. *(The ID + selfie tier left this line 2026-09-27: the PM ruled none is being built, so F080 names no unlock.)*
-
-- Individual product and service listings on a Page — **postponed until after beta** *(the PM, 2026-10-01)*. **Starting point when it's due (the PM, 2026-10-05):** the old `/you/sell` flow, moved onto the Page's Add. Its pieces are kept in `socialus-web`, unrouted since #336: the composers `src/components/sell/ProductComposer.tsx`, `ServiceComposer.tsx`, `GatheringComposer.tsx` and the `Add*Button.tsx` triggers; their server actions under `src/app/you/sell/product/`, `service/` and `gathering/` (`actions.ts`, with `action-result.ts`); and the walkthrough's helpers `src/lib/sell/` (`purpose.ts`, `unwrap.ts`). `SellWalkthrough.tsx`, `SellCta.tsx` and `getDraftGroup.ts` belong to the retired walkthrough that Create replaced. **Also the shared foundation for the market concepts in `IMAGINE.md` (Don, 2026-10-11, likely their T1); not in the Beta milestone:** `planning/briefs/2026-10-11-market-listings.md`.
-- Item-level photos — substrate built, ~half a day when resumed.
-- Volunteering (offer/ask composer) — blocked on messaging, not on the composer.
-- The idea mechanic (wonder composer) — specced and substrate shipped, composer/page missing.
-- The feed reads the market and orders by the rings, and the vantage (F104, F105) — first fortnight after beta; the give-back town and the local badge (F106) with badges' return. Sequence: `planning/research/local-inventory-2026-10-11.md` § 4.
-- Page-level appearances at venues — ~1.5 days, scoped.
-- Follow-substrate merge and the map's area rendering — both scoped.
-- Member-to-member messaging — no substrate at all; blocks a volunteering reply channel.
-- Structured recurring-location scheduling — priced v2 buy-back for the free-text "where they'll be next" line.
-- Paid visibility / advertising mechanic — gated on passing the member-benefit test; not designed.
-- Cooperative coordination tooling (voting, distributions) — waits on documented demand.
-- LLM-enhanced natural-language search ("sourdough near me Saturday") and SEO-structured public pages. **In-app answering is the next version after beta, not backlog for 2026-10-30** *(the PM, 2026-09-21: "something I'd like to prepare for for the next version after")*. **What is wanted before beta is not building it but not foreclosing it** — five constraints in `planning/AGENT-ANSWERING.md`, each cheap now and expensive to retrofit. Paired with the crawler-blocking and thin-public-tier work in `socialus-web`.
-- **Values-shaped recommendations** (F097, draft) — private values, a ranked buying list, blended recommendations, opt-in badges, endorsements shown as a meter not a number. **Nobody can search values.**
-- Saved-search subscriptions ("notify me: new products in Oak Park").
-- Richer service-listing fields (appointment availability, scope of work), item lifecycle states (draft/paused/archived), stock indicators, bundled items.
-- Community-attested (Tier 1) and document-verified (Tier 2) locality/provenance badges — Tier 0 self-attestation is all that ships in beta.
-- Follow-stream notifications, item-level customer inquiry, follower-list management for a producer.
-- Producer growth dashboard, weekly digest email, peer benchmarks.
-- Multi-location/ambulatory-route management, sub-venue support (e.g. "Drake's barn" under Drake's).
-- On-platform payments — closed-loop ledger + ACH via a chartered partner, SocialUs takes transaction income on member commerce (the wealth-circulation rubric), a stablecoin path long-horizon.
-- Treatment-review surface (reviews the treatment, not the person) and member references.
-- Multi-owner/partnership business Pages, staff-confirmation flows, community-stewardship-to-business transition.
-
-**Speculative, not ruled**
-- Price on cards: Free / Donation / Paid *(the PM, 2026-09-30)*. F072 criterion 2 stands: an announcement carries no price today.
-- A public member profile, like a TikTok profile *(the PM, 2026-10-01)*. You currently isn't visible to anyone else; someone who wants to be followed creates a Page.
-- An event without an organization: a one-time Page for it *(the PM, 2026-10-01: "even though that doesn't really make sense")*. Today an event is a post a Page makes.
-- Vouching: a neighbour chooses to vouch for a service provider *(the PM, 2026-09-30; F095)*.
-- Page components not offered in beta *(the PM, 2026-09-30: a Page is composed of components any owner can add)*: RSVP on a single post; transactions and one-on-one meetings; visibility levels on a Page that isn't a group Page; switching following or joining off.
-- When in-app purchasing exists, producer and purchaser see each other as far as the transaction needs *(the PM, 2026-09-30)*.
-
+- F077: People who actually interact are not hidden from each other; everyone else sees a display name
+- F079: The review queue handles many reports at once
+- F055: A producer puts a photo on what they're selling
+- F106: A Page says where its give-back goes, and the local badge is the receipt
+- F097: Values shape what's recommended, and nobody can search them
+- F095: Where I work — a Page component for routine routes and response areas
+- F063: Someone says they're coming
+- F098: Home is rows that keep going, and an honest place to stop
+- F092: Narrowing happens in a modal that writes what it did
+- F048: A member gets the address, not the mileage
+- F049: A newcomer picks a hood and a metro at signup
+- F067: A follower and a member are different things
+- F068: A Page owner sees who noticed
+- F071: A stranger searches, and finds someone
+- F075: An occurrence is cancelled
+- F083: The argument reaches people a few sentences at a time, never as a wall
+- F084: Every word the app says lives in one file
+- F085: /join is a pitch, not a second door
+- F086: Signed in, and the app says so
+- F087: One create flow, and what you call it depends on what you are starting
+- F088: Nothing fits, so the app explains itself and asks what is missing
+- F089: What people are looking for, told back to the people who could make it
+- F090: A Page carries the work its owner already does elsewhere
+- F096: Events come in with consent, and send their traffic home
+- F107: A searched place is searched as what it is, a town or a county
+- F108: A gentle pause before posting something likely to hurt
+- F109: Explore shows the top results per category, nearest first by rings, each card naming its town
+- F110: A Support page shows the rough roadmap and how to help fund it
+- F111: A Join-the-team page for people who want to help build SocialUs
 
 ## Deferred
 - F104: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency

@@ -1,0 +1,25 @@
+# glob	KB	age-days — first match wins; - for none. Budgets: ops-pattern/process/WHERE-THINGS-GO.md
+STATUS.md	-	-
+README.md	-	-
+DASHBOARD.md	-	-
+PLATFORM-*.md	-	-
+constraints/*	-	-
+product/charter.md	-	-
+dashboard/*	-	-
+handoff/capabilities.md	-	-
+PRINCIPLES.md	15	-
+IMAGINE.md	15	-
+CLAUDE.md	8	-
+handoff/*	4	-
+product/foundation/nouns.md	30	-
+product/foundation/verbs.md	30	-
+product/ui/surfaces.md	30	-
+product/*	10	-
+planning/scenario-*.md	8	-
+planning/research/*	-	30
+planning/briefs/*	-	30
+planning/council/2*	-	30
+accepted-risks/*	4	-
+process/*	8	-
+planning/*	12	-
+*	12	-

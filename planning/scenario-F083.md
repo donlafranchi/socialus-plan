@@ -2,6 +2,8 @@
 id: F083
 title: The argument reaches people a few sentences at a time, never as a wall
 status: draft
+horizon: later
+rank: 170
 date: 2026-09-15
 depends: []
 ---

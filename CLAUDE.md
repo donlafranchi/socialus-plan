@@ -20,17 +20,19 @@ DECISION RULE (2026-10-04, Don)
 ## Read first, every session
 
 1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
-2. `ROADMAP.md` — Now / Next / Later / Won't.
+2. `DASHBOARD.md` § Where we're going — Now / Next / Later, generated from scenario `horizon` and `rank` and the socialus-web milestones.
 3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
 4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
-5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags in `DECISIONS.md`; never edit it.
+5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags on the rulings; never edit it.
 6. `product/foundation/what-this-is.md` § Direction — what kind of platform this is. Read it before building anything that collects or uses member data.
 
 ## Where truth lives
 
 - **How the system works:** the code in `socialus-web`. If the code can answer it, read the code, don't write it down.
-- **Why it is that way:** `DECISIONS.md`. One dated line per **live** ruling. A superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest ([newer-decision-wins]).
-- **What is decided but not built:** `planning/` scenarios with `status: approved`, and `ROADMAP.md`.
+- **Where each kind of thing goes:** `ops-pattern/process/WHERE-THINGS-GO.md` — one home per kind, budgets, generated vs maintained. Read it before writing any doc.
+- **Why it is that way:** `PRINCIPLES.md` — the principles behind the Charter, few, reworded in place as they sharpen. Principles only: the lint names the home of anything else.
+- **What was ruled:** under `## Rulings` in the scenario each ruling governs, moving verbatim to the spine or system doc when the scenario ships. One dated line per **live** ruling, words never edited; a superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest ([newer-decision-wins]).
+- **What is decided but not built:** `planning/` scenarios with `status: approved` (their `horizon` and `rank` order them), and the socialus-web milestones.
 - **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
 - **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `ops-pattern/process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
@@ -61,10 +63,10 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 | `STATUS.md` | `scripts/status.sh`, wrapping `scripts/state.sh` and `scripts/markers.py` | `.github/workflows/status.yml` — push to `main`, daily 13:05 UTC, and *Actions → status → Run workflow*, which works from a phone |
 | `README.md` | `scripts/view.sh` | the same workflow |
 | `DASHBOARD.md` (plain text), `dashboard/status-dashboard.html` (colour) | `scripts/dashboard.py`, reading `socialus-web` Issues and PRs | by hand at each 5am/5pm handoff (`ops-pattern/process/DISPATCH.md`); no workflow, the repo has no Actions minutes |
-| `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a `DECISIONS.md` change — `scripts/lint.sh` fails until it is run |
+| `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a ruling changes — `scripts/lint.sh` fails until it is run |
 | `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md` | `python3 scripts/markers.py platform`, from `[platform …]` markers | by hand after a marker changes — `scripts/lint.sh` fails until it is run |
 
-**Nothing here asks you to remember to run anything.** A skill for this was written and never installed, so it never ran once and `STATUS.md` went stale naming the wrong launch blocker — the whole point is that the refresh does not depend on anyone thinking of it (lesson 27, and lesson 15 before it). To refresh by hand anyway: `bash scripts/status.sh`.
+**Nothing here asks you to remember to run anything**, because a refresh that depends on someone thinking of it goes stale. To refresh by hand anyway: `bash scripts/status.sh`.
 
 **The repos are public for now** (2026-10-01, Actions minutes), so anyone — the workflow included — can read `socialus-web`. If they go private, the workflow needs the `SOCIALUS_WEB_TOKEN` secret. Without it `STATUS.md` still regenerates and says, at the top and at the bottom, exactly what is missing.
 
@@ -79,8 +81,8 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 | Who | Owns | Never |
 |---|---|---|
-| Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than STATUS + ROADMAP unless he asks |
-| Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, ROADMAP, DECISIONS, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
+| Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
+| Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, PRINCIPLES, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
 | Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
 Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. Don sees it only if they disagree.
@@ -118,4 +120,4 @@ Schema names are durable; UI labels translate them. The table is in `product/fou
 - **Branch:** `f060-t142-slug`. **Commit:** `F060/T142: what`.
 - **Bugs/changes/chores carry the Issue number, not a ticket number** — they have no `T###`. Branch `bug-36-slug`, commit `bug #36: what` (likewise `change-`/`chore-`). Process work has no Issue (`ops-pattern/process/PIPELINE.md`), so it dates instead: branch `process-YYYY-MM-DD-slug`, commit `docs: what`. Every branch name carries something unique that needs no central counter — dozens of agents must be able to name a branch without asking anything.
 - **Provenance is git:** `git log --grep F060` is everything built for that scenario.
-- **No hand-maintained indexes.** A file a person reads to find out what is true goes stale between the moment it is written and the moment it is read, and then it lies — REGISTRY, MAP, TRACE, STAGE-LEDGER and JOURNAL all died of this (lesson 2). The test is *who reads it to be right*, not what format it is in: a file only a script compares is fine, because nothing believes it and drift shows up as diff noise on the next run. `accepted-risks/` is that — generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. `DECISIONS.md` settles questions.
+- **No hand-maintained indexes.** A file a person reads to find out what is true goes stale between the moment it is written and the moment it is read, and then it lies. The test is *who reads it to be right*, not what format it is in: a file only a script compares is fine, because nothing believes it and drift shows up as diff noise on the next run. `accepted-risks/` is that — generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. The rulings settle questions.

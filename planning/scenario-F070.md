@@ -2,6 +2,8 @@
 id: F070
 title: Every Page has a face, even without a photo
 status: building
+horizon: now
+rank: 20
 date: 2026-09-10
 depends: [F061]
 amended: 2026-10-05 — Don (F099): a Page with no image shows its kind's placeholder, which is how kinds are told apart at a glance; letter art is gone. A Page may also carry one Page picture (F099), so "Multiple images per Page" leaves Not this.

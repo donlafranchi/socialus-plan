@@ -27,3 +27,9 @@ Every write to platform state — item creation, member edit, group lifecycle �
 **Rules out:** parallel write paths per caller; long-lived or agent-held credentials; bypassable confirmation gates; uncatalogued scopes; service-role SQL from controllers; cross-tenant Skill reads; a fake placeholder actor for platform-emitted events (the system Member is a real, login-disabled row).
 
 **CI enforcement, not just code review.** No `pg.Pool` or service-role credential outside the action-handler library; every write route must import from the action layer; every public table has RLS, asserted against the live DB; no string-interpolated SQL. These four rules are what make the design hold when the codebase grows and someone's shipping under pressure at 11pm — there's no shortcut that lints clean.
+
+## Rulings
+- **2026-09-09 — `public.spatial_ref_sys` having RLS disabled is accepted risk and is not ours to fix.** PostGIS-owned, held by `supabase_admin`, so the `alter table` fails as `postgres`; it holds coordinate-system reference data with no privacy surface. Already allowlisted with that reasoning in `tests/rls-coverage.test.ts`. Don confirmed. Evidence: `socialus-web` issue #36. *(Same call applies to the three `st_estimatedextent` overloads reported at WARN.)*
+- **The app ships on Next.js App Router + TypeScript + Tailwind v4 + Supabase (Postgres/Auth/Realtime) + Mapbox GL JS on Vercel, Playwright for evals, Vitest for units.** A stack-row swap needs a new decision; tuning within a row doesn't.
+- **Every write flows through a named, validated, transactional action handler that commits the data row and its `*_events` row together**, with `acting_member_id` always set and `via_delegation_id` when an agent acted.
+- **The data layer was rebuilt clean-slate on Person/Item/Location/Group** — no dual-write, no backfill, no rollback window; justified only because `web/` had no live users or data at the time.

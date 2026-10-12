@@ -2,6 +2,8 @@
 id: F104
 title: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency
 status: approved
+horizon: next
+rank: 10
 date: 2026-10-11
 depends: [F059, F103]
 approved: 2026-10-11 — the PM: the three rings replace "local means the whole metro"; order, never distance; a Page in a waiting market is absent until it opens.

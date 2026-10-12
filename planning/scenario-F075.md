@@ -2,6 +2,8 @@
 id: F075
 title: An occurrence is cancelled
 status: draft
+horizon: later
+rank: 160
 date: 2026-09-13
 depends: [F074]
 ---

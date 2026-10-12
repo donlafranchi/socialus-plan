@@ -2,6 +2,8 @@
 id: F108
 title: A gentle pause before posting something likely to hurt
 status: draft
+horizon: later
+rank: 270
 date: 2026-10-11
 depends: [F078]
 ---
@@ -36,3 +38,6 @@ Precedents: [Nextdoor Kindness Reminder, 2019](https://blog.nextdoor.com/2019/09
 - C) **No pause at launch**: revisit after the shadow data (two weeks, 2026-10-11 ruling). **Taken, for launch.**
 
 [platform none]
+
+## Rulings
+- **2026-10-12 — No kindness pause at launch (C). After two weeks of shadow data a pause with a scored draft goes in (A): above a cutoff set from our own log the author sees one kind pause and may post anyway; the draft is scored, not stored. A pause driven by report history (B) is not taken.** The PM, 2026-10-12, taking the recommendation. Because a cutoff we have not measured is a guess. [for now] [replaces none] [binds tiers=planning surfaces=moderation,posting build=none]

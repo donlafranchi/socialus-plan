@@ -10,7 +10,7 @@ date: 2026-10-11
 
 **Options only; nothing here is ruled.** Sources were opened on 2026-10-11 unless marked *snippet* (a search summary, page not opened).
 
-## Where we are (read from the scenarios and DECISIONS)
+## Where we are (read from the scenarios and rulings)
 
 - A report hides the content at once. The hide bar is per metro and **starts at 0: every report hides** (F078 criteria 2, 6, 7; launch value chosen on #626).
 - The AI reads every report **in shadow**: it changes nothing, it shows on the review row. Claude Haiku first; Sonnet gives a second opinion under 0.70 confidence. Output: category, severity 1 to 4, confidence 0 to 1, suggested outcome, a 140-character reason (F100 criteria 2, 3, 6).

@@ -2,6 +2,8 @@
 id: F082
 title: Anyone publishing something others show up for takes one step first, and nothing is checked
 status: approved
+horizon: now
+rank: 110
 gates: launch
 date: 2026-09-14
 depends: [F081]
@@ -49,3 +51,13 @@ ID plus selfie verification — not planned; F080 no longer names an unlock (202
 **A draft reaches nobody, so there is nothing yet to attest about** (Don, 2026-09-27). The step exists because other people will show up for the thing; that becomes true when the Page goes live. Asking earlier puts a declaration in front of someone still deciding whether to make anything.
 
 *(F057's "Not this" line and F060 criteria 1–2 were amended 2026-09-14 to match; both predate this ruling.)*
+
+## Rulings
+- **2026-10-01 — Publishing a Page requires a name, a location (an address or an area) and a description. A photo is optional; a Page without one shows its kind's default image or icon.** Don. F082 criterion 8 added, beside the rules agreement and the at-least-one-tag requirement (2026-09-13), which stand. F070 criterion 4, F093 criterion 4 and `design-language.md` restated: per-kind default art replaces art generated from each Page's id. **New for non-business kinds:** today only a business Page needs a location to publish. Builds on F082, F070 and F093. [replaces F070: generated art derived from its own id] [replaces F093: shows the same placeholder every tile does] [binds tiers=planning,code surfaces=page-publish,page-photos,default-art]
+- **2026-09-30 — The become-a-creator step is fixed statements, framed as rules rather than an attestation.** Don, on #223. The app explains the rules and why each exists, and the member agrees to abide by them. **Agreeing is the attestation.** Nothing is typed, so no free text is stored. **Adds scope to #223** (flagged, not cut): the rules are viewable with one click, and they are versioned, so when they change members re-read and agree again. F082's story and criteria 2 and 6 restated, 7 added. [replaces F082: The step runs exactly once per member.] [replaces 2026-09-27: Still open, and on #223] [binds tiers=planning,code surfaces=page-publish,copy]
+- **2026-09-30 — The rules agreement comes before every new Page, including an existing owner's next one.** Don: *"A new Page gets the attestation."* Nobody is treated as having taken a step that did not exist. **Every new Page gets the rules agreement, and every rules update asks again** (Don, answering how often). F082 criteria 1, 4 and 6 restated. [binds tiers=planning,code surfaces=page-publish]
+- **2026-09-27 — The creator attestation comes before publishing a first Page, not before creating a draft.** Don's ruling on `socialus-web` #223, answering *gate on create or on publish?* **A draft reaches nobody**; the step exists because other people will show up for the thing, and that becomes true when the Page goes live. F082's criterion 4 already said "published"; the story said otherwise and is fixed. [binds tiers=planning,code surfaces=page-publish]
+- **2026-09-14 — F081 (signup) and F082 (becoming a creator) are approved and ticketed.** Don approved both after reading the acceptance criteria in plain language. Eight tickets, T161–T168, sequenced in `HANDOFF.md`; the two migrations lead and everything else waits on them.
+- **2026-09-14 — The enforcement mechanism for the counterparty rule and for creator attestation is visibility and peer pressure — no ID check, no selfie, no approval queue, no badge.** Consistent with `policy.md` § How good faith is enforced; the ID-plus-selfie tier stays deferred (F080).
+- **2026-09-14 — The become-a-creator step covers anyone publishing something others show up for: selling and hosting alike.** The test is whether people turn up for the thing, not whether money changes hands. **Supersedes the same-day line scoping it to a first Page** and the narrower reading proposed in F082. Amends F060 criteria 1–2 (in build, nothing built against them yet) and narrows F057's "Not this" — what stays refused is self-classification, not the step.
+- **2026-09-14 — Creator verification at launch is self-attestation only, and attaches to the become-a-creator step, not to signup.** No document, ID, selfie, third-party lookup, or approval queue. The ID-plus-selfie tier stays deferred and unscheduled (F080). Consistent with the 2026-09-07 ruling that the business claim is the friction gate. See F082.

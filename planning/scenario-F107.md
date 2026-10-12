@@ -2,6 +2,8 @@
 id: F107
 title: A searched place is searched as what it is, a town or a county
 status: draft
+horizon: later
+rank: 260
 date: 2026-10-11
 depends: [F104, F105]
 ---
@@ -16,11 +18,12 @@ Marcus's home is Granite Bay, so with nothing typed his Explore shows his three 
 3. **The same name at two area types shows as two suggestions, each labelled with its type** ("Napa, town", "Napa County, county"). The member picks; nothing is picked for them.
 4. **Ring order applies only to a town or neighbourhood vantage** (F105 criterion 2). A county or market search returns that area as one set, ordered by F059's rules, with no town bands and no adjacency.
 5. **A place in a waiting market** behaves as F105 criterion 4 says, whatever its area type.
-6. **Nothing is stored.** The searched place is session state and part of the shared URL, as in F105 criterion 3.
+6. **Top-N does not apply to a searched place.** F109 (top results per category) governs the default three-ring vantage only; a searched place uses its own area type, with no "Further out" section.
+7. **Nothing is stored.** The searched place is session state and part of the shared URL, as in F105 criterion 3.
 
 ## Not this
 
-Drawing new areas or merging them for search. Distance or radius search. Saved searches. Changing what makes a Page local (F106).
+Drawing new areas or merging them for search. Distance or radius search. Saved searches. Changing what makes a Page local (F106). How many results each category shows on the default rings (F109).
 
 ## Why
 
@@ -36,3 +39,6 @@ Drawing new areas or merging them for search. Distance or radius search. Saved s
 Backlog: not yet ticketed. Verify against `socialus-web` main which of the three rings Explore already builds before writing tickets (plan #107).
 
 [platform none]
+
+## Rulings
+- **2026-10-11 — Search uses area types. A member's default location is the three rings; a place they search uses that place's own area type, so Napa (the town) and Napa County (the county) are different searches with different results.** The PM, 2026-10-11, new input on plan #107. Revises F105 ("search re-centres the rings"). Scenario: F107. [replaces none] [binds tiers=planning,code surfaces=search,explore,places]

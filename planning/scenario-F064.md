@@ -2,6 +2,8 @@
 id: F064
 title: Someone asks for something that isn't built
 status: approved
+horizon: next
+rank: 130
 date: 2026-09-10
 depends: []
 approved: 2026-09-07
@@ -21,3 +23,7 @@ Priya is making a Page for bike repair and none of the labels are hers, so she t
 ## Not this
 
 A public leaderboard or "most requested" surface. Any admin UI for the signal table. Restoring the free-text category field — it was removed deliberately, not lost. Replying to anyone.
+
+## Rulings
+- **2026-09-15 — A search that returns nothing is an honest answer, not a gap to fix.** Don: there may genuinely be nothing, and we can say that. **This removes zero-result searches as a source for the signal queue** — F064 now serves two sources, an unmapped label and an Other description, not three. **It does not retire the search dictionary**, which still grows from the tags creators create; it retires the second of its two inputs. **Resolves the open question "How does the search dictionary grow?" to A alone** — the creator's vocabulary — where the standing recommendation had been A and B together.
+- **2026-09-15 — Triage outcome that matters most: "already covered" is a labelling failure, not a dismissal.** Three people describing a thing the product already does means a label is missing, and the label layer makes the fix one row.

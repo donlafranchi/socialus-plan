@@ -2,6 +2,8 @@
 id: F048
 title: A member gets the address, not the mileage
 status: draft
+horizon: later
+rank: 110
 date: 2026-09-10
 depends: []
 ---
@@ -19,3 +21,7 @@ A newcomer to Sacramento set her home to Oak Park. Scrolling the feed Tuesday ev
 ## Not this
 
 Ranking by the place hierarchy (a later scenario) — this only removes distance, it doesn't install the replacement. Whether the `sort` control's other options survive is undecided.
+
+## Rulings
+- **2026-09-30 — "Near you", "Browse nearby" and "mi away" come out. "In Sacramento" stands in until there is a second metro.** Don, answering F094. Placeholder until then ([public-is-draft]); `voice.md`'s samples follow. The app strings are a separate ticket. [binds tiers=planning,code surfaces=copy,explore,venue]
+- **2026-09-30 — There is no "near you" while there is one metro. Nearness is deferred until there is critical mass.** Don, on F094. [binds tiers=planning,code surfaces=copy,explore]

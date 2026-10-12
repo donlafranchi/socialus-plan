@@ -2,6 +2,8 @@
 id: F049
 title: A newcomer picks a hood and a metro at signup
 status: draft
+horizon: later
+rank: 120
 date: 2026-09-10
 depends: []
 ---
@@ -19,4 +21,4 @@ Someone new to Oak Park finishes the account step. Signup asks one geography que
 
 ## Not this
 
-The plural saved-hoods set. The metro switcher. Ranking the feed by hierarchy. The rural-candidate sort mechanism (ZIP-distance vs. state vs. map) — decide at ticket time, per `DECISIONS.md` 2026-09-10.
+The plural saved-hoods set. The metro switcher. Ranking the feed by hierarchy. The rural-candidate sort mechanism (ZIP-distance vs. state vs. map) — decide at ticket time, per the 2026-09-10 ruling.

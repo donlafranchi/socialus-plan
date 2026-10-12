@@ -168,7 +168,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 | Replaces | nothing | **promotional email from businesses** |
 | Built? | **○ unbuilt** — no column, no handler, no control | **● the existing `group.follow`**, minus a reader |
 
-**Support produces no notifications. If it ever does, it has stopped being support and become a subscription** — that single test is what keeps the ribbon compatible with the not-addicting constraint instead of being a pull-back loop in softer clothing. It sits under *no engagement optimization, anywhere* and under `metrics.md`'s refusal of notification open-rate.
+**Support produces no notifications. If it ever does, it has stopped being support and become a subscription** — that single test is what keeps the ribbon compatible with the not-addicting constraint instead of being a pull-back loop in softer clothing. It sits under *no engagement optimization, anywhere* and under `metrics.md`'s refusal of notification open-rate. [for now — Find only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
 
 **Get-updates is a privacy posture as much as a feature.** Its purpose is that a Page owner reaches subscribers **without holding their email address** — which answers the hatch `messaging-problem.md` names, an organizer publishing a contact address that is *"scrapeable, not revocable."*
 
@@ -195,3 +195,6 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 A follower of a business is a customer, and customers aren't an audience for each other — following a bakery tells the bakery something, it doesn't put you in a room with its other customers. A member of a social group has joined something, and knowing who else is in it is most of the reason to join.
 
 Former members: you follow a group or you don't. A member leaves, or the Page owner prunes them — a stale membership nobody's cleaned up is tolerated, not a defect. Deferred, recorded not scoped: a group creator accepting/declining members, private groups, private members — see `groups.md` § What doesn't ship at b1.
+
+## Rulings
+- **2026-09-12 — `verbs.md` becomes one section per verb with a bullet per noun, plus a glyph-only index table for orientation.** The matrix was unreadable and ungreppable — a grep hit returned a row of pipes with no context, so an agent searching a verb learned nothing. Verb-first rather than noun-first: the file's own discipline is *"a verb is not one rule — it's a rule per noun it acts on"*, and a noun-first arrangement would duplicate `nouns.md`'s index shape, which is the two-descriptions problem. All 52 cells preserved verbatim, checked programmatically; two accidental rewordings were reverted.

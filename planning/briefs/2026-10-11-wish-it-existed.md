@@ -45,14 +45,14 @@ criteria:
 - **Launch phase (SocialUs not involved):** a wish is an **Idea** (`wonder`): a member posts it, other members show interest, the requester links the finished thing when it exists. No offers channel, no terms card, no backing, no money, no mediation. People find each other and work out the rest on their own, outside the app.
 - **If it becomes popular:** expand in this order, each only when the one before is used: public offers ("I can build that, for this"); then the standard terms card with backers (words only); then, only once payments exist and socialus-legal has cleared it, pledges that carry money. The highest backing level stays held for counsel throughout.
 - **Criteria are tagged `[launch]` or `[if popular]`.** Only the `[launch]` ones belong to the first phase. The sections on offers, the terms card and backing below are the plan for expansion, not for launch.
-- **No expiry; old wishes go stale.** This is already ruled (DECISIONS 2026-09-15: a wonder has no expiry; everything carries a last-interaction date, and anything quiet for 90 days sorts last rather than being hidden; a view does not count as interaction). `verbs.md` still said "expires 90 days"; it is corrected in the same change. Open from that ruling: whether 90 days is one number everywhere.
+- **No expiry; old wishes go stale.** This is already ruled (ruling 2026-09-15: a wonder has no expiry; everything carries a last-interaction date, and anything quiet for 90 days sorts last rather than being hidden; a view does not count as interaction). `verbs.md` still said "expires 90 days"; it is corrected in the same change. Open from that ruling: whether 90 days is one number everywhere.
 
 *Don, 2026-10-11.* A third concept, separate from the two market concepts. It connects to them (see [Market listings](2026-10-11-market-listings.md) for the map) but needs nothing from them.
 
 ## Why it fits (members first)
 
 - **Flip 1, toward in-person.** The thing gets made by a neighbour and handed over in person; the want starts a conversation between two people who live near each other.
-- **Flip 2, spreading wealth among the many.** The money goes to the member who builds, not to a catalogue company that does not make it. SocialUs earns only on a sale (DECISIONS 2026-10-07).
+- **Flip 2, spreading wealth among the many.** The money goes to the member who builds, not to a catalogue company that does not make it. SocialUs earns only on a sale (ruling 2026-10-07).
 - **Who it serves first:** the person with a specific want the shops do not stock; the neighbour who can make things and has no way to be found for it.
 
 ## 1. What this is, and what it is not, in the plan today
@@ -63,7 +63,7 @@ criteria:
 | **Offer / Ask** (schema `offer`, `ask`): entry types exist | No composer; blocked on the missing reply channel | An "I can build that" is an Offer. **A wish is an Ask or an Idea** |
 | **Discussion message**: a reply on a Page's board, one level deep | Not built | The reply channel this needs, in its smallest form: one level of public replies on a wish |
 | **F089 search demand** (draft) and **F064** (a tap on something not built) | Search demand is aggregated: a floor of ten members, one metro, raw rows deleted after 30 days; "resolved by somebody starting it" | A wish is the **member-written** form of that demand |
-| **Sample rule** (DECISIONS 2026-09-17): examples live in their own marked block, not in search, not interactive | Ruled | Limits how starter wishes can appear (section 7) |
+| **Sample rule** (ruling 2026-09-17): examples live in their own marked block, not in search, not interactive | Ruled | Limits how starter wishes can appear (section 7) |
 
 So the honest answer to "is this new?" is: **mostly no.** It is the undesigned half of Idea, plus one reply that carries a price. The brief is that design.
 
@@ -72,10 +72,10 @@ So the honest answer to "is this new?" is: **mostly no.** It is the undesigned h
 | Fact | Verified / assumed | Source |
 |---|---|---|
 | Idea has substrate only; the signalling mechanic is undesigned | Verified | `nouns.md`, `verbs.md` |
-| An Idea has no expiry and sorts last after 90 quiet days (DECISIONS 2026-09-15); `verbs.md` wrongly said it expires at 90 days, now corrected | Verified | DECISIONS 2026-09-15; `verbs.md` |
-| No messaging, no reply channel; Volunteering (offer/ask) is blocked on it | Verified | `nouns.md`, ROADMAP Later |
-| No public member profile; a member who wants to be found makes a Page | Verified | ROADMAP Speculative (2026-10-01) |
-| The platform handles no money; payments are Later; no auctions or dynamic pricing | Verified | ROADMAP Later, Won't |
+| An Idea has no expiry and sorts last after 90 quiet days (ruling 2026-09-15); `verbs.md` wrongly said it expires at 90 days, now corrected | Verified | the 2026-09-15 ruling; `verbs.md` |
+| No messaging, no reply channel; Volunteering (offer/ask) is blocked on it | Verified | `nouns.md`, the After beta milestone |
+| No public member profile; a member who wants to be found makes a Page | Verified | After beta, speculative |
+| The platform handles no money; payments are Later; no auctions or dynamic pricing | Verified | the After beta milestone; what-this-is § Won't |
 | IMAGINE's "Missing pets" worries about request-shaped posts that become rants or scams | Verified | `IMAGINE.md` |
 | A `page_posts` kind `sample` exists | Verified | `socialus-web` migration `20261010010000` |
 | Locals will answer a wish with a real offer | **Assumed** | the pilot (T0) |
@@ -123,7 +123,7 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 
 ## 6. Who earns
 
-The member who builds, from the price they state. SocialUs, transaction income on a sale once payments exist (DECISIONS 2026-10-07). Nothing is charged to post or to reply.
+The member who builds, from the price they state. SocialUs, transaction income on a sale once payments exist (ruling 2026-10-07). Nothing is charged to post or to reply.
 
 ## 6a. Backers and the standard terms
 
@@ -169,7 +169,7 @@ A backer funds an idea and receives a thing, a reward or thanks. **Gift, reward 
 
 ### The commerce-income tie
 
-Backing is member commerce. SocialUs's part is its transaction income on the sale (DECISIONS 2026-10-07), stated on the card before anyone backs; nothing is charged to post a wish, reply or back. Holding pledged money until a goal is met is custody of funds, so it can only be done for the members' benefit through the chartered partner's closed-loop ledger (ROADMAP Later); the Won't against funds held for the platform's own benefit still stands. **Until payments exist, a pledge is words between people** and the card says money moves outside the app.
+Backing is member commerce. SocialUs's part is its transaction income on the sale (ruling 2026-10-07), stated on the card before anyone backs; nothing is charged to post a wish, reply or back. Holding pledged money until a goal is met is custody of funds, so it can only be done for the members' benefit through the chartered partner's closed-loop ledger (the After beta milestone); the Won't against funds held for the platform's own benefit still stands. **Until payments exist, a pledge is words between people** and the card says money moves outside the app.
 
 ## 7. Starter requests and the sample rule
 
