@@ -2,7 +2,7 @@
 id: F114
 title: A test member with six weeks of history, for testing freshness and learning
 status: draft
-horizon: next
+horizon: considering
 rank: 135
 date: 2026-10-12
 depends: [F112, F113, F115]

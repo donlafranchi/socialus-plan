@@ -2,7 +2,7 @@
 id: F115
 title: Real businesses from Napa Valley to Tahoe are listed as unclaimed Pages, waiting with their markets
 status: draft
-horizon: next
+horizon: considering
 rank: 140
 date: 2026-10-12
 depends: [F103, F104]

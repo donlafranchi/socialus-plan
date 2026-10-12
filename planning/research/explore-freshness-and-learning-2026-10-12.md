@@ -114,7 +114,7 @@ On both sides: nothing changes what another member sees or what a Page owner see
 - **B) Collect from beta, show it when Discover ships.** Cheapest beta (the F109 log and seen only, plus a stored search log); members cannot see what is kept until Discover lands. Against Kay's scrutability and the trust the Charter asks for; the opt-out still has to exist (F109).
 - **C) Collect only what beta uses.** Seen and the F109 log; no search history kept until Discover is scoped. Least data; Discover starts cold and the test profile has little to show.
 
-**For the PM: A, B or C** (member trust, new territory). F113 is written to A.
+**Ruled A** (the PM, 2026-10-12, on #137): a member-visible profile of what we think they like, each item editable or deletable, from beta; the switch reads "Help me discover things I might like" or "I don't mind doing this myself"; built from app usage, searches, clicks and our categorizing. F113 carries the criteria. **Open**: collecting data the member is not shown (device, location); nothing is built until ruled.
 
 ## 4. The PM's test profile
 
@@ -216,15 +216,15 @@ The PM, 2026-10-12: "One needs to be party and the other needs to be business li
    - **Events.** None exist for Explore today [C]. Add, under the learning switch and with builder accounts excluded: `find.search` (query, result count, market), `find.open` (F109), `discover.shown`, `discover.action` (I'm coming, save, follow, share, not interested, open), `media.open` (photo or video, Page, category; on Find and Discover), `discover.stop_card`, `nav.switch` (from, to; counts only), and `discover.dwell` only if the PM picks B in § 9.
 4. **After the switch.** Watch the `nav.switch` counts and the § 9 measures for four weeks; Find's personal rows (following, coming up) stay on Find until then.
 
-## 8. A categorization engine (after beta; the seed may use it earlier)
+## 8. A categorization engine (beta: the profile in F113 needs it)
 
-**What it does.** Gives every Page and post up to three categories from one shared list, from its own text, photo, tags and any hashtags, so members' interests (§ 3) and Discover (§ 9) read the same keys.
+**What it does.** Gives every Page and post up to three categories from one shared list, from its own text, photo and tags, so members' interests (§ 3) and Discover (§ 9) read the same keys.
 
 **What exists** [C]: creator-typed tags (`tags`, `page_tags`, `post_tags`, with a safety review column); a fixed interest list (`INTEREST_VOCAB`); a `#` typed into a tag is ignored and post bodies are not parsed; unclaimed Pages' categories are used only to pick a stock photo and not stored; pgvector is enabled with unused `vector(1536)` tables; AI calls are raw `fetch` to the Messages API, run after a report with `after()` (F100's moderation, Haiku first with a Sonnet second opinion).
 
 **Design.**
 - **One list**: about ten top categories and sixty under them [A], the same keys as `INTEREST_VOCAB`, extended by a person, not by the model.
-- **Hashtags become tags**: a `#word` in a post body is added to its tags, normalized as tags are; the engine maps tags to categories, so creators keep their words and the list stays small.
+- **Internal categories, not hashtags**: the engine reads a post's words, a `#word` included, as plain text; categories are ours, assigned by the engine and editable by the owner and, on their own profile, by the member. Nothing asks a poster to type hashtags and no hashtag shows on a card, in line with 2026-10-11 (#619, #621: plain words, no hashtags). Dispatch's advice on the PM's question; the PM to confirm.
 - **When**: on create or edit, after the save, like F100 (`after()`); the seed and any backfill through the Batch API at half price.
 - **Input and output**: name, description or body, tags, hashtags, Overture's category for seeded Pages, and the first photo at 512px; out comes up to three categories with a confidence each, structured JSON.
 - **Correction, members first**: the owner sees "Listed under: bakery, coffee" with Change; an owner's choice is pinned and a re-run does not overwrite it; on an unclaimed Page, staff fix it from a count of "wrong category" taps. Nothing needs ongoing operator work.
@@ -270,8 +270,8 @@ The PM lifted the attention rule for Discover, so whether time counts is a choic
 Recommend B. § 2's draft objective is written without time; under B it gains one capped per-card term.
 
 ## Order to bring to the PM
-1. **What we learn about a member (A/B/C, § 3)**, with the PM now.
-2. **Where the test profile lives (A/B/C, § 4)**, next.
+1. ~~What we learn about a member~~: ruled A.
+2. **Where the test profile lives (A/B/C, § 4)**, with the PM now.
 3. Then, one at a time: time spent on Discover (A/B/C, § 9); the categorization model after its bake-off (§ 8); Discover's tab labels, icons and signed-out preview (§ 6, § 7); copy for the credit line, the suggestion prompt, the preview banner and the stop card.
 
-Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover, the switch and the categorization engine are after beta; the seed may use the engine earlier, on the Batch API.
+Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover and the switch are after beta; the categorization engine is needed in beta for F113's profile, and the seed can run it on the Batch API.

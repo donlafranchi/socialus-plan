@@ -2,7 +2,7 @@
 id: F112
 title: Explore leads with what a member has not seen yet, and gives every Page its turn
 status: draft
-horizon: next
+horizon: considering
 rank: 125
 date: 2026-10-12
 depends: [F059, F104]
