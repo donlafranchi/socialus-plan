@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **179 older decisions carry no tag yet and are not listed** — tagging is required from
+> **180 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-12** · principles — Everything the platform touches serves the people it touches
