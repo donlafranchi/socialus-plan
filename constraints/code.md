@@ -23,6 +23,8 @@
 - **2026-10-12** · [always] · principles, legal — The platform records facts; it never performs legal acts or speaks legal language (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, ai — What an assistant knows belongs to the member; the assistant never holds the keys (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, metrics — Measure what happens inside the app; the north star is time and money together (PRINCIPLES.md)
+- **2026-10-12** · [always] · markets, places — A market may cross a state line. Whether money, entities or tax must be handled per state is a question for `socialus-legal` and counsel, and does not come back to the PM as a decision (planning/scenario-F103.md)
+- **2026-10-12** · [for now] · explore, home, onboarding — A visitor with no location is prompted to enter a location or choose a market, with an arrow pointing to the market selector (planning/scenario-F105.md)
 - **2026-10-12** · explore, search, home — Explore shows the top N results per category, nearest first in F104's ring order, each card naming its town ("in Folsom") and showing no miles or minutes. Starting guesses: 10 coffee, 20 restaurants, 5 hardware, and a default row for the rest, held in a config table a person edits (planning/scenario-F109.md)
 - **2026-10-12** · explore, privacy, metrics — From beta day one we log which Page a member opens from Explore, with the member id, staff-side only, for the benefit of members, with an easy opt-out; member-to-member privacy stays strict (planning/scenario-F109.md)
 - **2026-10-11** · follows — The following list keeps its three tables and has one reader (what `get-member-follows.ts` does today); no schema change. F065 criterion 5 now says so (planning/scenario-F065.md)

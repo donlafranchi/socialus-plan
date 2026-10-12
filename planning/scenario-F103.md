@@ -15,7 +15,7 @@ Priya in Davis signs up. Her zip is in Yolo County, and Yolo is in the Sacrament
 
 ## Acceptance
 
-1. **A market is a `region` row in the place tree whose members are whole counties and, where a county is split, county subdivisions.** Sacramento's at beta: Sacramento and Yolo counties whole, Placer minus its Tahoe subdivision, El Dorado minus its South Lake Tahoe subdivision. Every US county belongs to exactly one market; a county nobody has drawn into a named market is its own waiting market by default. Moving a county or subdivision between markets is one row, no deploy.
+1. **A market is a `region` row in the place tree whose members are whole counties and, where a county is split, county subdivisions.** Sacramento's at beta: Sacramento and Yolo counties whole, Placer minus its Tahoe subdivision, El Dorado minus its South Lake Tahoe subdivision. Every US county belongs to exactly one market; a county nobody has drawn into a named market is its own waiting market by default. Moving a county or subdivision between markets is one row, no deploy. **A market's counties may lie in more than one state.**
 2. **A zip resolves to exactly one market, deterministically:** zip → county (the national HUD-USPS crosswalk, largest residential share wins) → market; inside a split county, zip → county subdivision (the Census ZCTA relationship file, largest share wins) → market. The same zip always gives the same market. A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."*
 3. **The zip decides, nobody picks.** A zip in an open market signs the person up into it. A zip in a waiting market puts them on that market's waitlist (F076) and names the market they are waiting for. No IP, no GPS, no default, no shortlist, no picker.
 4. **Nothing member-facing reads the MSA or CSA.** An MSA code, where kept, is a column on the market row read by reports only. No surface shows the words MSA, CSA or metro.
@@ -23,7 +23,7 @@ Priya in Davis signs up. Her zip is in Yolo County, and Yolo is in the Sacrament
 
 ## Not this
 
-A market drawn by population, density, drive time or behaviour. A market that crosses a state line (open question below). A list of markets to browse or pick from. Growing a market outward with buffers until a stray place falls in (parked 2026-09-30, now moot: every county is a market). Funds, payouts or fees. What Explore shows or how it orders (F104), where a member looks from (F105), what makes a Page local (F106).
+A market drawn by population, density, drive time or behaviour. A list of markets to browse or pick from. Growing a market outward with buffers until a stray place falls in (parked 2026-09-30, now moot: every county is a market). Funds, payouts or fees. What Explore shows or how it orders (F104), where a member looks from (F105), what makes a Page local (F106).
 
 ## Why
 
@@ -36,6 +36,8 @@ A market drawn by population, density, drive time or behaviour. A market that cr
 
 **Path: new territory, ruled.** The PM approved replacing the MSA on 2026-10-11. This scenario replaces F081 criterion 8 (every zip → its MSA) and F076 criteria 1, 2 and 16 (every US metro selectable; metros ordered by waiting count): with the zip deciding, there is nothing to select and no list to order. The 2026-09-30 rulings that the metro for a zip is the MSA and that a member outside every seeded metro chooses one are superseded; "the zip is kept, nobody picks" (2026-09-30) stands and is now literal. F081 criterion 7 (no place the person did not give) holds: the home town is derived from the zip the person gave, the way the metro was.
 
+**A state line is a political boundary, not a physical one,** so a market may cross it: the Tahoe basin can be one market with the Nevada shore (Douglas and Washoe counties). What changes with a state line is the law, not the market (see Rulings). Nothing in this scenario moves money.
+
 **Why every county is a market by default.** "Every US subdivision belongs to an open market or a waiting one" is only testable if the default needs no drawing. Counties tile the US with no gaps (`017_places.sql`); so the national data is zip → county, which F081 already named, and subdivisions are loaded only for a county an operator splits (Placer, El Dorado). Towns (Census Places) are loaded for open markets, when they open, which is what keeps the data job to days, not weeks. Craigslist does the same: a region per metro, the rest of a state as one site.
 
 **Why subdivisions, not Places, as the market's grain.** A Census Place is the right home for a member and a Page (the town ring, F104), but a market needs enough people to clear a gate, and in most of the country only a county does. A county subdivision (a CCD in California) is the Census's own partition of a county, so Placer minus Tahoe is a set of rows, not a drawn line. [A: the exact CCD names for the Tahoe basin in Placer and El Dorado are verified against TIGER before seeding, not assumed.]
@@ -46,9 +48,8 @@ A market drawn by population, density, drive time or behaviour. A market that cr
 
 **Where "local" is defined and read today, and the order of work:** `planning/research/local-inventory-2026-10-11.md`. **The model in four other places:** `planning/research/rings-stress-test-2026-10-11.md`.
 
-[open-question owner=don raised=2026-10-11] May a market's county set cross a state line (Tahoe: El Dorado/Placer CA with Douglas/Washoe NV)? A) **Yes, for discovery only; money stays per state** — Explore works for Tahoe, legal stays simple (recommended). B) No; two markets, each waits on its own. C) Yes, for everything; needs counsel before the first payout. Bites when Tahoe is drawn, not before.
-
 [platform none]
 
 ## Rulings
 - **2026-10-11 — The zip lookup switches to zip → county → market now, inside `socialus-web` #569 and #568; no MSA build comes first.** The PM, 2026-10-11, option A on plan #107, since the MSA is replaced (F103) and building it first would be thrown away. [replaces none] [binds tiers=planning,code surfaces=signup,places,waitlist] Issue: #569.
+- **2026-10-12 — A market may cross a state line. Whether money, entities or tax must be handled per state is a question for `socialus-legal` and counsel, and does not come back to the PM as a decision.** The PM, 2026-10-12, replacing the open question that offered discovery-only, no, or yes-for-everything. Because a state line is a political boundary, not a physical one, and the Tahoe basin spans one. Scenario: F103. [always] [replaces none] [binds tiers=planning,code surfaces=markets,places build=none]

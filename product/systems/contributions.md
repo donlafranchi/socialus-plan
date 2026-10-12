@@ -36,7 +36,7 @@ No login. For each community, for the month: what **came in**, what the **platfo
 
 ## Give-back: the community decides
 
-*"Community" for money is still open: proposed, a town (`places.md` § The three rings carries the question). Ruled 2026-10-11 and written as F106: a Page owner declares one give-back town; the Page's own town makes it local and badged, anywhere else does not.*
+*"Community" for money means the community's legal entity (`places.md` § Rulings, 2026-10-12): "per community" below reads "per community entity". Ruled 2026-10-11 and written as F106: a Page owner declares one give-back town; the Page's own town makes it local and badged, anywhere else does not.*
 
 Participatory budgeting, per community:
 
