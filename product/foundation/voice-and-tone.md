@@ -89,7 +89,7 @@ Lines that fit:
 
 ## 5. Source (locked, verbatim)
 
-The PM's original `voice.md` text, 2026-09-15, from his TikTok essay on dying malls, late capitalism and supporting local. Kept intact so his words are never paraphrased. One authorised removal, 2026-09-15: a second variant of the no-sale line, asserting ownership of what members create, was removed on his instruction over legal exposure; it is not reproduced, and the ruling is the dated `DECISIONS.md` line.
+The PM's original `voice.md` text, 2026-09-15, from his TikTok essay on dying malls, late capitalism and supporting local. Kept intact so his words are never paraphrased. One authorised removal, 2026-09-15: a second variant of the no-sale line, asserting ownership of what members create, was removed on his instruction over legal exposure; it is not reproduced, and the ruling is the dated line below.
 
 ---
 

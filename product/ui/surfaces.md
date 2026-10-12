@@ -35,7 +35,7 @@ owns:
 
 **Three tabs and a create action: Home, Browse, You, and `+`.** This is what the code ships, and — since 2026-09-12 — what is ruled.
 
-**The two-tab merge is rescinded** *(2026-09-12)*. Don: *"we rescinded that decision to make the launch date."* **A scope cut for 30 October, not a design conclusion** — the merge was not judged wrong on its merits. Anyone reviving it needs that context. `../../DECISIONS.md`.
+**The two-tab merge is rescinded** *(2026-09-12)*. Don: *"we rescinded that decision to make the launch date."* **A scope cut for 30 October, not a design conclusion** — the merge was not judged wrong on its merits. Anyone reviving it needs that context.
 
 **One thing in the nav is still missing: the create action.** Three tabs ship; the `+` does not. That was the half of the two-tab decision that was never about tab count.
 
