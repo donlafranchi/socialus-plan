@@ -42,7 +42,6 @@ Every entry added from 2026-09-12 carries three things:
 - **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build. [lane: later]
 - **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped. [lane: later]
 - **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed. [lane: later]
-- **Social integration.** How TikTok/Instagram could be distribution, credibility or discovery channels into the platform. Not before b2; needs feed, follows and item surfaces. [lane: later]
 - **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating. [lane: later]
 - **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed. [lane: later]
 - **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling. [lane: later]
@@ -50,6 +49,12 @@ Every entry added from 2026-09-12 carries three things:
 ---
 
 ## Added under the house rules
+
+### Short video and photos on Pages
+
+*Don, 2026-10-12, verbatim:* "We will want more photos and short videos to be viewed in this app. I was looking at wineries yesterday and searched for them on tiktok to see what they were about. it would be helpful for us to allow these in our app for our users. perhaps business owners can link videos about their business from tiktok or we host videos from these businesses before they get posted to tiktok as an example. this should already be in imagine.md. write this up somewhere for later use. this should be done sooner than later on our roadmap." [lane: considering]
+
+Absorbs "Social integration" (TikTok and Instagram as distribution and discovery channels). *Options, not decisions (agent, 2026-10-12):* **A) Link or embed** an owner's TikTok, Instagram or YouTube video: cheap, no storage, but our moderation does not see it. **B) Host short video natively**, posted here before TikTok: a reason to post here first, but it costs storage and transcoding, and video enters moderation (the F100 shadow pass, the child-safety scan). Photos are the smaller step either way. Feeds Discover's full-screen format. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
 
 ### Ticketing, and what RSVPs have to do with Ticketmaster
 
@@ -104,23 +109,23 @@ Every entry added from 2026-09-12 carries three things:
 
 *Don's ruling, 2026-09-19, recorded here because the ruling was that it stays here:* **there is no goal object type.** The app is a **finding mechanism**. The organizing happens in real life, and where it needs a legal form it happens in entities formed outside the platform. [lane: later]
 
-**Why this is in the waiting room and not the spine.** It has no noun — that is the ruling. It has no verb of its own: what people actually do is make a Page and post a date, and both already exist. It has no surface. **It fails all three parts of the test at the top of this file**, which is the whole reason it stays rather than moving.
+**Why it is here, not in the spine.** It has no noun (that is the ruling), no verb of its own (people make a Page and post a date, both existing) and no surface: it fails all three parts of the test at the top of this file.
 
-**What it is not:** an Idea (`wonder`) — that is someone putting a *new thing* to the neighbourhood and watching for interest, and it has a noun and substrate already. Not a Page — a Page is *who*. Not a dated post — that is *when*. The occasion would be *what for*, and nothing in the model holds that.
+**What it is not:** an Idea (`wonder`), which is a *new thing* put to the neighbourhood and already has a noun; a Page, which is *who*; or a dated post, which is *when*. The occasion would be *what for*, and nothing in the model holds that.
 
-**What would make it real:** an occasion that a Page and a dated post cannot carry between them — something people need to find, join and come back to that is neither an organization nor a moment. Nobody has produced one yet, and until somebody does, the pair is the answer.
+**What would make it real:** an occasion that a Page and a dated post cannot carry between them, something people find, join and come back to that is neither an organization nor a moment. Until somebody produces one, the pair is the answer.
 
 ### Places compete to keep spending local
 
-*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays with local people. Places compete to keep spending local, with local pride as the motivator. It would show on place pages (`/places/…`, the 2026-10-06 ruling) as local-pride measures, once purchases are tracked. [lane: later]
+*The PM, 2026-10-06. An exploration, not a ruling.* Local operators run their own versions of platform businesses (scooters, rides, stays) through SocialUs, so the money stays local. Places compete to keep spending local, motivated by local pride, shown on place pages (`/places/…`, 2026-10-06) once purchases are tracked. [lane: later]
 
-**What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is only an index.
+**What would make it real:** purchases tracked on the platform, and at least one local operator running a platform-style service through a Page. Until then a place page is an index.
 
 ### Civic voice — a pulse of how a community feels about local issues
 
-*The PM, 2026-10-06. An exploration, not a ruling.* A space for public figures, mainly elected officials, as a kind of Page, where the community's view on local issues is visible. Not free-text comments: members choose from framed options on issues, to give a pulse of how people feel and help them engage. [lane: later]
+*The PM, 2026-10-06. An exploration, not a ruling.* A space for public figures, mainly elected officials, as a kind of Page, showing the community's view on local issues. Not free-text comments: members choose from framed options, giving a pulse of how people feel. [lane: later]
 
-**High-risk territory, flagged:** moderation, political neutrality, legal exposure and brigading. It needs its own research before any scenario is written, and nothing here is approved to build.
+**High-risk territory, flagged:** moderation, political neutrality, legal exposure and brigading. It needs its own research before any scenario; nothing here is approved to build.
 
 **What would make it real:** that research done and the PM ruling on it, and a public figure willing to hold a Page.
 
@@ -148,11 +153,11 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Community funds a seller designates
 
-*Don, 2026-10-11. Later; nothing built, payments are cut from beta.* [lane: later] A community holds several funds (a general fund, a library, youth sports, main street). A seller designates the fund their give-back goes to, and may change it once a year, like open enrollment. Money leaves the chartered partner only to a verified legal payee the community already has; a fund with no payee accrues as pending, visibly, and that is what prompts a community to organise. Communities form their own entities, alone or with help; SocialUs creates none and pools nothing top-down. *Analysis:* precedents are Open Collective's fiscal hosts and pending balances, payroll-giving designations, co-op patronage declarations; tax treatment of a designation is unknown and goes to `socialus-legal` when due. **What would make this real:** the first payout period with a positive surplus in one community.
+*Don, 2026-10-11. Later; nothing built, payments are cut from beta.* [lane: later] A community holds several funds (a general fund, a library, youth sports, main street). A seller designates the fund their give-back goes to, and may change it once a year, like open enrollment. Money leaves the chartered partner only to a verified legal payee the community already has; a fund with no payee accrues as pending, visibly, and that is what prompts a community to organise. Communities form their own entities, alone or with help; SocialUs creates none and pools nothing top-down. *Analysis:* precedents are Open Collective's fiscal hosts, payroll-giving designations, co-op patronage declarations; tax treatment goes to `socialus-legal` when due. **What would make this real:** the first payout period with a positive surplus in one community.
 
 ### Evidence of deceit, submitted by members
 
-*Don, 2026-10-11. Later; designed ahead of need.* [lane: later] A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop with evidence, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
+*Don, 2026-10-11. Later; designed ahead of need.* [lane: later] A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
 
 ### Market shopper: a neighbour shops the market for you
 
@@ -182,10 +187,8 @@ Every entry added from 2026-09-12 carries three things:
 
 *Analysis, agent, 2026-10-11:* mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply "I can build that, for this", and there is no reply channel (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
 
-**Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So the first phase is a wish as an Idea: post it, show interest, link the finished thing, nothing more, SocialUs not involved. **No expiry:** old wishes go stale (sorted last after 90 quiet days, per the 2026-09-15 ruling), they are not removed. Everything below (offers, the terms card, backers) is the plan *if it becomes popular*.
-
-**Backers (Don, 2026-10-11):** "Maybe we also offer others to become backers and we provide the structure so that the parties don't have to figure this out for themselves." A backer funds an idea; one standard terms card, vetted once by counsel at the platform level, is what the requester, maker and backers accept: what is funded, the amount, what the backer gets back (the thing, a defined reward, or thanks), milestones, delivery, what happens if it falls through, who owns the result. Three variants: gift, reward, pre-purchase. **The purpose, in Don's words:** "We want to generate revenue for our members and not let outside lawyers take advantage of our members": the template is a member benefit and the revenue stays with members. **Backing is not investing, with one level held back:** gift, reward and pre-purchase give a backer a thing, a reward or thanks, and no money back, share or return. Don, 2026-10-11: "a backer at the highest level is an investor. We want to be an economic engine for our members." That level is not designed or offered; it is held for socialus-legal (crowdfunding, securities and money-handling rules), kept apart from the settled ruling that members are SocialUs's own investors. Don chose option A: words-only terms until payments exist and counsel clears it.
-
+**Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So a wish is an Idea: post it, show interest, link the finished thing; SocialUs is not involved. **No expiry:** old wishes sort last after 90 quiet days (2026-09-15), not removed. Offers, the terms card and backers are the plan *if it becomes popular*.
+**Backers (Don, 2026-10-11):** "Maybe we also offer others to become backers and we provide the structure so that the parties don't have to figure this out for themselves." A backer funds an idea under one standard terms card, vetted once by counsel at the platform level, in three variants: gift, reward, pre-purchase. The aim is a member benefit: "We want to generate revenue for our members and not let outside lawyers take advantage of our members." **Backing is not investing:** no money back, share or return. The highest level ("a backer at the highest level is an investor") is not designed or offered and is held for socialus-legal. Don chose option A: words-only terms until payments exist and counsel clears it. Terms-card contents and detail: the brief § 6a.
 **Connects to:** the market listings (a wish can ask for a shopper or a plan; an answer that is for sale becomes a listing) and to F089 (wishes show producers what to bring).
 
 **What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
@@ -199,6 +202,6 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 ### Member-facing names for Find and Discover
 
-*Don, 2026-10-12.* The copy names are to be more interesting than the internal ones. A later item. [lane: later]
+*Don, 2026-10-12.* The copy names should be more interesting than the internal ones. Later. [lane: later]
 
-[open-question owner=don raised=2026-10-12] Every other IMAGINE entry is laned Later. Recommended for Considering (laned so now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (marked Priority: higher; the report path now exists).
+[open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).
