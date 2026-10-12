@@ -18,11 +18,13 @@ Marcus lives in Granite Bay. He searches coffee and sees ten cafes: Granite Bay'
 5. **The measure can change without the callers changing.** What "nearest" means sits inside top() and its own scenario; inputs and the output shape stay as they are.
 6. **One event is logged when a member opens a Page from Explore:** the member id, the member's home town, the Page's town, the category and the rank in the list. Staff-side only: no member sees it, it is never shown member to member, and no coordinates or device location are stored. A member can opt out easily from You, and an opted-out member is not logged.
 7. **Logged counts reach a person, not the table.** A staff report shows, per category, how many results members actually open past. Every count shows, however small; a low count carries "few opens, still a guess". Staff metrics carry no small-count suppression (DECISIONS 2026-10-09). A person edits the rows; nothing retunes itself (Next: tune N from the log).
-8. **Top-N applies to the default vantage, the three rings.** A searched named place uses its own area type (F107), not top-N: Napa the town and Napa County are searched as what they are.
+8. **Show more, asked for by the member (Now).** Under the N results a "Show more" button adds the next set, continuing in ring order within the market. It shows whenever the market holds more matches; when the first set comes up short it reads "Show more nearby". Nothing widens unless the member taps it.
+9. **Search further, asked for by the member (Next, its own criterion).** At the market's edge a "Search further" control reaches into neighbouring markets and shows them in a separate labelled section, each card still naming its town and showing no distance. Nothing widens silently, and a waiting market shows no Pages (F105 criterion 4).
+10. **Top-N applies to the default vantage, the three rings.** A searched named place uses its own area type (F107), not top-N: Napa the town and Napa County are searched as what they are.
 
 ## Not this
 
-Showing distance or time anywhere. Routing, isochrones or density tiers. A neighbouring-market section. N set per member. A config editor in the app: the operator edits rows. Self-tuning. Top-N on a searched place (F107 owns that). Changing the order inside a ring (F059 criterion 3).
+Showing distance or time anywhere. Routing, isochrones or density tiers. A neighbouring-market section before Search further (criterion 9) ships. N set per member. A config editor in the app: the operator edits rows. Self-tuning. Top-N on a searched place (F107 owns that). Changing the order inside a ring (F059 criterion 3).
 
 ## Why
 
@@ -35,7 +37,7 @@ Showing distance or time anywhere. Routing, isochrones or density tiers. A neigh
 
 **Path: new territory, ruled** (the PM, 2026-10-12, A: top-N per category, replacing the earlier depth-by-bands design). It logs member behaviour, which touches privacy and member trust; the PM ruled the log with the member id, staff-side, for members, with an easy opt-out ("We are tracking, just not for shareholder benefit"), consistent with the 2026-10-11 data ruling. Precedents: [Walk Score](https://www.walkscore.com/methodology.shtml) counts categories separately; Yelp and Google list nearest first and show distance, which 2026-09-30 refuses.
 
-**Next:** tune N per category from the log; a person edits the rows.
+**Next:** tune N per category from the log (a person edits the rows), and Search further (criterion 9).
 
 [open-question owner=don raised=2026-10-12] Later: show driving time on each card once a routing service exists (OpenStreetMap with Valhalla or OpenRouteService), only if the 2026-09-30 no-distance ruling is lifted at that point. A) lift it then, for driving time only. B) keep no distance anywhere. Recommend B until a member asks for it.
 
