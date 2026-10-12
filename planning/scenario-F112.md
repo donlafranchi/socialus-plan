@@ -13,7 +13,7 @@ A member opens Explore on Monday and the bakery that led on Saturday has moved d
 
 ## Acceptance
 
-1. **Order stays place, then time.** F104's ring bands, then the recency bands #558 built (2, 7 and 30 days, then older), decide the order as today. Everything below acts only inside one ring band and one recency band. This is the tool side; the fun side's feed is a later design (research note § 2).
+1. **Order stays place, then time.** F104's ring bands, then the recency bands #558 built (2, 7 and 30 days, then older), decide the order as today. Everything below acts only inside one ring band and one recency band. This is Find; Discover's feed is a later design (research note § 2).
 2. **Not seen yet first, signed in.** Inside a band, Pages the member has not been shown in the last 14 days [guess] come first.
 3. **"Seen" is one row per member per Page** with the last time shown, expiring after 30 days. It is listed in "What SocialUs knows about you" (F113), and the learning switch stops it and deletes it. Staff-side under the 2026-10-09 ruling; no member sees another's.
 4. **Fair turns.** Next, Pages with the fewest showings in the vantage's market over the last 7 days; the session seed (#558) breaks ties. The market count is per Page per day with no member id, like `map_mix_log`. Signed out, this and the seed are the whole rule.
@@ -25,7 +25,7 @@ A member opens Explore on Monday and the bakery that led on Saturday has moved d
 
 ## Not this
 
-The fun side's feed, interest ranking or learning from opens (after beta, `IMAGINE.md` § Two sides). Popularity or trending. Distance.
+Discover's feed, interest ranking or learning from opens (after beta, `IMAGINE.md` § Two sides: the tool and the fun). Popularity or trending. Distance.
 
 ## Why
 

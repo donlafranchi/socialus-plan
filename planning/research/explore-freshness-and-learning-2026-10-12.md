@@ -1,34 +1,34 @@
 # Explore freshness, learning about a member, a test profile and a regional seed (2026-10-12)
 
-Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Draft scenarios: F112 (tool-side freshness, beta), F113 (what we learn), F114 (test profile), F115 (regional seed). The fun-side feed is designed here only, after beta, and is not a scenario.
+Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Draft scenarios: F112 (Find freshness, beta), F113 (what we learn), F114 (test profile), F115 (regional seed). The Discover feed is designed here only, after beta, and is not a scenario.
 
 **How sources are marked.** **[V]**: the page was read this session. **[S]**: only a search snippet or a secondary write-up was seen. **[A]**: assumed, verify before building. **[C]**: read in `socialus-web` main at `0e5ee14`.
 
 ## Two sides, and what conflicts
 
-**The newer direction (the PM, 2026-10-12; `IMAGINE.md` § Two sides, `PRINCIPLES.md`):** the app has two sides. **The tool** is finding something specific, like Yelp: place and time order, and search. **The fun** is exploring with nothing in mind, more like Instagram or TikTok, and the algorithm is for that side. The fun side is after beta and not ready for council. Earlier stances that go against it are tagged `[for now]` and listed for review in `planning/research/two-sides-conflicts-2026-10-12.md`; none is treated as a blocker here.
+**The newer direction (the PM, 2026-10-12; `IMAGINE.md` § Two sides: the tool and the fun, `PRINCIPLES.md`):** the app has two sides, internally named Find and Discover. **Find** (the tool) is finding something specific, like Yelp: place and time order, and search. **Discover** (the fun) is exploring with nothing in mind, more like Instagram or TikTok, and the algorithm is for that side. Discover is after beta and not ready for council. Earlier stances that go against it are tagged `[for now]` and listed for review in `planning/research/two-sides-conflicts-2026-10-12.md`; none is treated as a blocker here.
 
 **Conflicts this note touches** (noted, not resolved):
-- Charter flip 1, "never by what holds your attention" and "Browse is complete, not ranked by your interests": the fun side ranks by interests and is engagement-aware (§ 2). The tool side keeps place and time.
-- F059's 2026-09-12 ruling, "behaviour read back at the member may not": tool-side "not seen yet" (§ 1) and suggestions from behaviour (§ 3) read behaviour back at the member.
-- F098 criterion 4, no input measures opens or dwell: the fun side's objective uses opens and saves; dwell stays out (§ 2).
-- No pay-to-rank on the fun side is **assumed, not decided** (open question in the conflicts note).
+- Charter flip 1, "never by what holds your attention" and "Browse is complete, not ranked by your interests": Discover ranks by interests and is engagement-aware (§ 2). Find keeps place and time.
+- F059's 2026-09-12 ruling, "behaviour read back at the member may not": Find's "not seen yet" (§ 1) and suggestions from behaviour (§ 3) read behaviour back at the member.
+- F098 criterion 4, no input measures opens or dwell: Discover's objective uses opens and saves; dwell stays out (§ 2).
+- **Paid promotion on Discover is open for design after beta** (the PM removed no-pay-to-rank from Discover, 2026-10-12). Find keeps Charter flip 2's "no member can pay to rank above another". The test for any design is PRINCIPLES' member-benefit gate for paid visibility; "it funds the platform" fails alone.
 
 **Rules still standing that this fits:** collect data to benefit members with an easy opt-out (2026-10-11); the F109 open log, staff-side with opt-out (2026-10-12); member to member strict, staff have access, no tools that target one member (2026-10-09); sharing opt-in and private by default (PRINCIPLES); no distance anywhere (2026-09-30); a Page in a waiting market on no surface until it opens (F104); members self-correct before staff work (2026-10-11); unclaimed Pages carry the business's own credited photo, the Unclaimed tag, claim and remove (2026-10-05).
 
 **Already built [C].** PR #558 shuffles Explore once per session: four recency bands (2, 7 and 30 days, then older), and inside a band an order from a hash of a session cookie (`su_seed`) and the row id (`src/lib/browse/session-shuffle.ts`). Lenses are `recent | soonest | newest` plus tags and time rows. No "seen" tracking, no search log, no learning opt-out and no F109 open log exist yet. `member_interests` and `member_follows` read self-only since 2026-09-30. `item_responses` (RSVP, save) exists but only the persona seed writes to it. Home is paused and redirects to Explore.
 
-## 1. Freshness on the tool side (beta)
+## 1. Freshness on Find (beta)
 
-The tool side keeps place and time as the order. Freshness acts only inside a ring band and a recency band.
+Find keeps place and time as the order. Freshness acts only inside a ring band and a recency band.
 
 ### Precedents
 - **Front Porch Forum**: "no algorithm; everyone using the service sees the same content in their geographic area"; human moderators review every post; a slow pace, no endless scroll [V] ([Wikipedia](https://en.wikipedia.org/wiki/Front_Porch_Forum)). Fresh because of a daily cadence and place, not because of ranking. One issue a day: [S].
-- **Nextdoor**: machine learning ranks posts "most likely to matter to you" and re-engages lapsed members [V] ([Nextdoor blog](https://blog.nextdoor.com/whats-new-on-nextdoor-product-updates-1)). Engagement-ranked; not the tool side's model.
+- **Nextdoor**: machine learning ranks posts "most likely to matter to you" and re-engages lapsed members [V] ([Nextdoor blog](https://blog.nextdoor.com/whats-new-on-nextdoor-product-updates-1)). Engagement-ranked; not Find's model.
 - **Are.na**: "No ads, no personalized recommendations"; what you see comes from what you chose to follow [V] ([are.na](https://www.are.na/home)).
 - **Instagram Following and Meta under the DSA**: chronological feeds of what you follow; in the EU, Search "based only on the words they enter" [V] ([Instagram](https://about.instagram.com/blog/announcements/favorites-and-following), [Meta](https://about.fb.com/news/2023/08/new-features-and-additional-transparency-measures-as-the-digital-services-act-comes-into-effect/)).
 - **Bluesky custom feeds**: the member picks the feed, the platform supplies sensible defaults [V] ([Bluesky](https://bsky.social/about/blog/7-27-2023-custom-feeds)). The nearest thing to our lenses.
-- **Mastodon trends**: moderator-reviewed, but counted from popularity [V] ([Mastodon 3.5](https://blog.joinmastodon.org/2022/03/mastodon-3.5/)). Popularity is attention: not on the tool side.
+- **Mastodon trends**: moderator-reviewed, but counted from popularity [V] ([Mastodon 3.5](https://blog.joinmastodon.org/2022/03/mastodon-3.5/)). Popularity is attention: not on Find.
 - **Spotify Discover Weekly**: new every Monday [V] ([Spotify](https://newsroom.spotify.com/tag/discover-weekly-mondays/)). The cadence transfers; the personalisation does not.
 - **Airbnb**: making neighbouring results less alike helped in A/B tests [V] ([arXiv 2210.07774](https://arxiv.org/abs/2210.07774)).
 
@@ -36,8 +36,8 @@ The tool side keeps place and time as the order. Freshness acts only inside a ri
 - **Fair exposure over many rankings** (Biega, Gummadi and Weikum, SIGIR 2018): no one list can be fair, so make each item's visibility, summed over many lists, proportional to its relevance [V] ([arXiv 1805.01788](https://arxiv.org/abs/1805.01788)); Singh and Joachims, KDD 2018, the same idea per list [V] ([arXiv 1802.07281](https://arxiv.org/abs/1802.07281)). **This is the one that fits a local platform: every business gets its turn.**
 - **Novelty and diversity** (Kaminskas and Bridge, ACM TiiS 2016): diversity goes with novelty, and novelty raises coverage [V] ([UCC](https://research.ucc.ie/en/publications/diversity-serendipity-novelty-and-coverage-a-survey-and-empirical/)). MMR re-ranking cuts redundancy [V] ([Carbonell and Goldstein 1998](https://people.eng.unimelb.edu.au/ammoffat/sigir98/abstracts/carbonell.html)); topic diversification raised satisfaction while lowering accuracy [S] (Ziegler et al., WWW 2005).
 - **Impression discounting** (Lee et al., LinkedIn, KDD 2014): showing an item again and again lowers its response [V, slides] ([slides](https://slideshare.net/mitultiwari/impression-kdd)). The basis for "not seen yet first", and it needs a per-member record of what was shown.
-- **Bandits and Thompson sampling** (Li et al. 2010 [V], [arXiv 1003.0146](https://arxiv.org/abs/1003.0146)): learn from clicks. Not on the tool side; on the fun side, only as the exploration share in § 2, tuned to the member-first objective, not to clicks.
-- **DSA Article 27** (explain the main ranking parameters) and **Article 38** (very large platforms offer one option not based on profiling) [V, mirror] ([27](https://www.eu-digital-services-act.com/Digital_Services_Act_Article_27.html), [38](https://www.eu-digital-services-act.com/Digital_Services_Act_Article_38.html)). We are not bound; the tool side's place-and-time order is Article 38's option by construction, and is the fun side's off switch.
+- **Bandits and Thompson sampling** (Li et al. 2010 [V], [arXiv 1003.0146](https://arxiv.org/abs/1003.0146)): learn from clicks. Not on Find; on Discover, only as the exploration share in § 2, tuned to the member-first objective, not to clicks.
+- **DSA Article 27** (explain the main ranking parameters) and **Article 38** (very large platforms offer one option not based on profiling) [V, mirror] ([27](https://www.eu-digital-services-act.com/Digital_Services_Act_Article_27.html), [38](https://www.eu-digital-services-act.com/Digital_Services_Act_Article_38.html)). We are not bound; Find's place-and-time order is Article 38's option by construction, and is Discover's off switch.
 
 
 ### Options
@@ -47,7 +47,7 @@ The tool side keeps place and time as the order. Freshness acts only inside a ri
 
 **Decision taken here: A** (F112), because the PM asked for not-seen-yet in beta and the per-Page row is small and expires on its own. B is the fallback if the server record is ruled out.
 
-## 2. The fun side's feed (after beta, design only)
+## 2. Discover's feed (after beta, design only)
 
 ### How Instagram and TikTok do it
 - **TikTok For You**: interactions (likes, shares, follows, comments, finishing a video), video information and device settings; a finished long video counts far more than a weak signal. Cold start: newcomers pick interest categories; those who skip get a general popular feed that learns from their first engagement. Generally no two videos in a row from one creator or sound [V] ([TikTok](https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you)). Mixes in content outside a member's interests and breaks repetitive runs (December 2021) [S]. "Refresh your For You feed" starts over as if new, follows kept (2023) [S]. Topic sliders, more or less, not off (June 2025) [S].
@@ -64,14 +64,22 @@ The tool side keeps place and time as the order. Freshness acts only inside a ri
 8. **Dwell and completion as the target.** YouTube moved away from raw watch time because "not all watch time is equal" [S] ([YouTube](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/)).
 
 ### Member-first design (proposal)
-- **Cold start from what the member says**: interests picked at signup or first visit (TikTok's picker), plus the tool side's place and time, plus newly opened Pages. No popular-feed fallback.
+- **Cold start from what the member says**: interests picked at signup or first visit (TikTok's picker), plus Find's place and time, plus newly opened Pages. No popular-feed fallback.
 - **Interests shown and editable**: every interest, declared or inferred, listed with its reason ("from 4 RSVPs"), removable, with a slider for more or less (TikTok Manage Topics); one-tap reset (TikTok Refresh, Instagram Reset); "Why this?" on every card. Facebook's 2019 "Why am I seeing this?" without real controls did not build trust [S], so the reason always comes with the control.
 - **Rank on what members value, not on time**: weights tuned to "I'm coming", saves, follows and "more like this", checked against a short monthly question, "Did SocialUs help you find something good or meet people?" (YouTube's survey-based valued watch time [S]; Facebook's "worth your time" survey [S]).
 - **A finite batch and a stop card**: about 20 cards, then "You've seen what's new" (Instagram's "You're all caught up", 2018 [S]; already ruled for Home 2026-10-04). No autoplay, no infinite scroll, no push to return.
 - **Exploration by rule**: a fixed share of slots, about 15% [A], from outside the member's interests, spread across topics; at most one card per Page in any five (TikTok's rule).
-- **Fair exposure**: a floor of showings for new and small Pages (Singh and Joachims 2018 [V]); nothing paid enters the ranking (assumed, open).
-- **Member's choice of feed**: the fun feed, or Following newest first, or a lens (Bluesky's chosen feeds [V]); off means the tool side, nothing blank (YouTube's blank Home criticised [S]).
-- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: dwell, scroll depth, session length, completion, comment counts, spread velocity, payment. Time spent is a warning light: up is a question, not a win.
+- **Fair exposure**: a floor of showings for new and small Pages (Singh and Joachims 2018 [V]). **Paid promotion is open for design** (above); whatever it becomes, the floor for unpaid new and small Pages stays, and a promoted card says so.
+- **Member's choice of feed**: the Discover feed, or Following newest first, or a lens (Bluesky's chosen feeds [V]); off means Find, nothing blank (YouTube's blank Home criticised [S]).
+- **Draft objective, ours, not from a source**: score = 5 · P(said "I'm coming" and went) + 2 · P(save) + 2 · P("more like this") + 1.5 · P(follow) + 1 · P("I'm coming") + 1 · interest match + 0.5 · soon and in the member's rings − 4 · P("not interested") − 3 · P(hide or report). **Not inputs**: dwell, scroll depth, session length, completion, comment counts, spread velocity. Payment: open, with paid promotion (§ 2, above). Time spent is a warning light: up is a question, not a win.
+
+### Paid promotion (open, after beta)
+The PM removed no-pay-to-rank from Discover (2026-10-12); how it works is a design after beta, not decided here. What a design would have to answer, from the rules that stand:
+- **The member-benefit gate** (PRINCIPLES 2026-10-12): paid visibility must show what the member gains; "it funds the platform" fails alone.
+- **Find is unchanged**: Charter flip 2 holds there, so a paid card does not reach Find's place-and-time order or search.
+- **Disclosed**: a promoted card says it is promoted, the way Instagram's and TikTok's sponsored posts are labelled [A, not re-read]; US endorsement rules expect clear disclosure [A].
+- **Bounded**: a fixed share of a batch, kept inside the member's interests and markets; the unpaid floor for new and small Pages stays; "not interested" and the learning switch apply to promoted cards too.
+- **Fees favour no member over another** (2026-09-30): one price list, open to every Page.
 
 ## 3. Learning about a member (both sides)
 
@@ -88,7 +96,7 @@ The tool side keeps place and time as the order. Freshness acts only inside a ri
 
 ### What we would learn, and which side uses it
 
-| Signal | Strength | Kept | Tool side (beta) | Fun side (after beta) |
+| Signal | Strength | Kept | Find (beta) | Discover (after beta) |
 |---|---|---|---|---|
 | A declared interest | strong | until removed | Home rows | cold start, ranking |
 | A follow | strong | until unfollowed | Home's following row (built) | ranking |
@@ -98,12 +106,12 @@ The tool side keeps place and time as the order. Freshness acts only inside a ri
 | A Page open from Explore (F109) | weak | 90 days [A] | suggestions; N per category (staff, aggregate) | inferred interests |
 | Seen (§ 1) | — | 30 days | not seen yet first | not seen yet first |
 
-On both sides: nothing changes what another member sees or what a Page owner sees about a member. On the tool side, search relevance and place-and-time order do not change.
+On both sides: nothing changes what another member sees or what a Page owner sees about a member. On Find, search relevance and place-and-time order do not change.
 
 ### Options
-- **A) One store the member can see, from beta (recommended).** Every signal above goes into one place the member sees: "What SocialUs knows about you" in You, each item deletable, and one switch, **Learn from what I do**, on by default as the data ruling and F109 have it, which stops learning and the F109 log and deletes raw signals. In beta the store drives only not-seen-yet and **suggestions the member accepts** ("Add trivia to your interests?"). After beta the fun side reads the same store and shows inferred interests with their reasons. Raw signals expire on their own, so nothing needs an operator. Conflict: the 2026-09-12 ruling (suggestions read behaviour back).
-- **B) Collect from beta, show it when the fun side ships.** Cheapest beta (the F109 log and seen only, plus a stored search log); members cannot see what is kept until the fun side lands. Against Kay's scrutability and the trust the Charter asks for; the opt-out still has to exist (F109).
-- **C) Collect only what beta uses.** Seen and the F109 log; no search history kept until the fun side is scoped. Least data; the fun side starts cold and the test profile has little to show.
+- **A) One store the member can see, from beta (recommended).** Every signal above goes into one place the member sees: "What SocialUs knows about you" in You, each item deletable, and one switch, **Learn from what I do**, on by default as the data ruling and F109 have it, which stops learning and the F109 log and deletes raw signals. In beta the store drives only not-seen-yet and **suggestions the member accepts** ("Add trivia to your interests?"). After beta Discover reads the same store and shows inferred interests with their reasons. Raw signals expire on their own, so nothing needs an operator. Conflict: the 2026-09-12 ruling (suggestions read behaviour back).
+- **B) Collect from beta, show it when Discover ships.** Cheapest beta (the F109 log and seen only, plus a stored search log); members cannot see what is kept until Discover lands. Against Kay's scrutability and the trust the Charter asks for; the opt-out still has to exist (F109).
+- **C) Collect only what beta uses.** Seen and the F109 log; no search history kept until Discover is scoped. Least data; Discover starts cold and the test profile has little to show.
 
 **For the PM: A, B or C** (member trust, new territory). F113 is written to A.
 
@@ -165,8 +173,8 @@ About 1,230 Pages. **Split per town**: food and drink 35%, shops and makers 25%,
 
 
 ## Order to bring to the PM
-1. **What we learn about a member (A/B/C, § 3).** It decides what F113, the F109 log and the test profile's history hold, and the store the fun side will read.
+1. **What we learn about a member (A/B/C, § 3).** It decides what F113, the F109 log and the test profile's history hold, and the store Discover will read.
 2. **Where the test profile lives (A/B/C, § 4).**
 3. Copy for the credit line, the suggestion prompt and the preview banner, with the builds.
 
-Tool-side freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. The fun side waits for the PM to scope it after beta.
+Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover waits for the PM to scope it after beta.
