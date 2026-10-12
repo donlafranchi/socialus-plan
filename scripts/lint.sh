@@ -101,7 +101,7 @@ vt=scripts/fixtures/value-test
 #    README.md (scripts/view.sh), PLATFORM-*.md (scripts/markers.py platform) and
 #    DASHBOARD.md (scripts/dashboard.py),
 #    never hand-edited, so not link-checked below.
-allowed="CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
+allowed="CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md"
 for f in *.md; do
   [ -f "$f" ] || continue
   case " $allowed " in
@@ -133,7 +133,7 @@ check_links() {
   done
 }
 
-for f in CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
+for f in CLAUDE.md STATUS.md ROADMAP.md DECISIONS.md RULINGS.md UNPLACED.md IMAGINE.md process/*.md planning/*.md templates/*.md; do
   [ -f "$f" ] || continue
   out="$(check_links "$f")"
   if [ -n "$out" ]; then
@@ -191,6 +191,14 @@ got=$(python3 scripts/never.py scripts/fixtures/never/bad.md | grep -c '^never:'
 [ "$got" -eq 3 ] || { echo "lint: never checker is inert — rejected $got of 3 bad fixture uses"; fail=1; }
 python3 scripts/never.py scripts/fixtures/never/good.md >/dev/null || { echo "lint: never checker rejects the good fixture"; fail=1; }
 if [ "${NEVER_LINT:-0}" = "1" ] && ! out="$(python3 scripts/never.py)"; then
+  echo "$out" | sed 's/^/lint: /'; fail=1
+fi
+# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
+bf=scripts/fixtures/budgets
+got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
+[ "$got" -eq 4 ] || { echo "lint: budget checker is inert — rejected $got of 4 bad fixtures"; fail=1; }
+BUDGETS_BASE_DIR="$bf/good-base" python3 scripts/budgets.py check --root "$bf/good" >/dev/null || { echo "lint: budget checker rejects the good fixture"; fail=1; }
+if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
 if [ -f DECISIONS.md ] && ! out="$(python3 scripts/markers.py lint)"; then
