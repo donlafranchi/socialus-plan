@@ -23,4 +23,4 @@ contact details, and private records stay private by default.
 ## The value absolute lives elsewhere
 
 The product's one value absolute — wealth circulates in the community, the
-platform never extracts it — is in `foundation/goals.md`, not here.
+platform never extracts it — is in `charter.md`, not here.

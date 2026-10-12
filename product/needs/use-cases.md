@@ -14,7 +14,7 @@ Real situations, drawn from Sacramento and the surrounding region, that the plat
 
 ## Who does what — relations to a Page, not kinds of people
 
-**A member** is anyone: browses, follows, makes a Page. A member has no type, tier or stored role, and no public profile (2026-10-01). **Running a Page** — selling, convening, teaching, making art — is a relation to that Page, and the Page's **purpose** says which: **Gather**, **Sell**, **Offer a service or teach**, or **Be creative** (Don, 2026-10-05). Business or Social group is derived from the purpose for listing. Someone who wants to be found or followed makes a Page. Who the platform does *not* serve (corporate-shell franchise, rollup-acquirer, engagement-optimizer) is in `goals.md`.
+**A member** is anyone: browses, follows, makes a Page. A member has no type, tier or stored role, and no public profile (2026-10-01). **Running a Page** — selling, convening, teaching, making art — is a relation to that Page, and the Page's **purpose** says which: **Gather**, **Sell**, **Offer a service or teach**, or **Be creative** (Don, 2026-10-05). Business or Social group is derived from the purpose for listing. Someone who wants to be found or followed makes a Page. Who the platform does *not* serve (corporate-shell franchise, rollup-acquirer, engagement-optimizer) is in `charter.md`.
 
 ## Consumer cases
 
