@@ -199,6 +199,8 @@ python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is i
 if ! out="$(python3 scripts/going.py --lint)"; then
   echo "$out" | sed 's/^/lint: lanes: /'; fail=1
 fi
+# Lost since last look (the PM's one safety view) proves itself on its fixture.
+python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
 # Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
