@@ -16,7 +16,7 @@ written assuming a web client that hands the key to anyone, and **they apply to 
 The only boundary is what `anon` and `authenticated` may select in SQL. No app, like no component, is
 a place to enforce privacy. The same publishable key ships inside the APK and is as extractable as it is from the web bundle.
 
-- the withheld card is enforced in SQL against anyone holding the publishable key, and a native client holds it too — [planning/scenario-F093.md](planning/scenario-F093.md) · *F093, approved — decided, not built*
+- the withheld card is enforced in SQL against anyone holding the publishable key, and a native client holds it too — [product/foundation/policy.md](product/foundation/policy.md)
 - both leaks are reads open to the publishable key; a native binary ships the same key, so the exposure and the fix are unchanged — [product/systems/member.md](product/systems/member.md)
 
 ## Gaps: 6
@@ -82,8 +82,8 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**21 of 30 approved and building scenarios carry no platform marker**, so what they will
+**22 of 30 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 
-F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F081, F082, F091, F092
+F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F081, F082, F091, F092, F093

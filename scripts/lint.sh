@@ -199,6 +199,8 @@ python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is i
 if ! out="$(python3 scripts/going.py --lint)"; then
   echo "$out" | sed 's/^/lint: lanes: /'; fail=1
 fi
+# Lost since last look (the PM's one safety view) proves itself on its fixture.
+python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
 # Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
@@ -209,6 +211,21 @@ got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py 
 if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
+# Inline rulings: constraints/ index every ruling wherever it sits (principles, scenarios, product docs), with its
+# file and whether it is [always] or [for now]; an untagged never/won't/always fails; a deleted scenario may not take a ruling with it.
+ir=$(for t in planning code for-now; do MARKERS_ROOT="$fx/inline-root" python3 scripts/markers.py constraints-print $t; done)
+for want in '[for now] · fixtures — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)' \
+  '[always] · fixtures — Fixture system ruling: a thing is never sold (product/systems/thing.md)' \
+  '[always] · principles — Fixture principle: people come first (PRINCIPLES.md)' \
+  '- **2026-10-12** — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)'; do
+  echo "$ir" | grep -qF -- "$want" || { echo "lint: constraints index misses an inline ruling: $want"; fail=1; }
+done
+got=$(mk lint "$fx/lasts-bad/scenario-F994.md" "$fx/lasts-bad/PRINCIPLES.md" | grep -c '^markers:')
+[ "$got" -eq 4 ] || { echo "lint: [always]/[for now] checker is inert — rejected $got of 4 planted faults"; fail=1; }
+got=$(python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current/product/systems/kept.md" | grep -c '^markers:')
+[ "$got" -eq 1 ] || { echo "lint: deleted-scenario guard is inert — caught $got of 1 lost ruling"; fail=1; }
+python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-good/product/systems/kept.md" >/dev/null ||
+  { echo "lint: deleted-scenario guard rejects a scenario whose rulings all moved"; fail=1; }
 # PRINCIPLES.md holds principles only: the checker names the home of each planted non-principle.
 got=$(python3 scripts/markers.py principles "$fx/principles-bad/PRINCIPLES.md" | grep -c '^markers:')
 [ "$got" -eq 6 ] || { echo "lint: principles checker is inert — rejected $got of 6 planted non-principles"; fail=1; }

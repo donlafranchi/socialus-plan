@@ -39,5 +39,5 @@ Weekly hours: currently hidden from the Page and from Edit, data kept, on the La
   - **The one real gate is moderation.** Public tags are member-contributed content that other members see, so rule 1 bars them from production without report-and-takedown — which does not exist, and whose own blocker is a PM operating decision rather than engineering (`socialus-web` #13: *"Depends on: nothing in code"*).
   - **The farmers market dictionary is not a precondition either.** It is what a finder types, not what a creator must choose from. It makes search better; it does not gate the step.
 - **2026-09-09 — A Page's address is public if given; a neighbourhood is the private-safe alternative.** The address field must say it's public before anyone types into it.
-- **2026-09-07 — The producer values declaration is cut from launch.** The constraint survives: a values statement, whenever built, is self-declared only, never sourced or inferred.
+- **2026-09-07 — The producer values declaration is cut from launch.** The constraint survives: a values statement, whenever built, is self-declared only, never sourced or inferred. [always]
 - **2026-09-07 — "Where they'll be next" ships as one free-text line (≤140 chars) on the shop editor, not structured recurring scheduling.** Structure is a priced v2 buy-back; every producer who fills the sentence re-enters it by hand later.
