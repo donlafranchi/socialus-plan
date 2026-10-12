@@ -29,6 +29,7 @@ DECISION RULE (2026-10-04, Don)
 ## Where truth lives
 
 - **How the system works:** the code in `socialus-web`. If the code can answer it, read the code, don't write it down.
+- **Where each kind of thing goes:** `ops-pattern/process/WHERE-THINGS-GO.md` — one home per kind, budgets, generated vs maintained. Read it before writing any doc.
 - **Why it is that way:** `DECISIONS.md`. One dated line per **live** ruling. A superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest ([newer-decision-wins]).
 - **What is decided but not built:** `planning/` scenarios with `status: approved`, and `ROADMAP.md`.
 - **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
