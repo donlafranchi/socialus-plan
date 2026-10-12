@@ -14,9 +14,9 @@ The test: does it have a shape — a noun, a verb, or a surface? Then the spine.
 
 Every entry added from 2026-09-12 carries three things:
 
-1. **A date and who it came from.** "Don, 2026-09-12" or "agent analysis, 2026-09-12". An idea with no owner is one nobody will defend or retire.
-2. **One line: what would make this real.** The observable thing that would move it out of here. Not "when we have time" — a fact about the world or the product that would change the answer.
-3. **A separation of claim from analysis** where both exist. Don's framing is recorded in his terms; anything an agent adds is marked as analysis. A thesis that overstates itself is worse than no thesis.
+1. **A date and who it came from.** "Don, 2026-09-12" or "agent analysis, 2026-09-12". An ownerless idea is one nobody will retire.
+2. **One line: what would make this real.** The observable fact about the world or the product that moves it out of here, not "when we have time".
+3. **Claim separated from analysis** where both exist. Don's framing is in his terms; anything an agent adds is marked as analysis.
 
 **A `Priority: higher` line, where an entry has one.** It means Don has said this matters more than the rest of the room, nothing more. **Its absence says nothing**: most entries were never ranked, and a full ordering would be a hand-kept index. Added 2026-09-19 at Don's direction.
 
@@ -126,9 +126,9 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Badges vs values
 
-*The PM, 2026-10-06. An exploration, not a ruling.* Two different things an owner can say about a Page, both claims the owner makes.
+*The PM, 2026-10-06. An exploration, not a ruling.* Two things an owner can say about a Page, both owner claims.
 
-**Badges are facts** about who the owner is: locally owned, women-owned, veteran-owned, family-run, certifications. They are **self-attested**, as Google Business Profile's "identifies as" attributes and Yelp's business attributes are, and **possibly verifiable later**.
+**Badges are facts** about who the owner is (locally owned, women-owned, veteran-owned, family-run, certifications): **self-attested**, as on Google Business Profile and Yelp, **possibly verifiable later**.
 
 **Values are commitments** about how the business operates and what it stands for: pays a living wage, sources locally, gives back, sustainable, welcoming to all. They are **not verifiable**, closer to a mission than a fact.
 
@@ -140,7 +140,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Tone adapted by region, or per person
 
-*The PM, 2026-10-06. An exploration, not a ruling.* The tone is now one voice for everyone (`product/foundation/voice-and-tone.md` § 3, approved 2026-10-06: a subtle California ease). Later it might adapt, by **region** (a metro's own way of talking, so Sacramento reads differently from another metro) or **per person**, informed by **member feedback** about how the copy lands.
+*The PM, 2026-10-06. An exploration, not a ruling.* The tone is one voice for everyone (`product/foundation/voice-and-tone.md` § 3, 2026-10-06: a subtle California ease). Later it might adapt by **region** (a metro's own way of talking) or **per person**, informed by **member feedback** on how the copy lands.
 
 **Open questions:** what a region's voice would be and who writes it; whether per-person tone is a setting or learned, and what it would learn from; how it stays plain and clear where plain is required (errors, safety, reports, legal, sign-in); and whether it fights the platform's one name line and subhead, which are locked.
 
@@ -191,8 +191,8 @@ Every entry added from 2026-09-12 carries three things:
 **What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
 
 
-### Two sides: the tool and the fun
+### Two sides: Find and Discover
 
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
 
-After beta; not ready for council; an eventual part of the platform. The newer direction (PRINCIPLES.md); conflicting stances are tagged `[for now]` and listed in `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for the fun side to be scoped.
+After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** is the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [eventual: Discover, the exploratory feed, after beta] [eventual: member-facing names for Find and Discover, wanted more interesting]
