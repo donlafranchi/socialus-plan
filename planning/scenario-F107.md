@@ -16,11 +16,12 @@ Marcus's home is Granite Bay, so with nothing typed his Explore shows his three 
 3. **The same name at two area types shows as two suggestions, each labelled with its type** ("Napa, town", "Napa County, county"). The member picks; nothing is picked for them.
 4. **Ring order applies only to a town or neighbourhood vantage** (F105 criterion 2). A county or market search returns that area as one set, ordered by F059's rules, with no town bands and no adjacency.
 5. **A place in a waiting market** behaves as F105 criterion 4 says, whatever its area type.
-6. **Nothing is stored.** The searched place is session state and part of the shared URL, as in F105 criterion 3.
+6. **Reach depth does not apply to a searched place.** F109 (reach by category) governs the default three-ring vantage only; a searched place uses its own area type, with no "Further out" section.
+7. **Nothing is stored.** The searched place is session state and part of the shared URL, as in F105 criterion 3.
 
 ## Not this
 
-Drawing new areas or merging them for search. Distance or radius search. Saved searches. Changing what makes a Page local (F106).
+Drawing new areas or merging them for search. Distance or radius search. Saved searches. Changing what makes a Page local (F106). How far each category reaches on the default rings (F109).
 
 ## Why
 
