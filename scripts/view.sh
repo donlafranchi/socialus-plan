@@ -50,6 +50,9 @@ deferred_f=$(echo "$all" | awk -F'\t' '$4=="true"{print $2}' | grep -oE '^F[0-9]
   echo "## Next"
   python3 scripts/going.py --list next
   echo
+  echo "## Considering"
+  python3 scripts/going.py --list considering
+  echo
   echo "## Later"
   python3 scripts/going.py --list later
   echo

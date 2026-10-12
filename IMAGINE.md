@@ -55,11 +55,11 @@ Every entry added from 2026-09-12 carries three things:
 
 *Don's thesis, 2026-09-12, in his terms:* Ticketmaster holds a monopoly over ticketing and events. **RSVPs are a way to lessen that.**
 
-*Analysis, agent, 2026-09-12 — marked separately because the thesis is worth more stated honestly than stated large:*
+*Analysis, agent, 2026-09-12:*
 
 **An RSVP is not a ticket.** No payment, no allocation, no scarcity, no guaranteed entry, no recourse if you turn up and it's full. Today it is the free end of the same need, not a substitute for the paid end, and describing it as competing with Ticketmaster head-on would be a claim the product cannot cash.
 
-**What it does compete with is the reason a small organizer reaches for a ticketing platform at all.** For a run club, a market, a workshop, a supper — the whole requirement is usually *knowing who is coming*. Ticketing is what they buy because it is what was for sale. They pay a fee, and they hand over the relationship with their own attendees, to get a headcount. **That is the thing worth displacing**, and it is displaceable now rather than after a payments stack.
+**What it does compete with is the reason a small organizer reaches for a ticketing platform at all.** For a run club, a market, a workshop, a supper, the requirement is usually *knowing who is coming*. Ticketing is what was for sale, so they pay a fee and hand over the relationship with their own attendees to get a headcount. **That is the thing worth displacing**, and it is displaceable now rather than after a payments stack.
 
 **Where it connects to what's already promised:** it is a direct instance of *not an extractive platform* — the fee and the surrendered attendee relationship are the extraction. It is also the clearest case of *not pricing out the small*: a per-ticket fee is regressive against exactly the neighbourhood-scale organizer this platform is for. The thesis is not a new commitment; it is an application of two that exist.
 
@@ -67,7 +67,7 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Blog posts and emails that explain what's what
 
-*Don, 2026-09-15.* A channel for helping people understand the differences between the kinds of thing they can start, and what the product is for — alongside the in-app explainer, not instead of it.
+*Don, 2026-09-15.* A channel for helping people understand the kinds of thing they can start, and what the product is for, alongside the in-app explainer, not instead of it.
 
 **Unscoped, and deliberately so.** This is a marketing and education question, not a product surface, and it is **outside launch scope**. Recorded here so it is not lost.
 
@@ -148,11 +148,11 @@ Every entry added from 2026-09-12 carries three things:
 
 ### Community funds a seller designates
 
-*Don, 2026-10-11. Later; nothing built, payments are cut from beta.* A community holds several funds (a general fund, a library, youth sports, main street). A seller designates the fund their give-back goes to, and may change it once a year, like open enrollment. Money leaves the chartered partner only to a verified legal payee the community already has; a fund with no payee accrues as pending, visibly, and that is what prompts a community to organise. Communities form their own entities, alone or with help; SocialUs creates none and pools nothing top-down. *Analysis:* precedents are Open Collective's fiscal hosts and pending balances, payroll-giving designations, co-op patronage declarations; tax treatment of a designation is unknown and goes to `socialus-legal` when due. **What would make this real:** the first payout period with a positive surplus in one community.
+*Don, 2026-10-11. Later; nothing built, payments are cut from beta.* [lane: later] A community holds several funds (a general fund, a library, youth sports, main street). A seller designates the fund their give-back goes to, and may change it once a year, like open enrollment. Money leaves the chartered partner only to a verified legal payee the community already has; a fund with no payee accrues as pending, visibly, and that is what prompts a community to organise. Communities form their own entities, alone or with help; SocialUs creates none and pools nothing top-down. *Analysis:* precedents are Open Collective's fiscal hosts and pending balances, payroll-giving designations, co-op patronage declarations; tax treatment of a designation is unknown and goes to `socialus-legal` when due. **What would make this real:** the first payout period with a positive surplus in one community.
 
 ### Evidence of deceit, submitted by members
 
-*Don, 2026-10-11. Later; designed ahead of need.* A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop with evidence, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
+*Don, 2026-10-11. Later; designed ahead of need.* [lane: later] A seller declares their home community; members keep them honest. A report reason "not what it claims" takes a statement and an attachment, private to review, with the accused answering first (F102's shape), and staff are alerted when evidence arrives or when a Page's declared home disagrees with its locations or licence jurisdiction. Never an automatic penalty. *Analysis:* eBay and Etsy report-a-shop with evidence, BBB complaints answered by the business first, Google Business "suggest an edit". **What would make this real:** a home community on Pages that money or a badge depends on.
 
 ### Market shopper: a neighbour shops the market for you
 
@@ -195,4 +195,8 @@ Every entry added from 2026-09-12 carries three things:
 
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
 
-After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** is the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [eventual: Discover, the exploratory feed, after beta] [eventual: member-facing names for Find and Discover, wanted more interesting]
+After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [lane: later]
+
+### Member-facing names for Find and Discover
+
+*Don, 2026-10-12.* The copy names are to be more interesting than the internal ones. A later item. [lane: later]

@@ -1,7 +1,10 @@
 # IMAGINE
 
 ### An eventual thing
-Some text. [eventual: A long-term idea] and [eventual: A second one]
+Some text. [lane: later]
 
-### Not eventual
+### A likely candidate
+Text. [lane: considering]
+
+### Not on the roadmap
 Just an idea.
