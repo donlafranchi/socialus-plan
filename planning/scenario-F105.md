@@ -12,8 +12,8 @@ Marcus is driving to Davis on Saturday. On Explore he types Davis into the place
 
 ## Acceptance
 
-1. **The place control on Explore (today's area pill) accepts a typed place:** any town or market in the place tree, with suggestions as the member types. It shows the vantage's name, the home town by default. The search box stays "what"; the place control is "where".
-2. **Choosing a place re-centres Explore and Home on it for the session.** The rings rebuild there: hood none, town the typed town, market its market, and the order is F104's from that town. Typing a market's name centres on the market with no town band.
+1. **The place control on Explore (today's area pill) accepts a typed place:** any town, county or market in the place tree, with suggestions as the member types. It shows the vantage's name, the home town by default. The search box stays "what"; the place control is "where".
+2. **Choosing a place sets the vantage for the session, and a place is taken as the area type it is** (F107). A town or neighbourhood re-centres Explore and Home on it: the rings rebuild there (hood none, town the typed town, market its market) in F104's order. A county or market is looked at as that area, with no town band.
 3. **Nothing about the member changes.** The vantage is session state: never written to the member row, never logged, never derived from IP or GPS. A new session opens at home. A shared link reopens the same vantage and search (F059 criterion 10), which is the URL, not storage.
 4. **A vantage in a waiting market shows that market's cached waiting count and the tell-me-when-it-opens control** (F076 criteria 7 and 13), and no Pages or posts. A vantage in another open market shows that market in full.
 5. **A signed-out visitor with no vantage sees the one open market while exactly one is open, named in the control.** Once more than one market is open, the visitor is asked to type a place before results show; nothing is picked for them.
