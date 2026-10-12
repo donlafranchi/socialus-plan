@@ -21,3 +21,6 @@ Marcus makes hot sauce and also hosts a monthly swap — one person, two Pages. 
 ## Not this
 
 A switch-context surface. Aggregating messages or activity across a Member's several Pages — parked, not scoped.
+
+## Rulings
+- **2026-09-07 — A person holds as many Pages as they have things going on; Page-type conversion is rejected outright.** Different creation flows per type is correct; nothing ever mutates.

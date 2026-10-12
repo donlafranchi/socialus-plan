@@ -14,7 +14,7 @@ reverses that, and nothing here should ever become a dropdown.
 
 What it is for, both sanctioned by existing rulings:
 
-1. **Seeding the initial tag list.** `DECISIONS.md` 2026-09-13 retired
+1. **Seeding the initial tag list.** The 2026-09-13 ruling retired
    "Something else" and ruled *"its rows seed the initial tag list"*. A tag
    store that opens empty asks the first hundred creators to invent a
    vocabulary from nothing; one that opens with real words gives them something
@@ -168,7 +168,7 @@ not an enum** — but not yet, and not on this document's say-so.
   explicitly expected to grow from what creators write.
 - A **lookup table** seeding the tag store is plausible — rows a creator's tag
   can match against for search, with no constraint that a tag must be in it.
-  That is the shape `DECISIONS.md` already implies when it says the retired
+  That is the shape the rulings already imply when it says the retired
   suggestion rows *"seed the initial tag list"*.
 
 **Deciding that needs the tag store to exist**, which is blocked on

@@ -16,7 +16,7 @@ Backlog; not approved. The shape so far:
 
 1. **The page lists the roles that exist today, in plain words.** Starting set for the PM to confirm: building (software, design), community (moderation help, local outreach), and operations. Each says whether it is paid or volunteer. Roles are one short list edited by the operator, not a job board.
 2. **Anyone can leave an interest note, signed in or not:** name, an email, which role, a few lines about what they could do. Nothing else is asked.
-3. **Interest notes are staff-side only.** No member or visitor sees another's note. They are kept only as long as needed to answer and are deleted on request (DECISIONS 2026-10-09: staff get the data they need under roles and permissions).
+3. **Interest notes are staff-side only.** No member or visitor sees another's note. They are kept only as long as needed to answer and are deleted on request (ruling 2026-10-09: staff get the data they need under roles and permissions).
 4. **A note is answered by a person from our team** (one operator today; the standing rule is members self-correct before staff work, so the page sets expectations on reply time and takes no promise to answer every note).
 5. **Held for `socialus-legal`, not designed here:** employment or contractor terms, equity or any share of income promised to a contributor (members are the investors and the only people paid out, SETTLED), volunteer liability and any payment. The page makes no offer of pay beyond "paid" or "volunteer" per role.
 

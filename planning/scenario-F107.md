@@ -39,3 +39,6 @@ Drawing new areas or merging them for search. Distance or radius search. Saved s
 Backlog: not yet ticketed. Verify against `socialus-web` main which of the three rings Explore already builds before writing tickets (plan #107).
 
 [platform none]
+
+## Rulings
+- **2026-10-11 — Search uses area types. A member's default location is the three rings; a place they search uses that place's own area type, so Napa (the town) and Napa County (the county) are different searches with different results.** The PM, 2026-10-11, new input on plan #107. Revises F105 ("search re-centres the rings"). Scenario: F107. [replaces none] [binds tiers=planning,code surfaces=search,explore,places]

@@ -25,7 +25,7 @@ Not launch. Not approved. No scraping of listings without consent (C). No ticket
 
 ## Why
 
-**Recommend for members before things happen,** from their declared interests: the member works with the platform, not an algorithm (Don, 2026-09-30). It sits inside the existing ordering rule — place, declared interests and genuine community response (`product/ui/surfaces.md` § ordering; DECISIONS 2026-09-12) — and ranks nobody for payment, size or follower count (2026-09-30).
+**Recommend for members before things happen,** from their declared interests: the member works with the platform, not an algorithm (Don, 2026-09-30). It sits inside the existing ordering rule — place, declared interests and genuine community response (`product/ui/surfaces.md` § ordering; the 2026-09-12 ruling) — and ranks nobody for payment, size or follower count (2026-09-30).
 
 **Links back are the owner's own:** a venue's consented connection counts as links the owner typed, so F090 criterion 7 holds (Don, 2026-09-30).
 
@@ -36,3 +36,7 @@ Not launch. Not approved. No scraping of listings without consent (C). No ticket
 [open-question owner=don raised=2026-09-30] Does imported content follow relationship-based visibility and the signed-out front door like any announcement? A) **Yes, exactly:** an imported event is a public or followers announcement on the Page, and signed out sees the withheld card. B) Imported events are public by default because they already are elsewhere. *Recommend A;* one rule for every announcement.
 
 [open-question owner=don raised=2026-09-30] What does the platform do when imported content breaks the sensitive-content ask (children, animals and pets, anyone who can't fend for themselves)? A) **Reports catch it as they would a post, and the owner is told the source posted it.** B) Hold imports for a check before they show. *Recommend A;* nothing checks a post today either.
+
+## Rulings
+- **2026-09-30 — Our relationship with venues is symbiotic: we send traffic to a venue's own site and channels rather than capturing it, and everything pulled in carries attribution and a link back.** Don: *"we want to be generous and not steal a places web traffic. We need to find a way to have a symbiotic relationship."* The platform works for its members, not an algorithm: *"Consumers share or we learn what they like. We search for them and recommend for them before things happen."* [binds tiers=planning surfaces=imports,attribution,explore]
+- **2026-09-30 — Events reach SocialUs two ways: a venue, artist or group links its Instagram or calendar once, with consent, and we pull its events in (the main path); and members share events they hear about, and the venue is invited to claim them. We don't currently gather public listings without consent.** Don approved dispatch's recommendation (B and D, not C). The members' problem it answers: following every venue, artist and group to find out what's happening. Written as draft F096, not launch. [binds tiers=planning surfaces=imports,events,claims]

@@ -21,3 +21,8 @@ A newcomer to Sacramento set her home to Oak Park. Scrolling the feed Tuesday ev
 ## Not this
 
 Ranking by the place hierarchy (a later scenario) — this only removes distance, it doesn't install the replacement. Whether the `sort` control's other options survive is undecided.
+
+## Rulings
+- **2026-09-30 — "Near you", "Browse nearby" and "mi away" come out. "In Sacramento" stands in until there is a second metro.** Don, answering F094. Placeholder until then ([public-is-draft]); `voice.md`'s samples follow. The app strings are a separate ticket. [binds tiers=planning,code surfaces=copy,explore,venue]
+- **2026-09-30 — No distance is shown anywhere.** Don, on F094. The venue page's "X mi away" goes, with nothing in its place. **A Page has a location, or says where it usually shows up** (which farmers market, say). **A Page with no address is in the Pages directory and not on the map.** [binds tiers=planning,code surfaces=venue,map,pages]
+- **2026-09-30 — There is no "near you" while there is one metro. Nearness is deferred until there is critical mass.** Don, on F094. [binds tiers=planning,code surfaces=copy,explore]

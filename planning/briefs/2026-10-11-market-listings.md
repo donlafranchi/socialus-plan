@@ -54,7 +54,7 @@ criteria:
 | Listings on a Page are postponed past beta; the starting point is the old sell flow moved onto the Page's Add | Verified | the After beta milestone (2026-10-01, 2026-10-05) |
 | There is no availability or in-season field; stock indicators are Later | Verified | the composer; the After beta milestone |
 | An Appearance (a Page at a Venue for a bounded time) is a noun, scoped at about 1.5 days and Later | Verified | `nouns.md`; the After beta milestone |
-| A farmers market is a Page that convenes people | Verified | DECISIONS 2026-09-15 |
+| A farmers market is a Page that convenes people | Verified | the 2026-09-15 ruling |
 | Won't: cart, checkout, SKUs, inventory management as full products | Verified | what-this-is § Won't |
 | Price on cards (Free, Donation, Paid) is speculative, not ruled | Verified | After beta, speculative |
 | The kept composer still builds and runs after the retirement | **Assumed** | ticket 1 settles it |
@@ -87,7 +87,7 @@ Criteria are in the frontmatter, each tagged to its journey. All binary.
 |---|---|---|---|---|
 | Person (browsing) | Sees what the market has, the price if there is one, and whether it is there this week | Twenty seconds | A listing that shows stock that is gone | A visit on Monday finds no list yet |
 | Maker (the producer) | Lists in about a minute, optional price, can say it is gone | Weekly upkeep | Required photos, stock counts, or more than four fields | Listing at the wrong market, or forgetting to update |
-| Money | Listings are free; SocialUs earns only when a sale happens (DECISIONS 2026-10-07) | none now | Charging to list; a cut before a sale | A listing leads to a sale off the app |
+| Money | Listings are free; SocialUs earns only when a sale happens (ruling 2026-10-07) | none now | Charging to list; a cut before a sale | A listing leads to a sale off the app |
 | Architect | An availability field; a "sells at" link; the market's week view | Two new fields and one view, on the kept items | A second source of truth for what a market carries | Old items orphaned from a market |
 | Developer | Re-route the kept composer onto the Page's Add; add the new fields | See sizes | Building stock sync, a cart or an order system | The composer depends on the retired walkthrough |
 | Tester | List, edit, remove, view as a stranger; every empty state | Two producers, one market | A non-binary criterion | A weeks-old listing taken for current |

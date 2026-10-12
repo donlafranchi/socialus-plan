@@ -63,3 +63,6 @@ What a vote may fund, and how money is held and paid, wait on counsel.
 ## Open
 
 [open-question owner=don raised=2026-10-07] Which payment rail takes contributions? A) **Stripe Billing** — recurring plans, annual option and a per-member ledger built in; we own the member relationship and the page's numbers. B) **Open Collective** — public ledger out of the box, but a second account system and by-name display that cuts against counts-not-names. C) **Ko-fi or Patreon** — fastest to open, but the platform owns the supporter relationship and its rules set amounts, fees and pages. *Recommend A.*
+
+## Rulings
+- **2026-10-07 — Funding uses a monthly milestone ladder (lights on → part-time development → further milestones → community give-back) and the page always headlines the next milestone, never "done". Once the platform's milestones are covered, money generated in a community goes back to it, and that community decides its use (one member, one vote).** The PM. Because a single goal reads as finished and stops contributions; returning money where it was made rewards everyone for building their community. Spec: `product/systems/contributions.md`; numbers are private in `socialus-legal`. Supersedes the same-day lights-on goal 1 / stretch line. [replaces none] [binds tiers=planning surfaces=contributions,fees]

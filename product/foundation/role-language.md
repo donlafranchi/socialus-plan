@@ -21,7 +21,7 @@ status: retired
 |---|---|
 | Rule 2, no umbrella noun for either side | **Overruled in its internal half only.** Patron and creator are our shorthand; `nouns.md` § The two sides. **The user-facing half stands.** |
 | Rule 1, no noun a person didn't choose | **Kept.** *(Restored 2026-09-14 — dropped on a misreading that rule 2 had fallen entirely.)* No person-noun reaches a member; they get "you," their own name, and verbs. Now in `nouns.md` § The two sides and enforced by lint. |
-| Rule 3, no stored role, mode, or account type | **Kept, as architecture.** A dated `DECISIONS.md` line of its own — it was never a naming rule, and F081/F082 are built on it. |
+| Rule 3, no stored role, mode, or account type | **Kept, as architecture.** A dated ruling of its own — it was never a naming rule, and F081/F082 are built on it. |
 | Rule 4, functional roles stay scoped to one thing | **Kept**, on its own merits, in `nouns.md` § The two sides. Sanctioning two nouns does not make *host* or *steward* a profile badge. |
 | Rule 5, no zero counters on your own work | **Kept, as UX.** Principle 11 in `../ui/design-language.md`. |
 | Rule 6, "producer/seller/maker" are spec words | **Kept in full.** *(Restored 2026-09-14.)* They are spec words and never labels — and so, in user-facing copy, are patron and creator. |

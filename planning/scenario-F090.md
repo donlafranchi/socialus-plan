@@ -47,3 +47,6 @@ Don: *"At the very minimum I'd like to only offer TikTok and Instagram for now o
 ### What this supersedes
 
 The current social-links field takes a full `https://` URL and refuses everything else — a real handle typed into it is rejected. That is a live bug, fixed separately; this scenario is what the field becomes, not the fix.
+
+## Rulings
+- **2026-09-30 — A venue's own consented connection (its Instagram or calendar) counts as links the owner typed.** Don approved, resolving F090 criterion 7 against F096's imports. F090 criterion 7 restated. [replaces F090: because the owner typed it,] [binds tiers=planning surfaces=links,imports]

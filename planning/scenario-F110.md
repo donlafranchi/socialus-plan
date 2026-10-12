@@ -15,10 +15,10 @@ A neighbour who likes what SocialUs is doing opens Support. She sees what the pl
 Backlog; not approved. Criteria follow the PM's call on timing and `socialus-legal`'s clearance. The shape so far:
 
 1. **The roadmap on the page is generated from scenario `horizon` and `rank` and the socialus-web milestones (the dashboard's Where we're going), never hand-kept.** A build step reads Now, Next and Later and renders them as plain-word lines (no ticket ids, no dates beyond the section names). A line changes only when `ROADMAP.md` does. Cut and Won't are not shown.
-2. **The page headlines the next funding milestone, not a finished goal** (DECISIONS 2026-10-07, `product/systems/contributions.md`). The numbers stay private in `socialus-legal` until counsel clears publishing them.
+2. **The page headlines the next funding milestone, not a finished goal** (ruling 2026-10-07, `product/systems/contributions.md`). The numbers stay private in `socialus-legal` until counsel clears publishing them.
 3. **Held for `socialus-legal`, not designed here:** whether and how donations are accepted, the form and terms of any gift, tax treatment, who receives the money, any thank-you or reward for giving, and any promise about what a gift buys. No payment flow, amount, button or terms card is specified until counsel clears it and an entity exists.
 4. **Until then the page offers one action: be told when giving opens** (an email, like F076's tell-me-when-it-opens). No money moves.
-5. **Plain, honest words.** The page says what is built and what is only planned, uses the Charter's wording rules, and promises no return, share or payout (DECISIONS 2026-10-11, backing).
+5. **Plain, honest words.** The page says what is built and what is only planned, uses the Charter's wording rules, and promises no return, share or payout (ruling 2026-10-11, backing).
 
 ## Not this
 
