@@ -2,6 +2,8 @@
 id: F100
 title: An AI reads every reported Post first, and a person still makes the call
 status: approved
+horizon: now
+rank: 170
 gates: launch
 date: 2026-10-05
 depends: [F078, F080, F099]

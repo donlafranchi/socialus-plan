@@ -20,7 +20,7 @@ DECISION RULE (2026-10-04, Don)
 ## Read first, every session
 
 1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
-2. `ROADMAP.md` — Now / Next / Later / Won't.
+2. `DASHBOARD.md` § Where we're going — Now / Next / Later, generated from scenario `horizon` and `rank` and the socialus-web milestones.
 3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
 4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
 5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags in `DECISIONS.md` and `RULINGS.md`; never edit it.
@@ -32,7 +32,7 @@ DECISION RULE (2026-10-04, Don)
 - **Where each kind of thing goes:** `ops-pattern/process/WHERE-THINGS-GO.md` — one home per kind, budgets, generated vs maintained. Read it before writing any doc.
 - **Why it is that way:** `DECISIONS.md` — the principles, few, reworded in place as they sharpen.
 - **What was ruled:** `RULINGS.md`. One dated line per **live** ruling, words never edited. A superseded one is deleted and named in one `[replaces …]` tag on its replacement; a shipped one is deleted once the spine or code states it; git holds the rest ([newer-decision-wins]).
-- **What is decided but not built:** `planning/` scenarios with `status: approved`, and `ROADMAP.md`.
+- **What is decided but not built:** `planning/` scenarios with `status: approved` (their `horizon` and `rank` order them), and the socialus-web milestones.
 - **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
 - **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `ops-pattern/process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
@@ -66,7 +66,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 | `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a `DECISIONS.md` or `RULINGS.md` change — `scripts/lint.sh` fails until it is run |
 | `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md` | `python3 scripts/markers.py platform`, from `[platform …]` markers | by hand after a marker changes — `scripts/lint.sh` fails until it is run |
 
-**Nothing here asks you to remember to run anything.** A skill for this was written and never installed, so it never ran once and `STATUS.md` went stale naming the wrong launch blocker — the whole point is that the refresh does not depend on anyone thinking of it (lesson 27, and lesson 15 before it). To refresh by hand anyway: `bash scripts/status.sh`.
+**Nothing here asks you to remember to run anything**, because a refresh that depends on someone thinking of it goes stale. To refresh by hand anyway: `bash scripts/status.sh`.
 
 **The repos are public for now** (2026-10-01, Actions minutes), so anyone — the workflow included — can read `socialus-web`. If they go private, the workflow needs the `SOCIALUS_WEB_TOKEN` secret. Without it `STATUS.md` still regenerates and says, at the top and at the bottom, exactly what is missing.
 
@@ -81,8 +81,8 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 | Who | Owns | Never |
 |---|---|---|
-| Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than STATUS + ROADMAP unless he asks |
-| Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, ROADMAP, DECISIONS, RULINGS, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
+| Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
+| Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, DECISIONS, RULINGS, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
 | Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
 Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. Don sees it only if they disagree.

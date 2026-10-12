@@ -2,6 +2,8 @@
 id: F102
 title: The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
 status: approved
+horizon: now
+rank: 190
 gates: launch
 date: 2026-10-05
 depends: [F078, F100, F101]
@@ -42,7 +44,7 @@ A score, rank or label on a person. Telling a reported member who reported them 
 
 ### Counters on the act, not a score on the person
 
-**ROADMAP § Won't: the platform currently doesn't rate, rank or label a person.** So nothing here is a reputation: no score, no badge, no tier on a member. What exists is counts of reports filed and how each ended, and caps and cool-downs on *the act of reporting*, exactly like today's per-reporter caps in `report.create` (5 open hiding reports, 20 open in total, 2 per subject). The counts are visible to the operator only and feed nothing outside the report path.
+**A principle: the platform never rates, ranks or labels a person.** So nothing here is a reputation: no score, no badge, no tier on a member. What exists is counts of reports filed and how each ended, and caps and cool-downs on *the act of reporting*, exactly like today's per-reporter caps in `report.create` (5 open hiding reports, 20 open in total, 2 per subject). The counts are visible to the operator only and feed nothing outside the report path.
 
 ### What changes against today (read in `socialus-web` main, 2026-10-05)
 

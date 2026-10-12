@@ -2,6 +2,8 @@
 id: F060
 title: Someone starts something without opening a shop
 status: building
+horizon: now
+rank: 40
 date: 2026-09-10
 depends: [F057]
 ---

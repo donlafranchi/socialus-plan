@@ -2,6 +2,8 @@
 id: F080
 title: No sensitive content, while we grow into a platform with staff
 status: approved
+horizon: now
+rank: 70
 gates: launch
 date: 2026-09-14
 depends: [F077]

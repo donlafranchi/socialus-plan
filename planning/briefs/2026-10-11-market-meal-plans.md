@@ -43,10 +43,10 @@ criteria:
 |---|---|---|
 | A farmers market is a Page that convenes people; a given Saturday is a dated post | Verified | DECISIONS 2026-09-15 |
 | A Page's managers post; a Post carries a date, place and tags; the search dictionary is seeded with farmers-market items | Verified | `member-journey.md`; DECISIONS 2026-09-12 |
-| No messaging between members; the platform handles no money; payments are Later | Verified | `member-journey.md`; ROADMAP Later |
-| Listings on a Page are postponed past beta | Verified | ROADMAP Later |
-| No public member profile; someone who wants to be found makes a Page | Verified | ROADMAP Speculative (2026-10-01) |
-| Won't: full e-commerce, checkout, inventory management as products | Verified | ROADMAP Won't |
+| No messaging between members; the platform handles no money; payments are Later | Verified | `member-journey.md`; the After beta milestone |
+| Listings on a Page are postponed past beta | Verified | the After beta milestone |
+| No public member profile; someone who wants to be found makes a Page | Verified | After beta, speculative |
+| Won't: full e-commerce, checkout, inventory management as products | Verified | what-this-is § Won't |
 | A plan is information (recipes and a list), not food | Chair's reading of Don's words | this brief |
 | A market, or its producers, would keep a weekly list current | **Assumed** | none; the first thing a pilot answers |
 

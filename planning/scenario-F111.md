@@ -2,6 +2,8 @@
 id: F111
 title: A Join-the-team page for people who want to help build SocialUs
 status: draft
+horizon: later
+rank: 300
 date: 2026-10-12
 ---
 ## Story

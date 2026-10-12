@@ -2,6 +2,8 @@
 id: F059
 title: A newcomer browses, and finds the neighbourhood
 status: approved
+horizon: next
+rank: 120
 date: 2026-09-13
 depends: [F061]
 amended: 2026-10-11 — the PM (F103–F105): results scope to the vantage's market, not a picked metro; criteria 6 and 7 restated.

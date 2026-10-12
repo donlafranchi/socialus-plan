@@ -41,11 +41,11 @@ criteria:
 |---|---|---|
 | A farmers market is a Page that convenes people (a gathering Page); a given Saturday is a dated post with a time and place | Verified | DECISIONS 2026-09-15; `model.md` |
 | A Page's managers post; a Post can carry a date, a place and tags | Verified | `member-journey.md`; capabilities F072 |
-| There is no messaging between members and no substrate for it | Verified | `member-journey.md`; ROADMAP Later |
-| The platform handles no money; on-platform payments are Later (closed-loop ledger, ACH via a chartered partner) | Verified | ROADMAP Later; Terms draft |
-| Product and service listings on a Page are postponed past beta | Verified | ROADMAP Later (2026-10-01) |
+| There is no messaging between members and no substrate for it | Verified | `member-journey.md`; the After beta milestone |
+| The platform handles no money; on-platform payments are Later (closed-loop ledger, ACH via a chartered partner) | Verified | the After beta milestone; Terms draft |
+| Product and service listings on a Page are postponed past beta | Verified | the After beta milestone |
 | SocialUs takes transaction income on member commerce | Verified | DECISIONS 2026-10-07 |
-| Won't: cart, checkout, inventory management as full products; funds held for the platform's benefit; pull-back notifications | Verified | ROADMAP Won't |
+| Won't: cart, checkout, inventory management as full products; funds held for the platform's benefit; pull-back notifications | Verified | what-this-is § Won't |
 | A role is a relation, not a member type | Verified | `nouns.md` |
 | One metro (Sacramento) at beta | Verified | ROADMAP |
 | Whether a Sacramento market would post a weekly list, or whether producers would | **Assumed** | none; the first thing a pilot answers |

@@ -2,6 +2,8 @@
 id: F096
 title: Events come in with consent, and send their traffic home
 status: draft
+horizon: later
+rank: 250
 date: 2026-09-30
 depends: [F090, F093]
 ---

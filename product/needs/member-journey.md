@@ -19,7 +19,7 @@ Foundational north star, upstream of every system spec. The platform exists so p
 - **A Post is what a Page says** — an update, or a dated one with a time and a place, with tags. **Currently only a Page's managers post on it.**
 - **Follow** links a member to a Page. Delivering posts to followers is cut for beta; a followed Page's posts reach a signed-in reader on Explore (F059 criterion 2b).
 - **There is currently no messaging between members**, and the platform handles no money.
-- **Status** is `ROADMAP.md`'s: **beta** (in for 2026-10-30), **later** (wanted, after beta), **cut** (off the beta list, may return).
+- **Status:** **beta**, **later** (wanted, after beta), **cut** (off the beta list, may return).
 
 | # | Loop | Family | Page purpose | Status |
 |---|---|---|---|---|

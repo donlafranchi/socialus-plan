@@ -2,6 +2,8 @@
 id: F058
 title: A member reports something, and the operator can take a photo down
 status: approved
+horizon: now
+rank: 50
 gates: launch
 date: 2026-09-10
 depends: []

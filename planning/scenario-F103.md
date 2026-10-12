@@ -2,6 +2,8 @@
 id: F103
 title: A market is a set of towns, and the zip decides which one a person is in
 status: approved
+horizon: now
+rank: 80
 gates: launch
 date: 2026-10-11
 depends: [F076, F081]

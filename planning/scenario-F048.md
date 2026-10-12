@@ -2,6 +2,8 @@
 id: F048
 title: A member gets the address, not the mileage
 status: draft
+horizon: later
+rank: 110
 date: 2026-09-10
 depends: []
 ---

@@ -2,6 +2,8 @@
 id: F084
 title: Every word the app says lives in one file
 status: draft
+horizon: later
+rank: 180
 date: 2026-09-15
 depends: []
 ---

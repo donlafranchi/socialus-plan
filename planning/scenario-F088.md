@@ -2,6 +2,8 @@
 id: F088
 title: Nothing fits, so the app explains itself and asks what is missing
 status: draft
+horizon: later
+rank: 220
 date: 2026-09-15
 depends: [F064, F087]
 ---

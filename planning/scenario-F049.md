@@ -2,6 +2,8 @@
 id: F049
 title: A newcomer picks a hood and a metro at signup
 status: draft
+horizon: later
+rank: 120
 date: 2026-09-10
 depends: []
 ---

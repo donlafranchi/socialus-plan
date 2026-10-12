@@ -2,6 +2,8 @@
 id: F072
 title: A Page owner announces something, with a time on it
 status: approved
+horizon: now
+rank: 120
 date: 2026-09-13
 depends: [F059, F065]
 approved: 2026-09-21 — Don: "I need it built and composed." Composer, time, post address and the audience switch are one piece of work. Absorbs F073.
@@ -33,4 +35,4 @@ Maya's bakery has nothing to say until Thursday, when the sourdough is back. She
 
 **Criterion 4's count is permitted and its roster is not** — Don, 2026-09-07: *a count is shown to the Page owner, never a roster of who reacted.* The open question in `verbs.md` about a Page owner seeing **who** their audience is stays open and is untouched by a count.
 
-**The restricted setting depends on delivery, which is in `ROADMAP.md` § Cut.** It may be **visible before delivery exists, and not selectable-and-postable** — a creator who addresses forty-two people none of whom receive it has been told something untrue. At launch most Pages have nobody getting updates, so the reason shown is the true one either way. **The anyone setting is complete against what exists.**
+**The restricted setting depends on delivery, which is in After beta (cut).** It may be **visible before delivery exists, and not selectable-and-postable** — a creator who addresses forty-two people none of whom receive it has been told something untrue. At launch most Pages have nobody getting updates, so the reason shown is the true one either way. **The anyone setting is complete against what exists.**

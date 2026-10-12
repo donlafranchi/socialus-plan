@@ -2,6 +2,8 @@
 id: F095
 title: Where I work — a Page component for routine routes and response areas
 status: draft
+horizon: later
+rank: 60
 date: 2026-09-30
 depends: [F094]
 ---

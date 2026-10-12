@@ -2,6 +2,8 @@
 id: F090
 title: A Page carries the work its owner already does elsewhere
 status: draft
+horizon: later
+rank: 240
 date: 2026-09-18
 depends: [F070]
 ---

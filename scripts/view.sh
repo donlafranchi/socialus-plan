@@ -48,10 +48,10 @@ deferred_f=$(echo "$all" | awk -F'\t' '$4=="true"{print $2}' | grep -oE '^F[0-9]
   done
   echo
   echo "## Next"
-  sed -n '/^## Next/,/^## /p' ROADMAP.md | sed '1d;$d'
+  python3 scripts/going.py --list next
   echo
   echo "## Later"
-  sed -n '/^## Later/,/^## /p' ROADMAP.md | sed '1d;$d'
+  python3 scripts/going.py --list later
   echo
   echo "## Deferred"
   for f in $deferred_f; do

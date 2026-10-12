@@ -2,6 +2,8 @@
 id: F106
 title: A Page says where its give-back goes, and the local badge is the receipt
 status: approved
+horizon: later
+rank: 40
 date: 2026-10-11
 depends: [F103]
 approved: 2026-10-11 — the PM's ruling: local means money comes back to the community where it was generated; the owner chooses; to the business's own town is local and badged, anywhere else is not. Not beta: badges are cut (2026-10-06).

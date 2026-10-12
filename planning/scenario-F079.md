@@ -2,6 +2,8 @@
 id: F079
 title: The review queue handles many reports at once
 status: draft
+horizon: later
+rank: 20
 date: 2026-09-14
 depends: [F078]
 ---

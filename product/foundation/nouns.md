@@ -124,7 +124,7 @@ The launch is a yellow pages of organizations, not a white pages of people (2026
 
 - **Page** is the platform noun for an organization. **Group, business and organization** are the everyday words for kinds of Page, not separate things: a business Page, a social group's Page, an organization's Page. The `groups` table holds all of them.
 - **Post** is something a Page publishes (`page_posts`). **An announcement is a kind of post, and so is an event** — a post with a time.
-- **An organization holds events; an event is not an organization.** There is currently no event Page: a once-a-year event like BottleRock is still an organization's event. An event without an organization waits in `ROADMAP.md` § Later, speculative.
+- **An organization holds events; an event is not an organization.** There is currently no event Page: a once-a-year event like BottleRock is still an organization's event. An event without an organization waits in After beta, speculative.
 - **Which words show.** User-facing: **Page**, and **"Event"** for a post with a time (2026-09-30). Internal: **gathering** (a post or entry kind for something people come back to), **meetup** (an everyday word, not a label), **occasion** (withdrawn). **Business and Social group** are the two types of Page, with use cases as presets under them (2026-10-05), each offered at creation as one question with a one-line purpose (2026-10-04; placeholder copy, [public-is-draft]). **"Post"**, never "Announcement", is the user-facing noun for what a Page publishes (Don, 2026-10-05).
 
 ## The nouns that ship
@@ -216,10 +216,10 @@ The launch is a yellow pages of organizations, not a white pages of people (2026
 | Members, with join approval | ● built, on every Page; approval ruled 2026-09-29 |
 | Announcements | ● built, on every Page |
 | RSVP gatherings | ● the Response on an occurrence, above |
-| RSVP on a single post | ○ `ROADMAP.md` § Later, speculative |
-| Transactions and one-on-ones | ○ `ROADMAP.md` § Later, speculative; purchasing deferred |
+| RSVP on a single post | ○ After beta, speculative |
+| Transactions and one-on-ones | ○ After beta, speculative; purchasing deferred |
 
-Each offered component's explanation, and the way an owner adds one, are new launch scope (2026-09-30). Levels on a Page that isn't a group Page, and switching following or joining off, also wait in `ROADMAP.md` § Later.
+Each offered component's explanation, and the way an owner adds one, are new launch scope (2026-09-30). Levels on a Page that isn't a group Page, and switching following or joining off, also wait in After beta.
 
 **Viewers.** *Signed out* — the general public, *"the one on the street after all the businesses are closed"* (Don). *Signed in* — no relation to the Page. *Follower* — watches the Page, takes no part. *Member* — of this Page; membership is scoped to the Page and there is no MSA-wide community; a member gets everything a follower does (2026-09-29). *RSVP party* — RSVP'd to one of the Page's gatherings, or to a single post, which covers that post only. *Transaction party* — one side of a one-on-one meeting or a purchase. *Runner* — the Page's creator, owner or steward. A **consumer** is a party to an RSVP or a transaction; a follower only watches.
 
@@ -242,7 +242,7 @@ Each offered component's explanation, and the way an owner adds one, are new lau
 | Follow graph: who follows whom | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ their own Page's followers, by name |
 | Who RSVP'd | ✕ | ✕ | ✕ | ✕ | ● the others party to that gathering or post | ✕ | ● as host |
 | A one-on-one meeting or transaction | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ the parties see each other, as far as it needs | ◐ as a party |
-| Who bought | — no purchasing in the app yet (`ROADMAP.md` § Later) | — | — | — | — | — | — |
+| Who bought | — no purchasing in the app yet (After beta) | — | — | — | — | — | — |
 | A member's legal name | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
 | Public announcement, from any Page | ◐ one withheld card per Page (F093), "Sign in to see what's happening" | ● | ● | ● | ● | ● | ● |
 | Followers announcement | ◐ the same withheld card | ✕ | ● | ● | ✕ | ✕ | ● |
