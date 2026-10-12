@@ -1,46 +1,38 @@
 ---
 id: F107
-title: Explore reaches as far as each kind of thing is worth the trip, set in one table and tuned by where members go
+title: A searched place is searched as what it is, a town or a county
 status: draft
 date: 2026-10-11
 depends: [F104, F105]
 ---
 ## Story
 
-Marcus lives in Granite Bay. He searches coffee: Granite Bay, Roseville and Folsom, and it stops there; Auburn's cafes are not in the list. He searches a home builder: the whole market, in order. Dana lives in a thin foothill town with no cafe. She searches coffee and sees one labelled section, "Further out", with the nearest ones, not an empty page. Nothing says how far anything is.
+Marcus's home is Granite Bay, so with nothing typed his Explore shows his three rings (F104). On a Saturday he types Napa. The suggestions list "Napa, town" and "Napa County, county" as two rows. He picks the town: he sees what is in the city of Napa. A week later he picks the county and sees what is anywhere in Napa County, Yountville and Calistoga included. Same word, two searches, two different sets of results.
 
 ## Acceptance
 
-1. **One question, one answer.** Explore, Home and search ask a single function, reach(vantage, category), for how far a category goes. It returns F104's bands in order, with a flag on the ones that fall under "Further out". No surface decides reach on its own.
-2. **A config table holds the numbers.** One row per category and one default row: how many bands deep results show, the fewest results wanted, and a ceiling. Changing a row changes behaviour with no deploy. Every starting value is marked "guess" in the row.
-3. **Depth is counted in F104's bands, never shown.** No miles, minutes or hop count on any surface (2026-09-30 stands).
-4. **Too few inside the depth: the next bands appear under "Further out".** The page is never empty while the market holds any match. Nothing widens silently. Past the market stays a later, labelled section.
-5. **Uncapped categories show the whole market in order** (builders, contractors and other made-to-order work are the starting guess).
-6. **The measure can change without the callers changing.** Swapping adjacency for travel-time bands later is a change inside reach() and its own scenario; the inputs and the shape of the output stay as they are.
-7. **One event is logged when a member opens a Page from Explore:** the member's home town, the Page's town, the category and the band depth between them. Towns and a number only: no member id, no coordinates, no vantage (F105 criterion 3 stands), no device location.
-8. **Logged counts reach a person, not the table.** A report shows, per category, the depth that covers most observed opens, hidden below a minimum count. A person edits the row. Nothing retunes itself.
+1. **With no place typed, search and Explore use the member's three rings** (F104). Nothing here changes the default.
+2. **A typed place is searched as its own area type** (the place tree's `kind`: neighbourhood, city, county, region). A town returns what is in that town; a county returns what is anywhere in that county; a market (`region`) returns what is in the market. A town search does not widen to its county, and a county search does not narrow to its county seat.
+3. **The same name at two area types shows as two suggestions, each labelled with its type** ("Napa, town", "Napa County, county"). The member picks; nothing is picked for them.
+4. **Ring order applies only to a town or neighbourhood vantage** (F105 criterion 2). A county or market search returns that area as one set, ordered by F059's rules, with no town bands and no adjacency.
+5. **A place in a waiting market** behaves as F105 criterion 4 says, whatever its area type.
+6. **Nothing is stored.** The searched place is session state and part of the shared URL, as in F105 criterion 3.
 
 ## Not this
 
-Showing distance or time anywhere. Routing, isochrones or density tiers (F104 ruled no density band; travel time is the next scenario, behind the same function). A neighbouring-market section. Reach set per member. A config editor in the app: rows are edited by the operator. Self-tuning. Changing the order inside a band (F059 criterion 3).
+Drawing new areas or merging them for search. Distance or radius search. Saved searches. Changing what makes a Page local (F106).
 
 ## Why
 
-- **Lives somewhere better?** No: Yelp and Google show everything within a radius; what is worth the trip for each kind of thing, learned from the people who live there, is nowhere else.
-- **Only locals know?** Yes: a cafe is a ten minute question and a builder is a fifty minute one, and the foothills and the valley answer both differently.
-- **Gets people together?** Yes: what shows first is what a finder will actually go to.
-- **Stays fresh on its own?** Mostly: adjacency changes only when boundaries do; the table is a handful of rows reviewed against the report.
-- **Who keeps it current?** The operator, from a report, a few rows a quarter; nobody edits a boundary.
-- **Better as more people join?** Yes: the first guesses harden into observed depths as opens accumulate.
+- **Lives somewhere better?** Partly: Google Maps and Yelp resolve a typed place to one area; they do not separate a town from the county of the same name.
+- **Only locals know?** Yes: that Napa the town and Napa County are different places to a local is local knowledge.
+- **Gets people together?** Yes: a day trip to the county finds the winery event outside the town.
+- **Stays fresh on its own?** Yes: it reads the place tree and stores nothing.
+- **Who keeps it current?** Nobody; the place tree is the only input.
+- **Better as more people join?** Yes: more Pages fill more area types.
 
-**Path: new territory.** It narrows F104's "the scope is the whole market" for categories with a depth, and it logs member behaviour, which touches privacy and member trust. A/B/C below.
+**Path: new territory, ruled** (the PM, 2026-10-11, plan #107: default location is the three rings; a searched place uses its own area type). Revises F105 criterion 2 (re-centring always rebuilt the rings from a town). Precedents: [Google Maps](https://www.google.com/maps) and [Yelp](https://www.yelp.com) resolve "Napa" to one place for you; [Zillow](https://www.zillow.com) lists a city and its county as separate suggestions with a type label, which is the pattern here (not re-verified this session).
 
-**Why bands now, minutes later.** F104's order is already a count of towns crossed, so the first version needs no routing. When it is wrong (mountains, lakes, a freeway that makes a far town near), the fix is a better measure inside reach(), with free inputs: OpenStreetMap roads with Valhalla or OpenRouteService for travel-time areas, Overture or OSM places to count supply per category, Census population for density, H3 cells to precompute [A: none verified for this stack]. The config table and the log do not change.
-
-**Precedents.** [Walk Score](https://www.walkscore.com/methodology.shtml) weights amenities by travel time and counts categories separately; [USDA Food Access Research Atlas](https://www.ers.usda.gov/data-products/food-access-research-atlas/) uses different distance standards for urban and rural tracts; Yelp and Google rank by distance within a radius and show it. Conflict: all three show miles or minutes, which 2026-09-30 refuses; bands carry the same idea unseen.
-
-[open-question owner=don raised=2026-10-11] Do we log town pairs from beta day one? A) **Log from day one: home town, Page town, category, band depth, no member id** (recommended: the table has nothing to learn from until it runs; no personal data in the row). B) Log nothing until after beta: safest, but the first quarter of learning is lost. C) Log with a member id so reach can be per member: richer, and the kind of tracking the platform refuses.
-
-[open-question owner=don raised=2026-10-11] What is the minimum count before a town pair's number appears in the report? A) **20 opens per pair and category** (recommended: a guess, small enough to start, large enough to hide one person). B) 50. C) Same as the place-metric minimum, once `place-connection-metrics.md` sets one.
+Backlog: not yet ticketed. Verify against `socialus-web` main which of the three rings Explore already builds before writing tickets (plan #107).
 
 [platform none]

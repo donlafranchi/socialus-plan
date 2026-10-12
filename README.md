@@ -34,6 +34,7 @@
 - F100: An AI reads every reported Post first, and a person still makes the call
 - F101: One scannable page of flagged and reviewed Posts, decided in one tap
 - F102: The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
+- F103: A market is a set of towns, and the zip decides which one a person is in
 
 ## Next
 
@@ -93,6 +94,9 @@
 
 
 ## Deferred
+- F104: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency
+- F105: A member looks from a typed place, and home stays the default
+- F106: A Page says where its give-back goes, and the local badge is the receipt
 
 ## Accepted risks
 
