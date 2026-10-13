@@ -62,7 +62,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 |---|---|---|
 | `STATUS.md` | `scripts/status.sh`, wrapping `scripts/state.sh` and `scripts/markers.py` | `.github/workflows/status.yml` — push to `main`, daily 13:05 UTC, and *Actions → status → Run workflow*, which works from a phone |
 | `README.md` | `scripts/view.sh` | the same workflow |
-| `DASHBOARD.md`, the PM's one cockpit (ruled 2026-10-13); `dashboard/status-dashboard.html` is its colour rendering | `scripts/dashboard.py` (sections in `scripts/cockpit.py`, safety panel in `scripts/safety.py`), reading `socialus-web` Issues and PRs | `.github/workflows/dashboard.yml` daily, and by hand at each handoff; the PM ticks the "Cockpit · I have looked" Issue to move its baseline |
+| `DASHBOARD.md` (the PM's cockpit), `dashboard/status-dashboard.html` (colour) | `scripts/dashboard.py`, reading `socialus-web` | `dashboard.yml` daily, and by hand at handoff |
 | `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a ruling changes — `scripts/lint.sh` fails until it is run |
 | `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md` | `python3 scripts/markers.py platform`, from `[platform …]` markers | by hand after a marker changes — `scripts/lint.sh` fails until it is run |
 
