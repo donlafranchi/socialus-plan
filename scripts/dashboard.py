@@ -516,11 +516,75 @@ def pipeline_health():
         pass
     return lines + ['']
 
+
+# The PM cockpit (ruled B, 2026-10-13): facts gathered here, shaped by scripts/cockpit.py, drawn in the md and the colour page alike.
+import cockpit
+def cockpit_facts():
+    def latest(runs, name=None):
+        seen = {}
+        for r in runs:                                   # newest first
+            if r['status'] == 'completed' and r['conclusion'] != 'skipped' and (name is None or r['name'] == name):
+                seen.setdefault(r['name'], r['conclusion'])
+        return seen
+    try:
+        runs = gh('run', 'list', '-R', REPO, '--branch', 'main', '--limit', '40', '--json', 'name,conclusion,status')
+        ci_ = latest(runs, 'CI'); dep = latest(runs, 'Deploy health')
+        build = {'name': 'build', 'state': 'unknown' if not ci_ else ('green' if all(v == 'success' for v in ci_.values()) else 'red'), 'text': 'main CI ' + ('passing' if ci_ and all(v == 'success' for v in ci_.values()) else 'failing or unread')}
+        site = {'name': 'site', 'state': 'unknown' if not dep else ('green' if all(v == 'success' for v in dep.values()) else 'red'), 'text': 'last deploy health run ' + ('passed' if dep and all(v == 'success' for v in dep.values()) else 'failed or unread')}
+    except Exception:
+        build = {'name': 'build', 'state': 'unknown', 'text': 'CI not readable'}; site = {'name': 'site', 'state': 'unknown', 'text': 'deploy health not readable'}
+    try:
+        undated = json.load(open(os.path.join(os.environ.get('PROJECTS', os.path.expanduser('~/Projects')), 'socialus-ops', 'scores', 'tend-docs', 'latest.json')))['undated']
+        docs = {'name': 'docs', 'state': 'green' if undated < 5 else 'amber', 'text': f'{undated} undated (target under 5)'}
+    except Exception:
+        docs = {'name': 'docs', 'state': 'unknown', 'text': 'not read (tend-docs score unreadable)'}
+    pct = MS['pct']
+    crit = {'name': f'criteria {pct}%', 'state': 'red' if MS.get('red') else ('green' if pct >= 100 else 'amber'), 'text': f'{MS["met"]} of {MS["total"]} met' + (f', {MS["red"]} launch-blocking unmet' if MS.get('red') else '')}
+    flat = [i for a in WAIT_AREAS for i in WAIT.get(a, [])]
+    wait = {'name': 'waiting on you', 'state': 'green' if not flat else 'amber', 'text': f'{len(flat)} items; oldest wait not read yet'}
+    lights = [build, site, {'name': 'migrations', 'state': 'unknown', 'text': 'not read yet'}, crit, wait, docs]
+    since = datetime.now(timezone.utc) - timedelta(days=7)
+    merged = []
+    for repo, short in ((REPO, 'web'), ('donlafranchi/socialus-plan', 'plan')):
+        for p_ in gh('pr', 'list', '-R', repo, '--state', 'merged', '--limit', '60', '--json', 'number,title,mergedAt,url'):
+            if datetime.fromisoformat(p_['mergedAt'].replace('Z', '+00:00')) >= since and not re.match(r'^docs: regenerate', p_['title']):
+                merged.append({'repo': short, 'n': p_['number'], 'title': p_['title'], 'url': p_['url'], 't': p_['mergedAt']})
+    merged.sort(key=lambda x: x['t'], reverse=True)
+    newly = sum(1 for k, v in (_now or {}).items() if v['built'] == 'yes' and _prev is not None and (k not in _prev or _prev[k]['built'] != 'yes'))
+    lost_n = 0 if _prev is None or _now is None else sum(1 for k in _prev if k not in _now or (_prev[k]['built'] == 'yes' and _now[k]['built'] != 'yes') or (_prev[k]['checked'] == 'yes' and _now[k]['checked'] != 'yes'))
+    sc = going.scenarios(os.path.join(root, 'planning')); ideas = going.imagine(os.path.join(root, 'IMAGINE.md'))
+    up = {'now': sum(1 for x in sc if x['horizon'] == 'now'), 'next': sum(1 for x in sc if x['horizon'] == 'next'),
+          'considering': sum(1 for x in sc if x['horizon'] == 'considering') + sum(1 for l, _ in ideas if l == 'considering'),
+          'later': sum(1 for x in sc if x['horizon'] == 'later') + sum(1 for l, _ in ideas if l == 'later')}
+    first = flat[0] if flat else None
+    test = {'done': _u['ticked'], 'total': _u['total'], 'next': _u['start'], 'upnext': _u['next'][:3]}
+    setup = []
+    try:
+        body = gh('issue', 'view', '-R', REPO, '707', '--json', 'body,url')
+        for row in re.findall(r'^\|\s*([^|]+?)\s*\|\s*`?([^|]+?)`?\s*\|', body['body'], re.M):
+            if row[0] not in ('Feature', 'Where') and not row[0].startswith('---'):
+                setup.append({'text': f'{row[0]}: {row[1]}'[:120], 'done': False, 'url': body['url']})
+    except Exception:
+        pass
+    r = subprocess.run(['bash', os.path.join(PLAN, 'scripts', 'risks-due.sh')], capture_output=True, text=True, cwd=PLAN)
+    due = [l.strip(' -*') for l in r.stdout.splitlines() if l.strip()][:6]
+    dated = [f"Launch checklist: {i['text'][:90]}" + (f" ({i['days_to_date']} days to the date trigger)" if i.get('days_to_date') is not None else '') for i in (LAUNCH or [])]
+    safe = {'flags': [], 'unread': ['rulings and tags removed', 'tests deleted or skipped', 'guard, lint or CI files changed', 'rulesets changed', 'migrations applied']}
+    if lost_n:
+        safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
+    lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
+    return {'days': days, 'lights': lights,
+            'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'last 7 days; criteria since the last dashboard'},
+            'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
+            'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
+
+COCKPIT = cockpit.build(cockpit_facts())
 _pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
-out[_pi + 1:_pi + 1] = [''] + pipeline_health()
+out[_pi + 1:_pi + 1] = [''] + cockpit.md(COCKPIT) + pipeline_health()
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
 
 data = {
+    'cockpit': COCKPIT,
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
     'features': [{'id': f['id'], 'title': f['title'], 'area': f['area'], 'met': f['met'], 'total': f['total'], 'checked': f['checked'], 'reviewed': f['reviewed'], 'smoked': f['smoked'], 'pm': f['pm'], 'blocked': len(f['blocked']), 'stale': f.get('stale', False), 'url': f['url'], 'criteria': [{'n': r['n'], 'text': r['text'], 'built': r['built'], 'checked': r['checked'], 'reviewed': r['reviewed'], 'smoked': r['smoked'], 'pm': r['pm'], 'uat': r['uat'], 'blocking': r['blocking'], 'not_ok': r.get('not_ok', False), 'not_ok_text': r.get('not_ok_text', ''), 'issues': r['issues']} for r in f['criteria']]} for f in sorted(FEATS, key=lambda f: (f['area'], f['id']))], 'cover': COVER,
     'your_uat': _u, 'journeys': JR, 'how': HOW[1:], 'waiting': WAIT, 'wait_areas': WAIT_AREAS, 'wait_total': WAIT_TOTAL, 'launch': LAUNCH, 'test_notice': globals().get('TEST_NOTICE', ''), 'uat': uat_items, 'problems': problems, 'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
@@ -581,7 +645,8 @@ const testNote=D.test_notice?`<p class="settled" style="background:#fecaca"><b>T
 const jrSec=`<h2 style="font-size:1rem;margin:22px 0 4px">Your review: journeys, by area</h2><p class="sub">Your 3-minute checks, over the criteria the agents test. Feature progress is by criteria; this is by journeys.</p><table class="t"><tr><th>Area</th><th>Journeys looked</th><th>Criteria under them</th></tr>${Object.entries(D.journeys).sort().map(([a,c])=>`<tr><td>${esc(a)}</td><td>${c.looked}/${c.total}</td><td>${c.crit}</td></tr>`).join('')}</table>`;
 const uatSec=(D.uat.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Live testing (UAT Issues)</h2><div class="foot">${D.uat.map(u=>`<p><a href="${esc(u.url)}">#${u.n} ${esc(u.title)}</a> · ${esc(u.state)} · ${u.done}/${u.total} boxes ticked</p>`).join('')}</div>`:'')+`<h2 style="font-size:1rem;margin:22px 0 4px">Data problems</h2><div class="foot">${D.problems.length?D.problems.map(p=>`<p>${esc(p)}</p>`).join(''):'<p>none</p>'}</div>`;
 const waitTop=`<p class="settled" style="background:var(--card);border:1px solid var(--line)"><b>Waiting on you: ${D.wait_total}</b> · ${D.wait_areas.map(n=>`<a href="#card-${slug(n)}">${esc(n)} (${(D.waiting[n]||[]).length})</a>`).join(' · ')}</p>`;
-document.getElementById('areas').innerHTML=waitTop+testNote+launchSec+featSection+jrSec+uatSec+D.areas.map(a=>{
+const cockpitSec=`<h2 style="font-size:1rem;margin:0 0 4px">The cockpit</h2><p class="sub">One generated page: a bold line per section, the detail folded. The safety panel reads GitHub, not agent reports.</p>${D.cockpit.map((x,n)=>`<details id="cockpit-${esc(x.id)}" style="border-left-color:#2563eb"><summary><span class="name">${n+1}. ${esc(x.title)}</span><span class="note" style="grid-column:auto;color:var(--ink)">${esc(x.bold)}</span></summary><div class="rows">${x.items.length?x.items.map(i=>`<div class="row"><div class="title">${i.url?`<a href="${esc(i.url)}">${esc(i.text)}</a>`:esc(i.text)}</div></div>`).join(''):'<div class="row"><div class="title">nothing</div></div>'}</div></details>`).join('')}`;
+document.getElementById('areas').innerHTML=cockpitSec+waitTop+testNote+launchSec+featSection+jrSec+uatSec+D.areas.map(a=>{
  const bar=segBar(hue(a.name),critsOf(a.name));
  const rows=waitList(a.name);
  const cm=a.crit&&a.crit.total?a.crit.met/a.crit.total:null;const mean=cm!==null?cm:(a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0);return `<details id="card-${slug(a.name)}" style="border-left-color:${a.crit&&a.crit.red?'#b91c1c':tint(hue(a.name),mean)}"><summary><span class="name">${esc(a.name)}</span>${bar||'<span class="note">no criterion reports yet</span>'}<span class="note"><b>Waiting on you (${(D.waiting[a.name]||[]).length})</b> · ${cm!==null?`${a.crit.met}/${a.crit.total} criteria met (${Math.round(cm*100)}%)${a.crit.red?` · ${a.crit.red} red`:''}`:`${Math.round(mean*100)}% of Issue stages (no criterion reports)`} · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+waitCard(D.wait_areas[D.wait_areas.length-1])+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');

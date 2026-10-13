@@ -71,7 +71,7 @@ jobs:
           git show HEAD:DASHBOARD.md > /tmp/prev.md 2>/dev/null || { cp /dev/null /tmp/prev.md; }
           norm /tmp/prev.md > /tmp/a.md; norm DASHBOARD.md > /tmp/b.md
           if cmp -s /tmp/a.md /tmp/b.md; then echo "No change beyond the time; nothing to commit."; exit 0; fi
-          git add DASHBOARD.md dashboard/status-dashboard.html
+          git add DASHBOARD.md dashboard/status-dashboard.html dashboard/capabilities.json
           git commit -m "docs: regenerate dashboard (scheduled)"
           # main requires the `lint` check, and Actions cannot be exempted. Same pattern as status.yml: run scripts/lint.sh
           # on this commit, park it on `dashboard-bot`, report `lint` on that sha, then fast-forward main. A failing lint

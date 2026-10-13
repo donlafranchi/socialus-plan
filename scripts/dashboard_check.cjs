@@ -20,6 +20,7 @@ const checks = {
   'one segment per criterion, in every feature and area bar': d.querySelectorAll('.segbar i').length === 2 * crit,
   'how to read, five lines': d.querySelectorAll('ol.how li').length === 5,
   'your UAT line': d.body.textContent.includes('Your UAT: ' + D.your_uat.ticked + ' of ' + D.your_uat.total + ' walk-throughs done'),
+  'cockpit drawn, eight sections': D.cockpit.length === 8 && d.querySelectorAll('[id^=cockpit-]').length === 8,
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
 }
