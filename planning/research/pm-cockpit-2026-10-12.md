@@ -2,7 +2,7 @@
 id: pm-cockpit-2026-10-12
 purpose: Inventory every human-facing view across the five repos, research how agent-led teams give one person one control view, and design one generated PM cockpit. Extends growing-docs-audit-2026-10-12.
 layer: why
-status: draft
+status: ruled
 last-updated: 2026-10-12
 ---
 
@@ -10,7 +10,7 @@ last-updated: 2026-10-12
 
 **The PM looks in nine places today, and they disagree: three launch dates, and three different counts of what waits on the PM.** This proposes one generated page, the dashboard grown into a cockpit: a big checklist with every detail folded, built only from agent docs and GitHub, never hand-kept. Agents keep as many single-purpose docs as they need; the cockpit is the only thing the PM has to read.
 
-**Your call:** A, B or C below. Recommend **A: the dashboard becomes the one cockpit, and every other PM view folds in or retires.**
+**Ruled B (2026-10-13):** the dashboard becomes the one cockpit, and the colour page stays as a second rendering of the same data. Every other PM view folds in or retires.
 
 Path: new territory. It retires views the PM uses and decides what a public page may show about accounts and money.
 
@@ -35,7 +35,7 @@ guards agents can't edit (rulesets, protected paths, CI) ──────┘  
 
 ## What changed since you last looked
 
-**Nothing built yet. This extends today's docs audit (ruled A): that one cut what agents maintain; this one cuts what the PM reads.**
+**Ruled B; nothing built yet.** This extends the docs audit (ruled A): that one cut what agents maintain; this one cuts what the PM reads.
 
 ## 1. What the PM reads today
 
@@ -164,7 +164,7 @@ Not found: anything specific from Thoughtworks or Steve Yegge; Linear's health l
 
 | View | Becomes |
 |---|---|
-| Dashboard colour page (html) | Retired; the md page with folds is the phone view |
+| Dashboard colour page (html) | Stays: a second rendering of the cockpit, built from the same data in the same run |
 | Plan README's roadmap and dates | A five-line front page linking to the cockpit |
 | STATUS | Agent-facing feed (guard coverage, open questions); off the PM's list |
 | Handoff state | Dispatch's own file; its open calls come from the cockpit |
@@ -187,16 +187,22 @@ Not found: anything specific from Thoughtworks or Steve Yegge; Linear's health l
 4. Save the criterion snapshot so "lost" and "built since last look" compare; add the "last look" tick.
 5. The safety diff: tags, rulings, tests, skips, guard and CI files, rulesets; a ruleset on the ops repo.
 6. Health lights from CI, deploy health and the migrations check.
-7. Trim the plan README and retire the html page once the cockpit holds their facts.
+7. Trim the plan README once the cockpit holds its facts; the html page renders the same eight sections.
 
 Each lands as its own PR with a check seen failing first.
 
 </details>
 
-## The call
+## The call (ruled B, 2026-10-13)
 
-**A — The dashboard becomes the one cockpit (recommended).** Eight sections, everything else folds in or retires, READMEs link to it. *Trade-off: most clarity; the colour page and the README's lists go away.*
+**A — The dashboard becomes the one cockpit.** Eight sections, everything else folds in or retires, READMEs link to it. *Trade-off: most clarity; the colour page and the README's lists go away.*
 
-**B — Cockpit plus the colour page.** As A, but keep the tappable html as a second rendering of the same data. *Trade-off: nicer on a big screen; two views to keep in step.*
+**B — Cockpit plus the colour page (chosen).** As A, but keep the tappable html as a second rendering of the same data. *Trade-off: nicer on a big screen; two views to keep in step.*
 
 **C — New cockpit beside today's views.** A separate summary page; dashboard, STATUS and README stay as they are. *Trade-off: least change; the PM keeps reading several pages that can disagree.*
+
+## The ruling
+
+```
+- **2026-10-13 — The PM reads one generated cockpit: the dashboard, in eight sections, with the colour page as a second rendering of the same data.** [for now] Every repo's README links to it; other PM views fold in or become agent-facing; nothing in it is hand-kept, and the agent-safety panel reads GitHub, not agent reports. Because nine PM views disagreed on dates and on what waited on the PM (2026-10-12). Rationale: planning/research/pm-cockpit-2026-10-12.md.
+```
