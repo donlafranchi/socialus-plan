@@ -6,6 +6,7 @@
 
 ## Built
 - F081: Everyone signs up the same way, and the zip sets the market
+- F082: Anyone publishing something others show up for takes one step first, and nothing is checked
 - F093: A signed-out visitor sees that something is happening, and is asked in to read it
 - F101: One scannable page of flagged and reviewed Posts, decided in one tap
 - F103: A market is a set of towns, and the zip decides which one a person is in
@@ -29,12 +30,12 @@
 - F077: People who actually interact are not hidden from each other; everyone else sees a display name
 - F078: Flagged content hides itself immediately, and the poster is told why
 - F080: No sensitive content, while we grow into a platform with staff
-- F082: Anyone publishing something others show up for takes one step first, and nothing is checked
 - F091: What's happening, today and this week
 - F092: Narrowing happens in a modal that writes what it did
 - F099: Every post shows a picture, and every Page can have a Page picture
 - F100: An AI reads every reported Post first, and a person still makes the call
 - F102: The poster answers first, report misuse is tracked, and the platform holds steady Tuesday to Thursday
+- F114: A test member with six weeks of history, for testing freshness and learning
 
 ## Next
 - F104: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency
@@ -46,6 +47,9 @@
 - F093: A signed-out visitor sees that something is happening, and is asked in to read it
 
 ## Considering
+- F112: Explore leads with what a member has not seen yet, and gives every Page its turn
+- F113: A member sees what SocialUs thinks they like, and edits it
+- F115: Real businesses from Napa Valley to Tahoe are listed as unclaimed Pages, waiting with their markets
 
 ## Later
 - F077: People who actually interact are not hidden from each other; everyone else sees a display name
