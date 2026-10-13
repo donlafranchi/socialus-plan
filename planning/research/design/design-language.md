@@ -1,6 +1,6 @@
 # SocialUs — Design Language
 
-> **Reference, 2026-10-01 — a dated research note, not a second spec.** Rulings live in `DECISIONS.md`; the reasons in `product/ui/design-language.md`; the token values, once adopted, in `socialus-web` (design decision 7). Where this note disagrees with those, they win.
+> **Reference, 2026-10-01 — a dated research note, not a second spec.** Rulings live in `PRINCIPLES.md` or under `## Rulings` in the doc they govern; the reasons in `product/ui/design-language.md`; the token values, once adopted, in `socialus-web` (design decision 7). Where this note disagrees with those, they win.
 
 Oct 1, 2026 · @don
 
