@@ -1,6 +1,6 @@
 # SocialUs — Who to Copy & Design Resources
 
-> **Reference, 2026-10-01 — research notes.** Rulings drawn from it live in `DECISIONS.md`.
+> **Reference, 2026-10-01 — research notes.** Rulings drawn from it live in `PRINCIPLES.md` or under `## Rulings` in the doc they govern.
 
 Oct 1, 2026 · @don
 
