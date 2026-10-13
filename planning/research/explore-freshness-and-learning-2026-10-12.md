@@ -1,6 +1,6 @@
 # Explore freshness, learning about a member, a test profile and a regional seed (2026-10-12)
 
-Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Sections 6–9: how Find and Discover look and feel, the switch, a categorization engine, and why TikTok's feed works. Draft scenarios: F112 (Find freshness, beta), F113 (what we learn), F114 (test profile), F115 (regional seed). The Discover feed is designed here only, after beta, and is not a scenario.
+Asked for by the PM: show new and interesting things on every revisit, learn about a member from what they search for, build a test profile for the PM, and add businesses from Napa Valley to Truckee, South Lake Tahoe, Lodi, Yuba and Colusa. Sections 6–9: how Find and Discover look and feel, the switch, a categorization engine, and why TikTok's feed works. Scenarios: F112 (Find freshness, beta), F113 (what we learn), F115 (regional seed), drafts; F114 (test profile), approved. The Discover feed is designed here only, after beta, and is not a scenario.
 
 **How sources are marked.** **[V]**: the page was read this session. **[S]**: only a search snippet or a secondary write-up was seen. **[A]**: assumed, verify before building. **[C]**: read in `socialus-web` main at `0e5ee14`.
 
@@ -125,7 +125,7 @@ On both sides: nothing changes what another member sees or what a Page owner see
 - **B) The PM's own production account.** Least setup; mixes test history into the operator break-glass and into staff metrics, and wiping it wipes real history.
 - **C) A local persona only.** Safest; the PM cannot use it on a phone or against the regional seed.
 
-**For the PM: A, B or C.** The spec is F114.
+**Ruled A** (the PM, 2026-10-12, on #137). F114 is approved for build; it writes the history that exists today and grows a block with each new signal.
 
 ## 5. Regional seed (build plan; no data loaded)
 
@@ -271,7 +271,7 @@ Recommend B. § 2's draft objective is written without time; under B it gains on
 
 ## Order to bring to the PM
 1. ~~What we learn about a member~~: ruled A.
-2. **Where the test profile lives (A/B/C, § 4)**, with the PM now.
+2. ~~Where the test profile lives~~: ruled A.
 3. Then, one at a time: time spent on Discover (A/B/C, § 9); the categorization model after its bake-off (§ 8); Discover's tab labels, icons and signed-out preview (§ 6, § 7); copy for the credit line, the suggestion prompt, the preview banner and the stop card.
 
 Find freshness (A) and the seed plan are decided here, path well-worn; Truckee joining Tahoe is a one-row default the PM can reverse. Discover and the switch are after beta; the categorization engine is needed in beta for F113's profile, and the seed can run it on the Batch API.
