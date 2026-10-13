@@ -1,0 +1,27 @@
+[
+ [
+  {
+   "text": "Rulings removed: 40 then, 39 now"
+  },
+  {
+   "text": "[always]/[for now] tags dropped: 38 then, 35 now"
+  },
+  {
+   "text": "Test files deleted: 200 then, 198 now"
+  },
+  {
+   "text": "Tests skipped, todo'd or focused: 1 then, 3 now"
+  },
+  {
+   "text": "Ruleset changed on socialus-plan"
+  },
+  {
+   "text": "socialus-ops has no ruleset: nothing stops a direct push or a force push"
+  },
+  {
+   "text": "web #9 chore: quiet CI (touches .github/workflows/ci.yml)",
+   "url": "https://example.test/9"
+  }
+ ],
+ []
+]

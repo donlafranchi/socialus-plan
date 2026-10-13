@@ -19,6 +19,7 @@ concurrency:
 
 permissions:
   contents: write
+  issues: write   # --record-look clears the "I looked" box
   checks: write   # it reports the lint it ran on its own commit; main requires `lint` (see status.yml)
 
 jobs:
@@ -51,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PROJECTS: ${{ github.workspace }}/_projects
           STATUS_CODE: ${{ github.workspace }}/_projects/socialus-web
-        run: python3 scripts/dashboard.py .
+        run: python3 scripts/dashboard.py . --record-look
       # A page whose script throws still commits and silently shows nothing. Run its script in jsdom and refuse to publish on any error.
       - name: Check the page script
         working-directory: socialus-plan
@@ -71,7 +72,7 @@ jobs:
           git show HEAD:DASHBOARD.md > /tmp/prev.md 2>/dev/null || { cp /dev/null /tmp/prev.md; }
           norm /tmp/prev.md > /tmp/a.md; norm DASHBOARD.md > /tmp/b.md
           if cmp -s /tmp/a.md /tmp/b.md; then echo "No change beyond the time; nothing to commit."; exit 0; fi
-          git add DASHBOARD.md dashboard/status-dashboard.html dashboard/capabilities.json
+          git add DASHBOARD.md dashboard/status-dashboard.html dashboard/capabilities.json dashboard/last-look.json
           git commit -m "docs: regenerate dashboard (scheduled)"
           # main requires the `lint` check, and Actions cannot be exempted. Same pattern as status.yml: run scripts/lint.sh
           # on this commit, park it on `dashboard-bot`, report `lint` on that sha, then fast-forward main. A failing lint
