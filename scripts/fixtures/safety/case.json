@@ -1,0 +1,3 @@
+{"base": {"rulings": 40, "tags": 38, "tests": {"files": 200, "skips": 1}, "rulesets": {"socialus-web": "aaa", "socialus-plan": "bbb"}},
+ "now":  {"rulings": 39, "tags": 35, "tests": {"files": 198, "skips": 3}, "rulesets": {"socialus-web": "aaa", "socialus-plan": "ccc", "socialus-ops": "none"}},
+ "guards": [["web #9 chore: quiet CI (touches .github/workflows/ci.yml)", "https://example.test/9"]]}

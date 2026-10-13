@@ -166,6 +166,8 @@ for i in issues:
 
 args = sys.argv[1:]
 since_h = 12
+RECORD_LOOK = '--record-look' in args
+args = [a for a in args if a != '--record-look']
 if '--since' in args:
     k = args.index('--since')
     since_h = int(args[k + 1].rstrip('h'))
@@ -434,10 +436,10 @@ import lost
 _cap = os.path.join(root, 'dashboard', 'capabilities.json')
 _prev = json.load(open(_cap)) if os.path.exists(_cap) else None
 _now = lost.snapshot(FEATS) if FEATS else None
+BASELINE_NEW = False
 if _now is not None:
     out += [''] + lost.section(_prev, _now)
-    os.makedirs(os.path.dirname(_cap), exist_ok=True)
-    json.dump(_now, open(_cap, 'w'), indent=0, sort_keys=True)
+    BASELINE_NEW = _prev is None   # the criterion baseline moves only when the PM looks (record_look below), or the first time
 out += [''] + going.section(going.scenarios(os.path.join(root, 'planning')), sum(1 for i in issues if i['state'] == 'OPEN'), _later, MILESTONE, ideas=going.imagine(os.path.join(root, 'IMAGINE.md')))
 out += ['', '## Your review: journeys, by area', '', 'A journey is your 3-minute human check; each sits over the criteria the agents test. Feature progress above is by criteria; this is by journeys. A journey belongs to the area of its first feature.', '', '| Area | Journeys looked | Criteria under them |', '|---|---|---|']
 out += [f"| {_a} | {_c['looked']}/{_c['total']} | {_c['crit']} |" for _a, _c in sorted(JR.items())]
@@ -518,7 +520,33 @@ def pipeline_health():
 
 
 # The PM cockpit (ruled B, 2026-10-13): facts gathered here, shaped by scripts/cockpit.py, drawn in the md and the colour page alike.
-import cockpit
+import cockpit, safety
+LOOK_FILE = os.path.join(root, 'dashboard', 'last-look.json')
+LOOK_ISSUE = 'Cockpit · I have looked'
+try:
+    LOOK = json.load(open(LOOK_FILE)); LOOK['time'] = datetime.fromisoformat(LOOK['time'])
+except (OSError, ValueError, KeyError):
+    LOOK = None
+_cwd = os.getcwd(); os.chdir(PLAN)
+try:
+    SAFETY_NOW = safety.snapshot(markers.decisions(), os.environ.get('STATUS_CODE') or os.path.expanduser('~/Projects/socialus-web'))
+finally:
+    os.chdir(_cwd)
+
+
+def record_look():
+    """The PM ticks the box on the pinned Issue; this run moves the baseline to now and clears the box. Only with --record-look (the workflow)."""
+    PLAN_REPO = 'donlafranchi/socialus-plan'
+    for i in gh('issue', 'list', '-R', PLAN_REPO, '--state', 'open', '--search', f'"{LOOK_ISSUE}" in:title', '--json', 'number,body') or []:
+        if re.search(r'- \[[xX]\] I looked', i['body'] or ''):
+            json.dump({'time': datetime.now(timezone.utc).isoformat(), 'safety': SAFETY_NOW}, open(LOOK_FILE, 'w'), indent=1, sort_keys=True)
+            os.makedirs(os.path.dirname(_cap), exist_ok=True)
+            json.dump(_now, open(_cap, 'w'), indent=0, sort_keys=True)
+            subprocess.run(['gh', 'issue', 'edit', str(i['number']), '-R', PLAN_REPO, '--body', re.sub(r'- \[[xX]\] I looked', '- [ ] I looked', i['body'])], check=True, capture_output=True)
+            return True
+    return False
+
+
 def cockpit_facts():
     def latest(runs, name=None):
         seen = {}
@@ -542,8 +570,13 @@ def cockpit_facts():
     crit = {'name': f'criteria {pct}%', 'state': 'red' if MS.get('red') else ('green' if pct >= 100 else 'amber'), 'text': f'{MS["met"]} of {MS["total"]} met' + (f', {MS["red"]} launch-blocking unmet' if MS.get('red') else '')}
     flat = [i for a in WAIT_AREAS for i in WAIT.get(a, [])]
     wait = {'name': 'waiting on you', 'state': 'green' if not flat else 'amber', 'text': f'{len(flat)} items; oldest wait not read yet'}
-    lights = [build, site, {'name': 'migrations', 'state': 'unknown', 'text': 'not read yet'}, crit, wait, docs]
-    since = datetime.now(timezone.utc) - timedelta(days=7)
+    try:
+        mg = latest(gh('run', 'list', '-R', REPO, '--workflow', 'migrations.yml', '--branch', 'main', '--limit', '5', '--json', 'name,conclusion,status'))
+        mig = {'name': 'migrations', 'state': 'unknown' if not mg else ('green' if all(v == 'success' for v in mg.values()) else 'red'), 'text': 'repo and database agree (last drift check on main)' if mg and all(v == 'success' for v in mg.values()) else 'drift check failing or unread'}
+    except Exception:
+        mig = {'name': 'migrations', 'state': 'unknown', 'text': 'not read yet'}
+    lights = [build, site, mig, crit, wait, docs]
+    since = max(LOOK['time'] if LOOK else datetime.now(timezone.utc) - timedelta(days=7), datetime.now(timezone.utc) - timedelta(days=7))
     merged = []
     for repo, short in ((REPO, 'web'), ('donlafranchi/socialus-plan', 'plan')):
         for p_ in gh('pr', 'list', '-R', repo, '--state', 'merged', '--limit', '60', '--json', 'number,title,mergedAt,url'):
@@ -569,15 +602,21 @@ def cockpit_facts():
     r = subprocess.run(['bash', os.path.join(PLAN, 'scripts', 'risks-due.sh')], capture_output=True, text=True, cwd=PLAN)
     due = [l.strip(' -*') for l in r.stdout.splitlines() if l.strip()][:6]
     dated = [f"Launch checklist: {i['text'][:90]}" + (f" ({i['days_to_date']} days to the date trigger)" if i.get('days_to_date') is not None else '') for i in (LAUNCH or [])]
-    safe = {'flags': [], 'unread': ['rulings and tags removed', 'tests deleted or skipped', 'guard, lint or CI files changed', 'rulesets changed', 'migrations applied']}
+    flags, unread = safety.compare(LOOK['safety'] if LOOK else None, SAFETY_NOW, safety.guard_prs(since.isoformat()) if LOOK else [])
+    safe = {'flags': flags, 'unread': unread}
     if lost_n:
         safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
     lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
     return {'days': days, 'lights': lights,
-            'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'last 7 days; criteria since the last dashboard'},
+            'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' + ('' if LOOK else ' (no look recorded yet: last 7 days)')},
             'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
             'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
 
+if RECORD_LOOK and record_look():
+    LOOK = json.load(open(LOOK_FILE)); LOOK['time'] = datetime.fromisoformat(LOOK['time'])
+if BASELINE_NEW and _now is not None and not os.path.exists(_cap):
+    os.makedirs(os.path.dirname(_cap), exist_ok=True)
+    json.dump(_now, open(_cap, 'w'), indent=0, sort_keys=True)
 COCKPIT = cockpit.build(cockpit_facts())
 _pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
 out[_pi + 1:_pi + 1] = [''] + cockpit.md(COCKPIT) + pipeline_health()
