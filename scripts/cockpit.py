@@ -20,7 +20,7 @@ def build(f):
           'items': [{'text': f"{DOT[l['state']]} {l['name']}: {l['text']}"} for l in L]}]
     b = f['built']
     s.append({'id': 'built', 'title': 'Built since last look',
-              'bold': f"{len(b['merged'])} PRs merged, {b['newly_met']} criteria newly met, " + ('nothing lost' if not b['lost'] else f"{b['lost']} lost") + f" ({b['since']})",
+              'bold': f"{len(b['merged'])} PRs merged, {b['newly_met']} criteria newly met, " + ('nothing lost' if not b['lost'] else f"{b['lost']} lost") + f", {b['since']}",
               'items': [{'text': f"{p['repo']} #{p['n']} {p['title']}", 'url': p['url']} for p in b['merged']]})
     u = f['upcoming']
     s.append({'id': 'upcoming', 'title': 'Upcoming',
@@ -48,7 +48,7 @@ def build(f):
               'items': [{'text': x} for x in r['due'] + r['dated']]})
     sf = f['safety']
     s.append({'id': 'safety', 'title': 'Agent safety',
-              'bold': ('All clear' if not sf['unread'] else f"Nothing flagged, but {len(sf['unread'])} checks are not read yet") if not sf['flags'] else f"{len(sf['flags'])} things agents removed or weakened",
+              'bold': ('All clear' if not sf['unread'] else f"Nothing flagged, but {len(sf['unread'])} check{'s' if len(sf['unread']) != 1 else ''} not read yet") if not sf['flags'] else f"{len(sf['flags'])} things agents removed or weakened",
               'items': [{'text': x['text'], 'url': x.get('url')} for x in sf['flags']] + [{'text': f"Not read yet: {x}"} for x in sf['unread']]})
     return s
 

@@ -608,7 +608,7 @@ def cockpit_facts():
         safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
     lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
     return {'days': days, 'lights': lights,
-            'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' + ('' if LOOK else ' (no look recorded yet: last 7 days)')},
+            'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' if LOOK else 'last 7 days, no look recorded yet'},
             'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
             'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
 

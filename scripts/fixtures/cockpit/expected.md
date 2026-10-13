@@ -14,7 +14,7 @@
 </details>
 
 <details>
-<summary><b>2. Built since last look</b> — 1 PRs merged, 2 criteria newly met, nothing lost (last 7 days)</summary>
+<summary><b>2. Built since last look</b> — 1 PRs merged, 2 criteria newly met, nothing lost, since you last looked</summary>
 
 - [plan #149 docs: F078 amended](https://example.test/149)
 
