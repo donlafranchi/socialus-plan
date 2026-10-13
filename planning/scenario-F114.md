@@ -9,7 +9,7 @@ depends: [F112, F113, F115]
 ---
 ## Story
 
-The PM signs in on a phone as a test member who has lived in the Sacramento market for six weeks: follows, interests, RSVPs and searches already there. Explore leads with different Pages on two visits a day apart. Home suggests an interest from the history. They type Napa and sees it is waiting. A second test member with no history shows what a newcomer sees. When testing is done, one call removes both.
+The PM signs in on a phone as a test member who has lived in the Sacramento market for six weeks: follows, interests, RSVPs and searches already there. Explore leads with different Pages on two visits a day apart. Home suggests an interest from the history. They type Napa and see it is waiting. A second test member with no history shows what a newcomer sees. When testing is done, one call removes both.
 
 ## Acceptance
 
@@ -44,10 +44,10 @@ The operator account. Fake Pages. Seeding other members' history. Any learning b
 **Path: new territory** (writes to production). Research: `planning/research/explore-freshness-and-learning-2026-10-12.md` § 3.
 
 **For the PM (A/B/C):**
-- A) **Builder accounts in production, seeded by script** (recommended): real data on the phone; activity counts nowhere and is wiped in one call.
+- A) **A separate production test account, seeded by script** (recommended): real data on the phone; its activity counts nowhere and is wiped in one call.
 - B) **The PM's own account**: least setup; mixes test history into the operator account and staff counts.
 - C) **Local persona only**: safest; no phone, no regional seed.
 
-[open-question owner=don raised=2026-10-12] Where does the PM's test profile live: builder accounts in production (A), the PM's own account (B), or local only (C)? Recommend A.
+[open-question owner=don raised=2026-10-12] Where does the PM's test profile live: a separate production test account whose activity counts nowhere (A), the PM's own account (B), or local only (C)? Recommend A.
 
 [platform none]

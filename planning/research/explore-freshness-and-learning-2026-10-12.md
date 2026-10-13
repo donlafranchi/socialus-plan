@@ -121,7 +121,7 @@ On both sides: nothing changes what another member sees or what a Page owner see
 **What exists [C].** Builder accounts (`builders` table, `scripts/builders.ts` through a GitHub workflow): a builder's follows, joins and RSVPs to real Pages do not count, and `delete_builder_content()` removes everything a builder made. The persona seed (`scripts/seed-personas.ts`) refuses any host that is not local. The operator account is a break-glass holding every permission (`OPERATOR_MEMBER_ID`). There is one remote Supabase project; previews use it.
 
 ### Options
-- **A) A builder account in production, seeded by a script (recommended).** A second account, signed in with a PM test address, home zip in the Sacramento market, flagged builder so none of its activity counts and it can be wiped in one call. A script (`scripts/test-profile.ts`, dry run unless `--apply`) writes six weeks of history against real seeded Pages. The PM uses it on a phone, on the real data, without touching the operator account. Builder signals must be left out of staff counts and the F109 report.
+- **A) A separate production test account whose activity counts nowhere, seeded by a script (recommended).** A second account, signed in with a PM test address, home zip in the Sacramento market, flagged builder so none of its activity counts and it can be wiped in one call. A script (`scripts/test-profile.ts`, dry run unless `--apply`) writes six weeks of history against real seeded Pages. The PM uses it on a phone, on the real data, without touching the operator account. Builder signals must be left out of staff counts and the F109 report.
 - **B) The PM's own production account.** Least setup; mixes test history into the operator break-glass and into staff metrics, and wiping it wipes real history.
 - **C) A local persona only.** Safest; the PM cannot use it on a phone or against the regional seed.
 
@@ -218,13 +218,13 @@ The PM, 2026-10-12: "One needs to be party and the other needs to be business li
 
 ## 8. A categorization engine (beta: the profile in F113 needs it)
 
-**What it does.** Gives every Page and post up to three categories from one shared list, from its own text, photo and tags, so members' interests (§ 3) and Discover (§ 9) read the same keys.
+**What it does.** Gives every Page and post up to three categories from one shared list, from its own text, photo and any hashtags in its words, with a cheap model pass, so members' interests (§ 3) and Discover (§ 9) read the same keys.
 
 **What exists** [C]: creator-typed tags (`tags`, `page_tags`, `post_tags`, with a safety review column); a fixed interest list (`INTEREST_VOCAB`); a `#` typed into a tag is ignored and post bodies are not parsed; unclaimed Pages' categories are used only to pick a stock photo and not stored; pgvector is enabled with unused `vector(1536)` tables; AI calls are raw `fetch` to the Messages API, run after a report with `after()` (F100's moderation, Haiku first with a Sonnet second opinion).
 
 **Design.**
 - **One list**: about ten top categories and sixty under them [A], the same keys as `INTEREST_VOCAB`, extended by a person, not by the model.
-- **Internal categories, not hashtags**: the engine reads a post's words, a `#word` included, as plain text; categories are ours, assigned by the engine and editable by the owner and, on their own profile, by the member. Nothing asks a poster to type hashtags and no hashtag shows on a card, in line with 2026-10-11 (#619, #621: plain words, no hashtags). Dispatch's advice on the PM's question; the PM to confirm.
+- **Internal categories, not hashtags**: the engine reads a post's words, a `#word` included, as plain text; categories are ours, assigned by the engine and editable by the owner and, on their own profile, by the member. Nothing asks a poster to type hashtags and no hashtag shows on a card, in line with 2026-10-11 (#619, #621: plain words, no hashtags). Ruled by the PM, 2026-10-12 (F113).
 - **When**: on create or edit, after the save, like F100 (`after()`); the seed and any backfill through the Batch API at half price.
 - **Input and output**: name, description or body, tags, hashtags, Overture's category for seeded Pages, and the first photo at 512px; out comes up to three categories with a confidence each, structured JSON.
 - **Correction, members first**: the owner sees "Listed under: bakery, coffee" with Change; an owner's choice is pinned and a re-run does not overwrite it; on an unclaimed Page, staff fix it from a count of "wrong category" taps. Nothing needs ongoing operator work.
