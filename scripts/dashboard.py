@@ -607,7 +607,11 @@ def cockpit_facts():
     if lost_n:
         safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
     lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
-    return {'days': days, 'lights': lights,
+    try:
+        todo = json.load(open(os.path.join(root, 'dashboard', 'dons-todo.json')))['items']
+    except Exception:
+        todo = []
+    return {'days': days, 'lights': lights, 'todo': todo,
             'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' if LOOK else 'last 7 days, no look recorded yet'},
             'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
             'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
@@ -684,7 +688,7 @@ const testNote=D.test_notice?`<p class="settled" style="background:#fecaca"><b>T
 const jrSec=`<h2 style="font-size:1rem;margin:22px 0 4px">Your review: journeys, by area</h2><p class="sub">Your 3-minute checks, over the criteria the agents test. Feature progress is by criteria; this is by journeys.</p><table class="t"><tr><th>Area</th><th>Journeys looked</th><th>Criteria under them</th></tr>${Object.entries(D.journeys).sort().map(([a,c])=>`<tr><td>${esc(a)}</td><td>${c.looked}/${c.total}</td><td>${c.crit}</td></tr>`).join('')}</table>`;
 const uatSec=(D.uat.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Live testing (UAT Issues)</h2><div class="foot">${D.uat.map(u=>`<p><a href="${esc(u.url)}">#${u.n} ${esc(u.title)}</a> · ${esc(u.state)} · ${u.done}/${u.total} boxes ticked</p>`).join('')}</div>`:'')+`<h2 style="font-size:1rem;margin:22px 0 4px">Data problems</h2><div class="foot">${D.problems.length?D.problems.map(p=>`<p>${esc(p)}</p>`).join(''):'<p>none</p>'}</div>`;
 const waitTop=`<p class="settled" style="background:var(--card);border:1px solid var(--line)"><b>Waiting on you: ${D.wait_total}</b> · ${D.wait_areas.map(n=>`<a href="#card-${slug(n)}">${esc(n)} (${(D.waiting[n]||[]).length})</a>`).join(' · ')}</p>`;
-const cockpitSec=`<h2 style="font-size:1rem;margin:0 0 4px">The cockpit</h2><p class="sub">One generated page: a bold line per section, the detail folded. The safety panel reads GitHub, not agent reports.</p>${D.cockpit.map((x,n)=>`<details id="cockpit-${esc(x.id)}" style="border-left-color:#2563eb"><summary><span class="name">${n+1}. ${esc(x.title)}</span><span class="note" style="grid-column:auto;color:var(--ink)">${esc(x.bold)}</span></summary><div class="rows">${x.items.length?x.items.map(i=>`<div class="row"><div class="title">${i.url?`<a href="${esc(i.url)}">${esc(i.text)}</a>`:esc(i.text)}</div></div>`).join(''):'<div class="row"><div class="title">nothing</div></div>'}</div></details>`).join('')}`;
+const cockpitSec=`<h2 style="font-size:1rem;margin:0 0 4px">The cockpit</h2><p class="sub">One generated page: a bold line per section, the detail folded. The safety panel reads GitHub, not agent reports. Whenever you ask what you need to do, the steps land in Your to-do and come off once done.</p>${D.cockpit.map((x,n)=>`<details id="cockpit-${esc(x.id)}" style="border-left-color:#2563eb"><summary><span class="name">${n+1}. ${esc(x.title)}</span><span class="note" style="grid-column:auto;color:var(--ink)">${esc(x.bold)}</span></summary><div class="rows">${x.items.length?x.items.map(i=>`<div class="row"><div class="title">${i.url?`<a href="${esc(i.url)}">${esc(i.text)}</a>`:esc(i.text)}</div></div>`).join(''):'<div class="row"><div class="title">nothing</div></div>'}</div></details>`).join('')}`;
 document.getElementById('areas').innerHTML=cockpitSec+waitTop+testNote+launchSec+featSection+jrSec+uatSec+D.areas.map(a=>{
  const bar=segBar(hue(a.name),critsOf(a.name));
  const rows=waitList(a.name);
