@@ -1,0 +1,68 @@
+{
+ "_how": "Don's to-do, shown first on the HTML dashboard. Don, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever he asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD).",
+ "items": [
+  {
+   "p": 1,
+   "text": "Review the community review write-up",
+   "how": "Open it, pick A, B or C (recommended A).",
+   "due": "2026-10-16",
+   "unlocks": "Moderation launch-blockers: the Page-words report fix (web #625) and the courtesy-notice check (web #220)",
+   "url": "https://github.com/donlafranchi/socialus-plan/pull/156",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 1,
+   "text": "Accepted risks review (three due 10-16)",
+   "how": "Three are due. Removed photos: web #491 lets the operator delete one for good, so mark it resolved (recommended). Error tracking: web #490 built it, but it stays off until the Sentry step below, so keep it until then. The members' group-memberships view: re-argue or delete.",
+   "due": "2026-10-16",
+   "unlocks": "Plan lint stays green after 10-16 (a passed review date fails it)",
+   "url": "https://github.com/donlafranchi/socialus-plan/tree/main/accepted-risks",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 2,
+   "text": "Reconnect the GitHub connector",
+   "how": "Claude Settings → Connectors → GitHub → reconnect.",
+   "unlocks": "The 3am seed and the handoffs can read and write GitHub again",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 2,
+   "text": "Outer counties: A, B or C",
+   "how": "Pick on the Issue; recommended A.",
+   "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/787",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 2,
+   "text": "Turn on Vercel Speed Insights (free tier)",
+   "how": "Vercel → socialus-web → Speed Insights → Enable.",
+   "unlocks": "Real-user speed data",
+   "url": "https://vercel.com/dashboard",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 2,
+   "text": "Sign up for Sentry (free)",
+   "how": "sentry.io → create a Next.js project → text Dispatch the DSN; Dispatch puts it in Vercel.",
+   "unlocks": "Error tracking in production, and closes that accepted risk",
+   "url": "https://sentry.io/signup/",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 3,
+   "text": "Look at the new Explore on your phone",
+   "how": "Open Explore; you should see \"What's new since you were here\" (web #800).",
+   "url": "https://www.socialus.org/explore",
+   "added": "2026-10-15"
+  },
+  {
+   "p": 3,
+   "text": "The committee model-test plan",
+   "how": "Read and decide on the plan PR.",
+   "url": "https://github.com/donlafranchi/socialus-plan/pull/102",
+   "added": "2026-10-15"
+  }
+ ]
+}

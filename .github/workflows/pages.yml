@@ -1,0 +1,42 @@
+name: dashboard page
+
+# Don, 2026-10-15: "when I say dashboard I want html not markdown" — and he reads it on his phone, where GitHub shows
+# HTML as source. GitHub Pages (free on this public repo) serves the generated page at
+# https://donlafranchi.github.io/socialus-plan/ . Only the dashboard page is published, marked noindex; everything in it
+# is already public in this repo. It redeploys after each dashboard run and whenever the page changes on main.
+on:
+  workflow_run:
+    workflows: [dashboard]
+    types: [completed]
+  push:
+    branches: [main]
+    paths: ['dashboard/status-dashboard.html']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: main
+      - name: Only the dashboard page
+        run: mkdir -p _site && cp dashboard/status-dashboard.html _site/index.html && printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

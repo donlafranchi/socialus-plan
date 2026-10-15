@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Writes README.md from data. Never hand-edit README.md — re-run this instead.
-# A front page only: the PM reads one generated cockpit (DASHBOARD.md), ruled B 2026-10-13. No dates or lists here, so this cannot disagree with it.
+# A front page only: the PM reads one generated dashboard, the HTML page (2026-10-15, replacing 2026-10-13 B's markdown cockpit). No dates or lists here, so this cannot disagree with it.
 set -uo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -13,9 +13,9 @@ cd "$ROOT"
   echo
   echo "# SocialUs — planning"
   echo
-  echo "**For the status, the dates and what waits on you: [the cockpit (DASHBOARD.md)](DASHBOARD.md), or its [colour page](dashboard/status-dashboard.html).** Nothing here is kept by hand."
+  echo "**For the status, the dates and what waits on you: [the dashboard](https://donlafranchi.github.io/socialus-plan/)** (a web page, generated daily). Nothing here is kept by hand."
   echo
-  echo "- Where we're going: the cockpit's Upcoming section, and the full lanes under *Where we're going* in the same file."
+  echo "- Where we're going: the dashboard's *Where we're going* section."
   echo "- Principles: [PRINCIPLES.md](PRINCIPLES.md). Rulings sit inline under *Rulings* in the scenario or product doc they govern."
   echo "- Ideas, none of them commitments: [IMAGINE.md](IMAGINE.md)."
   echo "- For agents: [CLAUDE.md](CLAUDE.md), then [STATUS.md](STATUS.md) (generated)."

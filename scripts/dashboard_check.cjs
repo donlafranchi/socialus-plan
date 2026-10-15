@@ -12,7 +12,7 @@ const crit = D.features.reduce((n, f) => n + f.criteria.length, 0)
 const cards = d.querySelectorAll('details').length
 const checks = {
   'no script errors': errs.length === 0,
-  'header leads with criteria': d.getElementById('h').textContent.includes('criteria met'),
+  'header leads with the date, criteria right under it': (d.getElementById('h').textContent + ' ' + (d.getElementById('h').nextElementSibling?.textContent || '')).includes('criteria met'),
   'a card per feature and area': cards >= D.features.length + D.areas.length,
   'one row per criterion': d.querySelectorAll('details .rows .row .title').length >= crit,
   'launch checklist drawn': !D.launch || D.launch.length === 0 || d.body.textContent.includes('Launch checklist'),
@@ -20,7 +20,13 @@ const checks = {
   'one segment per criterion, in every feature and area bar': d.querySelectorAll('.segbar i').length === 2 * crit,
   'how to read, five lines': d.querySelectorAll('ol.how li').length === 5,
   'your UAT line': d.body.textContent.includes('Your UAT: ' + D.your_uat.ticked + ' of ' + D.your_uat.total + ' walk-throughs done'),
-  'cockpit drawn, nine sections (Your to-do is 2)': D.cockpit.length === 9 && d.querySelectorAll('[id^=cockpit-]').length === 9 && D.cockpit[1].id === 'todo',
+  'cockpit drawn, eight sections': D.cockpit.length === 8 && d.querySelectorAll('[id^=cockpit-]').length === 8,
+  // Don, 2026-10-15: the HTML page is the dashboard: to-do first, a sidebar and a phone menu listing every section.
+  'your to-do first, one card per item with its priority': d.querySelector('section.sec')?.id === 'todo' && d.querySelectorAll('#todo .todo .pri').length === (D.todos || []).length,
+  'every to-do item has a priority 1 to 3 and a how': Array.isArray(D.todos) && D.todos.every((t) => [1, 2, 3].includes(t.p) && t.how && t.text),
+  'sidebar and phone menu list every section': d.querySelectorAll('#toc a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('#tocm a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('section[data-toc]').length >= 8,
+  'every section opens with a bold overview': [...d.querySelectorAll('section[data-toc]')].every((x) => x.querySelector(':scope > p.lede > b')?.textContent.trim()),
+  'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
 }

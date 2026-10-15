@@ -20,7 +20,7 @@ DECISION RULE (2026-10-04, Don)
 ## Read first, every session
 
 1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
-2. `DASHBOARD.md` § Where we're going — Now / Next / Later, generated from scenario `horizon` and `rank` and the socialus-web milestones.
+2. Now / Next / Later: `python3 scripts/going.py --list now` (or next, considering, later). PM's dashboard: the HTML page.
 3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
 4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
 5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags on the rulings; never edit it.
@@ -62,7 +62,7 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 |---|---|---|
 | `STATUS.md` | `scripts/status.sh`, wrapping `scripts/state.sh` and `scripts/markers.py` | `.github/workflows/status.yml` — push to `main`, daily 13:05 UTC, and *Actions → status → Run workflow*, which works from a phone |
 | `README.md` | `scripts/view.sh` | the same workflow |
-| `DASHBOARD.md` (the PM's cockpit), `dashboard/status-dashboard.html` (colour) | `scripts/dashboard.py`, reading `socialus-web` | `dashboard.yml` daily, and by hand at handoff |
+| `dashboard/status-dashboard.html` (PM's dashboard), `DASHBOARD.md` (pointer) | `scripts/dashboard.py`, reading `socialus-web` | `dashboard.yml` daily, and by hand at handoff |
 | `constraints/planning.md`, `constraints/code.md` | `python3 scripts/markers.py constraints` | by hand after a ruling changes — `scripts/lint.sh` fails until it is run |
 | `PLATFORM-IOS.md`, `PLATFORM-ANDROID.md` | `python3 scripts/markers.py platform`, from `[platform …]` markers | by hand after a marker changes — `scripts/lint.sh` fails until it is run |
 

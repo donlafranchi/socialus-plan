@@ -607,11 +607,7 @@ def cockpit_facts():
     if lost_n:
         safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
     lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
-    try:
-        todo = json.load(open(os.path.join(root, 'dashboard', 'dons-todo.json')))['items']
-    except Exception:
-        todo = []
-    return {'days': days, 'lights': lights, 'todo': todo,
+    return {'days': days, 'lights': lights,
             'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' if LOOK else 'last 7 days, no look recorded yet'},
             'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
             'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
@@ -624,10 +620,29 @@ if BASELINE_NEW and _now is not None and not os.path.exists(_cap):
 COCKPIT = cockpit.build(cockpit_facts())
 _pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
 out[_pi + 1:_pi + 1] = [''] + cockpit.md(COCKPIT) + pipeline_health()
-open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(out) + '\n')
+# Don, 2026-10-15: "when I say dashboard I want html not markdown." The page is the dashboard; this file is a pointer and the numbers.
+PAGE_URL = 'https://donlafranchi.github.io/socialus-plan/'
+_todos = sorted(_json_items := (json.load(open(os.path.join(root, 'dashboard', 'don-todos.json')))['items'] if os.path.exists(os.path.join(root, 'dashboard', 'don-todos.json')) else []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))
+short = [out[0], '', out[2], '',
+         f'**The dashboard is a web page: [{PAGE_URL}]({PAGE_URL})** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.', '',
+         '## The numbers', '']
+short += [f"- {i['text']}" for i in COCKPIT[0]['items']]
+short += [f"- {x['title']}: {x['bold']}" for x in COCKPIT[1:]]
+short += ['', f"## Your to-do ({len(_todos)})", ''] + [f"- P{t.get('p', 3)} · {t['text']}" + (f" · due {t['due'][5:]}" if t.get('due') else '') for t in _todos]
+short += ['', '*Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*']
+open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(short) + '\n')
 
+def _json(name, key, default):
+    try:
+        return json.load(open(os.path.join(root, 'dashboard', name)))[key]
+    except Exception:
+        return default
 data = {
     'cockpit': COCKPIT,
+    # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
+    'todos': sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999')),
+    'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
+    'lanes': (lambda sc, ideas: {h: [{'id': x['id'], 'title': x['title'], 'status': x['status']} for x in sorted((x for x in sc if x['horizon'] == h), key=lambda x: (x['rank'], x['id']))] + [{'id': 'idea', 'title': t, 'status': 'IMAGINE'} for l, t in ideas if l == h] for h in ('now', 'next', 'considering', 'later')})(going.scenarios(os.path.join(root, 'planning')), going.imagine(os.path.join(root, 'IMAGINE.md'))),
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
     'features': [{'id': f['id'], 'title': f['title'], 'area': f['area'], 'met': f['met'], 'total': f['total'], 'checked': f['checked'], 'reviewed': f['reviewed'], 'smoked': f['smoked'], 'pm': f['pm'], 'blocked': len(f['blocked']), 'stale': f.get('stale', False), 'url': f['url'], 'criteria': [{'n': r['n'], 'text': r['text'], 'built': r['built'], 'checked': r['checked'], 'reviewed': r['reviewed'], 'smoked': r['smoked'], 'pm': r['pm'], 'uat': r['uat'], 'blocking': r['blocking'], 'not_ok': r.get('not_ok', False), 'not_ok_text': r.get('not_ok_text', ''), 'issues': r['issues']} for r in f['criteria']]} for f in sorted(FEATS, key=lambda f: (f['area'], f['id']))], 'cover': COVER,
     'your_uat': _u, 'journeys': JR, 'how': HOW[1:], 'waiting': WAIT, 'wait_areas': WAIT_AREAS, 'wait_total': WAIT_TOTAL, 'launch': LAUNCH, 'test_notice': globals().get('TEST_NOTICE', ''), 'uat': uat_items, 'problems': problems, 'header': header, 'stages': STAGES, 'colors': COLORS, 'behind': behind, 'test_items': test_items,
@@ -639,13 +654,24 @@ data = {
                         for r in x['rows']]} for x in areas],
 }
 PAGE = """<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
 <title>Beta dashboard</title>
 <style>
 :root{--bg:#f8fafc;--card:#fff;--ink:#0f172a;--mute:#64748b;--off:#d1d5db;--unk:#fde68a;--line:#e2e8f0}
 @media(prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#111a2e;--ink:#e5e7eb;--mute:#94a3b8;--off:#334155;--unk:#854d0e;--line:#1e293b}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif}
-main{max-width:960px;margin:0 auto;padding:20px 16px 60px}h1{font-size:1.25rem;margin:0 0 4px}
+main{max-width:960px;margin:0 auto;padding:20px 16px 60px;min-width:0}h1{font-size:1.25rem;margin:0 0 4px}
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);max-width:1240px;margin:0 auto}
+.toc{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:20px 8px 20px 16px;border-right:1px solid var(--line);font-size:.88rem}
+.toc a{display:block;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}.toc a:hover,.toc a.on{background:var(--card)}
+.toc b{display:block;margin:0 0 8px 8px}.tocm{display:none}
+.sec{scroll-margin-top:64px;margin:0 0 30px}.sec>h2{font-size:1.1rem;margin:0 0 4px}.lede{margin:0 0 10px}
+.todo{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 14px;margin:8px 0;background:var(--card);border:1px solid var(--line);border-radius:12px}
+.pri{font-weight:800;font-size:.8rem;border-radius:999px;padding:3px 9px;color:#fff;align-self:start}.p1{background:#b91c1c}.p2{background:#d97706}.p3{background:#64748b}
+.todo .what{font-weight:650}.todo .meta{grid-column:2;font-size:.85rem;color:var(--mute)}.todo .meta b{color:var(--ink)}.late{color:#b91c1c!important;font-weight:700}
+.gl{display:grid;grid-template-columns:minmax(120px,190px) 1fr;gap:6px 14px;padding:8px 0;border-bottom:1px solid var(--line);font-size:.9rem}.gl:last-child{border:0}.gl .src{color:var(--mute);font-size:.75rem}
+@media(max-width:899px){.layout{display:block}.toc{display:none}.tocm{display:block;position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 16px}
+.tocm summary{display:flex;justify-content:space-between;padding:6px 0;font-weight:650;grid-template-columns:none}.tocm details{border:0;margin:0;background:none}.tocm a{display:block;padding:10px 4px;border-top:1px solid var(--line);color:var(--ink);text-decoration:none}}
 .settled{margin:0 0 14px;padding:10px 12px;border-radius:8px;background:var(--unk);color:var(--ink);font-size:.85rem}.sub{color:var(--mute);font-size:.85rem;margin:0 0 18px}.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;margin-bottom:18px}
 .legend span{display:inline-flex;align-items:center;gap:6px}.dot{width:12px;height:12px;border-radius:3px;display:inline-block}
 details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;border-left-width:6px}
@@ -661,14 +687,14 @@ summary::-webkit-details-marker{display:none}.name{font-weight:650}.note{grid-co
 .segbar{display:flex;gap:1px;height:16px;width:100%;margin:2px 0}.segbar i{flex:1 1 0;min-width:1px;border-radius:1px}.legend .sw{display:inline-block;width:20px;height:12px;border-radius:2px;vertical-align:middle;margin-right:4px}.how{margin:0 0 12px;padding:10px 12px;border-radius:8px;background:var(--card);border:1px solid var(--line);font-size:.85rem}.how li{margin:2px 0}.uatline{margin:0 0 10px;font-size:1rem}
 .foot{margin-top:18px;padding:14px;border-radius:12px;background:var(--card);border:1px solid var(--line)}.foot p{margin:4px 0}
 @media(max-width:560px){summary{grid-template-columns:1fr}}
-</style></head><body><main>
+</style></head><body><div class="tocm" id="tocm"></div><div class="layout"><nav class="toc" id="toc" aria-label="Contents"></nav><main>
 <p class="settled"><b>SETTLED — do not re-raise:</b> members are the investors and the only people paid out. “Ownership, not profit-share” is rejected. Legal/securities questions about this go to socialus-legal for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.</p><h1 id="h"></h1><p class="sub">Generated by scripts/dashboard.py. Tap an area or a feature to open it.</p>
-<div class="legend" id="legend"></div><div id="areas"></div><div class="foot" id="foot"></div>
+<div id="areas"></div><section class="sec" id="how" data-toc="How to read"><h2>How to read this page</h2><p class="lede"><b>The colours, the squares and the walk-throughs, explained.</b></p><details><summary><span class="name">Details</span></summary><div class="rows"><div class="legend" id="legend"></div></div></details></section><div class="foot" id="foot"></div>
 <script id="data" type="application/json">__DATA__</script>
 <script>
 const D=JSON.parse(document.getElementById('data').textContent);
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-document.getElementById('h').textContent=D.header;document.title=D.header;
+{const [lead,...more]=D.header.split(' · criterion');document.getElementById('h').textContent=lead;document.title='Dashboard · '+lead;if(more.length){const m=document.createElement('p');m.className='sub';m.style.margin='0 0 4px';m.textContent='Criterion'+more.join(' · criterion');document.getElementById('h').after(m)}}
 const HUES={'page-editing':'#2563eb','sign-in-you':'#7c3aed','explore-map':'#0d9488','create-posts':'#d97706','sharing-links':'#65a30d','builders-seed':'#a16207','moderation':'#c026d3','ops':'#475569','Ops & plan':'#475569'};const hue=n=>HUES[n]||'#475569';const slug=n=>n.toLowerCase().replace(/[^a-z0-9 -]/g,'').replace(/ /g,'-');
 const tint=(hex,f)=>{const t=0.18+0.82*Math.max(0,Math.min(1,f));const c=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));return '#'+c.map(v=>Math.round(255-(255-v)*t).toString(16).padStart(2,'0')).join('')};
 const depth=c=>c.built==='yes'?1+['checked','reviewed','smoked','pm'].filter(k=>c[k]==='yes').length:0;
@@ -688,13 +714,39 @@ const testNote=D.test_notice?`<p class="settled" style="background:#fecaca"><b>T
 const jrSec=`<h2 style="font-size:1rem;margin:22px 0 4px">Your review: journeys, by area</h2><p class="sub">Your 3-minute checks, over the criteria the agents test. Feature progress is by criteria; this is by journeys.</p><table class="t"><tr><th>Area</th><th>Journeys looked</th><th>Criteria under them</th></tr>${Object.entries(D.journeys).sort().map(([a,c])=>`<tr><td>${esc(a)}</td><td>${c.looked}/${c.total}</td><td>${c.crit}</td></tr>`).join('')}</table>`;
 const uatSec=(D.uat.length?`<h2 style="font-size:1rem;margin:22px 0 4px">Live testing (UAT Issues)</h2><div class="foot">${D.uat.map(u=>`<p><a href="${esc(u.url)}">#${u.n} ${esc(u.title)}</a> · ${esc(u.state)} · ${u.done}/${u.total} boxes ticked</p>`).join('')}</div>`:'')+`<h2 style="font-size:1rem;margin:22px 0 4px">Data problems</h2><div class="foot">${D.problems.length?D.problems.map(p=>`<p>${esc(p)}</p>`).join(''):'<p>none</p>'}</div>`;
 const waitTop=`<p class="settled" style="background:var(--card);border:1px solid var(--line)"><b>Waiting on you: ${D.wait_total}</b> · ${D.wait_areas.map(n=>`<a href="#card-${slug(n)}">${esc(n)} (${(D.waiting[n]||[]).length})</a>`).join(' · ')}</p>`;
-const cockpitSec=`<h2 style="font-size:1rem;margin:0 0 4px">The cockpit</h2><p class="sub">One generated page: a bold line per section, the detail folded. The safety panel reads GitHub, not agent reports. Whenever you ask what you need to do, the steps land in Your to-do and come off once done.</p>${D.cockpit.map((x,n)=>`<details id="cockpit-${esc(x.id)}" style="border-left-color:#2563eb"><summary><span class="name">${n+1}. ${esc(x.title)}</span><span class="note" style="grid-column:auto;color:var(--ink)">${esc(x.bold)}</span></summary><div class="rows">${x.items.length?x.items.map(i=>`<div class="row"><div class="title">${i.url?`<a href="${esc(i.url)}">${esc(i.text)}</a>`:esc(i.text)}</div></div>`).join(''):'<div class="row"><div class="title">nothing</div></div>'}</div></details>`).join('')}`;
-document.getElementById('areas').innerHTML=cockpitSec+waitTop+testNote+launchSec+featSection+jrSec+uatSec+D.areas.map(a=>{
+const cockpitSec=`${D.cockpit.map((x,n)=>`<details id="cockpit-${esc(x.id)}" style="border-left-color:#2563eb"><summary><span class="name">${n+1}. ${esc(x.title)}</span><span class="note" style="grid-column:auto;color:var(--ink)">${esc(x.bold)}</span></summary><div class="rows">${x.items.length?x.items.map(i=>`<div class="row"><div class="title">${i.url?`<a href="${esc(i.url)}">${esc(i.text)}</a>`:esc(i.text)}</div></div>`).join(''):'<div class="row"><div class="title">nothing</div></div>'}</div></details>`).join('')}`;
+const areaCards=D.areas.map(a=>{
  const bar=segBar(hue(a.name),critsOf(a.name));
  const rows=waitList(a.name);
  const cm=a.crit&&a.crit.total?a.crit.met/a.crit.total:null;const mean=cm!==null?cm:(a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0);return `<details id="card-${slug(a.name)}" style="border-left-color:${a.crit&&a.crit.red?'#b91c1c':tint(hue(a.name),mean)}"><summary><span class="name">${esc(a.name)}</span>${bar||'<span class="note">no criterion reports yet</span>'}<span class="note"><b>Waiting on you (${(D.waiting[a.name]||[]).length})</b> · ${cm!==null?`${a.crit.met}/${a.crit.total} criteria met (${Math.round(cm*100)}%)${a.crit.red?` · ${a.crit.red} red`:''}`:`${Math.round(mean*100)}% of Issue stages (no criterion reports)`} · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+waitCard(D.wait_areas[D.wait_areas.length-1])+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
+// Don, 2026-10-15: the HTML page is the dashboard. Each section: a bold overview, the detail folded; a sidebar lists them.
+const sec=(id,title,lede,body,open)=>`<section class="sec" id="${id}" data-toc="${esc(title)}"><h2>${esc(title)}</h2><p class="lede"><b>${lede}</b></p>${open?body:`<details><summary><span class="name">Details</span></summary><div class="rows">${body}</div></details>`}</section>`;
+const PR=['','p1','p2','p3'];const DAY=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+const today=new Date().toISOString().slice(0,10);
+const when=d=>{const t=new Date(d+'T12:00:00');return `${DAY[t.getDay()]} ${d.slice(5)}`};
+const T=D.todos;const p1=T.filter(t=>t.p===1).length;const due=T.filter(t=>t.due).sort((a,b)=>a.due<b.due?-1:1)[0];
+const todoLede=T.length?`${T.length} thing${T.length===1?'':'s'} only you can do · ${p1} first${due?` · next due ${when(due.due)}`:''}`:'Nothing only you can do right now.';
+const todoBody=T.map(t=>`<div class="todo" data-p="${t.p}"><span class="pri ${PR[t.p]||'p3'}">P${t.p}</span><div class="what">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div><div class="meta">${esc(t.how||'')}${t.due?` · <b class="${t.due<today?'late':''}">${t.due<today?'Overdue':'Due'} ${when(t.due)}</b>`:''}${t.unlocks?`<br>Unlocks: ${esc(t.unlocks)}`:''}</div></div>`).join('')+`<p class="sub">Whenever you ask what you need to do, the steps land here, highest priority first, and come off once done. P1 = do first.</p>`;
+const where=D.cockpit[0];
+const glossBody=D.shorthand.groups.map(g=>`<h3 style="font-size:.95rem;margin:14px 0 2px">${esc(g.name)}</h3>${g.items.map(i=>`<div class="gl"><div><b>${esc(i.name)}</b><div class="src">${i.src==='patterns'?'patterns.md':'shorthand note only'}</div></div><div>${esc(i.does)}</div></div>`).join('')}`).join('')+`<p class="sub">Checked: ${esc(D.shorthand.checked)}</p>`;
+document.getElementById('areas').innerHTML=
+ sec('todo','Your to-do',todoLede,todoBody,true)+
+ sec('cockpit','The cockpit',esc(where.bold),cockpitSec,true)+
+ sec('going',"Where we're going",`Now ${D.lanes.now.length} · Next ${D.lanes.next.length} · Considering ${D.lanes.considering.length} · Later ${D.lanes.later.length}`,[['now','Now: being built'],['next','Next: settled and approved'],['considering','Considering: possible, not approved'],['later','Later: eventual']].map(([k,t])=>`<h3 style="font-size:.95rem;margin:12px 0 4px">${t}</h3><ol style="margin:0;padding-left:22px">${D.lanes[k].map(x=>`<li>${x.id==='idea'?'':esc(x.id)+' '}${esc(x.title)} <span style="color:var(--mute)">(${esc(x.status)})</span></li>`).join('')||'<li>none</li>'}</ol>`).join(''))+
+ sec('waiting','Waiting on you',`${D.wait_total} item${D.wait_total===1?'':'s'} waiting, by area`,waitTop+testNote,true)+
+ (D.launch.length?sec('launch','Launch checklist',`${D.launch.filter(i=>i.due).length} due, ${D.launch.length} in all`,launchSec):'')+
+ sec('features','Criteria by feature',`${D.cover[0]} of ${D.cover[1]} features reporting; tap one for its criteria`,featSection)+
+ sec('journeys','Your review: journeys',`Your 3-minute checks, by area`,jrSec)+
+ sec('live','Live testing and data problems',`${D.uat.length} UAT Issue${D.uat.length===1?'':'s'} · ${D.problems.length} data problem${D.problems.length===1?'':'s'}`,uatSec)+
+ sec('areas-list','By area',`${D.areas.length} areas, each with what waits on you and the past ${D.since}h`,areaCards,true)+
+ sec('shorthand','Your shorthand',`${D.shorthand.groups.reduce((n,g)=>n+g.items.length,0)} names you can say; agents apply each in full. For your review.`,glossBody);
+const secs=[...document.querySelectorAll('section[data-toc]')];
+const links=secs.map(x=>`<a href="#${x.id}">${esc(x.dataset.toc)}</a>`).join('');
+document.getElementById('toc').innerHTML=`<b>Contents</b>${links}`;
+document.getElementById('tocm').innerHTML=`<details><summary>Contents <span>☰</span></summary>${links}</details>`;
+document.querySelectorAll('#tocm a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
 document.getElementById('foot').innerHTML=`<p><b>Behind:</b> ${D.behind.length?esc(D.behind.join(', ')):'none'}</p><p><b>Your next action:</b> ${D.next?`Review ${esc(D.next.title)} (<a href="${esc(D.next.url)}">#${D.next.n}</a>)${D.next.review?` at <a href="${esc(D.next.review)}">the live page</a>`:''}, then label it <code>pm-reviewed</code>.`:'none: nothing is waiting on you.'}</p>`;
-</script></main></body></html>
+</script></main></div></body></html>
 """
 blob = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
 open(os.path.join(root, 'dashboard', 'status-dashboard.html'), 'w').write(PAGE.replace('__DATA__', blob))
