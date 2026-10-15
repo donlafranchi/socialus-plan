@@ -1,0 +1,51 @@
+{
+ "_how": "Don's shorthand: say the name, the agent applies it in full. Source of truth: ~/.claude/templates/patterns.md (\"patterns\"); entries marked \"shorthand\" come only from the shorthand memory note. Where the two differed on 2026-10-15, patterns won; \"checked\" says what changed. Refresh this file whenever patterns.md changes.",
+ "checked": "2026-10-15 against patterns.md. Patterns won on: [always]/[for now] (the old \"we currently…\" and only-\"never extractive\" wording was retired 2026-10-12), three-line report (Status / Next / \"say expand\"), cheapest that works (always name a model; at most 2 builds at once), verified or not (name the check; a new check is first seen failing), record every ruling (on the Issue or PR and inline in the doc it governs).",
+ "groups": [
+  {"name": "Deciding", "items": [
+   {"name": "research first", "src": "shorthand", "does": "Before any new feature, idea or question: how established platforms handle this exact case, plus our past rulings. Never answer a new product question from memory."},
+   {"name": "well-worn", "src": "patterns", "does": "Name 2–3 precedents, pick the simplest that fits, build it and tell you what was chosen. Labelled Path: well-worn."},
+   {"name": "new territory", "src": "patterns", "does": "No clear precedent, they conflict, or it touches a ruling, legal, privacy, money or member trust: one A/B/C with a recommendation, before building."},
+   {"name": "adapt, don't adopt", "src": "patterns", "does": "A pattern made for human teams is a starting point: keep what still solves a problem, rebuild the rest for agents."},
+   {"name": "no speculative rulings", "src": "patterns", "does": "Rule only on what binds current work; prune the rest instead of asking you."},
+   {"name": "[always] / [for now]", "src": "patterns", "does": "Every never / won't / always ruling carries one: [always] = every version, [for now] = this version, reviewed at each release planning."},
+   {"name": "newer wins", "src": "patterns", "does": "When two recorded rulings conflict, the newer holds and work continues; only a chat remark that contradicts the record gets a one-line confirm."}
+  ]},
+  {"name": "Working with you", "items": [
+   {"name": "one at a time", "src": "patterns", "does": "One decision or one page to review per message: the next one, the one that unblocks the most work soonest."},
+   {"name": "record every ruling", "src": "patterns", "does": "The moment you decide, write it on its Issue or PR and inline in the doc it governs; search that record before asking you anything."},
+   {"name": "save open threads", "src": "patterns", "does": "During a back-and-forth, save your words, where we got to and the next step after each substantive message."},
+   {"name": "do the mechanical work", "src": "patterns", "does": "Anything with no judgement (merges, env vars, Issues, labels, reruns, migrations while allowed) gets done, not handed to you."},
+   {"name": "Don directs, agents edit", "src": "patterns", "does": "You say what to change; agents change it. Never ask you to edit or paste into a file."},
+   {"name": "say it once", "src": "patterns", "does": "Name a real cost or collision once, plainly, then do what you asked."},
+   {"name": "what do I need to do", "src": "shorthand", "does": "The answer lands in Your to-do at the top of this dashboard, each with priority 1–3, due by and/or what it unlocks, and comes off when done; also said in chat."},
+   {"name": "dashboard", "src": "shorthand", "does": "This generated HTML page, with the sidebar. Markdown is only for short to medium text docs. (2026-10-15, replaces plan #146 B.)"}
+  ]},
+  {"name": "Talking to you", "items": [
+   {"name": "three-line report", "src": "patterns", "does": "Status: Done / Blocked / Question, one sentence. Next: the ask, or none. Then \"Want detail? Say expand.\""},
+   {"name": "copy-paste inline", "src": "patterns", "does": "Anything you will copy goes in the message as one code block, never a file or artifact."},
+   {"name": "phone / computer", "src": "patterns", "does": "phone (and office days): nothing needing a desktop approval or terminal; queue it. computer: everything."},
+   {"name": "safe to close", "src": "shorthand", "does": "Every Code session ends with SAFE TO CLOSE or NOT SAFE TO CLOSE and why, so you know which sessions you can close."}
+  ]},
+  {"name": "Running the work", "items": [
+   {"name": "no manual prompts", "src": "patterns", "does": "Tool-heavy work only in sessions that skip permission prompts; reuse a running session within the day."},
+   {"name": "cheapest that works", "src": "patterns", "does": "Least costly model, tool and plan that does the job: Haiku for status, Sonnet for routine and docs, Opus for design and tricky builds. Flag any new recurring cost first."},
+   {"name": "verified or not", "src": "patterns", "does": "Every \"done\" names the check that ran (live DB, local DB, unit tests only, or not verified); a new check is first seen failing."},
+   {"name": "earn the rule", "src": "patterns", "does": "A process change names the dated failure that earned it. No failure, no rule."}
+  ]},
+  {"name": "Building the product", "items": [
+   {"name": "runs unattended", "src": "patterns", "does": "Every flow runs while you're away Tue–Thu; your items batch for Fri–Mon; one global switch over item-by-item controls."},
+   {"name": "self-correct first", "src": "patterns", "does": "Push a problem back to whoever can fix it before any staff work; escalate only on a repeat or a legal/safety must-have."},
+   {"name": "nothing gets lost", "src": "patterns", "does": "Everything you approved stays visible with its test; anything that disappears or loses its test is shown to you."},
+   {"name": "Now / Next / Considering / Later", "src": "patterns", "does": "The four fixed roadmap lanes: being built, settled and approved, possible, eventual."},
+   {"name": "Find / Discover", "src": "shorthand", "does": "The tool side (search, businesslike) and the fun side (algorithmic, after beta)."}
+  ]},
+  {"name": "Docs", "items": [
+   {"name": "agent vs human", "src": "patterns", "does": "Pick the reader first: you get what and why (PM doc), agents get how (agent doc). Never one doc for both."},
+   {"name": "PM doc", "src": "patterns", "does": "Bottom line first, a bold 1–3 line overview per section, the detail folded; fits one phone screen closed."},
+   {"name": "agent doc", "src": "patterns", "does": "One home per fact, current state plus why, a size budget, a check that proves it."},
+   {"name": "fewest docs", "src": "patterns", "does": "Never propose a new hand-kept doc; each kind of thing has one home; human views are generated."},
+   {"name": "current + why", "src": "patterns", "does": "Agent docs say what is true now and why, never the history; git is the history."}
+  ]}
+ ]
+}

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""The PM cockpit: nine sections at the top of DASHBOARD.md and the colour page (ruled B, 2026-10-13; research/pm-cockpit-2026-10-12.md).
+"""The PM cockpit: eight sections on the HTML dashboard (the PM's dashboard, 2026-10-15), under Your to-do (ruled B, 2026-10-13; research/pm-cockpit-2026-10-12.md).
 Pure: dashboard.py gathers the facts and passes them in; this turns them into sections, so the md and the html draw the same data.
 A light is green, amber, red or unknown (a signal that is not read yet says so, never green). Nothing here is hand-kept.
   cockpit.py --check   proves the section on scripts/fixtures/cockpit (run from lint.sh)"""
@@ -18,11 +18,6 @@ def build(f):
     s = [{'id': 'where', 'title': 'Where we are',
           'bold': f"Beta in {f['days']} days · {lights_line(L)}",
           'items': [{'text': f"{DOT[l['state']]} {l['name']}: {l['text']}"} for l in L]}]
-    # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Read from dashboard/dons-todo.json.
-    td = f.get('todo') or []
-    s.append({'id': 'todo', 'title': 'Your to-do',
-              'bold': f"{len(td)} thing{'s' if len(td) != 1 else ''} only you can do" if td else 'Nothing only you can do right now.',
-              'items': [{'text': f"{i['date']} · {i['text']}", 'url': i.get('url')} for i in td]})
     b = f['built']
     s.append({'id': 'built', 'title': 'Built since last look',
               'bold': f"{len(b['merged'])} PRs merged, {b['newly_met']} criteria newly met, " + ('nothing lost' if not b['lost'] else f"{b['lost']} lost") + f", {b['since']}",
@@ -30,7 +25,7 @@ def build(f):
     u = f['upcoming']
     s.append({'id': 'upcoming', 'title': 'Upcoming',
               'bold': f"Now: {u['now']} being built · Next: {u['next']} settled · Considering: {u['considering']} · Later: {u['later']}",
-              'items': [{'text': 'The lanes in full are under Where we\'re going, below.'}]})
+              'items': [{'text': 'The lanes in full are under Where we\'re going.'}]})
     a = f['attention']
     first = a['first']
     s.append({'id': 'attention', 'title': 'Needs your attention',
@@ -59,7 +54,7 @@ def build(f):
 
 
 def md(sections):
-    o = ['## The cockpit', '', '*One generated page: a bold line per section, the detail folded. Nothing in it is hand-kept; the safety panel reads GitHub, not agent reports. Whenever you ask what you need to do, the steps land in Your to-do and come off once done.*', '']
+    o = ['## The cockpit', '', '*One generated page: a bold line per section, the detail folded. Nothing in it is hand-kept; the safety panel reads GitHub, not agent reports.*', '']
     for n, x in enumerate(sections, 1):
         o += ['<details>', f"<summary><b>{n}. {x['title']}</b> — {x['bold']}</summary>", '']
         o += [f"- [{i['text']}]({i['url']})" if i.get('url') else f"- {i['text']}" for i in x['items']] or ['- nothing']
