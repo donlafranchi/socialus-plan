@@ -4,9 +4,9 @@
 
 # SocialUs — planning
 
-**For the status, the dates and what waits on you: [the dashboard](https://donlafranchi.github.io/socialus-plan/)** (a web page, generated daily). Nothing here is kept by hand.
+**For the status, the dates and what waits on you: [the cockpit (DASHBOARD.md)](DASHBOARD.md), or its [colour page](dashboard/status-dashboard.html).** Nothing here is kept by hand.
 
-- Where we're going: the dashboard's *Where we're going* section.
+- Where we're going: the cockpit's Upcoming section, and the full lanes under *Where we're going* in the same file.
 - Principles: [PRINCIPLES.md](PRINCIPLES.md). Rulings sit inline under *Rulings* in the scenario or product doc they govern.
 - Ideas, none of them commitments: [IMAGINE.md](IMAGINE.md).
 - For agents: [CLAUDE.md](CLAUDE.md), then [STATUS.md](STATUS.md) (generated).
