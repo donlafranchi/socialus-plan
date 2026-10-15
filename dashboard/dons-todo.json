@@ -1,0 +1,9 @@
+{
+ "_how": "Don's to-do (Don, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\"). Whenever he asks what he needs to do, add each step here: date, one short phone-friendly line, a link if there is one. Remove an item the moment it is done. The cockpit's \"Your to-do\" section reads this file; DASHBOARD.md is generated, never edited by hand.",
+ "items": [
+  {"date": "10-15", "text": "Vercel Speed Insights: in the Vercel dashboard open socialus-web → Speed Insights → Enable."},
+  {"date": "10-15", "text": "Sentry (free): sign up at sentry.io, create a Next.js project, and text Dispatch the DSN; Dispatch puts it in Vercel.", "url": "https://sentry.io/signup/"},
+  {"date": "10-15", "text": "Reconnect the GitHub connector in Claude Settings → Connectors. It fails in scheduled runs, so the 3am seed and the handoffs can't write."},
+  {"date": "10-15", "text": "On your phone, look at Explore's new \"What's new since you were here\" (#800).", "url": "https://www.socialus.org/explore"}
+ ]
+}
