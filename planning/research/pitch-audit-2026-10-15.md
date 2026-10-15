@@ -83,7 +83,83 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 - Unlocks: the honest answer to "who will see this and when"; follower delivery without a feed.
 - Path: new territory (emails members, member trust, copy). Precedents: Front Porch Forum's daily issue, Meetup's weekly digest, Eventbrite's weekly email.
 
-**Start with A:** smallest, no copy or ruling needed, and it fixes a bug that makes the pitch's headline feature fail on the day it matters. B and C both depend on dated posts being right.
+**Start with A:** smallest, no copy or ruling needed, and it fixes a bug that makes the pitch's headline feature fail on the day it matters. In production it hides 261 of 420 live posts right now (below). B and C both depend on dated posts being right. B also needs the seeder to tag Pages first (adjustment a2), or the filter matches nothing.
+
+## Content reality check (production, read-only totals, 2026-10-15)
+
+- Pages: 149 live; 137 unclaimed (seeded), 12 others (builder and test Pages; no outside owner yet). 33 places covered. **V**
+- Posts: 420 live; 408 are seeder "Sample" posts (3 per Page: event, deal, last-minute), 12 written by a person. **V**
+- Dated: 410 of 420 have a start and an end; 135 Pages have a post still to come; 62 posts start this weekend. **V**
+- **Hidden while running: 261 of 420** (all 136 deals, which run 6–9 days, and 125 last-minute posts). They have started, they haven't ended, and Explore drops them at the start. **V**
+- Interests and categories: 9 of 149 Pages carry any tag; 0 posts are tagged; 0 Pages have a category. **V**
+- Hours: 1 Page of 149. **V**
+
+| # | Capability | Enough content to judge? | Low rating is a… |
+|---|---|---|---|
+| 1 | Timely announcements | Yes: 408 dated samples, but only 12 real posts | **Feature gap** (expiry hides 62%); content gap for real owner posts |
+| 2 | Discovery without searching | Yes: 149 Pages, 33 places | Small feature gap |
+| 3 | Member's own signals | **No**: Pages carry no interest tags | **Both**: an interest feature would match nothing today |
+| 4 | Member control | No, for interests (same reason) | **Both** |
+| 5 | Current without many follows | Partly: dated samples exist, no real follows to deliver | **Feature gap** (nothing is delivered) |
+| 6 | Owners served | No: no outside owner, and a claim can't complete | **Both** |
+| 7 | Comparisons hold up | No: every post says "Sample… not a real offer"; 1 Page has hours | **Content gap** first, then the signed-out gate |
+
+## Our rubrics against the pitch
+
+| # | Capability | Seeder rules (THEMES.md, #353/#517/#542/#556, #788) | MVP grading (approved scenarios, 52 launch-blocking Issues) |
+|---|---|---|---|
+| 1 | Timely announcements | Partly: 3 dated samples, rolled forward; not real, none scheduled | Partly: F072.3, F072.6, F074; F072 rules out scheduling |
+| 2 | Discovery | Partly: 10 a day, themes, at least 5 towns | Yes: F059.1–4, F091.1–7, F104.1–2 |
+| 3 | Member's own signals | No | Partly: F059.3 bars payment and attention ranking; interest signals only in drafts F112/F113 |
+| 4 | Member control | No | Partly: area only (F105, F059.6–7); no mute, pin, interests or notification level |
+| 5 | Current without many follows | Partly: samples feed What's happening | Partly: F091, F065.1; follower delivery is "beta-partial" |
+| 6 | Owners served | Partly: claim, instant remove, credited own-site photos | Partly: F072.1–2, F056, F099 |
+| 7 | Comparisons hold up | Partly: Yelp and Google appear only as claim precedents | No: no criterion tests it |
+
+- Bundle b1 is retired (2026-10-05). The beta grade is now the "Beta 11-06" milestone: 52 launch-blocking Issues, 3 open, none on capabilities 3, 4 or 7. **V**
+- The daily seeder's rules all live in `scripts/unclaimed/THEMES.md`. No separate prompt file was found. **V**
+
+## Proposed adjustments
+
+**(a) What the builder seeds and posts.** All are well-worn tweaks to the seeder, except a4.
+- a1. Spread sample dates over the coming 14 days, with at least one per Page landing Fri–Sun. A deal may span days. Moves the judging of 1 and 5.
+- a2. Tag every new and existing unclaimed Page with 1–2 of the 12 interest tags, and its samples with the same. Moves the judging of 3 and 4; B needs it.
+- a3. Coverage rule per daily batch: at least 5 towns and at least 4 interest tags, logged in `ADDED.md`. Moves the judging of 2–4.
+- a4. **New territory:** where the business's own site lists a real dated event or seasonal special (Apple Hill harvest, holiday hours), post it as real, credited and linked, instead of a "Sample". This is the only way capability 7 can be judged before owners arrive, and it touches member trust and posting on a business's behalf.
+
+**(b) MVP grade card: soft-launch pass bars.** New territory: the PM sets the bars. Today's state is in brackets.
+1. An owner posts a dated special in at most 8 taps; it shows from posting until it ends, and can span days. [fail: hidden at start]
+2. A new member with a zip sees at least 6 things happening this week on first open, with 0 taps. [pass when A lands]
+3. Nothing the member didn't give orders their results; at least one signal they gave (follows or interests) visibly changes what they see. [fail]
+4. From You, in at most 3 taps, a member sets or clears area and interests. [fail: area only]
+5. A member following up to 5 Pages learns this week's posts from all of them without opening each Page. [fail]
+6. Before posting, an owner sees who will see it and where; a claim can be completed. [fail]
+7. On a phone, signed out, the PM can find a Page and see what's on and when, as on Yelp or Google. [fail: details gated]
+
+## Proposed homes (draft text below; homes not edited until the PM reviews the grade card)
+
+1. **Pitch** → socialus-plan `PRINCIPLES.md`, anchor `#pitch`, carrying `changed:`. It holds the 7 capabilities as `cap-1`…`cap-7` and is the only copy.
+2. **Grade card** → a new approved scenario, "Pitch grade card" (F116 if free), horizon now. Its 7 criteria are the bars above, plus `[binds tiers=planning,code]` and `[for now]`, so they roll into tickets, the criterion roll-up and "lost since last look".
+3. **Builder rubric** → socialus-web `scripts/unclaimed/THEMES.md`: a1–a3 as rules, mapped to `cap-1`…`cap-5`.
+4. **Pipeline hook** → one line in socialus-ops. It goes after the Gate bullet in `PIPELINE-build.md` § 5 Scenario, because that is where approval actually happens, not `PIPELINE.md`.
+5. **Cascade** (about 5–7 hours) → no new tool. A `[derives pitch@<date>]` marker kind is added to socialus-plan `scripts/markers.py`, the same script that already fails the lint on stale `[binds]` constraints and already reads socialus-web lines. It fails and names each file whose `@` date is older than `#pitch`'s `changed:`. The planning agent or the weekly tend-docs pass opens one PR updating them, and only a changed pass bar goes to the PM. The dashboard adds one row, "pitch changed → N files updating", until green.
+
+<details><summary>Draft text per home</summary>
+
+**PRINCIPLES.md**
+> - <a id="pitch"></a>**2026-10-15 — SocialUs works for the member; the member doesn't work for it.** `changed: 2026-10-15`. Pages say what's coming and when it ends; members see what's happening around them without endless scrolling, hunting for Pages or following hundreds of accounts. What a member sees is driven by signals they gave: interests, area, saves, attends, follows. An engagement signal is welcome when it serves the member; ranking that serves the platform at the member's expense is not. Capabilities: `cap-1` timely Page announcements · `cap-2` discovery without searching · `cap-3` results from the member's own signals · `cap-4` member control over what shows · `cap-5` current without following many · `cap-6` the Page is the owner's product · `cap-7` holds up against Yelp, Google, TikTok, Facebook, Instagram.
+
+**Scenario F116, "Pitch grade card"** (frontmatter as F091; `horizon: now`; `derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
+> Acceptance 1–7 = the pass bars in (b), each opening with its `cap-n`. Rulings: `- **2026-10-15 — The pitch is the MVP grade.** [binds tiers=planning,code surfaces=explore,announcements,you] [for now]`
+
+**THEMES.md** (`derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
+> - Dates (`cap-1`, `cap-5`): samples spread over the next 14 days, at least one per Page Fri–Sun; a deal may span days.
+> - Interests (`cap-3`, `cap-4`): every Page and its samples carry 1–2 of the 12 interest tags.
+> - Coverage (`cap-2`): each batch spans at least 5 towns and at least 4 interest tags; `ADDED.md` records both.
+
+**PIPELINE-build.md § 5 Scenario, after Gate** (`derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
+> - **Pitch test:** before approval, the scenario names which of `cap-1`…`cap-7` it moves, or says none, and passes the pitch's member-first test; one that moves a capability against the member goes to the PM.
+</details>
 
 ## Questions only the PM can answer
 
@@ -91,5 +167,7 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 - Is a weekly email to members acceptable at soft launch, and opt-in or on by default?
 - Should signed-out visitors see a Page's public specials and events, as on Yelp and Google, instead of "sign in to see"?
 - Does claiming an unclaimed Page need to work before owner outreach starts?
+- The grade card's seven pass bars: keep, loosen or tighten?
+- May the seeder post a business's real, dated events from its own site, instead of "Sample" posts (a4)?
 
-**Next action: build A (posts last until they end), opened as a change Issue in socialus-web. Owner: Code agent, with the PM applying its migration.**
+**Next action: build A (posts last until they end), opened as a change Issue in socialus-web. Owner: Code agent, with the PM applying its migration. Then the PM reviews the grade card, and the homes are written.**
