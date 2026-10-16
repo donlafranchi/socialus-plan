@@ -23,7 +23,7 @@ A member has searched "trivia" twice, opened photos on three trivia-night posts 
 
 ## Not this
 
-Collecting data the member is not shown (device details, location; open below). Ads or anything sold. A score or label on a person. Telling another member what someone searched. Hashtags on cards.
+Collecting data the member is not shown (device details, location; open below). Ads or anything sold. Telling another member what someone searched. Hashtags on cards.
 
 ## Why
 

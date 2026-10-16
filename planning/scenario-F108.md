@@ -17,7 +17,7 @@ Not written. **Ruled 2026-10-12 (the PM): take the recommendation, C now and A a
 
 ## Not this
 
-Blocking a post. A score or label on a person. Telling anyone but the author. Email.
+Blocking a post. Telling anyone but the author. Email.
 
 ## Why
 

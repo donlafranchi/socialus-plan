@@ -23,7 +23,7 @@ Ana cares where her money goes. At signup she is asked how she looks for product
 
 ## Not this
 
-Not launch. Not approved. No values search, no price comparison, no third-party certification checks, no platform-assigned values, no published feedback, no score for a person.
+Not launch. Not approved. No values search, no price comparison, no third-party certification checks, no platform-assigned values, no published feedback.
 
 ## Why
 

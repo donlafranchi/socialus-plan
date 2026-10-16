@@ -34,7 +34,7 @@ We are trying to flip how technology gets used.
 
 **3. Design for kindness; make cruelty hard.** We help each other be good to one another.
 - A first report gives the poster a courtesy notice and a chance to fix it. A second report hides the post and sends it to a person from our team. Threats of harm and sensitive content hide at once. Notices are kind, in the app, never by email.
-- Reporting is for real problems: misused reports carry a visible consequence for the reporter, and reports never become a score on a person.
+- Reporting is for real problems: misused reports carry a visible consequence for the reporter.
 - We currently default to what people would expect socially about who sees what.
 
 ## Real examples

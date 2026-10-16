@@ -19,7 +19,7 @@ There is no impersonal Business entity anywhere in the data model. A Person make
 
 ## Corollaries this principle produces
 
-**No ranking of people; treatment, not the person, gets reviewed.** Star ratings and leaderboards are the Yelp failure mode — the rating becomes a price-of-being-found column and platform incentives flip to selling visibility to the rated. A treatment-pattern review (per the four-pillar structure, never a single score) is the peer-pressure shape the platform wants instead.
+**Treatment gets reviewed, never a single score on a Page.** Star ratings and leaderboards are the Yelp failure mode — the rating becomes a price-of-being-found column and platform incentives flip to selling visibility to the rated. A treatment-pattern review (per the four-pillar structure, never a single score) is the peer-pressure shape the platform wants instead.
 
 **Groups are people-first too.** A Group is never a polygon, a postal code, or an algorithm's guess — it's started, joined, and dissolved by members alone, never auto-assigned by geography or owned by a corporate entity. A Group without members ceases to exist; a Group can never dissolve a member.
 
