@@ -628,16 +628,42 @@ short = [out[0], '', out[2], '',
          '## The numbers', '']
 short += [f"- {i['text']}" for i in COCKPIT[0]['items']]
 short += [f"- {x['title']}: {x['bold']}" for x in COCKPIT[1:]]
-short += ['', f"## Your to-do ({len(_todos)})", ''] + [f"- P{t.get('p', 3)} · {t['text']}" + (f" · due {t['due'][5:]}" if t.get('due') else '') for t in _todos]
-short += ['', '*Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*']
-open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(short) + '\n')
-
 def _safe(fn, default=None):
     try:
         return fn()
     except Exception:
         return [] if default is None else default
 
+
+def _speed():
+    """#536 (Don: "Where can I see... how well the app is responding?"). The nightly tap-speed run (socialus-web,
+    a mid-range phone on 4G against production) writes latest.json and history/YYYY-MM-DD.json to the perf-history
+    branch; read with git show, like the criterion reports. Red only when a member-facing (consumer) screen is red."""
+    code = os.environ.get('STATUS_CODE') or os.path.expanduser('~/Projects/socialus-web')
+    subprocess.run(['git', '-C', code, 'fetch', '-q', 'origin', 'perf-history'], capture_output=True)
+    show = lambda path: json.loads(subprocess.run(['git', '-C', code, 'show', f'origin/perf-history:{path}'], check=True, capture_output=True, text=True).stdout)
+    names = subprocess.run(['git', '-C', code, 'ls-tree', '--name-only', 'origin/perf-history', 'history/'], check=True, capture_output=True, text=True).stdout.split()
+    hist = [(n[len('history/'):-len('.json')], show(n)) for n in sorted(x for x in names if x.endswith('.json'))[-7:]]
+    latest = show('latest.json')
+    rows = latest.get('rows', [])
+    red = [r for r in rows if r.get('status') == 'red' and r.get('kind') == 'consumer']
+    amber = [r for r in rows if r.get('status') in ('amber', 'red') and r not in red]
+    trend = lambda screen: [{'day': d, 'ms': next((r.get('readyMs') for r in h.get('rows', []) if r.get('screen') == screen), None)} for d, h in hist]
+    return {
+        'at': latest.get('at'), 'state': 'red' if red else 'amber' if amber else 'green', 'red': len(red), 'amber': len(amber), 'taps': len(rows),
+        'slowest': [{'screen': x['screen'], 'kind': x.get('kind'), 'ms': x.get('readyMs'), 'status': x.get('status'), 'trend': trend(x['screen'])} for x in latest.get('slowest', [])[:5]],
+        # Real phones (Vercel Speed Insights) once it is switched on and its code ships; until then, said so.
+        'real_users': None,
+        'runs': 'https://github.com/donlafranchi/socialus-web/actions/workflows/tap-speed.yml',
+    }
+
+
+_sp = _safe(_speed, {})
+if _sp.get('state'):
+    short += ['', f"**How fast it feels: {_sp['state'].title()}** ({_sp['red']} member screen(s) red, {_sp['amber']} amber); slowest: " + ', '.join(f"{x['screen']} {x['ms']} ms" for x in _sp['slowest'][:3])]
+short += ['', f"## Your to-do ({len(_todos)})", ''] + [f"- P{t.get('p', 3)} · {t['text']}" + (f" · due {t['due'][5:]}" if t.get('due') else '') for t in _todos]
+short += ['', '*Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*']
+open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(short) + '\n')
 
 def _json(name, key, default):
     try:
@@ -646,6 +672,7 @@ def _json(name, key, default):
         return default
 data = {
     'cockpit': COCKPIT,
+    'speed': _safe(_speed, {}),
     # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
     'todos': sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999')),
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
@@ -679,6 +706,7 @@ main{max-width:960px;margin:0 auto;padding:20px 16px 60px;min-width:0}h1{font-si
 .toc{position:sticky;top:0;align-self:start;height:100vh;overflow:auto;padding:20px 8px 20px 16px;border-right:1px solid var(--line);font-size:.88rem}
 .toc a{display:block;padding:6px 8px;border-radius:6px;color:var(--ink);text-decoration:none}.toc a:hover,.toc a.on{background:var(--card)}
 .toc b{display:block;margin:0 0 8px 8px}.tocm{display:none}
+.spark{vertical-align:middle;color:var(--mute)}.row.speed{align-items:flex-start;gap:8px}
 .sec{scroll-margin-top:64px;margin:0 0 30px}.sec>h2{font-size:1.1rem;margin:0 0 4px}.lede{margin:0 0 10px}
 .todo{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:12px 14px;margin:8px 0;background:var(--card);border:1px solid var(--line);border-radius:12px}
 .pri{font-weight:800;font-size:.8rem;border-radius:999px;padding:3px 9px;color:#fff;align-self:start}.p1{background:#b91c1c}.p2{background:#d97706}.p3{background:#64748b}
@@ -749,10 +777,16 @@ const launchLede=`${leftN} thing${leftN===1?'':'s'} left, ${LL.calls.length} ${L
 const launchBody=`<h3 style="font-size:.95rem;margin:4px 0">Launch-blocking work (${LL.issues.length})</h3><ul style="margin:0;padding-left:20px">${LL.issues.map(i=>`<li><a href="${esc(i.url)}">#${i.n} ${esc(i.title)}</a></li>`).join('')||'<li>none open</li>'}</ul>`+
  `<h3 style="font-size:.95rem;margin:12px 0 4px">Pitch grade card</h3>${LL.grade?`<ul style="margin:0;padding-left:20px">${LL.grade.map(g=>`<li>${g.pass?'✅':'☐'} cap-${g.n} · ${esc(g.text)}</li>`).join('')}</ul>`:'<p class="sub" style="margin:0">Pass/fail for cap-1 to cap-8: not yet set (it starts once the grade card scenario, F116, is written).</p>'}`+
  `<h3 style="font-size:.95rem;margin:12px 0 4px">Your open calls (${LL.calls.length})</h3><ul style="margin:0;padding-left:20px">${LL.calls.map(c=>`<li><span class="pri ${PR[c.p]||'p3'}" style="font-size:.7rem;padding:1px 6px">P${c.p}</span> ${c.url?`<a href="${esc(c.url)}">${esc(c.text)}</a>`:esc(c.text)}${c.due?` · due ${when(c.due)}`:''}</li>`).join('')||'<li>none</li>'}</ul>`;
+// #536 — how fast it feels, from the nightly tap-speed run on a mid-range phone on 4G. Red only for a member-facing screen.
+const SP=D.speed||{};const STC={green:['#15803d','Green'],amber:['#b45309','Amber'],red:['#b91c1c','Red']};
+const spark=t=>{const v=t.filter(x=>x.ms!=null);if(v.length<2)return '';const ms=v.map(x=>x.ms),mx=Math.max(...ms),mn=Math.min(...ms),w=90,h=22;return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.5" points="${t.map((x,i)=>x.ms==null?null:`${(i/(t.length-1)*w).toFixed(1)},${(h-1-((x.ms-mn)/((mx-mn)||1))*(h-2)).toFixed(1)}`).filter(Boolean).join(' ')}"/></svg>`};
+const speedLede=SP.state?`${STC[SP.state][1]}: ${SP.red?`${SP.red} member screen${SP.red===1?' is':'s are'} over budget`:SP.amber?`${SP.amber} tap${SP.amber===1?' is':'s are'} slower than budget, no member screen red`:'every tap is within budget'} (nightly ${String(SP.at||'').slice(5,10)})`:'No tap-speed results yet.';
+const speedBody=SP.state?`<p class="sub" style="margin:0 0 6px">The five slowest taps on a mid-range phone on 4G, with their last ${SP.slowest[0]?.trend.length||0} nightly runs (ms until the screen is usable). Budgets: a member screen 1 s, a creator screen 2.5 s.</p>`+SP.slowest.map(x=>`<div class="row speed" data-status="${esc(x.status)}"><span class="pri" style="background:${(STC[x.status]||STC.green)[0]};color:#fff">${esc((STC[x.status]||STC.green)[1])}</span><div class="title"><b>${esc(x.screen)}</b> · ${x.ms} ms · ${x.kind==='creator'?'creator':'member'} screen<br><span class="sub">${x.trend.map(t=>t.ms==null?'–':t.ms).join(' → ')}</span> ${spark(x.trend)}</div></div>`).join('')+`<p class="sub">Real phones: ${SP.real_users?esc(SP.real_users):'not yet. They come from Vercel Speed Insights once it is switched on.'} · <a href="${esc(SP.runs)}">all runs</a></p>`:'<p class="sub">The nightly tap-speed results could not be read.</p>';
 document.getElementById('areas').innerHTML=
  sec('todo','Your to-do',todoLede,todoBody,true)+
  sec('soft-launch','Before soft launch (11-06)',launchLede,launchBody)+
  sec('going',"Where we're going",`Now ${D.lanes.now.length} · Next ${D.lanes.next.length} · Considering ${D.lanes.considering.length} · Later ${D.lanes.later.length}`,[['now','Now: being built'],['next','Next: settled and approved'],['considering','Considering: possible, not approved'],['later','Later: eventual']].map(([k,t])=>`<h3 style="font-size:.95rem;margin:12px 0 4px">${t}</h3><ol style="margin:0;padding-left:22px">${D.lanes[k].map(x=>`<li>${x.id==='idea'?'':esc(x.id)+' '}${esc(x.title)} <span style="color:var(--mute)">(${esc(x.status)})</span></li>`).join('')||'<li>none</li>'}</ol>`).join(''))+
+ sec('speed','How fast it feels',speedLede,speedBody)+
 
  sec('cockpit','The cockpit',esc(where.bold),cockpitSec,true)+
  sec('waiting','Waiting on you',`${D.wait_total} item${D.wait_total===1?'':'s'} waiting, by area`,waitTop+testNote,true)+
