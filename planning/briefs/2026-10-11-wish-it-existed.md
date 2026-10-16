@@ -36,6 +36,8 @@ criteria:
 
 # Feature Brief: Wish it existed
 
+**As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Goal:** A member can ask the neighbourhood for something they want that may not exist locally, and neighbours can answer "I can build that" with a price, team up, or back the idea together, when they have a want like a small frog habitat.
 **Date / run by / PM context:** 2026-10-11 · plan-feature, one pass on a light model, chair merge · Don, voice-dictated: "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment.
 **Scope line:** After beta. Not in the Beta milestone.

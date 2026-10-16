@@ -1,5 +1,7 @@
 # Pitch audit: does SocialUs work for the member? (2026-10-15)
 
+**As of 2026-10-16** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Bottom line: the pitch's two headline promises, timely announcements and "the app works for you", are each about half built. Nothing a member does (follow, save, interests) brings anything to them yet; they still have to come and look. Start by fixing post expiry (half a day). Then let members choose interests as a filter, then send a weekly "your week" email.**
 
 Method: socialus.org signed out at 390px; signed-in member and Page owner on a local copy with seeded data at 390px (production sign-in needs the PM's inbox); then code and schema on `main` at `56d9792`. **V** = seen in the app or code. **A** = assumed. Test Page and post were deleted afterwards.

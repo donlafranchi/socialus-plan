@@ -8,6 +8,8 @@ last-updated: 2026-10-12
 
 # One cockpit for the PM
 
+**As of 2026-10-13** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **The PM looks in nine places today, and they disagree: three launch dates, and three different counts of what waits on the PM.** This proposes one generated page, the dashboard grown into a cockpit: a big checklist with every detail folded, built only from agent docs and GitHub, never hand-kept. Agents keep as many single-purpose docs as they need; the cockpit is the only thing the PM has to read.
 
 **Ruled B (2026-10-13):** the dashboard becomes the one cockpit, and the colour page stays as a second rendering of the same data. Every other PM view folds in or retires.

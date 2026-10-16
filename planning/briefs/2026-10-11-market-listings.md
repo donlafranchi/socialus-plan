@@ -22,6 +22,8 @@ criteria:
 
 # Feature Brief: Market listings (the shared foundation)
 
+**As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Goal:** A producer at a farmers market can say what they bring this week, in a minute, and a neighbour can see what the market has, when the market is on.
 **Date / run by / PM context:** 2026-10-11 · plan-feature, one pass on a light model, chair merge · Don, voice-dictated: "we would need a way for the farmers market attendee to list products ... a simple way for them to list their products and possibly prices." A possibility, not a commitment. Likely T1 for both the Market shopper and Market meal plans.
 **Scope line:** After beta. Not in the Beta milestone. This is the ROADMAP "Individual product and service listings on a Page (postponed until after beta, 2026-10-01)" item, now also the foundation for the market concepts.

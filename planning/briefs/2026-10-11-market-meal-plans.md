@@ -25,6 +25,8 @@ criteria:
 
 # Feature Brief: Market meal plans
 
+**As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Goal:** A family can have a week of meals planned around what their farmers market has this week, written by a neighbour, when they want to cook from the market.
 **Date / run by / PM context:** 2026-10-11 · plan-feature, one pass on a light model per concept, chair merge · Don, voice-dictated: "recipes for families that used the ingredients that were at a farmers market ... a week full of meals ... created by members of the community, and then they can sell their meal plan ... in reference to a farmers market and what that farmers market carries." A possibility, not a commitment.
 **Scope line:** After beta. Not in the Beta milestone (beta 2026-11-06, freeze 2026-10-30). Nothing leaves scope because nothing enters it.

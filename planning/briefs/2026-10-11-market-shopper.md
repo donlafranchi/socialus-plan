@@ -23,6 +23,8 @@ criteria:
 
 # Feature Brief: Market shopper
 
+**As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Goal:** A member who cannot get to the farmers market can have a neighbour shop it for them, and farmers and producers can do the same for their own regulars, when the market is on.
 **Date / run by / PM context:** 2026-10-11 · plan-feature, one pass on a light model per concept, chair merge · Don, voice-dictated: "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment.
 **Scope line:** After beta. Not in the Beta milestone (beta 2026-11-06, freeze 2026-10-30). Nothing leaves scope because nothing enters it.
