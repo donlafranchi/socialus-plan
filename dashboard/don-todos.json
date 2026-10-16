@@ -2,15 +2,6 @@
  "_how": "Don's to-do, shown first on the HTML dashboard. Don, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever he asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD).",
  "items": [
   {
-   "p": 1,
-   "text": "Accepted risks review (three due 10-16)",
-   "how": "Three are due. Removed photos: web #491 lets the operator delete one for good, so mark it resolved (recommended). Error tracking: web #490 built it, but it stays off until the Sentry step below, so keep it until then. The members' group-memberships view: re-argue or delete.",
-   "due": "2026-10-16",
-   "unlocks": "Plan lint stays green after 10-16 (a passed review date fails it)",
-   "url": "https://github.com/donlafranchi/socialus-plan/tree/main/accepted-risks",
-   "added": "2026-10-15"
-  },
-  {
    "p": 2,
    "text": "Reconnect the GitHub connector",
    "how": "Claude Settings → Connectors → GitHub → reconnect.",
