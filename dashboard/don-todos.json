@@ -33,18 +33,20 @@
    "added": "2026-10-15"
   },
   {
-   "p": 3,
+   "p": 2,
    "text": "Look at the new Explore on your phone",
-   "how": "Open Explore; you should see \"What's new since you were here\" (web #800).",
+   "how": "Open Explore: Pages and posts are mixed (megaphone = post). Tap the filter icon, pick Posts and This weekend, then a Category; the list should narrow.",
    "url": "https://www.socialus.org/explore",
-   "added": "2026-10-15"
+   "added": "2026-10-16",
+   "unlocks": "Your sign-off on the mixed Explore and its filters (web #876), or the change you want next"
   },
   {
    "p": 3,
    "text": "The committee model-test plan",
    "how": "Read and decide on the plan PR.",
    "url": "https://github.com/donlafranchi/socialus-plan/pull/102",
-   "added": "2026-10-15"
+   "added": "2026-10-15",
+   "unlocks": "Agents can run the \"wish it existed\" model test (roles on Sonnet)"
   },
   {
    "p": 2,
