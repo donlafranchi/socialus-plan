@@ -632,6 +632,13 @@ short += ['', f"## Your to-do ({len(_todos)})", ''] + [f"- P{t.get('p', 3)} · {
 short += ['', '*Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*']
 open(os.path.join(root, 'DASHBOARD.md'), 'w').write('\n'.join(short) + '\n')
 
+def _safe(fn, default=None):
+    try:
+        return fn()
+    except Exception:
+        return [] if default is None else default
+
+
 def _json(name, key, default):
     try:
         return json.load(open(os.path.join(root, 'dashboard', name)))[key]
@@ -642,6 +649,13 @@ data = {
     # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
     'todos': sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999')),
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
+    # Don, 2026-10-16: "Where can I see what we have left to build… what else needs to be done before soft launch?"
+    'launch_left': {
+        'issues': [{'n': i['number'], 'title': i['title'], 'url': i['url']} for i in sorted(_safe(lambda: gh('issue', 'list', '-R', REPO, '--milestone', MILESTONE, '--label', 'launch-blocking', '--state', 'open', '--limit', '200', '--json', 'number,title,url')), key=lambda i: i['number'])],
+        # The pitch grade card (F116) once it exists: one row per criterion, pass when built. Until then, not yet set.
+        'grade': next(([{'n': c['n'], 'text': c['text'], 'pass': c['built'] == 'yes'} for c in f['criteria']] for f in FEATS if f['id'] == 'F116'), None) if os.path.exists(os.path.join(root, 'planning', 'scenario-F116.md')) else None,
+        'calls': [{'p': t.get('p', 3), 'text': t['text'], 'url': t.get('url'), 'due': t.get('due')} for t in sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))],
+    },
     'lanes': (lambda sc, ideas: {h: [{'id': x['id'], 'title': x['title'], 'status': x['status']} for x in sorted((x for x in sc if x['horizon'] == h), key=lambda x: (x['rank'], x['id']))] + [{'id': 'idea', 'title': t, 'status': 'IMAGINE'} for l, t in ideas if l == h] for h in ('now', 'next', 'considering', 'later')})(going.scenarios(os.path.join(root, 'planning')), going.imagine(os.path.join(root, 'IMAGINE.md'))),
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
     'features': [{'id': f['id'], 'title': f['title'], 'area': f['area'], 'met': f['met'], 'total': f['total'], 'checked': f['checked'], 'reviewed': f['reviewed'], 'smoked': f['smoked'], 'pm': f['pm'], 'blocked': len(f['blocked']), 'stale': f.get('stale', False), 'url': f['url'], 'criteria': [{'n': r['n'], 'text': r['text'], 'built': r['built'], 'checked': r['checked'], 'reviewed': r['reviewed'], 'smoked': r['smoked'], 'pm': r['pm'], 'uat': r['uat'], 'blocking': r['blocking'], 'not_ok': r.get('not_ok', False), 'not_ok_text': r.get('not_ok_text', ''), 'issues': r['issues']} for r in f['criteria']]} for f in sorted(FEATS, key=lambda f: (f['area'], f['id']))], 'cover': COVER,
@@ -729,10 +743,18 @@ const todoLede=T.length?`${T.length} thing${T.length===1?'':'s'} only you can do
 const todoBody=T.map(t=>`<div class="todo" data-p="${t.p}"><span class="pri ${PR[t.p]||'p3'}">P${t.p}</span><div class="what">${t.url?`<a href="${esc(t.url)}">${esc(t.text)}</a>`:esc(t.text)}</div><div class="meta">${esc(t.how||'')}${t.due?` · <b class="${t.due<today?'late':''}">${t.due<today?'Overdue':'Due'} ${when(t.due)}</b>`:''}${t.unlocks?`<br>Unlocks: ${esc(t.unlocks)}`:''}</div></div>`).join('')+`<p class="sub">Whenever you ask what you need to do, the steps land here, highest priority first, and come off once done. P1 = do first.</p>`;
 const where=D.cockpit[0];
 const glossBody=D.shorthand.groups.map(g=>`<h3 style="font-size:.95rem;margin:14px 0 2px">${esc(g.name)}</h3>${g.items.map(i=>`<div class="gl"><div><b>${esc(i.name)}</b><div class="src">${i.src==='patterns'?'patterns.md':'shorthand note only'}</div></div><div>${esc(i.does)}</div></div>`).join('')}`).join('')+`<p class="sub">Checked: ${esc(D.shorthand.checked)}</p>`;
+const LL=D.launch_left;const gradeOpen=LL.grade?LL.grade.filter(g=>!g.pass):[];
+const leftN=LL.issues.length+LL.calls.length+gradeOpen.length;
+const launchLede=`${leftN} thing${leftN===1?'':'s'} left, ${LL.calls.length} ${LL.calls.length===1?'is':'are'} yours`;
+const launchBody=`<h3 style="font-size:.95rem;margin:4px 0">Launch-blocking work (${LL.issues.length})</h3><ul style="margin:0;padding-left:20px">${LL.issues.map(i=>`<li><a href="${esc(i.url)}">#${i.n} ${esc(i.title)}</a></li>`).join('')||'<li>none open</li>'}</ul>`+
+ `<h3 style="font-size:.95rem;margin:12px 0 4px">Pitch grade card</h3>${LL.grade?`<ul style="margin:0;padding-left:20px">${LL.grade.map(g=>`<li>${g.pass?'✅':'☐'} cap-${g.n} · ${esc(g.text)}</li>`).join('')}</ul>`:'<p class="sub" style="margin:0">Pass/fail for cap-1 to cap-8: not yet set (it starts once the grade card scenario, F116, is written).</p>'}`+
+ `<h3 style="font-size:.95rem;margin:12px 0 4px">Your open calls (${LL.calls.length})</h3><ul style="margin:0;padding-left:20px">${LL.calls.map(c=>`<li><span class="pri ${PR[c.p]||'p3'}" style="font-size:.7rem;padding:1px 6px">P${c.p}</span> ${c.url?`<a href="${esc(c.url)}">${esc(c.text)}</a>`:esc(c.text)}${c.due?` · due ${when(c.due)}`:''}</li>`).join('')||'<li>none</li>'}</ul>`;
 document.getElementById('areas').innerHTML=
  sec('todo','Your to-do',todoLede,todoBody,true)+
- sec('cockpit','The cockpit',esc(where.bold),cockpitSec,true)+
+ sec('soft-launch','Before soft launch (11-06)',launchLede,launchBody)+
  sec('going',"Where we're going",`Now ${D.lanes.now.length} · Next ${D.lanes.next.length} · Considering ${D.lanes.considering.length} · Later ${D.lanes.later.length}`,[['now','Now: being built'],['next','Next: settled and approved'],['considering','Considering: possible, not approved'],['later','Later: eventual']].map(([k,t])=>`<h3 style="font-size:.95rem;margin:12px 0 4px">${t}</h3><ol style="margin:0;padding-left:22px">${D.lanes[k].map(x=>`<li>${x.id==='idea'?'':esc(x.id)+' '}${esc(x.title)} <span style="color:var(--mute)">(${esc(x.status)})</span></li>`).join('')||'<li>none</li>'}</ol>`).join(''))+
+
+ sec('cockpit','The cockpit',esc(where.bold),cockpitSec,true)+
  sec('waiting','Waiting on you',`${D.wait_total} item${D.wait_total===1?'':'s'} waiting, by area`,waitTop+testNote,true)+
  (D.launch.length?sec('launch','Launch checklist',`${D.launch.filter(i=>i.due).length} due, ${D.launch.length} in all`,launchSec):'')+
  sec('features','Criteria by feature',`${D.cover[0]} of ${D.cover[1]} features reporting; tap one for its criteria`,featSection)+

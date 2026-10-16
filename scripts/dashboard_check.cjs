@@ -26,6 +26,15 @@ const checks = {
   'every to-do item has a priority 1 to 3 and a how': Array.isArray(D.todos) && D.todos.every((t) => [1, 2, 3].includes(t.p) && t.how && t.text),
   'sidebar and phone menu list every section': d.querySelectorAll('#toc a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('#tocm a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('section[data-toc]').length >= 8,
   'every section opens with a bold overview': [...d.querySelectorAll('section[data-toc]')].every((x) => x.querySelector(':scope > p.lede > b')?.textContent.trim()),
+  // Don, 2026-10-16: "what we have left to build… what else needs to be done before soft launch?"
+  'before soft launch: second, with its count, every item linked': (() => {
+    const L = D.launch_left
+    const sec = d.getElementById('soft-launch')
+    if (!L || !sec || d.querySelectorAll('section[data-toc]')[1]?.id !== 'soft-launch') return false
+    const n = L.issues.length + L.calls.length + (L.grade ? L.grade.filter((g) => !g.pass).length : 0)
+    return sec.querySelector('p.lede b').textContent.startsWith(`${n} thing`) && sec.querySelectorAll('li a[href]').length >= L.issues.length + L.calls.filter((c) => c.url).length && sec.textContent.includes(L.grade ? 'cap-1' : 'not yet set')
+  })(),
+  "where we're going is third, right under it": d.querySelectorAll('section[data-toc]')[2]?.id === 'going',
   'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
