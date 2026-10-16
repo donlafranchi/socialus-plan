@@ -6,9 +6,9 @@
   "source": "project / socialus-web",
   "decision": "2026-09-17",
   "evidence": "no Sentry or equivalent in package.json or src/",
-  "why": "Nothing was wired up and nothing has needed it while the only user is Don. The daily deploy-health check catches the one failure mode that mattered so far — the database being unreachable.",
+  "why": "Nothing was wired up and nothing has needed it while the only user is Don. The daily deploy-health check catches the one failure mode that mattered so far — the database being unreachable. 2026-10-16: web #490 built the tracking, but it stays off until the Sentry DSN arrives (Don's to-do); review_by moved to 11-06 (soft launch).",
   "cost_if_forgotten": "A runtime error for a real member is invisible. Nobody is paged, nothing is logged where anyone looks, and the first signal is a person giving up and not saying why. The DATABASE_URL outage went four months unnoticed for exactly this reason.",
   "revisit_if": "ANY of: a member outside the team signs up; a bug is reported that nobody can reproduce; or 2026-10-16 passes with this still open.",
   "owner": "code",
-  "review_by": "2026-10-16"
+  "review_by": "2026-11-06"
 }
