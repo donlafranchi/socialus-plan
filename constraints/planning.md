@@ -10,8 +10,10 @@
 > **180 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-16** · [always] · principles, badges, pages — Local means money comes back to where it was generated; it is never a distance, a map or a metro. [always] (PRINCIPLES.md)
 - **2026-10-16** · [for now] · reports, moderation, pages — A Page's own words (its name and description) are reportable on the courtesy-first flow: a first report sends the owner a courtesy notice; a repeat from someone else hides just those words and queues them, and the Page stays up; threat of harm and child content hide at once. Community-review panels come later, per metro, once beta opt-ins are big enough (planning/scenario-F078.md)
 - **2026-10-16** · [for now] · members, reports — The "no score on a person" rule is removed (planning/scenario-F102.md)
+- **2026-10-16** · [for now] · badges, pages — The Locally Owned badge shows when the owner has made the Locally Owned claim, and nothing else decides it: not the MSA, a ring, a market or a distance. A Page nobody has claimed, such as a seeded unclaimed Page, shows no Local badge (product/systems/business-jurisdiction.md)
 - **2026-10-12** · [always] · principles, explore, discovery — The app has two sides: Find (the tool), where a person looks for something specific, and Discover (the fun), where a person explores with nothing in mind and an algorithm may serve what interests them. [always] (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles — Everything the platform touches serves the people it touches (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, fees — Wealth circulates; it is not extracted (PRINCIPLES.md)
