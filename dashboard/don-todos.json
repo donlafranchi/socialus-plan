@@ -54,6 +54,15 @@
    "how": "Read and decide on the plan PR.",
    "url": "https://github.com/donlafranchi/socialus-plan/pull/102",
    "added": "2026-10-15"
+  },
+  {
+   "p": 2,
+   "text": "Make one test report on a Page you own",
+   "how": "Signed in on socialus.org, open a Page you own from a second account, tap ⋯ → Report the name or description, and send it. Check that the owner account gets the courtesy notice under You. No courtesy notice has ever been sent in production, so this is the last check on #220.",
+   "due": "2026-10-23",
+   "unlocks": "Closes #220, which clears the 10-27 photo tripwire",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/220",
+   "added": "2026-10-16"
   }
  ]
 }
