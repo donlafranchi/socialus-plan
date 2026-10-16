@@ -208,4 +208,8 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 *Don, 2026-10-12.* The copy names should be more interesting than the internal ones. Later. [lane: later]
 
+### Holiday specials up front
+
+**Holiday specials up front** (Don, 2026-10-16): ahead of each upcoming holiday, Explore surfaces Pages' timely holiday specials and events (e.g. a 'Thanksgiving week' or 'holiday markets' strip), driven by the post dates and a holiday calendar for the metro. Relates to cap-1 (timely announcements) and cap-5 (current without following many). **What would make this real:** enough dated holiday posts in a metro to fill a strip. [lane: later]
+
 [open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).
