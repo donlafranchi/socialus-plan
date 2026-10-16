@@ -80,24 +80,17 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 *Don's framing, 2026-09-19, in his terms:* *"I tend to regularly search for bars and restaurants with nice outdoor environments as opposed to outdoor tables next to a busy street. Whereas other times I don't really care about the ambiance and only want the best enchilada in the city."* And on reviews: *"yelp and google... lump all reviews from all people and that isn't really a useful way to do reviews when people have different expectations. For example some people are value oriented and want maximum say food for their dollar whereas I am willing to pay for quality and it'd be nice to be able to differentiate this."*
 
-*Analysis, agent, 2026-09-19:*
-
 **The load-bearing obstacle is not filtering. It is that the product has no way for anyone to say anything about a Page they do not own.** Every description the platform holds today is creator-supplied — tags, the Page description, the composer's fields. A brewery will tag itself *patio*; it will never tag itself *patio beside a four-lane road*. **The distinction Don wants is inherently third-party, and third-party statements about a Page are a surface this product has never had.** Any first step that does not answer *may a member write about someone else's Page* is a step in a different direction.
 
-**Four separable systems, smallest first, none a filter control:**
+**Four separable systems, smallest first:** (1) a vocabulary for attributes (quiet, patio, cheap), distinct from the tags a creator types about themselves; (2) member-supplied attributes, the third-party surface above, gated by [member-content-takedown] (the report path, F058, now exists); (3) reviewer segmentation, declared or inferred (**inference is close to what `product/systems/discovery.md` refuses**); (4) reviews at all (no review noun exists).
 
-1. **A vocabulary for attributes**, distinct from the tags a creator types about themselves — quiet, patio, cheap, worth-the-price. Nothing exists. Tags are the nearest substrate and are creator-owned by rule.
-2. **Member-supplied attributes** — the third-party surface above. Gated by [member-content-takedown]; the report path (F058) now exists, so the gate is passable for the first time.
-3. **Reviewer segmentation** — knowing what a reviewer optimizes for. Either a declared axis on the member, or inferred from behaviour. **Inference is close to what `product/systems/discovery.md` refuses**, and a declared axis is a profile field nobody fills in.
-4. **Reviews at all.** No review noun exists; a treatment-review surface is in § Later, unbuilt.
-
-**Cold start is the quiet killer.** One metro at launch means roughly zero reviews, and a segmented review system needs several times the volume of an unsegmented one. **A segmented review surface with no reviews is worse than none**: it advertises a promise the data cannot keep, the failure Don describes in Yelp.
+**Cold start is the quiet killer:** one metro means roughly zero reviews, and a segmented system needs several times the volume. **A segmented review surface with no reviews advertises a promise the data cannot keep**, the failure Don describes in Yelp.
 
 **The smallest honest first step is not to build any of it.** F064, the approved not-built-yet signal capture (a tap, recorded once, no count), pointed at *narrow by what I care about* costs almost nothing and shows whether anyone but Don wants it. **The first real build afterwards is creator-declared attribute tags, and Don should know before it starts that it does not solve his stated problem** — self-reported attributes cannot make the distinction he opened with.
 
-**What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density in one metro that a second reader sees a first reader's words.
+**What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density that a second reader sees a first reader's words.
 
-**Reframed in part, 2026-09-21, by the in-app answering strategy** (`planning/AGENT-ANSWERING.md`). **System 1 largely dissolves**: nobody must enumerate *quiet* or *patio* as a vocabulary if a person can say it, so natural language carries the intent. **The obstacle is untouched**: an answering layer can only answer over what is written, and nothing lets anyone write about a Page they do not own. **The entry stays, trigger unchanged**: the interface half is answered, the data half is not.
+**Reframed in part, 2026-09-21, by the in-app answering strategy** (`planning/AGENT-ANSWERING.md`): system 1 largely dissolves (a person can simply say *quiet*), but the obstacle is untouched, since an answering layer can only answer over what is written and nothing lets anyone write about a Page they do not own. **The entry stays, trigger unchanged.**
 
 **Not folded in:** *what's on*, the time-based half, already has a noun, verb and surface and belongs in the spine.
 
@@ -157,9 +150,9 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 ### Market shopper: a neighbour shops the market for you
 
-*Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
+*Don, 2026-10-11, in his terms:* "a shopper like at Walmart but at a farmers market, and then how could we replicate that for farmers and producers." A possibility. After beta. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* the big-chain pattern replaces the visit and pays one company. The flip here is a neighbour who shops the market for someone who cannot get there, handing off in person, the money going to the members who shop and grow, SocialUs taking transaction income (ruling 2026-10-07). The producer version is a producer shopping for their own regulars. Nothing exists to build on: no market list, no order, no messaging, no money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
+*Analysis, agent, 2026-10-11:* the flip on the big-chain pattern is a neighbour who shops the market for someone who cannot get there, the money going to the members who shop and grow (ruling 2026-10-07). Nothing exists to build on: no market list, order, messaging or money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
 **Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
 
@@ -169,9 +162,9 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 *Don, 2026-10-11, in his terms:* recipes for families "that used the ingredients that were at a farmers market ... a week full of meals ... created by members of the community," who can sell their plans, each in reference to a farmers market and what it carries. A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, so the legal weight is lower than the shopper's. Its weak point is the market's list, so a plan carries its list date and says so when the week moves on. The author is credited through their own Page (there is no public member profile). **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
+*Analysis, agent, 2026-10-11:* the closest precedent (eMeals) ties a plan to one chain's sale items; this ties it to one market's people. A plan is information, not food, so the legal weight is lower than the shopper's. A plan carries its list date and says so when the week moves on; the author is credited through their own Page. **The smallest honest step builds nothing:** the market's Page posts its week, and one member's Page posts a week of meals as a Post tagged with the market.
 
-**Sizes (Don, 2026-10-11):** a plan can be one meal, a couple of days, or a week, so authors and families start small. Listings are the foundation (see the shopper entry).
+**Sizes (Don, 2026-10-11):** one meal, a couple of days, or a week. Listings are the foundation (see the shopper entry).
 
 **What would make it real:** a market that keeps a weekly list for six weeks and three families who cook from a plan. Full brief: `planning/briefs/2026-10-11-market-meal-plans.md`.
 
@@ -212,6 +205,6 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 *Don, 2026-10-16, verbatim:* "who counts as local for a maker or producer will at first just be a cloak [claim] and later will be where a producer sends their money, e.g. to which community fund. If they are the same then they are local. Local will be solely determined by if money comes back to where it was generated." And: "I'm not certain on the mechanism or exact details. That's one concept that should be explored among others when the time comes."
 
-How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open. Today the badge is the owner's own claim (`product/systems/business-jurisdiction.md` § Rulings); no mechanism is ruled. **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
+How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open; none is ruled (today: the owner's claim, `product/systems/business-jurisdiction.md`). **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
 
 [open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).
