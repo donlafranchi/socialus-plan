@@ -62,11 +62,7 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 *Analysis, agent, 2026-09-12:*
 
-**An RSVP is not a ticket.** No payment, no allocation, no scarcity, no guaranteed entry, no recourse if you turn up and it's full. Today it is the free end of the same need, not a substitute for the paid end, and describing it as competing with Ticketmaster head-on would be a claim the product cannot cash.
-
-**What it does compete with is the reason a small organizer reaches for a ticketing platform at all.** For a run club, a market, a workshop, a supper, the requirement is usually *knowing who is coming*; they pay a fee and hand over the relationship with their own attendees to get a headcount. **That is the thing worth displacing**, and it is displaceable now rather than after a payments stack.
-
-**Where it connects to what's already promised:** the fee and the surrendered attendee relationship are the extraction, so this applies *not an extractive platform*; a per-ticket fee is regressive against the neighbourhood-scale organizer, so it also applies *not pricing out the small*. Not a new commitment.
+**An RSVP is not a ticket** (no payment, allocation or guaranteed entry), so it doesn't compete head-on. It displaces why a small organizer pays a ticketing fee and hands over their attendees just to get a headcount: *not an extractive platform* and *not pricing out the small*, not a new commitment.
 
 **What would have to become true for this to be more than a thesis:** capacity limits · payment · transfer between people · proof of entry at the door. The platform has none of them.
 
@@ -207,5 +203,9 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 ### Member-facing names for Find and Discover
 
 *Don, 2026-10-12.* The copy names should be more interesting than the internal ones. Later. [lane: later]
+
+### Holiday specials up front
+
+*Don, 2026-10-16:* ahead of each upcoming holiday, Explore surfaces Pages' timely holiday specials and events (e.g. a 'Thanksgiving week' or 'holiday markets' strip), driven by the post dates and a holiday calendar for the metro. Relates to cap-1 (timely announcements) and cap-5 (current without following many). **What would make this real:** enough dated holiday posts in a metro to fill a strip. [lane: later]
 
 [open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).
