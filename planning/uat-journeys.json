@@ -33,14 +33,17 @@
    "The notice names the category, the reporter's reason and a kind explanation",
    "\"Fix it and repost\" puts the post back at once, and a second repost is not offered",
    "\"This is wrong\" asks for a reason and a note that stops at 280",
-   "A second answer is refused; the item stays hidden until a person decides"
+   "A second answer is refused; the item stays hidden until a person decides",
+   "Leave it unanswered: the post stays hidden and closes by itself later"
   ],
   "criteria": [
    "F078.3",
    "F102.1",
    "F102.2",
-   "F102.3",
-   "F078.4"
+   "F078.4a",
+   "F102.3a",
+   "F102.4",
+   "F078.11"
   ]
  },
  {
@@ -103,13 +106,15 @@
    "You cannot use the photo until you tick that it has no children",
    "A sensitive-content question shows while you upload",
    "The \"add something to sell\" screen opens with a short kind note asking for nothing sensitive",
-   "The Page picture is optional"
+   "The Page picture is optional",
+   "A Page with no picture yet shows the placeholder on its posts"
   ],
   "criteria": [
    "F080.1",
    "F099.9",
    "F080.5",
-   "F099.1"
+   "F099.1",
+   "F099.13"
   ]
  },
  {
@@ -124,15 +129,16 @@
    "A closed city shows how many more people are needed, with no date and no promise",
    "Creator and patron both start unselected",
    "You join with only an email: no password, no name",
-   "Cities with more people waiting sit higher"
+   "Join twice with the same email, or switch city: the count moves once and the screen looks the same"
   ],
   "criteria": [
    "F076.1",
    "F076.9",
-   "F076.3",
    "F076.13",
-   "F076.16",
-   "F076.2"
+   "F076.2",
+   "F076.4",
+   "F076.5",
+   "F076.14"
   ]
  },
  {
@@ -155,7 +161,9 @@
    "F093.8",
    "F093.10",
    "F093.9",
-   "F077.3"
+   "F077.3",
+   "F093.11",
+   "F059.5d"
   ]
  },
  {
@@ -198,7 +206,8 @@
    "F082.4",
    "F082.8",
    "F082.5",
-   "F082.1"
+   "F082.1",
+   "F082.7"
   ]
  },
  {
@@ -217,7 +226,6 @@
   ],
   "criteria": [
    "F059.1",
-   "F059.5",
    "F044.2",
    "F044.3",
    "F045.2",
@@ -225,7 +233,9 @@
    "F092.1",
    "F059.9",
    "F059.10",
-   "F069.1"
+   "F069.1",
+   "F044.1a",
+   "F045.3a"
   ]
  },
  {
@@ -239,15 +249,18 @@
    "Today and this-week rows hold only posts starting in that window, soonest first",
    "Empty rows do not show, and a quiet city drops the whole heading",
    "Your own items show for you, and change when you change the metro",
-   "Signed out, each posting Page gives one \"sign in to see\" card"
+   "Signed out, each posting Page gives one \"sign in to see\" card",
+   "Open the same link on another phone: the same rows show"
   ],
   "criteria": [
-   "F091.1",
    "F091.3",
    "F091.4",
    "F059.2b",
-   "F059.7",
-   "F091.7"
+   "F091.7",
+   "F091.1a",
+   "F091.1b",
+   "F091.2",
+   "F091.5"
   ]
  },
  {
@@ -261,7 +274,8 @@
    "Scrolling down slides the bar away smoothly; scrolling up a little brings it back",
    "At the very top it is showing, and on a fresh tab load",
    "Content does not jump",
-   "Home and You behave the same way"
+   "Home and You behave the same way",
+   "Icons are thin and filled when active, on an opaque white bar with a hairline top border"
   ],
   "criteria": [
    "F046.1",
@@ -269,7 +283,8 @@
    "F046.3",
    "F046.4",
    "F046.5",
-   "F046.6"
+   "F046.6",
+   "F046.7a"
   ]
  },
  {
@@ -296,7 +311,8 @@
    "F060.4",
    "F069.3",
    "F070.1",
-   "F057.5"
+   "F057.5",
+   "F069.4"
   ]
  },
  {
@@ -310,13 +326,15 @@
    "A real address shows a pin; a nonsense one is refused with a message",
    "A neighbourhood shows a pin mid-area with no street address",
    "Your own tag saves, there is no category list, and zero tags cannot publish",
-   "A public phone shows signed in but not signed out"
+   "A public phone shows signed in but not signed out",
+   "A Page with nothing optional filled in still looks complete, with nothing nagging"
   ],
   "criteria": [
    "F056.6",
    "F056.7",
    "F056.8",
-   "F056.9"
+   "F056.9",
+   "F056.5"
   ]
  },
  {
@@ -329,12 +347,17 @@
   "look": [
    "Edit works in place, no delete, and visitors see no edit",
    "The time shows in local time; no date means no time",
-   "The audience switch defaults to Anyone and says Nobody yet at zero"
+   "The audience switch defaults to Anyone and says Nobody yet at zero",
+   "It reads as coming from the Page: no price, no buy button",
+   "After its start time passes it leaves Explore by itself"
   ],
   "criteria": [
-   "F072.1",
    "F072.3",
-   "F072.4"
+   "F072.4",
+   "F072.1a",
+   "F072.2a",
+   "F072.2b",
+   "F059.8"
   ]
  },
  {
@@ -346,11 +369,14 @@
   "launch": false,
   "look": [
    "Follow turns into following and the Page shows in your list",
-   "Unfollow then follow again: back once, no duplicate"
+   "Unfollow then follow again: back once, no duplicate",
+   "Following a business when you own no shop still offers you Start something"
   ],
   "criteria": [
    "F065.1",
-   "F065.4"
+   "F065.4",
+   "F065.3",
+   "F065.5"
   ]
  },
  {
@@ -374,6 +400,106 @@
    "F099.8",
    "F099.12",
    "F099.2"
+  ]
+ },
+ {
+  "id": "J18",
+  "title": "Read one flagged post in full and remove its photo",
+  "role": "the operator",
+  "link": "https://socialus.org/admin/reports",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "Each row shows a picture, a short excerpt, how serious, the reasons, the AI line, the reply, the reporter's record, the status and age",
+   "Seriousness runs 1 to 4 and shows the highest open one",
+   "Tap a row: its full history shows newest first, with Undo on any decision",
+   "Serious pictures are blurred until you press and hold; the most serious show plain",
+   "Remove photo on your test Page: it vanishes everywhere but the post stays listed"
+  ],
+  "criteria": [
+   "F101.2",
+   "F101.3",
+   "F101.12",
+   "F101.13",
+   "F058.4"
+  ]
+ },
+ {
+  "id": "J19",
+  "title": "A second person's report hides the post",
+  "role": "a second member (not the Page owner)",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "The first report leaves the post up and the owner gets a gentle notice",
+   "Reporting again from the same account does not hide it",
+   "A report from a different member hides it",
+   "Both reports appear in the review list, hidden or not"
+  ],
+  "criteria": [
+   "F078.2",
+   "F078.12",
+   "F078.6"
+  ]
+ },
+ {
+  "id": "J20",
+  "title": "Sign up with a zip from a city that is not open yet",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/auth/login",
+  "minutes": 3,
+  "launch": true,
+  "look": [
+   "A made-up zip is refused with a plain message",
+   "A zip from a waiting city puts you on that city's waitlist and names it",
+   "Nobody asks you to pick a city",
+   "In an open city your home town comes from the zip and nothing else",
+   "Change the zip on You: your city and town move with it"
+  ],
+  "criteria": [
+   "F081.8",
+   "F103.2a",
+   "F103.3",
+   "F081.7",
+   "F081.4"
+  ]
+ },
+ {
+  "id": "J21",
+  "title": "Narrow Explore and watch the search box",
+  "role": "signed out (private tab)",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Tap Apply: the panel closes and your choices are written into the box in plain words",
+   "Edit those words by hand: the results follow what the box says",
+   "Clear the box: the narrowing is gone",
+   "Open a copy of the link: the same filters come back"
+  ],
+  "criteria": [
+   "F092.2",
+   "F092.3",
+   "F092.6",
+   "F045.7b"
+  ]
+ },
+ {
+  "id": "J22",
+  "title": "Check the AI light and the Friday summary",
+  "role": "the operator",
+  "link": "https://socialus.org/admin/metrics",
+  "minutes": 2,
+  "launch": false,
+  "look": [
+   "A readiness light shows green, amber or red",
+   "The review page lists recall, top-severity recall, false alarms and shadow days against their targets",
+   "On a Friday, a summary shows waiting rows by seriousness, answers received and cool-downs started"
+  ],
+  "criteria": [
+   "F100.11a",
+   "F102.11"
   ]
  }
 ]
