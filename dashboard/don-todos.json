@@ -77,6 +77,14 @@
    "how": "Quit Claude, open it again.",
    "unlocks": "Agents get the Chrome DevTools tool for tracing slow taps in a real browser",
    "added": "2026-10-16"
+  },
+  {
+   "p": 3,
+   "text": "Should members be able to mark a post as a deal or last-minute?",
+   "how": "Yes or no on the Issue. Today only the sample posts have those kinds, so Explore's Deals and Last-minute filters show samples only.",
+   "unlocks": "The Deals and Last-minute filters work for real posts",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/876",
+   "added": "2026-10-16"
   }
  ]
 }
