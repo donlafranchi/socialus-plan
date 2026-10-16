@@ -63,6 +63,20 @@
    "unlocks": "Closes #220, which clears the 10-27 photo tripwire",
    "url": "https://github.com/donlafranchi/socialus-web/issues/220",
    "added": "2026-10-16"
+  },
+  {
+   "p": 1,
+   "text": "Database safety call: A, B or C",
+   "how": "Details in your 10-16 speed chat. Recommended B+C: you file a private Supabase support ticket (B); agents make the locked database functions answer signed-out calls safely (C).",
+   "unlocks": "Closes a crash risk agents found while testing",
+   "added": "2026-10-16"
+  },
+  {
+   "p": 2,
+   "text": "Quit and reopen the Claude app",
+   "how": "Quit Claude, open it again.",
+   "unlocks": "Agents get the Chrome DevTools tool for tracing slow taps in a real browser",
+   "added": "2026-10-16"
   }
  ]
 }
