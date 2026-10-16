@@ -49,15 +49,6 @@
    "unlocks": "Agents can run the \"wish it existed\" model test (roles on Sonnet)"
   },
   {
-   "p": 2,
-   "text": "Make one test report on a Page you own",
-   "how": "Signed in on socialus.org, open a Page you own from a second account, tap ⋯ → Report the name or description, and send it. Check that the owner account gets the courtesy notice under You. No courtesy notice has ever been sent in production, so this is the last check on #220.",
-   "due": "2026-10-23",
-   "unlocks": "Closes #220, which clears the 10-27 photo tripwire",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/220",
-   "added": "2026-10-16"
-  },
-  {
    "p": 1,
    "text": "Database safety call: A, B or C",
    "how": "Details in your 10-16 speed chat. Recommended B+C: you file a private Supabase support ticket (B); agents make the locked database functions answer signed-out calls safely (C).",
@@ -80,21 +71,44 @@
    "added": "2026-10-16"
   },
   {
-   "p": 2,
-   "text": "Photo hash check: A now plus the PhotoDNA application, yes or no?",
-   "how": "Answer on the Issue; recommended yes. Approval time is outside our control, so applying today matters.",
+   "p": 1,
+   "text": "Look at the live report flow: make one test report",
+   "how": "Signed in on socialus.org, report a Page you own from a second account (⋯ → Report the name or description; pick a reason other than Sensitive content so the AI read is written too). Check the owner account gets the courtesy notice under You.",
    "due": "2026-10-27",
-   "unlocks": "The last open piece of the AI report read (web #486)",
+   "unlocks": "Closes web #220 and clears the 10-27 photo tripwire; also proves the AI shadow read runs (#486)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/220",
+   "added": "2026-10-16"
+  },
+  {
+   "p": 2,
+   "text": "Cloudflare hash-check steps",
+   "how": "Follow the phone checklist on the Issue (about 20 minutes), then reply 'enabled' with the contact email. Dispatch then sets the Vercel photo-address switch, redeploys and moves the existing photos over (web #784).",
+   "unlocks": "Scanning photos for known child-abuse images (web #641)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/641",
+   "added": "2026-10-16"
+  },
+  {
+   "p": 2,
+   "text": "IP-purge switch: CONTENT_ORIGINS_PURGE_ENABLED=true",
+   "how": "Recommended yes (standard data minimization). Say yes and Dispatch sets it in Vercel.",
+   "unlocks": "The one-year purge of stored IP addresses",
+   "added": "2026-10-16"
+  },
+  {
+   "p": 3,
+   "text": "AI shadow window: extend past 10-27, or end it",
+   "how": "The window runs 10-13 to 10-27; few reports so far, so extending is likely. Your call on 10-27.",
+   "due": "2026-10-27",
+   "unlocks": "Whether the AI report read can go live (web #486)",
    "url": "https://github.com/donlafranchi/socialus-web/issues/486",
    "added": "2026-10-16"
   },
   {
    "p": 3,
-   "text": "Read the AI shadow results and decide whether it goes live",
-   "how": "The two-week window runs 10-13 to 10-27. Few reports so far means it may need longer; your call on 10-27.",
-   "due": "2026-10-27",
-   "unlocks": "Turning the AI report read on (web #486)",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/486",
+   "text": "Wording: 'we do not tolerate abusive content'",
+   "how": "Give the sentence you want members to see. The verified-phone part stays parked with Twilio (web #707).",
+   "unlocks": "The abusive-content line (web #648)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/648",
    "added": "2026-10-16"
   }
  ]
