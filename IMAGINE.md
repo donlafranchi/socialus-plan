@@ -208,4 +208,10 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 *Don, 2026-10-16:* ahead of each upcoming holiday, Explore surfaces Pages' timely holiday specials and events (e.g. a 'Thanksgiving week' or 'holiday markets' strip), driven by the post dates and a holiday calendar for the metro. Relates to cap-1 (timely announcements) and cap-5 (current without following many). **What would make this real:** enough dated holiday posts in a metro to fill a strip. [lane: later]
 
+### Local is where the money returns
+
+*Don, 2026-10-16, verbatim:* "who counts as local for a maker or producer will at first just be a cloak [claim] and later will be where a producer sends their money, e.g. to which community fund. If they are the same then they are local. Local will be solely determined by if money comes back to where it was generated." And: "I'm not certain on the mechanism or exact details. That's one concept that should be explored among others when the time comes."
+
+How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open. Today the badge is the owner's own claim (`product/systems/business-jurisdiction.md` § Rulings); no mechanism is ruled. **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
+
 [open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).
