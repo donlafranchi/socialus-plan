@@ -49,7 +49,6 @@ One line per doc, then the settled rules with no rationale attached — read the
 **`foundation/messaging-problem.md`** — open questions, not a spec yet.
 - Messaging is the platform's single highest-risk surface — controls must exist before any of it ships, not retrofitted after.
 - A block (mute one member, no operator involved) is the cheapest control and the one this doc recommends shipping first.
-- No per-member "politeness" or derived score column of any kind, ever.
 - **Still open:** whether reachability rules alone gate speech, or combine with a flagging system; who may initiate contact with a stranger at launch; whether an operator/moderator role exists before member-initiated posts do.
 
 **`foundation/nouns.md`** — the entity list. **Spine:** each entry carries its own status and holds both horizons, now and later.

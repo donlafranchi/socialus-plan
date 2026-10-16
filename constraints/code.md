@@ -10,12 +10,12 @@
 > **180 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-16** · [for now] · members, reports — The "no score on a person" rule is removed (planning/scenario-F102.md)
 - **2026-10-12** · [always] · principles, explore, discovery — The app has two sides: Find (the tool), where a person looks for something specific, and Discover (the fun), where a person explores with nothing in mind and an algorithm may serve what interests them. [always] (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles — Everything the platform touches serves the people it touches (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, fees — Wealth circulates; it is not extracted (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, fees — The platform is the technology layer, never the bank (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, explore — Paid visibility passes a member-benefit gate; it isn't banned by fiat (PRINCIPLES.md)
-- **2026-10-12** · [always] · principles, members — The platform never rates, ranks or labels a person (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, members, pages — People, not shells: one word for a person, member; every role is derived, never stored; and a business is the people doing its work (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, groups — Groups are joined, never assigned (PRINCIPLES.md)
 - **2026-10-12** · [always] · principles, privacy — Sharing is opt-in, granular, visible and revocable, and a member is private by default (PRINCIPLES.md)
@@ -72,7 +72,7 @@
 - **2026-10-05** · [for now] · moderation, reports, ai — In beta the AI restores severity-4 reported content on its own, narrowly: only when the poster answered, Claude Haiku and Claude Sonnet both suggest approve at 0.95 or higher, nothing flags coordinated reporting, and the evaluation harness has passed on that slice. Severities 1–3 currently never restore without a person (planning/scenario-F102.md)
 - **2026-10-05** · uploads, posts, privacy, moderation — Every upload and post records the IP address and time it came from, operator-only, kept one year and then deleted (planning/scenario-F102.md)
 - **2026-10-05** · moderation, reports, process — Moderation is designed to run unattended: one person operates the platform alongside a day job and is currently away Tuesday to Thursday, so review work is batched Friday to Monday and nothing midweek asks for attention except severity 1 (planning/scenario-F102.md)
-- **2026-10-05** · [always] · moderation, reports, members — When content hides, the poster answers first: fix and repost, or say the report is wrong. Report misuse is tracked as counters on the act of reporting (filed, upheld, dismissed, open), never as a score, rank or label on a person (planning/scenario-F102.md)
+- **2026-10-05** · [always] · moderation, reports, members — When content hides, the poster answers first: fix and repost, or say the report is wrong. Report misuse is tracked as counters on the act of reporting (filed, upheld, dismissed, open) (planning/scenario-F102.md)
 - **2026-10-05** · launch, badges, pages — The Badges & values section in Page settings is cut from beta and logged under the asterisk in `ROADMAP.md` § Cut; end time, add-to-calendar and repeating series stay in beta (product/foundation/nouns.md)
 - **2026-10-05** · copy, voice — `voice.md` and `tone.md` are merged into one file, `product/foundation/voice-and-tone.md`: precedence, rules, what we say, how we sound, examples, and the PM's original voice text kept verbatim as its locked source. The core lines are unchanged (product/foundation/voice-and-tone.md)
 - **2026-10-05** · launch, roadmap — Beta is 2026-10-30, a soft target for testing in one metro, not a hard deadline. Feature freeze is 2026-10-23, also soft. Production launch is currently April–May 2027. Anything cut from beta is logged in `ROADMAP.md` under the PM's asterisk (product/foundation/what-this-is.md)

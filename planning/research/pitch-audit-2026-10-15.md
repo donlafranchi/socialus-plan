@@ -160,7 +160,7 @@ The prompt was Etsy: a handmade marketplace where mass-made goods posed as handm
 **Smallest soft-launch version (recommended)**
 - **Vouch**, on a Page: "I vouch for them". On a Page tagged small-batch, it reads "They really make it themselves". One per member per Page, withdrawable.
 - **Who can vouch:** a signed-in member in the Page's metro who has followed the Page for at least 7 days. A Page's own managers can't vouch for it, and test accounts are excluded (F114). Following is the only signal that exists today, and the wait slows brigading the way Etsy's order link does.
-- **Shown:** "Vouched for by 12 members" to everyone. A first name shows only if that member chose to show it when vouching ("Show my first name"; off by default). That keeps to member-to-member privacy and sharing being opt-in. There is no score on any person, and vouches never order Find.
+- **Shown:** "Vouched for by 12 members" to everyone. A first name shows only if that member chose to show it when vouching ("Show my first name"; off by default). That keeps to member-to-member privacy and sharing being opt-in. Vouches never order Find.
 - **Small-batch producer:** one optional owner tag, defined the Faire way (made or grown by the owner or their own team, no outside production). It is self-attested on the editor.
 - **Call it out:** Report → "This claim isn't true". The owner gets a courtesy notice first (self-correct first). An upheld report removes the tag, and nothing more is done automatically.
 - **Who's behind it:** the About block (story plus socials) moves to the first screen of a Page, so it is 1 tap from any card.

@@ -56,7 +56,7 @@ Gathering density + newcomer connection rate. One place number, one people numbe
 | Planned PostHog events (`group_joined`, `page_followed`, `item_viewed`…) | `socialus-web` `INFRASTRUCTURE.md` §13 | **replaces** | Audit tables already hold joins/follows; no PostHog needed for this. `item_viewed` must never feed a connection metric |
 | Build progress (STATUS, DASHBOARD) | root | n/a | Not product metrics |
 
-Nothing in the starter set contradicts `charter.md`: aggregate only, nothing sold, no person scored, no attention measured.
+Nothing in the starter set contradicts `charter.md`: aggregate only, nothing sold, no attention measured.
 
 ## How it becomes a system
 

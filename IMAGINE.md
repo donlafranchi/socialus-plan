@@ -84,16 +84,16 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 *Don's framing, 2026-09-19, in his terms:* *"I tend to regularly search for bars and restaurants with nice outdoor environments as opposed to outdoor tables next to a busy street. Whereas other times I don't really care about the ambiance and only want the best enchilada in the city."* And on reviews: *"yelp and google... lump all reviews from all people and that isn't really a useful way to do reviews when people have different expectations. For example some people are value oriented and want maximum say food for their dollar whereas I am willing to pay for quality and it'd be nice to be able to differentiate this."*
 
-*Analysis, agent, 2026-09-19 — marked separately because the goal is one sentence and the mechanism is four systems:*
+*Analysis, agent, 2026-09-19:*
 
 **The load-bearing obstacle is not filtering. It is that the product has no way for anyone to say anything about a Page they do not own.** Every description the platform holds today is creator-supplied — tags, the Page description, the composer's fields. A brewery will tag itself *patio*; it will never tag itself *patio beside a four-lane road*. **The distinction Don wants is inherently third-party, and third-party statements about a Page are a surface this product has never had.** Any first step that does not answer *may a member write about someone else's Page* is a step in a different direction.
 
-**Four separable systems, smallest first, and none of them is a filter control:**
+**Four separable systems, smallest first, none a filter control:**
 
 1. **A vocabulary for attributes**, distinct from the tags a creator types about themselves — quiet, patio, cheap, worth-the-price. Nothing exists. Tags are the nearest substrate and are creator-owned by rule.
 2. **Member-supplied attributes** — the third-party surface above. Gated by [member-content-takedown]; the report path (F058) now exists, so the gate is passable for the first time.
 3. **Reviewer segmentation** — knowing what a reviewer optimizes for. Either a declared axis on the member, or inferred from behaviour. **Inference is close to what `product/systems/discovery.md` refuses**, and a declared axis is a profile field nobody fills in.
-4. **Reviews at all.** There is no review noun. A principle bars star ratings and reputations **for people**; a treatment-review surface that reviews the treatment and never the person sits in § Later, unbuilt and unscoped.
+4. **Reviews at all.** No review noun exists; a treatment-review surface is in § Later, unbuilt.
 
 **Cold start is the quiet killer.** One metro at launch means roughly zero reviews, and a segmented review system needs several times the volume of an unsegmented one. **A segmented review surface with no reviews is worse than none**: it advertises a promise the data cannot keep, the failure Don describes in Yelp.
 
@@ -185,7 +185,7 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 
 *Don, 2026-10-11, in his terms:* "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price, and the member-written form of F089 search demand. The one new move is a public reply "I can build that, for this", and there is no reply channel (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **The sample rule limits seeding:** a Sample is non-interactive and out of search, so it can show the shape of a wish but cannot test how people respond; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
+*Analysis, agent, 2026-10-11:* mostly the undesigned half of an **Idea** (`wonder`) plus an **Offer** with a price. The one new move is a public reply "I can build that, for this", and there is no reply channel (no messaging), so the smallest honest step builds nothing: a Page for wishes posts each as an ordinary Post, Don's frog habitat first, and replies happen outside the app. **Samples can't test it:** they are non-interactive and out of search; Don's frog habitat is a real want and should be posted as real. `nouns.md` says an Idea has no expiry and `verbs.md` says 90 days: Don's ruling needed.
 
 **Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So a wish is an Idea: post it, show interest, link the finished thing; SocialUs is not involved. **No expiry:** old wishes sort last after 90 quiet days (2026-09-15), not removed. Offers, the terms card and backers are the plan *if it becomes popular*.
 **Backers (Don, 2026-10-11):** "Maybe we also offer others to become backers and we provide the structure so that the parties don't have to figure this out for themselves." A backer funds an idea under one standard terms card, vetted once by counsel at the platform level, in three variants: gift, reward, pre-purchase. The aim is a member benefit: "We want to generate revenue for our members and not let outside lawyers take advantage of our members." **Backing is not investing:** no money back, share or return. The highest level ("a backer at the highest level is an investor") is not designed or offered and is held for socialus-legal. Don chose option A: words-only terms until payments exist and counsel clears it. Terms-card contents and detail: the brief § 6a.
@@ -199,6 +199,10 @@ Absorbs "Social integration" (TikTok and Instagram as distribution and discovery
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
 
 After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [lane: later]
+
+### Two-way ratings between members and Pages
+
+*Don, 2026-10-16:* members and Pages rate each other after a real interaction, like Uber drivers and riders, "because some people may be terrible consumers." **What would make this real:** the platform recording such an interaction (an order, booking or event). [lane: later]
 
 ### Member-facing names for Find and Discover
 

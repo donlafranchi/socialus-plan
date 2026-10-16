@@ -83,7 +83,7 @@ Don, 2026-10-13: *"not hiding does nothing. this teaches people to ignore it. on
 
 <details><summary>Details</summary>
 
-- **No score on a person (principle, 2026-10-12: "no trust levels").** Eligibility by **tenure** (days since joining) is a fact, not a rating: nothing is stored about the person, nothing is shown, and F102 already uses account age the same way for its coordinated-reporting flag. Opting in is the member's own choice, like any sharing setting. A panelist's past votes are never scored. **Risk to watch:** if eligibility ever grows beyond tenure (accuracy, "good" reviewers), it becomes a trust level and breaks the principle.
+- **Eligibility is tenure** (days since joining); F102 already uses account age the same way for its coordinated-reporting flag. Opting in is the member's own choice, like any sharing setting.
 - **Roles are derived, never stored (principle).** "Neighbour who helps" is an opt-in setting, not a role; eligibility is worked out at draw time.
 - **Self-correct first (2026-10-11).** Kept: the courtesy notice still comes first. The panel only sees what a second report hides.
 - **Don runs it alone, away Tuesday to Thursday (2026-10-05).** Improved: panels decide midweek, so a fine post isn't down until Saturday.
