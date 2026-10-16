@@ -34,7 +34,7 @@ Ads or anything sold. Telling another member what someone searched. Hashtags on 
 - **Who keeps it current?** The member.
 - **Better as more people join?** Yes: more to learn from.
 
-**Path: new territory, ruled.** Precedents: Pinterest's Refine your recommendations, Spotify's Exclude from your taste profile, TikTok's Refresh (research note § 8). **Conflict, noted for the two-sides review:** reads behaviour back at the member (F059, 2026-09-12).
+**Path: new territory, ruled.** Precedents: Pinterest's Refine your recommendations, Spotify's Exclude from your taste profile, TikTok's Refresh (research note § 3). **Conflict, noted for the two-sides review:** reads behaviour back at the member (F059, 2026-09-12).
 
 [platform none]
 
