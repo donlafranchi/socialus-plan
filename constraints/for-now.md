@@ -27,6 +27,7 @@
 - **2026-09-14** — Members are never anonymous to the platform; they may be pseudonymous to everyone else (planning/scenario-F077.md)
 - **2026-09-14** — Correction: reaching Don by email being deprioritized is a guideline, not an absolute, and belongs in `CLAUDE.md` § How to talk to Don, not a scenario or a hard "never." (planning/scenario-F078.md)
 - **2026-09-14** — Content gets hidden the moment the agent flags it, before any human looks — not held for a person's decision first (planning/scenario-F078.md)
+- **2026-10-16** — A Page's own words (its name and description) are reportable on the courtesy-first flow: a first report sends the owner a courtesy notice; a repeat from someone else hides just those words and queues them, and the Page stays up; threat of harm and child content hide at once. Community-review panels come later, per metro, once beta opt-ins are big enough (planning/scenario-F078.md)
 - **2026-09-27** — It is a photo rule, not a topic rule (planning/scenario-F080.md)
 - **2026-09-30** — The zip is kept. Nobody picks a metro: the zip decides it at signup, and a member who moves changes their zip on `/you` and the metro follows (planning/scenario-F081.md)
 - **2026-09-30** — Signup does not say "we never sell". It says what the app is for (planning/scenario-F081.md)

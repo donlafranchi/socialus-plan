@@ -39,21 +39,8 @@ A public-facing appeals board or an SLA promise. Building the classification log
 
 **With one operator, the first step is the poster correcting it, before staff work is needed.** So a first report only notifies; a second report from a different member hides. The metro bar stays as data for the day an agent's score is allowed to hide things, and it is built before any bar is raised.
 
-### When the bar rises (2026-09-30)
-
-**When Don's daily review runs past 30 minutes**, he raises that metro's bar. His time is the signal, not a queue size or a count, because his time is what a buried queue costs.
-
-### Threat of harm (2026-09-30)
-
-Don delegated what a credible threat is to Cowork. **A seventh category, not a score threshold inside one**, so the text to Don doesn't wait on a confidence number, and the reporter can name it directly.
-
-### Misuse (2026-09-30)
-
-**We don't currently share a misusing reporter's identity with the person they reported** (Don, 2026-09-30): it would make the platform a party to a dispute between members. Three strikes is the consequence. Revisit later.
-
-**Unresolvable metro uses zero** so the fallback leans toward hiding, never toward leaving something up.
-
 ## Rulings
+- **2026-10-16 — A Page's own words (its name and description) are reportable on the courtesy-first flow: a first report sends the owner a courtesy notice; a repeat from someone else hides just those words and queues them, and the Page stays up; threat of harm and child content hide at once. Community-review panels come later, per metro, once beta opt-ins are big enough.** Don, option A of plan #156, recorded on `socialus-web` #625; built in #820. Because the smallest harm if a report is wrong is the words, not the Page. [for now] [replaces none] [binds tiers=planning,code surfaces=reports,moderation,pages] Issue: #625.
 - **2026-10-11 — The second report that hides an item must come from a different member than the first.** Dispatch, shipped in `socialus-web` #706, on top of the courtesy-notice-first ruling above. Because one member filing twice cannot hide a post. [replaces none] [binds tiers=planning,code surfaces=reports,moderation] Issue: #706.
 - **2026-10-11 — The report-path copy takes these edits: no numbers in the misuse warning (it says graciously that misusing reports has its own consequences), and "a person from our team", not "a real person". Final approval comes after Don reviews a screenshot storyboard of every report-path screen in context, before going public.** The PM, 2026-10-11, via Dispatch, on `socialus-web` #627 (F078 criterion 11). [replaces none] [binds tiers=planning,code surfaces=reports,copy] Issue: #627.
 - **2026-10-11 — A first report gives the owner a courtesy notice and a chance to fix the post themselves, and the post stays up; a second report on the same item hides it and sends it to a person on our team. Threat of harm and Sensitive content (children, animals, anyone who cannot speak up) hide at once, and child content does not go back to the poster (2026-10-07; CyberTipline duty, #648).** The PM, 2026-10-11, on `socialus-web` #626. Because with one operator the first step is the poster correcting it, before staff work is needed (see the standing rule below). [replaces 2026-09-27: starts at zero — every report hides —] [binds tiers=planning,code surfaces=reports,moderation,copy] Issue: #626.

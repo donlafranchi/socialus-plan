@@ -3,15 +3,6 @@
  "items": [
   {
    "p": 1,
-   "text": "Review the community review write-up",
-   "how": "Open it, pick A, B or C (recommended A).",
-   "due": "2026-10-16",
-   "unlocks": "Moderation launch-blockers: the Page-words report fix (web #625) and the courtesy-notice check (web #220)",
-   "url": "https://github.com/donlafranchi/socialus-plan/pull/156",
-   "added": "2026-10-15"
-  },
-  {
-   "p": 1,
    "text": "Accepted risks review (three due 10-16)",
    "how": "Three are due. Removed photos: web #491 lets the operator delete one for good, so mark it resolved (recommended). Error tracking: web #490 built it, but it stays off until the Sentry step below, so keep it until then. The members' group-memberships view: re-argue or delete.",
    "due": "2026-10-16",
