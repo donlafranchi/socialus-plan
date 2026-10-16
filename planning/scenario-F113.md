@@ -23,7 +23,7 @@ A member has searched "trivia" twice, opened photos on three trivia-night posts 
 
 ## Not this
 
-Collecting data the member is not shown (device details, location; open below). Ads or anything sold. A score or label on a person. Telling another member what someone searched. Hashtags on cards.
+Ads or anything sold. A score or label on a person. Telling another member what someone searched. Hashtags on cards. Collecting data the member is not told about: device and location data may be collected (see the 2026-10-16 ruling) only once the privacy page says so.
 
 ## Why
 
@@ -34,12 +34,11 @@ Collecting data the member is not shown (device details, location; open below). 
 - **Who keeps it current?** The member.
 - **Better as more people join?** Yes: more to learn from.
 
-**Path: new territory, ruled.** Precedents: Pinterest's Refine your recommendations, Spotify's Exclude from your taste profile, TikTok's Refresh (research note § 3). **Conflict, noted for the two-sides review:** reads behaviour back at the member (F059, 2026-09-12).
-
-[open-question owner=don raised=2026-10-12] Should SocialUs collect data it does not show the member, such as device details and location? The PM is considering it; nothing is built until ruled.
+**Path: new territory, ruled.** Precedents: Pinterest's Refine your recommendations, Spotify's Exclude from your taste profile, TikTok's Refresh (research note § 8). **Conflict, noted for the two-sides review:** reads behaviour back at the member (F059, 2026-09-12).
 
 [platform none]
 
 ## Rulings
 - **2026-10-12 — Learning about a member is option A: from beta, a member-visible profile of what we think they like, where they can edit or delete each item. The choice is framed in the member's terms, "Help me discover things I might like" or "I don't mind doing this myself" (the off switch). It is based on app usage, what they search for and click on, and our categorizing of it.** The PM, 2026-10-12, on #137. Because a member should see and control what is learned about them. [for now] [replaces none] [binds tiers=planning,code surfaces=you,privacy,explore,discovery build=none]
 - **2026-10-12 — Interest categories are assigned by SocialUs internally; members never type hashtags, and no hashtag shows on a card. A `#word` in a post is read as plain text.** The PM, 2026-10-12, on #137. Because it puts no work on posters and keeps cards in plain words. [for now] [replaces none] [binds tiers=planning,code surfaces=explore,discovery,posting build=none]
+- **2026-10-16 — Data collection is option C: SocialUs may collect everything it can use, including device details and location, not only what the member is shown. Three conditions: the privacy page says what is collected before any of it is collected; counsel (socialus-legal) clears the privacy wording and the handling of precise location before it ships; the member's "I don't mind doing this myself" switch and the 90-day expiry still apply to anything tied to a person.** The PM, 2026-10-16. Because the project is high-risk and needs as much evidence as possible to succeed. The agent recommended B (anonymous counts only) and disagreed once; this is the PM's call, and it is the agent's best guess that the conditions above are needed, to be confirmed by a human. [for now] [replaces none] [binds tiers=planning,code surfaces=privacy,you build=none]
