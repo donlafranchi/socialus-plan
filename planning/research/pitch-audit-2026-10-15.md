@@ -136,9 +136,46 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 6. Before posting, an owner sees who will see it and where; a claim can be completed. [fail]
 7. On a phone, signed out, the PM can find a Page and see what's on and when, as on Yelp or Google. [fail: details gated]
 
+## cap-8, Honest origin (added 2026-10-16)
+
+The prompt was Etsy: a handmade marketplace where mass-made goods posed as handmade after its 2013 rule change and 2015 IPO. The PM's direction: no badge for everything; owners tell their own story and link their socials; small-batch producers are worth supporting; members vouch for makers and producers (for Pages, never for other members).
+
+**Precedents: how a vouch is earned, guarded and shown**
+- **Nextdoor Faves.** A Fave is "a verified neighbor… willing to vouch". It is earned by being nearby, guarded by address-verified accounts, and shown as a count on the business page. More Faves rank higher in search, which we would not copy on Find. ([Nextdoor](https://business.nextdoor.com/en-us/blog/how-to-make-the-most-of-nextdoor-neighborhood-favorites), [awards](https://about.nextdoor.com/press-releases/nextdoor-celebrates-businesses-loved-by-locals-with-7th-annual-neighborhood-faves-awards)) [V]
+- **Etsy reviews.** Earned by a purchase: a review is tied to a completed order, needs an account, opens a limited window, and is blocked while a case is open. ([guide](https://crosslist.com/blog/how-to-leave-a-review-on-etsy)) [S]: secondary sources only.
+- **Yelp check-ins.** These were shown on reviews as a visit count to add trust, and frequent visitors became "regulars". They are tied to a visit, but they were a 2010 feature, and whether they are still current is unconfirmed. ([TechCrunch](https://techcrunch.com/?p=136195)) [S]
+- **Google Local Guides.** Points reward volume, and practitioners report unvisited and bought reviews as the result. This is the anti-pattern: never reward vouching itself. ([forum](https://localsearchforum.com/threads/local-guides-are-posting-bogus-photos-reviews.50987)) [S]
+- **Faire's "handmade" value tag.** It means made or designed by the brand's own team, with no outside production partner. The brand self-attests and is responsible for complying. It is the closest precedent for an owner tag. ([guide](https://fitsmallbusiness.com/how-to-sell-on-faire)) [S]
+- **Front Porch Forum.** It has no endorsement feature; neighbours recommend businesses in ordinary posts, under real names and addresses. ([Wikipedia](https://en.wikipedia.org/wiki/Front_Porch_Forum)) [V]
+- **Pattern:** the well-worn shape is one verified local person, one vouch, shown as a count. Earning it by a purchase or visit needs commerce or check-ins, which we don't have. Ranking by vouches (Nextdoor, Google) is what we refuse.
+
+**What exists today** (production totals; code on `main`)
+- Linked socials: `groups.social_links` (Instagram, Facebook, TikTok, X, YouTube, Bluesky, website), https only. 111 of 157 Pages have at least one. **V**
+- Story: `groups.description`, 80 characters or more on 153 of 157 Pages, but the seeder wrote it on unclaimed Pages ("Claim this Page to tell your own story"). **V**
+- Page tags: `page_tags` exists, with 9 Pages tagged. There is no small-batch, handmade or origin field anywhere. **V**
+- An origin badge already exists: the "Locally Owned" claim (F037), where the owner self-asserts a ZIP and a badge shows. It conflicts with "no badge for everything"; it should be kept, folded in or retired. **V**
+- `item_responses` (interest, rsvp, follow, save, pledge, purchase, support) hangs off legacy `items`, not Pages or posts, and nothing in the app writes to it. The only signal a member can give a Page today is a follow (`group_memberships`). **V**
+- Reports and self-correct-first: report answers already include `mistake` and `fix_and_repost`, and `member_notices` has a `courtesy` kind. **V**
+
+**Smallest soft-launch version (recommended)**
+- **Vouch**, on a Page: "I vouch for them". On a Page tagged small-batch, it reads "They really make it themselves". One per member per Page, withdrawable.
+- **Who can vouch:** a signed-in member in the Page's metro who has followed the Page for at least 7 days. A Page's own managers can't vouch for it, and test accounts are excluded (F114). Following is the only signal that exists today, and the wait slows brigading the way Etsy's order link does.
+- **Shown:** "Vouched for by 12 members" to everyone. A first name shows only if that member chose to show it when vouching ("Show my first name"; off by default). That keeps to member-to-member privacy and sharing being opt-in. There is no score on any person, and vouches never order Find.
+- **Small-batch producer:** one optional owner tag, defined the Faire way (made or grown by the owner or their own team, no outside production). It is self-attested on the editor.
+- **Call it out:** Report → "This claim isn't true". The owner gets a courtesy notice first (self-correct first). An upheld report removes the tag, and nothing more is done automatically.
+- **Who's behind it:** the About block (story plus socials) moves to the first screen of a Page, so it is 1 tap from any card.
+- **Hours:** 16–22 (2–3 days, flagged). It covers:
+  - a migration: a `page_vouches` table with RLS where a member reads only their own rows and others get counts only
+  - a `page.vouch` handler and its `links.ts` entry
+  - the button and count
+  - the small-batch tag and its editor toggle
+  - the report reason
+  - the F114 exclusion and tests
+- **New territory for the PM:** showing first names at all; the 7-day follow wait as the bar for earning a vouch; the small-batch definition and its copy; whether "Locally Owned" stays as a badge.
+
 ## Proposed homes (draft text below; homes not edited until the PM reviews the grade card)
 
-1. **Pitch** → socialus-plan `PRINCIPLES.md`, anchor `#pitch`, carrying `changed:`. It holds the 7 capabilities as `cap-1`…`cap-7` and is the only copy.
+1. **Pitch** → socialus-plan `PRINCIPLES.md`, anchor `#pitch`, carrying `changed:`. It holds the 8 capabilities as `cap-1`…`cap-8` and is the only copy.
 2. **Grade card** → a new approved scenario, "Pitch grade card" (F116 if free), horizon now. Its 7 criteria are the bars above, plus `[binds tiers=planning,code]` and `[for now]`, so they roll into tickets, the criterion roll-up and "lost since last look".
 3. **Builder rubric** → socialus-web `scripts/unclaimed/THEMES.md`: a1–a3 as rules, mapped to `cap-1`…`cap-5`.
 4. **Pipeline hook** → one line in socialus-ops. It goes after the Gate bullet in `PIPELINE-build.md` § 5 Scenario, because that is where approval actually happens, not `PIPELINE.md`.
@@ -147,10 +184,10 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 <details><summary>Draft text per home</summary>
 
 **PRINCIPLES.md**
-> - <a id="pitch"></a>**2026-10-15 — SocialUs works for the member; the member doesn't work for it.** `changed: 2026-10-15`. Pages say what's coming and when it ends; members see what's happening around them without endless scrolling, hunting for Pages or following hundreds of accounts. What a member sees is driven by signals they gave: interests, area, saves, attends, follows. An engagement signal is welcome when it serves the member; ranking that serves the platform at the member's expense is not. Capabilities: `cap-1` timely Page announcements · `cap-2` discovery without searching · `cap-3` results from the member's own signals · `cap-4` member control over what shows · `cap-5` current without following many · `cap-6` the Page is the owner's product · `cap-7` holds up against Yelp, Google, TikTok, Facebook, Instagram.
+> - <a id="pitch"></a>**2026-10-15 — SocialUs works for the member; the member doesn't work for it.** `changed: 2026-10-16`. Pages say what's coming and when it ends; members see what's happening around them without endless scrolling, hunting for Pages or following hundreds of accounts. What a member sees is driven by signals they gave: interests, area, saves, attends, follows. An engagement signal is welcome when it serves the member; ranking that serves the platform at the member's expense is not. Capabilities: `cap-1` timely Page announcements · `cap-2` discovery without searching · `cap-3` results from the member's own signals · `cap-4` member control over what shows · `cap-5` current without following many · `cap-6` the Page is the owner's product · `cap-7` holds up against Yelp, Google, TikTok, Facebook, Instagram · `cap-8` honest origin: owners tell who they are in their own words and links, members who know them vouch for them, and a false claim can be called out; no badge for everything. *Example:* Etsy, a handmade marketplace whose listings filled with mass-made goods once growth outranked origin. *Why:* a local platform is only worth trusting if what a Page says about itself holds up, and the people best placed to say so are the members who buy from it.
 
-**Scenario F116, "Pitch grade card"** (frontmatter as F091; `horizon: now`; `derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
-> Acceptance 1–7 = the pass bars in (b), each opening with its `cap-n`. Rulings: `- **2026-10-15 — The pitch is the MVP grade.** [binds tiers=planning,code surfaces=explore,announcements,you] [for now]`
+**Scenario F116, "Pitch grade card"** (frontmatter as F091; `horizon: now`; `derives-from: PRINCIPLES.md#pitch @ 2026-10-16`)
+> Acceptance 1–7 = the pass bars in (b), each opening with its `cap-n`. 8. `cap-8` From any card, a member sees who's behind a Page (story and links) in 1 tap, and can vouch or report a false claim in 2. Measures (dashboard, Page-level totals only): share of Pages with an owner-written story or linked socials; vouches per Page; false-claim reports upheld. Rulings: `- **2026-10-15 — The pitch is the MVP grade.** [binds tiers=planning,code surfaces=explore,announcements,you] [for now]`
 
 **THEMES.md** (`derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
 > - Dates (`cap-1`, `cap-5`): samples spread over the next 14 days, at least one per Page Fri–Sun; a deal may span days.
@@ -158,7 +195,7 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 > - Coverage (`cap-2`): each batch spans at least 5 towns and at least 4 interest tags; `ADDED.md` records both.
 
 **PIPELINE-build.md § 5 Scenario, after Gate** (`derives-from: PRINCIPLES.md#pitch @ 2026-10-15`)
-> - **Pitch test:** before approval, the scenario names which of `cap-1`…`cap-7` it moves, or says none, and passes the pitch's member-first test; one that moves a capability against the member goes to the PM.
+> - **Pitch test:** before approval, the scenario names which of `cap-1`…`cap-8` it moves, or says none, and passes the pitch's member-first test; one that moves a capability against the member goes to the PM.
 </details>
 
 ## Questions only the PM can answer
@@ -168,6 +205,8 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 - Should signed-out visitors see a Page's public specials and events, as on Yelp and Google, instead of "sign in to see"?
 - Does claiming an unclaimed Page need to work before owner outreach starts?
 - The grade card's seven pass bars: keep, loosen or tighten?
+- cap-8: may a vouch show the member's first name (opt-in), and is following for 7 days the right bar for earning a vouch?
+- cap-8: keep, fold in or retire the existing "Locally Owned" badge, given "no badge for everything"?
 - May the seeder post a business's real, dated events from its own site, instead of "Sample" posts (a4)?
 
 **Next action: build A (posts last until they end), opened as a change Issue in socialus-web. Owner: Code agent, with the PM applying its migration. Then the PM reviews the grade card, and the homes are written.**
