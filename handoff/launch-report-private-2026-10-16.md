@@ -1,42 +1,23 @@
 # Not yet, and how close
 
-**Launch checklist: nothing DUE.** (Dated reminder below fires at entity setup or production launch.)
+**Launch checklist: nothing DUE.**
+**Bottom line: beta (2026-11-06) holds if the check tickets land; the risk is "built" outrunning "checked and reviewed".** 188 of 285 built, 93 checked, 28 reviewed, 0 you looked at; 34 of 34 features reporting; 8 red (F076, F078, F081, F082, F093, F100, F102, F103). Wanted, unbuilt: F074, F064, F104-F106, F114.
 
-**Bottom line: beta (2026-11-06, freeze 2026-10-30) is about 3 weeks out and the risk is checks and reviews, not missing features.** 188 of 285 criteria are built (66%) across 34 of 34 features reporting, but only 93 are checked, 28 reviewed, 0 looked at by you. 8 features are red for an unmet launch-blocking criterion (F076, F078, F081, F082, F093, F100, F102, F103). [V: rollup.json 2026-10-16; the dashboard headline says "2 red", a different rule, see tuning notes]
+**Your calls (2):**
+1. Delete the 32 per-ticket files in `socialus-web/build-log/2026-W42/`? A delete (reports hold the evidence), B keep. Recommend A.
+2. Needs-pm: #827, #831 drop (recommend); #832 "free" as a tag; #848; #849.
 
-**Your calls this week (at most 3):**
-1. **Delete the 32 per-ticket files in `socialus-web/build-log/2026-W42/`?** A: delete (the criterion reports hold the evidence, the skill calls them retired). B: keep as history and exempt from doc checks. Recommend A.
-2. **Keep or delete the two retired tombstones** `product/foundation/goals.md` and `role-language.md`? Rulings cite `role-language.md` by name. A: keep both. B: delete `goals.md` only (the Charter replaced it). Recommend B.
-3. **Needs-pm Issues** (one line each): drop the "Recurring" filter (#827, recommend drop); drop the owner-panel switch (#831, recommend drop); "free" as a tag (#832, recommend a tag); remove the "Default metro" row for beta (#848, recommend remove); HUD token (#849).
-
-## Table A: beta scope (launch-blocking, open)
+**Table A: beta scope (open launch-blocking) [V]**
 | Item | State | Blocker | Owner |
 |---|---|---|---|
-| F081 signup checks (#851-857) | partly: 9 of 9 built, checks missing | agents | agent |
-| F082 rules agreement (#839, #840) | partly: 9 of 9 built, guard and checks missing; rules wording is draft | agents; your wording | agent / you |
-| F078/F080/F100/F102/F058 checks (#833-838) | partly: built, tests do not claim the criterion | agents | agent |
-| F100 AI first pass (#486), F078 courtesy notice (#220) | open | Twilio, Cloudflare scanning (#641) | you |
-| F103 market and zip (#848-850) | partly: 4 of 7 built | your two calls (#848, #849) | you |
-| F076 zip check (#843), F093 (#844) | partly | agents | agent |
-| Tap speed (#791) | open: tap-speed red today | agents | agent |
-Source: open `launch-blocking` Issues, 2026-10-16 [V].
+| Checks and guards on 11 features (#833-844, #851-857) | built, untested | none | agent |
+| F100 AI first pass (#486), F078 notice (#220) | open | Twilio, Cloudflare (#641) | you |
+| F103 market and zip (#848-850) | 4 of 7 | your two calls | you |
+| Tap speed (#791) | red today | none | agent |
 
-## Table B: wanted, not built, not overtaken
-| Item | Why wanted | Size |
-|---|---|---|
-| F074 weekly series | owners post repeating events | large (1 of 8 built, off in production) |
-| F064 asks for what is not built | learn demand | medium (0 of 5) |
-| F104-F106 | on the roadmap | 0 of 5 each |
-| F114 test member with history | testing freshness | 0 of 6 |
-[V: reports]
+**Verdict:** about 3 weeks; risk is review (28 of 285), Twilio, Cloudflare.
 
-**Verdict:** beta date holds if the 18 check/guard tickets and the two F103 calls land this week; biggest risk is that "built" outruns "checked and reviewed" (reviewed 28 of 285), plus Twilio and Cloudflare setup that only you can do.
-
-**Criterion roll-up:** 188 of 285 met · 34 of 34 features reporting · 8 red · 0 of 22 phone journeys ticked (next: J13, J10, J07, J20). Gaps filed this run: about 35 Issues (#824-857), 7 needs-pm.
-
-**Doc gardening:** 127 docs in scope, duplicates 0 (was 3), undated 63 (was 57; counting more files), no standard header 91, hand-written 83%. Mechanical headers merged in three repos.
-
-**Next action for you:** answer the three calls above; approve or reject the two open `meta-change` PRs (socialus-ops #133, #134).
+**Next:** the 2 calls; meta-change PRs ops #133, #134.
 
 ### Launch checklist
 
