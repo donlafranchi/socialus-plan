@@ -32,7 +32,7 @@ Source: open `launch-blocking` Issues, 2026-10-16 [V].
 
 **Verdict:** beta date holds if the 18 check/guard tickets and the two F103 calls land this week; biggest risk is that "built" outruns "checked and reviewed" (reviewed 28 of 285), plus Twilio and Cloudflare setup that only you can do.
 
-**Criterion roll-up:** 188 of 285 met · 34 of 34 features reporting · 8 red · 0 of 22 phone journeys ticked (next: J13, J10, J07, J20). Gaps filed this run: 29 Issues (#824-857 range), 5 needs-pm.
+**Criterion roll-up:** 188 of 285 met · 34 of 34 features reporting · 8 red · 0 of 22 phone journeys ticked (next: J13, J10, J07, J20). Gaps filed this run: about 35 Issues (#824-857), 7 needs-pm.
 
 **Doc gardening:** 127 docs in scope, duplicates 0 (was 3), undated 63 (was 57; counting more files), no standard header 91, hand-written 83%. Mechanical headers merged in three repos.
 
