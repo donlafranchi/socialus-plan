@@ -76,6 +76,24 @@
    "unlocks": "The Deals and Last-minute filters work for real posts",
    "url": "https://github.com/donlafranchi/socialus-web/issues/876",
    "added": "2026-10-16"
+  },
+  {
+   "p": 2,
+   "text": "Photo hash check: A now plus the PhotoDNA application, yes or no?",
+   "how": "Answer on the Issue; recommended yes. Approval time is outside our control, so applying today matters.",
+   "due": "2026-10-27",
+   "unlocks": "The last open piece of the AI report read (web #486)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/486",
+   "added": "2026-10-16"
+  },
+  {
+   "p": 3,
+   "text": "Read the AI shadow results and decide whether it goes live",
+   "how": "The two-week window runs 10-13 to 10-27. Few reports so far means it may need longer; your call on 10-27.",
+   "due": "2026-10-27",
+   "unlocks": "Turning the AI report read on (web #486)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/486",
+   "added": "2026-10-16"
   }
  ]
 }
