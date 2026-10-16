@@ -36,6 +36,15 @@ const checks = {
   })(),
   "where we're going is third, right under it": d.querySelectorAll('section[data-toc]')[2]?.id === 'going',
   'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
+  // #536 (Don): "Where can I see... how well the app is responding?"
+  'how fast it feels: green, amber or red; the five slowest with their trend; red only for a member screen': (() => {
+    const S = D.speed, sec = d.getElementById('speed')
+    if (!sec) return false
+    if (!S || !S.state) return sec.textContent.includes('could not be read') || sec.textContent.includes('No tap-speed')
+    const lede = sec.querySelector('p.lede b')?.textContent || ''
+    const word = { green: 'Green', amber: 'Amber', red: 'Red' }[S.state]
+    return lede.startsWith(word) && (S.state === 'red') === S.red > 0 && sec.querySelectorAll('.row.speed').length === Math.min(5, S.slowest.length) && S.slowest.every((x) => x.trend.length <= 7) && sec.textContent.includes('Real phones')
+  })(),
   'data problems drawn': d.body.textContent.includes('Data problems'),
   'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
 }
