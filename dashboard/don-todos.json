@@ -3,13 +3,6 @@
  "items": [
   {
    "p": 2,
-   "text": "Reconnect the GitHub connector",
-   "how": "Claude Settings → Connectors → GitHub → reconnect.",
-   "unlocks": "The 3am seed and the handoffs can read and write GitHub again",
-   "added": "2026-10-15"
-  },
-  {
-   "p": 2,
    "text": "Outer counties: A, B or C",
    "how": "Pick on the Issue; recommended A.",
    "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley",
@@ -110,6 +103,21 @@
    "unlocks": "The abusive-content line (web #648)",
    "url": "https://github.com/donlafranchi/socialus-web/issues/648",
    "added": "2026-10-16"
+  },
+  {
+   "p": 2,
+   "text": "HUD account and token for web #849",
+   "how": "Register a free user at huduser.gov (USPS crosswalk API), then text Dispatch the token; Dispatch puts it in Vercel and the repo secrets.",
+   "unlocks": "Every zip resolves to the right county, PO-box zips included (F103 criterion 2)",
+   "url": "https://www.huduser.gov/portal/dataset/uspszip-api.html",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 1,
+   "text": "Review the 8 grade card pass bars (and the weekly-email question)",
+   "how": "Open the F116 draft: keep, loosen or tighten each bar, and say yes or no to a weekly \"your week\" email (opt-in or on by default).",
+   "unlocks": "The grade card goes live on the dashboard and the pitch test starts gating scenarios",
+   "added": "2026-10-18"
   }
  ]
 }
