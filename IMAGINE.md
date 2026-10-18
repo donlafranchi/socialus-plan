@@ -2,25 +2,11 @@
 
 # IMAGINE
 
-Nothing here is a commitment. A heading and a few lines per idea, distilled from `product/exploration/` (23 files, now deleted — git history holds the full drafts). Scenarios may not cite this file.
-
-**A waiting room, not a parallel library.** This file holds only ideas that do **not yet have a noun, a verb, or a surface**. The moment an idea acquires one, it **moves** into the spine — `product/foundation/nouns.md`, `product/foundation/verbs.md`, `product/ui/surfaces.md` — and leaves this file. **Entries move out; they are never copied out.** A copy is two descriptions of one concept, which is what this rule exists to prevent.
-
-The test: does it have a shape — a noun, a verb, or a surface? Then the spine. If not, here. The Ticketmaster thesis below is the worked example of something staying: it is a claim about a market, not a shape.
-
-`product/exploration/` is not coming back — it was deleted deliberately and distilled into this file, and a new idea folder would be the next thing to clean up.
+Nothing here is a commitment, and scenarios may not cite this file. **A waiting room, not a parallel library:** it holds only ideas with no noun, verb or surface yet. Once an idea has one it **moves** to the spine (`product/foundation/nouns.md`, `verbs.md`, `product/ui/surfaces.md`) and leaves; it is never copied, because a copy is two descriptions of one concept. The Ticketmaster thesis stays: a claim about a market, not a shape.
 
 ## House rules, so this doesn't become a graveyard
 
-Every entry added from 2026-09-12 carries three things:
-
-1. **A date and who it came from.** "Don, 2026-09-12" or "agent analysis, 2026-09-12". An ownerless idea is one nobody will retire.
-2. **One line: what would make this real.** The observable fact about the world or the product that moves it out of here, not "when we have time".
-3. **Claim separated from analysis** where both exist. Don's framing is in his terms; anything an agent adds is marked as analysis.
-
-**A `Priority: higher` line, where an entry has one.** It means Don has said this matters more than the rest of the room, nothing more. **Its absence says nothing**: most entries were never ranked, and a full ordering would be a hand-kept index. Added 2026-09-19 at Don's direction.
-
-**Retiring is the normal outcome.** An entry leaves when it ships, when its trigger fires, or when someone says it's dead, which is a good day, not a failure. Entries above this line predate the rule and are not retro-fitted.
+Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerless idea is one nobody retires); **one line on what would make it real**, an observable fact, not "when we have time"; and **claim separated from analysis**, agent additions marked as analysis. **`Priority: higher`** means Don said it matters more, nothing more; its absence says nothing (2026-09-19). **Retiring is the normal outcome**: an entry leaves when it ships, its trigger fires, or someone calls it dead. Older entries are not retro-fitted.
 
 ## Ideas
 
@@ -206,5 +192,13 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 *Don, 2026-10-16, verbatim:* "who counts as local for a maker or producer will at first just be a cloak [claim] and later will be where a producer sends their money, e.g. to which community fund. If they are the same then they are local. Local will be solely determined by if money comes back to where it was generated." And: "I'm not certain on the mechanism or exact details. That's one concept that should be explored among others when the time comes."
 
 How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open; none is ruled (today: the owner's claim, `product/systems/business-jurisdiction.md`). **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
+
+### Inventory import: stock in, Page out
+
+*Don, 2026-10-18:* "The long term vision is we allow business owners to scan their inventory and it populate here so they don't have to manage two things." Featured products fill from Square, Shopify, a CSV or a barcode scan instead of by hand. Precedent: Pointy (Google), a till-side box that put a shop's stock online for local search. **What would make this real:** owners keep their featured products current by hand and ask for it. [lane: later]
+
+### Our own inventory tool: SocialUs is the system of record
+
+*Don, 2026-10-18:* "What would be the most ideal is if we were to make business inventory software where they manage their business and this app integrates somehow so they don't have to do things twice." The owner runs stock in SocialUs and the Page is always current. **What would make this real:** import (above) is used and owners ask to stop keeping a second system. [lane: later]
 
 [open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).

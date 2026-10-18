@@ -7,9 +7,10 @@
 > Every ratified decision whose tag binds the **planning** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **180 older decisions carry no tag yet and are not listed** — tagging is required from
+> **178 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-18** · [for now] · pages, products, search — A Page features up to 12 of its products and services; their words help search find the Page that carries them; what locals search for is kept aggregated and anonymous and shown back to owners (product/foundation/nouns.md)
 - **2026-10-16** · [always] · principles, badges, pages — Local means money comes back to where it was generated; it is never a distance, a map or a metro. [always] (PRINCIPLES.md)
 - **2026-10-16** · [for now] · reports, moderation, pages — A Page's own words (its name and description) are reportable on the courtesy-first flow: a first report sends the owner a courtesy notice; a repeat from someone else hides just those words and queues them, and the Page stays up; threat of harm and child content hide at once. Community-review panels come later, per metro, once beta opt-ins are big enough (planning/scenario-F078.md)
 - **2026-10-16** · [for now] · members, reports — The "no score on a person" rule is removed (planning/scenario-F102.md)
