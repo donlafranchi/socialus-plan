@@ -284,7 +284,7 @@ if risks:
     w("dated ruling; the register is `accepted-risks/`.")
     w()
     if due:
-        w(f"**{len(due)} need a look now.**")
+        w(f"**{len(due)} due within 21 days.**")
         w()
     for _, left, e in risks:
         if left is None:

@@ -680,7 +680,9 @@ data = {
     'launch_left': {
         'issues': [{'n': i['number'], 'title': i['title'], 'url': i['url']} for i in sorted(_safe(lambda: gh('issue', 'list', '-R', REPO, '--milestone', MILESTONE, '--label', 'launch-blocking', '--state', 'open', '--limit', '200', '--json', 'number,title,url')), key=lambda i: i['number'])],
         # The pitch grade card (F116) once it exists: one row per criterion, pass when built. Until then, not yet set.
-        'grade': next(([{'n': c['n'], 'text': c['text'], 'pass': c['built'] == 'yes'} for c in f['criteria']] for f in FEATS if f['id'] == 'F116'), None) if os.path.exists(os.path.join(root, 'planning', 'scenario-F116.md')) else None,
+        'grade': next(([{'n': c['n'], 'text': c['text'], 'pass': c['built'] == 'yes'} for c in f['criteria']] for f in FEATS if f['id'] == 'F116'), None) if os.path.exists(os.path.join(root, 'planning', 'scenario-F116.md')) and re.search(r'^status: approved', open(os.path.join(root, 'planning', 'scenario-F116.md')).read(), re.M) else None,
+        # [derives pitch@date] docs older than PRINCIPLES.md #pitch (scripts/markers.py derives): a row until green.
+        'pitch': _safe(lambda: json.loads(subprocess.run(['python3', os.path.join(root, 'scripts', 'markers.py'), 'derives'], capture_output=True, text=True, check=True, cwd=root).stdout), {'changed': None, 'stale': []}),
         'calls': [{'p': t.get('p', 3), 'text': t['text'], 'url': t.get('url'), 'due': t.get('due')} for t in sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))],
     },
     'lanes': (lambda sc, ideas: {h: [{'id': x['id'], 'title': x['title'], 'status': x['status']} for x in sorted((x for x in sc if x['horizon'] == h), key=lambda x: (x['rank'], x['id']))] + [{'id': 'idea', 'title': t, 'status': 'IMAGINE'} for l, t in ideas if l == h] for h in ('now', 'next', 'considering', 'later')})(going.scenarios(os.path.join(root, 'planning')), going.imagine(os.path.join(root, 'IMAGINE.md'))),
@@ -775,7 +777,8 @@ const LL=D.launch_left;const gradeOpen=LL.grade?LL.grade.filter(g=>!g.pass):[];
 const leftN=LL.issues.length+LL.calls.length+gradeOpen.length;
 const launchLede=`${leftN} thing${leftN===1?'':'s'} left, ${LL.calls.length} ${LL.calls.length===1?'is':'are'} yours`;
 const launchBody=`<h3 style="font-size:.95rem;margin:4px 0">Launch-blocking work (${LL.issues.length})</h3><ul style="margin:0;padding-left:20px">${LL.issues.map(i=>`<li><a href="${esc(i.url)}">#${i.n} ${esc(i.title)}</a></li>`).join('')||'<li>none open</li>'}</ul>`+
- `<h3 style="font-size:.95rem;margin:12px 0 4px">Pitch grade card</h3>${LL.grade?`<ul style="margin:0;padding-left:20px">${LL.grade.map(g=>`<li>${g.pass?'✅':'☐'} cap-${g.n} · ${esc(g.text)}</li>`).join('')}</ul>`:'<p class="sub" style="margin:0">Pass/fail for cap-1 to cap-8: not yet set (it starts once the grade card scenario, F116, is written).</p>'}`+
+ `<h3 style="font-size:.95rem;margin:12px 0 4px">Pitch grade card</h3>${LL.grade?`<ul style="margin:0;padding-left:20px">${LL.grade.map(g=>`<li>${g.pass?'✅':'☐'} cap-${g.n} · ${esc(g.text)}</li>`).join('')}</ul>`:'<p class="sub" style="margin:0">Pass/fail for cap-1 to cap-8: not yet set (it starts once you approve the grade card draft, F116).</p>'}`+
+ (LL.pitch&&LL.pitch.stale.length?`<p class="sub" style="margin:12px 0 0" id="pitch-cascade">Pitch changed ${esc(LL.pitch.changed)} → ${LL.pitch.stale.length} file${LL.pitch.stale.length===1?'':'s'} updating: ${LL.pitch.stale.map(x=>esc(x.path)).join(', ')}</p>`:'')+
  `<h3 style="font-size:.95rem;margin:12px 0 4px">Your open calls (${LL.calls.length})</h3><ul style="margin:0;padding-left:20px">${LL.calls.map(c=>`<li><span class="pri ${PR[c.p]||'p3'}" style="font-size:.7rem;padding:1px 6px">P${c.p}</span> ${c.url?`<a href="${esc(c.url)}">${esc(c.text)}</a>`:esc(c.text)}${c.due?` · due ${when(c.due)}`:''}</li>`).join('')||'<li>none</li>'}</ul>`;
 // #536 — how fast it feels, from the nightly tap-speed run on a mid-range phone on 4G. Red only for a member-facing screen.
 const SP=D.speed||{};const STC={green:['#15803d','Green'],amber:['#b45309','Amber'],red:['#b91c1c','Red']};

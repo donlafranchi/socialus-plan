@@ -34,6 +34,10 @@ const checks = {
     const n = L.issues.length + L.calls.length + (L.grade ? L.grade.filter((g) => !g.pass).length : 0)
     return sec.querySelector('p.lede b').textContent.startsWith(`${n} thing`) && sec.querySelectorAll('li a[href]').length >= L.issues.length + L.calls.filter((c) => c.url).length && sec.textContent.includes(L.grade ? 'cap-1' : 'not yet set')
   })(),
+  'pitch cascade: a row names each stale file, and none when green': (() => {
+    const P = D.launch_left?.pitch
+    return !!P && Array.isArray(P.stale) && !!d.getElementById('pitch-cascade') === (P.stale.length > 0)
+  })(),
   "where we're going is third, right under it": d.querySelectorAll('section[data-toc]')[2]?.id === 'going',
   'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
   // #536 (Don): "Where can I see... how well the app is responding?"
