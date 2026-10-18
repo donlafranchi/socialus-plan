@@ -41,6 +41,12 @@ const checks = {
   "where we're going is third, right under it": d.querySelectorAll('section[data-toc]')[2]?.id === 'going',
   'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
   // #536 (Don): "Where can I see... how well the app is responding?"
+  // #904 — the notifications section is always drawn: its counts, or why there are none yet.
+  'notifications: a section with each kind, or the reason it has no counts yet': (() => {
+    const s = d.getElementById('notify')
+    if (!s) return false
+    return D.notify && D.notify.state ? D.notify.kinds.every((k) => s.textContent.includes(k.kind === 'weekend' ? 'This weekend near me' : 'New posts from Pages I follow')) : s.textContent.includes('could not be read') || s.textContent.includes('No notification counts')
+  })(),
   'how fast it feels: green, amber or red; the five slowest with their trend; red only for a member screen': (() => {
     const S = D.speed, sec = d.getElementById('speed')
     if (!sec) return false

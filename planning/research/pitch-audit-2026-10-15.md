@@ -83,6 +83,7 @@ Method: socialus.org signed out at 390px; signed-in member and Page owner on a l
 - Touches: new `scripts/digest/`, `.github/workflows/digest.yml`, a migration adding `members.digest_frequency`; reads `page_posts`, `group_memberships`, `member_interests`.
 - Moves: #5 2→3, #6 2→3, #4 +1, #7 +½.
 - Unlocks: the honest answer to "who will see this and when"; follower delivery without a feed.
+- **Ruled 2026-10-18: opt-in web push instead of email** (`product/foundation/verbs.md` § Rulings); building in socialus-web #904.
 - Path: new territory (emails members, member trust, copy). Precedents: Front Porch Forum's daily issue, Meetup's weekly digest, Eventbrite's weekly email.
 
 **Start with A:** smallest, no copy or ruling needed, and it fixes a bug that makes the pitch's headline feature fail on the day it matters. In production it hides 261 of 420 live posts right now (below). B and C both depend on dated posts being right. B also needs the seeder to tag Pages first (adjustment a2), or the filter matches nothing.
@@ -203,7 +204,6 @@ The prompt was Etsy: a handmade marketplace where mass-made goods posed as handm
 ## Questions only the PM can answer
 
 - Should a signed-in member see posts from Pages they follow on Explore's default view, not only under Updates? (This reverses part of the 10-14 Explore ruling.)
-- Is a weekly email to members acceptable at soft launch, and opt-in or on by default?
 - Should signed-out visitors see a Page's public specials and events, as on Yelp and Google, instead of "sign in to see"?
 - Does claiming an unclaimed Page need to work before owner outreach starts?
 - The grade card's seven pass bars: keep, loosen or tighten?
