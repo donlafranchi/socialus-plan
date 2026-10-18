@@ -1,12 +1,12 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 13 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 93, reviewed 28, smoked 0, PM looked 0 across 34 features, 2 red, 0 reports stale · Issues closed 103/144 (alongside, not the headline) · updated 2026-10-17 07:19 PT
+# Beta 11-06 · 12 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 97, reviewed 28, smoked 0, PM looked 0 across 34 features, 2 red, 0 reports stale · Issues closed 105/147 (alongside, not the headline) · updated 2026-10-18 07:44 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
 ## The numbers
 
-- 🟢 build: main CI passing
+- 🔴 build: main CI failing or unread
 - 🟢 site: last deploy health run passed
 - 🟢 migrations: repo and database agree (last drift check on main)
 - 🔴 criteria 66%: 188 of 285 met, 2 launch-blocking unmet
@@ -21,7 +21,7 @@
 - Risks and deadlines: Freeze 2026-10-30 · 6 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Amber** (0 member screen(s) red, 3 amber); slowest: Bottom nav → Explore [settled] 1439 ms, Creator: own Page → edit [settled] 646 ms, Creator: Page edit screen [settled] 645 ms
+**How fast it feels: Amber** (0 member screen(s) red, 4 amber); slowest: Bottom nav → Explore [settled] 1540 ms, Explore card → Page [quick] 774 ms, Creator: own Page → edit [settled] 709 ms
 
 ## Your to-do (14)
 
