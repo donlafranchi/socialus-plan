@@ -681,7 +681,7 @@ data = {
         'issues': [{'n': i['number'], 'title': i['title'], 'url': i['url']} for i in sorted(_safe(lambda: gh('issue', 'list', '-R', REPO, '--milestone', MILESTONE, '--label', 'launch-blocking', '--state', 'open', '--limit', '200', '--json', 'number,title,url')), key=lambda i: i['number'])],
         # The pitch grade card (F116) once it exists: one row per criterion, pass when built. Until then, not yet set.
         'grade': next(([{'n': c['n'], 'text': c['text'], 'pass': c['built'] == 'yes'} for c in f['criteria']] for f in FEATS if f['id'] == 'F116'), None) if os.path.exists(os.path.join(root, 'planning', 'scenario-F116.md')) and re.search(r'^status: approved', open(os.path.join(root, 'planning', 'scenario-F116.md')).read(), re.M) else None,
-        # [derives pitch@date] docs older than PRINCIPLES.md #pitch (scripts/markers.py derives): a row until green.
+        # `[derives pitch@date]` docs older than PRINCIPLES.md #pitch (scripts/markers.py derives): a row until green.
         'pitch': _safe(lambda: json.loads(subprocess.run(['python3', os.path.join(root, 'scripts', 'markers.py'), 'derives'], capture_output=True, text=True, check=True, cwd=root).stdout), {'changed': None, 'stale': []}),
         'calls': [{'p': t.get('p', 3), 'text': t['text'], 'url': t.get('url'), 'due': t.get('due')} for t in sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))],
     },
