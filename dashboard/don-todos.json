@@ -118,6 +118,28 @@
    "how": "Open the F116 draft: keep, loosen or tighten each bar, and say yes or no to a weekly \"your week\" email (opt-in or on by default).",
    "unlocks": "The grade card goes live on the dashboard and the pitch test starts gating scenarios",
    "added": "2026-10-18"
+  },
+  {
+   "p": 1,
+   "text": "Read the notification wording",
+   "how": "Open the notifications PR and say yes, or change any line; it's live on socialus.org under You → Alerts.",
+   "unlocks": "Members can turn on notifications with words you approved",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/904",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 2,
+   "text": "Try notifications on your iPhone",
+   "how": "Safari → socialus.org → Share → Add to Home Screen. Open SocialUs from the Home Screen, sign in, You → Alerts → turn on New posts from Pages I follow → Allow. Follow a Page; when it posts you get one.",
+   "unlocks": "Proof it works on iPhone, which needs iOS 16.4 or later",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 3,
+   "text": "Each month: the notifications review",
+   "how": "On the 1st an Issue lists the numbers and every notification line; say yes or no to the one change it proposes.",
+   "unlocks": "Keeps notifications reviewed and updated, as you asked on 10-18",
+   "added": "2026-10-18"
   }
  ]
 }

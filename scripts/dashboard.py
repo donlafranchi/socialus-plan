@@ -658,6 +658,17 @@ def _speed():
     }
 
 
+
+def _notifications():
+    """#904 (Don, 2026-10-18: "constantly reviewed and updated"). The weekly notify job (socialus-web) writes counts only
+    to latest.json on the notify-history branch: per kind per week, sends, opens, turn-offs, pauses and the opt-in share.
+    Red when turn-offs plus pauses spike; the rule lives in src/lib/notify/push/review.ts, not here."""
+    code = os.environ.get('STATUS_CODE') or os.path.expanduser('~/Projects/socialus-web')
+    subprocess.run(['git', '-C', code, 'fetch', '-q', 'origin', 'notify-history'], capture_output=True)
+    latest = json.loads(subprocess.run(['git', '-C', code, 'show', 'origin/notify-history:latest.json'], check=True, capture_output=True, text=True).stdout)
+    latest['runs'] = 'https://github.com/donlafranchi/socialus-web/actions/workflows/notify.yml'
+    return latest
+
 _sp = _safe(_speed, {})
 if _sp.get('state'):
     short += ['', f"**How fast it feels: {_sp['state'].title()}** ({_sp['red']} member screen(s) red, {_sp['amber']} amber); slowest: " + ', '.join(f"{x['screen']} {x['ms']} ms" for x in _sp['slowest'][:3])]
@@ -673,6 +684,7 @@ def _json(name, key, default):
 data = {
     'cockpit': COCKPIT,
     'speed': _safe(_speed, {}),
+    'notify': _safe(_notifications, {}),
     # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
     'todos': sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999')),
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
@@ -785,11 +797,17 @@ const SP=D.speed||{};const STC={green:['#15803d','Green'],amber:['#b45309','Ambe
 const spark=t=>{const v=t.filter(x=>x.ms!=null);if(v.length<2)return '';const ms=v.map(x=>x.ms),mx=Math.max(...ms),mn=Math.min(...ms),w=90,h=22;return `<svg class="spark" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" aria-hidden="true"><polyline fill="none" stroke="currentColor" stroke-width="1.5" points="${t.map((x,i)=>x.ms==null?null:`${(i/(t.length-1)*w).toFixed(1)},${(h-1-((x.ms-mn)/((mx-mn)||1))*(h-2)).toFixed(1)}`).filter(Boolean).join(' ')}"/></svg>`};
 const speedLede=SP.state?`${STC[SP.state][1]}: ${SP.red?`${SP.red} member screen${SP.red===1?' is':'s are'} over budget`:SP.amber?`${SP.amber} tap${SP.amber===1?' is':'s are'} slower than budget, no member screen red`:'every tap is within budget'} (nightly ${String(SP.at||'').slice(5,10)})`:'No tap-speed results yet.';
 const speedBody=SP.state?`<p class="sub" style="margin:0 0 6px">The five slowest taps on a mid-range phone on 4G, with their last ${SP.slowest[0]?.trend.length||0} nightly runs (ms until the screen is usable). Budgets: a member screen 1 s, a creator screen 2.5 s.</p>`+SP.slowest.map(x=>`<div class="row speed" data-status="${esc(x.status)}"><span class="pri" style="background:${(STC[x.status]||STC.green)[0]};color:#fff">${esc((STC[x.status]||STC.green)[1])}</span><div class="title"><b>${esc(x.screen)}</b> · ${x.ms} ms · ${x.kind==='creator'?'creator':'member'} screen<br><span class="sub">${x.trend.map(t=>t.ms==null?'–':t.ms).join(' → ')}</span> ${spark(x.trend)}</div></div>`).join('')+`<p class="sub">Real phones: ${SP.real_users?esc(SP.real_users):'not yet. They come from Vercel Speed Insights once it is switched on.'} · <a href="${esc(SP.runs)}">all runs</a></p>`:'<p class="sub">The nightly tap-speed results could not be read.</p>';
+// #904 — notifications, counts only, from the weekly notify job. Red when turn-offs and pauses spike.
+const NT=D.notify||{};const NTN={follow_posts:'New posts from Pages I follow',weekend:'This weekend near me'};
+const pc=x=>x==null?'–':`${Math.round(x*100)}%`;const NTS={green:STC.green,red:STC.red,quiet:['#64748b','Quiet']};
+const notifyLede=NT.state?`${(NTS[NT.state]||NTS.quiet)[1]}: ${NT.kinds.map(k=>`${NTN[k.kind]} ${pc(k.optInRate)} opted in`).join(' · ')}`:'No notification counts yet (the first weekly run writes them).';
+const notifyBody=NT.state?NT.kinds.map(k=>{const w=k.weeks.slice(-8);const sum=f=>w.slice(-4).reduce((a,x)=>a+x[f],0);return `<div class="row speed"><span class="pri" style="background:${(NTS[k.state]||NTS.quiet)[0]};color:#fff">${esc((NTS[k.state]||NTS.quiet)[1])}</span><div class="title"><b>${esc(NTN[k.kind]||k.kind)}</b> · ${pc(k.optInRate)} of members opted in · ${pc(k.openRate)} opened${k.why?` · <b>${esc(k.why)}</b>`:''}<br><span class="sub">Last 4 weeks: ${sum('sends')} sent, ${sum('opens')} opened, ${sum('unsubscribes')} turned off, ${sum('mutes')} paused, ${sum('opt_ins')} turned on. Sent per week: ${w.map(x=>x.sends).join(' → ')||'–'}</span></div></div>`}).join('')+`<p class="sub">Counts only: no member is named. Reviewed monthly and at each release; a review proposes one change at a time. <a href="${esc(NT.runs)}">runs</a></p>`:'<p class="sub">The weekly notification counts could not be read yet.</p>';
 document.getElementById('areas').innerHTML=
  sec('todo','Your to-do',todoLede,todoBody,true)+
  sec('soft-launch','Before soft launch (11-06)',launchLede,launchBody)+
  sec('going',"Where we're going",`Now ${D.lanes.now.length} · Next ${D.lanes.next.length} · Considering ${D.lanes.considering.length} · Later ${D.lanes.later.length}`,[['now','Now: being built'],['next','Next: settled and approved'],['considering','Considering: possible, not approved'],['later','Later: eventual']].map(([k,t])=>`<h3 style="font-size:.95rem;margin:12px 0 4px">${t}</h3><ol style="margin:0;padding-left:22px">${D.lanes[k].map(x=>`<li>${x.id==='idea'?'':esc(x.id)+' '}${esc(x.title)} <span style="color:var(--mute)">(${esc(x.status)})</span></li>`).join('')||'<li>none</li>'}</ol>`).join(''))+
  sec('speed','How fast it feels',speedLede,speedBody)+
+ sec('notify','Notifications',notifyLede,notifyBody)+
 
  sec('cockpit','The cockpit',esc(where.bold),cockpitSec,true)+
  sec('waiting','Waiting on you',`${D.wait_total} item${D.wait_total===1?'':'s'} waiting, by area`,waitTop+testNote,true)+
