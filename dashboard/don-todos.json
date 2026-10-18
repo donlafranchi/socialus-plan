@@ -118,14 +118,6 @@
    "how": "Open the F116 draft: keep, loosen or tighten each bar, and say yes or no to a weekly \"your week\" email (opt-in or on by default).",
    "unlocks": "The grade card goes live on the dashboard and the pitch test starts gating scenarios",
    "added": "2026-10-18"
-  },
-  {
-   "p": 1,
-   "text": "Paste the 3 new sign-in emails into Supabase (web #927)",
-   "how": "Supabase dashboard → Authentication → Emails → Templates: for Magic Link, Confirm signup and Reset Password, paste the subject and body from the Issue comment, Save (about 5 minutes).",
-   "unlocks": "Sign-in links work in any browser (Gmail app, Mail) and the email shows a 6-digit code, so you can retry your F078 test",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/927",
-   "added": "2026-10-18"
   }
  ]
 }
