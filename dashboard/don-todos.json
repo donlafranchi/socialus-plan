@@ -2,6 +2,15 @@
  "_how": "Don's to-do, shown first on the HTML dashboard. Don, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever he asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD).",
  "items": [
   {
+   "p": 1,
+   "text": "Run the F078 report test (closes #220)",
+   "how": "Phone, socialus.org, signed in with your SECOND email (enter the 6-digit code from the email). Open a Page your main account owns, tap ⋯ beside the share icon → Report this Page, pick any reason except Sensitive content, Send. Then sign in as your main account, open You: a courtesy notice should be there, and the Page is still fully visible. Report the same Page again from the second account: only the name and description disappear for others, the Page stays up. Also check your own Page shows no Report in its ⋯ (needs PR #938 merged).",
+   "due": "2026-10-27",
+   "unlocks": "Closes web #220, clears the 10-27 photo tripwire, and proves the AI shadow read runs (#486)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/220",
+   "added": "2026-10-18"
+  },
+  {
    "p": 2,
    "text": "Outer counties: A, B or C",
    "how": "Pick on the Issue; recommended A.",
@@ -61,15 +70,6 @@
    "how": "Yes or no on the Issue. Today only the sample posts have those kinds, so Explore's Deals and Last-minute filters show samples only.",
    "unlocks": "The Deals and Last-minute filters work for real posts",
    "url": "https://github.com/donlafranchi/socialus-web/issues/876",
-   "added": "2026-10-16"
-  },
-  {
-   "p": 1,
-   "text": "Look at the live report flow: make one test report",
-   "how": "Signed in on socialus.org, report a Page you own from a second account (⋯ → Report the name or description; pick a reason other than Sensitive content so the AI read is written too). Check the owner account gets the courtesy notice under You.",
-   "due": "2026-10-27",
-   "unlocks": "Closes web #220 and clears the 10-27 photo tripwire; also proves the AI shadow read runs (#486)",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/220",
    "added": "2026-10-16"
   },
   {
