@@ -140,6 +140,27 @@
    "how": "On the 1st an Issue lists the numbers and every notification line; say yes or no to the one change it proposes.",
    "unlocks": "Keeps notifications reviewed and updated, as you asked on 10-18",
    "added": "2026-10-18"
+  },
+  {
+   "p": 1,
+   "text": "Turn on reminder emails",
+   "how": "Resend → Domains → add socialus.org and add the DNS records it shows; then GitHub → socialus-web → Settings → Secrets → Actions: add RESEND_API_KEY (your Resend key) and FOLLOW_EMAIL_FROM (SocialUs <reminders@socialus.org>).",
+   "unlocks": "Remind me reaches members by email when they haven't turned on notifications (push reminders already work)",
+   "url": "https://resend.com/domains",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 2,
+   "text": "Read the Remind me wording",
+   "how": "Open the PR and say yes, or change any line; it goes live under each dated post and on You → Alerts.",
+   "url": "https://github.com/donlafranchi/socialus-web/pull/952",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 3,
+   "text": "Add the Maidu Park market",
+   "how": "Create → a Page for the market (or ask the seeder to add it from its website); post Sundays 8–1 as repeating once repeats are switched on. Then Remind me → Every time.",
+   "added": "2026-10-18"
   }
  ]
 }
