@@ -143,6 +143,22 @@
   },
   {
    "p": 1,
+   "text": "Look at a Page's Products & services on socialus.org and approve the wording",
+   "how": "Open a business Page you own, scroll to Products & services: add one (name, Save), switch it out of stock, remove it. On someone else's Page, try the ⋯ on an item. Search Explore for its name while signed in. Change any words you don't like (listed on PR #920).",
+   "unlocks": "Owners show what they carry; search finds a shop by what it sells (#909)",
+   "url": "https://github.com/donlafranchi/socialus-web/pull/920",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 2,
+   "text": "Approve the search-sharing switch and the owner's \"what locals searched\" card",
+   "how": "On socialus.org: You → Settings → Searches, and the card on a Page you own. Say if a term may show in both lists (\"Fits your Page\" and \"Found nothing nearby\"). Wording is on PR #923.",
+   "unlocks": "Owners see what locals look for and can stock it (#909)",
+   "url": "https://github.com/donlafranchi/socialus-web/pull/923",
+   "added": "2026-10-18"
+  },
+  {
+   "p": 1,
    "text": "Turn on reminder emails",
    "how": "Resend → Domains → add socialus.org and add the DNS records it shows; then GitHub → socialus-web → Settings → Secrets → Actions: add RESEND_API_KEY (your Resend key) and FOLLOW_EMAIL_FROM (SocialUs <reminders@socialus.org>).",
    "unlocks": "Remind me reaches members by email when they haven't turned on notifications (push reminders already work)",
