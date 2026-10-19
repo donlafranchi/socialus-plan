@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 11 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 115, reviewed 28, smoked 29, PM looked 0 across 34 features, 1 red, 16 reports stale · Issues closed 135/156 (alongside, not the headline) · updated 2026-10-19 05:23 PT
+# Beta 11-06 · 11 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 115, reviewed 28, smoked 0, PM looked 0 across 34 features, 1 red, 0 reports stale · Issues closed 135/156 (alongside, not the headline) · updated 2026-10-19 10:39 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -10,18 +10,18 @@
 - 🟢 site: last deploy health run passed
 - 🟢 migrations: repo and database agree (last drift check on main)
 - 🔴 criteria 66%: 188 of 285 met, 1 launch-blocking unmet
-- 🟡 waiting on you: 13 items; oldest wait not read yet
+- 🟡 waiting on you: 12 items; oldest wait not read yet
 - 🟡 docs: 63 undated (target under 5)
 - 🔴 agent safety: 1 flags
 - Built since last look: 15 PRs merged, 54 criteria newly met, 19 lost, last 7 days, no look recorded yet
 - Upcoming: Now: 20 being built · Next: 7 settled · Considering: 9 · Later: 62
-- Needs your attention: 1 of 13: Start something without opening a shop (as a member, about 3 min)
+- Needs your attention: 1 of 12: Start something without opening a shop (as a member, about 3 min)
 - What to test: Next walk-through: 3 min, as a member. 0 of 22 done
 - Accounts, keys and APIs: 6 to set up before beta
 - Risks and deadlines: Freeze 2026-10-30 · 6 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Amber** (0 member screen(s) red, 4 amber); slowest: Bottom nav → Explore [settled] 1540 ms, Explore card → Page [quick] 774 ms, Creator: own Page → edit [settled] 709 ms
+**How fast it feels: Amber** (0 member screen(s) red, 3 amber); slowest: Bottom nav → Explore [settled] 1363 ms, Creator: own Page → edit [settled] 1078 ms, Explore card → Page [settled] 828 ms
 
 ## Your to-do (24)
 
