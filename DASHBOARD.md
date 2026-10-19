@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 12 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 115, reviewed 28, smoked 38, PM looked 0 across 34 features, 1 red, 14 reports stale · Issues closed 131/155 (alongside, not the headline) · updated 2026-10-18 17:14 PT
+# Beta 11-06 · 11 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 115, reviewed 28, smoked 29, PM looked 0 across 34 features, 1 red, 16 reports stale · Issues closed 135/156 (alongside, not the headline) · updated 2026-10-19 05:23 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
