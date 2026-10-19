@@ -177,6 +177,14 @@
    "text": "Add the Maidu Park market",
    "how": "Create → a Page for the market (or ask the seeder to add it from its website); post Sundays 8–1 as repeating once repeats are switched on. Then Remind me → Every time.",
    "added": "2026-10-18"
+  },
+  {
+   "p": 2,
+   "text": "Register a HUD account and set the HUD token (web #849)",
+   "how": "Register a free HUD user account for the HUD-USPS zip crosswalk, then tell Dispatch the token name so an agent adds it (#707 holds the other keys).",
+   "unlocks": "Exact zip-to-county matching, no guesses, PO-box zips resolve (F103 criterion 2)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/849",
+   "added": "2026-10-18"
   }
  ]
 }
