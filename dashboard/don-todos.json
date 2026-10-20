@@ -4,7 +4,7 @@
   {
    "p": 1,
    "text": "Run the F078 report test (closes #220)",
-   "how": "Phone, socialus.org, signed in with your SECOND email (enter the 6-digit code from the email). Open a Page your main account owns, tap ⋯ beside the share icon → Report this Page, pick any reason except Sensitive content, Send. Then sign in as your main account, open You: a courtesy notice should be there, and the Page is still fully visible. Report the same Page again from the second account: only the name and description disappear for others, the Page stays up. Also check your own Page shows no Report in its ⋯ (needs PR #938 merged).",
+   "how": "Phone, socialus.org. You need THREE accounts: your main (owns the Page), a second email, and a third. A Gmail '+' address works as the third, e.g. yourname+two@gmail.com: same inbox, counts as a different member. Sign in on the second and third with the 6-digit code from the email; never use a builder account (they never send notices).\n1. Second account: open a Page your main account owns, tap ⋯ → Report this Page, pick Spam (NOT Sensitive content or Threat of harm: those hide at once), type 'TEST', Send. Page stays up.\n2. Main account: open You. A courtesy notice about the report is there, and the Page still shows its name and description.\n3. Second account again: report the same Page a second time. Nothing changes (the same person twice does not count; a third try says you already reported it). Fine.\n4. Third account: report the same Page, Spam, 'TEST'. Now a second member has reported it: the name and description disappear for everyone, the Page stays up, and your main account gets a 'hidden' notice.\n5. Undo: in Admin → Reports, restore the Page's words.\nThen tell an agent 'F078 test done': it checks the AI shadow row and closes #220 and #486's check.",
    "due": "2026-10-27",
    "unlocks": "Closes web #220, clears the 10-27 photo tripwire, and proves the AI shadow read runs (#486)",
    "url": "https://github.com/donlafranchi/socialus-web/issues/220",
@@ -85,15 +85,6 @@
    "text": "IP-purge switch: CONTENT_ORIGINS_PURGE_ENABLED=true",
    "how": "Recommended yes (standard data minimization). Say yes and Dispatch sets it in Vercel.",
    "unlocks": "The one-year purge of stored IP addresses",
-   "added": "2026-10-16"
-  },
-  {
-   "p": 3,
-   "text": "AI shadow window: extend past 10-27, or end it",
-   "how": "The window runs 10-13 to 10-27; few reports so far, so extending is likely. Your call on 10-27.",
-   "due": "2026-10-27",
-   "unlocks": "Whether the AI report read can go live (web #486)",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/486",
    "added": "2026-10-16"
   },
   {
@@ -185,6 +176,15 @@
    "unlocks": "Exact zip-to-county matching, no guesses, PO-box zips resolve (F103 criterion 2)",
    "url": "https://github.com/donlafranchi/socialus-web/issues/849",
    "added": "2026-10-18"
+  },
+  {
+   "p": 2,
+   "text": "Decide at 10-27: end or extend the AI shadow window",
+   "how": "Numbers as of 10-19 (production, read-only): 2 reports ever, none since the window opened 10-13; 0 AI reads written; 0 person-vs-AI agreements; 0 of 14 shadow days counted; no recorded test-set run (recall and false-alarm numbers: none, because the key is not in GitHub so CI only validates the set; recording a run is yours: `npm run moderation:eval -- --record` with your key). Check again on 10-27: Admin → Reports → AI readiness panel (recall ≥ 95%, severity-1 recall 100%, false alarms < 10%, 14 shadow days). My recommendation: extend. With almost no reports there is nothing to agree or disagree on; go live only when the panel reads Ready.",
+   "due": "2026-10-27",
+   "unlocks": "Whether the AI report read can go live (web #486)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/486",
+   "added": "2026-10-19"
   }
  ]
 }
