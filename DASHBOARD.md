@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 10 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 116, reviewed 28, smoked 0, PM looked 0 across 34 features, 1 red, 0 reports stale · Issues closed 137/156 (alongside, not the headline) · updated 2026-10-20 08:44 PT
+# Beta 11-06 · 9 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 116, reviewed 28, smoked 0, PM looked 0 across 34 features, 1 red, 0 reports stale · Issues closed 137/156 (alongside, not the headline) · updated 2026-10-21 08:14 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -14,23 +14,25 @@
 - 🟡 docs: 63 undated (target under 5)
 - 🔴 agent safety: 1 flags
 - Built since last look: 15 PRs merged, 54 criteria newly met, 18 lost, last 7 days, no look recorded yet
-- Upcoming: Now: 20 being built · Next: 7 settled · Considering: 9 · Later: 62
+- Upcoming: Now: 20 being built · Next: 7 settled · Considering: 10 · Later: 62
 - Needs your attention: 1 of 12: Start something without opening a shop (as a member, about 3 min)
 - What to test: Next walk-through: 3 min, as a member. 0 of 22 done
 - Accounts, keys and APIs: 6 to set up before beta
 - Risks and deadlines: Freeze 2026-10-30 · 6 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Amber** (0 member screen(s) red, 3 amber); slowest: Bottom nav → Explore [settled] 1363 ms, Creator: own Page → edit [settled] 1078 ms, Explore card → Page [settled] 828 ms
+**How fast it feels: Red** (9 member screen(s) red, 0 amber); slowest: Bottom nav → You (signed out) [settled] 337 ms
 
-## Your to-do (24)
+## Your to-do (29)
 
 - P1 · Run the F078 report test (closes #220) · due 10-27
+- P1 · Founding circle: talk with 5 people outside the team who've tried SocialUs · due 11-06
 - P1 · Database safety call: A, B or C
 - P1 · Review the 8 grade card pass bars (and the weekly-email question)
 - P1 · Read the notification wording
 - P1 · Look at a Page's Products & services on socialus.org and approve the wording
 - P1 · Turn on reminder emails
+- P1 · Dark-site businesses: A or B
 - P2 · Decide at 10-27: end or extend the AI shadow window · due 10-27
 - P2 · Outer counties: A, B or C
 - P2 · Turn on Vercel Speed Insights (free tier)
@@ -44,6 +46,9 @@
 - P2 · Approve the search-sharing switch and the owner's "what locals searched" card
 - P2 · Read the Remind me wording
 - P2 · Register a HUD account and set the HUD token (web #849)
+- P2 · Dark-site outreach: approve the channel and the copy
+- P2 · Dark-site outreach: approve the 10-business pilot list
+- P2 · Review the local creators idea (one page)
 - P3 · The committee model-test plan
 - P3 · Should members be able to mark a post as a deal or last-minute?
 - P3 · Wording: 'we do not tolerate abusive content'
