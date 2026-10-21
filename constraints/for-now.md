@@ -77,6 +77,8 @@
 - **2026-09-12** — Correction: showing a count and ranking by it are different things, and only the second is forbidden (product/systems/discovery.md)
 - **2026-09-15** — What counts as interaction: any deliberate act by the author, and any deliberate act by anyone else. Viewing is neither (product/systems/discovery.md)
 - **2026-09-15** — A view must never count as interaction, and that one is forced rather than chosen (product/systems/discovery.md)
+- **2026-10-21** — An unclaimed Page is claimed self-serve; a verified claim completes at once, with no staff step. [for now] (product/systems/groups.md)
+- **2026-10-21** — Samples give way to the owner; the seeder steps back from a town that runs itself. [for now] (product/systems/groups.md)
 - **2026-09-12** — Confirmed, no longer provisional: the creator sets pin precision and the platform never snaps, rounds or coarsens it (product/systems/location.md)
 - **2026-09-12** — A creator dropping a pin sets its precision; the platform never snaps, rounds or coarsens it (product/systems/location.md)
 - **2026-09-21** — Where a Page is, is resolved at read time from its Location's geography, never stored on it. Deepest containing Place wins, and "deepest" means the kind rank that already exists (product/systems/location.md)
