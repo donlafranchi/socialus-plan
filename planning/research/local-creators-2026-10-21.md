@@ -68,11 +68,11 @@ Facts gathered 2026-10-21. Several thresholds come from press or law-firm summar
 
 | | Gets | Gives |
 |---|---|---|
-| **Business** | Photos and a story it didn't have to make; a Page claimed in person rather than by cold email; reach on TikTok and Instagram it never paid for; no fee to anyone | Nothing required. May offer a members' deal or a comp, which is then labelled |
+| **Business** | Photos and a story it didn't have to make; a Page claimed in person rather than by postcard; reach on TikTok and Instagram it never paid for; no fee to anyone | Nothing required. May offer a members' deal or a comp, which is then labelled |
 | **Scout** | Credit on every Page they bring on ("first showcased by"); the first-run spot, their post is the one people find first; perks businesses choose to offer, labelled; later, a referral credit if counsel clears it (§ 5); a showcase reel that is portable and theirs | Visits, photos, honesty |
 | **Members** | Places they could never have found by search; content that is local and labelled; Discover that is not empty on day one | Nothing |
 
-**Feeds dark-site outreach:** scouts are the in-person channel email can't reach. A ranch with no website rarely answers a postcard, but a neighbour who bought eggs and handed over a QR card is a different conversation. The outreach list tells scouts where to go; scouts tell the list who is still operating.
+**Feeds dark-site outreach:** scouts are the in-person channel a postcard can't be. A ranch with no website rarely answers a postcard, but a neighbour who bought eggs and handed over a QR card is a different conversation. The outreach list tells scouts where to go; scouts tell the list who is still operating.
 
 **Feeds Discover:** Discover needs short, real, local video and photos; showcases are exactly that, with origin and disclosure already attached. It ties to the open short-video choice in `IMAGINE.md` (link or embed vs host natively): **a first-run window only works if we host the content**, so scouts are the strongest reason yet for hosting photos (and later video) natively.
 
