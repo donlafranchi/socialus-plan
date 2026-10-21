@@ -6,7 +6,7 @@
 
 *The PM, 2026-10-21, verbatim:* "So, what I'm thinking of is an outreach program to these businesses. this is a side project that we an hopefully market to these businesses if they still operate. Next we should be using other models like TikToks influencers who go out and "review" businesses to gain followers and try to create a pattern like that for our platform. Local influencers going out and finding these businesses to help them get found and to help them promote. this would be a new system that would need to be developed. We essentially want to copy all the other apps high value features in a way that helps our app. pretend for example that these "influencers" go out and create for TikTok as they normally do but we allow them to post on our site prior to them posting on TikTok or elsewhere and incentivize them somehow to do so. In essence copy from other apps to help our communities and figure out how to help influencers do that. I use "influencers" as a shorthand here and we'd call them something different so you do the same."
 
-"These businesses" are the dark-site local businesses (farms, ranches, bakeries with blank, stale or no websites) being triaged for the outreach pilot (`planning/research/dark-site-outreach-2026-10-21.md`, when it lands). This doc calls the people **scouts** (§ 3).
+"These businesses" are the dark-site local businesses (farms, ranches, bakeries with blank, stale or no websites) being triaged for the outreach pilot (`planning/research/dark-site-outreach-2026-10-21.md`). This doc calls the people **scouts** (§ 3).
 
 ## 1. What other apps do
 
@@ -164,7 +164,7 @@ Not built for the pilot: video (photos first, pending the short-video ruling), a
 
 **5. Name.** Scouts (§ 3).
 
-[open-question owner=pm raised=2026-10-21] Which of A/B/C for what scouts get, the first-run window, exclusivity and disclosure; and whether "Scouts" is the name.
+[open-question owner=don raised=2026-10-21] Which of A/B/C for what scouts get, the first-run window, exclusivity and disclosure; and whether "Scouts" is the name.
 
 **Risks to watch:**
 - A scout asks a business for free food. The code forbids it and the report path catches it; one case in the pilot is a stop-and-review.
