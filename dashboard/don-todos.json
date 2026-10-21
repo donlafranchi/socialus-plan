@@ -185,6 +185,30 @@
    "unlocks": "Whether the AI report read can go live (web #486)",
    "url": "https://github.com/donlafranchi/socialus-web/issues/486",
    "added": "2026-10-19"
+  },
+  {
+   "p": 1,
+   "text": "Dark-site businesses: A or B",
+   "how": "Reply on the Issue. Recommended B: ask first by postcard, and the Page goes up only when the owner taps Yes. A is a stub Page built from a directory listing, which needs the own-site rule changed.",
+   "unlocks": "Building the opt-out list and the postcard claim (web #981)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/981",
+   "added": "2026-10-21"
+  },
+  {
+   "p": 2,
+   "text": "Dark-site outreach: approve the channel and the copy",
+   "how": "Recommended: a mailed postcard as the main channel, and the same card handed over at farm stands as the backup. Read the postcard, card and phone-script drafts in the outreach research doc (socialus-plan, planning/research), then say yes or edit.",
+   "unlocks": "Printing the 10 pilot postcards (nothing is sent until you say so)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/981",
+   "added": "2026-10-21"
+  },
+  {
+   "p": 2,
+   "text": "Dark-site outreach: approve the 10-business pilot list",
+   "how": "Seven farms and three bakeries in nine towns, in the same doc under Pilot plan. Say yes, or swap in alternates.",
+   "unlocks": "The two-week postcard pilot: claims, opt-outs and replies",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/981",
+   "added": "2026-10-21"
   }
  ]
 }
