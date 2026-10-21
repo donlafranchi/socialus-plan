@@ -6,7 +6,7 @@
 
 *The PM, 2026-10-21, verbatim:* "So, what I'm thinking of is an outreach program to these businesses. this is a side project that we an hopefully market to these businesses if they still operate. Next we should be using other models like TikToks influencers who go out and "review" businesses to gain followers and try to create a pattern like that for our platform. Local influencers going out and finding these businesses to help them get found and to help them promote. this would be a new system that would need to be developed. We essentially want to copy all the other apps high value features in a way that helps our app. pretend for example that these "influencers" go out and create for TikTok as they normally do but we allow them to post on our site prior to them posting on TikTok or elsewhere and incentivize them somehow to do so. In essence copy from other apps to help our communities and figure out how to help influencers do that. I use "influencers" as a shorthand here and we'd call them something different so you do the same."
 
-"These businesses" are the dark-site local businesses (farms, ranches, bakeries with blank, stale or no websites) being triaged for the outreach pilot (`planning/research/dark-site-outreach-2026-10-21.md`). This doc calls the people **scouts** (§ 3).
+"These businesses" are the dark-site local businesses (farms, ranches, bakeries with blank, stale or no websites) triaged for the outreach pilot (`planning/research/dark-site-outreach-2026-10-21.md`): 23 of 59 are open and worth reaching, it recommends publishing a Page only on the owner's yes, and it names in-person as the backup channel to a mailed postcard. Scouts are that in-person channel. This doc calls the people **scouts** (§ 3).
 
 ## 1. What other apps do
 
@@ -48,10 +48,10 @@ Facts gathered 2026-10-21. Several thresholds come from press or law-firm summar
 
 **The loop:**
 1. A member joins the Scouts Group. Groups are joined, never assigned, so being a scout is derived from a dated membership, never a stored role (the same pattern `product/systems/creator.md` uses for selling).
-2. They pick a business, often an unclaimed dark-site Page from the outreach list, or one they love that has no Page yet, and visit as a paying customer.
+2. They pick a business, often one from the outreach list, or one they love that has no Page yet, and visit as a paying customer. They ask the owner in person; if the outreach doc's ask-first option is ruled, the Page and any showcase go up only on the owner's yes.
 3. They post a **showcase** on SocialUs: photos, a short write-up, later video. It names the business's Page, and the business's Page shows it.
 4. The showcase says **First on SocialUs · date**. After the window (§ 5, recommended 48 hours) the scout posts on TikTok or Instagram as they normally would, with the share kit: a link back to the Page, a caption line, and a QR card the scout can hand the owner.
-5. The owner scans the QR card and claims the Page. The scout is credited as the one who brought them on.
+5. The owner scans the QR card and says yes, or claims the Page. The scout is credited as the one who brought them on.
 
 **Fits our rulings:**
 - **Works for the member** (`#pitch`): showcases reach a member through what they follow and save, and the scout is a member doing something they already enjoy.
@@ -72,7 +72,7 @@ Facts gathered 2026-10-21. Several thresholds come from press or law-firm summar
 | **Scout** | Credit on every Page they bring on ("first showcased by"); the first-run spot, their post is the one people find first; perks businesses choose to offer, labelled; later, a referral credit if counsel clears it (§ 5); a showcase reel that is portable and theirs | Visits, photos, honesty |
 | **Members** | Places they could never have found by search; content that is local and labelled; Discover that is not empty on day one | Nothing |
 
-**Feeds dark-site outreach:** scouts are the in-person channel email can't reach. A ranch with no website rarely answers a cold message, but a neighbour who bought eggs and handed over a QR card is a different conversation. The outreach list tells scouts where to go; scouts tell the list who is still operating.
+**Feeds dark-site outreach:** scouts are the in-person channel email can't reach. A ranch with no website rarely answers a postcard, but a neighbour who bought eggs and handed over a QR card is a different conversation. The outreach list tells scouts where to go; scouts tell the list who is still operating.
 
 **Feeds Discover:** Discover needs short, real, local video and photos; showcases are exactly that, with origin and disclosure already attached. It ties to the open short-video choice in `IMAGINE.md` (link or embed vs host natively): **a first-run window only works if we host the content**, so scouts are the strongest reason yet for hosting photos (and later video) natively.
 
@@ -101,11 +101,11 @@ The member-facing name is copy, so it is the PM's to approve. "Scouts" is used t
 
 ## 4. The smallest test
 
-**Four weeks, 3–5 local scouts, the dark-site list. Build only what a scout needs to post first and say so: a Scouts Group, a showcase that names a Page, a first-on-SocialUs date, a disclosure line, and a share kit. About 25–35 hours.** It succeeds if scouts bring businesses on that email alone could not.
+**Four weeks, 3–5 local scouts, the dark-site list. Build only what a scout needs to post first and say so: a Scouts Group, a showcase that names a Page, a first-on-SocialUs date, a disclosure line, and a share kit. About 25–35 hours.** It succeeds if scouts bring on businesses a postcard alone could not.
 
 <details><summary>Details</summary>
 
-**Shape:** recruit 3–5 people in the pilot area who already post local food or farm content (any follower count; the pilot tests the loop, not reach). Each takes 4–6 businesses from the dark-site list. About 20 businesses get a scout visit; the rest get the email outreach only, which makes a comparison.
+**Shape:** recruit 3–5 people in the pilot area who already post local food or farm content (any follower count; the pilot tests the loop, not reach). Of the 23 reachable businesses, the outreach doc's 10-business pilot goes first: about half get a scout visit as well as the postcard, half the postcard only, which makes a comparison. Each scout then takes 2–4 more from the remaining 13.
 
 **Build (code lane; estimates, not a ticket):**
 
@@ -123,7 +123,7 @@ The member-facing name is copy, so it is the PM's to approve. "Scouts" is used t
 Not built for the pilot: video (photos first, pending the short-video ruling), any payment, any scout page or profile beyond the member's own, leaderboards.
 
 **Measure:**
-- **Claims:** share of scout-visited dark-site businesses that claim their Page in four weeks, against email-only. The headline number.
+- **Yes or claim:** share of scout-visited businesses that say yes or claim their Page in four weeks, against postcard-only. The headline number.
 - **Still operating:** businesses scouts confirmed open or closed (feeds the outreach list).
 - **Showcases** per scout per week, and how many scouts are still posting in week four.
 - **First-run kept:** the gap between the SocialUs post and the pasted TikTok or Instagram link.
@@ -132,7 +132,7 @@ Not built for the pilot: video (photos first, pending the short-video ruling), a
 - **Honesty:** share of showcases labelled anything other than *Paid my own way*; reports on showcases; any business complaint.
 - **Owner view:** one question to each claiming owner: "Was the scout's visit welcome?"
 
-**Kill or keep:** keep if scout-visited businesses claim at least twice as often as email-only and no business complains about a scout asking for something. Otherwise stop and write down why.
+**Kill or keep:** keep if scout-visited businesses say yes at least twice as often as postcard-only and no business complains about a scout asking for something. Otherwise stop and write down why.
 
 </details>
 
