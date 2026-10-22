@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta 11-06 · 9 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 116, reviewed 28, smoked 0, PM looked 0 across 34 features, 1 red, 0 reports stale · Issues closed 137/156 (alongside, not the headline) · updated 2026-10-21 09:11 PT
+# Beta 11-06 · 8 days to freeze · criterion roll-up: 188/285 criteria met (66%), checked 116, reviewed 28, smoked 0, PM looked 0 across 34 features, 1 red, 0 reports stale · Issues closed 137/156 (alongside, not the headline) · updated 2026-10-22 08:57 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -8,7 +8,7 @@
 
 - 🟢 build: main CI passing
 - 🟢 site: last deploy health run passed
-- 🟢 migrations: repo and database agree (last drift check on main)
+- ⚪ migrations: drift check failing or unread
 - 🔴 criteria 66%: 188 of 285 met, 1 launch-blocking unmet
 - 🟡 waiting on you: 12 items; oldest wait not read yet
 - 🟡 docs: 63 undated (target under 5)
@@ -21,7 +21,7 @@
 - Risks and deadlines: Freeze 2026-10-30 · 6 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Red** (2 member screen(s) red, 4 amber); slowest: Bottom nav → Explore [settled] 1691 ms, Explore post card → Page post [quick] 1653 ms, Explore card → Page (member) [quick] 1512 ms
+**How fast it feels: Red** (2 member screen(s) red, 4 amber); slowest: Bottom nav → Explore [settled] 1600 ms, Explore card → Page [quick] 1273 ms, Explore card → Page (member) [quick] 1224 ms
 
 ## Your to-do (29)
 
