@@ -1,6 +1,6 @@
 # Founding circle: the first five people (2026-10-21)
 
-**As of 2026-10-21** · Source: hand-written, Launch Coach · Path: well-worn
+**As of 2026-10-21** · Source: hand-written, Launch Coach · Path: well-worn · Maintained by: hand (the owner confirms on next edit)
 
 **Bottom line: before beta grows, five people outside the team use SocialUs and each has one 20-minute conversation with the PM. Agents prepare everything; the PM only talks and listens.**
 

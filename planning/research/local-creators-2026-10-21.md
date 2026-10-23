@@ -1,6 +1,6 @@
 # Local scouts: members who find and showcase local businesses (2026-10-21)
 
-**As of 2026-10-21** · Source: hand-written research, product lane · Path: new territory (money, member trust, disclosure law) · Research only; nothing here is ruled.
+**As of 2026-10-21** · Source: hand-written research, product lane · Path: new territory (money, member trust, disclosure law) · Research only; nothing here is ruled. · Maintained by: hand (the owner confirms on next edit)
 
 **Bottom line: let members go out, find the local businesses nobody can find online, and post them on SocialUs first, then everywhere else. Reward them with credit, first-found standing and labelled perks, not cash, for the pilot. A four-week pilot with 3–5 local scouts and the dark-site businesses needs about 25–35 hours of build. The one call: what scouts get (A/B/C in § 5; recommended A, no cash yet).**
 
