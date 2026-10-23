@@ -63,6 +63,7 @@
 - **2026-10-01** — Members can tell other members who owns a business or brand — private equity, B Corp and the like — and those notes steer recommendations by people's values (product/foundation/nouns.md)
 - **2026-10-01** — "A tag never orders results" is redefined: tags decide what matches, not who comes first (product/foundation/nouns.md)
 - **2026-10-18** — A Page features up to 12 of its products and services; their words help search find the Page that carries them; what locals search for is kept aggregated and anonymous and shown back to owners (product/foundation/nouns.md)
+- **2026-10-22** — A venue's real shows from its own public schedule may be posted on its unclaimed Page as real dated event posts, not Samples: read daily from the venue's own events page or feed (never an aggregator), the next 60 days, crediting the source, with the venue's own ticket link (product/foundation/nouns.md)
 - **2026-09-15** — Cross-metro makes the floor sharper, not softer (product/foundation/policy.md)
 - **2026-09-21** — If agent search replaces keyword search, SocialUs becomes the agent for its own domain rather than the free data layer under someone else's (product/foundation/policy.md)
 - **2026-09-23** — Who exists is public. What's happening is not — but *that* something is happening is public (product/foundation/policy.md)

@@ -40,11 +40,15 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 *Don, 2026-10-12, verbatim:* "We will want more photos and short videos to be viewed in this app. I was looking at wineries yesterday and searched for them on tiktok to see what they were about. it would be helpful for us to allow these in our app for our users. perhaps business owners can link videos about their business from tiktok or we host videos from these businesses before they get posted to tiktok as an example. this should already be in imagine.md. write this up somewhere for later use. this should be done sooner than later on our roadmap." [lane: considering]
 
-Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed** an owner's TikTok, Instagram or YouTube video: cheap, but our moderation doesn't see it. **B) Host natively**, posted here first: a reason to come here, but it costs storage and transcoding and puts video into moderation (the F100 shadow pass, the child-safety scan). Photos come first either way; feeds Discover. Local scouts, below, need B for a first-run window. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
+Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed** an owner's video: cheap, unseen by our moderation. **B) Host natively**, posted here first: a reason to come, but storage, transcoding and video moderation (F100, child-safety scan). Photos first either way; Local scouts need B. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
+
+### Follow an artist across venues
+
+*Don, 2026-10-22:* follow a performer and hear whenever any local venue lists them (#997). Precedent: Bandsintown. **What would make it real:** members ask, and a ruling on what an artist is. [lane: considering]
 
 ### Local scouts
 
-*The PM, 2026-10-21:* members who go out, find local businesses that don't market themselves, and post them here before TikTok or Instagram, with a reason to do so. [lane: considering] *Analysis, agent:* a scout is a member in a Scouts Group; a showcase names a Page, carries a "First on SocialUs" window (48 hours) and a required disclosure line, and never reorders Find. Recommended reward: credit and labelled perks, no money until counsel. Doc: `planning/research/local-creators-2026-10-21.md`. **What would make it real:** a ruling on the reward, and three scouts willing to pilot on the dark-site list.
+*The PM, 2026-10-21:* members who go out, find local businesses that don't market themselves, and post them here before TikTok or Instagram, with a reason to do so. [lane: considering] *Analysis, agent:* a scouts Group showcasing Pages first here; reward credit and perks, no money until counsel (`planning/research/local-creators-2026-10-21.md`). **What would make it real:** a ruling on the reward, and three scouts willing to pilot on the dark-site list.
 
 ### Ticketing, and what RSVPs have to do with Ticketmaster
 

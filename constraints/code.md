@@ -10,6 +10,7 @@
 > **178 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-22** · [for now] · pages, posts, unclaimed, events — A venue's real shows from its own public schedule may be posted on its unclaimed Page as real dated event posts, not Samples: read daily from the venue's own events page or feed (never an aggregator), the next 60 days, crediting the source, with the venue's own ticket link (product/foundation/nouns.md)
 - **2026-10-21** · [for now] · pages, unclaimed, moderation — An unclaimed Page is claimed self-serve; a verified claim completes at once, with no staff step. [for now] (product/systems/groups.md)
 - **2026-10-21** · [for now] · pages, unclaimed, seeder — Samples give way to the owner; the seeder steps back from a town that runs itself. [for now] (product/systems/groups.md)
 - **2026-10-18** · [for now] · pages, products, search — A Page features up to 12 of its products and services; their words help search find the Page that carries them; what locals search for is kept aggregated and anonymous and shown back to owners (product/foundation/nouns.md)
