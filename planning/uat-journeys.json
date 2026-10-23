@@ -7,7 +7,7 @@
   "minutes": 3,
   "launch": true,
   "look": [
-   "Send stays off until you pick a reason and type words",
+   "Report is on the menu of a post, its photo, the Page picture, the Page's words and a featured item; Send stays off until you pick a reason and type words",
    "A plain note says misuse counts against you",
    "Picking \"threat of harm\" shows a call-911-first note",
    "After Send the sheet closes with a thank-you",
@@ -19,7 +19,8 @@
    "F102.10",
    "F078.8",
    "F058.1",
-   "F080.4"
+   "F080.4",
+   "F078.1"
   ]
  },
  {
@@ -67,7 +68,8 @@
    "F100.6",
    "F058.3",
    "F058.6",
-   "F102.12"
+   "F102.12",
+   "F100.1"
   ]
  },
  {
@@ -107,14 +109,15 @@
    "A sensitive-content question shows while you upload",
    "The \"add something to sell\" screen opens with a short kind note asking for nothing sensitive",
    "The Page picture is optional",
-   "A Page with no picture yet shows the placeholder on its posts"
+   "A Page with no picture yet shows its kind's picture on the Page, on Explore and on its posts"
   ],
   "criteria": [
    "F080.1",
    "F099.9",
    "F080.5",
    "F099.1",
-   "F099.13"
+   "F099.13",
+   "F070.4"
   ]
  },
  {
@@ -150,7 +153,7 @@
   "launch": true,
   "look": [
    "One card per Page; the count says \"this week\", never \"0\"",
-   "Cards show no post text, time or place",
+   "Cards show photo, name, count, a details line and a sign-in call; no post text, time or place; a Page with no photo shows its kind's picture",
    "A Page shows name, photo, description and a sign-in card; no location, tags or founder",
    "Tapping around a card only ever asks you to sign in",
    "Only display names show; no real full names anywhere"
@@ -163,7 +166,8 @@
    "F093.9",
    "F077.3",
    "F093.11",
-   "F059.5d"
+   "F059.5d",
+   "F093.4"
   ]
  },
  {
@@ -174,13 +178,11 @@
   "minutes": 3,
   "launch": true,
   "look": [
-   "Four fields only, and you must check your email",
    "The Sacramento zip names your metro and says the zip chose it",
    "A short line says what the app is for, with nothing about never selling",
    "Nobody asks whether you make things or look for things"
   ],
   "criteria": [
-   "F081.1",
    "F081.3",
    "F081.5",
    "F081.6"
@@ -219,7 +221,7 @@
   "launch": false,
   "look": [
    "Explore is its own screen; a Map switch is within reach and works both ways",
-   "One filter icon, no chip rows; a dot shows while a filter is on",
+   "One filter icon, no chip rows, nothing between the cards; a dot shows while a filter is on",
    "Each card shows the name people know that Page by",
    "Search, open a result, go back: same city, same search, same scroll place",
    "A group or gathering Page opens normally"
@@ -230,12 +232,14 @@
    "F044.3",
    "F045.2",
    "F045.9",
-   "F092.1",
+   "F092.1a",
    "F059.9",
    "F059.10",
    "F069.1",
    "F044.1a",
-   "F045.3a"
+   "F045.3a",
+   "F059.4b",
+   "F059.5e"
   ]
  },
  {
@@ -249,7 +253,7 @@
    "Today and this-week rows hold only posts starting in that window, soonest first",
    "Empty rows do not show, and a quiet city drops the whole heading",
    "Your own items show for you, and change when you change the metro",
-   "Signed out, each posting Page gives one \"sign in to see\" card",
+   "Signed out, each posting Page gives one \"sign in to see\" card; signed in, the full posts are back",
    "Open the same link on another phone: the same rows show"
   ],
   "criteria": [
@@ -260,7 +264,8 @@
    "F091.1a",
    "F091.1b",
    "F091.2",
-   "F091.5"
+   "F091.5",
+   "F093.6"
   ]
  },
  {
@@ -317,23 +322,25 @@
  },
  {
   "id": "J14",
-  "title": "Fill in your Page: address, tags and phone",
+  "title": "Fill in your Page: basics, address, tags and phone",
   "role": "the owner of your test Page",
   "link": "https://socialus.org/you",
   "minutes": 3,
   "launch": false,
   "look": [
+   "Edit opens with your picture, name and about already filled; a change shows on the Page",
    "A real address shows a pin; a nonsense one is refused with a message",
-   "A neighbourhood shows a pin mid-area with no street address",
+   "Pick a neighbourhood instead: the Page says \"In <neighbourhood>\" with no street address, and Explore's map marks the area at its centre",
    "Your own tag saves, there is no category list, and zero tags cannot publish",
-   "A public phone shows signed in but not signed out",
-   "A Page with nothing optional filled in still looks complete, with nothing nagging"
+   "A public phone shows signed in but not signed out; a Page with nothing optional filled in still looks complete"
   ],
   "criteria": [
+   "F056.1a",
    "F056.6",
-   "F056.7",
+   "F056.7a",
+   "F056.7b",
    "F056.8",
-   "F056.9",
+   "F056.9a",
    "F056.5"
   ]
  },
@@ -346,7 +353,7 @@
   "launch": false,
   "look": [
    "Edit works in place, no delete, and visitors see no edit",
-   "The time shows in local time; no date means no time",
+   "The time shows in local time; no date means no time, a Show-until field and \"Posted <date>\"; an undated post past its window sits under Earlier",
    "The audience switch defaults to Anyone and says Nobody yet at zero",
    "It reads as coming from the Page: no price, no buy button",
    "After its start time passes it leaves Explore by itself"
@@ -357,7 +364,8 @@
    "F072.1a",
    "F072.2a",
    "F072.2b",
-   "F059.8"
+   "F059.8",
+   "F072.2c"
   ]
  },
  {
@@ -370,13 +378,15 @@
   "look": [
    "Follow turns into following and the Page shows in your list",
    "Unfollow then follow again: back once, no duplicate",
-   "Following a business when you own no shop still offers you Start something"
+   "Following a business when you own no shop still offers you Start something",
+   "The Page's Started by line and your Following list show display names, never a legal name"
   ],
   "criteria": [
    "F065.1",
    "F065.4",
    "F065.3",
-   "F065.5"
+   "F065.5",
+   "F077.2"
   ]
  },
  {
@@ -390,7 +400,7 @@
    "One photo per post is kept; a second is refused with a message",
    "The Page picture does not change when a post gets a photo",
    "Each card shows one image: post photo, else Page picture, else placeholder",
-   "Reporting one image hides only that image, and the notice says which",
+   "Reporting one image hides only that image and the card falls back to the next picture; the notice says which",
    "Removing a picture and reloading: it is gone"
   ],
   "criteria": [
@@ -399,7 +409,8 @@
    "F099.6",
    "F099.8",
    "F099.12",
-   "F099.2"
+   "F099.2",
+   "F099.7"
   ]
  },
  {
@@ -411,17 +422,20 @@
   "launch": true,
   "look": [
    "Each row shows a picture, a short excerpt, how serious, the reasons, the AI line, the reply, the reporter's record, the status and age",
-   "Seriousness runs 1 to 4 and shows the highest open one",
+   "Seriousness runs 1 to 4 and shows the highest open one; a pile-on from new accounts is flagged as possible coordinated reporting",
    "Tap a row: its full history shows newest first, with Undo on any decision",
    "Serious pictures are blurred until you press and hold; the most serious show plain",
-   "Remove photo on your test Page: it vanishes everywhere but the post stays listed"
+   "Remove photo on your test Page: it vanishes everywhere but the post stays listed; on Removed photos, deleting it for good cannot be undone"
   ],
   "criteria": [
    "F101.2",
    "F101.3",
    "F101.12",
    "F101.13",
-   "F058.4"
+   "F058.4",
+   "F102.5",
+   "F102.8",
+   "F070.5b"
   ]
  },
  {
@@ -435,12 +449,14 @@
    "The first report leaves the post up and the owner gets a gentle notice",
    "Reporting again from the same account does not hide it",
    "A report from a different member hides it",
-   "Both reports appear in the review list, hidden or not"
+   "Both reports appear in the review list, hidden or not",
+   "A sixth open report from one account is refused; after a dismissal the limit is one"
   ],
   "criteria": [
    "F078.2",
    "F078.12",
-   "F078.6"
+   "F078.6",
+   "F102.6"
   ]
  },
  {
@@ -462,7 +478,8 @@
    "F103.2a",
    "F103.3",
    "F081.7",
-   "F081.4"
+   "F081.4",
+   "F103.5a"
   ]
  },
  {
