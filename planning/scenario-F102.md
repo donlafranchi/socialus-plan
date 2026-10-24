@@ -70,7 +70,7 @@ Hiding is the safe default, so midweek nothing needs a person: content that migh
 
 [platform store=ugc: the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content]
 
-**About 2 build days, in the beta (2026-10-30)**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). Criterion 12 adds about half a day; criterion 13 about half a day. What to push is in F101 § Size.
+**About 2 build days, in the beta**, after F078's notice: the answer choices and fix-and-repost (1 day); counters, cap and cool-down (half a day); the coordinated flag and the Friday summary (half a day). Criterion 12 adds about half a day; criterion 13 about half a day. What to push is in F101 § Size.
 
 ## Rulings
 - **2026-10-16 — The "no score on a person" rule is removed.** Person ratings are open to design (e.g. Uber-style two-way ratings between members and Pages). [replaces 2026-10-12: The platform never rates, ranks or labels a person] [replaces F102: never as a score, rank or label on a person] [for now] [binds tiers=planning,code surfaces=members,reports build=none]

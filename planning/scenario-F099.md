@@ -65,7 +65,7 @@ More than one photo on a Page or a post, and any gallery: after beta, its own sc
 
 ### Size
 
-**About 3 build days, in the beta (2026-10-30):** the Page picture and post-photo columns with their hide and remove state (half a day); the Page picture on Page edit and the photo step in the composer, with the ask and alt text (1 day); the fallback in every read that shows a post (1 day); per-image report and hide (half a day). The gallery, about 2 to 3 more days, follows after beta. The navy and gold palette stays in beta scope.
+**About 3 build days, in the beta:** the Page picture and post-photo columns with their hide and remove state (half a day); the Page picture on Page edit and the photo step in the composer, with the ask and alt text (1 day); the fallback in every read that shows a post (1 day); per-image report and hide (half a day). The gallery, about 2 to 3 more days, follows after beta. The navy and gold palette stays in beta scope.
 
 **Scope signal:** this is the fifth launch addition since 2026-10-01 with nothing removed. If beta tightens, the first candidates to push are Home's wildcard row and older-picks tap (F098 criteria 7 and 9), then the Badges & values section, then narrowing in a modal (F092).
 

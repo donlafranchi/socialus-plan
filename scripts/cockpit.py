@@ -16,7 +16,7 @@ def build(f):
     """f: facts (see scripts/fixtures/cockpit/facts.json). Returns [{id, title, bold, items:[{text, url?}]}]; items fold under the bold line."""
     L = f['lights']
     s = [{'id': 'where', 'title': 'Where we are',
-          'bold': f"Beta in {f['days']} days · {lights_line(L)}",
+          'bold': f"Beta runs until April 2027 · {lights_line(L)}",
           'items': [{'text': f"{DOT[l['state']]} {l['name']}: {l['text']}"} for l in L]}]
     b = f['built']
     s.append({'id': 'built', 'title': 'Built since last look',
@@ -44,7 +44,7 @@ def build(f):
               'items': [{'text': ('✅ ' if i['done'] else '☐ ') + i['text'], 'url': i.get('url')} for i in k['items']]})
     r = f['risks']
     s.append({'id': 'risks', 'title': 'Risks and deadlines',
-              'bold': f"Freeze {r['freeze']} · {len(r['due'])} due soon",
+              'bold': f"{len(r['due'])} due soon",
               'items': [{'text': x} for x in r['due'] + r['dated']]})
     sf = f['safety']
     s.append({'id': 'safety', 'title': 'Agent safety',

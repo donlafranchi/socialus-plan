@@ -8,7 +8,6 @@ from zoneinfo import ZoneInfo
 
 REPO = 'donlafranchi/socialus-web'
 MILESTONE = 'Beta 11-06'
-FREEZE = date(2026, 10, 30)
 LIVE = 'https://socialus.org'
 AREAS = ['page-editing', 'sign-in-you', 'explore-map', 'create-posts',
          'sharing-links', 'builders-seed', 'moderation', 'ops']
@@ -296,14 +295,13 @@ elif not uat_items:
 
 root = args[0] if args else '.'
 now = datetime.now(ZoneInfo('America/Los_Angeles'))
-days = (FREEZE - now.date()).days
 total = len(rows)
 done = sum(1 for r in rows if r['done'])
 stage_totals = ' · '.join(f'{STAGES[k]} {sum(1 for r in rows if (r["st"][k] == "●" if k == 2 else ok(r["st"][k])))}/{total}' for k in range(6))
 ROLL = criteria.rollup(FEATS) if FEATS else {'areas': {}, 'milestone': {'met': 0, 'total': 0, 'features': 0, 'red': 0, 'pct': 0}}
 MS = ROLL['milestone']
 issues_closed = sum(1 for r in rows if not r['open'])
-header = f'{MILESTONE} · {days} days to freeze · criterion roll-up: {MS["met"]}/{MS["total"]} criteria met ({MS["pct"]}%), checked {MS.get("checked", 0)}, reviewed {MS.get("reviewed", 0)}, smoked {MS.get("smoked", 0)}, PM looked {MS.get("pm", 0)}' + (f', PM: not OK {MS["not_ok"]}' if MS.get('not_ok') else '') + f' across {MS["features"]} features, {MS["red"]} red, {sum(1 for f in FEATS if f.get("stale"))} reports stale · Issues closed {issues_closed}/{total} (alongside, not the headline) · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
+header = f'{MILESTONE} · beta runs until April 2027 · criterion roll-up: {MS["met"]}/{MS["total"]} criteria met ({MS["pct"]}%), checked {MS.get("checked", 0)}, reviewed {MS.get("reviewed", 0)}, smoked {MS.get("smoked", 0)}, PM looked {MS.get("pm", 0)}' + (f', PM: not OK {MS["not_ok"]}' if MS.get('not_ok') else '') + f' across {MS["features"]} features, {MS["red"]} red, {sum(1 for f in FEATS if f.get("stale"))} reports stale · Issues closed {issues_closed}/{total} (alongside, not the headline) · updated {now.strftime("%Y-%m-%d %H:%M")} PT'
 
 areas = []
 behind = []
@@ -607,10 +605,10 @@ def cockpit_facts():
     if lost_n:
         safe['flags'].append({'text': f'{lost_n} approved criteria left, stopped being built or lost their test (see Lost since last look)'})
     lights.append({'name': 'agent safety', 'state': 'red' if safe['flags'] else ('unknown' if safe['unread'] else 'green'), 'text': f'{len(safe["flags"])} flags' if safe['flags'] else f'nothing flagged; {len(safe["unread"])} checks not read yet'})
-    return {'days': days, 'lights': lights,
+    return {'lights': lights,
             'built': {'merged': merged[:15], 'newly_met': newly, 'lost': lost_n, 'since': 'since you last looked' if LOOK else 'last 7 days, no look recorded yet'},
             'upcoming': up, 'attention': {'total': len(flat), 'first': first, 'rest': flat[1:8]}, 'test': test,
-            'setup': {'items': setup, 'private': 0}, 'risks': {'freeze': FREEZE.isoformat(), 'due': due, 'dated': dated}, 'safety': safe}
+            'setup': {'items': setup, 'private': 0}, 'risks': {'due': due, 'dated': dated}, 'safety': safe}
 
 if RECORD_LOOK and record_look():
     LOOK = json.load(open(LOOK_FILE)); LOOK['time'] = datetime.fromisoformat(LOOK['time'])
@@ -804,7 +802,7 @@ const notifyLede=NT.state?`${(NTS[NT.state]||NTS.quiet)[1]}: ${NT.kinds.map(k=>`
 const notifyBody=NT.state?NT.kinds.map(k=>{const w=k.weeks.slice(-8);const sum=f=>w.slice(-4).reduce((a,x)=>a+x[f],0);return `<div class="row speed"><span class="pri" style="background:${(NTS[k.state]||NTS.quiet)[0]};color:#fff">${esc((NTS[k.state]||NTS.quiet)[1])}</span><div class="title"><b>${esc(NTN[k.kind]||k.kind)}</b> · ${pc(k.optInRate)} of members opted in · ${pc(k.openRate)} opened${k.why?` · <b>${esc(k.why)}</b>`:''}<br><span class="sub">Last 4 weeks: ${sum('sends')} sent, ${sum('opens')} opened, ${sum('unsubscribes')} turned off, ${sum('mutes')} paused, ${sum('opt_ins')} turned on. Sent per week: ${w.map(x=>x.sends).join(' → ')||'–'}</span></div></div>`}).join('')+`<p class="sub">Counts only: no member is named. Reviewed monthly and at each release; a review proposes one change at a time. <a href="${esc(NT.runs)}">runs</a></p>`:'<p class="sub">The weekly notification counts could not be read yet.</p>';
 document.getElementById('areas').innerHTML=
  sec('todo','Your to-do',todoLede,todoBody,true)+
- sec('soft-launch','Before soft launch (11-06)',launchLede,launchBody)+
+ sec('soft-launch','Before the beta ends (April 2027)',launchLede,launchBody)+
  sec('going',"Where we're going",`Now ${D.lanes.now.length} · Next ${D.lanes.next.length} · Considering ${D.lanes.considering.length} · Later ${D.lanes.later.length}`,[['now','Now: being built'],['next','Next: settled and approved'],['considering','Considering: possible, not approved'],['later','Later: eventual']].map(([k,t])=>`<h3 style="font-size:.95rem;margin:12px 0 4px">${t}</h3><ol style="margin:0;padding-left:22px">${D.lanes[k].map(x=>`<li>${x.id==='idea'?'':esc(x.id)+' '}${esc(x.title)} <span style="color:var(--mute)">(${esc(x.status)})</span></li>`).join('')||'<li>none</li>'}</ol>`).join(''))+
  sec('speed','How fast it feels',speedLede,speedBody)+
  sec('notify','Notifications',notifyLede,notifyBody)+

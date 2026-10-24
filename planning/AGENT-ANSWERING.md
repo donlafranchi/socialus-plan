@@ -3,7 +3,7 @@ id: agent-answering
 purpose: In-app answering over SocialUs data — the argument for it, what the project looked like when it was decided, and what must not be foreclosed before launch. A constraints list, not a build plan.
 status: prepare-only
 discussed: 2026-09-21
-horizon: the version after launch (launch is 2026-10-30)
+horizon: the version after launch (after the beta, which runs until April 2027)
 ---
 
 # Answering, inside the app — prepare, don't build
@@ -12,7 +12,7 @@ horizon: the version after launch (launch is 2026-10-30)
 
 > **Not for launch.** Don, 2026-09-21, verbatim: *"This isn't something we're adding for [launch], but it is something I'd like to prepare for for the next version after [launch]."* And on why it is written down at all: *"I also want the information captured so we can build off of it when the time comes. Lastly date it so we have a reference for where we were when it was discussed."*
 >
-> **The version after 2026-10-30, and not backlog for it.** Nothing here is a ticket and nothing here competes for the launch list. **The post-launch milestone in `socialus-web` is where the work will hang; its name is pending and belongs in this line once it exists.**
+> **The version after the beta, and not backlog for it.** Nothing here is a ticket and nothing here competes for the launch list. **The post-launch milestone in `socialus-web` is where the work will hang; its name is pending and belongs in this line once it exists.**
 
 ## The argument, so a later reader can disagree with it
 
