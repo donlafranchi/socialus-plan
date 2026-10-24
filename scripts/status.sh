@@ -26,9 +26,7 @@ set -uo pipefail
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
-# Beta is for testing: a soft target, not a hard deadline (2026-10-05).
-BETA=2026-11-06
-FREEZE=2026-10-30
+# The beta runs until April 2027, no deadline or freeze (PM, 2026-10-23).
 PRODUCTION="April–May 2027"
 
 # Resolve the code repo. In CI it is checked out beside this one; locally it is
@@ -68,8 +66,6 @@ fi
 export STATUS_STATE="$STATE_OUT"
 export STATUS_CROSS_OK="$CROSS_OK"
 export STATUS_BLOCKED="$BLOCKED"
-export STATUS_BETA="$BETA"
-export STATUS_FREEZE="$FREEZE"
 export STATUS_PRODUCTION="$PRODUCTION"
 export STATUS_CODE="${CODE:-}"
 
@@ -84,8 +80,6 @@ import datetime, glob, json, os, re, subprocess, sys
 state   = os.environ["STATUS_STATE"]
 cross   = os.environ["STATUS_CROSS_OK"] == "1"
 blocked = os.environ["STATUS_BLOCKED"]
-beta    = datetime.date.fromisoformat(os.environ["STATUS_BETA"])
-freeze  = datetime.date.fromisoformat(os.environ["STATUS_FREEZE"])
 prod    = os.environ["STATUS_PRODUCTION"]
 today   = datetime.date.today()
 out     = []
@@ -141,8 +135,7 @@ w(">")
 w("> **Answers \"where is this project\", not \"what tickets exist.\"** The ticket")
 w("> list is `gh issue list`, which is always right; this is not a copy of it.")
 w()
-w(f"Beta **{beta:%Y-%m-%d}**, one metro — a soft target for testing, not a hard deadline. "
-  f"{(beta - today).days} days out; feature freeze {freeze:%Y-%m-%d}, also soft. Production launch {prod}.")
+w(f"Beta runs until April 2027, one metro, with no deadline or freeze. Production launch {prod}.")
 
 # Headline counts from the markers, so what is unverified is a number up here and not silence below.
 _code = ["--code", os.environ["STATUS_CODE"]] if os.environ.get("STATUS_CODE") else []

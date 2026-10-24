@@ -63,7 +63,7 @@ The AI hiding or removing anything on its own. Raising a metro's hide bar on the
 
 [platform none]
 
-**About 3.5 build days, in the beta (2026-10-30)**, after F078's report shape: the model call, escalation and assessments table (1.5 days); the agreement log (half a day); the harness runner (1 day); the PM's read of the first results (half a day). Builder agents build the test set alongside. Live mode and prompt tuning follow after beta. What to push is in F101 § Size.
+**About 3.5 build days, in the beta**, after F078's report shape: the model call, escalation and assessments table (1.5 days); the agreement log (half a day); the harness runner (1 day); the PM's read of the first results (half a day). Builder agents build the test set alongside. Live mode and prompt tuning follow after beta. What to push is in F101 § Size.
 
 ## Rulings
 - **2026-10-11 — The Cloudflare CSAM Scanning Tool is set up before beta. Don sets up the socialus.org zone on Cloudflare and a verified reporting contact; agents build the hash-result field on the row, wire it in as soon as the tool is enabled, and write Don a short phone checklist of the setup steps.** The PM, 2026-10-11, option A on `socialus-web` #641 (F100 criterion 12). The 2026-10-05 ruling on severity-1 content and AI providers stands. [replaces none] [binds tiers=planning,code surfaces=moderation,uploads,ai] Issue: #641.

@@ -76,9 +76,9 @@ An ordinary picture of a child is tier 1 because F078 already treats it at the t
 
 [platform none]
 
-**About 2.5 build days, in the beta (2026-10-30)**, after F078: the per-subject query, severity and sort (half a day); rows, buttons, swipe, toast and auto-advance (1.5 days); detail, reason codes and the 50-row timing test (half a day).
+**About 2.5 build days, in the beta**, after F078: the per-subject query, severity and sort (half a day); rows, buttons, swipe, toast and auto-advance (1.5 days); detail, reason codes and the 50-row timing test (half a day).
 
-**Scope signal:** F100, F101 and F102 together are about 8 build days, the sixth launch addition since 2026-10-01 with nothing removed, with feature freeze on 2026-10-23. **Recommend pushing to after beta, in this order:** the Badges & values section; add-to-calendar and end time on dated Posts (F072 criterion 6); repeating series (F074). Or hold F100's harness runner and live-mode gate to after beta (saves about 1 day), since they gate production, not beta.
+**Scope signal:** F100, F101 and F102 together are about 8 build days, the sixth launch addition since 2026-10-01 with nothing removed. **Recommend pushing to after beta, in this order:** the Badges & values section; add-to-calendar and end time on dated Posts (F072 criterion 6); repeating series (F074). Or hold F100's harness runner and live-mode gate to after beta (saves about 1 day), since they gate production, not beta.
 
 ## Rulings
 - **2026-10-05 — Reported content is reviewed on one operator page, Posts: one row per reported subject, ordered by severity 1–4 then oldest first, decided with one tap on a full-width Approve or Remove button or a swipe (right approves, left removes), with no confirm dialog and a five-second Undo.** Severity-1 Approve alone takes an extra confirm. A one-tap decision records a default reason that can be changed from the row's detail; each decision is still an attributed, reversible `report_decisions` row. Scenario: F101. [replaces 2026-09-17: each opening its own short list of preset reasons — one tap for the outcome, one for the reason] [binds tiers=planning,code surfaces=moderation,admin,reports]

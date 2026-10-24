@@ -63,7 +63,7 @@ status: ruled
 
 ## What happens to links already shared
 
-**This is cheap today and expensive later, which is the argument for ruling now.** Launch is 2026-10-30 and no member-created Page has a working URL at all — that is #135, the bug underneath all of this. **So there is currently nothing to break.** Whichever option wins, the rule is the same: **old shapes redirect permanently to the canonical form, and are never served as a second copy of it.** The redirect is what makes the place prefix safe to keep as a courtesy segment rather than dangerous as an identifier.
+**This is cheap today and expensive later, which is the argument for ruling now.** The beta has no end date before April 2027 and no member-created Page has a working URL at all — that is #135, the bug underneath all of this. **So there is currently nothing to break.** Whichever option wins, the rule is the same: **old shapes redirect permanently to the canonical form, and are never served as a second copy of it.** The redirect is what makes the place prefix safe to keep as a courtesy segment rather than dangerous as an identifier.
 
 ## The ID, specified
 

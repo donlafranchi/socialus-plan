@@ -1,4 +1,4 @@
-{"days": 17,
+{
  "lights": [{"name": "build", "state": "green", "text": "main CI passing"}, {"name": "site", "state": "green", "text": "deploy health passing"},
             {"name": "criteria 60%", "state": "amber", "text": "142 of 235 met"}, {"name": "migrations", "state": "unknown", "text": "not read yet"},
             {"name": "safety", "state": "red", "text": "1 flag"}],
@@ -8,5 +8,5 @@
                "rest": [{"title": "Tick a walk-through", "kind": "UAT", "url": "https://example.test/2"}]},
  "test": {"done": 0, "total": 17, "next": {"minutes": 3, "role": "a member"}, "upnext": [{"title": "Start something", "role": "a member", "minutes": 3, "url": "https://example.test/519"}]},
  "setup": {"items": [{"text": "Moderation key", "done": false, "url": "https://example.test/707"}, {"text": "Twilio", "done": true}], "private": 3},
- "risks": {"freeze": "2026-10-30", "due": ["Accepted risk X review due 2026-10-15"], "dated": ["Launch checklist: NCMEC registration at production launch"]},
+ "risks": {"due": ["Accepted risk X review due 2026-10-15"], "dated": ["Launch checklist: NCMEC registration at production launch"]},
  "safety": {"flags": [{"text": "Rulings removed: 1 since last look"}], "unread": ["migrations applied"]}}

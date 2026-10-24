@@ -3,7 +3,7 @@
 *One generated page: a bold line per section, the detail folded. Nothing in it is hand-kept; the safety panel reads GitHub, not agent reports.*
 
 <details>
-<summary><b>1. Where we are</b> — Beta in 17 days · 🟢 build · 🟢 site · 🟡 criteria 60% · ⚪ migrations · 🔴 safety</summary>
+<summary><b>1. Where we are</b> — Beta runs until April 2027 · 🟢 build · 🟢 site · 🟡 criteria 60% · ⚪ migrations · 🔴 safety</summary>
 
 - 🟢 build: main CI passing
 - 🟢 site: deploy health passing
@@ -51,7 +51,7 @@
 </details>
 
 <details>
-<summary><b>7. Risks and deadlines</b> — Freeze 2026-10-30 · 1 due soon</summary>
+<summary><b>7. Risks and deadlines</b> — 1 due soon</summary>
 
 - Accepted risk X review due 2026-10-15
 - Launch checklist: NCMEC registration at production launch
