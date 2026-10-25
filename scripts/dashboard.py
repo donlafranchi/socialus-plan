@@ -7,7 +7,7 @@ from datetime import datetime, date, timedelta, timezone
 from zoneinfo import ZoneInfo
 
 REPO = 'donlafranchi/socialus-web'
-MILESTONE = 'Beta 11-06'
+MILESTONE = 'Beta'
 LIVE = 'https://socialus.org'
 AREAS = ['page-editing', 'sign-in-you', 'explore-map', 'create-posts',
          'sharing-links', 'builders-seed', 'moderation', 'ops']
