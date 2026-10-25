@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 119, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 146/165 (alongside, not the headline) · updated 2026-10-24 18:32 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 119, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 147/165 (alongside, not the headline) · updated 2026-10-25 08:00 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -14,16 +14,16 @@
 - 🟡 docs: 64 undated (target under 5)
 - 🔴 agent safety: 1 flags
 - Built since last look: 15 PRs merged, 65 criteria newly met, 24 lost, last 7 days, no look recorded yet
-- Upcoming: Now: 20 being built · Next: 7 settled · Considering: 11 · Later: 62
+- Upcoming: Now: 20 being built · Next: 7 settled · Considering: 12 · Later: 62
 - Needs your attention: 1 of 14: Fill in your Page: basics, address, tags and phone (as the owner of your test Page, about…
 - What to test: Next walk-through: 3 min, as a member. 0 of 22 done
 - Accounts, keys and APIs: 6 to set up before beta
 - Risks and deadlines: 0 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Red** (2 member screen(s) red, 3 amber); slowest: Bottom nav → Explore [settled] 1771 ms, Explore post card → Page post [quick] 1089 ms, Explore card → Page (member) [quick] 1067 ms
+**How fast it feels: Red** (2 member screen(s) red, 4 amber); slowest: Bottom nav → Explore [settled] 1763 ms, Explore card → Page (member) [quick] 1412 ms, Explore card → Page [quick] 1075 ms
 
-## Your to-do (29)
+## Your to-do (30)
 
 - P1 · Run the F078 report test (closes #220) · due 10-27
 - P1 · Founding circle: talk with 5 people outside the team who've tried SocialUs · due 11-06
@@ -54,5 +54,6 @@
 - P3 · Wording: 'we do not tolerate abusive content'
 - P3 · Each month: the notifications review
 - P3 · Add the Maidu Park market
+- P3 · Review artist collaborations idea
 
 *Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*
