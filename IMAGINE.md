@@ -44,9 +44,7 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 ### Artist collaborations on Pages
 
-*Don, 2026-10-24, verbatim:* "Is there a way for us to use fan art for photos? We could be helping local artists this way by allowing them to create and post images of their art on certain pages if the page owner and artist collaborate?" [lane: considering]
-
-*Analysis, agent, 2026-10-24:* a Page owner invites a local artist to make **original** art for their Page (a mural, poster, banner, product art). The artist is credited and linked on the Page, so neighbours find them; the owner gets a picture nobody else has. It fits "locals supporting locals". **Guardrail:** no pro-team or brand trademarks, logos or player likenesses, so no fan art of the NBA, the Kings and the like; team names in text are fine. That is why this is original commissioned art, not fan art. Options, precedents and a pilot: `planning/research/artist-collaborations-2026-10-24.md`. **What would make it real:** a ruling on A, B or C in that note, and two or three Page owners who each want an artist.
+*Don, 2026-10-24:* "Is there a way for us to use fan art for photos? We could be helping local artists this way by allowing them to create and post images of their art on certain pages if the page owner and artist collaborate?" [lane: considering] *Analysis, agent:* a Page owner invites a local artist to make **original** art (mural, poster, banner, product art), credited and linked, locals supporting locals. **Guardrail:** no pro-team or brand trademarks, logos or player likenesses; team names in text are fine. Options: `planning/research/artist-collaborations-2026-10-24.md`. **What would make it real:** a ruling on that note's A/B/C and two Page owners who want an artist.
 
 ### Follow an artist across venues
 
@@ -84,15 +82,13 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 **Four separable systems, smallest first:** (1) a vocabulary for attributes (quiet, patio, cheap), distinct from the tags a creator types about themselves; (2) member-supplied attributes, the third-party surface above, gated by [member-content-takedown] (the report path, F058, now exists); (3) reviewer segmentation, declared or inferred (**inference is close to what `product/systems/discovery.md` refuses**); (4) reviews at all (no review noun exists).
 
-**Cold start is the quiet killer:** one metro means roughly zero reviews, and a segmented system needs several times the volume. **A segmented review surface with no reviews advertises a promise the data cannot keep**, the failure Don describes in Yelp.
+**Cold start is the quiet killer:** one metro means roughly zero reviews, and a segmented surface with none promises what the data cannot keep.
 
 **The first step builds nothing.** F064's not-built-yet tap (recorded once, no count), pointed at *narrow by what I care about*, costs almost nothing and shows whether anyone else wants it. **The first real build after that is creator-declared attribute tags, which do not solve the stated problem:** self-reported attributes cannot make the distinction it opened with.
 
 **What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density that a second reader sees a first reader's words.
 
-**Reframed in part, 2026-09-21, by the in-app answering strategy** (`planning/AGENT-ANSWERING.md`): system 1 largely dissolves (a person can simply say *quiet*), but the obstacle is untouched, since an answering layer can only answer over what is written and nothing lets anyone write about a Page they do not own. **The entry stays, trigger unchanged.**
-
-**Not folded in:** *what's on*, the time-based half, already has a noun, verb and surface and belongs in the spine.
+**Reframed in part, 2026-09-21** (`planning/AGENT-ANSWERING.md`): system 1 largely dissolves; the obstacle stands. Trigger unchanged. *Not folded in:* *what's on* has a surface in the spine.
 
 ### The occasion — a thing people organize around, with no row of its own
 
@@ -100,7 +96,7 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 **Why it is here, not in the spine.** It has no noun (that is the ruling), no verb of its own (people make a Page and post a date, both existing) and no surface: it fails all three parts of the test at the top of this file.
 
-**What it is not:** an Idea (`wonder`), which is a *new thing* put to the neighbourhood and already has a noun; a Page, which is *who*; or a dated post, which is *when*. The occasion would be *what for*, and nothing in the model holds that.
+**What it is not:** an Idea (*a new thing*), a Page (*who*) or a dated post (*when*). The occasion would be *what for*; nothing holds that.
 
 **What would make it real:** an occasion that a Page and a dated post cannot carry between them, something people find, join and come back to that is neither an organization nor a moment. Until somebody produces one, the pair is the answer.
 
@@ -177,7 +173,7 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 *Analysis, agent, 2026-10-11:* the undesigned half of an **Idea** (`wonder`) plus a priced **Offer**. The new move is a public reply ("I can build that, for this"), and there is no reply channel, so the first step builds nothing: a wishes Page posts each wish as a Post, the frog habitat first and as a real want (samples are out of search), and replies happen outside the app.
 
 **Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So a wish is an Idea: post it, show interest, link the finished thing; SocialUs is not involved. **No expiry:** old wishes sort last after 90 quiet days (2026-09-15), not removed. Offers, the terms card and backers are the plan *if it becomes popular*.
-**Backers (Don, 2026-10-11):** "Maybe we also offer others to become backers and we provide the structure so that the parties don't have to figure this out for themselves." A backer funds an idea under one standard terms card, vetted once by counsel at the platform level, in three variants: gift, reward, pre-purchase. The aim is a member benefit: "We want to generate revenue for our members and not let outside lawyers take advantage of our members." **Backing is not investing:** no money back, share or return. The highest level ("a backer at the highest level is an investor") is not designed or offered and is held for socialus-legal. Don chose option A: words-only terms until payments exist and counsel clears it. Terms-card contents and detail: the brief § 6a.
+**Backers (Don, 2026-10-11):** a backer funds an idea under one standard terms card, vetted once by counsel, in three variants (gift, reward, pre-purchase), so parties need not figure it out themselves; the aim is a member benefit, not outside lawyers' fees. **Backing is not investing:** no money back, share or return; the highest level is not designed and is held for socialus-legal. Don chose option A: words-only terms until payments exist and counsel clears it. Detail: the brief § 6a.
 **Connects to:** the market listings (a wish can ask for a shopper or a plan; an answer that is for sale becomes a listing) and to F089 (wishes show producers what to bring).
 
 **What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
