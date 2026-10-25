@@ -42,6 +42,12 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed** an owner's video: cheap, unseen by our moderation. **B) Host natively**, posted here first: a reason to come, but storage, transcoding and video moderation (F100, child-safety scan). Photos first either way; Local scouts need B. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
 
+### Artist collaborations on Pages
+
+*Don, 2026-10-24, verbatim:* "Is there a way for us to use fan art for photos? We could be helping local artists this way by allowing them to create and post images of their art on certain pages if the page owner and artist collaborate?" [lane: considering]
+
+*Analysis, agent, 2026-10-24:* a Page owner invites a local artist to make **original** art for their Page (a mural, poster, banner, product art). The artist is credited and linked on the Page, so neighbours find them; the owner gets a picture nobody else has. It fits "locals supporting locals". **Guardrail:** no pro-team or brand trademarks, logos or player likenesses, so no fan art of the NBA, the Kings and the like; team names in text are fine. That is why this is original commissioned art, not fan art. Options, precedents and a pilot: `planning/research/artist-collaborations-2026-10-24.md`. **What would make it real:** a ruling on A, B or C in that note, and two or three Page owners who each want an artist.
+
 ### Follow an artist across venues
 
 *Don, 2026-10-22:* follow a performer and hear whenever any local venue lists them (#997). Precedent: Bandsintown. **What would make it real:** members ask, and a ruling on what an artist is. [lane: considering]
