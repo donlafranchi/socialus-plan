@@ -39,7 +39,7 @@ An owner invites an artist. The artist says yes and uploads the piece, choosing 
 - **Threadless** runs on artists submitting original designs that the community votes on, the artist credited and paid per sale. [Threadless](https://www.threadless.com/)
 - **Instagram collab posts** appear on both accounts, and only after the invited account accepts: the model for owner-invites, artist-consents. [Instagram Collabs](https://help.instagram.com/)
 - **Spotify Canvas** shows the visual with the artist credited, supplied and approved by the artist, not by the platform. [Spotify for Artists](https://artists.spotify.com/)
-- **Local mural programs** (city and arts-council commissions) pair a property owner with a named artist under a written agreement that sets credit, duration and who may reproduce the work. Sacramento's own arts commission runs one. Federal law (VARA) also gives murals' artists rights over destruction.
+- **Local mural programs** (city and arts-council commissions) pair a property owner with a named artist under a written agreement that sets credit, duration and who may reproduce the work. Federal law (VARA) also gives murals' artists rights over destruction.
 
 The common pattern: **credit travels with the work, the artist accepts before it appears, and the licence is narrow.**
 
