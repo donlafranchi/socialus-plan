@@ -50,7 +50,7 @@ def imagine(path):
     return out
 
 
-def section(scen, now_open, later_issues, now_name='Beta 11-06', later_name='After beta', ideas=()):
+def section(scen, now_open, later_issues, now_name='Beta', later_name='After beta', ideas=()):
     def lst(h):
         rows = sorted((s for s in scen if s['horizon'] == h), key=lambda s: (s['rank'], s['id']))
         return [f"{i}. {s['id']} {s['title']} *({s['status']})*" for i, s in enumerate(rows, 1)]
