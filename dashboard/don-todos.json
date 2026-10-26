@@ -1,5 +1,5 @@
 {
- "_how": "The PM's to-do, shown first on the HTML dashboard. The PM, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever the PM asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD). Trimmed 2026-10-25 to the decision rights: only ideas, version scope, words and look-and-feel, and actions only the PM can take (accounts, people); at most 10 items and 3 P1.",
+ "_how": "The PM's to-do, shown first on the HTML dashboard. The PM, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever the PM asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD). Trimmed 2026-10-25 to the decision rights: only ideas, version scope, words and look-and-feel, and actions only the PM can take (accounts, people); at most 10 items and 3 P1. ONE AT A TIME (the PM, 2026-10-26, option C of the harness grade): `items` holds the single item in front of the PM; `queue` holds the rest in order. When the PM answers, Dispatch moves the next item from `queue` into `items`. The dashboard reads `items` only.",
  "items": [
   {
    "p": 1,
@@ -8,7 +8,9 @@
    "unlocks": "Every agent decides by these words from now on",
    "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/rules-review-2026-10-25.md",
    "added": "2026-10-25"
-  },
+  }
+ ],
+ "queue": [
   {
    "p": 2,
    "text": "Run the F078 report test (closes #220)",
@@ -26,6 +28,14 @@
    "unlocks": "Real evidence for every other call, your first stewards, and a second person who can help run it",
    "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/founding-circle-2026-10-21.md",
    "added": "2026-10-21"
+  },
+  {
+   "p": 2,
+   "text": "Wonders: pick the first version (A, B or C)",
+   "how": "Read the last section of the playbook. Recommended B: interest plus roles (\"I can help as …\"), no money, about 3–4 days to build.",
+   "unlocks": "The clothing co-op Wonder can find a lead and a designer",
+   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/wonders-playbook-2026-10-25.md",
+   "added": "2026-10-25"
   },
   {
    "p": 2,
