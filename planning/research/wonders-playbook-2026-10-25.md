@@ -157,7 +157,7 @@ Total contributor fees: $35,000. A contributor who misses a deadline gets one wr
 
 **Recommend B: roles are what turn an ask into a project, and the co-op needs a lead and a designer before anything else.**
 
-[open-question owner=don raised=2026-10-25] Which first version of Wonders? A, B or C; recommend B.
+**Decided 2026-10-25: B** (ruling and criteria in scenario F117).
 
 - **A. Interest only (~2 days):** a Wonder post, "I'm in" with a size, and a progress bar to the poster's threshold. Cheapest; nobody can step up to run it.
 - **B. Interest plus roles (~3–4 days, recommended):** A, plus "I can help as …" from the eight roles, and the poster or lead accepting a helper. Shows who's leading and designing; still no money.

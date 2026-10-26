@@ -170,7 +170,7 @@ The launch is a yellow pages of organizations, not a white pages of people (2026
 - **Purchase** ○ *(2026-09-30)* — a member bought something from a business Page, confirmed by the seller, dated, with both members on it. **Not tracked yet; parked.** F077's sale half waits on it. Who sees a purchase is deferred with it (2026-09-30).
 - **Discussion message** ○ — a reply on a Page's board, one level deep (not a tree). Member-authored top-level posts are a later increment and need an operator concept that doesn't exist yet.
 - **Direct message** ○ — one person to another. No substrate exists at all. Never Location-scoped — the accountable-participation commitment is honoured by absence.
-- **Idea** `○` *(schema `wonder`)* — someone puts a new thing to the neighbourhood and others signal interest before it exists.
+- **Idea** `○` *(schema `wonder`; member-facing "Wonder")* — someone puts a new thing to the neighbourhood and others signal interest before it exists. Now: v1 building (F117: "I'm in" with a size, helpers in roles, a progress bar). Later: all-or-nothing group pre-orders (`planning/research/wonders-playbook-2026-10-25.md`).
   - **Never** — an expiry, or any conversion into another entry type *(2026-09-15, Don)*. The author creates the new Page themselves and announces or links it from the wonder.
   - **Now** — substrate only.
   - **Blocked** — the signalling / threshold / conversion mechanic is undesigned.
