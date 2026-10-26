@@ -12,9 +12,8 @@ authored: the PM, 2026-09-15 (voice, verbatim) and 2026-10-05 (tone direction), 
 
 **Precedence:** this file outranks plainlanguage.gov wherever they differ. `../ui/design-language.md` principle 11 (never show a zero count on someone's own work) still applies.
 
-Agents edit this file only on the PM's explicit instruction, recording what changed and when. **The name line and subhead are locked** (§ What we say); changing either needs a dated ruling. § Source is the PM's own text and is never reworded.
+Agents edit this file only on the PM's explicit instruction; the commit message says what changed. **The name line and subhead are locked** (§ What we say); changing either needs a dated ruling. § Source is the PM's own text and is never reworded.
 
-*Changes: 2026-10-05, `voice.md` and `tone.md` merged into this file on the PM's instruction; the core lines are unchanged. 2026-10-06, approved by the PM: § 3 "How we sound" and § 4's before/after table are approved and apply to copy (no longer a draft); § 1's posting rule amended: "Post" is the noun for the thing on a Page. 2026-10-26, on the PM's instruction: § 3 gains the catch phrase and the rules line, § 1 gains "brief", § 4 gains the rules and safety rows; a draft until he approves the words ([public-is-draft]).*
 
 ## 1. Rules
 
@@ -33,27 +32,19 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
 - **No release numbers, internal jargon or product-team vocabulary.**
 - **No promises:** state things as fact, not as a future we can't back yet.
 - **No forced rule of three,** unless it's how a person would list things.
-- **Brief.** A rule, a toast or an error is one line. A screen of copy is five lines or fewer. If it needs more, it is a page, and the page starts with the one line (the PM, 2026-10-26: "chill and brief").
+- **Brief** (the PM, 2026-10-26). A rule, toast or error is one line; a screen is five lines or fewer; more is a page that opens with the one line.
 - **Post is the noun, and the verbs stay outward.** "Post" and "Posts" name the thing on a Page; the verbs around it point out ("Let people know what's on"; "Post it" is fine as a button). "Just posts", "share", "content" and feed language stay out (§ What we say). [checked, warns]
 
 ## 2. What we say
 
-- **The problem and what we're moving toward.** The voice comes from the PM's essay on dying malls, late capitalism and supporting local (§ Source). What we're building toward is a place to find what's around you and the people behind it, to trade, teach and connect, in person: somewhere to gather that isn't home, isn't work, and isn't a screen.
-- **Core lines (locked, unchanged):**
-  - Name line: "A local discovery and community-building platform."
-  - Subhead: "Find the local, the quirky, the one of a kind, and the people behind it."
-- **Point outward.** The app gets people together in person; it is not another feed. CTAs say meet up, show up, join in, not stay, scroll, keep going.
-- **Nobody just posts.** A Post is the plain name for the thing on a Page, and the verbs around it stay outward. Every listing is a creation: something to trade, something to teach, a meet up, a volunteer ask. Never write about it the way Facebook, Instagram or TikTok write about posting or sharing.
-- **Job words attach to things.** Host or owner describes a thing, never a profile.
-- **Sound:** warm, plainspoken, a little wry. Never corporate, never a nonprofit appeal. Short, concrete, verb-led sentences with real nouns (shops, the farmers market, neighbors), not abstractions (community, ecosystem, stakeholders).
+- **The problem and what we're moving toward:** the PM's essay on dying malls, late capitalism and supporting local (§ 5). We're building a place to find what's around you and the people behind it, to trade, teach and connect, in person: somewhere to gather that isn't home, isn't work, and isn't a screen.
+- **Core lines (locked):** name line "A local discovery and community-building platform."; subhead "Find the local, the quirky, the one of a kind, and the people behind it."
 
 ## 3. How we sound
 
 Plain, with a subtle California ease: **work to live, not live to work** (the PM's direction, 2026-10-05: "a subtle california cruisey language vibe around here"). Unhurried, sunny not loud, life first, outside and in person, laid back but still clear. One light touch per screen at most; most screens need none. Local, not generic: river towns, delta breezes, farm to fork, long summer evenings, never beaches and Hollywood.
 
-**Catch phrase: "Be decent."** Two words, the PM's (2026-10-26), after a friend of his who used to say it. It closes a thanks ("Posted. Thanks for being decent.") and opens the rules. Once per screen at most, never as a substitute for a rule a law stands behind. **The rules open with one line: "Be cool. Don't be a jerk."** The specifics follow in plain words, one line each; the child-safety line stays explicit under it because it is a legal duty, not a vibe (Safety and Legal rows below: plain only). Attitude lives in the headline and the thanks; the rule itself stays flat.
-
-[open-question owner=don raised=2026-10-26] Does the stylized dedication ("Be decent, TYLER", a friend's words) appear in member-facing copy, and where? A) The About page only, one line, no name: "Be decent. A friend used to say it. We kept it." B) Name and all, on About. C) Nowhere public; it stays ours. Recommend A: the public repo carries no personal names, and a stranger reads an in-joke as noise.
+[open-question owner=don raised=2026-10-26] Where does the dedication ("Be decent, TYLER") appear? A) About, one line, no name: "Be decent. A friend used to say it. We kept it." B) Name and all. C) Nowhere public. Recommend A: no personal names in a public repo.
 
 | Context | Tone |
 |---|---|
@@ -78,12 +69,8 @@ Plain, with a subtle California ease: **work to live, not live to work** (the PM
 | Complete your profile to get started. | Add a picture when you get a minute. |
 | You have 3 pending actions. | A few things are waiting when you're ready. |
 | Submit | Post it |
-| Error: request failed. | That didn't go through. Give it another shot. |
+| Error: request failed. | That didn't go through. Mind trying again? |
 | Please don't post anything sensitive, like content involving children, pets, or anyone who can't speak up for themselves. We rely on each other to keep this place kind and decent. | Be cool, don't be a jerk. Leave out kids, pets and anyone who can't speak up for themselves. Thanks for being decent. |
-| This photo has no children in it. | No kids in this photo. |
-| Be kind and decent. Please don’t post anything sensitive… (Terms) | Be decent. No photos of kids, ever. Nothing involving kids, pets or anyone who can't speak up for themselves. |
-| Thanks for looking out for everyone. The page owner is getting a courtesy notice. | Thanks for looking out. The Page owner gets a heads-up first. |
-| If someone's in danger right now, please call 911 first. We'll look into this too. | Someone in danger right now? Call 911 first. We're on it too. |
 | Maximize your reach. | Let people know it's on. |
 | Nothing found. | Nothing here yet. Maybe try a bit wider. |
 
@@ -200,7 +187,7 @@ Footer / about
 SocialUs is a place to find what's around you and the people behind it, to trade, teach, and connect, in person, not just online. Somewhere to gather that isn't home, isn't work, and isn't a screen.
 
 ## Rulings
-- **2026-10-26 — Copy is chill and brief, with attitude in the headline and the thanks: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line. The child-safety rule stays explicit and plain beneath the headline.** The PM: "I want our language to be chill and brief"; "Be cool, don't be a jerk!" in place of the long sensitive-content paragraph; "Be decent" after a friend who said it. Because the current safety paragraph is 50 words and reads as a policy; the duty stays, the words shrink. [binds tiers=planning,code surfaces=copy,voice,rules,safety]
+- **2026-10-26 — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline.** The PM, after a friend who said it. Because the safety paragraph read as policy. Builds `socialus-web` #1078. [binds tiers=planning,code surfaces=copy,voice,rules,safety]
 - **2026-10-08 — Member-facing copy says Page and post, not listing: members create Pages (no charge to create one) and post announcements or messages; listing products and services comes later.** Don. Because a Page and its posts are what exists in beta; "listing" promises a product catalogue that isn't built. [replaces none] [binds tiers=planning surfaces=copy,pages build=none]
 - **2026-10-06 — The tone is approved: copy follows `voice-and-tone.md` § 3 "How we sound" (a subtle California ease, "work to live, not live to work") and § 4's before/after table. "Post" is the noun for the thing on a Page (a Post, Posts); the verbs around it stay outward ("Let people know what's on"; "Post it" is fine as a button), and "just posts", "share", "content" and feed language stay out.** The PM, option A. Because Post is the plain name people expect; the ease keeps it human; outward verbs keep the in-person point. The copy checker in `nouns.md` no longer warns on the noun. Builds `socialus-web` #365. [replaces 2026-10-05: The "How we sound" section (a subtle California ease, "work to live, not live to work"), its tone table and the before/after examples are currently a draft, not applied to copy until the PM approves.] [binds tiers=planning,code surfaces=copy,voice]
 - **2026-10-05 — `voice.md` and `tone.md` are merged into one file, `product/foundation/voice-and-tone.md`: precedence, rules, what we say, how we sound, examples, and the PM's original voice text kept verbatim as its locked source. The core lines are unchanged..** The PM authorised merging the locked file. Agents edit it only on the PM's explicit instruction, recording what changed and when. Earlier lines here naming `voice.md` mean this file, as the 2026-09-16 line maps `RULES.md`. [binds tiers=planning,code surfaces=copy,voice build=none]
