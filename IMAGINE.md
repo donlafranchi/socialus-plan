@@ -36,6 +36,8 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
+**Open your town** (Don, 2026-10-26) has a surface, so it lives as scenario F118 in `planning/`, Next lane: after the soft launch, before the hard launch.
+
 ### Short video and photos on Pages
 
 *Don, 2026-10-12, verbatim:* "We will want more photos and short videos to be viewed in this app. I was looking at wineries yesterday and searched for them on tiktok to see what they were about. it would be helpful for us to allow these in our app for our users. perhaps business owners can link videos about their business from tiktok or we host videos from these businesses before they get posted to tiktok as an example. this should already be in imagine.md. write this up somewhere for later use. this should be done sooner than later on our roadmap." [lane: considering]

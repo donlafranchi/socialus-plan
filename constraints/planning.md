@@ -10,9 +10,10 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-10-26** · [for now] · waitlist, open-your-town — A town opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 towns to reach both open in this round. Sacramento is the launch market and is already open (planning/scenario-F118.md)
-- **2026-10-26** · [for now] · open-your-town — A town on the Open page is a waiting market in the coverage area, named for its county or region and listing the towns inside it; the market stays the unit that opens (planning/scenario-F118.md)
-- **2026-10-26** · [for now] · open-your-town, waitlist — The town page shows its two counts in public, makers and supporters separately, cached; the combined "300" is retired with its thresholds (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · waitlist, open-your-town — A market opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 to reach both open in this round. Sacramento is the launch market and is already open (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · open-your-town — Open your town comes after the soft launch and before the hard launch; only the landing page is in scope now (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · open-your-town, landing — Open your town v1 is one simple form: make-sell-organize or find-and-support, an email, a maker's site or social URLs, and the towns where a person lives and plays. Answers go to staff only, and opting out is one step (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · open-your-town — The counting unit is the market (a region), not a town or county; its definition is still being researched (planning/scenario-F118.md)
 - **2026-10-26** · copy, voice, rules, safety — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline (product/foundation/voice-and-tone.md)
 - **2026-10-26** · [always] · copy, about — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea." (product/foundation/voice-and-tone.md)
 - **2026-10-26** · [for now] · open-your-town — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round (product/ui/surfaces.md)
