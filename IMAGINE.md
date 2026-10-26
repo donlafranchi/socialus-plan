@@ -166,18 +166,17 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 **Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
 
-### Wish it existed: ask for what may not exist locally
+### Wonders: ask who else wants it, then buy it together
 
-*Don, 2026-10-11, in his terms:* "I want a cute little frog habitat for my backyard ... a tiny thing that has a pond, running water, a little bit of plants ... it may exist somewhere but probably not locally ... can we post things like that as starter examples and see how the community responds, maybe someone says hey I can build that and offers to do so for some kind of a price or fee, or they work together to create something, and then we can see ideas like that as we think of them." A possibility, not a commitment. After beta; not in the Beta milestone. [lane: considering]
+A member posts a **Wonder**: "Does anyone else want this? Who'll lead it? Who'll design a piece?" Others join, take a role (lead, design, make) or register interest. A Wonder can stay a conversation, find a local maker (the frog habitat: a tiny backyard pond with running water and plants that exists somewhere but not here), or grow into an **all-or-nothing group pre-order** like Kickstarter or Massdrop (Drop): it runs only if enough people commit, at little or no profit, and any surplus goes to members. [lane: considering]
 
-*Analysis, agent, 2026-10-11:* the undesigned half of an **Idea** (`wonder`) plus a priced **Offer**. The new move is a public reply ("I can build that, for this"), and there is no reply channel, so the first step builds nothing: a wishes Page posts each wish as a Post, the frog habitat first and as a real want (samples are out of search), and replies happen outside the app.
+**First example, the PM's idea, which the PM won't run:** a clothing co-op for men about 5'10" and 170–190 lb, buying in bulk straight from a factory (pre-orders of 10k–100k per item). The Wonder asks who wants to lead it and who wants to design.
 
-**Launch phase (Don, 2026-10-11):** "For launch we are only offering it as an idea and early people will need to figure it out on their own. If it becomes popular then we will expand it. We aren't involved in the early phase." So a wish is an Idea: post it, show interest, link the finished thing; SocialUs is not involved. **No expiry:** old wishes sort last after 90 quiet days (2026-09-15), not removed. Offers, the terms card and backers are the plan *if it becomes popular*.
-**Backers (Don, 2026-10-11):** a backer funds an idea under one standard terms card, vetted once by counsel, in three variants (gift, reward, pre-purchase), so parties need not figure it out themselves; the aim is a member benefit, not outside lawyers' fees. **Backing is not investing:** no money back, share or return; the highest level is not designed and is held for socialus-legal. Don chose option A: words-only terms until payments exist and counsel clears it. Detail: the brief § 6a.
-**Connects to:** the market listings (a wish can ask for a shopper or a plan; an answer that is for sale becomes a listing) and to F089 (wishes show producers what to bring).
+**v1 is interest only:** post a Wonder, join, take a role, register interest, link the finished thing. No money moves, no backers, no platform-written terms; members organize it themselves and we get out of the way. Money (pledges, the all-or-nothing charge, surplus back to members) waits for payments and for socialus-legal to clear backing; backing is never investing (the 2026-10-11 backing ruling in `product/foundation/monetization.md`). Old Wonders sort last after 90 quiet days, never removed. Builds on the Idea noun (`wonder`) and a priced Offer.
 
-**What would make it real:** five real wishes in four weeks and two with a real offer. Brief: `planning/briefs/2026-10-11-wish-it-existed.md`.
+**Connects to:** market listings (a Wonder can ask for a shopper or a plan) and F089 (Wonders show producers what to bring).
 
+**What would make it real:** five real Wonders in four weeks, two with someone taking a role, and one with enough registered interest to price a bulk order. Briefs: `planning/briefs/2026-10-11-wish-it-existed.md`.
 
 ### Two sides: Find and Discover
 
@@ -211,4 +210,3 @@ How we verify that money returns to where it was generated. One concept to explo
 
 *Don, 2026-10-18:* "What would be the most ideal is if we were to make business inventory software where they manage their business and this app integrates somehow so they don't have to do things twice." The owner runs stock in SocialUs and the Page is always current. **What would make this real:** import (above) is used and owners ask to stop keeping a second system. [lane: later]
 
-[open-question owner=don raised=2026-10-12] Other entries are Later. Recommended for Considering (laned now; say if any should be Later): Wish it existed (expansion order already ruled; launches as an Idea); Market shopper and Market meal plans (briefs with measurable triggers, after beta); Discovery that knows what a person is optimizing for (Priority: higher; the report path now exists).

@@ -162,4 +162,4 @@ The courtesy notice (#220's live check) is the same under all three; it doesn't 
 - **B. Build community review into beta now.** Trade-off: 3–4 more build days before beta for panels that would mostly fall back to Don anyway.
 - **C. Don't adopt community review; stay with courtesy-first plus raising the hide bar as volume grows.** Trade-off: Don stays the judge, so his load grows with every metro.
 
-[open-question owner=don raised=2026-10-13] Community review: A, B or C (above). Recommend A.
+Decided 2026-10-25: A (ruling in `product/systems/moderation.md`).

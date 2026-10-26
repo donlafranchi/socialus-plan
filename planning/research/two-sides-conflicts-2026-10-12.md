@@ -22,7 +22,7 @@ Don, 2026-10-12: the app has two sides, Find ("the tool": finding something spec
 12. `product/foundation/monetization.md`: no attention-capture advertising; "Don't sell visibility" (2026-09-12).
 13. No pay-to-rank, which Don (2026-10-12) says does not apply to Discover; paid promotion there is open for design after beta: `product/charter.md` flip 2 ("No member can pay to rank above another") and "no pay-to-rank" in the squeeze section; `planning/scenario-F059.md` criterion 3; `product/foundation/model.md` (payment, size or follower count; the "don't sell visibility" section); `product/ui/surfaces.md` ordering rule; `product/systems/discovery.md` (no favour for payment, size or follower count). `PRINCIPLES.md` "Paid visibility passes a member-benefit gate" already allows it and is unchanged.
 
-[open-question owner=don raised=2026-10-12] Review the thirteen groups above. A) Update each when Discover is scoped, keeping Find as written. B) Update now. Recommend A: Discover is after beta and undesigned.
+Settled 2026-10-25 by the rules review (`planning/research/rules-review-2026-10-25.md`): the stances are updated now, Find kept as written.
 
 Settled by Don, 2026-10-12: "no pay-to-rank" does not apply to Discover (item 13). Find and Discover are the internal names (Don, 2026-10-12), member-facing names to come.
 
