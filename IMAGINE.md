@@ -166,17 +166,11 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 **Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
 
-### Wonders: ask who else wants it, then buy it together
+### Wonders: ask who else wants it, then make it together
 
-A member posts a **Wonder**: "Does anyone else want this? Who'll lead it? Who'll design a piece?" Others join, take a role (lead, design, make) or register interest. A Wonder can stay a conversation, find a local maker (the frog habitat: a tiny backyard pond with running water and plants that exists somewhere but not here), or grow into an **all-or-nothing group pre-order** like Kickstarter or Massdrop (Drop): it runs only if enough people commit, at little or no profit, and any surplus goes to members. [lane: considering]
+A member posts a **Wonder** ("Does anyone else want this? Who'll lead it? Who'll design a piece?"); people say "I'm in" or take a role, and it can grow into an all-or-nothing group pre-order like Kickstarter or Drop. Roles are small paid contracts, the price covers every fee at cost with open books, and any surplus goes back to buyers or the community fund. First example: the PM's clothing co-op for men about 5'10" and 170–190 lb, bulk factory runs of 10k–100k per item, which the PM won't run. Until payments and the legal entity exist, a Wonder runs on interest sign-ups only. Playbook (stages, roles, pricing, templates, trust, precedents, v1 options): `planning/research/wonders-playbook-2026-10-25.md`. [lane: considering]
 
-**First example, the PM's idea, which the PM won't run:** a clothing co-op for men about 5'10" and 170–190 lb, buying in bulk straight from a factory (pre-orders of 10k–100k per item). The Wonder asks who wants to lead it and who wants to design.
-
-**v1 is interest only:** post a Wonder, join, take a role, register interest, link the finished thing. No money moves, no backers, no platform-written terms; members organize it themselves and we get out of the way. Money (pledges, the all-or-nothing charge, surplus back to members) waits for payments and for socialus-legal to clear backing; backing is never investing (the 2026-10-11 backing ruling in `product/foundation/monetization.md`). Old Wonders sort last after 90 quiet days, never removed. Builds on the Idea noun (`wonder`) and a priced Offer.
-
-**Connects to:** market listings (a Wonder can ask for a shopper or a plan) and F089 (Wonders show producers what to bring).
-
-**What would make it real:** five real Wonders in four weeks, two with someone taking a role, and one with enough registered interest to price a bulk order. Briefs: `planning/briefs/2026-10-11-wish-it-existed.md`.
+**What would make it real:** five real Wonders in four weeks, two with someone taking a role, and one with enough interest to price a bulk order.
 
 ### Two sides: Find and Discover
 
