@@ -80,13 +80,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 *Don's framing, 2026-09-19, in his terms:* *"I tend to regularly search for bars and restaurants with nice outdoor environments as opposed to outdoor tables next to a busy street. Whereas other times I don't really care about the ambiance and only want the best enchilada in the city."* And on reviews: *"yelp and google... lump all reviews from all people and that isn't really a useful way to do reviews when people have different expectations. For example some people are value oriented and want maximum say food for their dollar whereas I am willing to pay for quality and it'd be nice to be able to differentiate this."*
 
-**The obstacle is not filtering: nobody can say anything about a Page they do not own.** Every description today is the owner's: tags, the description, the composer's fields. A brewery tags itself *patio*, never *patio beside a four-lane road*. **The distinction wanted is third-party, a surface this product has never had** (local scouts' showcases, above, would be the first). A first step that does not answer *may a member write about someone else's Page* goes elsewhere.
-
-**Four separable systems, smallest first:** (1) a vocabulary for attributes (quiet, patio, cheap), distinct from the tags a creator types about themselves; (2) member-supplied attributes, the third-party surface above, gated by [member-content-takedown] (the report path, F058, now exists); (3) reviewer segmentation, declared or inferred (**inference is close to what `product/systems/discovery.md` refuses**); (4) reviews at all (no review noun exists).
-
-**Cold start is the quiet killer:** one metro means roughly zero reviews, and a segmented surface with none promises what the data cannot keep.
-
-**The first step builds nothing.** F064's not-built-yet tap (recorded once, no count), pointed at *narrow by what I care about*, costs almost nothing and shows whether anyone else wants it. **The first real build after that is creator-declared attribute tags, which do not solve the stated problem:** self-reported attributes cannot make the distinction it opened with.
+*Analysis, agent:* the obstacle is not filtering but that nobody can say anything about a Page they don't own; every description today is the owner's. Four separable systems, smallest first: an attribute vocabulary, member-supplied attributes (gated by [member-content-takedown]), reviewer segmentation (inference is close to what `product/systems/discovery.md` refuses), and reviews at all. Cold start is the risk: one metro means roughly zero reviews. The first step builds nothing: F064's not-built-yet tap shows whether anyone else wants it.
 
 **What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density that a second reader sees a first reader's words.
 
@@ -200,3 +194,6 @@ How we verify that money returns to where it was generated. One concept to explo
 
 *Don, 2026-10-18:* "What would be the most ideal is if we were to make business inventory software where they manage their business and this app integrates somehow so they don't have to do things twice." The owner runs stock in SocialUs and the Page is always current. **What would make this real:** import (above) is used and owners ask to stop keeping a second system. [lane: later]
 
+### Chat-first SocialUs
+
+*Don, 2026-10-26:* "I like being able to chat with an agent." The direction is ruled (`product/foundation/what-this-is.md`) and its shaped parts are F119 (near term) and F120 (long term); left here is only what a conversation is as a thing, if anything. **What would make this real:** F119's question log shows what people ask most.
