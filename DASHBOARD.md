@@ -1,12 +1,12 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 125, reviewed 29, smoked 128, PM looked 0 across 34 features, 3 red, 17 reports stale · Issues closed 147/165 (alongside, not the headline) · updated 2026-10-25 19:36 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 126, reviewed 29, smoked 126, PM looked 0 across 34 features, 3 red, 17 reports stale · Issues closed 147/165 (alongside, not the headline) · updated 2026-10-25 19:57 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
 ## The numbers
 
-- 🔴 build: main CI failing or unread
+- 🟢 build: main CI passing
 - 🟢 site: last deploy health run passed
 - 🟢 migrations: repo and database agree (last drift check on main)
 - 🔴 criteria 67%: 195 of 291 met, 3 launch-blocking unmet
