@@ -166,12 +166,6 @@ Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed*
 
 **Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
 
-### Wonders: ask who else wants it, then make it together
-
-A member posts a **Wonder** ("Does anyone else want this? Who'll lead it? Who'll design a piece?"); people say "I'm in" or take a role, and it can grow into an all-or-nothing group pre-order like Kickstarter or Drop. Roles are small paid contracts, the price covers every fee at cost with open books, and any surplus goes back to buyers or the community fund. First example: the PM's clothing co-op for men about 5'10" and 170–190 lb, bulk factory runs of 10k–100k per item, which the PM won't run. Until payments and the legal entity exist, a Wonder runs on interest sign-ups only. Playbook (stages, roles, pricing, templates, trust, precedents, v1 options): `planning/research/wonders-playbook-2026-10-25.md`. [lane: considering]
-
-**What would make it real:** five real Wonders in four weeks, two with someone taking a role, and one with enough interest to price a bulk order.
-
 ### Two sides: Find and Discover
 
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
