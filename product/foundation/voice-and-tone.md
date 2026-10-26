@@ -37,7 +37,7 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
 
 ## 2. What we say
 
-- **The problem and what we're moving toward:** the PM's essay on dying malls, late capitalism and supporting local (§ 5). We're building a place to find what's around you and the people behind it, to trade, teach and connect, in person: somewhere to gather that isn't home, isn't work, and isn't a screen.
+- **The problem and what we're moving toward:** the PM's essay (§ 5). We're building a place to find what's around you and the people behind it, to trade, teach and connect, in person: somewhere to gather that isn't home, isn't work, and isn't a screen.
 - **Core lines (locked):** name line "A local discovery and community-building platform."; subhead "Find the local, the quirky, the one of a kind, and the people behind it."
 
 ## 3. How we sound
