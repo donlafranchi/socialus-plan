@@ -82,7 +82,7 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**22 of 32 approved and building scenarios carry no platform marker**, so what they will
+**22 of 33 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 

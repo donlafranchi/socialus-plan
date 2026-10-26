@@ -7,11 +7,15 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **102 older decisions carry no tag yet and are not listed** — tagging is required from
+> **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-26** · [for now] · waitlist, open-your-town — A town opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 towns to reach both open in this round. Sacramento is the launch market and is already open (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · open-your-town — A town on the Open page is a waiting market in the coverage area, named for its county or region and listing the towns inside it; the market stays the unit that opens (planning/scenario-F118.md)
+- **2026-10-26** · [for now] · open-your-town, waitlist — The town page shows its two counts in public, makers and supporters separately, cached; the combined "300" is retired with its thresholds (planning/scenario-F118.md)
 - **2026-10-26** · copy, voice, rules, safety — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline (product/foundation/voice-and-tone.md)
 - **2026-10-26** · [always] · copy, about — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea." (product/foundation/voice-and-tone.md)
+- **2026-10-26** · [for now] · open-your-town — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round (product/ui/surfaces.md)
 - **2026-10-25** · [always] · principles, privacy, data — Data serves the members it comes from. [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, map, privacy — In public, locality is coarse; precision stays private (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, explore, discovery — Promotion earns its place by serving members. [always] (PRINCIPLES.md)
