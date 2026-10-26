@@ -41,10 +41,9 @@ Showing distance or time anywhere. Routing, isochrones or density tiers. A neigh
 
 **Next:** tune N per category from the log (a person edits the rows), and Search further (criterion 9).
 
-[open-question owner=don raised=2026-10-12] Later: show driving time on each card once a routing service exists (OpenStreetMap with Valhalla or OpenRouteService), only if the 2026-09-30 no-distance ruling is lifted at that point. A) lift it then, for driving time only. B) keep no distance anywhere. Recommend B until a member asks for it.
-
 [platform none]
 
 ## Rulings
+- **2026-10-25 — No driving time is planned; the question comes back only if members ask for it, and the no-distance ruling stands meanwhile.** Decided by the agent under the 2026-10-25 decision rights (soul and defaults; well-worn): no speculative rulings. [for now] [replaces none] [binds tiers=planning surfaces=explore build=none]
 - **2026-10-12 — Explore shows the top N results per category, nearest first in F104's ring order, each card naming its town ("in Folsom") and showing no miles or minutes. Starting guesses: 10 coffee, 20 restaurants, 5 hardware, and a default row for the rest, held in a config table a person edits.** The PM, 2026-10-12, option A on F109 (draft #123), replacing the depth-by-bands design. Driving time is a later question and only if the 2026-09-30 no-distance ruling is lifted (open question in F109). [replaces none] [binds tiers=planning,code surfaces=explore,search,home build=none]
 - **2026-10-12 — From beta day one we log which Page a member opens from Explore, with the member id, staff-side only, for the benefit of members, with an easy opt-out; member-to-member privacy stays strict.** The PM, 2026-10-12, A + C on F109: "We are tracking, just not for shareholder benefit." Because the table can only be tuned from observed opens; it follows the 2026-10-11 data ruling and the 2026-10-09 two-level privacy ruling. [replaces none] [binds tiers=planning,code surfaces=explore,privacy,metrics build=none]

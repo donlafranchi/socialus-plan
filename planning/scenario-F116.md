@@ -9,7 +9,7 @@ depends: []
 ---
 ## Story
 
-Before soft launch the PM opens one card and sees, bar by bar, whether SocialUs does what its pitch says: an owner's special lasts until it ends, a new member sees what is on without searching, what they gave (follows, interests, area) changes what they see, and a Page says who is behind it. Each bar is pass or fail on production. Derived from the pitch [derives pitch@2026-10-16] (`PRINCIPLES.md#pitch`, audit `planning/research/pitch-audit-2026-10-15.md`).
+Before soft launch the PM opens one card and sees, bar by bar, whether SocialUs does what its pitch says: an owner's special lasts until it ends, a new member sees what is on without searching, what they gave (follows, interests, area) changes what they see, and a Page says who is behind it. Each bar is pass or fail on production. Derived from the pitch [derives pitch@2026-10-25] (`PRINCIPLES.md#pitch`, audit `planning/research/pitch-audit-2026-10-15.md`).
 
 ## Acceptance
 

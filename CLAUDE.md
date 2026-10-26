@@ -6,16 +6,11 @@ Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadlin
 
 ## Decision rule
 
-Every agent, every decision, word for word from Don. Method detail: `ops-pattern/process/PIPELINE.md` § Decision rule.
+The 2026-10-04 decision rule, word for word, is in `~/.claude/CLAUDE.md` and `ops-pattern/process/PIPELINE.md` § Decision rule: look at 2–3 precedents first; decide well-worn paths yourself; bring new territory as A/B/C.
 
-```
-DECISION RULE (2026-10-04, Don)
-1. Look first: before designing or deciding anything, find what established platforms do for this exact use case. Name 2–3 precedents with links (e.g. Google, Apple HIG, Airbnb, Meetup, Yelp, Stripe, Linear).
-2. Choose: pick the most relevant and elegant option for SocialUs, the simplest one that fits our rulings.
-3. Well-worn path: if a clear, established pattern exists, decide and build it yourself. Label the Issue/PR "Path: well-worn", list the precedents, and don't wait for the PM.
-4. New territory: if there's no well-worn path, the precedents conflict, or it touches a ruling, legal or privacy exposure, money, or member trust, label it "Path: new territory" and bring it to the PM as A/B/C with a recommendation before building.
-5. When unsure which it is, say which in one line and lean toward deciding: the PM's time is the scarcest resource.
-```
+## Decision rights (2026-10-25)
+
+**The PM decides only ideas, what is in each version (the MVP of a feature), and words and look-and-feel.** Everything else, agents decide by the soul and defaults (`PRINCIPLES.md` § Soul, § Defaults) and the well-worn path, record it as a dated ruling where it governs, and report what they chose. Only new territory that conflicts with the soul goes to the PM. Detail: `ops-pattern/process/PIPELINE.md` § Decision rights.
 
 ## Read first, every session
 
@@ -91,7 +86,7 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 
 - Bullets, one line each. No preamble, no recap, no narration.
 - Name things in plain words; a number in brackets after, if useful.
-- Questions reach him as A/B/C with one-line trade-offs and a recommendation. Ask only when a fact only he has is missing, or the call affects the deadline. **Never ask which of two rulings is true — the newer wins and work continues** ([newer-decision-wins]); two live rulings that genuinely conflict become a marked open question, not a message.
+- Questions reach the PM as A/B/C with one-line trade-offs and a recommendation, and only for ideas, version scope, words and look-and-feel, or new territory that conflicts with the soul. **Never ask which of two rulings is true — the newer wins and work continues** ([newer-decision-wins]); two live rulings that genuinely conflict become a marked open question, not a message.
 - Reports open: `Status: Done | Blocked | Question — one sentence. Next: the ask.` Detail on "expand".
 - Email is not the best route to reach him — in-app is better; faster channels are TBD.
 - End with the next action, not a summary.
