@@ -37,14 +37,12 @@ Non-negotiable. **[checked]** means the user-facing string check in `nouns.md` e
 
 ## 2. What we say
 
-- **The problem and what we're moving toward:** the PM's essay (§ 5). We're building a place to find what's around you and the people behind it, to trade, teach and connect, in person: somewhere to gather that isn't home, isn't work, and isn't a screen.
+- **What we're moving toward** (the PM's essay, § 5): a place to find what's around you and the people behind it, to trade, teach and connect, in person; somewhere to gather that isn't home, work or a screen.
 - **Core lines (locked):** name line "A local discovery and community-building platform."; subhead "Find the local, the quirky, the one of a kind, and the people behind it."
 
 ## 3. How we sound
 
 Plain, with a subtle California ease: **work to live, not live to work** (the PM's direction, 2026-10-05: "a subtle california cruisey language vibe around here"). Unhurried, sunny not loud, life first, outside and in person, laid back but still clear. One light touch per screen at most; most screens need none. Local, not generic: river towns, delta breezes, farm to fork, long summer evenings, never beaches and Hollywood.
-
-[open-question owner=don raised=2026-10-26] Where does the dedication ("Be decent, TYLER") appear? A) About, one line, no name: "Be decent. A friend used to say it. We kept it." B) Name and all. C) Nowhere public. Recommend A: no personal names in a public repo.
 
 | Context | Tone |
 |---|---|
@@ -188,6 +186,7 @@ SocialUs is a place to find what's around you and the people behind it, to trade
 
 ## Rulings
 - **2026-10-26 — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline.** The PM, after a friend who said it. Because the safety paragraph read as policy. Builds `socialus-web` #1078. [binds tiers=planning,code surfaces=copy,voice,rules,safety]
+- **2026-10-26 — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea."** The PM's words, closing the question of where the nod to his friend appears. Builds `socialus-web` #1078. [always] [binds tiers=planning,code surfaces=copy,about]
 - **2026-10-08 — Member-facing copy says Page and post, not listing: members create Pages (no charge to create one) and post announcements or messages; listing products and services comes later.** Don. Because a Page and its posts are what exists in beta; "listing" promises a product catalogue that isn't built. [replaces none] [binds tiers=planning surfaces=copy,pages build=none]
 - **2026-10-06 — The tone is approved: copy follows `voice-and-tone.md` § 3 "How we sound" (a subtle California ease, "work to live, not live to work") and § 4's before/after table. "Post" is the noun for the thing on a Page (a Post, Posts); the verbs around it stay outward ("Let people know what's on"; "Post it" is fine as a button), and "just posts", "share", "content" and feed language stay out.** The PM, option A. Because Post is the plain name people expect; the ease keeps it human; outward verbs keep the in-person point. The copy checker in `nouns.md` no longer warns on the noun. Builds `socialus-web` #365. [replaces 2026-10-05: The "How we sound" section (a subtle California ease, "work to live, not live to work"), its tone table and the before/after examples are currently a draft, not applied to copy until the PM approves.] [binds tiers=planning,code surfaces=copy,voice]
 - **2026-10-05 — `voice.md` and `tone.md` are merged into one file, `product/foundation/voice-and-tone.md`: precedence, rules, what we say, how we sound, examples, and the PM's original voice text kept verbatim as its locked source. The core lines are unchanged..** The PM authorised merging the locked file. Agents edit it only on the PM's explicit instruction, recording what changed and when. Earlier lines here naming `voice.md` mean this file, as the 2026-09-16 line maps `RULES.md`. [binds tiers=planning,code surfaces=copy,voice build=none]

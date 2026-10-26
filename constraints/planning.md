@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-26** · copy, voice, rules, safety — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline (product/foundation/voice-and-tone.md)
+- **2026-10-26** · [always] · copy, about — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea." (product/foundation/voice-and-tone.md)
 - **2026-10-25** · [always] · principles, privacy, data — Data serves the members it comes from. [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, map, privacy — In public, locality is coarse; precision stays private (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, explore, discovery — Promotion earns its place by serving members. [always] (PRINCIPLES.md)
