@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 123, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 147/165 (alongside, not the headline) · updated 2026-10-25 19:25 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 124, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 147/165 (alongside, not the headline) · updated 2026-10-25 19:29 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -23,11 +23,12 @@
 
 **How fast it feels: Red** (4 member screen(s) red, 3 amber); slowest: Bottom nav → Explore [settled] 2811 ms, Explore post card → Page post [quick] 1439 ms, Creator: own Page → edit [settled] 1300 ms
 
-## Your to-do (9)
+## Your to-do (10)
 
 - P1 · Review the one-page rules list (wording only)
 - P2 · Run the F078 report test (closes #220) · due 10-27
 - P2 · Founding circle: talk with 5 people outside the team who've tried SocialUs · due 11-06
+- P2 · Wonders: pick the first version (A, B or C)
 - P2 · Read the wording waiting for you
 - P2 · Open the accounts only you can open
 - P3 · File the private Supabase support ticket
