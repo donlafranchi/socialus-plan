@@ -6,7 +6,7 @@ Nothing here is a commitment, and scenarios may not cite this file. **A waiting 
 
 ## House rules, so this doesn't become a graveyard
 
-Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerless idea is one nobody retires); **one line on what would make it real**, an observable fact, not "when we have time"; and **claim separated from analysis**, agent additions marked as analysis. **`Priority: higher`** means Don said it matters more, nothing more; its absence says nothing (2026-09-19). **Retiring is the normal outcome**: an entry leaves when it ships, its trigger fires, or someone calls it dead. Older entries are not retro-fitted.
+Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerless idea is one nobody retires); **one line on what would make it real**, an observable fact, not "when we have time"; and **claim separated from analysis**, agent additions marked as analysis. **`Priority: higher`** means Don said it matters more, nothing more; its absence says nothing (2026-09-19). **Retiring is normal**: an entry leaves when it ships, its trigger fires, or it's called dead.
 
 ## Ideas
 
@@ -36,13 +36,13 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
-**Open your town** (Don, 2026-10-26) has a surface, so it lives as scenario F118 in `planning/`, Next lane: after the soft launch, before the hard launch.
+Open your town (Don, 2026-10-26): scenario F118, Next.
 
 ### Short video and photos on Pages
 
 *Don, 2026-10-12, verbatim:* "We will want more photos and short videos to be viewed in this app. I was looking at wineries yesterday and searched for them on tiktok to see what they were about. it would be helpful for us to allow these in our app for our users. perhaps business owners can link videos about their business from tiktok or we host videos from these businesses before they get posted to tiktok as an example. this should already be in imagine.md. write this up somewhere for later use. this should be done sooner than later on our roadmap." [lane: considering]
 
-Absorbs "Social integration". *Options (agent, 2026-10-12):* **A) Link or embed** an owner's video: cheap, unseen by our moderation. **B) Host natively**, posted here first: a reason to come, but storage, transcoding and video moderation (F100, child-safety scan). Photos first either way; Local scouts need B. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
+*Options (agent, 2026-10-12):* **A) Link or embed** an owner's video: cheap, unseen by our moderation. **B) Host natively**, posted here first: a reason to come, but storage, transcoding and video moderation (F100, child-safety scan). Photos first either way; Local scouts need B. **What would make it real:** a ruling on A or B, and an owner who wants to post video.
 
 ### Artist collaborations on Pages
 
