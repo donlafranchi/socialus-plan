@@ -40,3 +40,5 @@ Answers written in chat, cards in a conversation, actions taken for the member, 
 - **Better as more people join?** Yes: more questions show what people look for (F089).
 
 Precedents: Google's search box opening an app's deep link (App Actions), Airbnb's and Expedia's natural-language search filling filters, Linear's command bar. Path: well-worn. Soul: `#works-for-you`, `#out-of-the-way`. Sins: none.
+
+[platform none]

@@ -82,8 +82,8 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**23 of 34 approved and building scenarios carry no platform marker**, so what they will
+**22 of 34 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 
-F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F081, F082, F091, F092, F093, F119
+F056, F057, F058, F059, F060, F061, F063, F064, F065, F069, F070, F072, F074, F076, F077, F078, F080, F081, F082, F091, F092, F093
