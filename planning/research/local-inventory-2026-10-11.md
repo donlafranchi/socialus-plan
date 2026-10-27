@@ -18,7 +18,7 @@ For F103–F106 (approved 2026-10-11). § 1 was read from `socialus-plan` main; 
 | `surfaces.md` § Metro is the feed's vantage point, § Distance is out, § A Member picks a hood and a metro | metro vantage; no miles; hood → metro → wider → online | proposed lines already added; **rewrite** on approval, "Distance is out" **stands** |
 | `business-jurisdiction.md` | locality evidence is a ZIP; the test is same MSA | proposed line added; **rewrite** the test on approval |
 | `voice-and-tone.md` § Rules | no "near you" or "nearby" while there is one metro; say "in Sacramento" | **amend**: say the vantage's town or area by name; still no "near you" as scoping |
-| `planning/values-badges-draft.md` | Locally owned borrows AMIBA's test (≥50% owned by area residents) | **amend**: add the give-back condition |
+| `research/values-badges-draft.md` | Locally owned borrows AMIBA's test (≥50% owned by area residents) | **amend**: add the give-back condition |
 | `socialus-design/research/BADGES-VALUES-KINDS-PLAN.md`, `screens/owner-page-spec.md` | badge section, kind line | **note** the two-condition badge; no mockup change until badges return |
 
 ## 2. Code that reads the metro or MSA as the unit (verified 2026-10-11 against `85c2622`)

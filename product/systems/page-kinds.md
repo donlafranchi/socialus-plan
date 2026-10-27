@@ -8,7 +8,7 @@ date: 2026-09-15
 
 # What a person can start
 
-> **Restored 2026-09-15 after deletion the same day. Status: pending, not superseded.** This document was deleted on the reading that `model.md` retired Items. **That reading is disputed by Don and is not settled** — see `planning/ITEMS-QUESTION.md`. Nothing about the Item kinds was ever changed in code: all seven kinds and all four sub-tables are intact on `origin/main`.
+> **Restored 2026-09-15 after deletion the same day. Status: pending, not superseded.** This document was deleted on the reading that `model.md` retired Items. **That reading is disputed by Don and is not settled** — see `research/ITEMS-QUESTION.md`. Nothing about the Item kinds was ever changed in code: all seven kinds and all four sub-tables are intact on `origin/main`.
 >
 > **One criticism of this document stands on its own and is unrelated to the dispute:** its kind-vocabulary table duplicates `item.md` § The kind vocabulary, and its schema section recommends a pattern the schema already uses. Those parts should be cut whichever way the Items question goes.
 
