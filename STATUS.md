@@ -266,10 +266,10 @@ the lint fails one that does none of the three — the identity leaks sat eight 
 148 authored docs in `product/` and `planning/`; **2 not reviewed in 30 days**, and **145 carry no `reviewed:` date** (their age is their last commit, which any edit resets).
 Reviewing one means reading it against `PRINCIPLES.md` and its rulings and setting `reviewed:` in its frontmatter.
 
-- `research/search-dictionary-draft.md` — 44 days (last commit 2026-09-13)
-- `research/PAGE-KINDS.md` — 40 days (last commit 2026-09-17)
-- `research/ONE-MODEL.md` — 30 days (last commit 2026-09-27)
-- `research/ITEMS-QUESTION.md` — 30 days (last commit 2026-09-27)
+- `planning/search-dictionary-draft.md` — 44 days (last commit 2026-09-13)
+- `planning/PAGE-KINDS.md` — 40 days (last commit 2026-09-17)
+- `planning/ONE-MODEL.md` — 30 days (last commit 2026-09-27)
+- `planning/ITEMS-QUESTION.md` — 30 days (last commit 2026-09-27)
 - `product/needs/use-cases.md` — 22 days (reviewed 2026-10-05)
 - `product/needs/member-journey.md` — 22 days (reviewed 2026-10-05)
 - `product/foundation/value-test.md` — 22 days (reviewed 2026-10-05)
