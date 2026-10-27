@@ -1,10 +1,12 @@
-# Explore: shelves and shelf life
+# Views built from the ask: shelves, followed first, shelf life
 
-**Explore should work like the App Store: categories run top to bottom as shelves, the items in each run left to right, and timely shelves (today, this weekend, deals, Wonders) sit above the lasting ones (Pages by collection).** Every post gets a shelf life by kind and leaves Explore when it ends, but stays on its Page and in search.
+**Every view is built from what the person asks for. In every view, timely posts from the Pages and people they follow come first. When those run out, a quiet line marks the end, and the view widens to everything else that matches.** A wide-open ask ("show me everything going on around me") gets the shelf view, which works like the App Store: categories run top to bottom and the items in each shelf run left to right. Every post gets a shelf life by kind, leaves these views when it ends, and stays on its Page and in search.
 
-**Your one call:** how the shelves are arranged (A, B or C, at the bottom). I recommend **A**.
+**Your one call:** how the shelf view is arranged (A, B or C, at the bottom). I recommend **A**.
 
 *The PM, 2026-10-27:* "the categories are top to bottom and then the options in each category are left to right … the posts are timely and they need to be displayed in a timely manner and right now what we're showing is everything for all time and that's a little bit too much."
+
+*The PM, later the same day:* "this is essentially one view … behind an agent search and if a person just says hey … I want to see all kinds of things going on around me then this is that view … every time a user comes in … we show them … the people they follow the announcements that they follow first and for any particular category or search request and when they run out, then we opened it up to more things … every view is based on the users search or what they're asking for."
 
 Research only. Nothing here is ruled yet, and nothing gets built until you pick.
 
@@ -58,9 +60,50 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 
 </details>
 
-## 2. Categories before data
+## 2. Followed first, then wider: the rule for every view
 
-**Seven shelves at most on a phone screen stack: four timely shelves (Today, This weekend, Deals this week, Count me in) above three or more collection shelves of Pages (Food & drink, Makers, Farms, and so on), plus "New here."** Time and post kind decide the timely shelves. The Page's main collection decides the lasting ones. An item shows once per screen, and a shelf with nothing on it doesn't appear.
+**Instagram has shown "You're all caught up" and then suggested posts since 2018 and 2020. Threads and X keep a separate Following tab.** We adapt Instagram's version: an ask returns its matches from the Pages and people you follow first, newest and soonest first. Then one quiet line marks the end, and the rest of what matches follows, ordered by place and time. We don't copy its suggested posts, its ads, or its "can't turn it off".
+
+<details><summary>Details</summary>
+
+| App | What it does | What we take, what we leave |
+|---|---|---|
+| **Instagram** | A "You're all caught up" marker (2018) ends what's new from accounts you follow. From 2020, suggested posts from accounts you don't follow appear below it, with ads, and can't be hidden | **Take:** the marker and the order, followed first and then the rest. **Leave:** the ads, recommendations learned from your behaviour, and "can't hide" |
+| **Threads / X** | A Following tab with posts in time order, next to an algorithmic For You tab | **Leave:** two tabs. One view that does both is simpler, and an ask already narrows it |
+| **Nextdoor** | A business page collects neighbours' posts that mention it alongside its own posts | See the vouching entry in IMAGINE |
+
+**How a view is built**, the same for every ask:
+1. **Read the ask** (F119's router turns it into filters for kind, time, place and words).
+2. **Followed block:** posts that match the ask, from Pages and people the member follows, that haven't passed their shelf life. Soonest first for dated posts, newest first for the rest.
+3. **End marker:** one quiet line. Its words are yours to choose. It's absent when the member follows nothing, or when nothing they follow matches.
+4. **Wider block:** everything else that matches, in Find's order (place, time, declared interests, community response). The followed items aren't repeated.
+
+**What decides the view's shape:**
+- A **wide-open ask** (no kind, no category) gets the **shelf view**: the followed block becomes the top shelf.
+- A **narrow ask** ("food trucks this weekend") gets a **list**: the followed block, the marker, then the wider block.
+
+**Following means getting their announcements.** This matches the existing rulings:
+- 2026-09-17: a follow is "get updates", in place of vendor emails.
+- 2026-10-25: push for new posts from Pages you follow.
+
+**What's already in code:** Explore already reads the member's followed Pages and has a following row (`src/app/explore/load.ts`). The change makes that row the first block of every view, not one row among many.
+
+**Sources:**
+- [Instagram: "You're all caught up" (2018)](https://m.gsmarena.com/instagram_introduces_youre_all_caught_up_feature-news-32018.php)
+- [Instagram: suggested posts after it (TechCrunch, 2020)](https://techcrunch.com/2020/08/19/instagram-finds-new-ad-space-at-the-end-of-your-feed-with-launch-of-suggested-posts-feature)
+- [Instagram: suggested posts can't be hidden (Bustle)](https://www.bustle.com/life/instagram-suggested-posts-feature)
+- [Threads' Following feed (CNBC, 2023)](https://www.cnbc.com/2023/07/25/meta-threads-gets-chronological-feed-for-people-you-follow.html)
+- [Following vs For You on Threads and X (TechCrunch, 2024)](https://techcrunch.com/2024/11/06/for-you-feeds-fail-on-election-night-offering-outdated-information-angering-users)
+
+</details>
+
+## 3. Categories before data: the shelf view
+
+**The shelf view answers a wide-open ask. Top to bottom:**
+- **From Pages you follow**
+- **Four timely shelves:** Today, This weekend, Deals this week, Count me in
+- **Collection shelves of Pages:** Food & drink, Makers, Farms, and so on
+- **New here** Time and post kind decide the timely shelves. The Page's main collection decides the lasting ones. An item shows once per screen, and a shelf with nothing on it doesn't appear.
 
 <details><summary>Details</summary>
 
@@ -81,11 +124,11 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 
 | # | Shelf | What goes in it | Order inside |
 |---|---|---|---|
+| 0 | **From Pages you follow** (signed in) | Timely posts from followed Pages and people | Soonest, then newest |
 | 1 | **Today** | Events and openings on now or later today | Soonest first |
 | 2 | **This weekend** | Events Friday to Sunday (this week, Monday to Thursday) | Soonest first |
 | 3 | **Deals this week** | Deals and offers that haven't ended | Ending soonest first |
 | 4 | **Count me in** | Open Wonders | Closest to its goal first |
-| 5 | **From Pages you follow** (signed in) | News from followed Pages | Newest first |
 | 6+ | **One shelf per collection** with four or more Pages, using about seven groups of the current eleven collections: **Food & drink** (with bakery), **Makers** (goods, crafts, art and print), **Repair & trades**, **Farms** (farm, ranch, farm stay), **Community & volunteer**, **Arts & culture**, **Outdoors** | Pages, by the main collection the owner picked | Nearby, then recently active |
 | last | **New here** | Pages created in the last 30 days | Newest first |
 
@@ -94,7 +137,7 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 - A Page goes in its main collection only.
 - Each shelf shows about 10 to 12 items plus a quiet "See all" text link, which opens the full list as today's grid.
 
-**How many shelves:** the four timely shelves plus up to three collection shelves on first load. More collection shelves load as the member scrolls. Every empty shelf is absent, which F091 already does for the "What's happening" rows.
+**How many shelves:** the followed shelf, the four timely shelves, and up to three collection shelves on first load. More collection shelves load as the member scrolls. Every empty shelf is absent, which F091 already does for the "What's happening" rows.
 
 **Samples:** samples are the unclaimed Page's own advertisement, not something timely. One sample per unclaimed Page goes on Explore, rotating, never three at once, and at most one in four cards on any shelf. All three stay on the Page.
 
@@ -105,7 +148,7 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 
 </details>
 
-## 3. Shelf life
+## 4. Shelf life
 
 **Posts already leave Explore in code:**
 - An event leaves when it ends.
@@ -147,7 +190,7 @@ The proposal: a shelf life by kind, and every expired post still findable on its
 
 </details>
 
-## 4. Why the samples look noisy
+## 5. Why the samples look noisy
 
 **A sample card says "Sample" four times and never says, in its first words, what it is, when, or who it's for.** The two lines under the headline are always the same disclaimer. The fix is a card whose first line is built from fields (kind · when · where) instead of the first sentence of the post.
 
@@ -192,11 +235,18 @@ Venue shows have the opposite problem: the title is just the act's name ("X with
 
 </details>
 
-## 5. Fit with chat-first
+## 6. Fit with chat-first
 
-**A shelf is a named, linkable query (kind, time, place), so the Ask bar (F119) can open Explore with the right shelves already narrowed, and chat as home (F120) can show the same shelves and cards inline.** Shelves are the stable building blocks that chat combines and narrows. Chat never invents new layouts.
+**The Ask bar (F119) turns a question into filters, and one rule builds the view from them:**
+1. What you follow first.
+2. A marker.
+3. Everything else.
+
+A wide-open question gets shelves; a narrow one gets a list. Shelves and cards are the stable building blocks that chat as home (F120) later shows inline. Chat never invents new layouts.
 
 <details><summary>Details</summary>
+
+- **The view rule goes in the page registry** (F119 criterion 5), so a routed question and a typed URL get the same view.
 
 - **One registry entry per shelf**, with an id, its filters and a URL. This is F119 criteria 4 and 5: Explore can be reached by date, category and place.
 - "Anything fun Saturday near Midtown?" opens Explore narrowed to Saturday and Midtown. The time shelves narrow to that day, the collection shelves to that place, and empty ones drop out.
@@ -224,16 +274,24 @@ The rest fit as they stand.
 | 2026-09-12: "Browse is everything", inclusion by default | **Already narrowed for posts** by F059 criterion 8 and #314, under which past posts drop out. Shelf life narrows it further for timely posts only. Pages are always included. |
 | 2026-09-15: staleness is one number, 90 days, sort last and never hide | **Needs a clarifying line.** The staleness rule is about things that go quiet (Pages); shelf life is about posts that have ended. Quiet Pages still sort last and are never hidden. |
 | 2026-10-12: Find and Discover | **Fits.** These shelves are Find; learned or promoted shelves wait for Discover. |
+| Find ordering: place, time, declared interests, community response; never favour an item for its follower count | **Fits, with a clarifying line.** Putting the member's own follows first uses their deliberate choice, like a declared interest. It never favours a Page for how many followers it has. |
+| 2026-09-17 follow = "get updates"; 2026-10-25 push for followed Pages | **Fits.** Followed-first is the same promise, kept on screen. |
 | 2026-10-04: Home rows (F098) | **Fits.** Home and Explore share the shelf components. |
 | 2026-10-10: every sample opens with "Sample" | **Kept on the Page.** On the card, "Sample" appears once, in the lead line. |
 | 2026-10-05: the map's mix | **Unaffected.** |
 
 </details>
 
-## Your call: how the shelves are arranged
+## Also added: vouching, to IMAGINE
 
-- **A — Time shelves first, then collections (App Store and Facebook Events).** Timely things are always on top; reaching a category takes a scroll.
-- **B — Collection shelves only, each sorted soonest first (Netflix by genre).** The simplest category scan, but timeliness is hidden inside each row.
-- **C — "This week" shelves on Explore, with Pages by collection moved to a separate directory.** The cleanest split between lasting and timely, at the cost of a new surface and search split in two.
+A member without a Page posts about a place they love (a sale, a great meal, the best date-night spot). It's in IMAGINE as an idea to explore, with precedents and open questions. It's not part of this call.
 
-**Recommend A.** It's the well-worn shape, it puts the timely items first, which is your point, and it keeps one surface for the Ask bar to open.
+## Your call: how the shelf view is arranged
+
+All three keep the same top two pieces: the followed shelf first, then its end marker.
+
+- **A — Then time shelves, then collections (App Store and Facebook Events).** Timely things stay on top, and categories are still in view; reaching a category takes a scroll.
+- **B — Then collection shelves only, each sorted soonest first (Netflix by genre).** The simplest category scan, but timeliness is hidden inside each row.
+- **C — Then one mixed timeline sorted by time, with categories reached only by asking.** The closest thing to a feed, but categories disappear from the wide-open view.
+
+**Recommend A.** It's the well-worn shape, it shows the timely items and the categories you asked for, and it gives the Ask bar one view to open.

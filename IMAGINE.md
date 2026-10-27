@@ -20,7 +20,7 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **Bulletin intelligence.** Prompting business Pages to post timely bulletins from what is happening nearby (weather, events, seasons). [lane: later]
 - **Local stays.** Short-term rentals as a surface: an anti-Airbnb thesis on the existing Location/Group primitives, not a new booking stack. [lane: later]
 - **Locally Made badge.** A provenance badge distinct from Locally Owned, from self-attestation to verified, varying by category. A proximity model was shelved (branch `t-f039`) pending the trust-model question. [lane: later]
-- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vetting & vouching below. [lane: later]
+- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vouching (below). [lane: later]
 - **The mighty oak.** A candidate visual symbol for the platform — "an oak tree is not a tree, it is a neighborhood." [lane: later]
 - **Missing pets.** Whether "help me find my pet" has a shape that rallies the community without a freeform posting surface that invites rants and scams. Pushes against accountable participation; unresolved. [lane: later]
 - **Project arc overview.** A one-page brief on the platform's story and mascot candidates, for design-tool briefing, not product spec. [lane: later]
@@ -28,7 +28,6 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build. [lane: later]
 - **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped. [lane: later]
 - **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed. [lane: later]
-- **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating. [lane: later]
 - **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed. [lane: later]
 - **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling. [lane: later]
 
@@ -166,7 +165,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
 
-After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [lane: later]
+**Find** is today's Explore; **Discover** is the exploratory feed (ruled in `PRINCIPLES.md`). Conflicts: `planning/research/two-sides-conflicts-2026-10-12.md`. **Real when:** beta ships and the PM asks for Discover. [lane: later]
 
 ### Two-way ratings between members and Pages
 
@@ -196,4 +195,8 @@ How we verify that money returns to where it was generated. One concept to explo
 
 ### Chat-first SocialUs
 
-*Don, 2026-10-26:* "I like being able to chat with an agent." The direction is ruled (`product/foundation/what-this-is.md`) and its shaped parts are F119 (near term) and F120 (long term); left here is only what a conversation is as a thing, if anything. **What would make this real:** F119's question log shows what people ask most.
+*Don, 2026-10-26:* "I like being able to chat with an agent." Ruled (`product/foundation/what-this-is.md`); shaped as F119 and F120. Left here: what a conversation is as a thing. **Real when:** F119's log shows what people ask.
+
+### Vouching: a member posts about a place they love
+
+*Don, 2026-10-27:* "people vouching for other people … if I frequent [a] business … I'd like to be able to create a post … that applies to that business … kind of like a review." A member without a Page vouches for a business: a sale, a great meal. Folds in the 2026-09-09 "Vetting & vouching" line. Detail: `planning/research/vouching-2026-10-27.md`. **Real when:** members may publish statements about Pages they don't own. [lane: considering]
