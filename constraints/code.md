@@ -16,6 +16,7 @@
 - **2026-10-26** · [for now] · open-your-town — The counting unit is the market (a region), not a town or county; its definition is still being researched (planning/scenario-F118.md)
 - **2026-10-26** · copy, voice, rules, safety — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline (product/foundation/voice-and-tone.md)
 - **2026-10-26** · [always] · copy, about — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea." (product/foundation/voice-and-tone.md)
+- **2026-10-26** · [for now] · navigation, ask, ai, explore, you — Chat-first is prompt → workflow → widgets, filled in and editable. The UX principle: stable widgets, composed by intent, always editable, pin what works (product/foundation/what-this-is.md)
 - **2026-10-26** · [for now] · navigation, ask, ai, explore, you — SocialUs is moving toward chat-first: a member's question opens the right page (product/foundation/what-this-is.md)
 - **2026-10-26** · [for now] · open-your-town — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round (product/ui/surfaces.md)
 - **2026-10-25** · [always] · principles, privacy, data — Data serves the members it comes from. [always] (PRINCIPLES.md)

@@ -1,6 +1,6 @@
 ---
 id: F120
-title: Chat is the way to use SocialUs, answering with real cards and acting only on a confirm tap
+title: Chat is the way to use SocialUs, answering with composed widgets and acting only on a confirm tap
 status: draft
 horizon: later
 rank: 1
@@ -24,7 +24,9 @@ Draft criteria, to sharpen before approval:
 6. **Voice, later**: speaking a question is a later step on the same path.
 7. **Daily limits**: per-member limits keep the cost down; past the limit, the member still has the pages.
 8. **Privacy and moderation**: chats are not used to profile or sell; what the assistant posts for a member goes through the same moderation as anything else they post.
-9. **The soul**: AI helps and never replaces a person; the benefit goes to members.
+9. **Composed widgets**: a prompt that needs several tools gets the fewest widgets from the fixed library that do the job, filled in, with one main action; the same question gives the same layout. Followers usually get one or two; organizers get workspaces they can pin ("my Saturday market").
+10. **Multi-step workflows**: a Wonder bulk-buy runs Wonder → sizes → roles, one editable widget at a time.
+11. **The soul**: AI helps and never replaces a person; the benefit goes to members.
 
 ## Not this
 
