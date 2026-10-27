@@ -10,6 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-27** · [for now] · open-your-town — Open your town is built but held back: one flag, off until after the soft launch. /open, /open/<town>, the signup redirect to town pages and the daily town round are inert; ring-county zips take the same waiting screen as any out-of-market zip. Code and migrations stay (planning/scenario-F118.md)
 - **2026-10-26** · [for now] · waitlist, open-your-town — A market opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 to reach both open in this round. Sacramento is the launch market and is already open (planning/scenario-F118.md)
 - **2026-10-26** · [for now] · open-your-town — Open your town comes after the soft launch and before the hard launch; only the landing page is in scope now (planning/scenario-F118.md)
 - **2026-10-26** · [for now] · open-your-town, landing — Open your town v1 is one simple form: make-sell-organize or find-and-support, an email, a maker's site or social URLs, and the towns where a person lives and plays. Answers go to staff only, and opting out is one step (planning/scenario-F118.md)
