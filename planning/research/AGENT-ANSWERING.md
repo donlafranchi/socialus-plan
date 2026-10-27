@@ -39,7 +39,7 @@ horizon: the version after launch (after the beta, which runs until April 2027)
 | **Pages** | **Editable**, name and description only, via an owner bar on the live Page (#158, merged). No tag or collection editing exists | Partly — corrects a common assumption that Pages are immutable |
 | **Post subject matter** | **No `post_tags` table.** A post carries its *Page's* tags | Yes — constraint 3 |
 | **Text and vector retrieval** | **Neither exists.** No `tsvector`, `pg_trgm` or `ilike` in any migration. `pgvector` installed, `item_embeddings` empty and attached to the retired `items` noun | Yes — this is why it is not a thin wrapper |
-| **Addresses** | **URL scheme ruled the same day**: slug plus a short non-sequential ID, no geography in a canonical URL, no member identity derivable from one (`planning/URL-IDENTITY.md`) | Yes — the public/private line and the no-geography rule both bear on the thin tier |
+| **Addresses** | **URL scheme ruled the same day**: slug plus a short non-sequential ID, no geography in a canonical URL, no member identity derivable from one (`research/URL-IDENTITY.md`) | Yes — the public/private line and the no-geography rule both bear on the thin tier |
 | **Member identity** | **Two leaks open**: `member_public_group_memberships` granted to `anon` joins `member_id` to a Page; `groups.founder_member_id` appears `anon`-selectable | Yes — an answering layer inherits whatever is public |
 | **Follower delivery** | **Bulletins in `ROADMAP.md` § Cut** (2026-09-20). The subscription link exists in `group_memberships` and nothing reads it | Yes — constraint 5, the public/private line |
 | **Metros** | One live; seeds pending for nearby markets *(reported, not verified from here)* | Yes — point 5 |
