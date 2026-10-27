@@ -20,7 +20,7 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **Bulletin intelligence.** Prompting business Pages to post timely bulletins from what is happening nearby (weather, events, seasons). [lane: later]
 - **Local stays.** Short-term rentals as a surface: an anti-Airbnb thesis on the existing Location/Group primitives, not a new booking stack. [lane: later]
 - **Locally Made badge.** A provenance badge distinct from Locally Owned, from self-attestation to verified, varying by category. A proximity model was shelved (branch `t-f039`) pending the trust-model question. [lane: later]
-- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vetting & vouching below. [lane: later]
+- **MEHKO home kitchens.** Home kitchens as an early producer segment; permit verification ties to vouching (below). [lane: later]
 - **The mighty oak.** A candidate visual symbol for the platform — "an oak tree is not a tree, it is a neighborhood." [lane: later]
 - **Missing pets.** Whether "help me find my pet" has a shape that rallies the community without a freeform posting surface that invites rants and scams. Pushes against accountable participation; unresolved. [lane: later]
 - **Project arc overview.** A one-page brief on the platform's story and mascot candidates, for design-tool briefing, not product spec. [lane: later]
@@ -28,7 +28,6 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **Recruitment plan.** A solo-founder hiring playbook, for when agents stop covering most of the build. [lane: later]
 - **Rising tide — civic pride.** A Place-level "community vitality" surface; unscoped. [lane: later]
 - **Social capital.** Recognition earned through participation (hosting, fulfilling, sharing, showing up), member-owned and portable, optionally surfaced, never a ranking signal. Standing intent only; no shape designed. [lane: later]
-- **Vetting & vouching.** A community trust signal for producer claims ("can I trust what this producer says, and is there something better nearby"), distinct from a behaviour rating. [lane: later]
 - **A scored community-health rubric.** A 0–3, five-section instrument (Dunbar, Ostrom, Oldenburg, etc.) for auditing platform decisions against community-health theory, alongside the binary Decision Test. Working defaults only; whether it is used was never confirmed. [lane: later]
 - **The cooperative engine (5 sketches).** Pooled-commitment purchasing, cooperative-formation templates, a federation layer, member-owned insurance, with "AI serves the people" as the constraint. Waits on documented member demand, per the standing decision against speculative cooperative tooling. [lane: later]
 
@@ -166,7 +165,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 *Don, 2026-10-12, verbatim:* "this is no longer true: what people see is ordered by place and time, never by what holds attention. And Browse currently isn't ranked by personal interests. there are two sides to this app. One is 'the tool' when a person needs to find something specific like in Yelp. the other is 'the fun' side that the algorithm is for. the fun side is for just exploring when a user isn't looking for anything specific. It should be more like an instagram or tiktok. this is new and needs to be recorded as an after beta imagine that's not yet ready for council and will be an eventual part of the platform. Record that this is a newer direction and if anything prior goes against it that it will need to be reviewed and updated."
 
-After beta; not ready for council; an eventual part of the platform. Internal names (Don, 2026-10-12): **Find** is the tool (directed search; today's Explore becomes Find when Discover ships), **Discover** the fun (exploratory feed). Conflicting stances, tagged `[for now]`: `planning/research/two-sides-conflicts-2026-10-12.md`. **What would make it real:** beta shipped and the PM asking for Discover to be scoped. [lane: later]
+**Find** is today's Explore; **Discover** is the exploratory feed (ruled in `PRINCIPLES.md`). Conflicts: `planning/research/two-sides-conflicts-2026-10-12.md`. **Real when:** beta ships and the PM asks for Discover. [lane: later]
 
 ### Two-way ratings between members and Pages
 
@@ -178,7 +177,7 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 ### Holiday specials up front
 
-*Don, 2026-10-16:* ahead of each upcoming holiday, Explore surfaces Pages' timely holiday specials and events (e.g. a 'Thanksgiving week' or 'holiday markets' strip), driven by the post dates and a holiday calendar for the metro. Relates to cap-1 (timely announcements) and cap-5 (current without following many). **What would make this real:** enough dated holiday posts in a metro to fill a strip. [lane: later]
+*Don, 2026-10-16:* before each holiday, Explore shows a strip of Pages' holiday specials and events ("Thanksgiving week"), from post dates and the metro's holiday calendar. Would be a seasonal shelf (`planning/research/explore-shelves-and-shelf-life-2026-10-27.md`). **Real when:** enough dated holiday posts fill a strip. [lane: later]
 
 ### Local is where the money returns
 
@@ -186,14 +185,18 @@ After beta; not ready for council; an eventual part of the platform. Internal na
 
 How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open; none is ruled (today: the owner's claim, `product/systems/business-jurisdiction.md`). **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
 
-### Inventory import: stock in, Page out
+### Inventory: import, then our own tool
 
-*Don, 2026-10-18:* "The long term vision is we allow business owners to scan their inventory and it populate here so they don't have to manage two things." Featured products fill from Square, Shopify, a CSV or a barcode scan instead of by hand. Precedent: Pointy (Google), a till-side box that put a shop's stock online for local search. **What would make this real:** owners keep their featured products current by hand and ask for it. [lane: later]
-
-### Our own inventory tool: SocialUs is the system of record
-
-*Don, 2026-10-18:* "What would be the most ideal is if we were to make business inventory software where they manage their business and this app integrates somehow so they don't have to do things twice." The owner runs stock in SocialUs and the Page is always current. **What would make this real:** import (above) is used and owners ask to stop keeping a second system. [lane: later]
+*Don, 2026-10-18:* "allow business owners to scan their inventory and it populate here so they don't have to manage two things" and, ideally, "make business inventory software … so they don't have to do things twice." Step one: featured products fill from Square, Shopify, a CSV or a barcode scan. Step two: the owner runs stock in SocialUs. **Real when:** owners ask for import, then ask to drop their second system. [lane: later]
 
 ### Chat-first SocialUs
 
-*Don, 2026-10-26:* "I like being able to chat with an agent." The direction is ruled (`product/foundation/what-this-is.md`) and its shaped parts are F119 (near term) and F120 (long term); left here is only what a conversation is as a thing, if anything. **What would make this real:** F119's question log shows what people ask most.
+*Don, 2026-10-26:* "I like being able to chat with an agent." Ruled (`product/foundation/what-this-is.md`); shaped as F119 and F120. Left here: what a conversation is as a thing. **Real when:** F119's log shows what people ask.
+
+### Vouching: a member posts about a place they love
+
+*Don, 2026-10-27:* "people vouching for other people … if I frequent [a] business … I'd like to be able to create a post … that applies to that business … kind of like a review." A member without a Page vouches for a business: a sale, a great meal. Folds in the 2026-09-09 "Vetting & vouching" line. Detail: `planning/research/vouching-2026-10-27.md`. **Real when:** members may publish statements about Pages they don't own. [lane: considering]
+
+### Asked for, not here yet
+
+*Don, 2026-10-27:* "if many people ask for something that doesn't exist … put that out to the community … and let others try to bring that thing into existence." Unmet asks, counted with F089's floor and nobody exposed, shown to the community, with a path to a Wonder (F117) or a Page; builds on F119 and #228. Also: example asks. Touches the 2026-10-11 Wish ruling. Detail: `planning/research/asked-for-not-here-2026-10-27.md`. **Real when:** F119's log shows repeated unmet asks. [lane: considering]
