@@ -196,4 +196,4 @@ How we verify that money returns to where it was generated. One concept to explo
 
 ### Chat-first SocialUs
 
-*Don, 2026-10-26:* "I like being able to chat with an agent." The direction is ruled (`product/foundation/what-this-is.md`) and its shaped parts are F119 (near term) and F120 (long term); left here is only what a conversation is as a thing, if anything. **What would make this real:** F119's question log shows what people ask most.
+*Don, 2026-10-26:* "I like being able to chat with an agent." Ruled in `product/foundation/what-this-is.md`; shaped as F119 and F120 (plan: `planning/research/chat-first-plan-2026-10-26.md`). Left here: what a conversation, or a pinned workspace, is as a thing. **Real when:** organizers pin the same widget sets again and again.

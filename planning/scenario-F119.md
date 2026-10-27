@@ -1,6 +1,6 @@
 ---
 id: F119
-title: A member asks a question, and the app opens the page that answers it
+title: A member asks or taps ➕, and the app opens the right widgets filled in, and organizers see what neighbours look for
 status: approved
 horizon: next
 rank: 2
@@ -16,15 +16,16 @@ A member types "anything fun this Saturday near Midtown?" into the Ask bar. Expl
 
 ## Acceptance
 
-1. **Ask bar**: one text box, on every signed-in page, that takes a question in plain words.
-2. **Routing**: one cheap model call (the smallest current Claude model) turns the question into one page plus its filters, and the app opens it.
+1. **Ask bar and ➕**: one text box, on every signed-in page, that takes a question in plain words; and one ➕ as the single place to start anything (a post, an event, a Wonder, a Page).
+2. **Routing**: one cheap model call (the smallest current Claude model) turns the prompt into a workflow: which widget opens, with which settings filled in. "Weekly run club Saturday mornings" opens the composer set to weekly, Saturday, 7am, near the member; "anything fun this Saturday near Midtown?" opens Explore filtered.
 3. **Fallback**: if the call fails, times out, or finds no page, the question runs as an ordinary search. The member always lands somewhere.
-4. **Deep links**: every page and every filter it supports can be reached by URL (Explore by date, category and place; You → Notifications; a post draft with prefilled text).
-5. **One page registry**: a single list in the code describes each page, its URL and its filters. The router reads only that list and can't send a member to a page that isn't on it.
+4. **Deep links**: every widget and every setting it takes can be reached by URL (Explore by date, category and place; a Page; You's settings and Notifications; the composer with text, kind and schedule; a Wonder).
+5. **One widget registry**: a single list in the code describes each widget, its URL and its settings. The router reads only that list and can't open a widget that isn't on it, or invent one.
 6. **Nothing is done for the member**: the router only opens pages. A prefilled draft is not posted until the member posts it.
 7. **Questions logged by the search-demand rules** (F089): anonymous, aggregated (a floor of ten members, one metro), raw rows deleted after 30 days, never tied to a member in anything shown.
 8. **Opt-out**: one setting stops a member's questions being logged; routing still works for them.
 9. **Cost cap**: a per-member daily limit on model calls, after which the bar falls back to search.
+10. **Search analysis**: nightly, Claude Haiku through the Batch API tags each logged search (intent, category, place, time window, matched or not, a normalised query); weekly, unmet demand is clustered per area and shown to creators and organizers (the owner card, a "what neighbours are looking for" list, suggested Wonders), under criterion 7's rules. Not DeepSeek's hosted API (member trust). Plan: `planning/research/chat-first-plan-2026-10-26.md`.
 
 ## Not this
 
@@ -36,7 +37,7 @@ Answers written in chat, cards in a conversation, actions taken for the member, 
 - **Only locals know?** The answers do; the bar just gets a member to them faster.
 - **Gets people together?** Yes: fewer taps between a wish and the event or Page.
 - **Stays fresh on its own?** Yes: it opens live pages and stores no answers.
-- **Who keeps it current?** The page registry, updated with each new page or filter.
+- **Who keeps it current?** The widget registry, updated with each new widget or setting.
 - **Better as more people join?** Yes: more questions show what people look for (F089).
 
 Precedents: Google's search box opening an app's deep link (App Actions), Airbnb's and Expedia's natural-language search filling filters, Linear's command bar. Path: well-worn. Soul: `#works-for-you`, `#out-of-the-way`. Sins: none.
