@@ -120,6 +120,13 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 
 **A gap:** only samples say whether they're a deal or a last-minute opening. A real post can't, so a real deal can only show as news or as an event.
 
+**A new item type: job postings** ("who's hiring"). This is a post kind: a role, pay if the owner gives it, how to apply. Its shelf life is 30 days or until it's filled. Until a kind field exists, it can't be told apart from news.
+
+**Named views, composed from shelves.** Each one is an ask the router maps to filters, with followed items first:
+- **"Who's hiring near me?"** A list of job postings, nearest first.
+- **"What's happening this weekend?"** The This weekend shelf, opened as a list, split by day.
+- **"Who has happy hour today?"** Recurring deals (a series, like market days) on today, soonest first. This needs the deal kind on real posts.
+
 **Proposed shelves, top to bottom:**
 
 | # | Shelf | What goes in it | Order inside |
@@ -177,7 +184,8 @@ The proposal: a shelf life by kind, and every expired post still findable on its
 | Deal or offer | Its end date: 7 days by default, 30 at most | Google offers |
 | News (announcement) | 7 days by default; the owner can set up to 30. **Change:** down from 14 today | Google updates (7 days), Marketplace (7 days) |
 | Wonder | Its sign-up closes: 30 days by default. Once it reaches its goal, it shows "It's happening" for 7 days, then leaves | none; new |
-| Recurring series | Only the next date shows | Meetup |
+| Recurring series (market day, happy hour) | Only the next date shows | Meetup |
+| Job posting | 30 days, or until filled | Craigslist jobs (30 days) |
 | Sample | One per unclaimed Page, as above | none |
 
 **Where an expired post goes:**
@@ -282,7 +290,11 @@ The rest fit as they stand.
 
 </details>
 
-## Also added: vouching, to IMAGINE
+## Also added to IMAGINE
+
+**"Asked for, not here yet"** (unmet asks shown to the community) and **teaching the ask** (example asks on the Ask bar). Detail: `planning/research/asked-for-not-here-2026-10-27.md`.
+
+### Vouching
 
 A member without a Page posts about a place they love (a sale, a great meal, the best date-night spot). It's in IMAGINE as an idea to explore, with precedents and open questions. It's not part of this call.
 

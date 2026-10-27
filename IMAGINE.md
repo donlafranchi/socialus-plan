@@ -177,7 +177,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 ### Holiday specials up front
 
-*Don, 2026-10-16:* ahead of each upcoming holiday, Explore surfaces Pages' timely holiday specials and events (e.g. a 'Thanksgiving week' or 'holiday markets' strip), driven by the post dates and a holiday calendar for the metro. Relates to cap-1 (timely announcements) and cap-5 (current without following many). **What would make this real:** enough dated holiday posts in a metro to fill a strip. [lane: later]
+*Don, 2026-10-16:* before each holiday, Explore shows a strip of Pages' holiday specials and events ("Thanksgiving week"), from post dates and the metro's holiday calendar. Would be a seasonal shelf (`planning/research/explore-shelves-and-shelf-life-2026-10-27.md`). **Real when:** enough dated holiday posts fill a strip. [lane: later]
 
 ### Local is where the money returns
 
@@ -185,13 +185,9 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 How we verify that money returns to where it was generated. One concept to explore among others: match the community fund a producer sends money to with the community where it was earned. Other mechanisms are open; none is ruled (today: the owner's claim, `product/systems/business-jurisdiction.md`). **What would make this real:** funds exist and money flows, so there is a place money can be seen to return to. [lane: later]
 
-### Inventory import: stock in, Page out
+### Inventory: import, then our own tool
 
-*Don, 2026-10-18:* "The long term vision is we allow business owners to scan their inventory and it populate here so they don't have to manage two things." Featured products fill from Square, Shopify, a CSV or a barcode scan instead of by hand. Precedent: Pointy (Google), a till-side box that put a shop's stock online for local search. **What would make this real:** owners keep their featured products current by hand and ask for it. [lane: later]
-
-### Our own inventory tool: SocialUs is the system of record
-
-*Don, 2026-10-18:* "What would be the most ideal is if we were to make business inventory software where they manage their business and this app integrates somehow so they don't have to do things twice." The owner runs stock in SocialUs and the Page is always current. **What would make this real:** import (above) is used and owners ask to stop keeping a second system. [lane: later]
+*Don, 2026-10-18:* "allow business owners to scan their inventory and it populate here so they don't have to manage two things" and, ideally, "make business inventory software … so they don't have to do things twice." Step one: featured products fill from Square, Shopify, a CSV or a barcode scan. Step two: the owner runs stock in SocialUs. **Real when:** owners ask for import, then ask to drop their second system. [lane: later]
 
 ### Chat-first SocialUs
 
@@ -200,3 +196,7 @@ How we verify that money returns to where it was generated. One concept to explo
 ### Vouching: a member posts about a place they love
 
 *Don, 2026-10-27:* "people vouching for other people … if I frequent [a] business … I'd like to be able to create a post … that applies to that business … kind of like a review." A member without a Page vouches for a business: a sale, a great meal. Folds in the 2026-09-09 "Vetting & vouching" line. Detail: `planning/research/vouching-2026-10-27.md`. **Real when:** members may publish statements about Pages they don't own. [lane: considering]
+
+### Asked for, not here yet
+
+*Don, 2026-10-27:* "if many people ask for something that doesn't exist … put that out to the community … and let others try to bring that thing into existence." Unmet asks, counted with F089's floor and nobody exposed, shown to the community, with a path to a Wonder (F117) or a Page; builds on F119 and #228. Also: example asks. Touches the 2026-10-11 Wish ruling. Detail: `planning/research/asked-for-not-here-2026-10-27.md`. **Real when:** F119's log shows repeated unmet asks. [lane: considering]
