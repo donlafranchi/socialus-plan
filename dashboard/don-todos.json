@@ -69,6 +69,14 @@
    "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley",
    "url": "https://github.com/donlafranchi/socialus-web/issues/787",
    "added": "2026-10-15"
+  },
+  {
+   "p": 3,
+   "text": "Words for the sign-up market choice screen (later)",
+   "how": "After the market-assignment diff is reviewed: the screen that shows a person their market and lets them pick another within 75 minutes. An agent drafts; you say yes or change any line.",
+   "unlocks": "Sign-up by market (web #1101)",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/1101",
+   "added": "2026-10-27"
   }
  ]
 }

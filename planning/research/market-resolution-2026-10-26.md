@@ -4,7 +4,7 @@
 
 **Bottom line: a sign-up never resolves a zip on the fly. A script assigns every town once, ahead of time: if it is within 60 minutes' drive of a market's hub, it goes to the nearest one; beyond that, it goes to a waiting region seeded by the government's commuting zones; regions under about 100,000 people merge with their nearest neighbour; and a short hand-written list (the Tahoe basin) overrides it. The result is stored in the market tables that already exist, so tens of thousands of zips collapse to a few hundred county subdivisions per state, which a person can check in one sitting. At sign-up the person sees their market and may pick another one within 75 minutes, and they count where they pick.**
 
-**Don's one call:** how far the open Sacramento market reaches. **A (recommended):** it stays as ruled, and people in Vacaville, Yuba City, Lodi or Grass Valley may choose Sacramento at sign-up. **B:** it grows to everything within 60 minutes. **C:** it stays as ruled with no choosing in. Details in § 5.
+**Ruled 2026-10-27, Don: B.** Sacramento grows to its 60-minute reach now; § 5. *(Was: Don's one call.)* How far the open Sacramento market reaches: **A (recommended):** it stays as ruled, and people in Vacaville, Yuba City, Lodi or Grass Valley may choose Sacramento at sign-up. **B:** it grows to everything within 60 minutes. **C:** it stays as ruled with no choosing in. Details in § 5.
 
 Method: drive times are from OSRM (the free, open-source router behind many map apps), car profile, free-flow with no traffic, from downtown to downtown, pulled from OSRM's public demo server on 2026-10-26. Real Friday-evening times on I-80 and US-50 run longer. **V** = seen on 2026-10-26; **A** = from memory or estimated, not checked this session.
 
@@ -152,6 +152,8 @@ El Dorado in Reno, Butte in Redding and Inyo in Bakersfield are the three that a
 - **Stored as** the chosen market on the member, empty when they kept the resolved one; counts read the choice first.
 
 ## 5. Recommendation and Don's call
+
+**Ruled 2026-10-27, Don: B** (comment on plan #223). The open Sacramento market grows to its 60-minute drive-time reach now. That adds Yuba City, Marysville, Vacaville, Dixon and, by the merge, Grass Valley and Nevada City. Lodi stays with Stockton–Modesto, which is nearer. The Tahoe parts stay with Lake Tahoe (F103). The rest of the method in § 3–4 is approved as well-worn. F118's Solano and Yuba–Sutter waiting regions go away, and the F076 goals (100 makers / 1,000 supporters) apply per market. Built by web #1101, its output reviewed as a diff before any row lands; the sign-up choice screen's words go to Don first. [for now]
 
 **Recommended: drive time proposes, commuting zones group the far towns, county subdivisions store it, a short override list settles the exceptions, and the person chooses among nearby markets. The method is well-worn and agents can build it without a further ruling. Sacramento's reach is Don's call.**
 
