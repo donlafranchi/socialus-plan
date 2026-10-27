@@ -46,9 +46,14 @@ An idea to explore, not a plan. The entry is in IMAGINE; this file holds the det
 
 **Chat-first apps show example asks on the empty box.** ChatGPT rotates starters, and Claude groups its suggestions by kind of task. Guides warn against a bare "Ask me anything", against the same starters for everyone, and against starters that promise things the app can't do. For SocialUs, show three local, real examples that each open a different view, rotate them, and stop once the person has asked a few times.
 
+**A prospective member asked for exactly this:** this weekend's suggestions on first open, plus a prompt for what they're trying to do.
+
+> *A prospective member, 2026-10-27, unnamed:* "I'm picturing opening the app and maybe it immediately shows some suggestions for things happening this wknd that it thinks I'll like (eg farmers market, street fairs, concert whatever). And/or gives me a prompt to say what I'm trying to do in that moment…ie is it to plan my weekend, find a social meetup, or where a specific type of vendor might be selling their stuff, etc. Anyways…and ideally it would allow you to access a calendar showing you anything you've specifically identified as wanting to be on your calendar. So a specific event, or like a vendor that you follow that goes to certain markets"
+
 <details><summary>Details</summary>
 
 **Proposed:**
+- **First open, from the member's words:** a "This weekend" shelf that fits the person (farmers markets, street fairs, concerts), plus three intent asks: "Plan my weekend", "Find a meetup", "Where is a [kind of vendor] selling?"
 - **On the empty Ask bar:** three example asks, each one a different view and each built from real data in the member's metro:
   - "What's happening this weekend?"
   - "Who has happy hour today?"

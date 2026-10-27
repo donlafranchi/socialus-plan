@@ -127,6 +127,19 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 - **"What's happening this weekend?"** The This weekend shelf, opened as a list, split by day.
 - **"Who has happy hour today?"** Recurring deals (a series, like market days) on today, soonest first. This needs the deal kind on real posts.
 
+**"My calendar", a candidate view** (from the prospective member quoted in `asked-for-not-here-2026-10-27.md`): one dated view of everything the member chose:
+- events they saved or responded to;
+- the market dates of vendors they follow.
+
+**Path: well-worn.**
+- **Precedents:** Meetup "Your events", Facebook Events' calendar, Eventbrite "Likes", Luma and Partiful. Every one lists the events you saved or responded to, soonest first. These are from product knowledge and weren't re-checked in this pass.
+- **What we add:** the market dates of vendors you follow.
+- **What already exists:**
+  - Add-to-calendar on dated posts (web #261).
+  - Vendors attached to market Pages, with reminders of when they're there (web #964).
+- **What's missing:** a view that combines the two.
+- **Shape:** a list by day, not a month grid, with the same shelf life as everything else and past dates under "Past". It opens from "What's on my calendar?"
+
 **Proposed shelves, top to bottom:**
 
 | # | Shelf | What goes in it | Order inside |
