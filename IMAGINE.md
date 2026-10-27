@@ -83,7 +83,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 **What would make this real:** a ruling that members may publish statements about Pages they do not own, plus enough density that a second reader sees a first reader's words.
 
-**Reframed in part, 2026-09-21** (`planning/AGENT-ANSWERING.md`): system 1 largely dissolves; the obstacle stands. Trigger unchanged. *Not folded in:* *what's on* has a surface in the spine.
+**Reframed in part, 2026-09-21** (`research/AGENT-ANSWERING.md`): system 1 largely dissolves; the obstacle stands. Trigger unchanged. *Not folded in:* *what's on* has a surface in the spine.
 
 ### The occasion — a thing people organize around, with no row of its own
 
