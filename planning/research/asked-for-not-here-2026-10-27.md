@@ -1,5 +1,7 @@
 # Asked for, not here yet, and teaching the ask
 
+**As of 2026-10-27** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **When many people nearby ask for something SocialUs doesn't have, the app can say so to the community ("lots of people near you are looking for X"), so someone can start a Wonder or a Page for it.** No individual is ever exposed. Separately, people need to be shown what they can ask, and the well-worn way is a few example asks on an empty Ask bar that rotate and fade once they've asked.
 
 An idea to explore, not a plan. The entry is in IMAGINE; this file holds the detail.

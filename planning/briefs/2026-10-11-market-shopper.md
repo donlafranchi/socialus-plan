@@ -23,6 +23,8 @@ criteria:
 
 # Feature Brief: Market shopper
 
+**As of 2026-10-16** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **Goal:** A member who cannot get to the farmers market can have a neighbour shop it for them, and farmers and producers can do the same for their own regulars, when the market is on.

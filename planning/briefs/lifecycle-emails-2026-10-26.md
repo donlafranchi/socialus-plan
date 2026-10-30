@@ -7,6 +7,8 @@ date: 2026-10-26
 
 # Lifecycle emails, reference copy
 
+**As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Reference only: nothing here turns a send on or changes one.** Don is forwarding the full text of each email. Paste each one into its section word for word as it arrives. Building or changing a send is separate work, with its own ticket.
 
 Landing copy these emails should match: `landing-copy-draft5-2026-10-26.md`.
