@@ -13,6 +13,7 @@ SocialUs: what we believe.
 - <a id="you-choose"></a>**2026-10-25 — You choose. [always]** We give people options and let them decide, and we push choices down as close to each person as we can. [binds tiers=planning,code surfaces=principles,ethos build=none]
 - <a id="out-of-the-way"></a>**2026-10-25 — We build the system, then get out of the way. [always]** People organize, discover and help each other; we make that easy, then step back. [binds tiers=planning,code surfaces=principles,ethos build=none]
 - <a id="works-for-you"></a>**2026-10-25 — It works for you. [always]** Local discovery and organizing that comes to you, without chasing followers or feeding a platform. [binds tiers=planning,code surfaces=principles,ethos build=none]
+- <a id="locals-supporting-locals"></a>**2026-10-30 — Locals supporting locals. [always]** The people of a town supporting each other: business, trade, teaching, happenings, tips, every kind of local supporting local people. Businesses are one kind of local among many; SocialUs is never another business listing site. The same when you travel: support the people who live where you are visiting, over chains and outside owners, so what you spend stays there. [binds tiers=planning,code surfaces=principles,ethos,explore,pages build=none]
 - <a id="never-extractive"></a>**2026-10-25 — Never extractive. [always]** The one "never" we keep. [binds tiers=planning,code surfaces=principles,ethos build=none]
 
 ## Defaults

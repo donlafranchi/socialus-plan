@@ -119,7 +119,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 **Open questions:** how a badge is verified, if it is; how contested or political values are moderated; and whether values become **filters in Explore**.
 
-**Needs research before a scenario.** Beta carries only a "Values & badges" card marked "Coming soon" on the Edit page (`socialus-web` #465); badges stay cut (ruling 2026-10-06).
+**Badges first, self-attested** (Don, 2026-10-30; `product/systems/business-jurisdiction.md` § Rulings); values need research. Beta: a "Coming soon" card (`socialus-web` #465).
 
 **What would make it real:** the research done (precedents on verification, a moderation approach for contested values) and the PM ruling on which of the two comes first.
 
