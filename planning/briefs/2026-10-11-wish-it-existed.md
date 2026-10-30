@@ -36,6 +36,8 @@ criteria:
 
 # Feature Brief: Wish it existed
 
+**As of 2026-10-16** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **Goal:** A member can ask the neighbourhood for something they want that may not exist locally, and neighbours can answer "I can build that" with a price, team up, or back the idea together, when they have a want like a small frog habitat.

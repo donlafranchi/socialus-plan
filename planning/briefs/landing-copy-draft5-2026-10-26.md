@@ -7,6 +7,8 @@ date: 2026-10-26
 
 # Landing page copy, Draft 5 (approved)
 
+**As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **The source of truth for the signed-out page at `/`.** Don approved Draft 5 on 2026-10-26. The code holds the same words in socialus-web `src/lib/home-landing.ts` (#1091). Section labels are for reference only; they are not on the page.
 
 This text is the previously approved copy with Don's Draft 5 changes applied, as relayed by Dispatch. If Don's own Draft 5 file differs anywhere, his file wins: replace this one with it.
