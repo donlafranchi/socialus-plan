@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 126, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 147/168 (alongside, not the headline) · updated 2026-10-29 10:30 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 195/291 criteria met (67%), checked 126, reviewed 29, smoked 0, PM looked 0 across 34 features, 3 red, 0 reports stale · Issues closed 147/168 (alongside, not the headline) · updated 2026-10-30 10:06 PT
 
 **The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -21,7 +21,7 @@
 - Risks and deadlines: 0 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Red** (2 member screen(s) red, 2 amber); slowest: Bottom nav → Explore [settled] 2480 ms, Explore card → Page (member) [quick] 1079 ms, Explore post card → Page post [quick] 928 ms
+**How fast it feels: Red** (4 member screen(s) red, 2 amber); slowest: Bottom nav → Explore [settled] 2336 ms, Explore post card → Page post [quick] 1239 ms, Explore card → Page (member) [quick] 1043 ms
 
 ## Your to-do (1)
 
