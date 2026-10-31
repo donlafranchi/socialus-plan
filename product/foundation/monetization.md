@@ -1,18 +1,18 @@
 ---
 id: why-monetization
-purpose: How the platform earns, and why — multi-source, no VC, fees follow success.
+purpose: Whether and how the platform earns — genuinely undecided as of 2026-10-31, beyond "take enough to run, give back the rest."
 layer: why
 status: active
-last-updated: 2026-09-12
+last-updated: 2026-10-31
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. That the many benefit, not a few, is the whole point of this platform. Every decision is tested against one thing: does this help circulate wealth? The platform takes only what it needs to run and gives back as much as it can to the communities that generated it. Who is paid what, any ownership or investor structure, incorporation, and fees — all genuinely undecided; nothing more specific than this paragraph is settled. *(Reopens the 2026-10-07 "members are the investors... SocialUs takes transaction income" ruling. Don, 2026-10-31.)*
 
 # Monetization
 
-No venture capital, ever — an exit-aligned funder is structurally misaligned with Member Flourishing as the north star, and VC pressure on growth metrics pushes toward the engagement-optimization failure modes the platform exists to refuse. No single revenue line may dominate (the working ceiling is 50–60%) — over-reliance on any one source, including member fees, is a lever any one party could pull to redirect the platform's incentives.
+**The only settled thing (2026-10-31): wealth circulates, it is never extracted.** The platform takes only what it needs to run, and gives back as much as it can to the communities that generated it. Every monetization question is tested against one thing — does this help circulate wealth, not concentrate it.
 
-**The shape is closer to a union than a company: it funds itself from the people who belong to it, and earns that by delivering something they couldn't get alone.** Two guidelines bind every revenue line: visibility isn't sold by default, and fees follow success — nothing charges before someone has benefited. That second constraint rules out most obvious early revenue and is the reason this is genuinely hard: dues need members who already value the platform, success fees need producers who've already succeeded. The model is sound at scale and thin at the beginning; no equity round means the beginning gets funded some other way — grants, adjacent revenue, or a long runway. Worth naming now rather than discovering in month four.
+**Genuinely undecided, as of 2026-10-31:** whether there's a transaction fee, member dues, an investor payout, outside capital, any incorporation type — none of it is settled. Earlier language in this repo claiming otherwise (no-VC-ever, "closer to a union than a company," members-are-the-investors, fees-follow-success as a bound guideline) is retired along with it. Don't cite an older doc's specifics as settled — `## Rulings` below is the one place that tracks what's actually decided.
 
 ## Lines under consideration
 
@@ -20,7 +20,7 @@ Voluntary/tiered member dues (specced in `product/systems/contributions.md`). Su
 
 ## Refused outright
 
-Data sales or licensing. Advertising that profits from a member's attention instead of serving them. Anything charged at signup or before a first sale. Paid placement as the primary revenue line. Marked promotion on Discover is allowed under `PRINCIPLES.md` (promotion earns its place by serving members).
+Data sales or licensing. Advertising that profits from a member's attention instead of serving them.
 
 ## Open — Don rules
 
@@ -30,6 +30,7 @@ Data sales or licensing. Advertising that profits from a member's attention inst
 [open-question owner=don raised=2026-09-07] What "surplus returns to the community" actually means (moved here from the retired `goals.md`). A) a fixed percentage, decided annually by the founder. B) a member vote or board process decides the number and the mechanism. C) stays internal-only indefinitely; never published as a specific commitment. *Recommend C for now: nothing forces a decision before launch, and a vague public promise is worse than a deferred one.*
 
 ## Rulings
+- **2026-10-31 — Reopened: whether or how the platform earns, who (if anyone) is paid out, and any ownership/incorporation structure are all genuinely undecided again.** Don. The only thing settled is wealth circulates, never extracted; the platform takes only what it needs to run and gives back the rest to the community that generated it. How is open. Replaces the 2026-10-07 "members are the investors... rejected for good" ruling and the 2026-10-07 "takes transaction income... rate set in the income plan" ruling — both reopened, not merely softened. Also retires "no venture capital, ever" and "closer to a union than a company" as settled framing; capital structure is undecided too. [replaces 2026-10-07: Members are SocialUs's investors...] [replaces 2026-10-07: SocialUs takes transaction income...] [binds tiers=planning,code surfaces=fees,ownership,payout]
 - **2026-10-25 — Paid visibility: promotion is allowed on Discover when it is marked as promoted, serves members, sends its surplus back to members and can be turned off; Find is never reordered by payment.** Answers the paid-visibility question by newer-wins: the 2026-10-12 principle and the 2026-10-25 soul outrank the September rulings that refused it outright. [always] [replaces none] [binds tiers=planning,code surfaces=explore,discovery,fees build=none]
 - **2026-10-11 — Backing a wish is words-only terms on one standard card (gift, reward or pre-purchase), and no screen or word offers a backer money back, a share, a return or a payout; the highest backing level is held for `socialus-legal` and not designed or offered until counsel clears it.** The PM, 2026-10-11, option A on backing. Because the template is vetted once at the platform level so members need no lawyer of their own, and securities and crowdfunding questions go to counsel, never back to the PM. Brief: `planning/briefs/2026-10-11-wish-it-existed.md` § 6a. [for now] [replaces none] [binds tiers=planning surfaces=wishes,backing,copy build=none]
 - **2026-10-07 — SocialUs takes transaction income on member commerce, like comparable apps; the rate is set in the income plan.** The PM. Because the PM ruled it 2026-10-07. Retires the zero-transaction-fees promise in ROADMAP.md and README.md. [replaces none] [binds tiers=planning surfaces=payments,fees]
