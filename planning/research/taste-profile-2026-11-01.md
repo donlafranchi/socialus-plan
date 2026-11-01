@@ -1,18 +1,24 @@
-# Taste profile: interest as a sliding scale
+# Taste profile: one adaptive algorithm, built on a sliding interest scale
 
 **As of 2026-11-01** · Source: hand-written · Maintained by: hand
 
-**Interest becomes a strength that rises when a member taps "this is cool", searches or visits, fades on its own, and can follow the seasons. It takes over from the profile checkboxes and sits beside Follow, so liking something no longer means subscribing to it.** TikTok and Instagram moved this way in 2024–25: a slider or editable list for "more or less of this", kept apart from the accounts you follow.
+## Bottom line for Don
 
-**Your call:** the overall approach, A, B or C (at the bottom). I recommend **A**: keep two taps, "This is cool" (soft, feeds the scale) and "Get updates" (today's Follow, renamed), and replace the checkboxes with a strength list a short chat can fill in.
+**One idea runs everything a member is shown: for each member, how strong their interest in each thing is right now. It rises when they tap "This is cool", search or visit, fades over time, and follows the seasons. Discover, Home, the shelves, the weekly push and the order of search rows all read that one scale, so the app changes as the member changes.**
 
-*The PM, 2026-11-01:* "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." Also: "I don't like the interest check boxes on the profile page … it's definitely not check boxes. It has to be highly specific when it needs to be and very basic when it doesn't."
+- **Your words, now in the ethos:** "We need to be fluid and evolve with our members however they evolve." This is proposed as a soul line [always], in its own small PR (#262).
+- **What it replaces:** the profile checkboxes become "What you're into", a list with a strength per interest, optional months, and a short weekly chat that fills it in. That costs about a cent per member per month.
+- **What it keeps:** Follow, renamed "Get updates", for the few Pages a member wants every post from. "This is cool" is the light tap that never subscribes.
+- **What the member controls:** they see every strength and why it's there, drag it up or down, delete it, or turn learning off.
+- **Your call:** A, B or C (at the bottom). I recommend **A**: two taps, the scale beside Follow, nothing already ruled breaks.
 
-Research only. Nothing here is ruled, and nothing gets built until you pick.
+*The PM, 2026-11-01:* "So I want to review what the research surfaced but more importantly I want to capture this is a concept and use it for an algorithm that can be dynamic and adaptive. We need to be fluid and evolve with our members however they evolve. It needs to be part of our ethos and inform our choices." Earlier: "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." And: "I don't like the interest check boxes on the profile page … it's definitely not check boxes."
 
-## The picture
+Research only. Nothing here is ruled except the soul line in #262, and nothing gets built until you pick.
 
-**Five parts: signals come in, the scale holds a strength per thing, the member sees and steers it, views read it, and the weekly push uses it to time things.**
+## The algorithm: one scale, every surface
+
+**Not a feature but one engine: signals come in, the scale holds a strength per thing with its season, the member sees and steers it, and every surface reads the same scale. Discover leans on it most. Find (search) uses it only to order rows and never hides a result.** That matches the two-sides principle (2026-10-12): Discover may serve what interests a member, and Find stays the member's own tool.
 
 <details><summary>Details</summary>
 
@@ -22,15 +28,20 @@ Research only. Nothing here is ruled, and nothing gets built until you pick.
  short chat (once a week) ──►  THE SCALE: per topic, Page or place
  member drags a strength   ──►  strength now · season · specifics
                 │                          │
-        You: "What you're into"     Explore shelves, search order,
-        (see, drag, delete, off)    the Thursday "this weekend" push
+        You: "What you're into"     every surface below reads it
+        (see, drag, delete, off)
 ```
 
-- **Signals:** what the member does. Raw signals expire.
-- **The scale:** one number per thing, from "not now" to "a lot", plus the months it matters.
-- **The member's view:** everything is visible and editable, with an off switch, as F113 already rules.
-- **Readers:** the shelves (F121), the order inside a search, and the weekly push.
-- **Follow stays separate:** it means "every post", and the scale means "some, when it's timely".
+| Surface | How it uses the scale | Limit that keeps it honest |
+|---|---|---|
+| **Discover / Home** | Picks which interest shelves appear ("Because you like wildflowers") and their order, by strength now × season | Get-updates Pages still come first (2026-10-30); a "what's new" shelf keeps unfamiliar Pages in view so the member isn't sealed into old tastes |
+| **Shelves (F121)** | Up to three interest shelves per member are chosen from the scale, not from checkboxes; seasonal shelves appear only when in season for that member | The rotation and shelf counts stay as ruled; counts have no member id |
+| **Weekly Thursday push** | Fills its interest slot with the in-season, high-strength topic | No new kind of notification; nothing is sent because a strength rose (§ 5) |
+| **Search (Find)** | Orders the grouped rows (Live music: "Next 7 days", then the venue kinds you like most) and breaks ties among equally near, equally soon results | Never hides or drops a result; "Show as one list" stays plain. Going further than row order touches F113 criterion 5 (Find's order unchanged in beta), so it would come back to you |
+| **You** | Shows every strength, its reason and its months, and lets the member edit them | The off switch stops all of it (F113) |
+| **Page owners** | At most a count of "This is cool" taps on their Page | Never who tapped (F067 covers only Get updates) |
+
+**Why it adapts:** guessed strengths fade by about half each month, so last spring's gardening doesn't crowd out this summer's concerts. Seasons bring interests back on time, and the member's own settings always win. This is the soul line in practice: the app follows the member, not the other way round.
 
 </details>
 
