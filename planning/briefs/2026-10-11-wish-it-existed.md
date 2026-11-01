@@ -63,7 +63,7 @@ criteria:
 
 | In the plan | State | What this concept adds |
 |---|---|---|
-| **Idea** (schema `wonder`): someone puts a new thing to the neighbourhood and others signal interest before it exists | Substrate only; signalling, threshold and conversion undesigned; ruled 2026-09-15: no conversion into another entry type, the author makes the new Page themselves | It is the same thing, with one new move: a reply that is an **offer to build** |
+| **Idea** (schema `wonder`): someone puts a new thing to the neighbourhood and others signal interest before it exists | Live as F117 (the goal number is optional); ruled 2026-09-15: no conversion into another entry type, the author makes the new Page themselves | It is the same thing, with one new move: a reply that is an **offer to build** |
 | **Offer / Ask** (schema `offer`, `ask`): entry types exist | No composer; blocked on the missing reply channel | An "I can build that" is an Offer. **A wish is an Ask or an Idea** |
 | **Discussion message**: a reply on a Page's board, one level deep | Not built | The reply channel this needs, in its smallest form: one level of public replies on a wish |
 | **F089 search demand** (draft) and **F064** (a tap on something not built) | Search demand is aggregated: a floor of ten members, one metro, raw rows deleted after 30 days; "resolved by somebody starting it" | A wish is the **member-written** form of that demand |
