@@ -1,5 +1,7 @@
 # Landing page facts — what the app does today (2026-10-26)
 
+> 2026-11-01: written for the Draft 5 landing, which is retired. The live landing copy is `product/ui/landing/landing-copy-final-2026-10-31.md`; the facts below are still a check on what the app does as of 2026-10-26.
+
 **As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **Bottom line: a landing page can truthfully show "find what's near you this week, follow it, get reminded, go" and "post a weekly thing once and your followers hear about it." It can't promise RSVPs, co-hosts, messaging, a market application or a contact address, because none of those exist yet. Sacramento is the only open market.**
