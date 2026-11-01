@@ -114,7 +114,7 @@
   "criteria": [
    "F080.1",
    "F099.9",
-   "F080.5",
+   "F080.5a",
    "F099.1",
    "F099.13",
    "F070.4"
@@ -129,10 +129,10 @@
   "launch": true,
   "look": [
    "The city list is long, open cities first under their own heading",
-   "A closed city shows how many more people are needed, with no date and no promise",
+   "A closed city shows how many more people are needed, one number everywhere, with no date and no promise; nothing on the screen says \"metro\"",
    "Creator and patron both start unselected",
    "You join with only an email: no password, no name",
-   "Join twice with the same email, or switch city: the count moves once and the screen looks the same"
+   "After joining, a popup shows the count and a short message; join twice with the same email, or switch city: the count moves once"
   ],
   "criteria": [
    "F076.1",
@@ -141,7 +141,11 @@
    "F076.2",
    "F076.4",
    "F076.5",
-   "F076.14"
+   "F076.14",
+   "F076.3a",
+   "F076.7",
+   "F076.8",
+   "F103.4"
   ]
  },
  {
@@ -175,9 +179,11 @@
   "title": "Sign up from a Sacramento zip",
   "role": "signed out (private tab)",
   "link": "https://socialus.org/auth/login",
-  "minutes": 3,
+  "minutes": 4,
   "launch": true,
   "look": [
+   "After the email code, you land on a profile step that asks for your legal name, display name, zip and an 18+ box; you cannot skip it",
+   "Try to leave the legal name empty: you are kept on the step",
    "The Sacramento zip names your metro and says the zip chose it",
    "A short line says what the app is for, with nothing about never selling",
    "Nobody asks whether you make things or look for things"
@@ -185,7 +191,9 @@
   "criteria": [
    "F081.3",
    "F081.5",
-   "F081.6"
+   "F081.6",
+   "F077.1",
+   "F081.1"
   ]
  },
  {
@@ -517,6 +525,32 @@
   "criteria": [
    "F100.11a",
    "F102.11"
+  ]
+ },
+ {
+  "id": "J23",
+  "title": "Post a Wonder and watch neighbours join",
+  "role": "the owner of your test Page, plus a second signed-in account",
+  "link": "https://socialus.org/g/08ppyj",
+  "minutes": 4,
+  "launch": false,
+  "look": [
+   "New post offers a Wonder: your words, a target number and an optional list of sizes",
+   "From the second account, tap I'm in and pick a size: the bar fills; change the size, then leave: the count drops",
+   "As the poster you see the count per size; the second account sees only the total and no names",
+   "From the second account, offer to help in a role; as the poster, accept it: the helper's display name and role show on the Wonder",
+   "Nothing on the Wonder asks for or promises money, and Report is on its menu"
+  ],
+  "criteria": [
+   "F117.1",
+   "F117.2",
+   "F117.3",
+   "F117.4",
+   "F117.5",
+   "F117.6",
+   "F117.7",
+   "F117.8",
+   "F117.9"
   ]
  }
 ]

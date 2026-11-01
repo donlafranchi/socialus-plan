@@ -1,5 +1,7 @@
 # Wonders playbook
 
+**As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **A Wonder turns "does anyone else want this?" into a project neighbours run themselves: people sign up, take paid roles as small contracts, and the price of the finished thing covers every fee at cost, with no profit layer.** SocialUs provides the playbook, templates and a place to organize; members do the work and get paid for it.
 
 **Your one call:** what goes in the first version (A, B or C, at the bottom). Recommend **B**.

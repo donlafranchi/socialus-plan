@@ -22,6 +22,8 @@ criteria:
 
 # Feature Brief: Market listings (the shared foundation)
 
+**As of 2026-10-16** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **Goal:** A producer at a farmers market can say what they bring this week, in a minute, and a neighbour can see what the market has, when the market is on.

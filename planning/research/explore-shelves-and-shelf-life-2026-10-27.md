@@ -1,5 +1,7 @@
 # Views built from the ask: shelves, followed first, shelf life
 
+**As of 2026-10-27** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Every view is built from what the person asks for. In every view, timely posts from the Pages and people they follow come first. When those run out, a quiet line marks the end, and the view widens to everything else that matches.** A wide-open ask ("show me everything going on around me") gets the shelf view, which works like the App Store: categories run top to bottom and the items in each shelf run left to right. Every post gets a shelf life by kind, leaves these views when it ends, and stays on its Page and in search.
 
 **Your one call:** how the shelf view is arranged (A, B or C, at the bottom). I recommend **A**.

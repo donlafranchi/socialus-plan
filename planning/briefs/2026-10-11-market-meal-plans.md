@@ -25,6 +25,8 @@ criteria:
 
 # Feature Brief: Market meal plans
 
+**As of 2026-10-16** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-10-12** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **Goal:** A family can have a week of meals planned around what their farmers market has this week, written by a neighbour, when they want to cook from the market.

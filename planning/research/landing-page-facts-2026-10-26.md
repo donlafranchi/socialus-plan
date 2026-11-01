@@ -1,5 +1,7 @@
 # Landing page facts — what the app does today (2026-10-26)
 
+**As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Bottom line: a landing page can truthfully show "find what's near you this week, follow it, get reminded, go" and "post a weekly thing once and your followers hear about it." It can't promise RSVPs, co-hosts, messaging, a market application or a contact address, because none of those exist yet. Sacramento is the only open market.**
 
 Source: socialus-web `origin/main` @ 6470159 (2026-10-26). Paths are relative to socialus-web. "Reachable" means a member can get there by tapping from Explore or You, with no flag or direct URL needed.
