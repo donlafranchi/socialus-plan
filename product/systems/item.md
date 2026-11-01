@@ -20,12 +20,12 @@ Anything a Person declares — a product, a service, a gathering, an idea, an of
 | `product` | Product | Sell · Share |
 | `service` | Service | Offer |
 | `gathering` | Gathering | Host |
-| `wonder` | Idea | Wonder · Float |
+| `wonder` | Proposal | Propose |
 | `offer` | Offer | Offer up |
 | `ask` | Ask | Ask |
 | `initiative` | Initiative | Lead · Start |
 
-"Item" is the spec/schema term only — it never reaches user-facing copy or a URL; the UI always uses the specific kind. Schema migrations are expensive (RLS, event-log replay, type generators); UI and URL renames are cheap. Locking the schema vocabulary to the most stable concept, not the prettiest word, keeps future rename work bounded to the surfaces that actually need it. "Gathering" and "Wonder" were the spec verbs that made loop discussions legible internally; "Event" and "Idea" are the everyday nouns a stranger recognizes immediately — the split lets the team keep spec language without imposing it on users. A new kind proposes all three columns (schema / UI label / UI verb) at once, never in isolation.
+"Item" is the spec/schema term only — it never reaches user-facing copy or a URL; the UI always uses the specific kind. Schema migrations are expensive (RLS, event-log replay, type generators); UI and URL renames are cheap. Locking the schema vocabulary to the most stable concept, not the prettiest word, keeps future rename work bounded to the surfaces that actually need it. "Gathering" was the spec verb that made loop discussions legible internally; "Event" and "Proposal" are the everyday nouns a stranger recognizes immediately — the split lets the team keep spec language without imposing it on users. A new kind proposes all three columns (schema / UI label / UI verb) at once, never in isolation.
 
 ## Provenance claims — "Locally Made," a sibling to "Locally Owned"
 
