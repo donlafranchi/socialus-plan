@@ -19,7 +19,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 
 *The one thing a matrix did well. Detail is in the per-verb sections below; this is for orientation only, never for citing.*
 
-| | Person | Page | Gathering | Product / Service | Venue | Announcement | Idea |
+| | Person | Page | Gathering | Product / Service | Venue | Announcement | Proposal |
 |---|---|---|---|---|---|---|---|
 | **Create** | ● | ● | ● | ● | ● | ○ | ○ |
 | **Edit** | ○ | ● | ○ | ○ | ○ | ✕ | ○ |
@@ -41,7 +41,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ●
 - **Venue** ●
 - **Announcement** ○
-- **Idea** ○ — composer undesigned.
+- **Proposal** ● — the verb is *propose* (F117).
 
 ## Edit
 
@@ -51,7 +51,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ○
 - **Venue** ○
 - **Announcement** ✕ — post is final.
-- **Idea** ○
+- **Proposal** ○
 
 ## Publish
 
@@ -61,7 +61,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ●
 - **Venue** — meaningless.
 - **Announcement** ● — publishing *is* posting.
-- **Idea** ○
+- **Proposal** ○
 
 ## Retire
 
@@ -71,7 +71,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ○
 - **Venue** — meaningless.
 - **Announcement** ✕
-- **Idea** ○ — no expiry (2026-09-15); quiet for 90 days it sorts last, and the author revives it by doing something ordinary.
+- **Proposal** ○ — no expiry (2026-09-15); quiet for 90 days it sorts last, and the author revives it by doing something ordinary.
 
 ## Follow
 
@@ -81,7 +81,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ✕ — not a concept.
 - **Venue** ● — a saved search.
 - **Announcement** — meaningless.
-- **Idea** — meaningless.
+- **Proposal** — meaningless.
 
 ## Respond
 
@@ -91,7 +91,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ○
 - **Venue** — meaningless.
 - **Announcement** ○ — one reaction.
-- **Idea** ○ — signalling interest.
+- **Proposal** ● — "I'm in", or offering to help (F117).
 
 ## Join / leave
 
@@ -101,7 +101,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** — meaningless.
 - **Venue** — meaningless.
 - **Announcement** — meaningless.
-- **Idea** — meaningless.
+- **Proposal** — meaningless.
 
 ## Appear at
 
@@ -111,7 +111,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ● — item-level.
 - **Venue** — meaningless.
 - **Announcement** — meaningless.
-- **Idea** — meaningless.
+- **Proposal** — meaningless.
 
 ## Take down
 
@@ -121,7 +121,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ○ — F058.
 - **Venue** — meaningless.
 - **Announcement** ✕
-- **Idea** ○
+- **Proposal** ○
 
 ## Volunteer
 
@@ -131,7 +131,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** — meaningless.
 - **Venue** — meaningless.
 - **Announcement** — meaningless.
-- **Idea** — meaningless.
+- **Proposal** — meaningless.
 
 ## Message
 
@@ -141,9 +141,9 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 - **Product / Service** ✕
 - **Venue** ✕
 - **Announcement** ○ — reply = board increment one.
-- **Idea** ✕
+- **Proposal** ✕
 
-*Signal acts on a category or an unbuilt feature — neither is a noun in this model, so it has no entry and no foreign key (F064). Signal interest is a different verb: its subject is an Idea, a real row.*
+*Signal acts on a category or an unbuilt feature — neither is a noun in this model, so it has no entry and no foreign key (F064). Signal interest is a different verb: its subject is a Proposal, a real row.*
 
 ## The forbidden cells, with reasons
 

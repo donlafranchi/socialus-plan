@@ -19,7 +19,7 @@ Draft criteria, to sharpen before approval:
 1. **Answers inline with real cards**: answers are built from the same Pages, posts and events the pages show, as tappable cards. Nothing is invented: a card that doesn't exist in the data is never shown.
 2. **Actions need a confirm tap**: the existing action registry in the code is the only set of tools. Each action is shown in plain words and runs only when the member taps to confirm.
 3. **Chat as home**: the conversation becomes the first screen; every page stays reachable directly.
-4. **Organizers by chat**: managers run their Pages (posts, edits) and coordinate Wonders (who's in, helpers, sizes) through the same confirm-tap actions.
+4. **Organizers by chat**: managers run their Pages (posts, edits) and coordinate Proposals (who's in, helpers, sizes) through the same confirm-tap actions.
 5. **Visible memory**: anything the assistant remembers is listed where the member can see it, delete it, or switch memory off.
 6. **Voice, later**: speaking a question is a later step on the same path.
 7. **Daily limits**: per-member limits keep the cost down; past the limit, the member still has the pages.

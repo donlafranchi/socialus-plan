@@ -48,8 +48,7 @@ The lightest, most universal loops — no belief required, only the desire to be
    - **Missing:** search over Pages (cut for beta); a quiet way to say "I'll come" (RSVP, cut).
    - **Beta.**
 2. **Float an idea.** *Who and why:* someone thinking of starting something who doesn't know if anyone would come. One sentence, no commitment; interest says whether to start. **Nothing converts** *(2026-09-15)*: they make the Page themselves.
-   - **Currently:** nothing to post it from — Wonder's substrate shipped, its composer did not.
-   - **Missing:** the Wonder composer and page.
+   - **Currently:** a Proposal on their Page (F117).
    - **Later.**
 3. **Land here.** *Who and why:* a newcomer who wants to know what's happening within walking distance this week — the highest-intent person this platform serves.
    - **Currently:** signed out, sees each Page's front door (name, picture, description) with posts withheld (F093); signs up with a zip, which sets the metro; signed in, sees What's happening by date.
@@ -108,7 +107,7 @@ Members become stakeholders; capital is pooled, businesses founded, resources sh
 
 12. **Start something.** *Who and why:* someone with an idea that would grow the community's capacity — a tool library, a co-op grocery.
     - **Currently:** makes a Page and posts from it; there is no goal or Initiative object (2026-09-19).
-    - **Missing:** Wonder to test interest first (loop 2); Encouragement and Pledge have no design.
+    - **Missing:** Encouragement and Pledge have no design.
     - **Later.**
 13. **Pool resources.** *Who and why:* neighbours who together could buy what no household could alone — land, a building, a workshop's tools.
     - **Currently:** nothing on the platform.

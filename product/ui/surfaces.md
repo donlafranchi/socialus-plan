@@ -131,7 +131,7 @@ owns:
 | **Join control** | ○ | The control that lets someone join a Group | **Nothing.** The rules are specced, the handler ships, the read paths exist. **Only the control is missing** — so today a member can re-join something they left and cannot join anything else. In scope, 0.75 day, unticketed. |
 | **Response control** | ○ | A member says they are coming to an occurrence — the tap itself | Nothing structural; the noun is ruled. **No occurrence exists to respond to** — the post mechanism is upstream of it. |
 | **Response list** | ○ | The organizer reads who is coming and who isn't — two lists, with names and faces | **`members.avatar_url` has no write path.** There is no avatar upload surface, so the list would render faceless. That work is upstream of this screen. |
-| **Idea composer** | ○ | Put a new thing to the neighbourhood and see who wants it before it exists | Mechanic undesigned — threshold, signalling, conversion. Substrate shipped. |
+| **Proposal composer** | ● | Propose something to the neighbourhood and see who's in before it exists | F117: a post kind on a Page; goal optional. |
 | **Volunteering composer** | ○ | Offer and ask | A reply channel. **Tractable inside a group the moment the board ships; blocked across the neighbourhood.** |
 | **Direct messages** | ○ | One person writing to another | Everything. No substrate at all. |
 | **Item photos** | ○ | A face on a listing | Deferred — the Page is the unit that carries a face. Upload substrate already built; about half a day when it resumes. |

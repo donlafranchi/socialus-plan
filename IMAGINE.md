@@ -91,7 +91,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 **Why it is here, not in the spine.** It has no noun (that is the ruling), no verb of its own (people make a Page and post a date, both existing) and no surface: it fails all three parts of the test at the top of this file.
 
-**What it is not:** an Idea (*a new thing*), a Page (*who*) or a dated post (*when*). The occasion would be *what for*; nothing holds that.
+**What it is not:** a Proposal (*new thing*), a Page (*who*) or a dated post (*when*). The occasion would be *what for*; nothing holds it.
 
 **What would make it real:** an occasion that a Page and a dated post cannot carry between them, something people find, join and come back to that is neither an organization nor a moment. Until somebody produces one, the pair is the answer.
 

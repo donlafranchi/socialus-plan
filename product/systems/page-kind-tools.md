@@ -59,9 +59,9 @@ Every tool below exists in the schema, in an approved scenario, or in a ratified
 
 ### What would settle each open cell
 
-- **Selling from a community-kind Page** *(product, service on the five affiliate kinds)* — a run club selling singlets is the real case and it is not hypothetical. **Settled by whether a community-kind Page selling a thing needs a business claim.** The 2026-09-07 ruling *"nothing gates selling"* says it does not, which argues for **●** — but nobody has said so about these kinds specifically.
-- **Ideas, offers, asks, initiatives on a business Page** — settled by whether a bakery asking for help is acting as a business or as a person. No ruling exists.
-- **Ideas on a family Page** — settled by whether a family Page is a coordination surface or only a private roster.
+- **Selling from a community-kind Page** *(product, service on the five affiliate kinds)* — a run club selling singlets is the real case and it is real. **Settled by whether a community-kind Page selling a thing needs a business claim.** The 2026-09-07 ruling *"nothing gates selling"* says it does not, which argues for **●** — but nobody has said so about these kinds specifically.
+- **Proposals, offers, asks, initiatives on a business Page** — settled by whether a bakery asking for help is acting as a business or as a person. No ruling exists.
+- **Proposals on a family Page** — settled by whether a family Page is a coordination surface or only a private roster.
 - **Tags on an event** — a one-off is hard to find without them and clutters the vocabulary with them. In `PAGE-KIND-OCCASION.md`, unruled.
 - **Appearances for community kinds** — settled by whether a book club that meets at a different pub each month is an appearance or just a post with its own address. `page_posts` already carries a post-level location, which argues **✕**.
 - **Dormancy on an event** — an event is over the day after it happens. Whether that is dormancy, dissolution, or simply dropping out of browse on the existing past-date rule.
