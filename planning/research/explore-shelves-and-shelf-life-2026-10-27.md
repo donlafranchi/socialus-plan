@@ -114,7 +114,7 @@ Most of the detail on Yelp, Eventbrite, Facebook and Marketplace comes from thir
 - **Posts** come in three shapes:
   - Announcements, which are undated.
   - Dated posts, which count as events.
-  - Wonders, which carry a threshold count.
+  - Wonders, which carry a count and an optional goal.
 - **Samples on unclaimed Pages:** three per Page (event, deal, last-minute opening).
 - **Seeded posts:**
   - Market days, from a weekly series.

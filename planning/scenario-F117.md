@@ -10,13 +10,13 @@ depends: []
 ---
 ## Story
 
-A member posts a Wonder on their Page: "Clothes that fit men about 5'10", 170–190 lb, bought in bulk at cost. Who's in? Who'll lead? Who'll design?", with a threshold of 500 and a size list (S, M, L). Neighbours tap "I'm in" and pick a size; the bar fills toward 500. One offers "I can help as Designer", another "as Lead". The poster accepts both, and the Wonder shows who is leading and designing. No money moves.
+A Wonder tests interest in a new venture before it exists. A member posts one on their Page: "Clothes that fit men about 5'10", 170–190 lb, bought in bulk at cost. Who's in? Who'll lead? Who'll design?", with a goal of 500 and a size list (S, M, L). Neighbours tap "I'm in" and pick a size; the bar fills toward 500. One offers "I can help as Designer", another "as Lead". The poster accepts both, and the Wonder shows who is leading and designing. Or a person posts "I'm thinking of offering dog walking in Midtown, who'd use it?" with no goal: neighbours tap "I'm in", the Wonder shows the count, and the poster sees whether it is worth starting. No money moves.
 
 ## Acceptance
 
-1. **A Wonder is a post kind** on a Page the member manages: words, a threshold (a whole number), and an optional list of sizes or options the poster names.
+1. **A Wonder is a post kind** on a Page the member manages: words, an optional goal (a whole number), and an optional list of sizes or options the poster names.
 2. **"I'm in"**: any signed-in member can join once, picking one size when the Wonder has sizes; they can change their size or leave.
-3. **Progress bar**: the Wonder shows the count of members in and the threshold as a bar, to anyone who can see the post; it reads full at the threshold and keeps counting past it.
+3. **Count and goal**: the Wonder shows the count of members in to anyone who can see the post. With a goal, it shows a bar to it, reads full at the goal and keeps counting past it; without one, just the count.
 4. **Size split**: the poster sees the count per size; others see only the total.
 5. **"I can help as …"**: any signed-in member can offer one or more of the eight roles (lead, designer, pattern-maker or sampler, sourcing, quality, logistics, support, treasurer), with an optional one-line note.
 6. **Accepting a helper**: the poster accepts or declines each offer. Accepted helpers show on the Wonder by display name and role; pending and declined offers are seen only by the poster and the person who offered.
@@ -44,5 +44,6 @@ Soul: `#out-of-the-way` (members organize it; we provide the tool) and `#benefit
 [platform none]
 
 ## Rulings
+- **2026-11-01 — A Wonder tests interest in any new venture (an event, a group, a service, something someone would make, a pre-business), and its goal number is optional; with no goal it shows the count of who's in and no bar.** Don, 2026-11-01: *"this is for any kind of new 'enterprise' though. It's not only for collaborative things. it could be a person offering a service or to make something, this is prior to a business or a page. It's really a way to test a market to see if anyone would be interested."* And on the goal: *"the person creating the wonder may not put a minimum number it would be optional."* The eight roles are not re-ruled here; whether they still fit services and makers is open for Don. Plan #218. [for now] [replaces none] [binds tiers=planning,code surfaces=wonders,posts build=none]
 - **2026-10-25 — Wonders v1 is option B: a Wonder post with "I'm in" (with a size), "I can help as <role>" from the eight playbook roles with the poster accepting helpers, and a progress bar to the poster's threshold; no money.** The PM chose B on the playbook's A/B/C. [for now] [replaces none] [binds tiers=planning,code surfaces=wonders,posts,pages build=none]
 - **2026-11-01 — A Wonder shows who is in and who is helping by display name to anyone who can see it (Don, 10-31: "people want to see people"); each person's size stays the poster's alone.** Precedents: Meetup's attendee list, Facebook Events' Going list, Kickstarter's named backers on updates. [for now] [replaces none] [binds tiers=planning,code surfaces=wonders build=none]
