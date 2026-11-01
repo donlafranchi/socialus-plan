@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-01** · [always] · principles, markets, open-your-town, fees — SocialUs grows only as fast as it can pay for itself. [always] (PRINCIPLES.md)
+- **2026-11-01** · [for now] · wonders — A Wonder shows who is in and who is helping by display name to anyone who can see it (Don, 10-31: "people want to see people"); each person's size stays the poster's alone (planning/scenario-F117.md)
 - **2026-10-31** · [for now] · explore, home, ranking — Find may sort and filter by members' interests, likes and interaction; interest shelves (F121) may appear on Explore (planning/scenario-F059.md)
 - **2026-10-31** · [for now] · signup, invites, open-your-town — Sign-up is never gated or slowed: no invite is required. Every invite link and Page add is recorded in an append-only log (inviter, invitee or claimed Page, time, market, channel), first touch permanent. Someone who arrives without a link is asked "Who told you about us?" once, after sign-up, skippable. Public recognition is opt-in; names, weights and thresholds are decided later from the log (planning/scenario-F118.md)
 - **2026-10-31** · [for now] · open-your-town — Open your town rewards recognition only: no cash, credit or perks. Each market has its own Founders, kept long term; a public Movers & Shakers board per market is to come (planning/scenario-F118.md)

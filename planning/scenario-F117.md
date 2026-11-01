@@ -20,7 +20,7 @@ A member posts a Wonder on their Page: "Clothes that fit men about 5'10", 170–
 4. **Size split**: the poster sees the count per size; others see only the total.
 5. **"I can help as …"**: any signed-in member can offer one or more of the eight roles (lead, designer, pattern-maker or sampler, sourcing, quality, logistics, support, treasurer), with an optional one-line note.
 6. **Accepting a helper**: the poster accepts or declines each offer. Accepted helpers show on the Wonder by display name and role; pending and declined offers are seen only by the poster and the person who offered.
-7. **Privacy**: nobody sees who is "in" except the poster, who sees names and sizes; a member's own state is visible to them.
+7. **Who's in, by name**: anyone who can see the Wonder sees who is in and who is helping, by display name; only the poster sees each person's size; a member's own state is visible to them.
 8. **Reports**: a Wonder is reportable like any post.
 9. **No money**: nothing on a Wonder takes, holds or promises payment.
 
@@ -45,3 +45,4 @@ Soul: `#out-of-the-way` (members organize it; we provide the tool) and `#benefit
 
 ## Rulings
 - **2026-10-25 — Wonders v1 is option B: a Wonder post with "I'm in" (with a size), "I can help as <role>" from the eight playbook roles with the poster accepting helpers, and a progress bar to the poster's threshold; no money.** The PM chose B on the playbook's A/B/C. [for now] [replaces none] [binds tiers=planning,code surfaces=wonders,posts,pages build=none]
+- **2026-11-01 — A Wonder shows who is in and who is helping by display name to anyone who can see it (Don, 10-31: "people want to see people"); each person's size stays the poster's alone.** Precedents: Meetup's attendee list, Facebook Events' Going list, Kickstarter's named backers on updates. [for now] [replaces none] [binds tiers=planning,code surfaces=wonders build=none]
