@@ -6,7 +6,7 @@
 
 *The PM, verbatim:* "there could be many categories, New and interesting, Something Unique. Play with Farm Animals. There could be dozens. Can you have a session see what we have in there now and see what we could create. Meet up with folks, Go out and play. Move your body. Try something new. How about a class? Want to learn something? Who's got a 'Wonder'." And: "I don't like the term 'a wonder'. We need something new for that?"
 
-**Your two calls:** which shelves go on the list (the 15 marked ★ are the recommendation) and the name (recommend *Rally*). All names are drafts for you.
+**Your two calls:** which shelves go on the list (the 15 marked ★ are the recommendation) and the name. **Ruled 2026-11-01: the name is Proposal** ("Propose something", "Who's proposing what?"); Rally is retired (plan #218). All names are drafts for you.
 
 ## What's in the app now
 
@@ -43,7 +43,7 @@
 | | **Something unique** | one-of-a-kind makers: ceramics, candles, leather, foraging, cider pressing | 49 | 0 | 99 | their drops and open studios |
 | ★ | **Play with farm animals** | sheep, goats, alpacas, poultry, petting farms | 15 | 0 | 32 | farm-day dates; thin but loved |
 | | **New and interesting** | Pages added in the last 14 days | 94 | 242 | 606 | fills itself |
-| ★ | **Who's got a rally?** | open "who's in?" posts, nearest goal first | — | 0 | 0 | the first rally; absent until then |
+| ★ | **Who's proposing what?** | open Proposals, nearest goal first | — | 0 | 0 | the first Proposal; absent until then |
 | ★ | **Lend a hand** | volunteering, cleanups, land trusts, service clubs | 65 | 5 | 182 | volunteer calendars |
 | | **Early birds** | starts before 10 am | — | 4 | 206 | runs and markets |
 | | **After work** | weekdays, starts 5–8 pm | — | 58 | 21 | fine as is |
