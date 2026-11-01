@@ -6,15 +6,16 @@
 
 **One idea runs everything a member is shown: for each member, how strong their interest in each thing is right now. It rises when they tap "This is cool", search or visit, fades over time, and follows the seasons. Discover, Home, the shelves, the weekly push and the order of search rows all read that one scale, so the app changes as the member changes.**
 
-- **Your words, now in the ethos:** "We need to be fluid and evolve with our members however they evolve." This is proposed as a soul line [always], in its own small PR (#262).
+- **Your words, now in the ethos:** "We need to be fluid and evolve with our members however they evolve." This is a soul line [always] (#262), now also covering each member's own preferences, with your one-day vs. one-year example.
+- **How, not just what:** the same engine learns how each member plans and uses the app: how far ahead, what time of day, weekday or weekend, how far they'll go, alone or with kids, how often they want a nudge. It shapes Home's time window, shelf order and when alerts arrive (§ 2).
 - **What it replaces:** the profile checkboxes become "What you're into", a list with a strength per interest, optional months, and a short weekly chat that fills it in. That costs about a cent per member per month.
 - **What it keeps:** Follow, renamed "Get updates", for the few Pages a member wants every post from. "This is cool" is the light tap that never subscribes.
 - **What the member controls:** they see every strength and why it's there, drag it up or down, delete it, or turn learning off.
 - **Your call:** A, B or C (at the bottom). I recommend **A**: two taps, the scale beside Follow, nothing already ruled breaks.
 
-*The PM, 2026-11-01:* "So I want to review what the research surfaced but more importantly I want to capture this is a concept and use it for an algorithm that can be dynamic and adaptive. We need to be fluid and evolve with our members however they evolve. It needs to be part of our ethos and inform our choices." Earlier: "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." And: "I don't like the interest check boxes on the profile page … it's definitely not check boxes."
+*The PM, 2026-11-01:* "We should be able to adapt to each members preferences in a way that serves them. For example I only plan one day ahead whereas someone else may plan a year ahead." Before that: "So I want to review what the research surfaced but more importantly I want to capture this is a concept and use it for an algorithm that can be dynamic and adaptive. We need to be fluid and evolve with our members however they evolve. It needs to be part of our ethos and inform our choices." Earlier: "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." And: "I don't like the interest check boxes on the profile page … it's definitely not check boxes."
 
-Research only. Nothing here is ruled except the soul line in #262, and nothing gets built until you pick.
+Research only. Nothing here is ruled except the soul line (#262), and nothing gets built until you pick.
 
 ## The algorithm: one scale, every surface
 
@@ -36,7 +37,7 @@ Research only. Nothing here is ruled except the soul line in #262, and nothing g
 |---|---|---|
 | **Discover / Home** | Picks which interest shelves appear ("Because you like wildflowers") and their order, by strength now × season | Get-updates Pages still come first (2026-10-30); a "what's new" shelf keeps unfamiliar Pages in view so the member isn't sealed into old tastes |
 | **Shelves (F121)** | Up to three interest shelves per member are chosen from the scale, not from checkboxes; seasonal shelves appear only when in season for that member | The rotation and shelf counts stay as ruled; counts have no member id |
-| **Weekly Thursday push** | Fills its interest slot with the in-season, high-strength topic | No new kind of notification; nothing is sent because a strength rose (§ 5) |
+| **Weekly Thursday push** | Fills its interest slot with the in-season, high-strength topic | No new kind of notification; nothing is sent because a strength rose (§ 6) |
 | **Search (Find)** | Orders the grouped rows (Live music: "Next 7 days", then the venue kinds you like most) and breaks ties among equally near, equally soon results | Never hides or drops a result; "Show as one list" stays plain. Going further than row order touches F113 criterion 5 (Find's order unchanged in beta), so it would come back to you |
 | **You** | Shows every strength, its reason and its months, and lets the member edit them | The off switch stops all of it (F113) |
 | **Page owners** | At most a count of "This is cool" taps on their Page | Never who tapped (F067 covers only Get updates) |
@@ -74,13 +75,52 @@ Research only. Nothing here is ruled except the soul line in #262, and nothing g
 
 </details>
 
-## 2. "This is cool" instead of Follow
+## 2. How each member plans and uses the app, not just what they like
+
+**The scale also holds a handful of habits per member, starting with how far ahead they plan. A one-day planner's Home opens on tonight and tomorrow; a year-ahead planner's opens on "Plan ahead" shelves months out. Each habit is learned from what the member taps and searches, can be asked once in the taste chat, and shows in You as one plain line they can change.** The evidence is strong that people differ here. Eventbrite found [57% of US music tickets were bought a week or less before the show](https://www.nivassoc.org/news/2024/last-minute-ticket-buying-eventbrite-releases-study-at-niva-24) (2024), while galas and dinners sell months out.
+
+<details><summary>Details</summary>
+
+**What other apps do**
+
+| App | What it adapts to | What we take |
+|---|---|---|
+| Spotify [daylist](https://www.engadget.com/spotifys-latest-playlist-auto-adapts-to-your-day-122541712.html) (2023) | Time of day: it refreshes several times a day from what you played at that hour | Time of day is a habit worth learning |
+| Netflix ([Learning a Personalized Homepage](https://gwern.net/doc/www/netflixtechblog.com/2f5717e8bbdc98d2caf5c7a972359fbb7e7c0b28.html)) | Which rows a member gets and their order, from viewing pattern | Shelf order per member, not one fixed order |
+| Google Maps commute | Learns your usual trips and times, then times its alerts to them | Alerts arrive when a member usually plans, not on our schedule |
+| Google Calendar | Working hours and "find a time" around your habits | A stated preference overrides the guess |
+
+**The habits, how we'd learn each, and what it changes**
+
+| Habit | Learned from | Or asked once in the chat | What it changes | What the member sees in You |
+|---|---|---|---|---|
+| **How far ahead they plan** (the first one) | How far out the dates are on things they open, save or say "I'm coming" to | "Do you plan the day of, a week out, or months ahead?" | Home's time window; puts "Tonight" first or "Plan ahead: next 3 months" first; how early the weekly push mentions something | "You usually plan **a day or two** ahead" · change |
+| **Time of day** | When they open the app and when they tap | — (learned only) | When the weekly push arrives, within quiet hours; morning vs. evening shelves | "You usually look **in the evening**" · change |
+| **Weekday vs. weekend** | Which days the things they save fall on | "Mostly weekends, or weeknights too?" | Shelf order (weeknight trivia vs. Saturday markets); Thursday push content | "Mostly **weekends**" · change |
+| **How far they'll go** | Distances of what they open and say "I'm coming" to | "How far will you go for something good?" | The ring Home and shelves open on (the place rings already exist) | "Usually within **20 minutes**" · change |
+| **Alone, with friends, or with kids** | Taps on family vs. 21+ posts | "Who do you usually go with?" | Kids & family shelves rise or fall; bars and late shows fall for a family planner | "Often **with kids**" · change |
+| **How often they want a nudge** | Which pushes they open or turn off | "How often should we tell you about things?" | Weekly only, or weekly plus in-season (if you later rule that kind) | "**Weekly**" · change |
+| **Price comfort** (weaker evidence) | Free vs. paid on what they save | — | Free things rise for members who mostly pick free | "Mostly **free things**" · change |
+
+**Rules for habits, the same as for interests:**
+- A stated habit always beats a learned one, and never fades.
+- A learned one fades if behaviour changes, so a member who starts planning further ahead in summer sees Home follow within weeks.
+- Each one is a single line in You with a reason ("from 12 things you saved") and a change link.
+- The off switch stops learning habits too.
+- Habits never hide anything. They change order and timing only, and Find stays complete.
+- No habit is shown to anyone else or to Page owners.
+
+**Smallest first step:** planning horizon only. Learn it from saves and "I'm coming", ask it as one question in the chat, and use it for Home's time window and the order of "Next 7 days" and "Plan ahead" shelves.
+
+</details>
+
+## 3. "This is cool" instead of Follow
 
 **Add a one-tap "This is cool" on cards and Pages that raises the strength of that Page and its topics and never subscribes. Keep Follow, renamed "Get updates", for the few Pages a member wants every post from.** That's the split you already ruled on 2026-09-17 (support vs. get-updates), so "This is cool" is the unbuilt support ribbon, now with a job. Removing Follow outright would break five live features that need a list of "everyone who asked for this Page's posts".
 
 <details><summary>Details</summary>
 
-**What already exists:** the 2026-09-17 ruling gives two links between a member and a Page: **Support** ("I like that this exists", soft, never in the inbox, unbuilt) and **Get updates** ("tell me what this Page posts", which is today's Follow). "This is cool" is Support with a clearer name and a purpose. One conflict to settle: that ruling says support produces no notifications **ever**. Option A keeps that, since "This is cool" never sends anything on its own and only changes what the existing weekly push picks (§ 5).
+**What already exists:** the 2026-09-17 ruling gives two links between a member and a Page: **Support** ("I like that this exists", soft, never in the inbox, unbuilt) and **Get updates** ("tell me what this Page posts", which is today's Follow). "This is cool" is Support with a clearer name and a purpose. One conflict to settle: that ruling says support produces no notifications **ever**. Option A keeps that, since "This is cool" never sends anything on its own and only changes what the existing weekly push picks (§ 6).
 
 **Everything that depends on Follow today, and what each becomes**
 
@@ -102,7 +142,7 @@ Follower counts: none are public today (F065 rules them out), so nothing changes
 
 </details>
 
-## 3. Taste profile instead of checkboxes
+## 4. Taste profile instead of checkboxes
 
 **Replace the 12 checkboxes with "What you're into": a list of topics, each with a strength and optional months, that a 3-question chat with a small model (Claude Haiku 5.5) can fill in about once a week. It costs about a cent per member per month at today's prices, even if every member chats weekly. The member can always read, drag, add and delete by hand for free, and the off switch stops all of it.** Specific where the member is specific ("bluegrass at small bars, not arenas"), broad where they're not ("music, sure").
 
@@ -134,7 +174,7 @@ Even at 5× these token counts it stays under $0.06 per member per month. The we
 
 </details>
 
-## 4. Watching search and taps
+## 5. Watching search and taps
 
 **We already collect most of what the scale needs, but nearly all of it is stored with no member attached, because it was built for counts. The scale needs a private, per-member, expiring record of taps, searches and opens, which F113 already allows under the data ruling (option C, tightened 2026-10-25).**
 
@@ -162,7 +202,7 @@ Even at 5× these token counts it stays under $0.06 per member per month. The we
 
 </details>
 
-## 5. "Alert me when the time is right"
+## 6. "Alert me when the time is right"
 
 **No new kind of notification. The weekly Thursday "this weekend near you" push already mixes in interests, so the scale decides what goes in it: a topic in season and high on the scale gets the slot ("Wildflower walks start this weekend"). Nothing is sent because a strength rose, and nothing is sent to someone who has been away.** This keeps "This is cool" inside the "support never notifies" rule, because it shapes a message the member already gets and never triggers one.
 
@@ -178,7 +218,7 @@ Even at 5× these token counts it stays under $0.06 per member per month. The we
 
 </details>
 
-## 6. Options
+## 7. Options
 
 **A keeps what's built, adds the scale beside it, and is the smallest path. B is the purest version of your idea but breaks followers-only posts and owner audiences. C is only a better checkbox.** I recommend **A**.
 
