@@ -4,6 +4,10 @@
 
 Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadline; production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
+## Where files go (Don, 2026-11-01) [always]
+
+Never create documents, briefs, notes or files anywhere outside the project repos (socialus-plan, socialus-ops, socialus-web, socialus-legal, socialus-design). No agent-temp, no ~/Downloads, no tmp folders, no Claude app folders. Cold-start briefs go in the repo they're about (e.g. socialus-web development/briefs/ or socialus-plan planning/briefs/).
+
 ## Decision rule
 
 The 2026-10-04 decision rule, word for word, is in `~/.claude/CLAUDE.md` and `ops-pattern/process/PIPELINE.md` § Decision rule: look at 2–3 precedents first; decide well-worn paths yourself; bring new territory as A/B/C.
@@ -104,8 +108,8 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 Two sessions in one working tree collide (lesson 9). Two rules, both cheap:
 
 - **Every session's cwd is its own worktree — never the repo root.** The one-session-per-cwd guard keys on cwd, so a repo root shared by two sessions wedges both. This holds for read-only sessions too: reading is what takes the lock.
-- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`. Inside the checkout, dozens of them make `.gitignore` load-bearing, bloat every tree walk, and leave stale metadata behind a crashed session (`git worktree prune`). Outside, the repo stays one repo.
-- **A session that isn't committing uses `git --no-optional-locks status`.** Plain `git status` writes `.git/index.lock` to refresh the index, and a sandboxed session can't always unlink it afterwards — the next session then finds a stale lock. The flag skips the write.
+- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`. Inside, they make `.gitignore` load-bearing, bloat tree walks and leave stale metadata (`git worktree prune`).
+- **A session that isn't committing uses `git --no-optional-locks status`.** Plain `git status` writes `.git/index.lock`, and a sandboxed session may leave it stale.
 
 ## Naming
 
@@ -115,4 +119,4 @@ Schema names are durable; UI labels translate them. The table is in `product/fou
 - **Branch:** `f060-t142-slug`. **Commit:** `F060/T142: what`.
 - **Bugs/changes/chores carry the Issue number, not a ticket number** — they have no `T###`. Branch `bug-36-slug`, commit `bug #36: what` (likewise `change-`/`chore-`). Process work has no Issue (`ops-pattern/process/PIPELINE.md`), so it dates instead: branch `process-YYYY-MM-DD-slug`, commit `docs: what`. Every branch name carries something unique that needs no central counter — dozens of agents must be able to name a branch without asking anything.
 - **Provenance is git:** `git log --grep F060` is everything built for that scenario.
-- **No hand-maintained indexes.** A file a person reads to find out what is true goes stale between the moment it is written and the moment it is read, and then it lies. The test is *who reads it to be right*, not what format it is in: a file only a script compares is fine, because nothing believes it and drift shows up as diff noise on the next run. `accepted-risks/` is that — generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. The rulings settle questions.
+- **No hand-maintained indexes.** A file people read to learn what is true goes stale and lies. A file only a script compares is fine: `accepted-risks/` is generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. The rulings settle questions.
