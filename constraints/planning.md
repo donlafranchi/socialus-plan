@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-01** · [always] · principles, markets, open-your-town, fees — SocialUs grows only as fast as it can pay for itself. [always] (PRINCIPLES.md)
+- **2026-11-01** · [for now] · wonders, posts, explore — A Wonder is a Proposal: a person proposes a thing and others say they're in or would help. The user-facing name is Proposal, the create button reads "Propose something", and the shelf headline is "Who's proposing what?". "Wonder" and "Rally" are retired in copy; the schema and code keep `wonder` (planning/scenario-F117.md)
 - **2026-11-01** · [for now] · wonders, posts — A Wonder tests interest in any new venture (an event, a group, a service, something someone would make, a pre-business), and its goal number is optional; with no goal it shows the count of who's in and no bar (planning/scenario-F117.md)
 - **2026-11-01** · [for now] · wonders — A Wonder shows who is in and who is helping by display name to anyone who can see it (Don, 10-31: "people want to see people"); each person's size stays the poster's alone (planning/scenario-F117.md)
 - **2026-11-01** · [for now] · ontology, wonders — An Idea (`wonder`) is a market test for any new venture, not only collaborative plans: a service, something someone would make, an event, a group, a pre-business (product/foundation/nouns.md)
