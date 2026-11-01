@@ -46,7 +46,7 @@ Bandits or learned shelf order (later, with more members). Learned interest shel
 
 **Path: well-worn** for the method; the shelf list and names are Don's. Research: #230. Netflix rows as data ([2015](https://gwern.net/doc/www/netflixtechblog.com/2f5717e8bbdc98d2caf5c7a972359fbb7e7c0b28.html)); App Store shelves ([HIG](https://developer.apple.com/design/human-interface-guidelines/collections)); Spotify's bandit needs huge traffic (RecSys 2018), so at beta size rotation spreads position bias evenly (Joachims, SIGIR 2005); Instagram's "You're all caught up".
 
-**Starting shelves** (draft names): Next 7 days · Garage and estate sales this weekend · Makers' markets and craft fairs · Fresh from the farm · Getting ready for Thanksgiving (Nov 2–28) · Fall in the garden · Free this week · Kids and families this weekend · Because you like {interest} · Count me in · New here. Seasons after: holidays (Nov 29–Dec 24), New Year, Valentine's, spring garden.
+**Starting shelves** (draft names): Next 7 days · Garage and estate sales this weekend · Makers' markets and craft fairs · Fresh from the farm · Getting ready for Thanksgiving (Nov 2–28) · Fall in the garden · Free this week · Kids and families this weekend · Because you like {interest} · Who's proposing what? · New here. Seasons after: holidays (Nov 29–Dec 24), New Year, Valentine's, spring garden.
 
 [platform none]
 
