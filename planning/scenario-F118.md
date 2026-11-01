@@ -20,30 +20,29 @@ Someone in Vacaville hears about SocialUs, which isn't open there yet. They fill
 
 ## Acceptance
 
-Draft pass/fail criteria. **v1, the form (the MVP):**
+**v1, the form (the MVP):**
 1. One form asks a role, with neither choice pre-selected: "I make, sell or organize" (a business, maker, creator or organizer) or "I'm here to find and support them and show up".
 2. It asks for an email.
 3. A maker also gives their website or social profile URLs, where they can be found.
 4. Everyone gives their town or towns: where they live, and where they play or spend time.
 5. **Privacy:** these answers go from the member to staff only. The email is never shown to another member. Opting out is one easy step and removes the answers.
 **Later, building on that data (after the soft launch):**
-6. **One page per market** at `/open/<market>`, no index. Maker or supporter, then email, then that market's page: a progress graphic of makers X of 100 and supporters Y of 1,000, with room for later data points (payers, income covering servers). No payments for now.
-7. **Soft sign-up:** a supporter account tied to a market. They can add makers and invite people, and get the full app when the market opens.
+6. **One page per market** at `/open/<market>`, no index: maker or supporter, email, then a progress graphic of makers X of 100 and supporters Y of 1,000, with room for later data points. No payments for now.
+7. **Soft sign-up:** a supporter account tied to a market; they can add makers, invite people, and get the full app when it opens.
 8. **Add a maker you love:** it becomes an unclaimed Page under the seeder rules, matched against existing Pages first. The supporter shares "Claim your free Page on SocialUs"; a claim counts toward makers and credits the inviter.
 9. **Variety:** a market shows its makers by kind (food, shops, makers, services, groups and events), so neighbours can see which kinds are missing.
-10. **First 3 open:** the first 3 markets to reach both goals open in this round. Each is notified (the ruled "SocialUs is open in {market}" message) and opened by a person.
+10. **First 3 open:** the first 3 markets to reach both goals open in this round, each notified and opened by a person.
 11. **Spam:** anyone signed in may add a maker, with a daily limit; existing report and remove paths apply. Test accounts never count; each person counts once.
 12. **Funding (note):** donations or investment first, then transaction income.
 
 ## Not this
 
-Nothing beyond the landing page now: this comes after the soft launch, before the hard launch. **Built ahead of schedule:** `socialus-web` #1093 (town pages, add a maker, counting, the daily ready-town check, onboarding to the town page) **merged and is live** at `/open`. It is parked behind a flag, off until after the soft launch (web #1100), then reworked to one page per market on the ruled market definition.
+Nothing beyond the landing page now. `socialus-web` #1093 (town pages, add a maker, counting, onboarding) is merged but parked behind a flag, off until after the soft launch (web #1100), then reworked to one page per market.
 
 
 Open questions:
 [open-question owner=code raised=2026-10-26] Where does the v1 form live: the landing page's existing list form, extended, or a form of its own?
 [open-question owner=cowork raised=2026-10-26] Do a supporter's "places they play" count toward those markets, or only where they live?
-[open-question owner=cowork raised=2026-10-26] Are neighbour invites credited, or only maker invites that end in a claim?
 
 ## Why
 
@@ -59,6 +58,7 @@ Soul: `#out-of-the-way`, `#you-choose`, `#decent`. **Path: well-worn.** Preceden
 [platform none]
 
 ## Rulings
+- **2026-10-31 — Sign-up is never gated or slowed: no invite is required. Every invite link and Page add is recorded in an append-only log (inviter, invitee or claimed Page, time, market, channel), first touch permanent. Someone who arrives without a link is asked "Who told you about us?" once, after sign-up, skippable. Public recognition is opt-in; names, weights and thresholds are decided later from the log.** The PM ("don't slow sign-ups"). [for now] [replaces none] [binds tiers=planning,code surfaces=signup,invites,open-your-town build=none]
 - **2026-10-31 — Open your town rewards recognition only: no cash, credit or perks. Each market has its own Founders, kept long term; a public Movers & Shakers board per market is to come.** The PM ("A"). Who qualifies and the board's rules are still open. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town build=none]
 - **2026-10-26 — A market opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 to reach both open in this round. Sacramento is the launch market and is already open.** The PM. [for now] [replaces 2026-09-14: A metro opens on 50 creators and 250 patrons, gated on the creators] [binds tiers=planning,code surfaces=waitlist,open-your-town build=none]
 - **2026-10-26 — Open your town comes after the soft launch and before the hard launch; only the landing page is in scope now.** The PM. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town build=none]
