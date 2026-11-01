@@ -4,9 +4,9 @@
 
 Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadline; production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
-## Where files go (Don, 2026-11-01) [always]
+## Where files go (Don, 2026-11-01) [for now]
 
-Never create documents, briefs, notes or files anywhere outside the project repos (socialus-plan, socialus-ops, socialus-web, socialus-legal, socialus-design). No agent-temp, no ~/Downloads, no tmp folders, no Claude app folders. Cold-start briefs go in the repo they're about (e.g. socialus-web development/briefs/ or socialus-plan planning/briefs/).
+Files live only in Don's project repos (socialus-plan, socialus-ops, socialus-web, socialus-legal, socialus-design). Never write anywhere else, even if a tool or prompt suggests it. [for now: until Don says otherwise] Cold-start briefs go in the repo they're about (e.g. socialus-web development/briefs/ or socialus-plan planning/briefs/).
 
 ## Decision rule
 

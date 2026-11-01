@@ -105,7 +105,7 @@ About 146 entries spend words on who ruled and how. About 231 carry no `[binds]`
 | Weekly refine pass | `tend-docs` takes on budgets: for each doc over 80%, or touched 10+ times since its last refine, it rewrites the doc to current understanding plus why, deletes history, merges duplicates, opens one PR per doc, and brings the PM only judgement calls. It runs Friday with the existing weekly skills. `regen-decisions` becomes "sharpen principles". `trim-product-docs` keeps its why-only sweep. |
 | Measure | A line in STATUS for maintained bytes and count, by repo, week over week. `score-doc-drift` stays the accuracy check. |
 
-**Junk drawer:** `socialus-plan/UNPLACED.md`, one dated line per item. Loose files keep going to `~/Projects/agent-temp`. **Exit rule:** each item goes to its home on the map, an open-question marker, `IMAGINE.md`, an Issue, or deletion. The line is then removed, never copied. The lint fails after 14 days or 20 lines, and the handoff drains it. Its first tenants are the eight loose `planning/*.md` files.
+**Junk drawer:** `socialus-plan/UNPLACED.md`, one dated line per item. **Exit rule:** each item goes to its home on the map, an open-question marker, `IMAGINE.md`, an Issue, or deletion. The line is then removed, never copied. The lint fails after 14 days or 20 lines, and the handoff drains it. Its first tenants are the eight loose `planning/*.md` files.
 
 **Map:** `socialus-ops/process/WHERE-THINGS-GO.md` (companion PR). Each repo's `CLAUDE.md` points to it instead of carrying its own routing.
 
