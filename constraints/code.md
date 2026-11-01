@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-10-31** · [for now] · explore, home, ranking — Find may sort and filter by members' interests, likes and interaction; interest shelves (F121) may appear on Explore (planning/scenario-F059.md)
+- **2026-10-31** · [for now] · open-your-town — Open your town rewards recognition only: no cash, credit or perks. Each market has its own Founders, kept long term; a public Movers & Shakers board per market is to come (planning/scenario-F118.md)
 - **2026-10-30** · [for now] · home, explore, search, following — Every view opens with the timely items it matches from the Pages and people the member follows, then one quiet end line, then widens to everything else that matches. No chips or pills (planning/scenario-F121.md)
 - **2026-10-30** · [for now] · home, explore, posts — Timely posts leave the shelves and lists at a shelf life set by kind (#230 §4); they stay on their Page under Past and in search. Shelf life is when a post ends; staleness (the 2026-09-15 90 days) is when a Page goes quiet, and still only sorts last (planning/scenario-F121.md)
 - **2026-10-30** · [for now] · home, explore, metrics — Shelves are rows of data, tested by rotating their order per member per day and judged on a weekly scoreboard, not by a bandit, until traffic supports one (planning/scenario-F121.md)
