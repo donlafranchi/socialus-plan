@@ -1,6 +1,6 @@
 ---
 id: url-identity
-purpose: What a Page's canonical address is made of. Ruled 2026-09-21: no geography, no member derivable from it; amended 2026-10-06 (the PM): the ID alone, no slug. The decision record, its consequences, and the identity audit behind it.
+purpose: What a Page's canonical address is made of. Replaced 2026-11-01 (Don): /<place>-<st>/<page-slug>, frozen at first publish. Earlier rulings (2026-09-21 no geography; 2026-10-06 the ID alone), their consequences and the identity audit stay below as history.
 status: ruled
 ---
 
@@ -9,6 +9,8 @@ status: ruled
 **Ruled by Don, 2026-09-21; the address form amended 2026-10-06 by the PM — the ID alone (below). `socialus-web` #175 is unblocked.** The Place-precedence ruling of the same day stands and is still right about *where a Page appears*; this governs what an address is made of, which is a different question.
 
 ## The ruling
+
+**Replaced 2026-11-01 (Don, chat; `socialus-web` #1139; live rule in `product/ui/surfaces.md` § Rulings): readable addresses.** A Page is `socialus.org/<place>-<st>/<page-slug>` (`/sacramento-ca/plant-foundry`), a post `/<place>-<st>/<page-slug>/<post-slug>`. The place is the home town set at first publish and frozen with the slug, never derived from the current address, so his 2026-09-21 worry (*"addresses/locations will evolve"*) is met by freezing rather than by leaving geography out; a move changes nothing in the URL. Always state-suffixed; the county for two same-named places in a state; unique as the pair; a twin takes its neighbourhood, then `-2`. Place order: our places list, the postal city, the county; never the founder's home, so no member is derivable from it. Old `/g/<id>` forms forward with a 301; the ID still resolves internally. Everything below is the history this replaces.
 
 **Amended 2026-10-06 (the PM, `planning/research/url-plan-2026-10-06.md` §2, §7.1): a Page's address is its ID only — `socialus.org/g/tzsxja`. `groups.slug` is frozen. Old forms are deleted, not redirected (the PM, 2026-10-06, no real members or shared links yet; revisited once real members exist).** Because names go stale on rename and the share preview already carries the name; precedent Airbnb `/rooms/<id>`, Instagram `/p/<code>`. A cosmetic name tail can be added later without breaking links. The 2026-09-21 form was a cosmetic slug plus a short ID (`joes-pizza-7k3x`); where this file still reads that way below, this paragraph governs.
 
