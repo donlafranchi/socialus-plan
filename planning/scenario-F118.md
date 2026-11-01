@@ -10,7 +10,7 @@ depends: [F076, F103]
 ---
 ## Story
 
-*2026-10-26, verbatim:* "We are gatekeeping other markets but we also want end users to have more control. What we want is a few dozen businesses by kind and 10x the consumers side. What would be ideal is if we allow users to work to open their community by adding businesses they love and seeing if those businesses will also sign up. similar to how I asked you to populate some businesses. It would be a sort of soft sign-up where early adopters share this platform with local businesses or local makers and have them sign up and if they sign up as a maker/organizer/business they count towards a goal and if they sign up as a supporter/consumer/meet-up-goer they count towards the other goal. And every market should have it's own page where users can see how many have signed up and how many still to go. essentially help people be the change and empowered to get this going. … Perhaps we limit it to the first 3 that meet the criteria to help us grow etc."
+*2026-10-26, verbatim:* "We are gatekeeping other markets but we also want end users to have more control. … allow users to work to open their community by adding businesses they love and seeing if those businesses will also sign up. … early adopters share this platform with local businesses or local makers and have them sign up and if they sign up as a maker/organizer/business they count towards a goal and if they sign up as a supporter/consumer/meet-up-goer they count towards the other goal. And every market should have it's own page where users can see how many have signed up and how many still to go. essentially help people be the change and empowered to get this going. … Perhaps we limit it to the first 3 that meet the criteria to help us grow etc."
 
 *Then:* "I'd like 100 and 1000. and three towns is good." *On timing:* "Town pages will come after we soft launch and before hard launch."
 
@@ -29,11 +29,11 @@ Draft pass/fail criteria. **v1, the form (the MVP):**
 **Later, building on that data (after the soft launch):**
 6. **One page per market** at `/open/<market>`, no index. Maker or supporter, then email, then that market's page: a progress graphic of makers X of 100 and supporters Y of 1,000, with room for later data points (payers, income covering servers). No payments for now.
 7. **Soft sign-up:** a supporter account tied to a market. They can add makers and invite people, and get the full app when the market opens.
-8. **Add a maker you love:** it becomes an unclaimed Page under the seeder rules (own site or socials only, credited photos, no children in photos, Samples labelled). It is matched against existing Pages first. The supporter shares "Claim your free Page on SocialUs"; a claim counts toward makers and credits the inviter.
+8. **Add a maker you love:** it becomes an unclaimed Page under the seeder rules, matched against existing Pages first. The supporter shares "Claim your free Page on SocialUs"; a claim counts toward makers and credits the inviter.
 9. **Variety:** a market shows its makers by kind (food, shops, makers, services, groups and events), so neighbours can see which kinds are missing.
 10. **First 3 open:** the first 3 markets to reach both goals open in this round. Each is notified (the ruled "SocialUs is open in {market}" message) and opened by a person.
-11. **Spam and abuse:** assume the best. Anyone signed in may add a maker, with a daily limit per member, and the existing report and remove-my-Page paths. Test and builder accounts never count, and each person counts once.
-12. **Funding (a note only):** opening markets needs money: donations or investment first, then transaction income.
+11. **Spam:** anyone signed in may add a maker, with a daily limit; existing report and remove paths apply. Test accounts never count; each person counts once.
+12. **Funding (note):** donations or investment first, then transaction income.
 
 ## Not this
 
@@ -50,8 +50,8 @@ Open questions:
 - **Lives somewhere better?** No: Nextdoor's founding-member gate and Kickstarter's goal bar exist, but neither lets neighbours bring in their own makers.
 - **Only locals know?** Yes: which bakery, which maker, which run club.
 - **Gets people together?** Yes: neighbours recruit the people they already buy from.
-- **Stays fresh on its own?** Yes: counts move with sign-ups and claims; nobody edits them.
-- **Who keeps it current?** The members, by signing up, adding makers and claiming Pages.
+- **Stays fresh on its own?** Yes: counts move with sign-ups and claims.
+- **Who keeps it current?** The members.
 - **Better as more people join?** Yes: that is the whole mechanic.
 
 Soul: `#out-of-the-way`, `#you-choose`, `#decent`. **Path: well-worn.** Precedents: Nextdoor's founding-member threshold (help.nextdoor.com), Kickstarter's goal bar (kickstarter.com/help/handbook), DoorDash's city-request pages (doordash.com/cities).
@@ -59,6 +59,7 @@ Soul: `#out-of-the-way`, `#you-choose`, `#decent`. **Path: well-worn.** Preceden
 [platform none]
 
 ## Rulings
+- **2026-10-31 — Open your town rewards recognition only: no cash, credit or perks. Each market has its own Founders, kept long term; a public Movers & Shakers board per market is to come.** The PM ("A"). Who qualifies and the board's rules are still open. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town build=none]
 - **2026-10-26 — A market opens when it reaches 100 makers (businesses, makers or organizers who sign up or claim their Page) and 1,000 supporters (neighbours who sign up as members); only the first 3 to reach both open in this round. Sacramento is the launch market and is already open.** The PM. [for now] [replaces 2026-09-14: A metro opens on 50 creators and 250 patrons, gated on the creators] [binds tiers=planning,code surfaces=waitlist,open-your-town build=none]
 - **2026-10-26 — Open your town comes after the soft launch and before the hard launch; only the landing page is in scope now.** The PM. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town build=none]
 - **2026-10-26 — Open your town v1 is one simple form: make-sell-organize or find-and-support, an email, a maker's site or social URLs, and the towns where a person lives and plays. Answers go to staff only, and opting out is one step.** The PM. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town,landing build=none]
