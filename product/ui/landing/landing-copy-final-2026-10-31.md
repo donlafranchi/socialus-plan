@@ -1,4 +1,4 @@
-# Landing page copy (from Don's copywriter, 2026-10-31). Use VERBATIM.
+# Landing page copy (from Don's copywriter, 2026-10-31; Don's changes 2026-11-01). Use VERBATIM.
 
 Navigation
 SocialUs
@@ -15,7 +15,7 @@ Meet people who share your interests. Get a group going. Do something together.
 
 Join SocialUs
 
-Launching first in Sacramento.
+We're launching first in Sacramento.
 
 Secondary CTA: See what you can do
 
@@ -26,27 +26,25 @@ Discover events and groups around your interests. Find people you'd like to spen
 
 Get people together.
 
-Start a group or organize an event around something you care about. A hobby, a shared ambition, a project you want to get off the ground. Find others who want to be part of it.
+Start a group or organize an event around something you care about: a hobby, a shared ambition, a project you want to get off the ground. Find others who want to be part of it.
 
 Support people who live here.
 
 Find businesses owned and operated by locals. Get to know the places around you and the people behind them, so you know who you're supporting and why.
 
 Why SocialUs
-We don't need another reason to keep scrolling.
+Made to work for you. Not the other way around.
 
-We need ways to get out of the house, get to know each other, and do things together.
-
-That's what SocialUs is for. The platform should work for you, not make you work for its algorithm. Finding a group, making a plan, meeting someone face to face: that's the point.
+We built SocialUs to help people find each other and get together in real life. Finding a group, making a plan and meeting face to face are the point, rather than keeping you in the app.
 
 We want decent people to find each other and work together on a better future. That can start with something as simple as meeting up.
 
 Third spaces
 Somewhere to go. People to see.
 
-The cafe where you meet every week. A group that gets together at the park. A local spot where people start to know your name.
+There used to be a place beyond home and work where people knew your name. For a lot of us, it went missing.
 
-We want to help bring back third spaces: places beyond home and work where people spend time together. SocialUs helps people find each other and organize. The goal is to give those connections somewhere to grow in real life. Familiar places. People you get to know over time.
+SocialUs helps people find their way back. The rest happens in person.
 
 Launch and final CTA
 Starting in Sacramento.
