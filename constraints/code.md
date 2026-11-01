@@ -10,6 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-10-31** · [for now] · explore, home, ranking — Find may sort and filter by members' interests, likes and interaction; interest shelves (F121) may appear on Explore (planning/scenario-F059.md)
 - **2026-10-30** · [for now] · home, explore, search, following — Every view opens with the timely items it matches from the Pages and people the member follows, then one quiet end line, then widens to everything else that matches. No chips or pills (planning/scenario-F121.md)
 - **2026-10-30** · [for now] · home, explore, posts — Timely posts leave the shelves and lists at a shelf life set by kind (#230 §4); they stay on their Page under Past and in search. Shelf life is when a post ends; staleness (the 2026-09-15 90 days) is when a Page goes quiet, and still only sorts last (planning/scenario-F121.md)
 - **2026-10-30** · [for now] · home, explore, metrics — Shelves are rows of data, tested by rotating their order per member per day and judged on a weekly scoreboard, not by a bandit, until traffic supports one (planning/scenario-F121.md)
@@ -32,7 +33,6 @@
 - **2026-10-25** · [always] · principles, ai — AI helps people and doesn't stand in for them; what an assistant knows belongs to the member. [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, fees — What never-extractive rules out: selling member data, a revenue line that works better when a member is stuck, and venture capital (no priced rounds, no plan that only works at venture scale). [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, metrics — Measure what happens inside the app; the north star is time and money together (PRINCIPLES.md)
-- **2026-10-25** · [for now] · explore, home, ranking — Browse (Find) is complete and is not ranked by a member's interests or by payment; Home is the personal surface, and may rank on what the member declared and does and carry marked promotion, each of which the member can turn off (planning/scenario-F059.md)
 - **2026-10-25** · [for now] · explore, tags — "Free" is a tag: a creator types it like any other tag, and the free-things lens is the tag lens pointed at that one word (planning/scenario-F059.md)
 - **2026-10-25** · [for now] · tags, search, ai — The LLM pass runs as a scheduled job and its proposals land in a queue any operator with the moderation role reviews, not the PM; the dictionary grows from both the tags creators create and logged zero-result searches (planning/scenario-F071.md)
 - **2026-10-25** · [for now] · waitlist, email, copy — The "market opened" email stays, for the landing list (criteria 13–15 stand); a person opens a market with `scripts/market/open-market.ts`, which sends "SocialUs is open in {town or market}. See what's going on." and then discards each address it reached (planning/scenario-F076.md)

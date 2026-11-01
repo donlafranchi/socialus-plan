@@ -1,10 +1,11 @@
 ---
 id: F121
 title: Shelves are data, and we try several to learn which ones help
-status: draft
-horizon: considering
+status: approved
+horizon: next
 rank: 3
 date: 2026-10-30
+approved: 2026-10-31 — the PM: "approve"; interest shelves may also appear on Explore
 depends: [F098, F119]
 ---
 ## Story
@@ -21,7 +22,7 @@ Maya opens SocialUs on a Monday in November. First come the farm stand and run c
 4. **Each item shows once per screen:** shelves fill top to bottom, and an item goes in the first shelf it qualifies for.
 5. **An empty shelf is absent**, and a shelf shows about 10 to 12 items and a quiet "See all" text link to its full list (a deep link from the F119 registry).
 6. **The starting shelves**, under the followed shelf, are the list Don approves in this PR: *Next 7 days*; at least three things-to-buy shelves narrower than "home sales" or "maker events"; the current seasonal shelf; and up to three interest shelves per member.
-7. **Interest shelves come from the interests a member declared on You**, one shelf per interest, three at most; none for a signed-out visitor. They appear on Home and the wide-open ask, never on Explore, which isn't ranked by a member's interests.
+7. **Interest shelves come from the interests a member declared on You**, one shelf per interest, three at most; none for a signed-out visitor. They may appear on Home, the wide-open ask and Explore.
 8. **Seasonal shelves run by date:** each has a start and end (Thanksgiving Nov 2–28, 2026, through Small Business Saturday; then a holiday shelf Nov 29–Dec 24), and turns itself on and off with no one touching it.
 9. **A season calendar, kept by an agent:** a scheduled run keeps the season list six weeks ahead and switches dates. A season whose shelf name isn't on Don's approved list is drafted and sent to Don; it doesn't go live without his yes.
 10. **Rotation, not a fixed order:** the followed shelf and *Next 7 days* stay first; the remaining shelves rotate order per member per day, so each spends about equal time in each position. The order holds still within a day.
@@ -43,31 +44,9 @@ Bandits or learned shelf order (later, with more members). Learned interest shel
 - **Who keeps it current?** The shelf table; members' posts fill it, an agent keeps the season dates, and Don keeps the list and words.
 - **Better as more people join?** Yes: more posts fill narrower shelves, and more impressions make the scoreboard judge sooner.
 
-**Path: well-worn** for the method; the shelf list and every shelf name are Don's (words). Research: `planning/research/explore-shelves-and-shelf-life-2026-10-27.md` (#230). Precedents:
-- Rows as data, ranked per member: Netflix, [Learning a Personalized Homepage (2015)](https://gwern.net/doc/www/netflixtechblog.com/2f5717e8bbdc98d2caf5c7a972359fbb7e7c0b28.html); App Store and Play edit shelves daily ([Apple HIG: collections](https://developer.apple.com/design/human-interface-guidelines/collections)).
-- Bandits need traffic: Spotify's home shelves use a bandit at hundreds of millions of users (McInerney et al., "Explore, Exploit, and Explain", RecSys 2018). At beta size, rotating order is the fair test: it spreads position bias evenly (Joachims et al., "Accurately Interpreting Clickthrough Data", SIGIR 2005), so plain rates compare.
-- Followed first, then wider: Instagram's "You're all caught up" (2018), without its ads or "can't hide".
-- Seasonal collections by date: Etsy and Pinterest seasonal hubs, Eventbrite holiday collections.
+**Path: well-worn** for the method; the shelf list and names are Don's. Research: #230. Netflix rows as data ([2015](https://gwern.net/doc/www/netflixtechblog.com/2f5717e8bbdc98d2caf5c7a972359fbb7e7c0b28.html)); App Store shelves ([HIG](https://developer.apple.com/design/human-interface-guidelines/collections)); Spotify's bandit needs huge traffic (RecSys 2018), so at beta size rotation spreads position bias evenly (Joachims, SIGIR 2005); Instagram's "You're all caught up".
 
-**Starting shelves for Don to approve or rename** (names are drafts):
-
-| Shelf | Query | Lead time |
-|---|---|---|
-| Next 7 days | events, openings, market days | 7 days |
-| Garage and estate sales this weekend | sale posts, Fri–Sun | 5 days |
-| Makers' markets and craft fairs | market days, maker events | 14 days |
-| Fresh from the farm | farm Pages' posts, farm stands | 7 days |
-| Getting ready for Thanksgiving (Nov 2–28) | pre-orders, pies, turkeys, Small Business Saturday | season dates |
-| Fall in the garden | garden, nursery and plant-sale posts | 14 days |
-| Free this week | the Free tag | 7 days |
-| Kids and families this weekend | Pages and posts tagged for families | 5 days |
-| Because you like {interest} | the member's declared interest | 14 days |
-| Count me in | open Wonders | until sign-up closes |
-| New here | Pages created in the last 30 days | — |
-
-Seasons kept after Thanksgiving: the holidays (Nov 29–Dec 24), New Year (Dec 26–Jan 1), Valentine's (Feb 1–14), spring garden (Mar 1–Apr 30). Halloween (Oct 31) has passed.
-
-Overlap: *Garage sales* and *Free* share items; first-shelf-wins and rotation together mean each shelf gets its fair turn at those items.
+**Starting shelves** (draft names): Next 7 days · Garage and estate sales this weekend · Makers' markets and craft fairs · Fresh from the farm · Getting ready for Thanksgiving (Nov 2–28) · Fall in the garden · Free this week · Kids and families this weekend · Because you like {interest} · Count me in · New here. Seasons after: holidays (Nov 29–Dec 24), New Year, Valentine's, spring garden.
 
 [platform none]
 
