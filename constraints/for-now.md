@@ -111,3 +111,4 @@
 - **2026-09-17** — Sample cards carry a mark, and the mark is the last line of defence rather than the first (product/ui/surfaces.md)
 - **2026-10-25** — The store apps are the site in a native shell (Capacitor-style), with web push as the native feature App Review asks for, built once the web beta is steady (product/ui/surfaces.md)
 - **2026-10-26** — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round (product/ui/surfaces.md)
+- **2026-11-01** — One top row on every screen: the mark, an Airbnb-style search (What · Where · When; full screen on a phone), one ➕ and You; on a phone it hides scrolling down. The ➕ is icon-only, signed in only: Start a Page, Propose something, and Explore's List/Map. No bottom bar, reach line, "What's new" block or market label (product/ui/surfaces.md)
