@@ -1,11 +1,13 @@
 ---
 id: landing-copy-draft5-2026-10-26
 title: Landing page copy, Draft 5 (approved)
-status: approved
+status: retired
 date: 2026-10-26
 ---
 
-# Landing page copy, Draft 5 (approved)
+# Landing page copy, Draft 5 (retired)
+
+**Retired 2026-11-01 (Don: the old landing page goes).** The live landing is Don's concept with the copywriter's final copy: `product/ui/landing/landing-copy-final-2026-10-31.md` and `landing-concept-2026-10-31.html`. Kept for history only.
 
 **As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
