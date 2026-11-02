@@ -4,87 +4,108 @@
 
 ## Bottom line for Don
 
-**One idea runs everything a member is shown: for each member, how strong their interest in each thing is right now. It's learned mostly from what they already do (opens, saves, shares, searches, return visits, "I'm coming"), plus one light, private tap that's weaker than Follow. Each interest fades at its own pace, so "always loved" lasts months, "on occasion" comes back when it recurs, and a passing spike fades in weeks. Discover, Home, the shelves, the weekly push and the order of search rows all read it.**
+**Can members like or save posts today? No.**
+- **There's no like, save or thumbs up anywhere.** No post or Page has one.
+- **Add to calendar** downloads a calendar file, and we don't record who tapped it.
+- **What we do record per member:** Follow (Join on a private Page), Remind me on a dated post, and Count me in.
+- **Recommendation: add one private tap to every post and Page.** It means "I like this, keep it for me". It saves the post to the member's list and teaches the app what they're into. It notifies no one and subscribes them to nothing.
+- **Follow** becomes a quiet "Get updates" in a Page's menu.
 
-- **Your ruling (2026-11-01):** no checkboxes and no manual strength pickers as the main way in; Follow is too strong. The new section right below answers it, with how TikTok does it.
-- **Your words, in the ethos:** "We need to be fluid and evolve with our members however they evolve." Soul line [always] (#262), with your one-day vs. one-year example.
-- **How, not just what:** the same engine learns how far ahead each member plans, when they look and how far they'll go (§ 2).
-- **What Follow becomes:** a quiet "Get updates" in a Page's menu, for the few Pages a member wants every post from. Nothing built breaks.
-- **What the member controls:** they see what was learned and why, remove it, say "less of this", or turn learning off.
-- **Your calls:** A, B or C, then the tap's word. I recommend **A** (learn from use + one light private tap; Follow kept quiet), and lean "Save" or "This is cool".
+- **Your direction (2026-11-02):** "Since we're not like TikTok we'll need another method though."
+  - The model is now the local apps: Eventbrite, Yelp, Google Maps, Airbnb, Pinterest, Meetup and Facebook Events. They learn from a small number of deliberate taps, not from watch time.
+  - Only TikTok's fading and recurrence ideas carry over.
+- **Your ruling (2026-11-01):** no checkboxes, no manual strength pickers as the main way in, and Follow is too strong.
+- **Telling "always loved" from "on occasion":** we judge it by how often a member comes back to a topic or Page over months, and each kind fades at its own speed.
+- **Your words, in the ethos:** "We need to be fluid and evolve with our members however they evolve." This is the soul line [always] (#262).
+- **Your calls:**
+  - Pick A, B or C. I recommend **A**: one tap that both likes and saves.
+  - Pick the tap's word. I lean **Save**, or **Like** with a heart as Eventbrite does.
 
-*The PM, 2026-11-01:* "We should be able to adapt to each members preferences in a way that serves them. For example I only plan one day ahead whereas someone else may plan a year ahead." Before that: "So I want to review what the research surfaced but more importantly I want to capture this is a concept and use it for an algorithm that can be dynamic and adaptive. We need to be fluid and evolve with our members however they evolve. It needs to be part of our ethos and inform our choices." Earlier: "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." And: "I don't like the interest check boxes on the profile page … it's definitely not check boxes."
+*The PM, 2026-11-02:* "Since we're not like TikTok we'll need another method though. Can we like or save posts" *2026-11-01:* "We should be able to adapt to each members preferences in a way that serves them. For example I only plan one day ahead whereas someone else may plan a year ahead." Before that: "So I want to review what the research surfaced but more importantly I want to capture this is a concept and use it for an algorithm that can be dynamic and adaptive. We need to be fluid and evolve with our members however they evolve. It needs to be part of our ethos and inform our choices." Earlier: "I want it to be something less committal than following and more akin to this is something I'm interested in where the strength of the interest is on a sliding scale that changes over time or between seasons." And: "I don't like the interest check boxes on the profile page … it's definitely not check boxes."
 
 Research only. Nothing here is ruled except the soul line (#262) and the 2026-11-01 ruling below, and nothing gets built until you pick. Sections 1–7 are the earlier research; where they conflict with the new section, the new section holds.
 
 ## Gauging interest without asking
 
-**Bottom line: learn interest mostly from what members already do, plus one light, private tap that's weaker than Follow and never subscribes. Keep Follow only as a quiet "Get updates" on a Page's menu, so nothing that's built breaks. The thing TikTok does that we should copy isn't watch time. It's that every interest learns its own fade rate from how often it comes back, so "I've always loved this" fades over months and "a passing spike" fades in two weeks.** We have hundreds of signals per member where TikTok has billions, so we use simple, explainable counts, borrow from the Page's own topic and season and from what's popular nearby, and treat "I'm coming" as the strongest signal of all. I recommend **A** (below).
+**Bottom line: one private tap that means "I like this, keep it for me" does both jobs, the way Eventbrite's heart and Airbnb's wishlist do. Add it to posts and Pages, learn the rest from what members already do, and keep Follow as a quiet "Get updates".** Lasting interest shows up as coming back to a topic or Page over months, the way Pinterest boards, Google Maps lists and repeat RSVPs show it. With little data, the Page's own topic, its distance and its date carry most of the weight, which is what the Meetup research found too. I recommend **A** (part 6).
 
-**Ruling (Don, 2026-11-01): no checkboxes, and no manual strength pickers as the main way in. Follow is too strong; find something lighter. [for now]** Don: "No checkboxes. We need to figure out the TikTok methods for gauging interest that means something between I've always loved this and I love this on occasion. Follow is too strong so we need to find something lighter." This replaces the parts of § 4 and § 7 that made a picker the main way in. A member can still see and correct what was learned in You; that just isn't how it starts.
+**Ruling (Don, 2026-11-01): no checkboxes, and no manual strength pickers as the main way in. Follow is too strong; find something lighter. [for now]** Don: "No checkboxes. We need to figure out the TikTok methods for gauging interest that means something between I've always loved this and I love this on occasion. Follow is too strong so we need to find something lighter." Then, 2026-11-02: "Since we're not like TikTok we'll need another method though. Can we like or save posts". This replaces the parts of § 4 and § 7 that made a picker the main way in. A member can still see and correct what was learned in You; that just isn't how it starts.
 
-<details><summary>1. How TikTok actually gauges interest</summary>
+<details><summary>1. What members can do today (from the code, 2026-11-02)</summary>
 
-**What it watches** (TikTok's own [How TikTok recommends videos](https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you), 2020):
-- **Interactions:** likes, shares, comments, follows, and whether you watch to the end. "Not interested" (long press) is the explicit negative.
-- **Video information:** captions, sounds, hashtags.
-- **Device and account settings:** language and country. These weigh least, because users don't choose them as preferences.
-- **Strength counts more than presence:** finishing a longer video outweighs living in the creator's country.
-- **No two in a row:** two videos in a row never share a sound or creator, and nothing you've already seen is shown again.
-
-**What it optimizes:**
-- The 2021 leaked internal doc ([NYT reporting](https://www.nzherald.co.nz/business/how-tiktok-reads-your-mind/KARWQK6ZOGITZACXNAWRGH2ETU/), syndicated) gives a simplified score: predicted like × its value, plus predicted comment × its value, plus expected watch time × its value, plus predicted play × its value. The goals are **retention and time spent**.
-- The same doc says repetition breeds boredom, so it penalizes the same creator or tag twice in a day and forces in other content.
-- **This is the part we don't copy (never-extractive).**
-
-**What actually moves the feed:**
-- The WSJ's 2021 bot investigation ([summary](https://www.tubefilter.com/2021/07/21/tiktok-recommendation-algorithm-wall-street-journal-guillaume-chaslot/amp/)) found **lingering and rewatching** drove what came next more than likes or shares. Feeds narrowed within an hour or two.
-- An academic audit ([Boeker & Urman, WWW '22](https://arxiv.org/abs/2201.12271)) found **follow** the strongest factor, then like, then share of the video watched.
-- So the deliberate signals still weigh most per action. Watch time wins because there's so much of it.
-
-**Lasting vs passing:**
-- ByteDance's [Monolith paper](https://arxiv.org/abs/2209.07663) (2022) shows the plumbing.
-  - The model updates from new feedback within minutes.
-  - An interest no one engages with for a set period **expires**.
-  - A one-off is admitted only after it shows up a set number of times.
-- Industry models keep two memories:
-  - a **lifelong** history, searched for whatever relates to the item in front of you ([Alibaba SIM](https://arxiv.org/abs/2006.05639); [Kuaishou TWIN](https://arxiv.org/abs/2302.02352), up to 100,000 past actions);
-  - a **recent-session** model ([SLi-Rec](https://www.ijcai.org/proceedings/2019/585) blends the two by how long it's been since your last action).
-- An interest "lasts" because it keeps coming back, not because it once spiked.
-
-**Controls:**
-- **Manage topics** ([TikTok, 2025](https://newsroom.tiktok.com/personalize-for-you-feed-with-new-features?lang=en-MY)): more or less of about 10 topics, never all-or-nothing.
-- **Refresh your For You feed** ([2023](https://www.searchenginejournal.com/tiktok-refresh-for-you-feed/482667/)): starts the feed over as if you'd just joined, without touching who you follow.
-- **Favorites:** a private bookmark (not confirmed on an official TikTok page).
-
-**The others, briefly:**
-
-| App | What it weighs | Lasting vs passing | Source |
+| Gesture | Where | Stored per member? | Notifies anyone? |
 |---|---|---|---|
-| Instagram Reels | Predicted reshare, watch to the end, like, open the audio page; Explore adds saves. Since 2024 the head of Instagram has said **sends** (shares to a friend) matter most for reach (press, not an official page). "Not interested" | Not published | [Instagram Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained) (2023); [press](https://www.socialmediatoday.com/news/instagram-shares-algorithm-2025/738034/) |
-| YouTube | Clicks, watch time, likes, dislikes, shares, and **"valued watch time"**: 1–5 star surveys where only 4–5 stars count, predicted for people who don't answer | Ranks by expected watch time, with an age correction so new things aren't buried | [On YouTube's recommendation system](https://blog.youtube/inside-youtube/on-youtubes-recommendation-system/) (2021); [Covington et al.](https://research.google/pubs/deep-neural-networks-for-youtube-recommendations/) (2016) |
-| Pinterest | Saves, clicks and close-ups, grouped into **several interests per person** | **The clearest precedent.** Each interest is weighted by how often and how recently it was used, recomputed daily from 60–90 days of actions. Weighting recency too heavily "compromises long-term interests." A separate real-time model handles today | [PinnerSage](https://arxiv.org/abs/2007.03634) (2020); [TransAct](https://arxiv.org/abs/2306.00248) (2023) |
+| **Like / heart / thumbs up** | Nowhere. An unused heart Follow button sits in the code, shown on no screen | — | — |
+| **Save / bookmark** | Nowhere. An older items table reserves "save" and "interest" kinds, but nothing writes them | — | — |
+| **Add to calendar** | Dated posts and gathering pages | **No.** It downloads a calendar file. From a shelf it adds one to that shelf's member-free weekly save count | No |
+| **Remind me** | Dated posts ("Just this one" or "Every time" for repeats) | **Yes**, private to the member | Only the member, before it starts |
+| **Follow / Join** | Pages (Join when private) | **Yes** | The member gets new-post pushes; the owner sees followers by name (F067) |
+| **Count me in** | "Count me in" posts | **Yes** | The post shows a count |
+| **"I'm coming" / RSVP** | **Not built.** A reserved kind in the older items table only | — | — |
 
-**Not verified:** the WSJ and NYT originals (read through syndicated copies); any audit measuring how fast an interest fades on TikTok; the exact weight Instagram gives shares vs likes.
+**So:** the only light, private, per-member signal today is Remind me, and it exists only on dated posts. Nothing light exists for a Page or an undated post. Earlier sections that treat "I'm coming" or saves as existing were wrong.
 
 </details>
 
-<details><summary>2. Telling "always loved" from "love on occasion"</summary>
+<details><summary>2. How local listings and events apps gauge interest</summary>
 
-**The idea:** each member-topic pair (and each member-Page pair) gets a pattern from **how often it comes back**, and the pattern sets how fast it fades. That replaces § 1's flat "half every month". It's PinnerSage's frequency-times-recency idea, sized for us.
+| App | Light gestures | Who learns of it | Stronger tier | How it tells lasting from occasional |
+|---|---|---|---|---|
+| **[Eventbrite](https://www.eventbrite.com/help/en-us/articles/783059/)** | **Like** (heart): "saves it for later, but doesn't reserve a ticket" | The organizer sees a count, never who | Follow an organizer (emails on new events); buy a ticket | Recommendations use followed organizers plus events attended or saved ([release notes, press](https://techcrunch.com/2012/08/03/eventbrite-recommendations/)) |
+| **Yelp** | **Bookmark** into Collections; check-ins; Useful / Funny / Cool on reviews | New collections are private by default ([press](https://smartphones.gadgethacks.com/how-to/use-yelp-collections-find-new-places-keep-your-bookmarked-locations-more-organized-0194859); not on an official page) | Review | **[Your Preferences](https://www.yelp-ir.com/news/press-releases/news-release-details/2019/Yelp-Introduces-an-Easier-Way-to-Find-Places-Youll-Love-Based-on-Personal-Preferences/default.aspx)** (2019), a page you fill in on purpose; repeat check-ins at a place |
+| **[Google Maps](https://support.google.com/maps/answer/7546473)** | Save to **Want to go**, **Favorites**, Starred or your own list | Private unless shared | [Follow a place](https://techcrunch.com/2018/10/25/google-maps-takes-on-facebook-pages-with-new-follow-feature-for-tracking-businesses): its posts appear in "For you" | Lists are the lasting record. "Want to go" is intent; Favorites is love |
+| **[Airbnb](https://www.airbnb.com/help/article/338)** | **Heart** into a named **wishlist** | Private, or shared with people you pick. Whether hosts are told isn't published | Book | Named wishlists hold lasting interest; one search's hearts group together on their own |
+| **[Pinterest](https://help.pinterest.com/article/create-a-board)** | **Save** to a board (secret boards too) | Board visibility is yours to set | Follow | Boards are lasting interests. [PinnerFormer](https://arxiv.org/abs/2205.04507) learns from what you'll do over the **next 28 days**, not the next tap, and [a separate model](https://arxiv.org/abs/2209.08435) handles today |
+| **[Meetup](https://help.meetup.com/hc/en-us/articles/39235072484109)** | **Save** an event | Private | **RSVP** (reminder 24 hours before), join a group | Joining a group plus repeat RSVPs to its events |
+| **Facebook Events** | **[Interested](https://thenextweb.com/news/facebook-has-officially-killed-the-maybe-button-on-events-in-favor-of-interested)** (replaced "Maybe", 2015) | **The host and often friends; it also subscribes you to updates** | Going | Not published |
+| **Instagram** | Like (the poster sees it); **[Save](https://about.instagram.com/blog/announcements/introducing-new-ways-to-organize-your-saved-posts)** (only you) | Save is private | Follow | [Explore weighs likes, saves and shares](https://about.instagram.com/blog/announcements/instagram-ranking-explained); saves signal stronger interest than likes |
+| **[Letterboxd](https://letterboxd.com/about/faq/)** / Goodreads | **Watchlist** / **Want to Read** | Public by default | Log / Read | "Want to" moves to "done" once you act; repeat logs in a genre show lasting taste |
 
-**What we'd count, per member, per topic and per Page:**
+**What they share:**
+- **Saving is private and doesn't subscribe.** Instagram, Eventbrite, Google Maps, Meetup and Airbnb all work this way. Only Follow, and Facebook's Interested, sign you up for updates.
+- **"Interested" is the trap:** it sounds light, but on Facebook it tells the host and subscribes you.
+- **Reminders hang on a commitment (Meetup's RSVP), not on a save.** Ours already do: Remind me is the member's own choice.
+- **Lasting interest comes from repetition and lists, never from one tap:**
+  - repeat saves on a topic;
+  - a named list or board;
+  - repeat RSVPs to one group.
+- **Little data:** event research on Meetup data ([Macedo et al., RecSys 2015](https://dblp.dagstuhl.de/rec/conf/recsys/MacedoMS15.html); [Qiao et al., AAAI 2014](https://ojs.aaai.org/index.php/AAAI/article/view/9095)) calls events "intrinsically cold-start", because each one is short-lived and in the future. The signals that carry it are group membership, location, time and the event's own content, more than any one member's history.
+
+**Not verified:**
+- Facebook's official help on what Interested shares.
+- Whether Airbnb tells hosts about hearts.
+- Yelp's current privacy default for bookmarks.
+- Meetup's exact save label.
+- Which single signal won in Macedo 2015.
+
+</details>
+
+<details><summary>3. What we borrow from TikTok, and only this</summary>
+
+TikTok learns from watch time on endless short video ([TikTok, 2020](https://newsroom.tiktok.com/en-us/how-tiktok-recommends-videos-for-you); [WSJ reporting](https://www.tubefilter.com/2021/07/21/tiktok-recommendation-algorithm-wall-street-journal-guillaume-chaslot/amp/)), aiming at time spent ([NYT leak](https://www.nzherald.co.nz/business/how-tiktok-reads-your-mind/KARWQK6ZOGITZACXNAWRGH2ETU/)). We have neither, and we don't want the second (never-extractive). We borrow three things:
+- **Recurrence:** an interest is lasting because it keeps coming back. Pinterest's [PinnerSage](https://arxiv.org/abs/2007.03634) weighs frequency against recency.
+- **Decay:** unused interests expire ([Monolith](https://arxiv.org/abs/2209.07663)).
+- **A weak negative:** a fast scroll-past, repeated, nudges down a little and is never used on its own.
+
+</details>
+
+<details><summary>4. Telling "always loved" from "love on occasion"</summary>
+
+**The idea:** each member-topic pair (and each member-Page pair) gets a pattern from **how often it comes back**, and the pattern sets how fast it fades. That replaces § 1's flat "half every month".
+
+**What we'd count, per member, per topic and per Page** (✓ = recorded today):
 
 | Signal | What counts | Weight [guess, tune in beta] |
 |---|---|---|
-| **"I'm coming"** / Count me in | Tapped | 4: real-world intent, our strongest |
-| **The light tap** (part 3 below) | Tapped | 3 |
+| **Remind me** ✓ | Set on a dated post | 4: the member plans to go |
+| **Count me in** ✓ | Tapped | 4 |
+| **The tap** (part 5) | Tapped on a post or Page | 3 |
+| **Get updates** ✓ (today's Follow) | On | 3, and it doesn't fade while on |
 | **Share** | Sent to someone | 3 |
-| **Save / add to calendar** | Tapped | 2 |
+| **Add to calendar** | Tapped (would need recording per member) | 2 |
 | **Search** | A search matching the topic or Page | 1 |
 | **Return visit to a Page** | Opened on a different day from the last open | 1 |
 | **Open** | Card opened | ½ |
-| **Card dwell** | Card stopped on screen 2+ seconds without opening | ¼, a hint only |
 | **Fast scroll-past** | Seen under half a second, three times or more | Only nudges down; never on its own |
 | **"Not for me"** | In the card's menu | Drops the Page or topic a step, and it isn't guessed back |
 
@@ -98,7 +119,7 @@ Research only. Nothing here is ruled except the soul line (#262) and the 2026-11
 
 | Pattern | Rule [guess] | Fades by half in | Example |
 |---|---|---|---|
-| **Always loved** | 6+ active weeks out of 26, spread over 3+ months, no week over 40% | ~6 months | Live music every few weeks all year |
+| **Always loved** | 6+ active weeks out of 26, spread over 3+ months, no week over 40% | ~6 months | Saves live music every few weeks all year |
 | **On occasion** | 2–5 active weeks, spread over 2+ months | ~2 months, back to full strength when it recurs | Antique fairs a few times a year |
 | **Seasonal** | Active in the same months last year, quiet between | Near zero out of season; rises ~4 weeks before | Gardening each March |
 | **Passing spike** | 60%+ in one week, no return within 8 weeks | ~2 weeks | Wedding venues for a month |
@@ -108,48 +129,47 @@ Research only. Nothing here is ruled except the soul line (#262) and the 2026-11
 - "Always loved" earns a Home shelf.
 - "On occasion" shows up when something fits and otherwise stays out of the way.
 - A spike doesn't take over Home after it's over.
+- A saved dated post leaves the member's list after its date, but still counts toward the pattern.
 - The member sees the pattern in plain words in You ("you come back to this every few weeks"), and can remove it or say "less of this".
 
 </details>
 
-<details><summary>3. The lightest tap that's weaker than Follow, and what to call it</summary>
+<details><summary>5. Like, save, or both: the lightest tap</summary>
 
-| App | Light gesture | Who learns of it | Stronger tier |
+**Recommendation: one tap, not two. It saves the post or Page to the member's list and counts as "I like this".**
+- **Precedent:** Eventbrite does exactly this; its heart is called Like and saves the event for later. Airbnb's heart is a save too.
+- **Why not two taps:**
+  - With few signals per member, splitting them between Like and Save halves what we learn from each.
+  - Members would have to guess the difference. Instagram has both, but its like is a public nod to the poster, which we don't want: no public counts (F065).
+- **What it means:**
+  - On a **dated post**: "I might go." It lands in a Saved list in You, and Remind me stays one tap away for going further.
+  - On an **undated post**, a sale or a listing: "I want this in my orbit."
+  - On a **Page**: "I like this place." It's the Google Maps Favorites idea, and no posts are pushed.
+- **What it never does:**
+  - It notifies no one and subscribes to nothing; the 2026-09-17 "support never notifies" ruling still holds.
+  - It shows no public count.
+  - The owner sees at most a private count, like Eventbrite.
+- **If you'd rather have both:** Like means taste (it trains the scale, saves nothing). Save means a plan (it keeps the post in a list and trains the scale more). That's two words to explain and half the signal each, so I wouldn't start there.
+
+**Word options** (new copy, your call):
+
+| Word and icon | Feel | Precedent | Risk |
 |---|---|---|---|
-| Instagram | Like (public to the poster); **Save** to a collection ([private](https://help.instagram.com/1744643532522513)) | Save: only you | Follow |
-| TikTok | Like; **Favorites**, a private bookmark | Favorites: only you, by default | Follow |
-| YouTube | Like | Not you, but counted | Subscribe, then the [bell: All, Personalized, None](https://support.google.com/youtube/answer/3382248) |
-| Pinterest | **Save** to a board | Counted in the creator's stats | Follow |
-| Letterboxd | Heart; **Watchlist** ("want to see") | Your own profile | Follow a member |
-| Goodreads | **[Want to Read](https://help.goodreads.com/s/article/000001101)** shelf | Can show in friends' feeds | Follow an author |
-| Google Discover | **Heart** on a card; "Not interested in…" | [Shared anonymously](https://support.google.com/websearch/answer/2819496) with publishers | Follow a topic |
-| Apple Music | **[Favorite](https://support.apple.com/guide/iphone/tell-apple-music-what-you-enjoy-iph744ea4009/ios)** (was "Love"); Suggest Less | Only you | Add to library |
-| Facebook Events | **[Interested](https://www.ubergizmo.com/2015/11/facebook-kills-maybe-button-for-interested/)** (replaced "Maybe" in 2015) | **The host, and it subscribes you to updates** | Going |
+| **Save** (bookmark) | Clear: it's kept for later | Instagram, Meetup, Google Maps, Pinterest | Reads as a list, less as "I like it" |
+| **Like** (heart) | Warm: says taste | Eventbrite (where it also saves), Airbnb heart | People expect a public like; we'd show it's private |
+| **This is cool** | Your earlier words; local voice | None | Long for a card; new to members |
+| **Into it** | Casual taste | None | Untested |
+| **Interested** | Pairs with going | Facebook | On Facebook it tells the host and subscribes you |
 
-**The lightest one that still gives a clear signal is a save-type tap: private and forward-looking ("I want this in my orbit").**
-- A like is mostly a social gesture to the poster, so it says little about what you want later.
-- A save says what you want, and it's what Instagram weighs for Explore. Letterboxd's watchlist and Goodreads' Want to Read are the same "want to" idea.
-- Ours must notify no one and subscribe to nothing. That keeps it inside the 2026-09-17 "support never notifies" ruling.
-- Facebook's "Interested" is a warning: the word sounds light, but it subscribes you and tells the host.
-- F121's "saves" count (thumbs up, calendar, follow) would count this tap too.
+I lean **Save** for clarity, with **Like** (heart) as the warmer alternative.
 
-**Word options for you** (it's new copy, so it's your call):
-
-| Word | Feel | Risk |
-|---|---|---|
-| **Save** (bookmark icon) | The most familiar; reads as "for later", private by habit | Sounds like a list feature more than a taste signal |
-| **This is cool** | Your words; warm and local | New to members; a little long on a card |
-| **Into it** | Casual; says taste, not a plan | Untested |
-| **Interested** | Pairs with "I'm coming" | On Facebook it subscribes you and tells the host |
-| Heart alone | Light, universal | Reads as a public like on Instagram; we'd have to say it's private |
-
-I lean **Save** for clarity, or **This is cool** if you want the warmer voice.
+**Storage note for builders:** the older items table's reserved "save" kind isn't wired to posts or Pages, so the tap needs its own small private table. Under F113 the off switch keeps it, because it's declared, not guessed.
 
 </details>
 
-<details><summary>4. What happens to Follow</summary>
+<details><summary>6. What happens to Follow</summary>
 
-**Keep it, quiet:** "Get updates" moves into the Page's menu, like YouTube's bell sitting behind Subscribe.
+**Keep it, quiet:** "Get updates" moves into the Page's menu, like YouTube's bell sitting behind Subscribe, or Eventbrite's follow sitting beside its like.
 - It's for the few Pages a member wants every post from: their kid's school, their own farm stand.
 - Everyone who follows today keeps it under the new name, so no one loses anything.
 - **Nothing breaks.** The "new posts" push, Get-updates Pages first in every view, followers-only announcements (F072) and the owner's named list (F067) all keep working (§ 3's table, column A).
@@ -160,45 +180,37 @@ I lean **Save** for clarity, or **This is cool** if you want the warmer voice.
 - The "new posts from Pages you follow" push has nothing to read.
 - The followed shelf becomes a guess.
 - Each would need a new ruling.
-- No big app has dropped following. They added lighter taps beside it.
+- None of the local apps (Eventbrite, Google Maps, Meetup, Yelp) dropped following. Each keeps a lighter save beside it.
 
 </details>
 
-<details><summary>5. Options, and how we start with little data</summary>
+<details><summary>7. Options, and how we start with little data</summary>
 
-**Where we differ from TikTok, and what it means:**
-
-| TikTok | SocialUs | So we… |
-|---|---|---|
-| Billions of signals a day; hundreds of videos per session | A few dozen signals per member per month | Use weighted counts, per-pattern fades and a few hand-set rules, not a trained model. Every strength can show its reason (F113) |
-| Optimizes time spent and retention | Never-extractive: the goal is finding something and going | Dwell is a hint and never a goal; "I'm coming" weighs most; success is saves and "I'm coming", never minutes in the app |
-| Every video is the same kind of thing, available any time | Things happen on a date, nearby | Season, date and distance matter as much as taste; a great thing that's over is worth nothing |
-| Learns from strangers' behaviour at huge scale | Small towns, small numbers | Borrow from the Page's own topic and season and from member-free area counts, not from other members' profiles |
-
-**Starting with little data:**
-1. **A new member** starts with what's popular near them this week (the member-free weekly counts) and the season, so Home isn't empty.
-2. **Fast early learning:** the first few signals count double for two weeks, so a member who taps three garden things sees gardening by the weekend.
-3. **Lean toward the town until there's enough:** a topic's strength blends with the area average until the member has about five signals for it [guess].
-4. **The Page tells us the rest:** one tap on a farm stand also lifts its topic (Farmers markets), its places and its season.
+**Starting with little data** (what the event research and the local apps rely on):
+1. **The Page tells us most:** one tap on a farm stand also lifts its topic (Farmers markets), its places and its season.
+2. **Distance and date carry the rest:** a new member starts with what's near them this week (the member-free weekly counts) and the season, so Home isn't empty.
+3. **Fast early learning:** the first few signals count double for two weeks, so a member who saves three garden things sees gardening by the weekend.
+4. **Lean toward the town until there's enough:** a topic's strength blends with the area average until the member has about five signals for it [guess].
 5. **Patterns wait for evidence:** "Too early to tell" until 8 weeks; seasons from each topic's known calendar until a year of data exists.
-6. **Keep a window open:** the "what's new" shelf keeps unfamiliar Pages in view, TikTok's anti-repetition lesson.
+6. **Keep a window open:** the "what's new" shelf keeps unfamiliar Pages in view.
+7. **Simple and explainable:** weighted counts and a few rules, computed nightly, not a trained model. Every strength can show its reason (F113), and success is saves and Remind me, never minutes in the app.
 
-| | **A. Learn from use + one light private tap; Follow kept quiet** (recommended) | **B. Learn from use only; Follow unchanged** | **C. One light tap replaces Follow** |
+| | **A. One private tap (like + save) on posts and Pages; Follow kept quiet** (recommended) | **B. Two taps, Like and Save; Follow kept quiet** | **C. One tap replaces Follow** |
 |---|---|---|---|
-| Way in | Nothing to fill in; the tap speeds it up | Nothing to fill in | Nothing to fill in; the tap speeds it up |
-| "Lighter than Follow" | Yes | No; Follow stays the only gesture | Yes |
-| Learns fast with little data | Yes: the tap is a strong, clear signal | Slowly; few signals per member | Yes |
-| Breaks rulings | None | None | F072 and F067, and the new-posts push (part 4) |
-| Precedent | Instagram, TikTok, Pinterest: save beside follow | Pure TikTok For You | None of the big apps |
+| Lighter than Follow | Yes | Yes | Yes |
+| Learns with little data | Best: every tap counts once, clearly | Splits few signals two ways | Same as A |
+| Member understands it | One meaning | Two meanings to learn | One meaning, but Page updates are gone |
+| Breaks rulings | None | None | F072 and F067, and the new-posts push (part 6) |
+| Precedent | Eventbrite, Airbnb, Google Maps | Instagram | None |
 | Path | Well-worn | Well-worn | New territory |
 
 **Smallest first version under A:**
-1. Record the signals per member (F113 already allows this).
-2. Add the tap on cards and Pages, plus "Not for me" in the card menu.
-3. Run the nightly patterns into the "Because you like…" shelf and the Thursday push.
-4. Move Follow to "Get updates" in the Page menu.
-5. In You, "What you're into" shows the learned list with reasons, for removing or correcting, not for picking.
-6. The weekly chat (§ 4) becomes an optional "tell us more" later, not the way in.
+1. Add the tap on posts and Pages, with a Saved list in You. Dated posts leave the list after their date.
+2. Record Remind me, the tap, Get updates and opens per member (F113 already allows this).
+3. Add "Not for me" in the card menu.
+4. Run the nightly patterns into the "Because you like…" shelf and the Thursday push.
+5. Move Follow to "Get updates" in the Page menu.
+6. In You, "What you're into" shows the learned list with reasons, for removing or correcting, not for picking.
 
 **Your calls:** A, B or C; then the tap's word.
 
@@ -377,8 +389,10 @@ Even at 5× these token counts it stays under $0.06 per member per month. The we
 | Photo and video opens | Not built | — | Yes (F113 lists them) |
 | Follow / Get updates | Yes | Yes | Yes |
 | Interest checkboxes | Yes | Yes, readable by the member only | Become declared strengths |
-| "This is cool" | Not built | — | Yes, the main explicit signal |
-| "I'm coming", saves, "Count me in" | Partly | Yes | Yes |
+| The light tap (like + save) | Not built | — | Yes, the main explicit signal |
+| Remind me, Count me in | Yes | Yes | Yes |
+| Add to calendar | Downloads a file only | No | Yes, if recorded |
+| "I'm coming" / RSVP | Not built | — | Yes, later |
 
 **The privacy rules already in force, applied here:**
 - Raw signals expire after 90 days [guess, F113]; only the strengths remain.
