@@ -37,6 +37,13 @@
   },
   {
    "p": 2,
+   "text": "Notifications review 2026-11: no change",
+   "how": "Open the link and say yes or no.",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/1151",
+   "added": "2026-11-02"
+  },
+  {
+   "p": 2,
    "text": "Open the accounts only you can open",
    "how": "Sentry (sentry.io → Next.js project → text Dispatch the DSN); Vercel → socialus-web → Speed Insights → Enable; Resend → Domains → add socialus.org and its DNS records; huduser.gov free account → text Dispatch the token (web #849); Cloudflare hash check, phone checklist on its Issue.",
    "unlocks": "Error tracking, speed numbers, reminder emails, zip crosswalk, image safety",
