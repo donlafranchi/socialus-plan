@@ -6,15 +6,17 @@ Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadlin
 
 ## Where files go (Don, 2026-11-01) [for now]
 
-Files live only in Don's project repos (socialus-plan, socialus-ops, socialus-web, socialus-legal, socialus-design). Never write anywhere else, even if a tool or prompt suggests it. [for now: until Don says otherwise] Cold-start briefs go in the repo they're about (e.g. socialus-web development/briefs/ or socialus-plan planning/briefs/).
+Only in Don's repos: `~/.claude/CLAUDE.md` § Where files go.
 
-## Decision rule
+## How decisions flow (Don, 2026-11-01)
 
-The 2026-10-04 decision rule, word for word, is in `~/.claude/CLAUDE.md` and `ops-pattern/process/PIPELINE.md` § Decision rule: look at 2–3 precedents first; decide well-worn paths yourself; bring new territory as A/B/C.
+"me as the human I set guidelines and desired outcomes or trajectories or concepts of where I'd like to go as the human decision maker and you are there to try to figure out options and choices. Do the research to help guide me make the best decision based on whatever information is available and that's how this app development should work from top to bottom."
 
-## Decision rights (2026-10-25)
+1. **Don gives direction:** guidelines, desired outcomes, trajectories, concepts.
+2. **Agents research it into options:** evidence, precedents, A/B/C and a recommendation.
+3. **Don decides** ideas, what is in each version, and words and look-and-feel.
 
-**The PM decides only ideas, what is in each version (the MVP of a feature), and words and look-and-feel.** Everything else, agents decide by the soul and defaults (`PRINCIPLES.md` § Soul, § Defaults) and the well-worn path, record it as a dated ruling where it governs, and report what they chose. Only new territory that conflicts with the soul goes to the PM. Detail: `ops-pattern/process/PIPELINE.md` § Decision rights.
+Agents decide the rest (well-worn and mechanical calls too) by the soul, the defaults and the 2026-10-04 decision rule (`~/.claude/CLAUDE.md`), record a dated ruling where it governs, and report. Only new territory that conflicts with the soul goes to Don. Detail: `ops-pattern/process/PIPELINE.md` § Decision rights.
 
 ## Read first, every session
 
