@@ -33,11 +33,7 @@ owns:
 
 ## Surface roles
 
-**Three tabs and a create action: Home, Browse, You, and `+`.** This is what the code ships, and — since 2026-09-12 — what is ruled.
-
-**The two-tab merge is rescinded** *(2026-09-12)*. Don: *"we rescinded that decision to make the launch date."* **A scope cut for 30 October, not a design conclusion** — the merge was not judged wrong on its merits. Anyone reviving it needs that context.
-
-**One thing in the nav is still missing: the create action.** Three tabs ship; the `+` does not. That was the half of the two-tab decision that was never about tab count.
+**One top row: the mark, the search, the `+` and You** (2026-11-01, ruling below). The slots:
 
 | Slot | Job | The question it answers |
 |---|---|---|
@@ -163,7 +159,7 @@ Carried forward with their ratification intact. **These bind whatever the surfac
 
 **A Member gives a zip at signup, and it decides the market and the home town.** *(F081, F103; replaces the 2026-09-03 hood-and-metro pick.)* No hood is picked; the hood band is empty until a member can choose one (F104 criterion 5).
 
-**Create is first class.** The `+` sits in the navigation between the tabs. *(A bet about nav placement serving a commitment about declaring things — not itself binding.)*
+**Create is first class.** The `+` sits in the one top row beside the search (2026-11-01). *(A bet about nav placement serving a commitment about declaring things — not itself binding.)*
 
 **The empty states carry the positioning.** At launch nearly every surface is empty, so they are the product on day one. *"Help shape a better future"* means an empty state that invites you to be first, **not one that apologises for being empty.**
 
@@ -193,6 +189,7 @@ Carried forward with their ratification intact. **These bind whatever the surfac
 **2. Dead code and dead surfaces are the same finding.** `HomeFeed.tsx` is an orphaned pre-rebuild component that nothing imports; `EventCard` and `BulletinFeedCard` are imported only by it. **A surfaces document that listed only routes would have missed all three** — which is why the ticket to retire `/vendors/[slug]` justifies a redirect on the grounds of "four live components" that are themselves dead.
 
 ## Rulings
+- **2026-11-01 — One top row on every screen: the mark, an Airbnb-style search (What · Where · When; full screen on a phone), one ➕ and You; on a phone it hides scrolling down. The ➕ is icon-only, signed in only: Start a Page, Propose something, and Explore's List/Map. No bottom bar, reach line, "What's new" block or market label.** Don; precedents Airbnb, Safari, Apple HIG menus. Supersedes the floating Map/List pill (2026-10-01). `socialus-web` #1161. [for now] [replaces none] [binds tiers=planning,code surfaces=explore,header,create build=none]
 - **2026-10-26 — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round.** The PM; criteria in F118. [for now] [replaces none] [binds tiers=planning,code surfaces=open-your-town build=none]
 - **2026-10-25 — The store apps are the site in a native shell (Capacitor-style), with web push as the native feature App Review asks for, built once the web beta is steady.** Decided by the agent under the 2026-10-25 decision rights (soul and defaults; well-worn): the shell keeps one codebase and every server action; precedents Capacitor and PWABuilder apps in both stores. [for now] [replaces none] [binds tiers=planning,code surfaces=platform build=none]
 - **2026-10-25 — Ordering on Discover and Home may learn from what a member does, views included, for that member's benefit, and may carry marked promotion; Find keeps locality, recency, declared interests and community response, unpaid. A member can turn personal suggestions and promotion off.** By the soul (`#benefit-all`); ordering never aims at time spent for its own sake. [always] [replaces 2026-09-15: stands unchanged.** Don had raised removing it] [binds tiers=planning,code surfaces=explore,discovery,home,ranking build=none]
