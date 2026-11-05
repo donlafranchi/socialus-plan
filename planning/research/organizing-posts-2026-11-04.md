@@ -1,10 +1,10 @@
 # Organizing what people post: simple, flexible, then sorted by AI
 
-**As of 2026-11-04** · Source: hand-written · Maintained by: hand
+**As of 2026-11-05** · Source: hand-written · Maintained by: hand
 
 ## Bottom line for Don
 
-**Ask one question when someone posts: what kind is it? Everything else (the category and a few labels) is suggested for them, and they change it with one tap. Today the suggestion comes from a simple word match on one shared list. Later a small model (Claude Haiku) reads the words and the photo instead, at about $0.0002 a post.** It's how Facebook Marketplace, eBay, Shopify and Nextdoor's For Sale & Free work. Facebook built it because 7–9% of people gave up listing when they had to pick a category themselves.
+**Ask one question when someone posts: what kind is it? Everything else (the category and a few labels) is suggested for them, and they change it with one tap. Today the suggestion comes from a simple word match on one shared list. Later a small model reads the words and the photo instead, at about $0.0002 a post: Jev from TypeSafe (you named it), with Claude Haiku as the fallback.** It's how Facebook Marketplace, eBay, Shopify and Nextdoor's For Sale & Free work. Facebook built it because 7–9% of people gave up listing when they had to pick a category themselves.
 
 - **Why the kind is the one choice:** it changes the form itself (a date for an Event, a price for an Offer, when it comes down). Google asks only this, from 3 kinds, and so does Nextdoor, from about 4.
 - **What breaks today:**
@@ -17,8 +17,9 @@
 - **Smallest first version of B, no AI:**
   - Replace the tag box with "Listed under: Gardening · Change", filled from the words and the Page.
   - Give person posts their 3 kinds.
-  - Haiku slots in later behind the same line.
-- *Don, 2026-11-04 (plan #270, option B):* "B is good for now although we need a way to help people organize what they're posting that is simple and flexible. Let's figure that out before implementing. Also in the end this would hopefully be auto categorized by something like Jev" (read as a small model, Claude Haiku).
+  - The AI step slots in later behind the same line.
+- **Which AI (correction, 2026-11-05):** Jev is TypeSafe's model, not Haiku. It's built for exactly this: it answers "pick one of these" with odds for each, and costs about the same. But it's 7 weeks out of stealth, promises no retention period, and calls photos "Danger Zone". **I recommend Jev, if it passes the same 100-post test and TypeSafe answers in writing how long it keeps posts. Haiku stays as the fallback.** See part 3.
+- *Don, 2026-11-04 (plan #270, option B):* "B is good for now although we need a way to help people organize what they're posting that is simple and flexible. Let's figure that out before implementing. Also in the end this would hopefully be auto categorized by something like Jev". Don, 2026-11-05: "Jev is an ai model from https://typesafe.ai" (I first read it as Claude Haiku; corrected).
 
 Research only, no rulings. Person posts aren't built until you pick.
 
@@ -82,7 +83,7 @@ Research only, no rulings. Person posts aren't built until you pick.
 
 ## 3. Auto-categorizing with a small model
 
-**After someone posts, Haiku reads the words and the photo and returns a category and up to 3 labels from our own list, with how sure it is. The poster sees "Listed under: Gardening · Change". It costs about $0.0002 a post, never slows posting down, and falls back to the word match if it fails. The same pass can flag likely problems for the existing review, without deciding anything.**
+**After someone posts, a small model (Jev recommended, Haiku as fallback) reads the words and the photo and returns a category and up to 3 labels from our own list, with how sure it is. The poster sees "Listed under: Gardening · Change". It costs about $0.0002 a post, never slows posting down, and falls back to the word match if it fails. The same pass can flag likely problems for the existing review, without deciding anything.**
 
 <details><summary>Details</summary>
 
@@ -104,7 +105,7 @@ Research only, no rulings. Person posts aren't built until you pick.
 - **Our list is tiny by comparison: 12 labels, about 60 finer ones.** So expect higher at the top level and lower on the finer labels. That's an inference, not a measured result.
 - **Measure it first:** a bake-off on 100 hand-labelled posts, the way bug triage was chosen (2026-10-06). Ship only if the top-level label is right on at least 90 of them [guess].
 
-**Cost**, from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing) (checked 2026-11-04). Haiku 5.5, prompts under 100,000 tokens: $0.10 per million tokens in, $0.50 out, cache hits $0.01, Batch half price.
+**Haiku cost** (the fallback), from [Anthropic's pricing page](https://platform.claude.com/docs/en/about-claude/pricing) (checked 2026-11-04). Haiku 5.5, prompts under 100,000 tokens: $0.10 per million tokens in, $0.50 out, cache hits $0.01, Batch half price.
 
 | Per post | Tokens | Cost |
 |---|---|---|
@@ -118,7 +119,7 @@ Research only, no rulings. Person posts aren't built until you pick.
 
 (The October categorization research priced Haiku 4.5 at $1 / $5. Haiku 5.5 is a tenth of that.)
 
-**Speed:** it runs after saving, so nobody waits. Expect a second or two for the result [estimate; measure in the bake-off].
+**Speed:** it runs after saving, so nobody waits. Haiku: expect a second or two [estimate]. Jev: TypeSafe says 70–500 ms [their own test]. Measure both in the bake-off.
 
 **When it fails:**
 - **Timeout or error:** the word match stands, and a background retry runs later.
@@ -137,14 +138,75 @@ Research only, no rulings. Person posts aren't built until you pick.
   - phone numbers stripped before sending (emails are already refused in posts).
 - **What we keep:** the label and confidence, never the prompt.
 - **The privacy page says plainly** that an AI helper reads posts to sort them.
-- Anthropic's commercial terms say API inputs aren't used for training by default. Confirm retention before launch [from memory, not checked today].
+- **Anthropic:** API inputs and outputs are deleted within 30 days, up to 2 years if flagged by its safety checks ([retention page](https://privacy.claude.com/en/articles/7996866-how-long-do-you-store-my-organization-s-data), checked 2026-11-05). No training on API data [from memory, not checked today].
+- **TypeSafe:** see "Which model" below.
 - It's the same data the post already shows publicly, and the same kind of call moderation already makes.
+
+</details>
+
+### Which model: Jev or Haiku
+
+**Jev fits the job better and costs about the same. TypeSafe is too new to trust blind. Run both on the 100-post test, and use Jev if it scores at least as well and TypeSafe confirms in writing how long it keeps posts. Otherwise use Haiku, which the code already calls.**
+
+<details><summary>Details</summary>
+
+Everything here comes from [typesafe.ai](https://typesafe.ai), [its docs](https://docs.typesafe.ai/introduction) and its legal pages, read 2026-11-05. Where a page is silent, it says so below.
+
+**What Jev is:** a "System One" model that answers instead of writing. You send the post plus typed questions, and it returns answers and nothing else:
+- **Choice:** one of up to 255 options, with odds for each and a confidence.
+- **Score:** a level on a scale.
+- **Noul:** yes or no, as 0–1.
+- **Box:** where something is in a photo.
+
+It can't write a sentence, so there's no text to parse and no made-up label. Our labels go in as the options.
+
+**How it maps to our job:**
+
+| We need | Jev question |
+|---|---|
+| One of the 12 labels | Choice, 12 options |
+| Up to 3 finer labels | A second Choice among that label's finer ones; keep the top 3 by odds (their [hierarchical cookbook](https://docs.typesafe.ai/cookbooks/hierarchical_classification.md)) |
+| "Reads like a different kind" | Choice over the 3 or 7 kinds |
+| Moderation hints (not local, kids-and-pets rule) | Noul each. Phone numbers stay a code check: their docs say it counts and reads numbers unreliably |
+| How sure | Built in: odds per option plus a confidence |
+
+**Side by side:**
+
+| | **Jev (TypeSafe)** | **Haiku 5.5 (Anthropic)** |
+|---|---|---|
+| Output | Typed answers with odds, nothing else | Text or a JSON shape we define; confidence has to be asked for |
+| Price | $0.042 per million tokens in; output free ([models](https://docs.typesafe.ai/models.md)). No cache discount listed | $0.10 in, $0.50 out per million; cache hits $0.01 |
+| Per post | About $0.0001 for the text and our lists (~2,000 tokens). Photo cost unknown: TypeSafe hasn't published how photos count yet | About $0.00014 |
+| 1,000 posts | About $0.10, plus photos | About $0.15–0.40 |
+| Speed | 70–500 ms, TypeSafe's own test from their laptops | A second or two [estimate] |
+| Photos | PNG or JPEG, 280–1,568 px; needs a header named "TypeSafe-Danger-Zone-Images" | Supported as standard |
+| Trains on our posts | No: Privacy Policy and Master Customer Agreement both say so | No [from memory] |
+| How long it keeps them | **No period stated.** The agreement says it "may delete Customer Data at any time" and keeps "Telemetry" derived from it "in perpetuity". Zero retention for enterprise customers only | 30 days, up to 2 years if flagged |
+| Uptime promise | None. Liability capped at the greater of 12 months' fees or $50 | Established API |
+| Known weak spots | Leans to the first option (their docs); weak with numbers and dates; long or messy input distracts it | General LLM weak spots; can return a label off the list unless constrained |
+| Maturity | Out of stealth 2026-09-15 with a $40M seed ([SiliconANGLE](https://siliconangle.com/2026/09/16/typesafe-ai-exits-stealth-with-40m-to-build-ai-for-use-by-software/)). Two releases (1.13, then 1.14 on 2026-10-14). Site says "Version 0.01" and early access | Anthropic; already in our code for moderation |
+| How we call it | `POST https://api.typesafe.ai/v1/systemone` with a Bearer key, or the `@typesafe-ai/sdk` npm package. Pin `jev-1.14.0`, not `jev-latest`, so answers don't shift under us | The fetch call the moderation code already makes |
+
+**Not verified:**
+- **Accuracy:** TypeSafe publishes no accuracy numbers. Its evals measure agreement with GPT and Fable answers, not correctness. Only our own test will tell.
+- **Photo cost:** TypeSafe hasn't published how photos count yet.
+- **Rate limits:** set per account in their console; no numbers are published.
+- **Subprocessors:** their trust page didn't load.
+- **Funding:** a report of an $870M round is unverified; only the $40M seed is confirmed.
+
+**Before Jev goes live:**
+1. Run the 100-post test on both, with the same 90-of-100 bar. Shuffle the option order on a second pass to catch the first-option lean.
+2. Get TypeSafe's answer in writing on how long it keeps posts and photos, or zero retention.
+3. Strip phone numbers before sending, as planned. Nothing about the person is sent.
+4. Haiku stays wired as the fallback: if Jev errors, times out or is unsure, Haiku answers. If both fail, the word match stands.
+
+**Cost to build:** the AI step goes from about 10 h to about 13 h with two models behind it.
 
 </details>
 
 ## 4. Options
 
-**I recommend B: pick the kind, we suggest the rest, one tap to change. It's the Marketplace, eBay and Shopify pattern, it works before any AI exists, and Haiku drops in later without changing the screen.**
+**I recommend B: pick the kind, we suggest the rest, one tap to change. It's the Marketplace, eBay and Shopify pattern, it works before any AI exists, and the AI (Jev, or Haiku as fallback) drops in later without changing the screen.**
 
 <details><summary>Details</summary>
 
@@ -153,7 +215,7 @@ Research only, no rulings. Person posts aren't built until you pick.
 | What the poster does | Kind, then one of the 12 labels, then optional labels | Kind (one tap), then writes; sees "Listed under: …" and can change it | Writes; sees the kind, category and labels and confirms |
 | Required choices | 2 | 1 | 0 (one confirm) |
 | Works without AI | Yes | Yes (word match) | No |
-| Sorting quality | Depends on people picking well | Good with the word match, better with Haiku | Best when right; a wrong **kind** breaks dates, shelf life and reminders |
+| Sorting quality | Depends on people picking well | Good with the word match, better with AI | Best when right; a wrong **kind** breaks dates, shelf life and reminders |
 | Fits "simple and flexible" | Simple, not flexible | Both | Flexible; simple only when the AI is right |
 | Precedent | Craigslist, Google (kind only) | Facebook Marketplace, eBay, Shopify, Nextdoor For Sale & Free | eBay's photo listing, Nextdoor's AI draft |
 | Path | Well-worn | Well-worn | New territory (AI decides what the form is) |
@@ -165,11 +227,11 @@ Research only, no rulings. Person posts aren't built until you pick.
 4. **Nothing matches:** it says "Listed under: Neighborhood life · Change" for a person post, or the Page's labels for a Page post.
 5. **Explore, shelves and search** read these labels instead of free tags. Existing tags are mapped once.
 
-**Then:** Haiku replaces the word match behind the same line, after the 100-post bake-off passes. Its moderation flags feed the existing review.
+**Then:** Jev (or Haiku, if Jev fails the test or the retention answer) replaces the word match behind the same line, after the 100-post bake-off passes. Its moderation flags feed the existing review.
 
 **What it costs to build** [estimates]:
 - First version: about 16 h (the list and word match 6, composer line 4, Explore and shelves read the labels 4, mapping existing tags 2).
-- The Haiku step: about 10 h more, plus the bake-off.
+- The AI step: about 13 h more with Jev and Haiku as fallback (10 h with one model), plus the bake-off.
 
 **Copy note:** "Listed under" and "Change" are new words on screen, so they come to you with the build.
 
