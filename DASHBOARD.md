@@ -1,8 +1,8 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 138, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 147/176 (alongside, not the headline) · updated 2026-11-06 11:04 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 138, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 147/176 (alongside, not the headline) · updated 2026-11-06 14:50 PT
 
-**The dashboard is a web page: [https://donlafranchi.github.io/socialus-plan/](https://donlafranchi.github.io/socialus-plan/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
+**The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
 ## The numbers
 
@@ -25,6 +25,6 @@
 
 ## Your to-do (1)
 
-- P1 · Set up Cloudflare so the dashboard has a private web address
+- P1 · Set up Twilio for the phone check
 
 *Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*
