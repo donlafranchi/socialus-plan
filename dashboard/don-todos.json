@@ -75,7 +75,7 @@
   {
    "p": 3,
    "text": "REFERENCE, no action: build freeze until the 2027 launch",
-   "how": "On hold: video, /join gaps, Jev, taste scale, public counts, Staff link. Nothing to do; this lists what is paused.",
+   "how": "On hold: video, /join gaps, Jev, taste scale, public counts, Staff link. Nothing to do; this lists what is paused. Low priority, separate: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard so it doesn't run its own Git build and fail.",
    "added": "2026-11-06"
   }
  ]
