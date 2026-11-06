@@ -1,82 +1,77 @@
 {
- "_how": "The PM's to-do, shown first on the HTML dashboard. The PM, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" Whenever the PM asks what he needs to do, add each step here; remove it the moment it is done. Fields: p (1 = do first, 2, 3), text (what), how (one line), due (YYYY-MM-DD, optional), unlocks (what it unblocks, optional), url (optional), added (YYYY-MM-DD). Trimmed 2026-10-25 to the decision rights: only ideas, version scope, words and look-and-feel, and actions only the PM can take (accounts, people); at most 10 items and 3 P1. ONE AT A TIME (the PM, 2026-10-26, option C of the harness grade): `items` holds the single item in front of the PM; `queue` holds the rest in order. When the PM answers, Dispatch moves the next item from `queue` into `items`. The dashboard reads `items` only.",
+ "_how": "The PM's to-do on the HTML dashboard. The PM, 2026-10-15: \"If I ever ask what I need to do then add it to my dashboard.\" ONE AT A TIME (2026-10-26): `items` holds the single item in front of the PM, shown as \"Do next\"; `queue` holds the rest in order, and the page does not show it. When the PM finishes one, Dispatch moves the next from `queue` into `items`. At most 10 items and 3 P1 in all. NO INSTRUCTIONS ON THE PAGE (the PM, 2026-11-06: \"I don't want the instructions in the dashboard. Only items to remember to do.\"): each item is one short line. Fields: p (1 do first, 2, 3), text (what to do, one short line), unlocks (a few words, the tag), due (YYYY-MM-DD, optional), url (where the steps live, an Issue or doc), added (YYYY-MM-DD). `how` is optional and never rendered; any how-to belongs in the linked Issue.",
  "items": [
   {
    "p": 1,
-   "text": "Set up Cloudflare so the dashboard has a private web address",
-   "how": "On your phone, about 10 minutes. 1) dash.cloudflare.com: sign in or create a free account; note the Account ID (Workers & Pages page, right side). 2) My Profile > API Tokens > Create Token > Create Custom Token. Permissions: Account > Cloudflare Pages > Edit; Account > Access: Apps and Policies > Edit; Account > Account Settings > Read. Account Resources: your account. Copy the token once. 3) Zero Trust (left menu): pick the Free plan and a team name if asked. 4) At a computer, run: gh secret set CLOUDFLARE_API_TOKEN -R donlafranchi/socialus-plan, then the same for CLOUDFLARE_ACCOUNT_ID (gh asks for the value; nothing is printed). Or GitHub > socialus-plan > Settings > Secrets and variables > Actions > New repository secret, on the phone. 5) GitHub > socialus-plan > Actions > 'cloudflare setup' > Run workflow (once; it creates the site and locks it to mrlafranchi@gmail.com), then 'cloudflare dashboard' > Run workflow. Opening it emails you a one-time code.",
-   "unlocks": "Your dashboard on Cloudflare, behind your email only (the GitHub Pages copy stays until this works)",
-   "url": "https://dash.cloudflare.com/",
+   "text": "Set up Twilio for the phone check",
+   "unlocks": "Unblocks posting without a Page and the sign-up phone check",
+   "url": "https://github.com/donlafranchi/socialus-web/issues/707",
    "added": "2026-11-06"
   }
  ],
  "queue": [
   {
    "p": 1,
-   "text": "Run the F078 report test (closes #220)",
-   "how": "Phone, socialus.org. You need THREE accounts: your main (owns the Page), a second email, and a third. A Gmail '+' address works as the third, e.g. yourname+two@gmail.com: same inbox, counts as a different member. Sign in on the second and third with the 6-digit code from the email; never use a builder account (they never send notices).\n1. Second account: open a Page your main account owns, tap ⋯ → Report this Page, pick Spam (NOT Sensitive content or Threat of harm: those hide at once), type 'TEST', Send. Page stays up.\n2. Main account: open You. A courtesy notice about the report is there, and the Page still shows its name and description.\n3. Second account again: report the same Page a second time. Nothing changes (the same person twice does not count; a third try says you already reported it). Fine.\n4. Third account: report the same Page, Spam, 'TEST'. Now a second member has reported it: the name and description disappear for everyone, the Page stays up, and your main account gets a 'hidden' notice.\n5. Undo: in Admin → Reports, restore the Page's words.\nThen tell an agent 'F078 test done': it checks the AI shadow row and closes #220 and #486's check.",
-   "due": "2026-10-30",
-   "unlocks": "Closes web #220, proves the AI shadow read runs (#486), and unblocks the moderation work",
+   "text": "Run the report test (three accounts)",
+   "unlocks": "Closes #220; proves the AI first read",
    "url": "https://github.com/donlafranchi/socialus-web/issues/220",
    "added": "2026-10-18"
   },
   {
+   "p": 1,
+   "text": "Decide the one-strike policy",
+   "unlocks": "Sets how we treat people trying to get over",
+   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/one-strike-2026-11-06.md",
+   "added": "2026-11-06"
+  },
+  {
    "p": 2,
-   "text": "Founding circle: talk with 5 people outside the team who've tried SocialUs",
-   "how": "3 who run something local, 2 neighbours. 20 minutes each, five questions, no pitch (on the linked page). After each, text Dispatch a voice note; an agent logs it without names. Do Sentry first (2 minutes, below) so their errors aren't invisible.",
-   "due": "2026-11-06",
-   "unlocks": "Real evidence for every other call, your first stewards, and a second person who can help run it",
+   "text": "Founding circle: talk with 5 people who have tried SocialUs",
+   "unlocks": "Real evidence for the next calls",
    "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/founding-circle-2026-10-21.md",
+   "due": "2026-11-06",
    "added": "2026-10-21"
   },
   {
    "p": 2,
-   "text": "Open the accounts and file the ticket only you can",
-   "how": "Sentry (sentry.io → Next.js project → text Dispatch the DSN); Vercel → socialus-web → Speed Insights → Enable; Resend → Domains → add socialus.org and its DNS records; huduser.gov free account → text Dispatch the token (web #849); image-safety hash check (Cloudflare), phone checklist on its Issue. Also: file the private Supabase support ticket (agents chose B+C: you file B; agents do C; details in your 10-16 speed chat).",
-   "unlocks": "Error tracking, speed numbers, reminder emails, zip crosswalk, image safety",
+   "text": "Open the remaining accounts (Sentry, Speed Insights, Resend, HUD, image safety)",
+   "unlocks": "Error tracking, speed numbers, emails",
+   "how": "Sentry (sentry.io → Next.js project → text Dispatch the DSN); Vercel → socialus-web → Speed Insights → Enable; Resend → Domains → add socialus.org and its DNS records; huduser.gov free account → text Dispatch the token (web #849); image-safety hash check (Cloudflare), phone checklist on its Issue. Also: file the private Supabase support ticket (agents chose B+C: you file B; agents do C; details in your 10-16 speed chat). Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.",
    "added": "2026-10-25"
   },
   {
    "p": 2,
-   "text": "Simplify the message and landing page: \"Locals, finding and supporting locals\"",
-   "how": "Task only, no copy changes yet. Open to anything around locals supporting locals. Say 'go' and an agent rewrites the landing page and /join copy (planning/briefs/seller-landing-copy-2026-11-04.md), then you approve the words. This replaces the separate /join copy approval.",
-   "unlocks": "One message across the site; the /join copy approval",
+   "text": "Say \"go\" on the new message: \"Locals, finding and supporting locals\"",
+   "unlocks": "Landing page and /join rewrite",
    "added": "2026-11-06"
   },
   {
    "p": 2,
-   "text": "Northern California beta: review where \"Sacramento\" appears, the boundary, and the Explore order",
-   "how": "(1) Review the list of where \"Sacramento\" appears and the proposed boundary (another session is producing it). (2) Explore order: this week, then later, then Pages after timely posts; review the check of what's live. Nothing changes until you say go.",
+   "text": "Pick the Northern California counties (A, B or C)",
    "unlocks": "Beta market becomes Northern California",
+   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/northern-california-2026-11-06.md",
    "added": "2026-11-06"
   },
   {
-   "p": 2,
+   "p": 3,
    "text": "Review three small PRs",
-   "how": "Edit link on each live Page (web #1071); seed themes rotate to meet-ups (web #1128); 'Pages and posts never share a shelf' (plan #257). Merge or comment on each.",
+   "unlocks": "Edit link, meet-up seeding, shelves",
    "url": "https://github.com/donlafranchi/socialus-web/pull/1071",
    "added": "2026-11-06"
   },
   {
-   "p": 2,
-   "text": "Read the wording and rules waiting for you",
-   "how": "One sitting, on your phone: the decency lines PR (every string listed), Remind me, Products & services, the owner's 'what locals searched' card, and the sentence for 'we do not tolerate abusive content'. Say yes or change any line. Also the one-page rules list (wording only): Read the short list at the top: the soul, the defaults and the principles under them. Change any word you want; everything else is already decided and applied.",
-   "added": "2026-10-25",
-   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/rules-review-2026-10-25.md"
+   "p": 3,
+   "text": "Read the wording waiting for you",
+   "unlocks": "Decency lines, Remind me, search card",
+   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/rules-review-2026-10-25.md",
+   "added": "2026-10-25"
   },
   {
    "p": 3,
-   "text": "Ideas and calls to react to",
-   "how": "Local scouts and artist collaborations (each one page; artists: A, B or C, recommended B). Outer counties: pick A, B or C on its Issue, recommended A. Dark-site outreach: A or B, the postcard words, the 10-business pilot, recommended B.",
+   "text": "React to ideas: scouts, artists, outer counties, outreach",
+   "unlocks": "First outreach pilot",
    "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/local-creators-2026-10-21.md",
-   "added": "2026-10-25",
-   "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley; the first dark-site outreach"
-  },
-  {
-   "p": 3,
-   "text": "REFERENCE, no action: build freeze until the 2027 launch",
-   "how": "On hold: video, /join gaps, Jev, taste scale, public counts, Staff link. Nothing to do; this lists what is paused. Low priority, separate: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard so it doesn't run its own Git build and fail.",
-   "added": "2026-11-06"
+   "added": "2026-10-25"
   }
  ]
 }
