@@ -38,11 +38,17 @@
   },
   {
    "p": 2,
-   "text": "Review the one-page rules list (wording only)",
-   "how": "Read the short list at the top: the soul, the defaults and the principles under them. Change any word you want; everything else is already decided and applied.",
-   "unlocks": "Every agent decides by these words from now on",
-   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/rules-review-2026-10-25.md",
-   "added": "2026-10-25"
+   "text": "Simplify the message and landing page: \"Locals, finding and supporting locals\"",
+   "how": "Task only, no copy changes yet. Open to anything around locals supporting locals. Say 'go' and an agent rewrites the landing page and /join copy (planning/briefs/seller-landing-copy-2026-11-04.md), then you approve the words. This replaces the separate /join copy approval.",
+   "unlocks": "One message across the site; the /join copy approval",
+   "added": "2026-11-06"
+  },
+  {
+   "p": 2,
+   "text": "Northern California beta: review where \"Sacramento\" appears, the boundary, and the Explore order",
+   "how": "(1) Review the list of where \"Sacramento\" appears and the proposed boundary (another session is producing it). (2) Explore order: this week, then later, then Pages after timely posts; review the check of what's live. Nothing changes until you say go.",
+   "unlocks": "Beta market becomes Northern California",
+   "added": "2026-11-06"
   },
   {
    "p": 2,
@@ -53,31 +59,24 @@
   },
   {
    "p": 2,
-   "text": "Approve the /join copy (after the rewrite)",
-   "how": "An agent first rewrites planning/briefs/seller-landing-copy-2026-11-04.md for the new message; then read it and say yes or change any line.",
-   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/briefs/seller-landing-copy-2026-11-04.md",
-   "added": "2026-11-06"
-  },
-  {
-   "p": 2,
-   "text": "Read the wording waiting for you",
-   "how": "One sitting, on your phone: the decency lines PR (every string listed), Remind me, Products & services, the owner's 'what locals searched' card, and the sentence for 'we do not tolerate abusive content'. Say yes or change any line.",
-   "added": "2026-10-25"
+   "text": "Read the wording and rules waiting for you",
+   "how": "One sitting, on your phone: the decency lines PR (every string listed), Remind me, Products & services, the owner's 'what locals searched' card, and the sentence for 'we do not tolerate abusive content'. Say yes or change any line. Also the one-page rules list (wording only): Read the short list at the top: the soul, the defaults and the principles under them. Change any word you want; everything else is already decided and applied.",
+   "added": "2026-10-25",
+   "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/rules-review-2026-10-25.md"
   },
   {
    "p": 3,
-   "text": "Ideas to react to: local scouts and artist collaborations",
-   "how": "Each is one page; read the bottom line. Scouts: what they get and the name. Artists: A, B or C (recommended B).",
+   "text": "Ideas and calls to react to",
+   "how": "Local scouts and artist collaborations (each one page; artists: A, B or C, recommended B). Outer counties: pick A, B or C on its Issue, recommended A. Dark-site outreach: A or B, the postcard words, the 10-business pilot, recommended B.",
    "url": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/local-creators-2026-10-21.md",
-   "added": "2026-10-25"
+   "added": "2026-10-25",
+   "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley; the first dark-site outreach"
   },
   {
    "p": 3,
-   "text": "Two calls on Issues: outer counties (A recommended) and dark-site outreach (B recommended)",
-   "how": "Outer counties: pick A, B or C on its Issue. Dark-site: A or B, the postcard words, the 10-business pilot; recommended B (ask first by postcard).",
-   "unlocks": "Pages in Lodi, Vacaville, Yuba City and Grass Valley; the first dark-site outreach",
-   "url": "https://github.com/donlafranchi/socialus-web/issues/787",
-   "added": "2026-10-25"
+   "text": "REFERENCE, no action: build freeze until the 2027 launch",
+   "how": "On hold: video, /join gaps, Jev, taste scale, public counts, Staff link. Nothing to do; this lists what is paused.",
+   "added": "2026-11-06"
   }
  ]
 }
