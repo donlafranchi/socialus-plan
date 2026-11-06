@@ -1,14 +1,15 @@
 # How SocialUs works
 
-Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos. It stands alone. **[unverified]** marks anything not checked against the code or a dated ruling.
+Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 2026-11-06 direction applied. It stands alone. **[unverified]** marks anything not checked against the code or a dated ruling.
 
 ## What it is
 
-**SocialUs is a map-based app where the people of one town find and support each other. Locals supporting locals. Businesses are one kind of local among many, never the point.**
+**SocialUs is a map-based app where the people of one town find and support each other. The message (11-06): "Locals, finding and supporting locals." Businesses are one kind of local among many, never the point.**
 
 - It is never another business listing site. At launch it is "a yellow pages of organizations, not a white pages of people."
 - Members are the investors and the only people paid out. SocialUs takes transaction income. Legal structure lives in the private legal repo, not here.
-- One metro for now. There is no "near you" while there is one metro.
+- One market for now: Northern California (11-06; was Sacramento, the counties not yet redrawn). There is no "near you".
+- Build freeze (11-06): no new features until the 2027 launch; refine, clean up, prepare.
 
 ## Ethos: the soul lines
 
@@ -46,7 +47,7 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos. It
 - **Save.** "Keep this for later." Private, listed on You.
 - **Get updates** (was Follow). The Page's news comes to you by push; the owner never gets your contact details. Its job is to replace promotional email.
 - **Remind me / Add to calendar** on dated posts.
-- **Shelves.** Explore is rows of things. Things you get updates from come first, then everything else. A shelf is a row of data, not code; seasonal shelves run by date, and the order rotates per member per day.
+- **Shelves.** Explore is rows of things. Things you get updates from come first, then Next 7 days, then themed shelves that rotate. Ruled 11-06: this week, then later, then Pages after the timely posts; today the main list below the shelves mixes Pages and posts by last update. A shelf is a row of data, not code; seasonal shelves run by date, and the order rotates per member per day.
 - **Search groups.** Results come in groups: time first (Today, Next 7 days, This weekend, Coming up), then Pages by kind, then posts by kind, then "From neighbors."
 - **The taste scale** (research only, not built). One sliding interest scale per member, by topic, Page and place, that the member can see and steer. Discover leans on it; Find only uses it to order and never hides a result. Ruling: no checkboxes or manual strength pickers as the main way in.
 

@@ -1,6 +1,16 @@
 # Near-term plans
 
-Briefing for idea chats, written 2026-11-05 from the plan and web repos. It stands alone. Numbers in brackets are web PRs or Issues unless marked "plan." **[unverified]** marks anything not checked.
+Briefing for idea chats, written 2026-11-05 from the plan and web repos; direction change of 2026-11-06 applied. It stands alone. Numbers in brackets are web PRs or Issues unless marked "plan." **[unverified]** marks anything not checked.
+
+## Direction, 2026-11-06
+
+**Build freeze: no new features. Refine what is built, clean up, and prepare for a 2027 launch.** Don: *"I don't want to build anything else only refine what we've built."*
+
+- **Held, not cancelled:** video A [plan #271]; the /join gaps (a link on each post, search-engine visibility, owner names and a note, "where I'll be", private stats); the Jev or Haiku sorting step [plan #273]; the taste scale and Haiku chat [plan #263, #269]; public counts; the Staff link; every approved scenario not yet built (the whole Next lane below).
+- **Continues:** bug fixes, copy, cleanup, performance, the overnight live check, seeding.
+- **Explore order:** what's happening this week, then later, then Pages after the timely posts.
+- **Market:** the beta market is Northern California, not Sacramento. The counties it covers are proposed, not yet changed.
+- **Message:** "Locals, finding and supporting locals." No copy changes yet; the rewrite is a to-do for Don.
 
 ## Live now
 
@@ -28,7 +38,7 @@ Shipped earlier:
 
 **Mostly seeding, a few fixes, and the launch blockers that wait on Don's keys and tests.**
 
-- Open PRs: an Edit link [#1071], rotating the seeding themes [#1128], and seven seed PRs [#1105, #1125, #1137, #1165, #1175, #1177, #1179]; two more need fixes [#1176, #1178].
+- Open PRs: an Edit link [#1071] and rotating the seeding themes [#1128]. The daily seed PRs through 11-06 merged; they load into production on the next write run.
 - Launch blockers:
   - Report flow and the AI first read in shadow: needs Don's three-account test and the Anthropic key [#220, #486].
   - Waitlist message [#616, #1118]; [#1112]; a failing production check [#1166].
@@ -37,9 +47,9 @@ Shipped earlier:
 - The rest of the Explore shelves work [#1158], plus smaller Issues [#1080, #1173, #1101, #1102, #1103, #1078].
 - Plan's "Now" lane lists F060, F061, F069 and F070 as building **[unverified]**.
 
-## Decided, queued
+## Decided, queued (held by the freeze)
 
-**Ruled and waiting their turn. Nothing here needs Don again unless it changes.**
+**Ruled and waiting their turn, held until the freeze lifts. Nothing here needs Don again unless it changes.**
 
 - Video: option A ruled 11-05 [plan #271]; no web Issue yet.
 - AI sorting of posts into labels: a 100-post test of Jev against Haiku first, 90 of 100 right to pass, and Jev's data retention confirmed in writing [#1182, plan #273].
@@ -71,7 +81,7 @@ Shipped earlier:
 
 ## Soft launch timing
 
-**No date is set. Ruling (10-23): no beta deadline and no feature freeze until April 2027; one metro; production April–May 2027.**
+**No date is set. Ruling (11-06): build freeze, prepare for a 2027 launch; one market, Northern California; production April–May 2027.**
 
 - Whether the soft launch has already started is **[unverified]**.
 - Blockers: the seven launch Issues above, Don's keys, test coverage of the launch criteria at 66%, speed red. Latest launch report: 10-30.
