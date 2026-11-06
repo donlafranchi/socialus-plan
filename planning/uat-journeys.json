@@ -94,7 +94,10 @@
    "F101.7",
    "F101.8",
    "F101.9",
-   "F101.10"
+   "F101.10",
+   "F101.11",
+   "F101.14",
+   "F101.15"
   ]
  },
  {
@@ -117,7 +120,11 @@
    "F080.5a",
    "F099.1",
    "F099.13",
-   "F070.4"
+   "F070.4",
+   "F070.2",
+   "F070.3",
+   "F080.2",
+   "F080.3"
   ]
  },
  {
@@ -145,7 +152,8 @@
    "F076.3a",
    "F076.7",
    "F076.8",
-   "F103.4"
+   "F103.4",
+   "F076.15"
   ]
  },
  {
@@ -171,7 +179,11 @@
    "F077.3",
    "F093.11",
    "F059.5d",
-   "F093.4"
+   "F093.4",
+   "F099.11a",
+   "F059.2c",
+   "F093.1",
+   "F093.2"
   ]
  },
  {
@@ -193,7 +205,9 @@
    "F081.5",
    "F081.6",
    "F077.1",
-   "F081.1"
+   "F081.1",
+   "F081.2",
+   "F081.9"
   ]
  },
  {
@@ -217,7 +231,10 @@
    "F082.8",
    "F082.5",
    "F082.1",
-   "F082.7"
+   "F082.7",
+   "F082.2a",
+   "F082.3",
+   "F082.6"
   ]
  },
  {
@@ -247,7 +264,9 @@
    "F044.1a",
    "F045.3a",
    "F059.4b",
-   "F059.5e"
+   "F059.5e",
+   "F059.3",
+   "F059.5b"
   ]
  },
  {
@@ -349,7 +368,9 @@
    "F056.7b",
    "F056.8",
    "F056.9a",
-   "F056.5"
+   "F056.5",
+   "F056.2",
+   "F106.1a"
   ]
  },
  {
@@ -373,7 +394,9 @@
    "F072.2a",
    "F072.2b",
    "F059.8",
-   "F072.2c"
+   "F072.2c",
+   "F072.5",
+   "F074.1"
   ]
  },
  {
@@ -394,7 +417,8 @@
    "F065.4",
    "F065.3",
    "F065.5",
-   "F077.2"
+   "F077.2",
+   "F065.2a"
   ]
  },
  {
@@ -418,7 +442,9 @@
    "F099.8",
    "F099.12",
    "F099.2",
-   "F099.7"
+   "F099.7",
+   "F099.5",
+   "F099.10"
   ]
  },
  {
@@ -507,7 +533,8 @@
    "F092.2",
    "F092.3",
    "F092.6",
-   "F045.7b"
+   "F045.7b",
+   "F092.4"
   ]
  },
  {
@@ -551,6 +578,70 @@
    "F117.7",
    "F117.8",
    "F117.9"
+  ]
+ },
+ {
+  "id": "J24",
+  "title": "See the shelves on Explore",
+  "role": "a member",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Explore opens with the timely items from Pages you follow, then Next 7 days",
+   "An empty shelf is absent; a shelf shows about 10 to 12 items",
+   "An item shows once on the screen, in the first shelf it fits",
+   "A seasonal shelf is on for its dates; interest shelves match what you declared on You (three at most, none signed out)",
+   "A dated item leaves when it ends"
+  ],
+  "criteria": [
+   "F121.1a",
+   "F121.2",
+   "F121.3a",
+   "F121.3b",
+   "F121.4",
+   "F121.5a",
+   "F121.6",
+   "F121.7",
+   "F121.8",
+   "F121.10"
+  ]
+ },
+ {
+  "id": "J25",
+  "title": "Add a maker you love",
+  "role": "a member",
+  "link": "https://socialus.org/explore",
+  "minutes": 3,
+  "launch": false,
+  "look": [
+   "Add a maker creates an unclaimed Page, matched against existing Pages first",
+   "You get a claim link to share",
+   "A market shows its makers by kind",
+   "The daily limit and the report / remove-my-Page paths are there"
+  ],
+  "criteria": [
+   "F118.8",
+   "F118.9",
+   "F118.11"
+  ]
+ },
+ {
+  "id": "J26",
+  "title": "Read the weekly shelf scoreboard",
+  "role": "the PM",
+  "link": "https://socialus.org/explore",
+  "minutes": 2,
+  "launch": false,
+  "look": [
+   "The dashboard shows impressions, tap rate, save rate and a verdict per shelf",
+   "Promote and retire verdicts wait for 200+ impressions from 10+ members"
+  ],
+  "criteria": [
+   "F121.11",
+   "F121.12",
+   "F121.13",
+   "F121.14"
   ]
  }
 ]
