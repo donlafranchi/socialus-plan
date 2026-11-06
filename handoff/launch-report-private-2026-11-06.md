@@ -30,16 +30,16 @@ Why: "stick with this and keep improving it" (trial started 2026-10-10). Tracker
 
 **Trial health: on schedule.** 3 of 3 built scores read within the last 8 days: score-ci-health (2026-11-06); score-doc-drift (2026-11-06); score-gap-leakage (2026-11-06).
 
-Meta PRs: 10 proposed, 5 approved and merged, 0 rejected, 5 open. Bookkeeping (renames, lists, counts) merged without the PM: 9.
+Meta PRs: 10 proposed, 5 approved and merged, 0 rejected, 5 open.
 
-Scores that moved: score-ci-health/actions_blocked: 1 (red) -> 0 (green); score-ci-health/ci_main_fail_pct: 25.9 (red) -> 13.3 (amber); score-ci-health/ci_pr_first_run_fail_pct: 37.7 (none) -> 31.6 (none); score-ci-health/smoke_red_pct: 0.0 (none) -> 75.0 (none); score-doc-drift/drift_items: 37 (red) -> 29 (red); score-gap-leakage/closed_parent_unmet: 15 (red) -> 16 (red); score-gap-leakage/unchecked_built_pct: 37.4 (amber) -> 40.9 (amber); score-gap-leakage/untracked_unmet: 29 (red) -> 45 (red)
+Moved: ci_main 25.9 → 13.3 (amber), drift 37 → 29 first pass / 41 after fresh inventory (red), untracked 29 → 45 → 39 (red, mostly retired).
 
 Not built yet: `score-review-coverage`, `score-rework`, `score-pm-overrule`. Next: `score-review-coverage`, waiting on a PR-label scan; can start any time, needs `record-pm-review` in use for the PM-look half.
 
 Tuning notes (2026-11-06):
-- **Is each score measuring what it should? (false reds and misses, with examples)** **score-ci-health: amber, the best reading of the trial (main failures 13.3%, was 25.9%); two real signals the score only half shows.** `ci_main_fail_pct` 13.3% amber: **real, and a different kind of red than three weeks ago.** 14 of 105 finished main runs failed; the last five (42257315178, 42236321513, 42233360581, 42229150951, 41331343603) are one browser eval (F059 "list only with no Map control", mobile-chrome),
-- **What to adjust (threshold, source, formula)** Open `meta-change` PRs waiting on Don, in order of value: **#151** (smoke window per workflow; today's 75% vs true 21%), **#134** (gap-leakage excludes retired and spec-conflict; removes ~30 of 39 untracked and most of the 18 closed parents), **#133** (README header and skill count; 18 of 41 drift items), **#142** (migration gate counted apart). New: **#166** (inventory listing not counted as its own review item; one
-- **Which score to build next** `score-review-coverage`, unchanged. The roll-up's Reviewed column is 43 of 345 (12%); the rule since 10-26 is a second-session GitHub review under `REVIEW.md`. A score that counts, per merged PR touching `src/app`, `src/components`, `src/actions` or `supabase/`, whether a review was posted by a login other than the author reads that rule directly from GitHub and needs nothing from Don to start. It waits on a decision
+- **Measuring right?** CI amber and best of the trial; smoke count still wrong (75% shown, 21% true, #151); 18 of 41 drift items are the README check (#133); 9 of 39 untracked criteria are real (all F118), the rest retired (#134).
+- **Adjust:** pm-approved on #151, #134, #133, #142; new #166 (inventory not counted as its own review item).
+- **Next score:** `score-review-coverage` (reviewed is 42 of 302); can start any time.
 
 Doc gardening (`tend-docs`, 2026-11-06): 166 docs in scope, 0 duplicate, 75 undated, 105 without the standard header, 1 broken links, hand-written share 85%.
 
