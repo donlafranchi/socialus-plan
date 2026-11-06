@@ -14,7 +14,7 @@
 
 **Verdict:** the beta runs until April 2027. Biggest risk: Smoked is unknown for most criteria (last green smoke covering a signed-in screen is 11-01, and 11-05 was red), and nobody but the builder has looked at the product (42 of 302 reviewed, 0 of 26 walk-throughs).
 
-**Doc gardening:** 166 docs in scope, 0 duplicates, 75 undated, 105 without the standard header, 1 broken link, 3 superseded; 7 headers added (plan #280); inventory regenerated; three expired 10-06 notes deleted, ops lint was failing every PR (ops #165). Not done: refining over-budget docs (plan CLAUDE.md 179%). Scheduled workflows: smoke-live and tap-speed fired; **no scheduled-event run of the plan dashboard or status workflow appears in the last 30 runs** (push and manual runs only). tap-speed red 21 days. CI on main amber (13.3%).
+**Doc gardening:** 166 docs in scope, 0 duplicates, 75 undated, 105 without the standard header, 1 broken link, 3 superseded; 7 headers added (plan #280); inventory regenerated; three expired 10-06 notes deleted, ops lint was failing every PR (ops #165). Not done: refining over-budget docs (plan CLAUDE.md 179%). Scheduled: smoke-live and tap-speed fired; **no scheduled-event run of the plan dashboard or status workflow appears in the last 30 runs** (push and manual runs only). tap-speed red 21 days. CI on main amber (13.3%).
 
 **Next:** the call above; `pm-approved` on ops #151, #134, #133, #142, #166.
 
@@ -41,6 +41,6 @@ Tuning notes (2026-11-06):
 - **Adjust:** pm-approved on #151, #134, #133, #142; new #166 (inventory not counted as its own review item).
 - **Next score:** `score-review-coverage` (reviewed is 42 of 302); can start any time.
 
-Doc gardening (`tend-docs`, 2026-11-06): 166 docs in scope, 0 duplicate, 75 undated, 105 without the standard header, 1 broken links, hand-written share 85%.
+
 
 **Tuning review is due (2026-10-24):** for each score, is it measuring what it should (false reds and misses, with examples), what to adjust (threshold, source, formula), and which score to build next.
