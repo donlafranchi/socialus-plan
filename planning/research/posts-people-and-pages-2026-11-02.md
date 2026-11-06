@@ -1,5 +1,7 @@
 # Posts from people and posts from Pages
 
+**As of 2026-11-02** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **Bottom line for Don:** Facebook, Nextdoor and Google all split posts the way you're thinking: **a Page speaks for an organization; a person speaks for themselves**, and the two look different on the card. Today every SocialUs post needs a Page, so a yard sale, a lost dog or a free couch has nowhere to go. **Recommend B: let a person post a small set of neighbour kinds (Lost & found, Free, For sale, Ask for a recommendation, Happening) without a Page, signed with display name and neighbourhood only, each one expiring on its own.** Proposals stay where you parked them.
 
 **Your call:** A, B or C (section 5). I recommend **B, starting with three kinds: Lost & found, Free / for sale, and Ask a neighbour.**
