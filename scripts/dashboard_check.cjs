@@ -10,53 +10,40 @@ const d = dom.window.document
 const D = JSON.parse(d.getElementById('data').textContent)
 const crit = D.features.reduce((n, f) => n + f.criteria.length, 0)
 const cards = d.querySelectorAll('details').length
+// Don, 2026-11-06: the page is "Do next" (one item) and FYI groups, folded, each with a count; no instructions on it.
+const fyi = [...d.querySelectorAll('details.fyi')]
+const grp = (id) => d.getElementById(id)
+const cnt = (id) => grp(id)?.querySelector(':scope > summary .cnt')?.textContent
+const T = D.todos || []
 const checks = {
   'no script errors': errs.length === 0,
   'header leads with the date, criteria right under it': (d.getElementById('h').textContent + ' ' + (d.getElementById('h').nextElementSibling?.textContent || '')).includes('criteria met'),
-  'a card per feature and area': cards >= D.features.length + D.areas.length,
-  'one row per criterion': d.querySelectorAll('details .rows .row .title').length >= crit,
-  'launch checklist drawn': !D.launch || D.launch.length === 0 || d.body.textContent.includes('Launch checklist'),
-  'waiting on you drawn': d.body.textContent.includes('Waiting on you: ' + D.wait_total) && d.querySelectorAll('summary b').length >= D.wait_areas.length,
-  'one segment per criterion, in every feature and area bar': d.querySelectorAll('.segbar i').length === 2 * crit,
-  'how to read, five lines': d.querySelectorAll('ol.how li').length === 5,
-  'your UAT line': d.body.textContent.includes('Your UAT: ' + D.your_uat.ticked + ' of ' + D.your_uat.total + ' walk-throughs done'),
-  'cockpit drawn, eight sections': D.cockpit.length === 8 && d.querySelectorAll('[id^=cockpit-]').length === 8,
-  // Don, 2026-10-15: the HTML page is the dashboard: to-do first, a sidebar and a phone menu listing every section.
-  'your to-do first, one card per item with its priority': d.querySelector('section.sec')?.id === 'todo' && d.querySelectorAll('#todo .todo .pri').length === (D.todos || []).length,
-  'every to-do item has a priority 1 to 3 and a how': Array.isArray(D.todos) && D.todos.every((t) => [1, 2, 3].includes(t.p) && t.how && t.text),
-  'sidebar and phone menu list every section': d.querySelectorAll('#toc a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('#tocm a').length === d.querySelectorAll('section[data-toc]').length && d.querySelectorAll('section[data-toc]').length >= 8,
-  'every section opens with a bold overview': [...d.querySelectorAll('section[data-toc]')].every((x) => x.querySelector(':scope > p.lede > b')?.textContent.trim()),
-  // Don, 2026-10-16: "what we have left to build… what else needs to be done before soft launch?"
-  'before soft launch: second, with its count, every item linked': (() => {
+  'do next comes first: one item, a priority, no how-to': d.querySelector('section.sec')?.id === 'todo' && T.length <= 1 && d.querySelectorAll('#todo .todo').length === T.length && d.querySelectorAll('#todo .todo .pri').length === T.length && T.every((t) => [1, 2, 3].includes(t.p) && t.text && (!t.how || !d.body.textContent.includes(t.how.slice(0, 40)))),
+  'no instructions or contents menu on the page': !d.getElementById('how') && !d.getElementById('toc') && !d.querySelector('ol.how'),
+  'every FYI group is folded and shows a count': fyi.length >= 10 && fyi.every((x) => !x.open && x.querySelector(':scope > summary .cnt')?.textContent.trim() !== ''),
+  'blocking the beta: first FYI group, its count, every item linked': (() => {
     const L = D.launch_left
-    const sec = d.getElementById('soft-launch')
-    if (!L || !sec || d.querySelectorAll('section[data-toc]')[1]?.id !== 'soft-launch') return false
-    const n = L.issues.length + L.calls.length + (L.grade ? L.grade.filter((g) => !g.pass).length : 0)
-    return sec.querySelector('p.lede b').textContent.startsWith(`${n} thing`) && sec.querySelectorAll('li a[href]').length >= L.issues.length + L.calls.filter((c) => c.url).length && sec.textContent.includes(L.grade ? 'cap-1' : 'not yet set')
+    return !!L && fyi[0]?.id === 'soft-launch' && cnt('soft-launch') === String(L.issues.length + L.calls.length) && grp('soft-launch').querySelectorAll('li a[href]').length >= L.issues.length + L.calls.filter((c) => c.url).length
   })(),
-  'pitch cascade: a row names each stale file, and none when green': (() => {
-    const P = D.launch_left?.pitch
-    return !!P && Array.isArray(P.stale) && !!d.getElementById('pitch-cascade') === (P.stale.length > 0)
-  })(),
-  "where we're going is third, right under it": d.querySelectorAll('section[data-toc]')[2]?.id === 'going',
-  'shorthand glossary drawn': d.querySelectorAll('#shorthand .gl').length === (D.shorthand?.groups || []).reduce((n, g) => n + g.items.length, 0) && d.querySelectorAll('#shorthand .gl').length > 0,
-  // #536 (Don): "Where can I see... how well the app is responding?"
-  // #904 — the notifications section is always drawn: its counts, or why there are none yet.
-  'notifications: a section with each kind, or the reason it has no counts yet': (() => {
-    const s = d.getElementById('notify')
+  'a card per feature, one row per criterion': d.querySelectorAll('#features details:not(.fyi)').length >= D.features.length && d.querySelectorAll('#features details .rows .row .title').length >= crit,
+  'one segment per criterion in the feature bars': d.querySelectorAll('.segbar i').length === crit,
+  'waiting on your review drawn with its count': cnt('waiting') === String(D.wait_total) && d.querySelectorAll('#waiting details').length === D.wait_areas.length,
+  'cockpit facts read, eight parts': D.cockpit.length === 8,
+  'on hold lists the held lanes': cnt('going') === String(D.lanes.next.length + D.lanes.considering.length + D.lanes.later.length),
+  // #904 — the notification counts group is always drawn: each kind, or why there are none yet.
+  'notifications: each kind, or the reason it has no counts yet': (() => {
+    const s = grp('notify')
     if (!s) return false
-    return D.notify && D.notify.state ? D.notify.kinds.every((k) => s.textContent.includes(k.kind === 'weekend' ? 'This weekend near me' : 'New posts from Pages I follow')) : s.textContent.includes('could not be read') || s.textContent.includes('No notification counts')
+    return D.notify && D.notify.state ? D.notify.kinds.every((k) => s.textContent.includes(k.kind === 'weekend' ? 'This weekend near me' : 'New posts from Pages I follow')) : s.textContent.includes('No notification counts')
   })(),
-  'how fast it feels: green, amber or red; the five slowest with their trend; red only for a member screen': (() => {
-    const S = D.speed, sec = d.getElementById('speed')
-    if (!sec) return false
-    if (!S || !S.state) return sec.textContent.includes('could not be read') || sec.textContent.includes('No tap-speed')
-    const lede = sec.querySelector('p.lede b')?.textContent || ''
-    const word = { green: 'Green', amber: 'Amber', red: 'Red' }[S.state]
-    return lede.startsWith(word) && (S.state === 'red') === S.red > 0 && sec.querySelectorAll('.row.speed').length === Math.min(5, S.slowest.length) && S.slowest.every((x) => x.trend.length <= 7) && sec.textContent.includes('Real phones')
+  // #536 — slow response: the five slowest taps with their trend, or why there are none.
+  'slow response: the five slowest with their trend': (() => {
+    const S = D.speed, s = grp('speed')
+    if (!s) return false
+    if (!S || !S.state) return s.textContent.includes('No tap-speed')
+    return s.querySelectorAll('.row.speed').length === Math.min(5, S.slowest.length) && S.slowest.every((x) => x.trend.length <= 7) && cnt('speed') === String((S.red || 0) + (S.amber || 0))
   })(),
-  'data problems drawn': d.body.textContent.includes('Data problems'),
-  'a testing notice when the list is empty': !D.test_notice || d.body.textContent.includes(D.test_notice.slice(0, 30)),
+  'broken checks and out-of-date reports drawn': !!grp('broken') && cnt('stale') === String(D.problems.length) && D.problems.every((p) => grp('stale').textContent.includes(p.slice(0, 30))),
 }
 for (const [k, v] of Object.entries(checks)) console.log((v ? 'ok   ' : 'FAIL ') + k)
 if (errs.length) console.log(errs)
