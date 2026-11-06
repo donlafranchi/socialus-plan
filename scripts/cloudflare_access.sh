@@ -3,7 +3,7 @@
 # Needs CLOUDFLARE_API_TOKEN (Pages:Edit, Access Apps and Policies:Edit) and CLOUDFLARE_ACCOUNT_ID. Prints no secrets.
 set -euo pipefail
 : "${CLOUDFLARE_API_TOKEN:?}" "${CLOUDFLARE_ACCOUNT_ID:?}"
-HOST="${DASHBOARD_HOST:-socialus-dashboard.pages.dev}"
+HOST="${DASHBOARD_HOST:-socialus-plan-dashboard.pages.dev}"
 EMAIL="${DASHBOARD_EMAIL:-mrlafranchi@gmail.com}"
 API="https://api.cloudflare.com/client/v4/accounts/$CLOUDFLARE_ACCOUNT_ID/access/apps"
 H=(-H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" -H "Content-Type: application/json")

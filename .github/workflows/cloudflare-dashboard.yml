@@ -1,6 +1,6 @@
 name: cloudflare dashboard
 
-# Publishes the generated dashboard to Cloudflare Pages (https://socialus-dashboard.pages.dev), behind Cloudflare Access
+# Publishes the generated dashboard to Cloudflare Pages (https://socialus-plan-dashboard.pages.dev), behind Cloudflare Access
 # (PM's email only; set up once by `cloudflare setup`). Same triggers as pages.yml. Does nothing until the
 # CLOUDFLARE_API_TOKEN and CLOUDFLARE_ACCOUNT_ID secrets exist. After deploying it checks that the site is NOT served
 # to an anonymous visitor and fails if it is: the dashboard holds private plans.
@@ -38,18 +38,26 @@ jobs:
           mkdir -p _site
           cp dashboard/status-dashboard.html _site/index.html
           printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+      - name: Create the Pages project (skipped if it exists)
+        if: env.HAVE_SECRETS == 'true'
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          if npx --yes wrangler@4 pages project list 2>/dev/null | grep -q 'socialus-plan-dashboard'; then echo "project exists"
+          else npx --yes wrangler@4 pages project create socialus-plan-dashboard --production-branch=main || echo "create failed or raced; deploy will say"; fi
       - name: Deploy to Cloudflare Pages
         if: env.HAVE_SECRETS == 'true'
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy _site --project-name=socialus-dashboard --branch=main --commit-dirty=true
+          command: pages deploy _site --project-name=socialus-plan-dashboard --branch=main --commit-dirty=true
       - name: Refuse if the site is open to anonymous visitors
         if: env.HAVE_SECRETS == 'true'
         run: |
           sleep 10
-          code=$(curl -s -o /dev/null -w '%{http_code}' https://socialus-dashboard.pages.dev/)
+          code=$(curl -s -o /dev/null -w '%{http_code}' https://socialus-plan-dashboard.pages.dev/)
           echo "Anonymous request returned $code"
           if [ "$code" = 200 ]; then echo "::error::Dashboard is public. Run 'cloudflare setup' (Cloudflare Access)."; exit 1; fi
       - name: No secrets yet

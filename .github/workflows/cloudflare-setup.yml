@@ -19,6 +19,6 @@ jobs:
     steps:
       - uses: actions/checkout@v5
       - name: Create the Pages project (skips if it exists)
-        run: npx --yes wrangler@4 pages project create socialus-dashboard --production-branch main || echo "exists, continuing"
+        run: npx --yes wrangler@4 pages project create socialus-plan-dashboard --production-branch main || echo "exists, continuing"
       - name: Lock it to the PM's email with Cloudflare Access
         run: bash scripts/cloudflare_access.sh
