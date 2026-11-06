@@ -1,0 +1,24 @@
+name: cloudflare setup
+
+# Run once by hand (Actions > cloudflare setup > Run workflow) after the PM adds CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID as repo secrets. Creates the Pages project and puts Cloudflare Access (allow only the PM's
+# email) in front of it. Safe to re-run. The dashboard holds private plans: never deploy before this has run.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  setup:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v5
+      - name: Create the Pages project (skips if it exists)
+        run: npx --yes wrangler@4 pages project create socialus-dashboard --production-branch main || echo "exists, continuing"
+      - name: Lock it to the PM's email with Cloudflare Access
+        run: bash scripts/cloudflare_access.sh
