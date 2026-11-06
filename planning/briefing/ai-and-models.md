@@ -1,5 +1,7 @@
 # AI and models
 
+**As of 2026-11-06** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos. It stands alone. **[unverified]** marks anything not checked against the code or a provider's own page.
 
 ## Where AI is used today

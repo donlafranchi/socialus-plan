@@ -1,5 +1,7 @@
 # Near-term plans
 
+**As of 2026-11-06** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 Briefing for idea chats, written 2026-11-05 from the plan and web repos; direction change of 2026-11-06 applied. It stands alone. Numbers in brackets are web PRs or Issues unless marked "plan." **[unverified]** marks anything not checked.
 
 ## Direction, 2026-11-06

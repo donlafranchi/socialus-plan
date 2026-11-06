@@ -9,7 +9,7 @@ status: active
 
 # The nouns
 
-> **Agent summary of [`model.md`](model.md), not a ruling. Cite the source or a dated ruling.** *(Marked 2026-09-15: this banner is where the Items drift came from — a paraphrase read as authority. Its claim that "there are no Items" is **disputed by Don and unsettled**; see [`../../research/ITEMS-QUESTION.md`](../../research/ITEMS-QUESTION.md).)* Where this document and `model.md` disagree, `model.md` is right — and neither this banner nor any summary of it settles anything.
+> **Agent summary of [`model.md`](model.md), not a ruling. Cite the source or a dated ruling.** *(Marked 2026-09-15: this banner is where the Items drift came from — a paraphrase read as authority. Its claim that "there are no Items" is **disputed by Don and unsettled**; see `../../research/ITEMS-QUESTION.md` (page removed).)* Where this document and `model.md` disagree, `model.md` is right — and neither this banner nor any summary of it settles anything.
 
 One of two tracking documents, with `verbs.md` (what may be done to each noun). Together they're the model — what things *are*. `surfaces.md` is where things *show*. Keep the two apart; conflating them is how this project's worst failures happened (a surface decision — Sell as the only create door — silently became a model decision, because one document described both). Postponed nouns are listed here, labelled — leaving them out to keep the launch list clean is how the model stops describing the product.
 
