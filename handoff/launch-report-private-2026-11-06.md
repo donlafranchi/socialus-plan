@@ -5,16 +5,16 @@
 **Launch checklist: nothing DUE.**
 **Bottom line: criteria built went from 215 to 213 of 302 only because retired ones left the count; five areas got fresh reports, 4 new launch gaps were filed, and 10 criteria across 6 features are red (F082, F076, F080, F100, F102, F103).** 148 checked, 42 reviewed, 0 you looked at; 38 of 38 reporting. Phone checklist: 26 walk-throughs (3 added: shelves, add a maker, shelf scoreboard), 0 done.
 
-**Your call (1 of 2):** two retired tombstones under product/foundation (goals.md, role-language.md): A delete and repoint, B keep. Recommend A (a product doc, so yours). Also: F082 criterion 2b, your 10-31 Terms-line change overtook it but no dated Rulings line exists. Say "ruling" and I write it.
+**Your call (1 of 2):** two retired tombstones under product/foundation (goals.md, role-language.md): A delete and repoint, B keep. Recommend A. Also: F082 criterion 2b, your 10-31 Terms-line change overtook it but no dated Rulings line exists. Say "ruling" and I write it.
 
 **Agents can finish alone (launch-blocking, open):** #1202, #1203, #1204 (F082 checks and a guard), #1206 (posts without a Page record no IP or time), #1118 and #616 (F076), #1112 (F103 home town), #220 (F078), #1166 (overnight live smoke red 11-02, 11-03, 11-05).
 **Needs you (11 needs-pm Issues):** F100 #486 (Twilio/Cloudflare/key), F119 spend and the daily cap (#1193, #1198, #1199, #1200), #1207 (wording for the post-without-a-Page composer: Lost & found is for pets), F102.7.
 
-**Wanted, not built [V]:** F119 ask bar (0 of 9, Issues filed), F064 asks for what isn't built (0 of 5), F104 explore by town (0 of 5), F063 (0 of 4), F106 (1 of 6), F057 the way in (2 of 5), F118 open your town (9 criteria with no Issue; closed #1092, the real leak), F121 shelves (14 of 17 built, 13 without a check).
+**Wanted, not built [V]:** F119 ask bar (0 of 9), F064 (0 of 5), F104 explore by town (0 of 5), F063 (0 of 4), F106 (1 of 6), F057 (2 of 5), F118 open your town (9 criteria, no Issue: the real leak).
 
 **Verdict:** the beta runs until April 2027. Biggest risk: Smoked is unknown for most criteria (last green smoke covering a signed-in screen is 11-01, and 11-05 was red), and nobody but the builder has looked at the product (42 of 302 reviewed, 0 of 26 walk-throughs).
 
-**Doc gardening:** 166 docs in scope, 0 duplicates, 75 undated, 105 without the standard header, 1 broken link, 3 superseded; 7 headers added and 1 dead link removed (plan #280); inventory regenerated (web #1191); three expired 10-06 notes deleted because ops lint was failing every PR (ops #165). Not done: refining the 10+ docs over budget (plan CLAUDE.md 179%, F059 scenario 241%). Scheduled workflows: smoke-live and tap-speed fired; **no scheduled-event run of the plan dashboard or status workflow appears in the last 30 runs** (push and manual runs only). tap-speed red 21 days. CI on main amber (13.3%).
+**Doc gardening:** 166 docs in scope, 0 duplicates, 75 undated, 105 without the standard header, 1 broken link, 3 superseded; 7 headers added (plan #280); inventory regenerated; three expired 10-06 notes deleted, ops lint was failing every PR (ops #165). Not done: refining over-budget docs (plan CLAUDE.md 179%). Scheduled workflows: smoke-live and tap-speed fired; **no scheduled-event run of the plan dashboard or status workflow appears in the last 30 runs** (push and manual runs only). tap-speed red 21 days. CI on main amber (13.3%).
 
 **Next:** the call above; `pm-approved` on ops #151, #134, #133, #142, #166.
 
