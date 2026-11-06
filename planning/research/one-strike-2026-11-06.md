@@ -1,77 +1,116 @@
-# One strike for anyone trying to get over: research, 2026-11-06
+# One strike for taking advantage: research, 2026-11-06
 
-Research only. Nothing here is ruled. Don, verbatim: *"a new kind of policy that says, we are not putting up with any nonsense. I'm thinking of having a 1 strike rule for anyone trying to get over."*
+Research only; nothing here is ruled. Don, verbatim:
+- *"a new kind of policy that says, we are not putting up with any nonsense. I'm thinking of having a 1 strike rule for anyone trying to get over."*
+- *"The one strike rule is to discourage anyone from taking advantage. It only applies when someone actually does something against the rules and one of the rules is to not abuse the reporting button. If someone gets reported and it's a false flag then nothing will happen to the person who got reported."*
 
 ## Bottom line for Don
 
-**Recommend A: one strike for deliberate deceit or targeting a person, and courtesy-first for everything else.** Someone who scams, fakes a Page, poses as someone else, comes back after removal, buys or fakes reactions, or harasses a person is removed the first time. Someone who gets something wrong keeps today's courtesy notice and the chance to fix it. Removal is always a person's call, and the removed person gets one reply, which you read.
+**Recommend A: a strike is a confirmed rule break, and it removes the account. Bad-faith reporting is one of those breaks. A false flag clears completely.**
+- **Who confirms:** you, by a tap on the review page, from what the content or our records show. A report alone never confirms anything, and neither does a count of reports or the AI.
+- **What it does:** the account is removed. It gets one reply within 14 days, which you read. If you uphold the removal, it is permanent, and the phone number stays with the removed account so it can't come back.
+- **False flags:** what was hidden comes back, any notice is marked cleared, and nothing stays against the person.
+- **An honest wrong report is not a strike.** Today's cool-down for dismissed reports already handles that.
 
-The first version needs no build. It needs a ruling, one line in the Terms (copy you approve), and the operator removing the account by hand. The phone check makes the removal stick, because the phone number stays on the removed account.
+The first version needs no build: a ruling, the Terms and report-screen lines (copy for you), and you removing accounts by hand in Supabase. It holds only once the Twilio phone check is live.
 
 **Your call: A, B or C (below).**
 
-## What "trying to get over" covers
+## The frame
 
-The line is intent: **deliberate deceit for gain, or targeting a person.** An honest mistake isn't covered.
+1. **The strike applies only to a confirmed rule break, never to a report alone.** How many people reported something doesn't matter.
+2. **Abusing the report button is itself a rule break.** A confirmed bad-faith report earns the reporter the strike.
+3. **A false flag leaves the reported person untouched.** Anything hidden in the meantime is restored, and no record is held against them.
 
-| One strike (deliberate) | Courtesy first (a mistake) |
+## How "confirmed" is decided, with one operator
+
+**Who:** the operator, a person. Today that is you, on the review page (F101). The AI's first read (F100) ranks the queue and can suggest, but it never confirms a break. That is already ruled: "remove, restore and strikes stay a person's tap".
+
+**What counts as evidence:** something you can point to, not a judgement of character.
+
+| Rule break | What confirms it |
 |---|---|
-| A scam: taking money or details under false pretences | A wrong price, date or address |
-| A fake Page or listing: a business, event or item that doesn't exist | A post in the wrong kind or the wrong place |
-| Impersonation: posing as another person or business, or claiming a Page that isn't yours | A claim filed in good faith that turns out to belong to a partner or ex-owner |
-| Spam: bulk or repeated posts, or links to sell elsewhere | One promotional post too many |
-| Ban evasion: a new account after a removal | A second account made by mistake |
-| Fake engagement: bought or traded hearts, reports or "I'm in"s | Asking friends to look at a Page |
-| Harassment: targeting a person, including false reports aimed at them | A heated or rude reply, once |
+| Scam, fake Page or listing | The content itself, or a member's screenshots or messages, plus the place or business not existing (no site, address or record) |
+| Impersonation, false claim | The claim record (a website email that isn't theirs), or the real owner coming forward with proof |
+| Spam | The posts themselves: bulk, repeated, or links to sell elsewhere |
+| Coming back after removal | The same phone (the phone check), or the same IP and device on uploads, which are already recorded for a year, operator-only (F102 criterion 13) |
+| Fake engagement | Hearts or "I'm in"s from new accounts that only touch one Page, or the same IP across accounts |
+| Harassment | The posts or messages aimed at one person |
+| Bad-faith reporting | See the next section |
 
-Threat of harm and sensitive content already hide at once (F078 criterion 8). They would also get one strike under A.
+**The standard:** clear from the evidence. If you are unsure, the content can stay hidden and nobody gets a strike. Doubt goes to the member, which keeps the soul's "assume the best of each other".
 
-## How others handle zero tolerance
+**With one operator**, the volume stays small because a strike needs your tap. The one reply (below) catches your rare wrong call. Nothing goes to a second person until there is one.
 
-**Everyone runs two tracks: a ladder for ordinary violations, and removal on the first offence for the worst.** They differ on how wide the second track is. Every one of them keeps a way to appeal.
+## Bad-faith report or honest mistake
 
-- **Meta (Facebook, Marketplace).** Strikes climb from a warning to time-limited limits to removal. Some violations, child exploitation for example, disable the account "after one occurrence" ([counting strikes](https://transparency.meta.com/enforcement/taking-action/counting-strikes/), [disabling accounts](https://transparency.meta.com/enforcement/taking-action/disabling-accounts/)). The Oversight Board criticised the vague line between the two tracks ([Oversight Board](https://www.oversightboard.com/news/accounts-pilot-case-upholds-metas-decision-but-shows-critical-improvements-needed-for-social-media)). Marketplace access can be restricted on its own, with a request for review **[unverified, from memory]**.
-- **Airbnb.** It may suspend or remove an account for "repeated or severe" violations. A removal can be appealed by a stated date ([Airbnb help 1303](https://airbnb.com/help/article/1303)).
-- **Uber.** Access can be lost "temporarily or permanently, depending on the seriousness". Fraud is "deliberate deception to secure unfair or unlawful gain". In the UK, a person reviews before any deactivation. Some fraud cases get warnings first ([community guidelines](https://www.uber.com/br/en/drive/basics/uber-community-guidelines), [deactivation policy](https://www.uber.com/pr/en/legal/deactivation-policy/), [Sea-Tac fraud](https://www.uber.com/blog/seattle/sea-tac-fraud/)).
-- **Reddit.** Coming back on another account after a ban is its own violation, and it can bring a sitewide ban ([Reddit help](https://support.reddithelp.com/hc/en-us/articles/360045734511-My-account-was-banned-for-violating-Reddit-s-rules)).
-- **Etsy.** A suspension notice names the policy broken, and there is an appeal. Opening a new shop to get around a suspension isn't allowed **[from forum and third-party guides, unverified]** ([Etsy community](https://community.etsy.com/t5/Technical-Issues/Etsy-account-has-been-permanently-suspended/m-p/148630268)).
-- **Nextdoor.** Removed content comes with the guideline it broke and a chance to appeal ([Nextdoor's report to the California AG](https://oag.ca.gov/sites/default/files/Nextdoor%20California%20ToS%20Report%2C%20Q4%202023%2C%20with%20attachments.pdf/Nextdoor%20California%20ToS%20Report%2C%20Q4%202023%2C%20with%20attachments.pdf)). No official page covers appealing a permanent removal.
-- **Craigslist.** Community flags take posts down, and the terms allow blocking a user. There is no formal appeal **[from memory, unverified]**.
+**The test: could a reasonable person have thought this broke a rule?** If yes, the report was honest even if it was wrong, and nothing happens beyond today's cool-down. If no, and there is a sign of intent, it's bad faith.
 
-**Legal norms.** In the US, platforms may remove in good faith, and no law requires an appeal (Section 230(c)(2)). The EU's Digital Services Act is the stricter model, though it doesn't bind us today. It requires:
-- a statement of reasons (Art. 17)
-- an internal complaint route (Art. 20)
-- suspension only after a warning, and only for "frequent" manifestly illegal content (Art. 23)
+**Signs of bad faith** (any one, confirmed by you):
+- **The reason plainly doesn't fit the content.** "Sensitive content" on a photo of a cake, or "threat of harm" on an opening-hours update. This matters most because those two reasons hide at once.
+- **Targeting:** reports aimed at one person or Page across several posts, or after a dispute between the two.
+- **Coordination:** the "Possible coordinated reporting" flag (F102 criterion 8: three or more reports on one poster in 24 hours, two or more from accounts under 7 days old), confirmed by the accounts' records.
+- **Pattern:** repeat reports on content that breaks no rule after earlier ones were dismissed.
 
-Telling the person why and giving one reply keeps us close to that model at almost no cost. Anything that touches money or a sale goes to counsel, as usual.
+**Not bad faith:** one dismissed report, a wrong category picked honestly, or reporting something that turns out to be allowed.
 
-## How it fits our stances
+**Precedents:**
+- **Reddit** treats reporting content that broke no rule, or using reports to harass moderators, as "report abuse", and it can lead to suspension. It runs a separate path for reporting report abuse ([Reddit admin, r/ModSupport, 2020](https://reddit.birdcat.cafe/r/ModSupport/comments/epn2lp/weaponized_reporting_what_were_seeing_and_what/fekjfw9); [the 2019 report-abuse report](https://reddit.rtrace.io/r/modnews/comments/cgxuep/were_rolling_out_a_new_way_to_report_abuse_of_the/eumrxfx/?context=3)). Users say enforcement is slow and uneven, so a written rule alone doesn't deter.
+- **YouTube** uses flaggers' accuracy as a measure of trust. It removed a trusted flagger for "a pattern of problematic notices" ([Tubefilter](https://www.tubefilter.com/2021/10/20/shifted-focus-youtube-trusted-flagger-upset-participants/)). It publishes no penalty for ordinary users who flag falsely.
+- **Nextdoor:** neighbours report, and volunteer moderators and staff decide. Authors whose content was removed are told the guideline and can appeal. Moderators who misuse their role can be reported to staff ([Nextdoor's report to the California AG](https://oag.ca.gov/sites/default/files/Nextdoor%20California%20ToS%20Report%2C%20Q4%202023%2C%20with%20attachments.pdf/Nextdoor%20California%20ToS%20Report%2C%20Q4%202023%2C%20with%20attachments.pdf)). It publishes no rule on false reports by members.
+- Taken together, everyone separates the dismissed report (no penalty) from the abusive pattern (a penalty). Ours would be clearer than any of them by naming it a rule break with one consequence.
 
-- **Phone check [always].** It is what makes one strike work. A removed account keeps its phone number, and a phone confirms only one account, so coming back costs a new phone. Without Twilio live, a removal is only as strong as an email address, so this waits on the dashboard's "Do next".
-- **One operator.** One strike adds removals, not reviews: the report flow already sends cases to you. The reply is one message per removal, read once, and kept only in your queue.
-- **Self-correct first and courtesy-first (2026-10-11, F078).** Under A, these still govern every honest mistake. A adds a third exception beside threat of harm and sensitive content: deliberate deceit. Under B, they would end.
-- **Decent by default (soul).** "We assume the best of each other… and keep simple ways to handle the times they aren't." A is that simple way. B assumes the worst of every reported mistake.
-- **AI first read (F100).** Removal stays a person's tap. The AI can rank a suspected scam higher, but it never removes anyone.
+## What the strike does
+
+| | What happens | Precedent |
+|---|---|---|
+| The account | Removed: it can't sign in, and its Pages and posts are hidden | Airbnb, Uber and Meta's one-and-done track |
+| How long | Permanent once you uphold it, or if no reply comes in 14 days | Meta disables "after one occurrence" for the worst breaks ([Meta](https://transparency.meta.com/enforcement/taking-action/counting-strikes/)) |
+| Coming back | The phone number stays on the removed account (a phone confirms one account), so a new account needs a new phone. Coming back is itself a break | Reddit's ban evasion ([Reddit help](https://support.reddithelp.com/hc/en-us/articles/360045734511-My-account-was-banned-for-violating-Reddit-s-rules)) |
+| Told why | A short notice naming the rule and what showed it | Etsy names the policy; the EU's DSA requires a statement of reasons (Art. 17) |
+| One reply | Within 14 days, read by you, decided once | Airbnb removal appeals ([Airbnb help 1303](https://airbnb.com/help/article/1303)), Uber, YouTube's one appeal per strike |
+
+Every platform we looked at keeps an appeal, and the EU's DSA requires one (Art. 20), though it doesn't bind us. In the US, removal in good faith needs none (Section 230(c)(2)). One reply costs you one read per removal.
+
+## How today's flow changes
+
+Today (F078, F102):
+- A first report leaves the post up and sends its owner a courtesy notice.
+- A second report from a different member hides it.
+- Threat of harm and Sensitive content hide at once.
+- The poster gets one answer.
+- A reporter with dismissed reports loses the power to hide for a while: three rejected reports and their reports stop hiding.
+
+| Step | Today | Under A |
+|---|---|---|
+| First report, most categories | Post stays up, courtesy notice | Same. If the report is dismissed, the notice shows as cleared and nothing is kept against the poster |
+| Second report, or Threat or Sensitive | Hides until a person decides | Same interim hide, for safety. Dismissed means restored at once, notice cleared, no record on the poster |
+| Your decision on the row | Remove or restore | Restore (false flag) · Remove (content goes, no strike: a mistake) · **Remove and strike the poster** (confirmed break) · **Strike the reporter** (confirmed bad faith) |
+| Reporter warning (F078 criterion 10) | "Each report Don rejects is a strike; after three, reports stop hiding" | "Reporting in bad faith is against the rules, and one confirmed bad-faith report removes your account." Honest wrong reports keep today's cool-down, which is renamed so it isn't called a strike |
+| Records on the reported person | The report history sits on the review row | A dismissed report is closed and leaves no count, flag or mark on the person. The year-long upload IP log is unchanged; it covers every upload, not reports |
+| The poster's answer (F102) | One answer per hide | Unchanged; it is evidence on the row |
 
 ## Options
 
-- **A (recommended): one strike for deliberate deceit or targeting a person.** The categories are the left column above. The removal is a person's call, the person is told why, and they get one reply. Everything else stays courtesy-first.
-  - Precedents: Meta's one-and-done track, Uber's fraud deactivation, Reddit's ban evasion.
-- **B: one strike for any upheld report.** The simplest to say, but it punishes honest mistakes. It ends courtesy-first and self-correct, and it turns false reports into a weapon against the people they target.
-- **C: keep the ladder (warning, cool-down, removal on a third offence).** One strike only for threat of harm and sensitive content. Kind, but scammers get three tries.
+- **A (recommended): a confirmed break removes the account, with one reply.** It covers every rule break, bad-faith reporting included, and false flags clear completely. It discourages taking advantage the most while the one reply catches a wrong call by one operator.
+- **B: a confirmed break suspends for 30 days, and the next one removes.** Softer, and closer to Meta's ladder for ordinary breaks. But it gives a scammer a second go, which isn't "one strike".
+- **C: a confirmed break removes the account, with no reply.** The simplest, and the fastest for you. But a wrong call can't be caught, every precedent keeps an appeal, and a wrongly removed honest member is the worst outcome for trust.
 
-**The smallest first version of A, with no build:**
+**The smallest first version of A (no build, fits the freeze):**
 - A dated ruling.
-- One line in the Terms and on the report screen (copy for Don).
-- The operator bans the account in Supabase Auth (it can't sign in) and hides its Pages and posts with the existing tools.
-- The account is never deleted, so its phone number stays taken.
-- The removal notice and the reply go by email from the operator.
+- The Terms line and the report-screen warning (copy for you).
+- On the review page you use today's Remove for a confirmed break, then ban the account in Supabase Auth by hand. Supabase's own user ban stops sign-in, and the account is never deleted, so its phone stays taken.
+- The notice and the one reply go by email from the operator.
 
-A "Removed" state and an in-app reply wait until the build freeze lifts.
+The "Remove and strike" and "Strike the reporter" buttons, and an in-app reply, wait until the freeze lifts.
 
-**Rulings that would change under A:**
-- **F078.** The courtesy-first ruling (2026-10-11) gains a third exception, deliberate deceit.
-- **F058.** Its "Not this" line, "Appeals, strikes, or bans", becomes one strike with one reply.
-- **`policy.md` § How good faith is enforced.** "Community and peer pressure, not platform policing" gains: except deliberate deceit, which the platform removes.
-- **F102.** The cool-down for misused reports stays as it is. A false report aimed at a person counts as harassment.
-- **Terms.** One new line, which is copy for Don.
+**Depends on:** the Twilio phone check being live (the dashboard's "Do next"). Without it a removal only costs a new email address.
+
+## Rulings that would change under A
+
+- **F078 criterion 10 and its 2026-09-30 ruling ("misusing reports: three strikes").** "Strike" is renamed for honest wrong reports (cool-down only), and confirmed bad-faith reporting becomes a one-strike break.
+- **F078's courtesy-first ruling (2026-10-11).** It stands. It gains "a dismissed report clears the notice and leaves no record".
+- **F058's "Not this" line** ("Appeals, strikes, or bans") becomes one strike with one reply.
+- **F102.** The cool-down (criterion 7) is renamed, not a strike. The coordinated-reporting flag (criterion 8) becomes evidence of bad faith.
+- **`policy.md` § How good faith is enforced.** "Community and peer pressure, not platform policing" gains: except a confirmed rule break, which removes the account.
+- **Terms.** One new line, which is copy for you.
