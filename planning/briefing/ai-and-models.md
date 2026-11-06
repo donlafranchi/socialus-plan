@@ -20,8 +20,8 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 
 **Five ideas in the plan, none built. All assume a small Claude model.**
 
-- **Auto-sorting posts into labels** [#1182, plan #273]. Ruled B on 11-05: a 100-post test of Jev (from TypeSafe) against Haiku 5.5, 90 of 100 right to pass, sending only the words and one small photo. Jev can't see member posts until TypeSafe confirms its data retention in writing and Don approves a privacy line. Otherwise Haiku; the word match stays as the fallback.
-- **Taste chat.** An optional short chat to correct your interest profile. The profile itself is weighted counts computed nightly, not a trained model. Research only.
+- **Auto-sorting posts into labels** [#1182, plan #273]. **Held by the 11-06 build freeze.** Ruled B on 11-05: a 100-post test of Jev (from TypeSafe) against Haiku 5.5, 90 of 100 right to pass, sending only the words and one small photo. Jev can't see member posts until TypeSafe confirms its data retention in writing and Don approves a privacy line. Otherwise Haiku; the word match stays as the fallback.
+- **Taste chat.** **Held by the 11-06 build freeze**, with the taste scale. An optional short chat to correct your interest profile. The profile itself is weighted counts computed nightly, not a trained model. Research only.
 - **Ask bar** (F119, approved, not built). One call to the smallest Claude model routes a question to the right page, with a daily cap per member and a fallback to search.
 - **Chat-first** (F120, draft, later). Actions only on a confirm tap; memory the member can see; never sold or trained on.
 - **Dictionary suggestions** (F071). A job proposes new search words into a review queue.
