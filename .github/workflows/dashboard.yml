@@ -6,6 +6,8 @@ name: dashboard
 # "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
 # Daily at 11:30 UTC (4:30am Pacific while daylight time lasts, 3:30am after 2026-11-01), ahead of the 5am handoff, as the PM asked
 # on 2026-10-11; the manual trigger stays. It was every 6 hours with a push trigger; one run a day keeps the history quiet.
+# The last step publishes the page to Cloudflare Pages (socialus-plan-dashboard.pages.dev), behind Cloudflare Access (the PM's
+# email only, configured in Cloudflare). It lives in this workflow because a commit made with GITHUB_TOKEN triggers no other workflow.
 # GitHub's schedule trigger is best-effort and can start late or not at all (it missed runs on 2026-10-11): if the dashboard
 # header's "updated" time is more than a day old, run Actions > dashboard > Run workflow.
 on:
@@ -20,6 +22,7 @@ concurrency:
 permissions:
   contents: write
   issues: write   # --record-look clears the "I looked" box
+  deployments: write   # wrangler-action records the Cloudflare deployment
   checks: write   # it reports the lint it ran on its own commit; main requires `lint` (see status.yml)
 
 jobs:
@@ -92,3 +95,33 @@ jobs:
           }
           publish || { git pull --rebase origin main && publish; }
           git push origin --delete dashboard-bot || true
+      # Never publish the real page unless an anonymous visitor is already sent to Cloudflare Access; otherwise publish an
+      # empty "Private" page. Needs no Access API rights: it only asks the live site.
+      - name: Is Cloudflare Access in front of the site?
+        id: access
+        run: |
+          read -r code redirect < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' https://socialus-plan-dashboard.pages.dev/ || echo "000 ")
+          echo "Anonymous request: $code ${redirect%%\?*}"
+          if { [ "$code" = 302 ] && [[ "$redirect" == *cloudflareaccess.com* ]]; } || [ "$code" = 403 ]; then echo "locked=true" >> "$GITHUB_OUTPUT"
+          else echo "locked=false" >> "$GITHUB_OUTPUT"; echo "::warning::Access not detected; publishing only the empty Private page."; fi
+      - name: Stage the site
+        working-directory: socialus-plan
+        run: |
+          mkdir -p _site
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+          if [ "${{ steps.access.outputs.locked }}" = true ]; then cp dashboard/status-dashboard.html _site/index.html
+          else printf '<!doctype html><meta charset=utf-8><meta name=robots content=noindex><title>Private</title><body style="font:16px system-ui;display:grid;place-items:center;height:100vh;margin:0"><p>Private</p>\n' > _site/index.html; fi
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v4
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: socialus-plan
+          command: pages deploy _site --project-name=socialus-plan-dashboard --branch=main
+      - name: Refuse if the site is open to anonymous visitors
+        run: |
+          sleep 10
+          read -r code redirect < <(curl -s -o /dev/null -w '%{http_code} %{redirect_url}\n' https://socialus-plan-dashboard.pages.dev/)
+          echo "Anonymous request: $code ${redirect%%\?*}"
+          if { [ "$code" = 302 ] && [[ "$redirect" == *cloudflareaccess.com* ]]; } || [ "$code" = 403 ]; then echo "Gated by Access."
+          else echo "::error::Dashboard site is not behind Cloudflare Access (got $code)."; exit 1; fi
