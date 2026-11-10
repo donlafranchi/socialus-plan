@@ -1,7 +1,7 @@
 ---
 id: brief-2026-11-10-knowledge-store-stage-1
-status: awaiting-approval
-size: null
+status: approved
+size: M
 path: new territory
 criteria:
   - Every live ruling on the import date is a decision record with its date, words, concern and tags, and the store's export of constraints/code.md matches the hand-built one line for line.
