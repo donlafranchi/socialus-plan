@@ -50,11 +50,11 @@ The public snapshot and public lookup tool (stage 2). Features, questions and ri
 
 ## Rulings
 
-- **2026-11-10 — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review.** The PM. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — An overturned decision is kept with status retired and a pointer to the newer one, never deleted.** The PM. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — Outside agents are served from a published snapshot of public records, never from the live store.** The PM. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — The departments to start are building, finance, telemetry and bugs, communications, trust and safety, and legal; a later department is a new value, not a redesign.** The PM. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — The store starts inside `socialus-db` in its own schema and login, and moves to its own Supabase project before any outside team gets access or the public side goes live.** The PM. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [always]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — Outside agents are served from a published snapshot of public records, never from the live store. [for now]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — The departments to start are building, finance, telemetry and bugs, communications, trust and safety, and legal; a later department is a new value, not a redesign.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — The store starts inside `socialus-db` in its own schema and login, and moves to its own Supabase project before any outside team gets access or the public side goes live.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — Only live decisions move in; an older one is rebuilt from git history when someone asks for it.** The PM. [binds tiers=planning surfaces=knowledge]
-- **2026-11-10 — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for.** The PM. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — Every philosophy, pattern, decision and correction carries a why; the why is versioned and refined as the platform and the times change, and it informs the platform's own why.** The PM. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for. [always]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — Every philosophy, pattern, decision and correction carries a why; the why is versioned and refined as the platform and the times change, and it informs the platform's own why.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]

@@ -11,11 +11,11 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-10** · knowledge — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review (planning/scenario-F125.md)
-- **2026-11-10** · knowledge — An overturned decision is kept with status retired and a pointer to the newer one, never deleted (planning/scenario-F125.md)
-- **2026-11-10** · knowledge — Outside agents are served from a published snapshot of public records, never from the live store (planning/scenario-F125.md)
+- **2026-11-10** · [always] · knowledge — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [always] (planning/scenario-F125.md)
+- **2026-11-10** · [for now] · knowledge — Outside agents are served from a published snapshot of public records, never from the live store. [for now] (planning/scenario-F125.md)
 - **2026-11-10** · knowledge — The departments to start are building, finance, telemetry and bugs, communications, trust and safety, and legal; a later department is a new value, not a redesign (planning/scenario-F125.md)
 - **2026-11-10** · knowledge — The store starts inside `socialus-db` in its own schema and login, and moves to its own Supabase project before any outside team gets access or the public side goes live (planning/scenario-F125.md)
-- **2026-11-10** · knowledge — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for (planning/scenario-F125.md)
+- **2026-11-10** · [always] · knowledge — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for. [always] (planning/scenario-F125.md)
 - **2026-11-10** · knowledge — Every philosophy, pattern, decision and correction carries a why; the why is versioned and refined as the platform and the times change, and it informs the platform's own why (planning/scenario-F125.md)
 - **2026-11-06** · [for now] · explore, search, shelves — Explore leads with time: what is happening this week, then later, then Pages after the timely posts (planning/scenario-F091.md)
 - **2026-11-06** · [for now] · markets, sign-up, copy — The beta market is Northern California, not Sacramento. Nothing in the data changes until Don rules which counties it covers (planning/scenario-F103.md)
