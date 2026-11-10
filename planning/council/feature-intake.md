@@ -12,7 +12,7 @@ owner: Don
 
 Turns "someone wants to do X" into one **Feature Brief** a builder can execute with no questions. Runs **before** a scenario is written.
 
-Not a debate. Every role fills its own section in parallel and a chair merges them. Not the beta-scope council (`2026-10-07-beta-mvp.md`), which decides *what ships*; this decides *how one thing is shaped*.
+Not a debate. Every role fills its own section in parallel and a chair merges them. Not the beta-scope council (2026-10-07, in git history), which decides *what ships*; this decides *how one thing is shaped*.
 
 Same machinery and shared lens as `socialus-ops/process/council-roles.md`: roles in parallel on a cheap model, chair on the strongest, Round 1 only at V0.
 
@@ -100,4 +100,4 @@ Chair also states: which Stage 0 lines were assumed, which role dissented, and w
 
 ## How to judge this process
 
-Back-test: run an already-built scenario and a ticket that stalled, compare to what happened. First results are in `2026-10-10-intake-worked-runs.md`.
+Back-test: run an already-built scenario and a ticket that stalled, compare to what happened. First results (2026-10-10) are in git history.
