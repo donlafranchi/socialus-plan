@@ -18,12 +18,12 @@ The PM reads about a new way to run coding agents and pastes the link. In one sh
 
 1. **Every rule of how we work is a record:** each rule in `socialus-ops` `process/` and the repos' `CLAUDE.md` files comes in with scope process, its why, the dated failure behind it as evidence, its strength, and the check or workflow that enforces it.
 2. **Ask how something runs:** "how does our DevOps work" (or review, planning, the agent loop, decisions, words) returns a short answer built from live records, each line linked to its record and its enforcing check.
-3. **Drift shows itself:** a nightly job flags any practice whose enforcing check or workflow no longer exists in the repo.
+3. **Drift shows itself:** a weekly job flags any practice whose enforcing check or workflow no longer exists in the repo.
 4. **Review a method in one session:** given one link or pasted text, an agent lists its claims (at most 15) and for each says: we do this, we do the opposite on purpose, a gap, or a clash with a philosophy, each citing the record; it ends with one recommended experiment. It reads only the given material and the store, with no web research.
 5. **Every practice has a ring:** adopt, trial, assess or hold; moving a ring writes a new version with its why.
 6. **Experiments are records:** the practice changed, the baseline, the measure, the verdict date and the verdict (keep, fix, revert); the single-loop plan's changes come in as the first ones.
 7. **The monthly upkeep reads them:** practices not confirmed in 90 days and experiments past their verdict date are listed for the PM.
-9. **One pack for a chat project:** every night the store writes one Markdown pack of how we work to a folder in `socialus-ops`, ready to add to a Claude Project such as "code good". It holds only what judging a tool, process or method against our way of working needs: for each area of the work, each live practice in a line or two with its why, how strict it is and its ring, under 10,000 tokens. It opens with its date and size; a second file holds the review-a-method steps from criterion 4, so a chat review follows the same procedure as an agent.
+9. **One pack for a chat project:** whenever a practice, its ring or its strength changes, and once a month regardless, the store writes one Markdown pack of how we work to a folder in `socialus-ops`, ready to add to a Claude Project such as "code good". It holds only what judging a tool, process or method against our way of working needs: for each area of the work, each live practice in a line or two with its why, how strict it is and its ring, under 10,000 tokens. It opens with its date and size; a second file holds the review-a-method steps from criterion 4, so a chat review follows the same procedure as an agent.
 8. **Docs follow the store:** after a week side by side, `socialus-ops` `process/` docs are generated from the records.
 
 ## Not this
@@ -45,3 +45,4 @@ Keeping the packs in sync with the Claude Project by hand (the project reads the
 
 - **2026-11-10 — How we work lives in the store as records, each practice with its why, strictness, enforcing check and ring, so any new tool, process or method can be checked against it in one session.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
 - **2026-11-10 — The pack for a chat project carries only what judging a tool, process or method against our way of working needs, not the full history.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
+- **2026-11-10 — The pack is rewritten when a practice changes and once a month, not nightly.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
