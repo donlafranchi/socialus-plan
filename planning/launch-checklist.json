@@ -3,11 +3,33 @@
     "id": "ncmec-cybertipline",
     "text": "Register SocialUs with the NCMEC CyberTipline, switch off the manual form, enable Cloudflare CSAM scanning.",
     "fires_at": [
-      {"event": "entity setup", "expected": "early 2027", "happened_on": null},
-      {"event": "production launch", "expected": "April-May 2027", "not_before": "2027-04-01"}
+      {
+        "event": "entity setup",
+        "expected": "early 2027",
+        "happened_on": null
+      },
+      {
+        "event": "production launch",
+        "expected": "April-May 2027",
+        "not_before": "2027-04-01"
+      }
     ],
     "why": "During beta apparent CSAM is reported through NCMEC's public CyberTipline form, which cannot take images; registration and hash scanning replace it. Entity specifics live in socialus-legal.",
     "runbook": "https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md",
     "source": "the 2026-10-05 ruling and 2026-10-06 (child-safety tier); the PM, 2026-10-11"
+  },
+  {
+    "id": "go-live-paid-tools",
+    "text": "Re-review paid tools now that budget opens: LaunchDarkly against our own flags, what a paid Vercel plan already gives, and whether GitHub needs upgrading. Run the saved prompt.",
+    "fires_at": [
+      {
+        "event": "production launch",
+        "expected": "April-May 2027",
+        "not_before": "2027-03-01"
+      }
+    ],
+    "why": "Beta held every new paid tool unless it replaced PM time; at go-live the PM will pay for services that help the platform perform, and plans to upgrade Vercel and perhaps GitHub (the PM, 2026-11-10). The LaunchDarkly review of 2026-11-10 held rollouts and automatic rollback for traffic and money.",
+    "runbook": "https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/go-live-paid-tools.md",
+    "source": "the PM, 2026-11-10"
   }
 ]
