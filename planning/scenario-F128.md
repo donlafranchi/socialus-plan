@@ -1,10 +1,11 @@
 ---
 id: F128
 title: How we work lives in the store, so any method can be checked against it quickly
-status: draft
-horizon: considering
+status: approved
+horizon: next
 rank: 2
 date: 2026-11-10
+approved: 2026-11-10, the PM: "Yes on how we work"; the Claude Project pack carries only what judging a method needs
 depends: [F125]
 ---
 ## Story
@@ -22,7 +23,7 @@ The PM reads about a new way to run coding agents and pastes the link. In one sh
 5. **Every practice has a ring:** adopt, trial, assess or hold; moving a ring writes a new version with its why.
 6. **Experiments are records:** the practice changed, the baseline, the measure, the verdict date and the verdict (keep, fix, revert); the single-loop plan's changes come in as the first ones.
 7. **The monthly upkeep reads them:** practices not confirmed in 90 days and experiments past their verdict date are listed for the PM.
-9. **Packs for a chat project:** every night the store writes three Markdown packs of how we work to a folder in `socialus-ops`, ready to add to a Claude Project such as "code good": *brief* (philosophies, top patterns, one line per area of the work; about 3,000 tokens), *working* (every live practice with its why, strength, ring and enforcing check; about 15,000) and *full* (adds the dated failures, experiments and their verdicts, and ring history). Each pack opens with its date and size, and a fourth file holds the review-a-method steps from criterion 4, so a chat review follows the same procedure as an agent.
+9. **One pack for a chat project:** every night the store writes one Markdown pack of how we work to a folder in `socialus-ops`, ready to add to a Claude Project such as "code good". It holds only what judging a tool, process or method against our way of working needs: for each area of the work, each live practice in a line or two with its why, how strict it is and its ring, under 10,000 tokens. It opens with its date and size; a second file holds the review-a-method steps from criterion 4, so a chat review follows the same procedure as an agent.
 8. **Docs follow the store:** after a week side by side, `socialus-ops` `process/` docs are generated from the records.
 
 ## Not this
@@ -39,3 +40,8 @@ Keeping the packs in sync with the Claude Project by hand (the project reads the
 - **Better as more people join?** Yes: every new team asks the same store how we work, and every method review adds evidence.
 
 **Path: well-worn.** Thoughtworks' Technology Radar rings practices adopt, trial, assess and hold, and moves them with a written reason ([Thoughtworks](https://www.thoughtworks.com/radar/faq)). The method repo already makes every rule carry its dated "because". Stage 2 of the F125 store. [platform none]
+
+## Rulings
+
+- **2026-11-10 — How we work lives in the store as records, each practice with its why, strictness, enforcing check and ring, so any new tool, process or method can be checked against it in one session.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
+- **2026-11-10 — The pack for a chat project carries only what judging a tool, process or method against our way of working needs, not the full history.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
