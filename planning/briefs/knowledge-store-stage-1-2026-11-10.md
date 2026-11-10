@@ -194,7 +194,7 @@ The calling agent writes the answer from what these return; the tool runs no mod
 
 Fine-grained, never all or nothing: a condition has parts, a decision or feature waits on the part it needs, and the parent is computed from its parts. Scenario: `planning/scenario-F126.md`.
 
-## Versions without brittleness: a proposal for stage 2, awaiting the PM
+## Versions without brittleness: approved 2026-11-10, scenario F127 (stage 2)
 
 The PM, 2026-11-10: "how we could use this knowledge store to track what we're building and what we aren't for any particular version and do so in a way that isn't brittle or doesn't allow us to pivot."
 
