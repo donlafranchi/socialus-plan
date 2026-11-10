@@ -14,6 +14,8 @@ criteria:
   - The store's own login can reach only the store's schema; a query from it against any app table is refused.
   - For any decision, one call returns every version it has had and the chain of decisions it replaced and was replaced by.
   - One call answers "what was live on a given date" for any concern.
+  - Asked for the live rules on member-facing words for a non-Claude model, the store returns the model-neutral rules and none of the corrections written for Claude.
+  - A record marked settled cannot be proposed for change by any agent; the attempt is refused and logged.
   - Every decision recorded after the flip names the principles or patterns it applies, or says none; one call lists every live decision that applies a given pattern, with the ones that depart from it.
 ---
 
@@ -75,14 +77,19 @@ One table holds every kind. Each row is one thing an agent can quote and cite.
 | `why` | the reason, short |
 | `status` | per kind, below |
 | `audience` | public, members, department, operators |
-| `department` | set when the audience is a department |
+| `departments` | one or more, when the audience is a department |
 | `owner` | the person accountable |
 | `decided_by`, `decided_on` | who decided and when; an agent's well-worn decision names the agent and the person it acts for |
 | `path` | well-worn or new territory |
+| `scope` | what it governs: `product` (true of the platform whoever builds it), `process` (how we work, including how agents work with the PM), `agent` (a correction to one model's habits) |
+| `models` | for `agent` scope only: which models it corrects (`claude`, `gpt`, `gemini`, ...); empty means every model |
+| `holds` | `always` or `for now`, as the `[always]` and `[for now]` tags mark today |
+| `until` | for `for now`: the condition that ends it, in words, linked to a record when there is one ("a second metro") |
+| `settled` | true when the PM has said do not re-raise; agents may read it, never propose changing it |
 | `as_of` | when it was last confirmed true |
 | `source` | where it came from: file and line, PR, Issue |
 
-Beside it: `links` (from, to, type: replaces, implements, governs, depends on, guards, relates, applies, departs from; each marked stated or inferred), `history` (every version in full, append-only, with when it became true and stopped being true, person, agent, reason), `refs` (GitHub Issues and PRs, Vercel, alerts: the store links to the trackers, it does not copy them), and `unanswered` (every search that found nothing).
+Beside it: `links` (from, to, type: replaces, implements, governs, depends on, guards, relates, applies, departs from, corrects, explains; each marked stated or inferred), `history` (every version in full, append-only, with when it became true and stopped being true, person, agent, reason), `refs` (GitHub Issues and PRs, Vercel, alerts: the store links to the trackers, it does not copy them), and `unanswered` (every search that found nothing).
 
 ## History, lookups across decisions, and the PM's patterns
 
@@ -109,6 +116,8 @@ That turns the why into something an agent can count and follow, not just read:
 
 **Who sees them.** Principles and patterns start with audience `operators`: the PM and the agents acting for him. Any of them can later be made public, one at a time.
 
+**A rule and a correction are two records.** "Say only what we must" is a rule about the platform's words, true whoever writes them, so it is `product` scope. "Claude turns the PM's *won't* into *we will never*" is a correction for one model's habit: `agent` scope, `models: claude`, linked to the rule it protects with `corrects`. An agent on another model gets the rule and not the correction. Corrections are rerun at every model change (the single-loop kit's upkeep step) and retired when the model no longer needs them; where one can be checked by a script (the user-facing string check already exists because prose rules did not hold), the check is the correction and the record says so.
+
 **The import.** The 800 live decisions get `applies` links inferred by meaning, marked `inferred`, so a wrong guess is visible and cheap to fix. From the flip on, a new decision names its links when it is recorded, or says "none".
 
 **Statuses.** Decision, principle and pattern: proposed, live, retired. Feature: draft, approved, building, shipped, dropped. Question: open, answered. Risk: open, accepted, closed. Noun, verb, link: live, coming, refused, retired. A record is never deleted; `retired` and `dropped` keep it findable.
@@ -125,6 +134,24 @@ A concern is the unit an agent asks about; each belongs to one department. Seede
 | Communications | words and voice, emails, landing and announcements |
 | Trust and safety | moderation and reports, privacy, security, child safety |
 | Legal | terms, consent, data retention, counsel's open items |
+
+## Stress tests (2026-11-10)
+
+Real decisions from this repo, and what each asks of the store. "Fixed" means the field or link above was added because of it.
+
+| Test | The decision | What the store must do | Result |
+|---|---|---|---|
+| A replacement chain | One market: Sacramento, then Northern California (2026-11-06) | `as_of` returns Sacramento for October and Northern California now; the old record points at the new one | holds |
+| A rule against a model's habit | "No promises: state things as fact" (`voice-and-tone.md`), and Claude escalating *won't* to *we will never* | serve the rule to every model, the correction only to Claude | fixed: `scope`, `models`, `corrects` |
+| The one never we keep | "Never extractive. [always]" (`PRINCIPLES.md`) beside the no-promises pattern | the pattern counts it as a named exception, not a conflict | holds: `departs_from` with its reason |
+| Settled, do not re-raise | Members are the investors; legal questions go to counsel | no agent can propose changing it; questions route to legal | fixed: `settled`; legal is the owner department |
+| A rule with an end condition | No "near you" until a second metro (2026-09-30) | list every for-now decision waiting on that condition when a second metro is ruled | fixed: `holds`, `until` |
+| 412 durability tags | 284 `[for now]` and 128 `[always]` lines today | a review queue of for-now decisions not confirmed since the last release | holds with `as_of` |
+| One decision, three departments | Transaction income, and "no fee" language retired | finance, legal and communications all see it; one record, not three | fixed: `departments` is a list |
+| The same topic, two audiences | "Why can't I post a photo of my kids?" | a member's agent gets the rule and a short why; the moderation detail stays internal | holds: two records, linked by `explains`, different audiences |
+| Deducing from patterns | New question: should a reminder email say "we'll never spam you"? | precedents under no-promises and say-only-what-we-must, with never-extractive as the only exception | holds: the agent proposes "We only send what you asked for" and cites them |
+| An agent's call overturned | A well-worn decision an agent made for the PM, which the PM later reverses | the old record keeps who decided and through which agent; overturned agent calls are countable | holds |
+| Two live rulings that disagree | Neither replaces the other ([newer-decision-wins] does not apply) | found by the drift query and raised as one open question | holds |
 
 ## How agents ask
 
@@ -154,8 +181,8 @@ A nightly job publishes every public, live record as a static snapshot on social
 
 ## Moving what exists
 
-1. Create the store, schema, access rules; seed departments and concerns.
-2. Import: 800 live ruling lines from 87 files (date, words, who, `[binds]` and `[replaces]` tags), the 23 principles, and the ontology mirror. Each ruling's `surfaces=` tags map to concerns; `applies` links are inferred and marked so.
+1. Create the store, schema, access rules; seed departments and concerns. The stress tests above become the store's first test suite, each seen failing before it passes.
+2. Import: 800 live ruling lines from 87 files (date, words, who, `[binds]` and `[replaces]` tags), the 23 principles, and the ontology mirror. Each ruling's `surfaces=` tags map to concerns; `[always]` and `[for now]` map to `holds`; `applies` links are inferred and marked so. Scope is inferred too (agent corrections are mostly in the method repo and the skills, and come in at stage 2).
 3. Run side by side for a week: the nightly export regenerates `constraints/code.md` from the store, and lint fails on any difference from the hand-built one.
 4. Flip: a new ruling is written through the tool; the markdown sections become generated. The doc-tidying jobs for rulings stop.
 
