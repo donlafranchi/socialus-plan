@@ -190,6 +190,21 @@ One lookup tool (an MCP server) with few verbs:
 
 The calling agent writes the answer from what these return; the tool runs no model of its own, so it costs nothing per question and cannot invent anything.
 
+## Conditions (F126, approved 2026-11-10)
+
+Fine-grained, never all or nothing: a condition has parts, a decision or feature waits on the part it needs, and the parent is computed from its parts. Scenario: `planning/scenario-F126.md`.
+
+## Versions without brittleness: a proposal for stage 2, awaiting the PM
+
+The PM, 2026-11-10: "how we could use this knowledge store to track what we're building and what we aren't for any particular version and do so in a way that isn't brittle or doesn't allow us to pivot."
+
+- **A feature has slices**, from smallest to full, as the brief template's three sizes already do. A slice is what a version takes in, and what a condition gates.
+- **A version is a plan, not a box:** a record with the outcomes it is for and an appetite (how much it is worth), and links to the slices it `includes` and the ones it `leaves out`, each with a reason and, where there is one, the condition that brings it back.
+- **No dates on features.** Horizon (now, next, later) and rank sit on the slice; a date, if any, sits on the version.
+- **A pivot is a new version of the plan, never an edit.** It carries its why (which outcome changed), and the history keeps every earlier plan, so "what v1 looked like on 10 November" and "what changed since" are each one query.
+- **Leaving something out is a record too.** It resurfaces on its own when its condition is met or the outcome it served changes, instead of sitting in a backlog.
+- Precedents: Shape Up's betting table, which bets on shaped work each cycle and keeps no backlog ([Shape Up](https://basecamp.com/shapeup/2.2-chapter-08)); Now, Next, Later roadmaps without dates ([ProdPad](https://www.prodpad.com/blog/invented-now-next-later-roadmap/)).
+
 ## The public side, designed now, built in stage 2
 
 A nightly job publishes every public, live record as a static snapshot on socialus.org, with an index file at the standard address (llms.txt) and a read-only public lookup tool that reads only the snapshot. A trick question or a break-in there reaches nothing private. App content (what's on this weekend) joins the same front door; it is the question outside agents will ask most.

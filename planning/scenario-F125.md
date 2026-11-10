@@ -25,7 +25,7 @@ Stage 1: our own agents only, inside `socialus-db` in its own schema.
 5. **Kind and strength apart:** every record has a kind (philosophy, pattern, decision, correction, and the rest in the brief) and a strength (absolute, rule, guideline).
 6. **Model-neutral:** no record names an agent or model as its audience; a correction is served to every agent alike, and the model it was seen in is stored only as evidence.
 7. **Settled stays settled:** a record marked settled cannot be proposed for change by any agent; the attempt is refused and logged.
-8. **Departments wall off:** a key scoped to one department cannot read another department's internal records, and the store's own login can reach nothing outside its schema.
+8. **Departments wall off:** a key scoped to one department cannot read another department's internal records, and the store's own login reaches no table outside its schema and no more than the public key does (the full wall comes with the move to the store's own project).
 9. **One concern, one call:** a build loop gets the live decisions for one concern in one call; for moderation the answer is under 2,000 tokens.
 10. **Precedent:** one call lists every live decision that applies a given pattern, with the ones that depart from it; links inferred at import are marked inferred.
 11. **The platform's why** can be read as it stood on any past date, and each change to it names the evidence that prompted it.
@@ -58,3 +58,4 @@ The public snapshot and public lookup tool (stage 2). Features, questions and ri
 - **2026-11-10 — Only live decisions move in; an older one is rebuilt from git history when someone asks for it.** The PM. [binds tiers=planning surfaces=knowledge]
 - **2026-11-10 — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for. [always]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — Every philosophy, pattern, decision and correction carries a why; the why is versioned and refined as the platform and the times change, and it informs the platform's own why.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — For stage 1 the store's login reaches no table outside its schema and no more than the public key does; the full wall comes with the move to the store's own project.** The PM, picking A, for F125. [binds tiers=planning,code surfaces=knowledge] [for now]
