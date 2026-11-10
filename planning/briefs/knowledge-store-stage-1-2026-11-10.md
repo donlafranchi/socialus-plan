@@ -14,7 +14,9 @@ criteria:
   - The store's own login can reach only the store's schema; a query from it against any app table is refused.
   - For any decision, one call returns every version it has had and the chain of decisions it replaced and was replaced by.
   - One call answers "what was live on a given date" for any concern.
-  - Asked for the live rules on member-facing words for a non-Claude model, the store returns the model-neutral rules and none of the corrections written for Claude.
+  - Every decision, pattern, correction and philosophy has a why; the store refuses one without.
+  - A correction is served to every agent alike, whatever the model; the model it was seen in is evidence, never a filter.
+  - The platform's why can be read as it stood on any past date, and each change to it names the decisions or signals that prompted it.
   - A record marked settled cannot be proposed for change by any agent; the attempt is refused and logged.
   - Every decision recorded after the flip names the principles or patterns it applies, or says none; one call lists every live decision that applies a given pattern, with the ones that depart from it.
 ---
@@ -33,7 +35,7 @@ Recorded here as context. They become dated rulings in the scenario this brief t
 2. Outside agents are served from a published snapshot of public records, never from the live store.
 3. Departments to start: building, finance, telemetry and bugs, communications, trust and safety, legal. Any later department is a new value, not a redesign.
 
-Also settled in the same session: an overturned decision is kept with status `retired` and a pointer to what replaced it (the architecture-decision-record practice), instead of being deleted. An agent never has permissions of its own: it acts for a person and sees at most what that person sees.
+Also settled the same day: nothing in the store is written for one model or agent. Many models will use it over time, and each new one differs from the last, so every record says what is true or wanted, never which agent it is for. Also settled in the same session: an overturned decision is kept with status `retired` and a pointer to what replaced it (the architecture-decision-record practice), instead of being deleted. An agent never has permissions of its own: it acts for a person and sees at most what that person sees.
 
 ## The PM's two calls (2026-11-10)
 
@@ -71,18 +73,19 @@ One table holds every kind. Each row is one thing an agent can quote and cite.
 | Field | What it holds |
 |---|---|
 | `id` | stable: `D-0001` for decisions; existing ids (`F094`) kept for features |
-| `kind` | decision, principle, pattern, feature, criterion, question, risk, noun, verb, link |
+| `kind` | philosophy, pattern, decision, correction, feature, criterion, question, risk, noun, verb, link |
 | `concern` | the part of the platform it belongs to (below) |
 | `answer` | the record in one line, written to be quoted |
-| `why` | the reason, short |
+| `why` | the reason, required for philosophies, patterns, decisions and corrections; versioned, and the part that keeps being refined (below) |
+| `strength` | `absolute`, `rule` or `guideline` (below) |
+| `enforced_by` | the check, lint or test that enforces it, when one does |
 | `status` | per kind, below |
 | `audience` | public, members, department, operators |
 | `departments` | one or more, when the audience is a department |
 | `owner` | the person accountable |
 | `decided_by`, `decided_on` | who decided and when; an agent's well-worn decision names the agent and the person it acts for |
 | `path` | well-worn or new territory |
-| `scope` | what it governs: `product` (true of the platform whoever builds it), `process` (how we work, including how agents work with the PM), `agent` (a correction to one model's habits) |
-| `models` | for `agent` scope only: which models it corrects (`claude`, `gpt`, `gemini`, ...); empty means every model |
+| `scope` | what it governs: `product` (true of the platform whoever builds it) or `process` (how we work, people and agents alike) |
 | `holds` | `always` or `for now`, as the `[always]` and `[for now]` tags mark today |
 | `until` | for `for now`: the condition that ends it, in words, linked to a record when there is one ("a second metro") |
 | `settled` | true when the PM has said do not re-raise; agents may read it, never propose changing it |
@@ -97,30 +100,47 @@ Beside it: `links` (from, to, type: replaces, implements, governs, depends on, g
 
 **Across decisions.** Four ways in, combinable in one call: fields (concern, department, status, dates, who decided, well-worn or new territory), exact words, meaning (pgvector), and the links between records, followed as many hops as asked.
 
-**Principles and patterns.** Two record kinds hold the PM's thinking:
+**Four kinds hold the PM's thinking**, from widest to narrowest:
 
-- `principle`: a philosophy, from `PRINCIPLES.md` (23 today) and the soul and defaults.
-- `pattern`: a rule of thumb that shows up across many decisions, such as "say only what we must" or "the member before the business". It is narrower than a principle and has its own status: proposed, live, retired.
+- `philosophy`: what the platform values and why it exists. The 23 lines in `PRINCIPLES.md`, the soul and the defaults come in as these.
+- `pattern`: a rule of thumb that shows up across many decisions, such as "say only what we must" or "the member before the business".
+- `decision`: one ruling, with its date.
+- `correction`: a guard against a failure that has been seen in how the work gets done, such as "won't was written as *we will never*" or "a doc restated the schema". It names the failure, never who made it. Each time it is seen again, the store logs the date, an example and, as plain evidence, which model and version produced it. A correction applies to every agent alike. It is retired when the failure has not been seen for three monthly reviews, and one that keeps recurring is turned into a check.
+
+**How strict each one is** is a separate field, because kind and strictness are different questions:
+
+- `absolute`: never broken. It must pass the four-harms test in `socialus-ops` `process/ABSOLUTES.md`; today's absolutes come in as these.
+- `rule`: must hold; breaking it is a defect, and a check enforces it where one can (`enforced_by`).
+- `guideline`: the default. An agent may depart from it when it can say why, and the departure is logged as `departs_from` with that reason. Most of today's rulings are guidelines, as the absolutes file already says.
 
 Every decision links to what it rests on, with one of two link types:
 
-- `applies`: this decision follows that principle or pattern.
+- `applies`: this decision follows that philosophy or pattern.
 - `departs_from`: this decision is an exception, with the reason.
 
 That turns the why into something an agent can count and follow, not just read:
 
 - **Precedent.** "Every live decision that applies *say only what we must*, and the two that depart from it." This is a library of the PM's own case law.
-- **Deduction.** For a new question, the tool returns the closest past decisions grouped by the patterns they apply, with counts and exceptions. The agent then answers: "by your pattern X, 14 decisions and 1 exception, this would be Y." A pattern with many live decisions and no exceptions counts as a well-worn path of the PM's own, next to the outside precedents in the decision rule. Patterns that conflict, or no pattern at all, make it new territory.
+- **Deduction.** For a new question, the tool returns the closest past decisions grouped by the patterns they apply, with counts and exceptions. The agent then answers: "by your pattern X, 14 decisions and 1 exception, this would be Y." A strong pattern of the PM's counts as a well-worn path, next to the outside precedents in the decision rule. Patterns that conflict, or no pattern at all, make it new territory.
 - **Drift.** Patterns cited only by retired decisions; decisions in one concern applying opposite patterns; new decisions that cite nothing. Each shows where the thinking moved or a new pattern is forming.
-- **New patterns.** When three or more decisions give the same reason without a pattern, an agent proposes one. Patterns and principles are the PM's to approve, because they are ideas. Until then they stay proposed and count for nothing.
+- **New patterns.** When three or more decisions give the same reason without a pattern, an agent proposes one. Philosophies and patterns are the PM's to approve, because they are ideas. Until then they stay proposed and count for nothing.
 
-**Who sees them.** Principles and patterns start with audience `operators`: the PM and the agents acting for him. Any of them can later be made public, one at a time.
+**Who sees them.** Philosophies, patterns and corrections start with audience `operators`: the PM and the agents acting for him. Any of them can later be made public, one at a time.
 
-**A rule and a correction are two records.** "Say only what we must" is a rule about the platform's words, true whoever writes them, so it is `product` scope. "Claude turns the PM's *won't* into *we will never*" is a correction for one model's habit: `agent` scope, `models: claude`, linked to the rule it protects with `corrects`. An agent on another model gets the rule and not the correction. Corrections are rerun at every model change (the single-loop kit's upkeep step) and retired when the model no longer needs them; where one can be checked by a script (the user-facing string check already exists because prose rules did not hold), the check is the correction and the record says so.
+## The why is the living part
+
+Every philosophy, pattern, decision and correction carries a why, and the store refuses one without. The answer to "what" changes rarely; the why is what gets refined, as the platform and the times change. It is never static.
+
+- **Each why is versioned.** Rewording a why writes a new version with the date, who proposed it, who approved it, and the evidence: the decisions, exceptions or signals that prompted it. Old versions stay readable.
+- **Whys chain upward.** A decision's why rests on a pattern, a pattern's on a philosophy. A decision whose why rests on nothing is the first sign a pattern is missing.
+- **The platform's why** is one record at the top: a short statement of why SocialUs exists and what it values, written from the live philosophies. When a philosophy changes, a new version of the platform's why is proposed with it. "Why did we exist, as we said it, in March 2027" is one query. A public version follows when the public side is built.
+- **What prompts a refinement.** Exceptions piling up against a pattern (its why is incomplete). The PM overturning agents' calls in one area (the why was misread). A correction that keeps recurring (a why is missing). Questions the store could not answer. A why not confirmed in six months. Later, members' agents asking why and not accepting the answer.
+- **Who refines.** An agent drafts the new wording with its evidence. The PM approves any change to a philosophy, a pattern or the platform's why, because those are ideas. An agent may sharpen a single decision's why when it cites evidence, and the history shows it.
+- **When.** A monthly why review lists every prompt above, with drafts. It replaces today's principle-sharpening pass, which rewords `PRINCIPLES.md` by hand and leaves the old wording only in git.
 
 **The import.** The 800 live decisions get `applies` links inferred by meaning, marked `inferred`, so a wrong guess is visible and cheap to fix. From the flip on, a new decision names its links when it is recorded, or says "none".
 
-**Statuses.** Decision, principle and pattern: proposed, live, retired. Feature: draft, approved, building, shipped, dropped. Question: open, answered. Risk: open, accepted, closed. Noun, verb, link: live, coming, refused, retired. A record is never deleted; `retired` and `dropped` keep it findable.
+**Statuses.** Philosophy, pattern, decision and correction: proposed, live, retired. Feature: draft, approved, building, shipped, dropped. Question: open, answered. Risk: open, accepted, closed. Noun, verb, link: live, coming, refused, retired. A record is never deleted; `retired` and `dropped` keep it findable.
 
 ## Departments and concerns
 
@@ -142,11 +162,13 @@ Real decisions from this repo, and what each asks of the store. "Fixed" means th
 | Test | The decision | What the store must do | Result |
 |---|---|---|---|
 | A replacement chain | One market: Sacramento, then Northern California (2026-11-06) | `as_of` returns Sacramento for October and Northern California now; the old record points at the new one | holds |
-| A rule against a model's habit | "No promises: state things as fact" (`voice-and-tone.md`), and Claude escalating *won't* to *we will never* | serve the rule to every model, the correction only to Claude | fixed: `scope`, `models`, `corrects` |
+| A guideline and a correction | "No promises: state things as fact" (`voice-and-tone.md`), and the seen failure of *won't* written as *we will never* | the guideline and the correction are separate records, linked by `corrects`; every agent gets both, whatever its model | fixed: kind `correction`, `strength` |
 | The one never we keep | "Never extractive. [always]" (`PRINCIPLES.md`) beside the no-promises pattern | the pattern counts it as a named exception, not a conflict | holds: `departs_from` with its reason |
 | Settled, do not re-raise | Members are the investors; legal questions go to counsel | no agent can propose changing it; questions route to legal | fixed: `settled`; legal is the owner department |
 | A rule with an end condition | No "near you" until a second metro (2026-09-30) | list every for-now decision waiting on that condition when a second metro is ruled | fixed: `holds`, `until` |
 | 412 durability tags | 284 `[for now]` and 128 `[always]` lines today | a review queue of for-now decisions not confirmed since the last release | holds with `as_of` |
+| How strict | "Never extractive" (absolute), the email-code-only sign-in (a rule a test enforces), "plain words, one line" (a guideline) | an agent knows which it may depart from, and every departure is logged with its reason | fixed: `strength`, `enforced_by` |
+| A why that changed | The market's why: a dense start in one city, then Northern California on 2026-11-06 | both whys readable with their dates and the evidence that moved it | fixed: versioned why with evidence |
 | One decision, three departments | Transaction income, and "no fee" language retired | finance, legal and communications all see it; one record, not three | fixed: `departments` is a list |
 | The same topic, two audiences | "Why can't I post a photo of my kids?" | a member's agent gets the rule and a short why; the moderation detail stays internal | holds: two records, linked by `explains`, different audiences |
 | Deducing from patterns | New question: should a reminder email say "we'll never spam you"? | precedents under no-promises and say-only-what-we-must, with never-extractive as the only exception | holds: the agent proposes "We only send what you asked for" and cites them |
@@ -161,7 +183,8 @@ One lookup tool (an MCP server) with few verbs:
 - `get(id)`: one record, its history and its links.
 - `related(id, hops?)`: what it replaces, implements, governs, applies or departs from; one hop unless asked.
 - `history(id)` and `as_of(concern, date)`: every version of one record; or what was live for a concern on a given date.
-- `precedents(question)`: the closest live decisions, grouped by the principles and patterns they apply, with counts and exceptions.
+- `precedents(question)`: the closest live decisions, grouped by the philosophies and patterns they apply, with counts and exceptions.
+- `why(id)`: the current why, its chain up to the platform's why, and every earlier wording with its evidence.
 - `live(concern)`: every live decision and principle for one concern, in the order a builder needs them. This replaces reading all of `constraints/code.md`.
 - `propose(record, reason)` and `decide(id)`: internal only. A well-worn decision may go straight to live with its precedents; a new-territory one stays proposed until the PM decides, as today.
 
@@ -182,7 +205,7 @@ A nightly job publishes every public, live record as a static snapshot on social
 ## Moving what exists
 
 1. Create the store, schema, access rules; seed departments and concerns. The stress tests above become the store's first test suite, each seen failing before it passes.
-2. Import: 800 live ruling lines from 87 files (date, words, who, `[binds]` and `[replaces]` tags), the 23 principles, and the ontology mirror. Each ruling's `surfaces=` tags map to concerns; `[always]` and `[for now]` map to `holds`; `applies` links are inferred and marked so. Scope is inferred too (agent corrections are mostly in the method repo and the skills, and come in at stage 2).
+2. Import: 800 live ruling lines from 87 files (date, words, who, `[binds]` and `[replaces]` tags), the 23 principles, and the ontology mirror. Each ruling's `surfaces=` tags map to concerns; `[always]` and `[for now]` map to `holds`; strength is inferred (absolutes from the two absolutes files, rules where a check names them, guidelines otherwise); `applies` links are inferred and marked so. Corrections live mostly in the method repo and the skills, and come in at stage 2.
 3. Run side by side for a week: the nightly export regenerates `constraints/code.md` from the store, and lint fails on any difference from the hand-built one.
 4. Flip: a new ruling is written through the tool; the markdown sections become generated. The doc-tidying jobs for rulings stop.
 
