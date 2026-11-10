@@ -1,0 +1,23 @@
+{
+ "_how": "The go-between for Don (PM) and the planning and building agents. Lanes: done, in_progress, up_next, deferred (deferred items carry a revisit date). Don adds or moves items via Dispatch; agents read up_next and write done. Fields: id, title (plain English), lane, area, link (Issue, PR or scenario), updated (YYYY-MM-DD), revisit (deferred only). Seeded 2026-11-08 from STATUS.md, dashboard/don-todos.json, planning/launch-checklist.json and recent PRs; the seed is a first draft for Don to correct.",
+ "items": [
+  {"id": "rm-twilio", "title": "Set up Twilio for the phone check", "lane": "up_next", "area": "accounts", "link": "https://github.com/donlafranchi/socialus-web/issues/707", "updated": "2026-11-08"},
+  {"id": "rm-report-test", "title": "Run the report test with three accounts", "lane": "up_next", "area": "moderation", "link": "https://github.com/donlafranchi/socialus-web/issues/220", "updated": "2026-11-08"},
+  {"id": "rm-one-strike", "title": "Decide the one-strike policy (research done, A recommended)", "lane": "up_next", "area": "moderation", "link": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/one-strike-2026-11-06.md", "updated": "2026-11-08"},
+  {"id": "rm-founding-circle", "title": "Talk with 5 people who have tried SocialUs", "lane": "up_next", "area": "growth", "link": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/founding-circle-2026-10-21.md", "updated": "2026-11-08"},
+  {"id": "rm-nor-cal", "title": "Pick the Northern California counties (A, B or C)", "lane": "up_next", "area": "markets", "link": "https://github.com/donlafranchi/socialus-plan/blob/main/planning/research/northern-california-2026-11-06.md", "updated": "2026-11-08"},
+  {"id": "rm-ai-first-read", "title": "An AI reads every reported post first; a person still decides", "lane": "in_progress", "area": "moderation", "link": "https://github.com/donlafranchi/socialus-web/issues/486", "updated": "2026-11-08"},
+  {"id": "rm-reports-notice", "title": "Reports: a courtesy notice first, a second report hides the post", "lane": "in_progress", "area": "moderation", "link": "https://github.com/donlafranchi/socialus-web/issues/220", "updated": "2026-11-08"},
+  {"id": "rm-markets-home", "title": "Opening a market gives its waiting members a home town", "lane": "in_progress", "area": "markets", "link": "https://github.com/donlafranchi/socialus-web/issues/1112", "updated": "2026-11-08"},
+  {"id": "rm-page-no-shop", "title": "Someone starts something without opening a shop (F060)", "lane": "in_progress", "area": "pages", "link": "planning/scenario-F060.md", "updated": "2026-11-08"},
+  {"id": "rm-page-worth-showing", "title": "Someone creates a Page worth showing people (F061)", "lane": "in_progress", "area": "pages", "link": "planning/scenario-F061.md", "updated": "2026-11-08"},
+  {"id": "rm-nonbusiness-page", "title": "A non-business Page resolves everywhere (F069)", "lane": "in_progress", "area": "pages", "link": "planning/scenario-F069.md", "updated": "2026-11-08"},
+  {"id": "rm-page-face", "title": "Every Page has a face, even without a photo (F070)", "lane": "in_progress", "area": "pages", "link": "planning/scenario-F070.md", "updated": "2026-11-08"},
+  {"id": "rm-smoke-stable", "title": "Live smoke test no longer trips on its own sign-in", "lane": "done", "area": "build health", "link": "https://github.com/donlafranchi/socialus-web/pull/1190", "updated": "2026-11-06"},
+  {"id": "rm-build-alarm", "title": "Build alarm closes itself when production builds again", "lane": "done", "area": "build health", "link": "https://github.com/donlafranchi/socialus-web/pull/1188", "updated": "2026-11-06"},
+  {"id": "rm-venue-alert", "title": "Venue import alerts close themselves once the feed reads again", "lane": "done", "area": "build health", "link": "https://github.com/donlafranchi/socialus-web/pull/1187", "updated": "2026-11-06"},
+  {"id": "rm-calm-dashboard", "title": "Calm dashboard: Do next plus folded FYI groups", "lane": "done", "area": "dashboard", "link": "https://github.com/donlafranchi/socialus-plan/pull/287", "updated": "2026-11-06"},
+  {"id": "rm-ncmec", "title": "Register with the NCMEC CyberTipline and switch on CSAM scanning", "lane": "deferred", "area": "safety", "link": "planning/launch-checklist.json", "updated": "2026-11-08", "revisit": "2027-01-15"},
+  {"id": "rm-f055", "title": "Scenario F055 (deferred on purpose)", "lane": "deferred", "area": "pages", "link": "planning/scenario-F055.md", "updated": "2026-11-08", "revisit": "2026-12-01"}
+ ]
+}
