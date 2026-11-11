@@ -6,6 +6,7 @@ horizon: next
 rank: 1
 date: 2026-10-26
 approved: 2026-10-26 — the PM: 100/1,000 and the first 3; after the soft launch; v1 is one form
+concept: CO-0002
 depends: [F076, F103]
 ---
 ## Story
