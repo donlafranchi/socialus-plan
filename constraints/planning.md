@@ -10,6 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-11** · knowledge, method — Documents stop being the record: knowledge lives in the store, the documents that remain only orient an agent and say where to look, and the PM asks any kind of question through an agent that searches the store instead of reading documents (planning/scenario-F125.md)
 - **2026-11-11** · knowledge — A concept keeps one identity from first idea to what got built; renames, splits, cuts and returns are dated events on it, each with its evidence and the PM's words (planning/scenario-F130.md)
 - **2026-11-10** · knowledge — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review (planning/scenario-F125.md)
 - **2026-11-10** · [always] · knowledge — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [always] (planning/scenario-F125.md)
