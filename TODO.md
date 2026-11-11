@@ -8,16 +8,17 @@ Agents keep this list. When you finish something, say so and the line is deleted
 
 1. **Set up Twilio for the phone check.** Unblocks posting without a Page and the sign-up phone check. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
 2. **Create the write token** (`KNOWLEDGE_WRITE_TOKEN`, contents and pull requests read and write, on socialus-plan and socialus-ops). Turns on your three answers page and the nightly packs.
-3. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
-4. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
-5. **Open the remaining accounts:** Sentry (error alerts; the code is built and waits for its key), Vercel Speed Insights, Resend (add socialus.org), a free HUD account (web #849), Cloudflare image safety. Also file the private Supabase support ticket.
-6. **Make your Mac's knowledge key** (`gh workflow run knowledge-keys.yml -R donlafranchi/socialus-web -f action=add -f agent=mac`), then Keychain and `~/.zshrc`.
-7. **Talk with 5 people who have tried SocialUs.** Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
-8. **Say "go" on the new message,** "Locals, finding and supporting locals". Unblocks the landing page and the join page.
-9. **Pick the Northern California counties (A, B or C).** [Options](planning/research/northern-california-2026-11-06.md)
-10. **Review three small PRs:** edit link, meet-up seeding, shelves. [First one](https://github.com/donlafranchi/socialus-web/pull/1071)
-11. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
-12. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+3. **Create the backup key,** then start the first backup and its restore test. Until then the nightly backup fails and opens a bug each night. [Steps](https://github.com/donlafranchi/socialus-web/issues/1259)
+4. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
+5. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
+6. **Open the remaining accounts:** Sentry (error alerts; the code is built and waits for its key), Vercel Speed Insights, Resend (add socialus.org), a free HUD account (web #849), Cloudflare image safety. Also file the private Supabase support ticket.
+7. **Make your Mac's knowledge key** (`gh workflow run knowledge-keys.yml -R donlafranchi/socialus-web -f action=add -f agent=mac`), then Keychain and `~/.zshrc`.
+8. **Talk with 5 people who have tried SocialUs.** Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
+9. **Say "go" on the new message,** "Locals, finding and supporting locals". Unblocks the landing page and the join page.
+10. **Pick the Northern California counties (A, B or C).** [Options](planning/research/northern-california-2026-11-06.md)
+11. **Review three small PRs:** edit link, meet-up seeding, shelves. [First one](https://github.com/donlafranchi/socialus-web/pull/1071)
+12. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
+13. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
