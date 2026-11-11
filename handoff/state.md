@@ -6,7 +6,7 @@
 none running. Idle, not closed: "Copy 3: storyboards §8–§11" (socialus-web, worktree `copy-sb-a`, draft PR #689, copy for the PM to judge); "Plan 2: unblock #56 + generated files" (socialus-plan); "Feature reports for every feature" (its PR #658 is merged).
 
 ## 2. The PM's open calls, in order
-1. **When the zip gate switches to the new county markets** (plan #107, approved as F103–F106). A (recommended): now, inside web #569/#568, with the market feed after beta. B: all of it after beta, on the MSA. C: all of it before the 2026-10-30 freeze. Detail: `planning/research/local-inventory-2026-10-11.md`.
+1. **When the zip gate switches to the new county markets** (plan #107, approved as F103–F106). A (recommended): now, inside web #569/#568, with the market feed after beta. B: all of it after beta, on the MSA. C: all of it before the 2026-10-30 freeze. Detail: `planning/research/local-inventory-2026-10-11.md` (in git history).
 2. Draft copy waits for the PM before any of it ships: storyboard PRs plan #104–#106, #108–#110 and web #681–#684, #687–#688 (all draft, do not merge).
 
 ## 3. Decided but not built

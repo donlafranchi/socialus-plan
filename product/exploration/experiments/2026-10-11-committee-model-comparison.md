@@ -16,7 +16,7 @@ experiment: nine council roles on Sonnet (chair Opus 4.8, blind) vs the default-
 |---|---|---|
 | Roles / chair | default light model / default chair | Sonnet / Opus 4.8 |
 | Context | the concept plus three rounds of Don's guidance (#98 to #101) | fresh context, blind, a chair-written facts brief |
-| Output | `planning/briefs/2026-10-11-wish-it-existed.md`, merged | `product/exploration/experiments/2026-10-11-committee-model-test-wish-it-existed.md`, PR open, lint red |
+| Output | `planning/briefs/2026-10-11-wish-it-existed.md` (in git history), merged | `product/exploration/experiments/2026-10-11-committee-model-test-wish-it-existed.md`, PR open, lint red |
 
 **The confound, stated first.** #101 is not one run. Its brief was built across four PRs in 17 minutes (#98 council run, then #99, #100, #101 chair-only edits after Don dictated backers, option A, the launch phase and no expiry). #102 ran once, blind, with none of that. Where #101 scores higher on fit or clarity, part of the margin is Don's words, not the model. Where #102 matches #101 on gates and risks with no guidance, that is the strongest evidence in this comparison.
 

@@ -46,7 +46,7 @@ A market drawn by population, density, drive time or behaviour. A list of market
 
 **Worked example, zip 95746 (Granite Bay).** County Placer; subdivision not in the Tahoe set; market Sacramento; home town Granite Bay CDP. Zip 96150 (South Lake Tahoe): El Dorado, the South Lake Tahoe subdivision, market Tahoe, waiting. Zip 95901 (Marysville): Yuba, no named market, so the Yuba County market, waiting.
 
-**Where "local" is defined and read today, and the order of work:** `planning/research/local-inventory-2026-10-11.md`. **The model in four other places:** `planning/research/rings-stress-test-2026-10-11.md`.
+**Where "local" is defined and read today, and the order of work:** `planning/research/local-inventory-2026-10-11.md` (in git history). **The model in four other places:** `planning/research/rings-stress-test-2026-10-11.md` (in git history).
 
 [platform none]
 
