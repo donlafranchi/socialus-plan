@@ -10,6 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-11** · knowledge — A concept keeps one identity from first idea to what got built; renames, splits, cuts and returns are dated events on it, each with its evidence and the PM's words (planning/scenario-F130.md)
 - **2026-11-10** · knowledge — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review (planning/scenario-F125.md)
 - **2026-11-10** · [always] · knowledge — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [always] (planning/scenario-F125.md)
 - **2026-11-10** · [for now] · knowledge — Outside agents are served from a published snapshot of public records, never from the live store. [for now] (planning/scenario-F125.md)

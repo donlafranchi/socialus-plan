@@ -1,6 +1,6 @@
 ---
 id: brief-2026-11-11-concepts-in-the-store
-status: awaiting-approval
+status: approved
 size: M
 path: new territory
 criteria:
