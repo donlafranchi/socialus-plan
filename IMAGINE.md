@@ -145,9 +145,9 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 *Analysis, agent, 2026-10-11:* the flip on the big-chain pattern is a neighbour who shops the market for someone who cannot get there, the money going to the members who shop and grow (ruling 2026-10-07). Nothing exists to build on: no market list, order, messaging or money in the app. **The smallest honest step builds nothing:** a market's Page posts what is here this week, and one member's Page offers to shop it, with asks arranged outside the app.
 
-**Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md` (in git history).
+**Shared foundation (Don, 2026-10-11):** both market concepts need producers at a market to list what they bring: an item, an optional price, availability, tied to their Page and the market. That is the existing postponed item "individual listings on a Page" (the After beta milestone), likely T1 for both. Brief: `planning/briefs/2026-10-11-market-listings.md`.
 
-**What would make it real:** a market that posts a weekly list and two neighbours who ask for a shopper, inside four market weeks. Full brief, three sizes and criteria: `planning/briefs/2026-10-11-market-shopper.md` (in git history).
+**What would make it real:** a market that posts a weekly list and two neighbours who ask for a shopper, inside four market weeks. Full brief, three sizes and criteria: `planning/briefs/2026-10-11-market-shopper.md`.
 
 ### Market meal plans: a week of meals from what one market carries
 
@@ -157,7 +157,7 @@ Open your town (Don, 2026-10-26): scenario F118, Next.
 
 **Sizes (Don, 2026-10-11):** one meal, a couple of days, or a week. Listings are the foundation (see the shopper entry).
 
-**What would make it real:** a market that keeps a weekly list for six weeks and three families who cook from a plan. Full brief: `planning/briefs/2026-10-11-market-meal-plans.md` (in git history).
+**What would make it real:** a market that keeps a weekly list for six weeks and three families who cook from a plan. Full brief: `planning/briefs/2026-10-11-market-meal-plans.md`.
 
 **Together or apart.** A plan's shopping list could go to a shopper, as eMeals sends lists to Instacart. Neither needs the other.
 
