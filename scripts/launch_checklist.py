@@ -11,6 +11,8 @@ PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'planning'
 def load(today=None):
     today = today or date.today()
     out = []
+    if not os.path.exists(PATH):   # retired 2026-11-11: launch tasks live in TODO.md
+        return out
     for it in json.load(open(PATH)):
         fired = [f for f in it['fires_at'] if f.get('happened_on') or (f.get('not_before') and f['not_before'] <= today.isoformat())]
         waiting = ' or '.join(f"{f['event']} (expected {f['expected']})" for f in it['fires_at'])

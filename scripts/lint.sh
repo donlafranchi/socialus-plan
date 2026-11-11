@@ -131,8 +131,8 @@ fi
 # 2. Root .md files are only the five listed here, plus the generated ones —
 #    README.md (scripts/view.sh), PLATFORM-*.md (scripts/markers.py platform) and
 #    DASHBOARD.md (scripts/dashboard.py) and ANSWERS.md (socialus-web Knowledge answers, F131),
-#    never hand-edited, so not link-checked below.
-allowed="CLAUDE.md STATUS.md PRINCIPLES.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md ANSWERS.md"
+#    never hand-edited, so not link-checked below. TODO.md is the PM's own list, kept by agents (2026-11-11).
+allowed="CLAUDE.md STATUS.md PRINCIPLES.md UNPLACED.md IMAGINE.md README.md PLATFORM-IOS.md PLATFORM-ANDROID.md DASHBOARD.md ANSWERS.md TODO.md"
 for f in *.md; do
   [ -f "$f" ] || continue
   case " $allowed " in
