@@ -2,7 +2,7 @@ name: dashboard
 
 # Regenerates DASHBOARD.md and dashboard/status-dashboard.html from live state once a day, so the roll-up no longer
 # waits for a handoff or a person. It reads the criterion-level feature reports (scripts/criteria.py), the Issues, PRs
-# and runs in socialus-web, and appends the meta-layer trial block. It commits only when the content changed beyond the
+# and runs in socialus-web. It commits only when the content changed beyond the
 # "updated" time. The criterion audit (socialus-ops audits/criterion-rollup.md) named "no scheduler runs it" as a gap.
 # Daily at 11:30 UTC (4:30am Pacific while daylight time lasts, 3:30am after 2026-11-01), ahead of the 5am handoff, as the PM asked
 # on 2026-10-11; the manual trigger stays. It was every 6 hours with a push trigger; one run a day keeps the history quiet.
