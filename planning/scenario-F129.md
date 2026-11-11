@@ -19,7 +19,7 @@ The PM opens the "code good" project on his phone and asks what a Page owner can
 1. **One answer, by who is asking:** a visitor without an account, a member, and someone who runs a Page or an event; each a short list of what they can do and what they can't yet.
 2. **Plain and brief:** one line per thing, in words a member would use, no ticket or scenario numbers; the whole answer under 1,500 words.
 3. **Can means proven:** a line goes under "can" only when its feature slice (F127) is shipped and its checks and the live smoke test pass; anything else is not listed as possible.
-4. **Can't yet says why:** each "can't yet" names the condition (F126) it waits on, or "not planned", in plain words.
+4. **Can't yet says why:** each "can't yet" names the condition (F126) it waits on, or says "not planned", "not built yet" or "built, waiting on its checks", in plain words.
 5. **Asked through the store:** "what can SocialUs do", optionally for one kind of person, is one call to the lookup tool and returns this answer with each line linked to its feature.
 6. **A pack for a chat project:** the same answer is written as one Markdown file in `socialus-plan` whenever a slice ships, is withdrawn or changes condition, and once a month regardless.
 7. **It stays true:** if a "can" line's live smoke test fails, the line moves to "can't right now" until it passes.
@@ -43,3 +43,4 @@ Telling members what is coming and when (later, with the public side). How the a
 ## Rulings
 
 - **2026-11-10 — "What SocialUs can do" is one short answer by kind of person, listing only what is shipped and proven live, with what can't be done yet and why.** The PM, for F129. [binds tiers=planning,code surfaces=knowledge,capabilities]
+- **2026-11-11 — A "can't yet" line may say "not built yet" or "built, waiting on its checks" when no condition holds it back; most unproven lines wait on neither a condition nor a decision.** Agents, deciding a well-worn path (Apple's feature availability lists "not yet available" with no reason; Stripe's capabilities read pending or inactive), for F129. [binds tiers=planning,code surfaces=knowledge,capabilities]
