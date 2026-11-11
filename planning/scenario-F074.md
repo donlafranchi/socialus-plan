@@ -5,6 +5,7 @@ status: approved
 horizon: now
 rank: 130
 date: 2026-09-13
+concept: CO-0001
 depends: [F072]
 approved: 2026-09-20 — Don ruled B, simple repeat; Bulletins leaves the launch list to pay for it.
 ---

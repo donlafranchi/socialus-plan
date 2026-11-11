@@ -5,6 +5,7 @@ status: approved
 horizon: now
 rank: 120
 date: 2026-09-13
+concept: CO-0001
 depends: [F059, F065]
 approved: 2026-09-21 — Don: "I need it built and composed." Composer, time, post address and the audience switch are one piece of work. Absorbs F073.
 supersedes: F066, F073

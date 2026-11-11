@@ -5,6 +5,7 @@ status: draft
 horizon: later
 rank: 160
 date: 2026-09-13
+concept: CO-0001
 depends: [F074]
 ---
 ## Story

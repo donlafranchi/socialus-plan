@@ -6,6 +6,7 @@ horizon: now
 rank: 90
 gates: launch
 date: 2026-09-14
+concept: CO-0002
 depends: [F059]
 approved: 2026-09-14 — Don's ruling; threshold 50 creators / 250 patrons, gated on creators, shown as one combined 300
 amended: 2026-09-21 — Don: someone may leave an email to be told when a metro opens, without signing up. Criterion 4 reopened, 13-15 added, the Not-this line struck.

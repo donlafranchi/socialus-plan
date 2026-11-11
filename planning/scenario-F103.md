@@ -6,6 +6,7 @@ horizon: now
 rank: 80
 gates: launch
 date: 2026-10-11
+concept: CO-0002
 depends: [F076, F081]
 approved: 2026-10-11 — the PM: the MSA goes; a market is towns and county subdivisions; the zip decides the market and the home town. Split from the draft into F103–F106.
 ---
