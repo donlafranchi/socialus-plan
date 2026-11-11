@@ -1,6 +1,6 @@
 ---
 id: brief-2026-11-11-three-planning-answers
-status: awaiting-approval
+status: approved
 size: M
 path: new territory
 criteria:
