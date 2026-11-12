@@ -2,7 +2,7 @@
 id: brief-2026-11-12-waitlist-join-journey
 status: awaiting-approval
 size: M
-path: well-worn for the journey; the Google and Apple call is the PM's
+path: well-worn (the PM ruled both calls, 2026-11-12)
 criteria:
   - From socialus.org, a person joins the waitlist on a 390px phone one question per screen, with short explainer screens between, in terracotta and the Aime font.
   - Nothing is checked by Twilio at join (no Lookup, no texted code, no cost per join); the invite goes by email; Lookup and the code come at sign-up.
@@ -20,7 +20,7 @@ criteria:
 
 *The PM, 2026-11-12:* "I need a nice simple way for people to say what they're interested in a format that allows them to answer one question at a time and walk though some screens. The goal is to get a phone number and a name (don't ask for a legal name), a zip code and then what they plan on doing in the app. since nobody knows what the app is for or has little idea we need to somewhat inform them along the way."
 
-**Bottom line: what they want to do first, then name, zip and email, and the phone number last. Eight screens to discover, eleven to be found. Nothing is checked or charged at join; the invite goes by email and the number is checked at sign-up. Your one remaining call: how Google and Apple sign-in fit with the number (recommended: Google or Apple first, then the number).**
+**Bottom line: the waitlist is plans, name, zip, email, then phone, with nothing checked or charged. Sign-up comes later and only for open zips: the invite email, then the phone and its code, then the member picks Google, Apple or email to sign in next time. No passwords anywhere. Ready for your copywriter.**
 
 ## Decided: email and phone, checked at sign-up (the PM, 2026-11-12)
 
@@ -31,22 +31,27 @@ criteria:
 - Fake entries can pad the counts; accepted for now.
 - The text-me consent box is dropped. If invite texts return, they need our own registered number and an unticked box: "Text me once when SocialUs opens near me. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Not required to join." (draft)
 
-## Your call: Google and Apple with the mobile number
+## Decided: phone first at sign-up; Google, Apple or email after (the PM, 2026-11-12)
 
-*The PM, 2026-11-12:* "add Google Auth and Apple Auth for this as well as that should be primary. I am launching the landing page which includes the 'sign-up' journey next before talking to anyone. We are using mobile numbers instead of email for sign up and then email can be used for repeated sign in."
+*"The phone number is the first step. Then they can sign in with email after. We should have logic that uses the persons zip code that determines if they get a twilio verify message and when."* · *"Ok, so we leave out the Auth until later."*
 
-| | A. Google or Apple first, then the number (recommended) | B. Number first, Google or Apple after | C. Google or Apple only, number later |
-|---|---|---|---|
-| Sign-up | Tap Google or Apple; then the mobile number and its code, on the same account | Mobile number and code, as ruled; then "Next time, sign in with Google or Apple" | Tap Google or Apple; the number is asked before the first post |
-| Signing in again | Google or Apple; an emailed code if neither (the email they came with) | The same three, once linked | Google or Apple only |
-| One person, one number | Holds: no account without a verified mobile | Holds | Breaks until they post; bots can browse and pad counts |
-| Drop-off | Lowest friction at the first tap; the number is still a step | Highest: the number comes first | Lowest |
+- **No Google or Apple at the waitlist.** There it would only save typing an email, and it would create an identity before there's an account.
+- **Sign-up is zip-gated.** The invite email goes only when the zip's market opens, and tapping it proves the email (no email code). Someone without an invite gives a zip first: open goes to the phone step; closed goes to the waitlist, and no text is sent. Twilio spends only for open zips.
+- **Then the phone.** The number comes pre-filled from the waitlist; Lookup refuses anything but a real mobile; Verify texts the code.
+- **Then the next-time choice:** "Sign in next time with Google, Apple or email." Email (an emailed code) is the default; no passwords anywhere; sessions last months. That answers *"I always prefer to sign up using another Auth provider instead of making a new email and password"*: Google or Apple attaches to the account right after the number.
+- **Apple is included;** you add the Apple Developer account ($99 a year) before launch.
+- **Build note:** linking a phone account to Google or Apple is not a documented Supabase path ([identity linking](https://supabase.com/docs/guides/auth/auth-identity-linking)); the build tests it first.
 
-- **Why A:** it does what you asked (Google and Apple first) and keeps your anti-bot rule (a real mobile per person). Airbnb offers Google, Apple, phone or email at sign-up and asks a confirmed phone before booking ([Airbnb help](https://www.airbnb.com/help/article/221)); scooter apps on ATOM Mobility take Apple or Google, then still ask the phone at registration ([ATOM](https://support.atommobility.com/en/articles/10308367-how-to-enable-sign-in-with-apple-id-and-google-account)). Uber and Nextdoor are assumed similar, not checked.
-- **What Google and Apple give us, and the privacy line:** we ask only for sign-in and an email, never contacts, photos or friends. Apple shares the name only on the first sign-in and may give a private relay email (Hide My Email) instead of the real one ([Apple](https://www.apple.com/au/legal/privacy/data/en/sign-in-with-apple/)); we accept either. A Google or Apple name only pre-fills "What should we call you?"; the person can change it. Which provider someone used is never shown to anyone. This keeps the 2026-11-12 principle that nobody can track the people who come to find and support.
-- **How the three bind:** one account holds up to three ways in: Google, Apple, and the mobile number (Supabase identity linking, [docs](https://supabase.com/docs/guides/auth/auth-identity-linking)). The number is required and unique; Google and Apple attach to it. Linking a phone to a Google account is not a documented Supabase path yet, so the build note checks it first.
-- **Apple costs $99 a year** (Apple Developer Program), a paid tool before go-live; the coordinating session is putting that exception to you separately. Once there is an iPhone app, Apple's rule 4.8 expects Sign in with Apple wherever Google sign-in is offered ([summary](https://vp0.com/blogs/apple-sign-in-required-rejection-fix-swiftui.md)).
-- **Waitlist:** under A the join journey's last screens become "Continue with Google / Apple", then the number and its code (screens 9 and 10); the name screen (7) is pre-filled when Google or Apple gives a name.
+### Sign-up storyboard (open zips only)
+
+| # | Purpose | The one question, or what it teaches | Answer | Branch | Placeholder copy | Imagery | Image brief | Feeds |
+|---|---|---|---|---|---|---|---|---|
+| S1 | Invite | You're in | Tap the link in the email | Proves the email | "SocialUs is open in {market}. Tap to finish joining." |  | The street-market scene, now busy | — |
+| S0 | No invite | Where are you? | 5-digit zip | Open → S2; closed → waitlist, no text | "We open town by town. What's your zip?" |  | The simple map, one town lit | The gate |
+| S2 | Phone | Your mobile number | Phone, pre-filled from the waitlist | Not a mobile → "Please use a real mobile number." | Why-phone line, and "SocialUs is a place where we look out for one another. ⓘ" |  | A phone in a hand, outdoors | Lookup, then the code |
+| S3 | Code | The 6-digit code | Code (`autocomplete="one-time-code"`) | Wrong → "That code didn't match. Try again." | "We texted a code to {number}." |  | — (keep it fast) | The account |
+| S4 | Next time | How do you want to sign in next time? | Google · Apple · Email (default) | — | "Sign in next time with Google, Apple or email. No passwords." |  | A key ring with three simple keys | Sign-in methods |
+| S5 | First screen | Your first useful screen | — | Be found → "Is your Page already here?"; discover → Explore | — |  | — | — |
 
 ## The order, and why
 
@@ -75,7 +80,7 @@ Copy is placeholder ([public-is-draft]); the imagery column is the copywriter's.
 | 10 | Phone | Your mobile number, and why we ask | Phone, any format | Nothing checked here | "Your mobile number keeps out bots and spam. Only real cell numbers work, not internet numbers." · "SocialUs is a place where we look out for one another. ⓘ" (ⓘ: "Your number is tied to everything you post. Illegal content is reported to police.") |  | A phone in a hand, outdoors | Checked at sign-up (F081); one account per number then |
 | 11 | Done | You're on the list | — | — | "You're on the list for {market}." · "{N} locals are waiting there. When enough makers and neighbours join, we can open." |  | The same market, a little fuller | — |
 
-**When the area opens:** one invite, by email. Its link opens sign-up (F081) with name, zip, number and plans carried in, so nothing is typed twice; there Lookup refuses non-mobiles and the code is texted. Someone who wants to be found lands on "Is your Page already here?" (claim or start); someone discovering lands on Explore, led by what they picked. The waitlist entry is then deleted; nothing becomes a type on the member.
+**When the area opens:** the sign-up storyboard above takes over; name, zip, number and plans carry over, so nothing is typed twice. The waitlist entry is then deleted; nothing becomes a type on the member.
 
 ## How you'll see it
 
