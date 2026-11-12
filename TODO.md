@@ -8,15 +8,15 @@ Agents keep this list. When you finish something, say so and the line is deleted
 
 The PM, 2026-11-12: get the landing page out with a "Join the waitlist" button that asks whether someone runs a business, store, shop, market or group or is looking for those, plus their zip; review the whole join journey before it's built; stay closed until everything is set up. Your part, in order:
 
-1. **Pick how the waitlist checks the mobile number (parked by you 2026-11-12).** A (recommended): a texted code when they join, about 7 cents each. B: checked only when they accept the invite. C: number unchecked, invite by email. Then hand the storyboard to your copywriter for imagery. [Brief and storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md)
-2. **Open a Twilio account and create a Verify service (no number to buy).** The waitlist needs it if you pick A or B. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+1. **Hand the waitlist storyboard to your copywriter** for words and imagery. You picked email and phone, with the number checked at sign-up. [Storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md)
+2. **Add socialus.org to Resend.** The waitlist's invites go by email, and the urgent-report alert too. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
 3. **Pick how Google, Apple and the mobile number fit together (parked by you 2026-11-12).** A (recommended): Google or Apple first, then the mobile number and its code. B: mobile number first, Google or Apple linked after. C: Google or Apple only, number asked before the first post. [Options](planning/briefs/waitlist-join-journey-2026-11-12.md)
 4. **Pick whether to pay for Apple sign-in now (parked by you 2026-11-12).** It needs the Apple Developer Program, $99 a year, an exception to "no new paid tool before go-live". A (recommended): pay now, since you want it as a main way in. B: Google only until launch.
 5. **Set up Google and Apple sign-in** once the two picks above are made: a Google Cloud sign-in client (free) and Sign in with Apple. Agents send the exact steps.
 6. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go."
-7. **Add socialus.org to Resend.** For the urgent-report alert, and the waitlist invite only if you pick C. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
-8. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
-9. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
+7. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
+8. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
+9. **Open a Twilio account and create a Verify service (no number to buy).** Not needed for the waitlist; needed before the first market opens and people sign up. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
 10. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
 
 Later, not now: whether reported or repeat accounts are asked for a photo ID.
