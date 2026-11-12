@@ -8,7 +8,8 @@ gates: launch
 date: 2026-09-14
 depends: [F058, F077]
 approved: 2026-09-14 — Don's ruling
-amended: 2026-10-13 — courtesy notice first (PM ruling 2026-10-11, web #626): criteria 2, 3, 6, 7 and 8 restated, 12 added; the story and Why follow. Code is built to it. Earlier, 2026-09-30 — Don: everything a member posts is reportable; "threat of harm" is a seventh category that hides at any bar; the bar rises when his daily review passes 30 minutes; the reporter picks a reason the poster sees and can rebut, and is told misuse costs a strike (after three, their reports stop auto-hiding). Criteria 1, 3, 5 and 8 restated, 9–11 added. (2026-09-27: the hide bar is per-metro data starting at zero.)
+concept: new
+amended: 2026-11-12 — the urgent alert goes by email for now (criterion 5). Earlier amendments: git log.
 ---
 ## Story
 
@@ -17,12 +18,12 @@ A photo gets reported. The reporter picks a reason, and is told kindly that repo
 ## Acceptance
 
 1. **Anything a member can post is reportable: photos, Pages, announcements and posts.** A submitted report triggers agent classification: category (harassment, nudity, spam, violence, children, threat of harm, other) and a confidence/severity score.
-2. **A first report leaves the post up and sends its owner a courtesy notice; a second report from a different member hides it and sends it to a person on our team.** Hiding is the mechanism F058's Remove-photo control uses. Threat of harm and Sensitive content are the exceptions (criterion 8). *(Amended 2026-10-13: this read "hides when its score is at or above its metro's hide bar"; no score drives hiding at launch.)*
+2. **A first report leaves the post up and sends its owner a courtesy notice; a second report from a different member hides it and sends it to a person on our team.** Threat of harm and Sensitive content are the exceptions (criterion 8).
 3. The poster is notified immediately, in-app (never email), with the specific category, **the reason the reporter chose**, and a plain-language explanation: a courtesy notice after the first report (the post is still up), a takedown notice when it hides.
 4. The poster can submit one explanation, rebutting the reason; submitting is the only thing that creates work for a person — an unanswered takedown stays hidden and closes itself.
-5. Threat-of-harm or children-category flags text Don's phone (SMS) immediately regardless of confidence; everything else queues in a mobile review view for whenever he's free.
+5. Threat-of-harm or children-category flags alert Don immediately regardless of confidence (by email for now, 2026-11-12); everything else queues in a mobile review view for whenever he's free.
 6. Every report lands in the same queue for an unhurried look, whether or not it hid anything. A first report is a notice, not a takedown.
-7. **The hide bar stays per-metro data without a migration or a deploy**, the way F076 criterion 11 makes the waitlist thresholds, for when the agent's score is allowed to drive hiding. **That is not built at launch (web #626, PM option A): the bar sits at zero and the AI stays in shadow, and agent-scored hiding is built before any metro's bar is raised.** Content whose metro cannot be resolved uses zero.
+7. **The hide bar stays per-metro data without a migration or a deploy** for when the agent's score is allowed to drive hiding. **That is not built at launch (web #626, PM option A): the bar sits at zero and the AI stays in shadow, and agent-scored hiding is built before any metro's bar is raised.** Content whose metro cannot be resolved uses zero.
 8. **A Threat of harm or Sensitive content report (children, animals, anyone who cannot speak up) hides at once, on the first report and regardless of the bar.** Pictures of children are not permitted (F080), and a threat of harm cannot wait on a second report. Child content does not go back to the poster (2026-10-07; CyberTipline duty, web #648).
 9. **A report cannot be sent without a reason the reporter chose.**
 10. **Before sending, the reporter is told that misusing reports has consequences: each report Don rejects is a strike, and after three, that person's reports stop hiding anything and go to his queue.**
@@ -31,7 +32,7 @@ A photo gets reported. The reporter picks a reason, and is told kindly that repo
 
 ## Not this
 
-A public-facing appeals board or an SLA promise. Building the classification logic itself (Code's implementation detail). Bulk actions on the queue (F079). Per-category bars — one number per metro until volume shows one is not enough. Raising the bar automatically from volume or time: it moves when Don moves it.
+A public-facing appeals board or an SLA promise. Bulk actions on the queue (F079). Per-category bars — one number per metro until volume shows one is not enough. Raising the bar automatically from volume or time: it moves when Don moves it.
 
 ## Why
 
@@ -40,6 +41,7 @@ A public-facing appeals board or an SLA promise. Building the classification log
 **With one operator, the first step is the poster correcting it, before staff work is needed.** So a first report only notifies; a second report from a different member hides. The metro bar stays as data for the day an agent's score is allowed to hide things, and it is built before any bar is raised.
 
 ## Rulings
+- **2026-11-12 — The urgent-report alert reaches the PM by email for now: sign-in codes use Twilio Verify, so SocialUs has no number to text from.** A text needs a number of our own. [for now] [replaces none] [binds tiers=planning,code surfaces=reports,alerts] Issue: #707.
 - **2026-10-16 — A Page's own words (its name and description) are reportable on the courtesy-first flow: a first report sends the owner a courtesy notice; a repeat from someone else hides just those words and queues them, and the Page stays up; threat of harm and child content hide at once. Community-review panels come later, per metro, once beta opt-ins are big enough.** Don, option A of plan #156, recorded on `socialus-web` #625; built in #820. Because the smallest harm if a report is wrong is the words, not the Page. [for now] [replaces none] [binds tiers=planning,code surfaces=reports,moderation,pages] Issue: #625.
 - **2026-10-11 — The second report that hides an item must come from a different member than the first.** Dispatch, shipped in `socialus-web` #706, on top of the courtesy-notice-first ruling above. Because one member filing twice cannot hide a post. [replaces none] [binds tiers=planning,code surfaces=reports,moderation] Issue: #706.
 - **2026-10-11 — The report-path copy takes these edits: no numbers in the misuse warning (it says graciously that misusing reports has its own consequences), and "a person from our team", not "a real person". Final approval comes after Don reviews a screenshot storyboard of every report-path screen in context, before going public.** The PM, 2026-10-11, via Dispatch, on `socialus-web` #627 (F078 criterion 11). [replaces none] [binds tiers=planning,code surfaces=reports,copy] Issue: #627.

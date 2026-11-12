@@ -8,11 +8,11 @@ Agents keep this list. When you finish something, say so and the line is deleted
 
 The PM, 2026-11-12: get "the landing page and early sign-up workflow dialed in while we wait to launch." Your part, in order:
 
-1. **Set up Twilio for the phone check.** The sign-up phone check can't run without it; it also unblocks posting without a Page. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+1. **Open a Twilio account and create a Verify service (no number to buy).** Sign-up moves to a mobile number and a texted code, so this is the front door; it also unblocks posting without a Page. Steps: sign up and upgrade from the trial; Verify > Services > Create (Fraud Guard on, Standard); Geo permissions: United States only; turn on Lookup; paste three values into Supabase's Twilio Verify phone provider; tell an agent "Twilio is set." [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
 2. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go." The page wording PR waits on it.
-3. **Pick the sign-up journey (parked by you 2026-11-12).** A (recommended): ask "What brings you here?" once after the phone check, makers to a Page, supporters to Explore. B: ask on the form and save it. C: never ask. [Options](planning/briefs/sign-up-journey-2026-11-12.md)
+3. **Pick the sign-up journey (parked by you 2026-11-12).** A (recommended): ask "What brings you here?" once right after sign-up, makers to a Page, supporters to Explore. B: ask on the form and save it. C: never ask. [Options](planning/briefs/sign-up-journey-2026-11-12.md)
 4. **Pick the Northern California counties (A, B or C).** Decides which zips open at sign-up and which join the waiting list. [Options](planning/research/northern-california-2026-11-06.md)
-5. **Add socialus.org to Resend,** so sign-up emails come from our own address. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
+5. **Add socialus.org to Resend,** no longer for sign-up: only for members who add an email, the urgent-report alert email and the "market opened" email. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
 6. **Sign up on your phone as a stranger would,** from socialus.org, once the agents' pass below is merged, and say what felt wrong.
 
 Agents' part: a pass over the landing page and sign-up, end to end, listing every gap; the landing page and the join page rewritten to your headline once picked; fixes for the well-worn gaps, and anything new brought to you as A/B/C.
