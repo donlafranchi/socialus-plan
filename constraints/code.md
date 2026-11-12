@@ -7,9 +7,12 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **101 older decisions carry no tag yet and are not listed** — tagging is required from
+> **100 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-12** · waitlist, signup, onboarding — A person outside an open market is not asked whether they are here to make, sell or organize, or to find and support; the waitlist counts one number (planning/scenario-F076.md)
+- **2026-11-12** · signup, copy — The sign-up line saying what the app is for is "Locals, finding and supporting locals." (planning/scenario-F081.md)
+- **2026-11-12** · signup, look — Sign-up carries the front page's look: terracotta and the Aime font (planning/scenario-F081.md)
 - **2026-11-12** · [for now] · method — No Vercel or Supabase plan upgrade for load during beta: fix the code first, and upgrade only what a re-run of the load simulation shows is a plan limit, or two weeks before launch, whichever comes first. [for now] (planning/scenario-F128.md)
 - **2026-11-11** · knowledge, method — Documents stop being the record: knowledge lives in the store, the documents that remain only orient an agent and say where to look, and the PM asks any kind of question through an agent that searches the store instead of reading documents (planning/scenario-F125.md)
 - **2026-11-11** · knowledge, capabilities — A "can't yet" line may say "not built yet" or "built, waiting on its checks" when no condition holds it back; most unproven lines wait on neither a condition nor a decision (planning/scenario-F129.md)
@@ -165,7 +168,6 @@
 - **2026-10-01** · page-create, page-edit, page-publish, tags, copy — Creating a Page is one question: its kind, and the screen says this just starts the process. Creation lands the owner on their draft Page, where they fill in everything else, the name included (planning/scenario-F061.md)
 - **2026-10-01** · posting, reports, moderation, copy — We can't enforce the sensitive-content rule; we rely on reporting. The ask at posting covers anything sensitive, in any form, and the children report category widens to "sensitive content", still hiding at any bar (planning/scenario-F080.md)
 - **2026-10-01** · privacy, legal, copy — We disclose member data only in response to valid legal process: court orders, subpoenas and legal emergencies. Counsel finalises the wording (planning/scenario-F081.md)
-- **2026-10-01** · signup, copy — The signup line ships as written: "This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together." (planning/scenario-F081.md)
 - **2026-10-01** · signup, identity — A member is verified as a person by a text-message code to their phone, at signup (planning/scenario-F081.md)
 - **2026-10-01** · page-publish, page-photos, default-art — Publishing a Page requires a name, a location (an address or an area) and a description. A photo is optional; a Page without one shows its kind's default image or icon (planning/scenario-F082.md)
 - **2026-10-01** · explore, announcements, signed-out — Signed out, the "today" row shows one withheld card for each Page posting something today, matching the signed-out front door (planning/scenario-F091.md)
