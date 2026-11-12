@@ -8,13 +8,13 @@ Agents keep this list. When you finish something, say so and the line is deleted
 
 The PM, 2026-11-12: get the landing page out with a "Join the waitlist" button that asks whether someone runs a business, store, shop, market or group or is looking for those, plus their zip; review the whole join journey before it's built; stay closed until everything is set up. Your part, in order:
 
-1. **Pick what contact the waitlist takes.** A (recommended): an email confirmed by one tap. B: a mobile number verified by a texted code. C: a mobile number invited by text from our own number. [Options](planning/briefs/waitlist-join-journey-2026-11-12.md)
+1. **Pick how the waitlist checks the mobile number.** A (recommended): a texted code when they join, about 7 cents each. B: checked only when they accept the invite. C: number unchecked, invite by email. Then hand the storyboard to your copywriter for imagery. [Brief and storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md)
 2. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go."
-3. **Add socialus.org to Resend.** With A it sends the waitlist's confirm and "we're open" emails; also the urgent-report alert. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
+3. **Add socialus.org to Resend.** For the urgent-report alert, and the waitlist invite only if you pick C. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
 4. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
 5. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
 6. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
-7. **Open a Twilio account and create a Verify service (no number to buy).** Needed before the first market opens, not for the waitlist. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+7. **Open a Twilio account and create a Verify service (no number to buy).** The waitlist needs it if you pick A or B. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
 
 Later, not now: whether reported or repeat accounts are asked for a photo ID.
 

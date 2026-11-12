@@ -23,7 +23,7 @@ A Member is the platform's record of one real human — one row, lifetime-stable
 
 ## There is no second, stronger-verified tier
 
-Every Member is self-attested, and that is the only identity tier. An ID-plus-selfie tier was once named as the unlock for F080; **Don ruled 2026-09-27 that none is being built**, so F080 (no pictures of children) has no unlock. The producer trust ladder in `product/foundation/what-this-is.md` § Won't (self-attest → community-attest → document-verify) is about a *business's* claims, not a person's identity; don't conflate the two.
+Every Member is self-attested, and that is the only identity tier. An ID-plus-selfie tier was once named as the unlock for F080; **Don ruled 2026-09-27 that none is being built**, so F080 (no pictures of children) has no unlock. The producer trust ladder (`what-this-is.md` § Won't) is about a business's claims, not a person's identity.
 
 ## Discoverability defaults to off; a member's outputs don't
 
@@ -59,7 +59,7 @@ Any surface that sends content to a private geographic signal as its target. Aut
 
 ## Rulings
 - **2026-10-06 — Members currently have no public link; anyone who wants to be found makes a Page. `/u/` and `/@` are reserved.** The PM, URL decision 5, option C. Because member identity stays private (2026-09-21 safety ruling) and a guessable handle would reveal who is on SocialUs. `socialus-web` #422. Rationale: `planning/research/url-plan-2026-10-06.md` §7.5. [binds tiers=planning,code surfaces=member-url,privacy]
-- **2026-11-12 — One way in: a US mobile number, then a texted 6-digit code (Twilio Verify). No password; email is optional, added later on You. Sessions last months, so a member is rarely texted again.** The PM: *"sign up with their mobile number."* Detail: F081. Issue: #1280. [for now] [replaces 2026-10-18: Currently one way in: email] [binds tiers=planning,code surfaces=sign-in,signup,you]
+- **2026-11-12 — One way in: a US mobile number, then a texted 6-digit code (Twilio Verify). No password; email is optional, added later on You. Sessions last months, so a member is rarely texted again.** The PM: *"sign up with their mobile number."* Detail: F081. Issue: #1280. Path: well-worn. [for now] [replaces 2026-10-18: Currently one way in: email] [binds tiers=planning,code surfaces=sign-in,signup,you]
 - **2026-10-01 — You is private, for managing your own things: the Pages you manage, the Pages you follow, your zip and metro. You currently isn't visible to anyone else. There is currently no public member profile; someone who wants to be followed, such as an artist, creates a Page.** Don. `nouns.md` Member entry, the `/m/[handle]` row in `surfaces.md`, F086 and F056 follow. The `/m/[handle]` route still serves a member's public surface in code, so retiring it is **new build work**. A public member profile, like a TikTok profile, waits in `ROADMAP.md` § Later, speculative. [replaces F086: One is the signed-in view, the other the public one.] [binds tiers=planning surfaces=you,members,profile]
 - **2026-09-30 — Between members, we currently show a display name and avatar, and don't show legal names. We don't take part in disputes between members unless a court orders it.** Don. [binds tiers=planning,code surfaces=names,members,copy build=none]
 - **2026-09-30 — Visibility has two sides, Page creators and consumers. `stakeholder_visibility` is the creator's setting.** Don, on `socialus-web` #246. A consumer setting comes later, with direct messaging. [binds tiers=planning,code surfaces=rls,members,pages]
