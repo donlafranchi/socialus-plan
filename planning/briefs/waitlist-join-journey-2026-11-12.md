@@ -2,12 +2,13 @@
 id: brief-2026-11-12-waitlist-join-journey
 status: awaiting-approval
 size: M
-path: new territory (how the waitlist's number is checked); well-worn for the rest
+path: well-worn for the journey; the Google and Apple call is the PM's
 criteria:
   - From socialus.org, a person joins the waitlist on a 390px phone one question per screen, with short explainer screens between, in terracotta and the Aime font.
-  - The journey collects exactly a mobile number, a name (first or display, never legal), a zip, and what they plan to do (multi-select, two sides); being-found answers add up to two detail screens, both skippable.
+  - Nothing is checked by Twilio at join (no Lookup, no texted code, no cost per join); the invite goes by email; Lookup and the code come at sign-up.
+  - The journey collects exactly a name (first or display, never legal), a zip, an email, a mobile number, and what they plan to do (multi-select, two sides); being-found answers add up to two detail screens, both skippable.
   - Every screen has Back; optional screens have Skip; a segmented progress bar fills faster at the start, with no step count.
-  - The mobile number is asked last, just before the finish, with "SocialUs is a place where we look out for one another." and its ⓘ beside it.
+  - The mobile number is asked last, says why we ask (bots and spam; real cell numbers only), and carries "SocialUs is a place where we look out for one another." with its ⓘ.
   - Answers are staff-only, counted per market by side, never shown as names, never stored as a type on a member; the contact is used once, to say the area opened.
   - The finish shows the market's one cached number, the same whether or not the person already joined (F076.14), and no date.
   - The PM walks the whole journey on his phone at a live socialus.org link (builders-only flag) before anyone else sees it.
@@ -19,23 +20,18 @@ criteria:
 
 *The PM, 2026-11-12:* "I need a nice simple way for people to say what they're interested in a format that allows them to answer one question at a time and walk though some screens. The goal is to get a phone number and a name (don't ask for a legal name), a zip code and then what they plan on doing in the app. since nobody knows what the app is for or has little idea we need to somewhat inform them along the way."
 
-**Bottom line: what they want to do first, then name and zip, and the phone number last. Eight screens if they're here to discover, eleven if they want to be found. Your calls: whether we check the number with a texted code when they join (recommended: yes, about 7 cents a person), and how Google and Apple sign-in fit with the number (recommended: Google or Apple first, then the number).**
+**Bottom line: what they want to do first, then name, zip and email, and the phone number last. Eight screens to discover, eleven to be found. Nothing is checked or charged at join; the invite goes by email and the number is checked at sign-up. Your one remaining call: how Google and Apple sign-in fit with the number (recommended: Google or Apple first, then the number).**
 
-## Your first call: the mobile number at join
+## Decided: email and phone, checked at sign-up (the PM, 2026-11-12)
 
-| | A. Verify at join (recommended) | B. Collect now, verify at invite | C. Collect now, invite by email |
-|---|---|---|---|
-| What happens | Lookup (mobile only) and a texted code before "You're on the list" | Lookup only; the code comes when they accept the invite | Lookup only; one more screen asks an email for the invite |
-| Cost per join | about $0.066 (Lookup $0.008 + Verify $0.058) | $0.008 | $0.008; Resend free to 100 emails a day |
-| Counts for where to launch | real people, one per number | fake numbers can pad them | fake numbers can pad them |
-| Drop-off | highest: a code to wait for | lower | an extra field |
-| The "we're open" invite | a text, once we have our own registered number | same | an email, works now |
+*"I don't want to spend 7 cents until the person is ready to join. We can ask for email and phone and explain "why phone" as this is to prevent bots and spam etc. … I don't care about padded numbers yet."*
 
-- **Texts that aren't codes need our own registered number** (Twilio: every A2P text from a 10-digit number must be registered; a toll-free number needs verification). Sole-owner registration works before the company exists: 1 number, 1,000 texts a day to T-Mobile.
-- **They need written consent first,** so A and B carry one unticked box: "Text me once when SocialUs opens near me. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Not required to join." (draft; [public-is-draft])
-- **Why A:** you're staying closed until set up, so nobody is invited before the number exists, and verified counts are the ones worth deciding a launch on. Clubhouse verified phones at waitlist time; Hinge asks the number first because it is the login.
+- The waitlist asks an email and a mobile number. No Twilio Lookup, no texted code: zero Twilio cost per join.
+- The invite goes by email (Resend) when the area opens. Its link opens sign-up, where Lookup (real mobiles only) and the code run (F081).
+- Fake entries can pad the counts; accepted for now.
+- The text-me consent box is dropped. If invite texts return, they need our own registered number and an unticked box: "Text me once when SocialUs opens near me. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Not required to join." (draft)
 
-## Your second call: Google and Apple with the mobile number
+## Your call: Google and Apple with the mobile number
 
 *The PM, 2026-11-12:* "add Google Auth and Apple Auth for this as well as that should be primary. I am launching the landing page which includes the 'sign-up' journey next before talking to anyone. We are using mobile numbers instead of email for sign up and then email can be used for repeated sign in."
 
@@ -54,9 +50,9 @@ criteria:
 
 ## The order, and why
 
-- **Intent first, phone last.** Duolingo moved sign-up after the first lesson and gained about 20% daily users ([First Round](https://review.firstround.com/the-tenets-of-a-b-testing-from-duolingos-master-growth-hacker)); Zuko ranks phone among the most-abandoned fields ([Zuko](https://www.zuko.io/blog/which-form-fields-cause-the-biggest-ux-problems)). Asked last, the number is a step toward something they've already chosen.
+- **Intent first, email, then phone last.** Duolingo moved sign-up after the first lesson and gained about 20% daily users ([First Round](https://review.firstround.com/the-tenets-of-a-b-testing-from-duolingos-master-growth-hacker)); Zuko ranks phone among the most-abandoned fields ([Zuko](https://www.zuko.io/blog/which-form-fields-cause-the-biggest-ux-problems)). Asked last, the number is a step toward something they've already chosen; email, a familiar field, goes just before it, so the invite contact is in hand even if someone stops at the phone.
 - **Teach between questions, briefly.** Headspace asks why you came before anything else ([Appcues](https://goodux.appcues.com/blog/headspaces-mindful-onboarding-sequence)); Noom teaches throughout. No published proof that explainer screens lift completion, so each is one line and one picture, and the discover path gets only two.
-- **Keep the questions few.** Typeform: past six questions, completion falls below half ([Typeform](https://www.typeform.com/blog/tips/survey-school-2-how-to-maximize-survey-response-rates)). Discover path: 4 answers plus the code. Be-found path: 2 more, both skippable.
+- **Keep the questions few.** Typeform: past six questions, completion falls below half ([Typeform](https://www.typeform.com/blog/tips/survey-school-2-how-to-maximize-survey-response-rates)). Discover path: 5 answers. Be-found path: 2 more, both skippable.
 - **Being found branches like Thumbtack's pro sign-up:** what you offer first, then the details ([Thumbtack pro center](https://pro-center.thumbtack.com/?p=21129)). Airbnb, Etsy and Nextdoor keep the provider side a later step on one account ([Airbnb](https://www.airbnb.com/host/homes), [Etsy](https://help.etsy.com/hc/articles/115015672808), [Nextdoor](https://business.nextdoor.com/en-us/blog/guide-to-claiming-your-nextdoor-business-page)); we ask it here only as interest, nothing is created.
 - **Progress:** a segmented bar that fills faster early; a meta-analysis of 32 experiments found fast-then-slow bars cut drop-off and slow-then-fast raised it ([Villar et al.](https://research.google/pubs/where-am-i-a-meta-analysis-of-experiments-on-the-effects-of-progress-indicators-for-web-surveys/)). No "3 of 9": branching changes the count. Back on every screen, Skip only on optional ones ([NN/g wizards](https://www.nngroup.com/articles/wizards/)).
 - **390px layout:** one question, a big answer area, the main button pinned at the bottom in thumb reach, 48px targets; `autocomplete="given-name"`, `inputmode="numeric" autocomplete="postal-code"`, `type="tel" autocomplete="tel"`, `autocomplete="one-time-code"`; any phone format accepted (Baymard: 89% type it differently from the form, [Baymard](https://baymard.com/blog/checkout-flow-average-form-fields)); the button rides above the keyboard ([Chrome](https://developer.chrome.com/blog/viewport-resize-behavior)).
@@ -75,11 +71,11 @@ Copy is placeholder ([public-is-draft]); the imagery column is the copywriter's.
 | 6 | Detail (be found) | What's it called, and where can we see it? | Name (text) + one link, both optional | — | "Business or group name" · "Website or social link" · Skip |  | A shopfront sign being hung | Later: matched to an unclaimed Page at invite |
 | 7 | Name | What should we call you? | Text, one field | — | "Your first name, or the name people know you by." |  | A name tag at a neighbourhood table | Invite greeting |
 | 8 | Zip | Where are you? | 5 digits | Unknown zip → "We don't recognize that zip, try again." | "We open town by town. Your zip counts toward yours." |  | A simple map with one town lit | Where-to-launch counts (F076, F118) |
-| 9 | Phone | Your mobile number | Phone, plus the unticked text-me box | VoIP or landline → "Please use a mobile number." | "Your number is how you'll sign in. No passwords." · "SocialUs is a place where we look out for one another. ⓘ" (ⓘ: "Your number is tied to everything you post. Illegal content is reported to police.") |  | A phone in a hand, outdoors | One per person; the future account (F081) |
-| 10 | Code (A only) | The 6-digit code | Code | Wrong code → "That code didn't match. Try again." | "We texted a code to {number}." |  | — (no image; keep it fast) | Verified count |
+| 9 | Email | Where should we send your invite? | Email (`type="email" autocomplete="email"`) | Not an email → "That doesn't look like an email." | "We'll email you once, when SocialUs opens near you. Nothing else." |  | An envelope tucked under a café door | The invite (F076.15) |
+| 10 | Phone | Your mobile number, and why we ask | Phone, any format | Nothing checked here | "Your mobile number keeps out bots and spam. Only real cell numbers work, not internet numbers." · "SocialUs is a place where we look out for one another. ⓘ" (ⓘ: "Your number is tied to everything you post. Illegal content is reported to police.") |  | A phone in a hand, outdoors | Checked at sign-up (F081); one account per number then |
 | 11 | Done | You're on the list | — | — | "You're on the list for {market}." · "{N} locals are waiting there. When enough makers and neighbours join, we can open." |  | The same market, a little fuller | — |
 
-**When the area opens:** one invite. Its link opens phone sign-up (F081) with name, zip and plans carried in the link, so nothing is asked twice. Someone who wants to be found lands on "Is your Page already here?" (claim or start); someone discovering lands on Explore, led by what they picked. The waitlist entry is then deleted; nothing becomes a type on the member.
+**When the area opens:** one invite, by email. Its link opens sign-up (F081) with name, zip, number and plans carried in, so nothing is typed twice; there Lookup refuses non-mobiles and the code is texted. Someone who wants to be found lands on "Is your Page already here?" (claim or start); someone discovering lands on Explore, led by what they picked. The waitlist entry is then deleted; nothing becomes a type on the member.
 
 ## How you'll see it
 
