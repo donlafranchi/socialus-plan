@@ -4,8 +4,8 @@ status: awaiting-approval
 size: M
 path: new territory
 criteria:
-  - A person goes from the landing page or a shared link to their first useful screen on a 390px phone in no more than eight screens, every one in terracotta and the Aime font.
-  - The question of whether someone makes, sells, organizes or teaches, or finds and supports, is asked once, after the phone check, never on the sign-up form and never on the waiting screen.
+  - A person goes from the landing page or a shared link to their first useful screen on a 390px phone in no more than six screens, every one in terracotta and the Aime font.
+  - The question of whether someone makes, sells, organizes or teaches, or finds and supports, is asked once, after sign-up is done, never on the sign-up form and never on the waiting screen.
   - Each answer leads to a different first screen; "just look around" is always offered and is never a lesser path.
   - No role, answer or person type is stored on the member; maker and supporter counts come from what people do (a Page started or claimed; a verified member in the market).
   - A member can take the other path at any time from You, with nothing to undo.
@@ -14,11 +14,11 @@ criteria:
 
 # The sign-up journey, end to end
 
-**As of 2026-11-12** · Source: F081, F076, F118, F085, F134, the 2026-11-12 rulings, the product analytics brief (2026-11-11), the screenshots on socialus-web branch `landing-signup-pass-screenshots` (live socialus.org and local, 390px) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
+**As of 2026-11-12** · Source: F081, F076, F078, F102, F118, F085, F134, the 2026-11-12 rulings (sign-up by mobile number and the anti-bot layers included), the product analytics brief (2026-11-11), the screenshots on socialus-web branch `landing-signup-pass-screenshots` (live socialus.org and local, 390px) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-12:* "As far as the make or support question from sign-up, I want that to be part of the focus for how we design this sign up journey. It needs to be more fully designed end to end."
 
-**Bottom line: ask the make-or-support question once, right after the phone check, as two doors and a "just look around" link; let the door choose the first screen and store nothing, and count makers and supporters from what they do.**
+**Bottom line: sign up with a mobile number and a texted code, no email; then ask the make-or-support question once, as two doors and a "just look around" link; let the door choose the first screen and store nothing, and count makers and supporters from what they do.**
 
 ## What is true today (from the screenshots)
 
@@ -33,6 +33,9 @@ criteria:
 - The sign-up form and the waiting screen ask nothing about making or finding (2026-11-12). This brief asks after sign-up is done, so it holds; if the PM meant "never in the journey at all", option C is the one that fits.
 - One kind of member; "patron" is never stored; being a creator comes from a later step plus what the member made (2026-09-14, always).
 - Visitors read everything; writes ask for sign-in first and finish after (F134).
+- Sign up with a US mobile number and a texted code, not an email; email is optional, added later on You; long sessions (2026-11-12, F081 and `member.md`).
+- Real mobile numbers only, one account per number; Turnstile, rate limits, Verify Fraud Guard and US-only sending guard the form; new accounts start small for a week; a banned number stays banned (2026-11-12, F081 and F102).
+- Positioning: "Every member is a real person with a real phone." Never a claim of zero bots (2026-11-12).
 - Privacy (the PM, 2026-11-12): Page owners decide which contact details show; patrons are never findable or trackable by outsiders, signed in or out.
 - Headline pending: "SocialUs, for the people" (word being chosen), with "A place for locals to find and support locals, wherever you are, wherever you go" under it. It sits on the landing page; the sign-up line stays the ruled one.
 
@@ -54,7 +57,7 @@ criteria:
 +----------------------------------+
 ```
 
-**1. Email.** One screen for new and returning people; the title says Join, not Sign in.
+**1. Your mobile number.** One screen for new and returning people; the title says Join, not Sign in. Cloudflare Turnstile runs unseen; a person sees a check box only if it is unsure.
 
 ```
 +----------------------------------+
@@ -62,13 +65,18 @@ criteria:
 |  Join SocialUs                   |
 |  Locals, finding and supporting  |
 |  locals.                         |
-|  Email  [ you@example.com     ]  |
-|        [ Email me a code ]       |
+|  Mobile number                   |
+|  [ (916) 555-0134             ]  |
+|  We'll text you a code. Your     |
+|  number is never shown to anyone.|
+|        [ Text me a code ]        |
 |  Already a member? Same box.     |
 +----------------------------------+
 ```
 
-**2. Email code.** Six boxes, paste-friendly, "Send it again" after 30 seconds. A returning member goes straight to where they were.
+A number that is not a US mobile (Google Voice, TextNow, a landline, a business line) gets one line: "Please use a mobile number. Internet and landline numbers can't sign up." Nothing is sent and nothing is saved.
+
+**2. Text code.** Six boxes, filled by the phone's own code suggestion, "Text it again" after 30 seconds. A returning member goes straight to where they were, and stays signed in for months.
 
 **3. Who you are.** Legal name (only our team sees it), display name (what neighbours see), zip, the 18+ box. As the zip is typed, one line under it names the market: "You're in Northern California." An unknown zip gets "We don't recognize that zip, try again."
 
@@ -93,18 +101,15 @@ criteria:
 +----------------------------------+
 |  We're not open in Portland yet  |
 |  {count} people there are waiting.|
-|  We'll email you when it opens,  |
-|  and for nothing else.           |
+|  Leave an email and we'll tell   |
+|  you when it opens, nothing else:|
+|  [ you@example.com  ] [ Send ]   |
 |  Meanwhile, look around:         |
 |     [ See what's on near us ]    |
 +----------------------------------+
 ```
 
-**4. Phone check.** "Everyone here is a real person. We'll text you a code. Your number is never shown to anyone." A non-mobile internet number gets a one-line ask for a mobile number.
-
-**5. Phone code.** Six boxes; then straight on.
-
-**6. What brings you here?** The question, asked once, here. Neither door is pre-selected. A small link under both skips it.
+**4. What brings you here?** The question, asked once, here. Neither door is pre-selected. A small link under both skips it.
 
 ```
 +----------------------------------+
@@ -124,7 +129,7 @@ criteria:
 +----------------------------------+
 ```
 
-**7a. Maker door: "Is your Page already here?"** One search box by name. A match offers "This is mine, claim it"; no match offers "Start your Page". Starting or claiming asks which contact details show (phone, email, site, socials, exact place or neighbourhood), each off until the owner turns it on.
+**5a. Maker door: "Is your Page already here?"** One search box by name. A match offers "This is mine, claim it"; no match offers "Start your Page". Starting or claiming asks which contact details show (phone, email, site, socials, exact place or neighbourhood), each off until the owner turns it on.
 
 ```
 +----------------------------------+
@@ -139,11 +144,11 @@ criteria:
 +----------------------------------+
 ```
 
-**8a. Maker's first useful screen: their own Page,** with one prompt: "Post what's on this week." Followers count toward nothing they must chase.
+**6a. Maker's first useful screen: their own Page,** with one prompt: "Post what's on this week." Followers count toward nothing they must chase.
 
-**7b. Supporter door: "What are you into?"** Today's interests screen, kept, skippable. Only the member sees these.
+**5b. Supporter door: "What are you into?"** Today's interests screen, kept, skippable. Only the member sees these.
 
-**8b. Supporter's first useful screen: Explore, this week near them,** led by what matches their interests, with Follow and Going on every card. A line at the top: "Follow a few places and their news comes to you." Following and going show to a Page as counts, never as names to outsiders, and the member has no page anyone outside can find.
+**6b. Supporter's first useful screen: Explore, this week near them,** led by what matches their interests, with Follow and Going on every card. A line at the top: "Follow a few places and their news comes to you." Following and going show to a Page as counts, never as names to outsiders, and the member has no page anyone outside can find.
 
 **Look around:** goes to Explore with no interests set; both doors stay on You.
 
@@ -166,13 +171,13 @@ criteria:
 
 ## Options
 
-- **A. Ask after the phone check, store nothing (recommended):** two doors and "just look around" pick the first screen; counts come from Pages started or claimed and verified members. Keeps every ruling, gives makers a path they lack today; one new screen.
+- **A. Ask right after sign-up, store nothing (recommended):** two doors and "just look around" pick the first screen; counts come from Pages started or claimed and verified members. Keeps every ruling, gives makers a path they lack today; one new screen.
 - **B. Ask on the sign-up form and keep the answer:** the answer is a field on the member, counts read it, You lets them change it. Simplest counts; overturns the 2026-11-12 "no make-or-find question in sign-up" ruling and the 2026-09-14 never-stored rule, and self-reported makers inflate the creator count.
 - **C. Never ask; infer from what they do:** everyone lands on interests then Explore; "Start or claim a Page" sits in the plus menu and on You. No new screen, no ruling touched; makers have to find their own way, which is the gap today.
 
 ## Calls that come with A
 
 - **Words:** the two door labels and "just look around" are drafts for the PM.
-- **Build freeze:** the fork and the "Is your Page already here?" screen are new screens; they need his yes as launch preparation. Applying the ruled look and line to screens 1 to 5 and removing the question from the waiting screen are already ruled and can go now.
+- **Build freeze:** the fork and the "Is your Page already here?" screen are new screens; they need his yes as launch preparation. Applying the ruled look and line to screens 1 to 3 and removing the question from the waiting screen are already ruled and can go now.
 
-**How A would be measured:** counts only, no member id beside them (the analytics brief, option A): how many people reach each screen from 1 to 8 and where they stop; the share taking each door and "look around"; of the maker door, how many start or claim a Page within 7 days; of the supporter door, how many follow a Page or tap Going in the first session and come back within 14 days.
+**How A would be measured:** counts only, no member id beside them (the analytics brief, option A): how many people reach each screen from 1 to 6 and where they stop; the share taking each door and "look around"; of the maker door, how many start or claim a Page within 7 days; of the supporter door, how many follow a Page or tap Going in the first session and come back within 14 days.
