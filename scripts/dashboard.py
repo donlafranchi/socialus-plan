@@ -613,7 +613,8 @@ _pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
 out[_pi + 1:_pi + 1] = [''] + cockpit.md(COCKPIT) + pipeline_health()
 # Don, 2026-10-15: "when I say dashboard I want html not markdown." The page is the dashboard; this file is a pointer and the numbers.
 PAGE_URL = 'https://socialus-plan-dashboard.pages.dev/'
-_todos = sorted(_json_items := (json.load(open(os.path.join(root, 'dashboard', 'don-todos.json')))['items'] if os.path.exists(os.path.join(root, 'dashboard', 'don-todos.json')) else []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))
+import todo  # TODO.md is the PM's to-do list (2026-11-11); don-todos.json is retired
+_todos = todo.load(root)
 short = [out[0], '', out[2], '',
          f'**The dashboard is a web page: [{PAGE_URL}]({PAGE_URL})** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.', '',
          '## The numbers', '']
@@ -677,7 +678,7 @@ data = {
     'speed': _safe(_speed, {}),
     'notify': _safe(_notifications, {}),
     # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
-    'todos': sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999')),
+    'todos': _todos,
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
     # Don, 2026-10-16: "Where can I see what we have left to build… what else needs to be done before soft launch?"
     'launch_left': {
@@ -686,7 +687,7 @@ data = {
         'grade': next(([{'n': c['n'], 'text': c['text'], 'pass': c['built'] == 'yes'} for c in f['criteria']] for f in FEATS if f['id'] == 'F116'), None) if os.path.exists(os.path.join(root, 'planning', 'scenario-F116.md')) and re.search(r'^status: approved', open(os.path.join(root, 'planning', 'scenario-F116.md')).read(), re.M) else None,
         # `[derives pitch@date]` docs older than PRINCIPLES.md #pitch (scripts/markers.py derives): a row until green.
         'pitch': _safe(lambda: json.loads(subprocess.run(['python3', os.path.join(root, 'scripts', 'markers.py'), 'derives'], capture_output=True, text=True, check=True, cwd=root).stdout), {'changed': None, 'stale': []}),
-        'calls': [{'p': t.get('p', 3), 'text': t['text'], 'url': t.get('url'), 'due': t.get('due')} for t in sorted(_json('don-todos.json', 'items', []), key=lambda t: (t.get('p', 3), t.get('due') or '9999'))],
+        'calls': [{'p': t['p'], 'text': t['text'], 'url': t.get('url'), 'due': None} for t in _todos],
     },
     'lanes': (lambda sc, ideas: {h: [{'id': x['id'], 'title': x['title'], 'status': x['status']} for x in sorted((x for x in sc if x['horizon'] == h), key=lambda x: (x['rank'], x['id']))] + [{'id': 'idea', 'title': t, 'status': 'IMAGINE'} for l, t in ideas if l == h] for h in ('now', 'next', 'considering', 'later')})(going.scenarios(os.path.join(root, 'planning')), going.imagine(os.path.join(root, 'IMAGINE.md'))),
     'since': since_h, 'noarea': [{'k': k, 't': t, 'u': u} for k, t, u in SHIFT.get(None, [])],
@@ -793,7 +794,7 @@ const pc=x=>x==null?'–':`${Math.round(x*100)}%`;const NTS={green:STC.green,red
 const notifyLede=NT.state?`${(NTS[NT.state]||NTS.quiet)[1]}: ${NT.kinds.map(k=>`${NTN[k.kind]} ${pc(k.optInRate)} opted in`).join(' · ')}`:'No notification counts yet (the first weekly run writes them).';
 const notifyBody=NT.state?NT.kinds.map(k=>{const w=k.weeks.slice(-8);const sum=f=>w.slice(-4).reduce((a,x)=>a+x[f],0);return `<div class="row speed"><span class="pri" style="background:${(NTS[k.state]||NTS.quiet)[0]};color:#fff">${esc((NTS[k.state]||NTS.quiet)[1])}</span><div class="title"><b>${esc(NTN[k.kind]||k.kind)}</b> · ${pc(k.optInRate)} of members opted in · ${pc(k.openRate)} opened${k.why?` · <b>${esc(k.why)}</b>`:''}<br><span class="sub">Last 4 weeks: ${sum('sends')} sent, ${sum('opens')} opened, ${sum('unsubscribes')} turned off, ${sum('mutes')} paused, ${sum('opt_ins')} turned on. Sent per week: ${w.map(x=>x.sends).join(' → ')||'–'}</span></div></div>`}).join('')+`<p class="sub">Counts only: no member is named. Reviewed monthly and at each release; a review proposes one change at a time. <a href="${esc(NT.runs)}">runs</a></p>`:'<p class="sub">The weekly notification counts could not be read yet.</p>';
 // Don, 2026-11-06: "I only need to know what's next to do and other issues as fyi's"; "I don't want the instructions in the dashboard."
-// Do next is the one item in don-todos.json `items`; everything else folds under FYI, each group named for the problem or state, with its count.
+// Do next is the first item of TODO.md (the focus section's first, if there is one); everything else folds under FYI, each group named for the problem or state, with its count.
 const CK=Object.fromEntries(D.cockpit.map(x=>[x.id,x]));const its=id=>(CK[id]&&CK[id].items)||[];
 const li=(t,u)=>`<li>${u?`<a href="${esc(u)}">${esc(t)}</a>`:esc(t)}</li>`;
 const ul=xs=>xs.length?`<ul style="margin:4px 0;padding-left:20px">${xs.join('')}</ul>`:'<p class="sub" style="margin:6px 0">None.</p>';

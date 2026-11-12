@@ -9,7 +9,7 @@ Agents keep this list. When you finish something, say so and the line is deleted
 The PM, 2026-11-12: get "the landing page and early sign-up workflow dialed in while we wait to launch." Your part, in order:
 
 1. **Set up Twilio for the phone check.** The sign-up phone check can't run without it; it also unblocks posting without a Page. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
-2. **Pick what a visitor without an account can see** (A, B or C, in chat). Decides what the landing page and a shared link show before sign-up.
+2. **Pick the landing headline** (A, B or C, in chat): "SocialUs, for the people" and the line under it. Then the page wording comes to you in one PR.
 3. **Pick the Northern California counties (A, B or C).** Decides which zips open at sign-up and which join the waiting list. [Options](planning/research/northern-california-2026-11-06.md)
 4. **Add socialus.org to Resend,** so sign-up emails come from our own address. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
 5. **Sign up on your phone as a stranger would,** from socialus.org, once the agents' pass below is merged, and say what felt wrong.
