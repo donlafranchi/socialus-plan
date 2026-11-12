@@ -10,7 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-11-12** · metrics, privacy, data, dashboard — Product analytics are counts kept in our own database, with no member id beside them and nothing sent to an outside service; a member who turns sharing off on You is never counted. The count tables are launch preparation, an exception to the 2026-11-06 build freeze, so the first members are counted (planning/scenario-F133.md)
+- **2026-11-12** · [for now] · metrics, privacy, data, dashboard — Product analytics are counts kept in our own database, with no member id beside them and nothing sent to an outside service; a member who turns sharing off on You is never counted. The count tables are launch preparation, an exception to the 2026-11-06 build freeze, so the first members are counted (planning/scenario-F133.md)
 - **2026-11-11** · knowledge, method — Documents stop being the record: knowledge lives in the store, the documents that remain only orient an agent and say where to look, and the PM asks any kind of question through an agent that searches the store instead of reading documents (planning/scenario-F125.md)
 - **2026-11-11** · knowledge, capabilities — A "can't yet" line may say "not built yet" or "built, waiting on its checks" when no condition holds it back; most unproven lines wait on neither a condition nor a decision (planning/scenario-F129.md)
 - **2026-11-11** · knowledge — A concept keeps one identity from first idea to what got built; renames, splits, cuts and returns are dated events on it, each with its evidence and the PM's words (planning/scenario-F130.md)

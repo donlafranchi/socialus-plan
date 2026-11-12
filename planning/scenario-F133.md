@@ -43,4 +43,4 @@ Charts beyond the three answers. Session replay, heatmaps, click paths of one me
 
 ## Rulings
 
-- **2026-11-12 — Product analytics are counts kept in our own database, with no member id beside them and nothing sent to an outside service; a member who turns sharing off on You is never counted. The count tables are launch preparation, an exception to the 2026-11-06 build freeze, so the first members are counted.** The PM, picking A ("A A"), for F133. [binds tiers=planning,code surfaces=metrics,privacy,data,dashboard]
+- **2026-11-12 — Product analytics are counts kept in our own database, with no member id beside them and nothing sent to an outside service; a member who turns sharing off on You is never counted. The count tables are launch preparation, an exception to the 2026-11-06 build freeze, so the first members are counted.** The PM, picking A ("A A"), for F133. [for now] [binds tiers=planning,code surfaces=metrics,privacy,data,dashboard]
