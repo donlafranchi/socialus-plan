@@ -7,9 +7,12 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **101 older decisions carry no tag yet and are not listed** — tagging is required from
+> **100 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-12** · waitlist, signup, onboarding — A person outside an open market is not asked whether they are here to make, sell or organize, or to find and support; the waitlist counts one number (planning/scenario-F076.md)
+- **2026-11-12** · signup, copy — The sign-up line saying what the app is for is "Locals, finding and supporting locals." (planning/scenario-F081.md)
+- **2026-11-12** · signup, look — Sign-up carries the front page's look: terracotta and the Aime font (planning/scenario-F081.md)
 - **2026-11-12** · [for now] · method — No Vercel or Supabase plan upgrade for load during beta: fix the code first, and upgrade only what a re-run of the load simulation shows is a plan limit, or two weeks before launch, whichever comes first. [for now] (planning/scenario-F128.md)
 - **2026-11-12** · signed-out, explore, map, pages, announcements, rls — Visitors without an account can read everything a signed-in member with no relation to the Page can read, map pins included; hearting, following, posting, reporting and every other write still need an account and ask for sign-in first; both are enforced in SQL (planning/scenario-F134.md)
 - **2026-11-12** · signed-out, rls, names, contact, groups — Opening reading to visitors changes no member's privacy: followers-only posts, group Page levels, the owner's chosen location precision and contact fields set to members hold for a signed-out visitor as for a signed-in stranger, and a member's display name and avatar, shown between members, stay hidden from a signed-out visitor (planning/scenario-F134.md)
@@ -167,7 +170,6 @@
 - **2026-10-01** · page-create, page-edit, page-publish, tags, copy — Creating a Page is one question: its kind, and the screen says this just starts the process. Creation lands the owner on their draft Page, where they fill in everything else, the name included (planning/scenario-F061.md)
 - **2026-10-01** · posting, reports, moderation, copy — We can't enforce the sensitive-content rule; we rely on reporting. The ask at posting covers anything sensitive, in any form, and the children report category widens to "sensitive content", still hiding at any bar (planning/scenario-F080.md)
 - **2026-10-01** · privacy, legal, copy — We disclose member data only in response to valid legal process: court orders, subpoenas and legal emergencies. Counsel finalises the wording (planning/scenario-F081.md)
-- **2026-10-01** · signup, copy — The signup line ships as written: "This is a community building app. It was made for good and decent people to find, connect with and support other good and decent people. We are here to build a better future together." (planning/scenario-F081.md)
 - **2026-10-01** · signup, identity — A member is verified as a person by a text-message code to their phone, at signup (planning/scenario-F081.md)
 - **2026-10-01** · page-publish, page-photos, default-art — Publishing a Page requires a name, a location (an address or an area) and a description. A photo is optional; a Page without one shows its kind's default image or icon (planning/scenario-F082.md)
 - **2026-10-01** · design-tokens, design-language — Design tokens live in the app code as the single source of truth; the design-language doc keeps only the reasons (product/ui/design-language.md)
