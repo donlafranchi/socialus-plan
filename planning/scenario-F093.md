@@ -64,5 +64,3 @@ So the body goes, entirely. **There is no excerpt, no first line, no character-t
 An excerpt, a teaser, a first line, or a character count of the body. A per-Page or per-post opt-out — this is one rule for every announcement. A paywall, a trial, or any tier above member. Blocking search engines from Pages. Anything that changes what a signed-in member sees. Rate-limiting the anonymous card endpoint, which is real work and belongs with `#195`. Closing the `members` leak, which is `#178` and is a bug under any ruling. Terms of service, still flagged and still not drafted.
 
 ## Rulings
-
-None live: all four were superseded by F134 on 2026-11-12. This file is deleted in the next change.

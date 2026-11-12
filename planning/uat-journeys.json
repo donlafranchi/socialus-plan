@@ -164,26 +164,22 @@
   "minutes": 3,
   "launch": true,
   "look": [
-   "One card per Page; the count says \"this week\", never \"0\"",
-   "Cards show photo, name, count, a details line and a sign-in call; no post text, time or place; a Page with no photo shows its kind's picture",
-   "A Page shows name, photo, description and a sign-in card; no location, tags or founder",
-   "Tapping around a card only ever asks you to sign in",
-   "Only display names show; no real full names anywhere"
+   "Posts read in full: what, when and where, at the place precision the owner chose",
+   "The map opens with pins; a Page shows its location and tags",
+   "Heart, follow, RSVP or report asks you to sign in before anything is saved, and finishes after",
+   "No \"Sign in to see what's happening\" card anywhere",
+   "Only display names show; no real full names anywhere, and no member names at all signed out"
   ],
   "criteria": [
-   "F093.5",
-   "F093.7",
-   "F093.8",
-   "F093.10",
-   "F093.9",
+   "F134.1",
+   "F134.2",
+   "F134.3",
+   "F134.4",
+   "F134.7",
+   "F134.8",
    "F077.3",
-   "F093.11",
-   "F059.5d",
-   "F093.4",
-   "F099.11a",
    "F059.2c",
-   "F093.1",
-   "F093.2"
+   "F099.11"
   ]
  },
  {
@@ -280,7 +276,7 @@
    "Today and this-week rows hold only posts starting in that window, soonest first",
    "Empty rows do not show, and a quiet city drops the whole heading",
    "Your own items show for you, and change when you change the metro",
-   "Signed out, each posting Page gives one \"sign in to see\" card; signed in, the full posts are back",
+   "Signed out, the same posts read in full, as they do signed in",
    "Open the same link on another phone: the same rows show"
   ],
   "criteria": [
@@ -292,7 +288,7 @@
    "F091.1b",
    "F091.2",
    "F091.5",
-   "F093.6"
+   "F134.9"
   ]
  },
  {
