@@ -1,14 +1,16 @@
 ---
 id: F093
 title: A signed-out visitor sees that something is happening, and is asked in to read it
-status: approved
-horizon: next
+status: draft
+horizon: considering
 rank: 150
 gates: launch
 date: 2026-09-23
 depends: [F059, F072]
 approved: 2026-09-23 — Don's ruling on socialus-web #200. "Who exists is public. What's happening is not — but that something is happening is public." The body is withheld entirely, not just the time and the place, and the withholding is enforced in SQL.
 amended: 2026-09-30 — Don approved: criterion 8 restated. The signed-out front door is name, default photo, description and the withheld card; the location is kept and used, not shown; tags show signed in only. Later the same day: no map pins signed out; the location scopes the metro only.
+concept: new
+retired: 2026-11-12 — superseded by F134 (visitors read everything); kept one change only so its rulings can leave first.
 ---
 ## Story
 
@@ -62,7 +64,5 @@ So the body goes, entirely. **There is no excerpt, no first line, no character-t
 An excerpt, a teaser, a first line, or a character count of the body. A per-Page or per-post opt-out — this is one rule for every announcement. A paywall, a trial, or any tier above member. Blocking search engines from Pages. Anything that changes what a signed-in member sees. Rate-limiting the anonymous card endpoint, which is real work and belongs with `#195`. Closing the `members` leak, which is `#178` and is a bug under any ruling. Terms of service, still flagged and still not drafted.
 
 ## Rulings
-- **2026-10-04 — The signed-out main button reads "Sign in to see what's happening".** Don. It is the withheld card and front-door button of F093 criterion 8, F091 criterion 7 and F098 criterion 10, all restated; copy stays a draft ([public-is-draft]). [replaces 2026-09-30: Sign up to see what's happening] [binds tiers=planning,code surfaces=signed-out,copy,pages,explore]
-- **2026-09-30 — Signed-out visitors see no map pins. A Page's stored location is used only for metro scoping when signed out.** Don approved. F093 criterion 8 and story restated. Builds on F093. [replaces 2026-09-30: and it scopes the metro and places the Page on the map without being displayed.] [replaces F093: and places it on the map without being displayed] [replaces F093: placed on the map without an address] [binds tiers=planning,code surfaces=map,explore,rls]
-- **2026-09-30 — F093 criterion 8 amended: a signed-out visitor sees a Page's name, default photo, description and the withheld card, and no location, tags or founder. Storing a location and showing it are separate: a Page keeps its location regardless, and it scopes the metro. Signed in, the owner chooses how much location shows; tags show to signed-in visitors only.** Don approved amending approved F093. The owner's choice is the existing one: an exact place, or a neighbourhood instead (the 2026-09-30 residence ruling). Answers the first correction `socialus-web` #246 flagged. [replaces F093: Pages stay fully public.] [replaces F093: Name, description, location, photo, tags and the map are unchanged for an anonymous reader] [replaces F093: where they are, the map — exactly as before] [binds tiers=planning,code surfaces=explore,pages,map,rls]
-- **2026-09-27 — The signed-out announcement card is one card per Page, and it shows the Page's photo.** Don, on seeing F093's card on production: *"it looks weird"* — show the image and the business name, omit the when and the where, say the details are for members and followers of this Page and invite them to sign in and become a member, and keep it looking pretty. **Two things made it weird and both are fixed:** it was a bare text box in a grid of photo tiles, and it was one card per *announcement* each carrying the *Page's* count, so a Page with two posts rendered two identical cards both reading *1 announcement this week* — correct per row, broken to a reader. **The photo is public already** (Pages are fully public), so showing it gives nothing away; it is resolved in SQL, so a hidden or removed photo never reaches the browser. **Nothing else moves:** the body is still withheld entirely, and so are the time and the place — including the Page's own location line, which under *3 announcements this week* reads as where they happen. No excerpt. The withheld projection gains a photo column and the announcement ids its card answers to, and never the body, `starts_at` or location. Built as `socialus-web` #230; F093 criteria 4, 5 and 9 restated. [for now] [replaces 2026-09-23: a card carrying the Page name, that the Page posted an announcement, and how many it has this period, plus a *Become a member* call to action] [binds tiers=planning,code surfaces=explore,announcements,copy]
+
+None live: all four were superseded by F134 on 2026-11-12. This file is deleted in the next change.

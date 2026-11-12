@@ -5,7 +5,8 @@ status: draft
 horizon: later
 rank: 250
 date: 2026-09-30
-depends: [F090, F093]
+depends: [F090, F134]
+concept: new
 ---
 ## Story
 
@@ -17,7 +18,7 @@ Jess follows six venues, three bands and a run club across four apps just to kno
 2. **Every imported event names its source and links back to the owner's own site or channel.**
 3. **A member can share an event they heard about;** it is marked unconfirmed until its venue claims it, and the venue is invited to.
 4. **Nothing is gathered from a public listing without the owner's consent.**
-5. **Imported and shared events follow the same visibility as any announcement,** including the signed-out front door (F093).
+5. **Imported and shared events follow the same visibility as any announcement,** including what a signed-out visitor reads (F134).
 
 ## Not this
 

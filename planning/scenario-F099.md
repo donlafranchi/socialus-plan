@@ -5,8 +5,10 @@ status: approved
 horizon: now
 rank: 160
 date: 2026-10-05
-depends: [F070, F072, F078, F080, F093]
+depends: [F070, F072, F078, F080, F134]
 approved: 2026-10-05 — Don's answers, "keep it simple": one Page picture for every kind; the kind placeholder when none is set; the beta slice, gallery after beta; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty. Same fields, flow and copy for every kind.
+amended: 2026-11-12 — criterion 11 restated for F134: signed-out visitors read posts, photos included.
+concept: new
 ---
 ## Story
 
@@ -24,7 +26,7 @@ Maya's bakery sets a Page picture, a round loaf on blue. On Thursday she posts t
 8. **The Page picture and each post photo are reportable on their own** (F078). A report hides that one image only, and the poster's notice names which.
 9. **Adding either image shows the sensitive-content ask at the moment of upload** (F080).
 10. **Every rendered image has alt text.** Page picture and placeholder: the Page's name. Post photo: the owner's words, else the default built from title, date and place (F072 criterion 6).
-11. **Signed out (F093), no post photo is in any response.** The Page picture or placeholder shows wherever the Page's name does; the withheld card is unchanged (2026-09-27).
+11. **Signed out (F134), a post's photo shows with its post, as it does signed in.** The Page picture or placeholder shows wherever the Page's name does.
 12. **Removing either image records an event,** and it stops showing on every surface on the next load.
 13. **A Page's current photo stays its photo, shown where it shows today.** The Page picture starts empty, so the placeholder shows on its posts until the owner sets one.
 
@@ -59,7 +61,7 @@ More than one photo on a Page or a post, and any gallery: after beta, its own sc
 - **Reports (F078):** a reported post photo hides and the post falls back to the Page picture; the post stays up unless reported itself.
 - **Removed bytes stay fetchable (accepted risk, review due 2026-10-16):** post photos add images that can be removed yet stay downloadable by direct URL. Recommend the 10-16 review settles the purge path (`socialus-web` `docs/purge-proposal.md`) before post photos reach production.
 - **Alt text:** F072 criterion 6 already asks for default alt text on a dated post's image; this gives it an image.
-- **Signed out (F093):** posts are withheld, so their photos are too.
+- **Signed out (F134):** posts are readable, so their photos show too.
 
 [platform photos: the owner picks a Page picture or a post photo from the library; each is resized and re-encoded to WebP on the device, as the Page photo is today]
 

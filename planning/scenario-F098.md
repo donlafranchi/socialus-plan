@@ -5,7 +5,8 @@ status: draft
 horizon: later
 rank: 80
 date: 2026-10-04
-depends: [F059, F091, F093]
+depends: [F059, F091, F134]
+concept: new
 ---
 ## Story
 
@@ -22,7 +23,7 @@ Sam opens SocialUs on a Friday evening with nothing planned. Home shows a row he
 7. **Below the stop card, older picks appear only after a tap.** Nothing refills on its own.
 8. **Each row's "Show all" opens Explore narrowed to that row's window or category.**
 9. **The wildcard row draws from outside the member's declared interests**; signed out, from the whole metro.
-10. **Signed out, Home follows F093:** withheld announcements show as its "Sign in to see what's happening" card, and the stop card's second line is absent.
+10. **Signed out, Home follows F134:** posts read in full, as for a signed-in member with no relation to the Page, and the stop card's second line is absent.
 
 ## Not this
 
