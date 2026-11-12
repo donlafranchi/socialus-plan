@@ -34,6 +34,7 @@
 - **2026-11-12** — Where a member posts, a positive reminder encourages good, decent content, never a list of don'ts; a marked placeholder until the PM's words (planning/scenario-F080.md)
 - **2026-09-30** — The zip is kept. Nobody picks a metro: the zip decides it at signup, and a member who moves changes their zip on `/you` and the metro follows (planning/scenario-F081.md)
 - **2026-09-30** — Signup does not say "we never sell". It says what the app is for (planning/scenario-F081.md)
+- **2026-11-12** — Google and Apple sign-in are the primary way in; a real mobile number is still required at sign-up, and email is for signing in again (planning/scenario-F081.md)
 - **2026-11-12** — Sign up with a US mobile number and a texted code, not an email; email is optional, added later on You. Sign-up collects a mobile number, a name (a first or display name, never a legal name), a zip and what the person plans to do, and nothing more without a stated reason (planning/scenario-F081.md)
 - **2026-11-12** — Only real mobile numbers sign up: Twilio Lookup must say `mobile`; one account per number (planning/scenario-F081.md)
 - **2026-11-12** — Codes go through Twilio Verify on Twilio's own senders: no number to buy, no 10DLC registration; our own number only if we send texts that are not codes or want branded sending (planning/scenario-F081.md)
