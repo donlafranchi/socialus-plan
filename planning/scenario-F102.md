@@ -9,13 +9,11 @@ date: 2026-10-05
 depends: [F078, F100, F101]
 approved: 2026-10-05 — the PM's ruling: "we want to track for Reporting abuse and have a plan for that. and we want to put as much back on the creator poster before we have to do anything … I want to do minimal work on my end." The auto-restore question below is open.
 concept: new
-amended: 2026-11-12 — the PM: new accounts start small; a banned number stays banned (15, 16).
+amended: 2026-11-12 — the PM: new accounts start small; a banned number stays banned (15, 16); the safety package (17–21).
 ---
 ## Story
 
-**The constraint behind this design: one person runs the platform alongside a day job, and is mostly unavailable Tuesday to Thursday. Moderation has to run itself, and the PM's work is minimal and batched Friday to Monday.**
-
-On Tuesday a bakery's Post is reported as spam three times in an hour, twice from accounts made that morning. It hides. The owner is told why and gets one answer: fix and repost, or say the report is wrong. They pick "Misusing reports" and write a line. The AI reads it; the row is marked as possible coordinated reporting, and the reporters' records sit beside it. Nobody acts until Saturday, when the PM approves it in one swipe. That dismissal counts against each reporter's record, and one of them now waits two weeks before a report of theirs hides anything again.
+**One person runs the platform beside a day job and is mostly away Tuesday to Thursday, so moderation runs itself.** A bakery's Post is reported three times in an hour, twice by day-old accounts; it hides, the owner answers "Misusing reports", the row is flagged as possible coordinated reporting, and on Saturday the PM dismisses it in one swipe, which counts against each reporter.
 
 ## Acceptance
 
@@ -36,45 +34,40 @@ On Tuesday a bakery's Post is reported as spam three times in an hour, twice fro
 15. **New accounts start small for 7 days:** 3 posts a day and first messages to 10 people a day; replies, follows, Going and hearts are not limited. It lifts on day 8 by itself. At the limit, one line says when they can post again ([public-is-draft]). Configurable without a deploy.
 16. **A banned number stays banned:** a ban keeps a one-way hash of the number, never the number, and it cannot sign up again (F081), even after deletion. Banning stays a person's act.
 
+17. **Removal for a violation bans the number for good** (16), by a person.
+18. **Apparent CSAM goes to NCMEC** (14): a duty on actual knowledge, with no duty to scan (2258A(a), (f)).
+19. **A credible threat goes to the police with the poster's number,** by a person, per the staff runbook.
+20. **Evidence (content, number, IP, time) is kept one year from the report** (13), matching 2258A's one-year preservation (REPORT Act, 2024).
+21. **A fresh prepaid line gets extra caution:** its first reports rank one tier higher.
+[open-question owner=code raised=2026-11-12] Which signal marks a fresh prepaid line: Telesign's subscriber status (enterprise accounts only), Twilio SIM Swap (US gives only yes/no, private beta), or none until a vendor gives one at our size?
+[open-question owner=don raised=2026-11-12] Should a reported or repeat account be asked for a photo ID check? Not decided; nothing is built.
+
 ## Not this
 
 Telling a reported member who reported them (2026-09-30 ruling). Auto-banning accounts. Acting automatically on a coordinated-reporting flag. Email.
 
 ## Why
 
-**The PM, 2026-10-05:** *"we want to track for Reporting abuse and have a plan for that. and we want to put as much back on the creator poster before we have to do anything. We give the creator a second chance to provide feedback that the report was malicious or ridiculous and being misused etc. I want to do minimal work on my end."* **The operating constraint** is the whole reason: every step here either moves work to the poster, moves it to a rule, or moves it to the Friday-to-Monday batch.
+**The PM, 2026-10-05:** put as much back on the poster as possible and keep his own work minimal and batched. Every step moves work to the poster, a rule, or the Friday-to-Monday batch.
 
 **Path: new territory.** It touches member trust, F078's strike rule and the beta shadow ruling.
 
-### Counters on the act of reporting
-
-Counts of reports filed and how each ended, plus caps and cool-downs on the act (today's `report.create` caps: 5 hiding, 20 open, 2 per subject). Operator-only; they feed nothing outside the report path.
-
-### What changes against today
-
-As of 2026-10-05 the poster was told nothing, the report caps were constants that ignored outcomes, and no account-age or burst check existed; criteria 1–8 add those.
-
 ### Precedent
 
-- **Reddit** lets moderators report abuse of the report button itself, and acts on the reporter, up to suspension ([r/modnews](https://www.reddit.com/r/modnews/comments/cgxuep/were_rolling_out_a_new_way_to_report_abuse_of_the/)). Tracking outcomes per reporter comes from that.
-- **YouTube** gives the creator an appeal on each strike and lifts a strike when the appeal succeeds ([help](https://support.google.com/youtube/answer/185111?hl=en)). The poster's one answer comes from that.
-- **Discord AutoMod** times out the act ([AutoMod FAQ](https://support.discord.com/hc/articles/4421269296535)). Cool-downs come from that.
+Reddit acts on abuse of the report button ([r/modnews](https://www.reddit.com/r/modnews/comments/cgxuep/were_rolling_out_a_new_way_to_report_abuse_of_the/)); YouTube gives an appeal per strike ([help](https://support.google.com/youtube/answer/185111?hl=en)); Discord AutoMod times out the act ([FAQ](https://support.discord.com/hc/articles/4421269296535)): counters, the poster's answer and cool-downs come from these.
 
 ### Unattended time
 
-Hiding is the safe default, so midweek nothing needs a person: content that might be bad is already down, and the cost of waiting falls on content that is fine, which the poster's answer and the batch handle.
-
-### Shadow mode against an empty Tuesday
-
-**Ruled B (the PM, 2026-10-05): narrow auto-restore** (criterion 12), so a mistaken spam report does not keep a fine Post down until the weekend.
+Hiding is the safe default, so midweek nothing needs a person; waiting costs only content that is fine, which the poster's answer, narrow auto-restore (12) and the batch handle.
 
 ### Size
 
 [platform store=ugc: the report path, the poster's answer and report-misuse limits are part of the moderation app stores require of an app with user-generated content]
 
-**About 3 build days in the beta,** after F078's notice, criteria 12–13 included; criteria 15–16 ride on #1280. What to push is in F101 § Size.
+About 3 build days in the beta; 15–21 ride on #1280 and #1288.
 
 ## Rulings
+- **2026-11-12 — The safety package: removal bans the number for good; apparent CSAM goes to NCMEC; credible threats go to the police with the number; evidence is kept one year per the 2026-10-05 retention ruling; a fresh prepaid line gets extra caution; every photo is hash-checked and every post screened before publish (F080). Photo ID for reported or repeat accounts is not decided.** The PM: *"no user of ours thinks that they can post anything anonymously and that if they do post anything heinous or dangerous or gross that we will know who they are and will take swift action."* [always] [replaces none] [binds tiers=planning,code surfaces=moderation,reports,abuse,uploads,signup] Issue: #1280.
 - **2026-11-12 — New accounts start small for 7 days, and a banned number stays banned (as a one-way hash).** The PM: "yes for new accounts starting small", bending the trust-first default for a week. Numbers and precedents: `planning/research/phone-sign-up-2026-11-12.md`. [for now] [replaces none] [binds tiers=planning,code surfaces=posting,messages,abuse,signup] Issue: #1280.
 - **2026-10-16 — The "no score on a person" rule is removed.** Person ratings are open to design (e.g. Uber-style two-way ratings between members and Pages). [replaces 2026-10-12: The platform never rates, ranks or labels a person] [replaces F102: never as a score, rank or label on a person] [for now] [binds tiers=planning,code surfaces=members,reports build=none]
 - **2026-10-11 — Apparent CSAM is reported through NCMEC's manual CyberTipline web form for beta, and through registration with the CyberTipline when the entity structure is set up and we go public (entity questions go to `socialus-legal`). Preservation is built now either way. A staff runbook (apparent CSAM, threats of harm, other severities: step by step, phone-readable, linked from the admin reports page) and a reminder tied to entity setup ("register with the CyberTipline and switch from the manual form") are in scope. We collect enough member information (verified phone, legal name, F077/F081) to act on abusive or harmful content and say plainly that we do not tolerate it; per policy it is collected for the platform's protection and not shown member to member.** The PM, 2026-10-11, option B for beta and A at public launch, on `socialus-web` #648 (F102 criterion 14). [replaces none] [binds tiers=planning,code surfaces=moderation,reports,uploads,privacy] Issue: #648.
