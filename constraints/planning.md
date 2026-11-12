@@ -10,7 +10,8 @@
 > **100 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
-- **2026-11-12** · waitlist, signup, onboarding — A person outside an open market is not asked whether they are here to make, sell or organize, or to find and support; the waitlist counts one number (planning/scenario-F076.md)
+- **2026-11-12** · [always] · principles, privacy, names, contact, threads — Sellers decide how and when they are found; the people who come to find and support them can never be tracked in the app, by anyone, signed in or out. [always] (PRINCIPLES.md)
+- **2026-11-12** · [for now] · waitlist, signup — Whether a person outside an open market is asked if they make or support is reopened, for the end-to-end design of the sign-up journey; until then nothing changes in the code, and the make/support gate (criterion 10, F118) waits on the same design (planning/scenario-F076.md)
 - **2026-11-12** · signup, copy — The sign-up line saying what the app is for is "Locals, finding and supporting locals." (planning/scenario-F081.md)
 - **2026-11-12** · signup, look — Sign-up carries the front page's look: terracotta and the Aime font (planning/scenario-F081.md)
 - **2026-11-12** · [for now] · method — No Vercel or Supabase plan upgrade for load during beta: fix the code first, and upgrade only what a re-run of the load simulation shows is a plan limit, or two weeks before launch, whichever comes first. [for now] (planning/scenario-F128.md)

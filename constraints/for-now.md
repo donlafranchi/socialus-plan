@@ -22,6 +22,7 @@
 - **2026-09-20** — A repeating thing repeats, simply: weekly on chosen weekdays with optional start and end dates, expanded into real rows (planning/scenario-F074.md)
 - **2026-09-23** — The waitlist count comes back, CACHED rather than live, and metros sort by it (planning/scenario-F076.md)
 - **2026-10-25** — The "market opened" email stays, for the landing list (criteria 13–15 stand); a person opens a market with `scripts/market/open-market.ts`, which sends "SocialUs is open in {town or market}. See what's going on." and then discards each address it reached (planning/scenario-F076.md)
+- **2026-11-12** — Whether a person outside an open market is asked if they make or support is reopened, for the end-to-end design of the sign-up journey; until then nothing changes in the code, and the make/support gate (criterion 10, F118) waits on the same design (planning/scenario-F076.md)
 - **2026-09-14** — A legal name stays legible on an interaction record for 12 months, then the record shows the display name (planning/scenario-F077.md)
 - **2026-09-14** — A member's legal name is disclosed to a counterparty, and never on a public surface (planning/scenario-F077.md)
 - **2026-09-14** — Members are never anonymous to the platform; they may be pseudonymous to everyone else (planning/scenario-F077.md)
