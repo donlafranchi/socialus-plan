@@ -19,9 +19,9 @@ criteria:
 
 *The PM, 2026-11-12:* "I need a nice simple way for people to say what they're interested in a format that allows them to answer one question at a time and walk though some screens. The goal is to get a phone number and a name (don't ask for a legal name), a zip code and then what they plan on doing in the app. since nobody knows what the app is for or has little idea we need to somewhat inform them along the way."
 
-**Bottom line: what they want to do first, then name and zip, and the phone number last. Eight screens if they're here to discover, eleven if they want to be found. Your one call: whether we check the number with a texted code when they join. Recommended: yes (A), about 7 cents a person.**
+**Bottom line: what they want to do first, then name and zip, and the phone number last. Eight screens if they're here to discover, eleven if they want to be found. Your calls: whether we check the number with a texted code when they join (recommended: yes, about 7 cents a person), and how Google and Apple sign-in fit with the number (recommended: Google or Apple first, then the number).**
 
-## Your one call: the mobile number at join
+## Your first call: the mobile number at join
 
 | | A. Verify at join (recommended) | B. Collect now, verify at invite | C. Collect now, invite by email |
 |---|---|---|---|
@@ -34,6 +34,23 @@ criteria:
 - **Texts that aren't codes need our own registered number** (Twilio: every A2P text from a 10-digit number must be registered; a toll-free number needs verification). Sole-owner registration works before the company exists: 1 number, 1,000 texts a day to T-Mobile.
 - **They need written consent first,** so A and B carry one unticked box: "Text me once when SocialUs opens near me. Msg & data rates may apply. Reply STOP to opt out, HELP for help. Not required to join." (draft; [public-is-draft])
 - **Why A:** you're staying closed until set up, so nobody is invited before the number exists, and verified counts are the ones worth deciding a launch on. Clubhouse verified phones at waitlist time; Hinge asks the number first because it is the login.
+
+## Your second call: Google and Apple with the mobile number
+
+*The PM, 2026-11-12:* "add Google Auth and Apple Auth for this as well as that should be primary. I am launching the landing page which includes the 'sign-up' journey next before talking to anyone. We are using mobile numbers instead of email for sign up and then email can be used for repeated sign in."
+
+| | A. Google or Apple first, then the number (recommended) | B. Number first, Google or Apple after | C. Google or Apple only, number later |
+|---|---|---|---|
+| Sign-up | Tap Google or Apple; then the mobile number and its code, on the same account | Mobile number and code, as ruled; then "Next time, sign in with Google or Apple" | Tap Google or Apple; the number is asked before the first post |
+| Signing in again | Google or Apple; an emailed code if neither (the email they came with) | The same three, once linked | Google or Apple only |
+| One person, one number | Holds: no account without a verified mobile | Holds | Breaks until they post; bots can browse and pad counts |
+| Drop-off | Lowest friction at the first tap; the number is still a step | Highest: the number comes first | Lowest |
+
+- **Why A:** it does what you asked (Google and Apple first) and keeps your anti-bot rule (a real mobile per person). Airbnb offers Google, Apple, phone or email at sign-up and asks a confirmed phone before booking ([Airbnb help](https://www.airbnb.com/help/article/221)); scooter apps on ATOM Mobility take Apple or Google, then still ask the phone at registration ([ATOM](https://support.atommobility.com/en/articles/10308367-how-to-enable-sign-in-with-apple-id-and-google-account)). Uber and Nextdoor are assumed similar, not checked.
+- **What Google and Apple give us, and the privacy line:** we ask only for sign-in and an email, never contacts, photos or friends. Apple shares the name only on the first sign-in and may give a private relay email (Hide My Email) instead of the real one ([Apple](https://www.apple.com/au/legal/privacy/data/en/sign-in-with-apple/)); we accept either. A Google or Apple name only pre-fills "What should we call you?"; the person can change it. Which provider someone used is never shown to anyone. This keeps the 2026-11-12 principle that nobody can track the people who come to find and support.
+- **How the three bind:** one account holds up to three ways in: Google, Apple, and the mobile number (Supabase identity linking, [docs](https://supabase.com/docs/guides/auth/auth-identity-linking)). The number is required and unique; Google and Apple attach to it. Linking a phone to a Google account is not a documented Supabase path yet, so the build note checks it first.
+- **Apple costs $99 a year** (Apple Developer Program), a paid tool before go-live; the coordinating session is putting that exception to you separately. Once there is an iPhone app, Apple's rule 4.8 expects Sign in with Apple wherever Google sign-in is offered ([summary](https://vp0.com/blogs/apple-sign-in-required-rejection-fix-swiftui.md)).
+- **Waitlist:** under A the join journey's last screens become "Continue with Google / Apple", then the number and its code (screens 9 and 10); the name screen (7) is pre-filled when Google or Apple gives a name.
 
 ## The order, and why
 
