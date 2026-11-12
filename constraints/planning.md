@@ -10,6 +10,7 @@
 > **101 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-12** · [for now] · method — No Vercel or Supabase plan upgrade for load during beta: fix the code first, and upgrade only what a re-run of the load simulation shows is a plan limit, or two weeks before launch, whichever comes first. [for now] (planning/scenario-F128.md)
 - **2026-11-11** · knowledge, method — Documents stop being the record: knowledge lives in the store, the documents that remain only orient an agent and say where to look, and the PM asks any kind of question through an agent that searches the store instead of reading documents (planning/scenario-F125.md)
 - **2026-11-11** · knowledge, capabilities — A "can't yet" line may say "not built yet" or "built, waiting on its checks" when no condition holds it back; most unproven lines wait on neither a condition nor a decision (planning/scenario-F129.md)
 - **2026-11-11** · knowledge — A concept keeps one identity from first idea to what got built; renames, splits, cuts and returns are dated events on it, each with its evidence and the PM's words (planning/scenario-F130.md)

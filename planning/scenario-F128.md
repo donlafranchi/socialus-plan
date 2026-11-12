@@ -7,6 +7,7 @@ rank: 2
 date: 2026-11-10
 approved: 2026-11-10, the PM: "Yes on how we work"; the Claude Project pack carries only what judging a method needs
 depends: [F125]
+concept: new
 ---
 ## Story
 
@@ -48,3 +49,4 @@ Keeping the packs in sync with the Claude Project by hand (the project reads the
 - **2026-11-10 — The pack is rewritten when a practice changes and once a month, not nightly.** The PM, for F128. [binds tiers=planning,code surfaces=knowledge,method]
 - **2026-11-10 — Unfinished work merges dark behind flags of our own, held in our database and on for builder accounts first; no flag vendor until go-live, when the choice is reviewed again. [for now]** The PM, picking A of the LaunchDarkly review, for #1227. [binds tiers=planning,code surfaces=method]
 - **2026-11-10 — No new paid tool before go-live unless it saves PM time; from go-live, paid services that help the platform perform are in, starting with a paid Vercel plan and perhaps a paid GitHub plan. [for now]** The PM, for F128. [binds tiers=planning,code surfaces=method]
+- **2026-11-12 — No Vercel or Supabase plan upgrade for load during beta: fix the code first, and upgrade only what a re-run of the load simulation shows is a plan limit, or two weeks before launch, whichever comes first. [for now]** The PM, "A", after the first load simulation found the database never the limit (socialus-web #1264). [binds tiers=planning,code surfaces=method]
