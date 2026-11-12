@@ -9,12 +9,13 @@ Agents keep this list. When you finish something, say so and the line is deleted
 The PM, 2026-11-12: get the landing page out with a "Join the waitlist" button that asks whether someone runs a business, store, shop, market or group or is looking for those, plus their zip; review the whole join journey before it's built; stay closed until everything is set up. Your part, in order:
 
 1. **Pick how the waitlist checks the mobile number.** A (recommended): a texted code when they join, about 7 cents each. B: checked only when they accept the invite. C: number unchecked, invite by email. Then hand the storyboard to your copywriter for imagery. [Brief and storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md)
-2. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go."
-3. **Add socialus.org to Resend.** For the urgent-report alert, and the waitlist invite only if you pick C. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
-4. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
-5. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
-6. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
-7. **Open a Twilio account and create a Verify service (no number to buy).** The waitlist needs it if you pick A or B. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+2. **Open a Twilio account and create a Verify service (no number to buy).** The waitlist needs it if you pick A or B. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+3. **Set up Google and Apple sign-in,** which you want as the main way in (the PM, 2026-11-12): a Google Cloud sign-in client (free) and Sign in with Apple, which needs the Apple Developer Program ($99 a year). Sign-up still takes a mobile number; email stays for signing in again later. Agents send the exact steps once the plan records it.
+4. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go."
+5. **Add socialus.org to Resend.** For the urgent-report alert, and the waitlist invite only if you pick C. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
+6. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
+7. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
+8. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
 
 Later, not now: whether reported or repeat accounts are asked for a photo ID.
 
@@ -25,10 +26,9 @@ Agents' part: the waitlist journey built behind the flag, one live link per scre
 1. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
 2. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
 3. **Open the remaining accounts:** Sentry (error alerts; the code is built and waits for its key), Vercel Speed Insights, a free HUD account (web #849), Cloudflare image safety (child-safety scanning no longer needs an NCMEC account, so it can go on now), and a free UptimeRobot account with two monitors so you hear when the site is down ([steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#12-uptime-monitoring)). Also file the private Supabase support ticket.
-4. **Make your Mac's knowledge key** (`gh workflow run knowledge-keys.yml -R donlafranchi/socialus-web -f action=add -f agent=mac`), then Keychain and `~/.zshrc`.
-5. **Talk with 5 people who have tried SocialUs.** Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
-6. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
-7. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+4. **Talk with 5 people who have tried SocialUs,** after the landing page and sign-up are live (the PM, 2026-11-12). Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
+5. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
+6. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
