@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 126, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 152/195 (alongside, not the headline) · updated 2026-11-12 13:20 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 126, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 152/195 (alongside, not the headline) · updated 2026-11-12 13:32 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -25,15 +25,15 @@
 
 ## Your to-do (16)
 
-- P1 · Pick how the waitlist checks the mobile number (parked by you 2026-11-12)
-- P1 · Open a Twilio account and create a Verify service (no number to buy)
+- P1 · Hand the waitlist storyboard to your copywriter
+- P1 · Add socialus.org to Resend
 - P1 · Pick how Google, Apple and the mobile number fit together (parked by you 2026-11-12)
 - P1 · Pick whether to pay for Apple sign-in now (parked by you 2026-11-12)
 - P1 · Set up Google and Apple sign-in
 - P1 · Pick the landing headline (parked by you 2026-11-12)
-- P1 · Add socialus.org to Resend
 - P1 · Write the positive posting reminder
 - P1 · Walk the waitlist on your phone
+- P1 · Open a Twilio account and create a Verify service (no number to buy)
 - P1 · Pick the Northern California counties (A, B or C)
 - P2 · Run the report test with three accounts
 - P2 · Decide the one-strike policy
