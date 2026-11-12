@@ -44,7 +44,7 @@ Someone in Boise signs up; their zip puts them in a market not open yet, so they
 
 **The member sees one number because Don asked for one number.** A popup with a count and a message stays a popup with a count and a message. The split is how the platform decides; 300 is what the person reads.
 
-**These are starting values and are expected to move.** A dense metro and a thin one do not need the same floor, which is why criterion 11 makes them per-metro configuration rather than a constant. **Nothing about the number is a commitment to the member** — criterion 9 is the guard: the message says what is needed, never when it will arrive.
+**These are starting values and are expected to move.** Criterion 11 makes them per-metro, since dense and thin metros need different floors. **Nothing about the number is a commitment to the member** — criterion 9 is the guard: the message says what is needed, never when it will arrive.
 
 ### Leaving an email, and the count
 
