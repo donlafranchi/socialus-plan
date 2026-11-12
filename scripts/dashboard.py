@@ -678,7 +678,7 @@ data = {
     'speed': _safe(_speed, {}),
     'notify': _safe(_notifications, {}),
     # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
-    'todos': _todos,
+    'todos': _todos[:1],   # one at a time (the PM, 2026-10-26): Do next is TODO.md's first item; the rest are under Your open calls
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
     # Don, 2026-10-16: "Where can I see what we have left to build… what else needs to be done before soft launch?"
     'launch_left': {
