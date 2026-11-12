@@ -24,7 +24,7 @@ Maya follows a neighbour's link and signs up. One screen: her legal name, her em
 4. **Nobody picks a market at signup.** A member who moves changes their zip on `/you`, and their market and home town follow from it. It is not one-and-done.
 5. The screen carries the line *"Locals, finding and supporting locals."* (the PM, 2026-11-12) to say what the app is for, **and no line about not selling member information.** It states no date, feature, or promise about the future.
 10. **Sign-up looks like the front page:** the same terracotta colour and the Aime font (the PM, 2026-11-12).
-6. No field, control, or string in signup or on the waitlist asks or records whether the person makes or finds things (the PM, 2026-11-12).
+6. [open-question owner=don raised=2026-11-12] How should sign-up ask whether someone is here to make or to support, end to end, and what does the market gate count?
 7. **Onboarding assigns no place the person did not give.** A member's home is the market and the town their zip determined (F103 criterion 5); no default place is written on their behalf, seen or unseen. *(Added 2026-09-27. Today `DEFAULT_HOME_PLACE_ID` sets every new member's home to a fictional city whose box sits inside Sacramento, which is why every member resolves to Sacramento.)*
 8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to its county and so to its market** (F103 criterion 2). A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in a waiting market joins its waitlist (F076); their zip is kept, to tell them when their market opens. *(Restated 2026-10-11; this read "to the MSA that contains it".)*
 9. **Phone verification refuses a non-fixed VoIP number** (Google Voice and the like), checked with Twilio Lookup's Line Type Intelligence before the code is sent, with a plain message asking for a mobile number ([public-is-draft]). *(the PM, 2026-10-05; Path: well-worn, Twilio's own guidance on blocking VoIP at verification.)*
@@ -39,7 +39,7 @@ Choosing the person-verification method, which is open. The waitlist popup and m
 
 **The PM reversed the 2026-09-14 shortlist-and-pick.** A zip is something the person told us, so a metro derived from it is not the platform choosing for them; what F076 criterion 2 forbids is choosing from something they did not give — IP, a default, a nearest match. **The unseen default place was the real violation**, and criterion 7 removes it.
 
-**The metro is the MSA** (the PM, 2026-09-30): Sacramento is MSA 40900, not CSA 472. Yuba and Sutter are not their own MSA and are not covered at launch. A member whose zip is in no MSA can choose a metro to view; the value is kept for records and to tell them when their own MSA opens.
+**The metro is the MSA** (the PM, 2026-09-30): Sacramento is MSA 40900, not CSA 472. Yuba and Sutter are not their own MSA and are not covered at launch. A zip in no MSA is kept, to tell them when theirs opens.
 
 **The zip is kept** (the PM, 2026-09-30): *"How will we know what's going on in their area without it."* So criterion 2 stands, and changing the zip is how a member changes metro.
 
