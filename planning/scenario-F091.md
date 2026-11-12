@@ -8,6 +8,7 @@ date: 2026-09-19
 depends: [F059, F072]
 approved: 2026-09-19 — Don named the set and ruled the heading is a sentence stem the lens completes.
 amended: 2026-10-01 — Don: criterion 7, the signed-out today row. 2026-11-12: criterion 7 restated for F134, signed-out visitors read posts.
+concept: new
 ---
 ## Story
 

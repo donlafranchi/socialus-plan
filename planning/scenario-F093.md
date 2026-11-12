@@ -2,7 +2,7 @@
 id: F093
 title: A signed-out visitor sees that something is happening, and is asked in to read it
 status: draft
-horizon: next
+horizon: considering
 rank: 150
 gates: launch
 date: 2026-09-23
