@@ -6,6 +6,7 @@ horizon: later
 rank: 250
 date: 2026-09-30
 depends: [F090, F134]
+concept: new
 ---
 ## Story
 

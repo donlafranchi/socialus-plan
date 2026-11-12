@@ -226,23 +226,23 @@ Each offered component's explanation, and the way an owner adds one, are new lau
 |---|---|---|---|---|---|---|---|
 | A member's fields: legal name, zip, interests, follows, profile | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
 | A member's interest tags | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
-| Front door, the same for every Page, private ones included: name, default photo, description; withheld-announcements card now, gone with F134 | ● | ● | ● | ● | ● | ● | ● |
+| Front door, the same for every Page, private ones included: name, default photo, description; withheld card until F134 | ● | ● | ● | ● | ● | ● | ● |
 | The Page's founder or seller, by display name | ✕ | ◐ inside the Page, if its creator shows it | ◐ the same | ◐ the same | ◐ the same | ◐ the same | ● |
 | Website, and the Page's area-level location, by default; any contact field the owner flips to "everyone" (2026-10-07) | ● | ● | ● | ● | ● | ● | ● |
 | Business phone and Contact email, if the owner gives them, by default; any contact field the owner flips to "members" (weekly hours hidden, data kept, 2026-10-05) | ✕ | ● | ● | ● | ● | ● | ● |
-| Contents (location, tags, posts): a Page with no level | ✕ now; F134: as signed in | ◐ what the owner makes visible to the MSA | ◐ the same, plus followers announcements | ● | ◐ as signed in, plus the gathering or post | ◐ as signed in | ● |
-| Contents: public Page | ✕ now; F134: ● | ● | ● | ● | ● | ● | ● |
+| Contents (location, tags, posts): a Page with no level | ✕ (F134: as signed in) | ◐ what the owner makes visible to the MSA | ◐ the same, plus followers announcements | ● | ◐ as signed in, plus the gathering or post | ◐ as signed in | ● |
+| Contents: public Page | ✕ (F134: ●) | ● | ● | ● | ● | ● | ● |
 | Contents: community-only Page | ✕ | ✕ | ◐ its announcements | ● | ◐ the gathering or post only | ✕ | ● |
 | Contents: private Page | ✕ | ✕ | — | ● | ◐ the gathering or post only | ✕ | ● |
-| How many RSVP'd | ✕ now; F134: ● | ● | ● | ● | ● | ● | ● |
+| How many RSVP'd | ✕ (F134: ●) | ● | ● | ● | ● | ● | ● |
 | Roster: who the members are | ✕ | ✕ | ✕ | ● current members | ✕ | ✕ | ● |
 | Follow graph: who follows whom | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ their own Page's followers, by name |
 | Who RSVP'd | ✕ | ✕ | ✕ | ✕ | ● the others party to that gathering or post | ✕ | ● as host |
 | A one-on-one meeting or transaction | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ the parties see each other, as far as it needs | ◐ as a party |
 | Who bought | — no purchasing in the app yet (After beta) | — | — | — | — | — | — |
 | A member's legal name | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
-| Public announcement, from any Page | ◐ one withheld card per Page now, "Sign in to see what's happening"; F134: ● | ● | ● | ● | ● | ● | ● |
-| Followers announcement | ◐ the same withheld card now; F134: ✕, as signed in | ✕ | ● | ● | ✕ | ✕ | ● |
+| Public announcement, from any Page | ◐ withheld (F134: ●) | ● | ● | ● | ● | ● | ● |
+| Followers announcement | ◐ withheld card (F134: ✕) | ✕ | ● | ● | ✕ | ✕ | ● |
 
 **Where each cell comes from** (dated 2026-09-30 unless marked). Member fields and interest tags: nobody reads anything about a member, only what they post; a creator may show their own display name and avatar on their Page. Front door: a business closed for the night, the same for every Page, and it doesn't show the founder or seller. Contents: a signed-in non-member sees the front door plus what the owner makes visible to the MSA; private, community-only and public are levels on group Pages; community-only means the Page's own members and can have followers; a private Page has members, not followers (2026-09-15). Roster: a stranger doesn't see it; current members see each other (2026-09-08). Follow graph: nobody sees who follows whom, and a runner sees who follows their Page. RSVPs: whoever is party to an RSVP sees what that gathering's parties see, and a post RSVP covers that post only; the count is the Response entry above. One-on-one meetings and transactions: only the parties; without a transaction it can be visible; purchasing is deferred. Legal name: **we currently show it to no member**; it is collected for the platform's protection and seen only by Don and operators, and real names between people who dealt with each other are out of scope until counsel (F077). Announcements: the public/followers switch (2026-09-21), no third audience, a public one reaches everyone whatever the Page's level, the signed-out card (F093). Don and operators see what the platform collects for its protection, outside this table.
 

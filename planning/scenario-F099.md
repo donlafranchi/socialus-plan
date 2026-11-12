@@ -8,6 +8,7 @@ date: 2026-10-05
 depends: [F070, F072, F078, F080, F134]
 approved: 2026-10-05 — Don's answers, "keep it simple": one Page picture for every kind; the kind placeholder when none is set; the beta slice, gallery after beta; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty. Same fields, flow and copy for every kind.
 amended: 2026-11-12 — criterion 11 restated for F134: signed-out visitors read posts, photos included.
+concept: new
 ---
 ## Story
 

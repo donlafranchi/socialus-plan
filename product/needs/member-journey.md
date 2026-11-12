@@ -52,7 +52,7 @@ The lightest, most universal loops — no belief required, only the desire to be
    - **Later.**
 3. **Land here.** *Who and why:* a newcomer who wants to know what's happening within walking distance this week — the highest-intent person this platform serves.
    - **Currently:** signed out, sees each Page's front door (name, picture, description) with posts withheld; signs up with a zip, which sets the metro; signed in, sees What's happening by date.
-   - **Missing:** posts in the signed-out view (approved as F134, 2026-11-12); Home rows (cut).
+   - **Missing:** posts in the signed-out view (F134); Home rows (cut).
    - **Beta, partial.**
 4. **Gather regularly.** *Who and why:* an organizer already convening something who wants it findable and persistent without running three apps for free.
    - **Currently:** makes a Gather Page, answers "How do people find you?", posts a dated Post with a weekly repeating series (F074); it shows in What's happening (F091) and on followers' Explore.
