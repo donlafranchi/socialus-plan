@@ -9,42 +9,42 @@ date: 2026-09-14
 depends: [F076, F077]
 concept: new
 approved: 2026-09-14 — the PM's ruling; legal name, email, zip, display name, zip suggests the metro
-amended: 2026-11-12 — the PM: sign up by mobile number and the anti-bot layers (1, 9, 11–16); the line and look (#1271; 5, 6, 10).
+amended: 2026-11-12 — the PM: sign up by mobile number and the anti-bot layers (1, 9, 11–16); the line and look (#1271; 5, 6, 10); the safety line (17); make-or-support moves to the waitlist (6).
 ---
 ## Story
 
-Maya follows a neighbour's link and signs up. She types her mobile number and the texted code; no email, no password. Then one screen: her legal name, her zip, and the display name everyone else will see. The screen, in the front page's look, says what the app is for. Her zip decides her metro, and the screen says which one — Sacramento — Nobody asks whether she is here to make things or find them — she is a member, and that is the whole question.
+Maya follows a neighbour's link and signs up with her mobile number and a texted code; no email, no password. One more screen takes her legal name, zip and display name, and tells her the zip puts her in Sacramento.
 
 ## Acceptance
 
 1. **Signup collects a US mobile number, verified by a texted code (Twilio Verify), then legal name, zip, display name and a checkbox reading "I'm 18 or older and agree to the Terms" with the Terms link beside it.** No email is asked; one may be added later on You, verified. No other field exists. Legal name, phone and email are seen only by operators (2026-10-05).
 2. The zip is stored, and never rendered on any surface another member or visitor can reach — profile, listing, search, map.
-3. **The zip determines the market** (F103 criterion 2), and the screen shows the person which market that is, by name. **Nothing else determines it** — not IP, not a pre-filled default, not a nearest match.
+3. **The zip determines the market** (F103), named on the screen. **Nothing else does:** no IP, default or nearest match.
 4. **Nobody picks a market at signup.** A member who moves changes their zip on `/you`, and their market and home town follow from it. It is not one-and-done.
 5. The screen carries the line *"Locals, finding and supporting locals."* (the PM, 2026-11-12) to say what the app is for, **and no line about not selling member information.** It states no date, feature, or promise about the future.
 10. **Sign-up looks like the front page:** the same terracotta colour and the Aime font (the PM, 2026-11-12).
-6. [open-question owner=don raised=2026-11-12] How should sign-up ask whether someone is here to make or to support, end to end, and what does the market gate count?
+6. Make-or-support is asked on the waitlist join (F076), never here.
 7. **Onboarding assigns no place the person did not give.** A member's home is the market and the town their zip determined (F103 criterion 5); no default place is written on their behalf, seen or unseen.
-8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to its county and so to its market** (F103 criterion 2). A zip the crosswalk does not know is refused with *"We don't recognize that zip, try again."* A person whose zip is in a waiting market joins its waitlist (F076); their zip is kept, to tell them when their market opens.
-9. **Only a real mobile number signs up.** Before any code, Twilio Lookup must return `mobile`; any other type (Google Voice and TextNow are `nonFixedVoip`) gets a plain line asking for a mobile number ([public-is-draft]), and nothing is sent. A Lookup outage lets the number through.
+8. **Every US zip resolves, before launch, through the national HUD-USPS crosswalk, to its county and so to its market** (F103). An unknown zip gets *"We don't recognize that zip, try again."* A zip in a waiting market joins its waitlist (F076).
+9. **Only a real mobile number signs up.** Before any code, Twilio Lookup must return `mobile`; any other type (Google Voice and TextNow are `nonFixedVoip`) gets a plain line asking for a mobile number ([public-is-draft]), and nothing is sent. A Lookup outage lets it through.
 11. **One account per number:** a number on an account signs in to it, never makes a second; a banned number (F102) makes none.
 12. **Cloudflare Turnstile guards the number screen,** checked on the server before anything is sent.
-13. **Rate limits before any text:** per number 1 a minute and 5 an hour, per IP 10 an hour, per first-six-digits range 20 an hour; configurable without a deploy. Over a limit: "Too many tries. Wait a few minutes and try again." ([public-is-draft]); nothing is sent.
+13. **Rate limits before any text:** per number 1 a minute and 5 an hour, per IP 10 an hour, per first-six-digits range 20 an hour; configurable without a deploy. Over a limit, a plain wait line ([public-is-draft]) and nothing sent.
 14. **Codes go only to US numbers** (Verify Geo Permissions), with Fraud Guard on.
 15. **A member stays signed in for months on a device,** texted again only on a new device or after signing out (`member.md`, 2026-11-12).
 16. **Where SocialUs describes who is here, it says "Every member is a real person with a real phone."** It never claims there are no bots ([public-is-draft]).
+17. **The number screen shows "SocialUs is a place where we look out for one another." with an ⓘ; only the ⓘ shows "Your number is tied to everything you post. Illegal content is reported to police."** The Terms say the same.
 
 ## Not this
 
-The waitlist popup and metro counts (F076). Storing anything derived from the zip beyond the metro it determined. A home place finer than the metro — local means the whole metro (F094). A street address — `product/systems/member.md` refuses one by default.
+The waitlist and its counts (F076). Anything derived from the zip beyond its metro. A home finer than the metro (F094). A street address (`member.md`).
 
 ## Why
 
-**Sign up with a mobile number (2026-11-12).** The PM: *"The point is to have something on people that helps us know who they are so we don't have to police as much if a person can't post anonymously."* A real mobile costs a bot farm money per account; an email costs nothing. Real SIMs can still be bought, so we never claim zero bots. Evidence: `planning/research/phone-sign-up-2026-11-12.md`.
-
-Legal facts live in a private repo.
+**Sign up with a mobile number (2026-11-12).** The PM: *"The point is to have something on people that helps us know who they are so we don't have to police as much if a person can't post anonymously."* A real mobile costs a bot farm money; we never claim zero bots. Evidence: `planning/research/phone-sign-up-2026-11-12.md`. Legal facts live in a private repo.
 
 ## Rulings
+- **2026-11-12 — Two layers at sign-up: a soft line, "SocialUs is a place where we look out for one another.", with an ⓘ; behind the ⓘ only, "Your number is tied to everything you post. Illegal content is reported to police." The Terms say the same.** The PM: *"I want to assume good behavior and not plant the idea in peoples minds … this is a place where we look out or one another period."* [always] [replaces none] [binds tiers=planning,code surfaces=signup,copy,terms] Issue: #1280.
 - **2026-11-12 — Sign up with a US mobile number and a texted code, not an email; email is optional, added later on You. Signup collects mobile number, legal name, zip and display name, and nothing more without a stated reason.** The PM: *"instead of asking people to sign up with email we ask them to sign up with their mobile number."* [always] [replaces 2026-09-14: Signup collects legal name, email and zip] [replaces 2026-10-01: A member is verified as a person by a text-message code] [binds tiers=planning,code surfaces=signup,sign-in,identity] Issue: #1280.
 - **2026-11-12 — Only real mobile numbers sign up: Twilio Lookup must say `mobile`; one account per number.** The PM: *"isn't there a way to prevent e-phone numbers?"* [for now] [replaces 2026-10-05: Phone verification refuses non-fixed VoIP numbers] [replaces 2026-10-11: Phone verification's VoIP check is built now] [binds tiers=planning,code surfaces=signup,verification] Issue: #1280.
 - **2026-11-12 — Codes go through Twilio Verify on Twilio's own senders: no number to buy, no 10DLC registration; our own number only if we send texts that are not codes or want branded sending.** The PM: *"does this mean I don't need to buy a twilio number?"* [for now] [replaces none] [binds tiers=planning,code surfaces=signup,verification,alerts] Issue: #707.
