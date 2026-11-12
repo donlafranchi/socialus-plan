@@ -7,7 +7,7 @@ rank: 140
 date: 2026-09-19
 depends: [F059, F072]
 approved: 2026-09-19 — Don named the set and ruled the heading is a sentence stem the lens completes.
-amended: 2026-10-01 — Don: criterion 7, the signed-out today row.
+amended: 2026-10-01 — Don: criterion 7, the signed-out today row. 2026-11-12: criterion 7 restated for F134, signed-out visitors read posts.
 ---
 ## Story
 
@@ -21,7 +21,7 @@ Rae opens Browse on a Thursday afternoon with no particular plan. Under a headin
 4. **The stem is absent when every row under it is absent.** A heading that opens a sentence no row finishes is a failure, not an empty state.
 5. The same link reopens the same rows.
 6. **A series appears at most once in a row** — its soonest occurrence inside that window — however many times it recurs inside it. A non-recurring post appears as itself. This is the read side of F074 criterion 6 and lands in the same release as the expansion, never after it.
-7. **Signed out, the *today* row shows one "Sign in to see what's happening" card for each Page posting something today**, matching the signed-out front door (F093). (Don, 2026-10-01, on `socialus-web` #257.)
+7. **Signed out, the *today* row shows the same posts a signed-in member with no relation to those Pages sees**, readable in full (F134, the PM, 2026-11-12).
 
 ## Why
 
@@ -41,5 +41,4 @@ A filter control beside the rows — narrowing is F092, in a modal. A lens for c
 
 ## Rulings
 - **2026-11-06 — Explore leads with time: what is happening this week, then later, then Pages after the timely posts.** Don, verbatim: *"I'm loving the angle of what's happening this week and later and then showing the pages after the timely posts."* Search keeps the same order where it groups results. Reordering what is built is refinement under the 2026-11-06 build freeze (`product/foundation/what-this-is.md`). It replaces "everything mixed: Pages and posts together" (Don, 2026-10-16, `socialus-web` #876) on the main list. [for now] [replaces none] [binds tiers=planning,code surfaces=explore,search,shelves]
-- **2026-10-01 — Signed out, the "today" row shows one withheld card for each Page posting something today, matching the signed-out front door.** Don: *"A."* Answers the question on `socialus-web` #257 (F091); written as F091 criterion 7. [replaces none] [binds tiers=planning,code surfaces=explore,announcements,signed-out]
 - **2026-09-19 — The time-based feature set is called "What's happening…", with the ellipsis, and the heading is a sentence stem the lens completes.** Don's ruling, rejecting *What's on*, *What's going on* and *Happening*. **The ellipsis is load-bearing, not decoration** — the heading reads *What's happening…* and each lens finishes the sentence: *today*, *this week*, *this weekend*. **One structural consequence, recorded because it is not free:** F059's rule is that **a lens row hides rather than showing an empty row**, and that rule is defined per row. A stem needs a second rule — **the stem hides when every lens under it is empty** — or a reader gets a sentence opened and never finished, which reads as broken rather than as empty. **No collision with `voice.md`:** an ellipsis is not an em dash, the lint checks `—` only, and the phrase is short and verb-led as that document asks. [for now]
