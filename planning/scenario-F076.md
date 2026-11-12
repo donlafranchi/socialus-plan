@@ -20,8 +20,8 @@ Someone in Boise signs up; their zip puts them in a market not open yet, so they
 1. Every US zip resolves to a market, open or waiting (F103). Nothing is picked from a list.
 2. The zip decides which waitlist; the platform **never selects for them** (no IP, default, nearest match or shortlist).
 3. **The waitlist join asks one question per screen, explaining SocialUs along the way:** what the person plans to do (multi-select: discover local businesses, groups and events; be found for a business, a class, a meetup), with being-found answers branching to a few detail screens; a name (never a legal name); a zip; a mobile number. Answers are staff-only, counted per market, and never stored as a type on a member. Storyboard: `planning/briefs/waitlist-join-journey-2026-11-12.md`.
-4. Joining is idempotent: **one person counts once in one metro, whether they signed up or only left an email.** Re-signup, re-visit or a second device does not increment anything.
-5. Changing the selected metro moves that person's count from the old metro to the new one, leaving neither double-counted nor stranded.
+4. **One person counts once in one market;** re-joining, re-visiting or a second device adds nothing.
+5. Changing the zip moves the count to the new market, never doubled or stranded.
 6. **Creator and patron counts are stored separately** per metro, and both are readable independently of what is displayed.
 7. After joining, a **popup** shows a count and a message. Not a page, not a tab, not a new surface. **Everyone sees a count, anonymous submitter included** — it is the CACHED figure, never one read in response to the submission.
 8. The popup shows **one combined number**, makers plus supporters, the same figure everywhere; the split never shows.
