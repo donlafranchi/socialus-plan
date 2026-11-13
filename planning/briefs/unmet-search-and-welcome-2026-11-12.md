@@ -8,7 +8,9 @@ criteria:
   - Every unclaimed Page is listed under one primary label from the one shared list, chosen from what kind of organization it is, with 30 misfiled Pages corrected; claimed Pages and owner-picked labels are never touched.
   - A search that finds nothing in a market never ends there: it offers to add a place you love, to be reminded when one joins, and a wider search, and logs only a count.
   - When an owner claims the first Page of a kind in a market, that market sees a welcome, and everyone who asked to be reminded is told.
-  - No reward or ceremony is built until the PM picks below; no ruling is recorded for them before then.
+  - A member can tell a Page with an owner from one without at a glance, on the Page, its card and its map pin.
+  - Map pins differ by type (business, group, everything else) by shape and glyph, not by colour alone; the PM approves the look at a live link behind the builders-only flag.
+  - No reward, ceremony, icon or pin is built until the PM picks below; no ruling is recorded for them before then.
 ---
 
 # When a search finds nothing, and welcoming new kinds of business
@@ -16,6 +18,8 @@ criteria:
 **As of 2026-11-12** · Source: the PM's words below; the shared list (web #1180), the seeder's log of every Page added, F076, F089, F118, F122, the privacy principle (plan #329) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-12:* "I dont need anymore pages or businesses yet. we do need to refine or categorize what we have. I also want to have a response for when someone searches for something new that we don't have. I was thinking I want to find a skateboard shop and if I search for skateboards and nothing comes up what would that look like. i want an approach to give people the permission to go find one and recommend that they sign up. i want to reward people for getting others to sign up and make it a ceremony where we welcome new kinds of businesses."
+
+*The PM, 2026-11-12, later:* "also I wouldn't mind giving many of these pages default icons instead of photos to allow users to know which pages have owners. And lastly we should probably also come up with different pin styles for the page types. one for businesses, others for groups and others for anything else."
 
 **Bottom line: tidy the list we have now (agents do it, no new Pages); after the waitlist, turn "nothing found" into "bring one here", and welcome the first of each kind with a moment the whole market sees. Your calls: what the reward is, who sees the welcome, and the words.**
 
@@ -83,6 +87,27 @@ After: Farmers markets 80, Arts & culture 71, Food & drink 56, Volunteering 45, 
 
 **Anti-gaming, whatever you pick:** one real mobile per account, checked at sign-up (F081). Credit only when an owner claims, never for adding a Page. First touch is kept for good and each person counts once (F118). Test accounts never count. A board shows names only for people who opted in.
 
+## 4. Owned or not yet: icons on unclaimed Pages (look-and-feel: yours)
+
+**Today:** an unclaimed Page leads with photos from its own site, or stock photos for its kind. It looks finished, so nothing says nobody runs it yet. **Your standing rule (2026-10-10) is "MOST IMPORTANTLY ADD PICTURES" on every unclaimed Page. Your words today point the other way: newer wins once you confirm.**
+
+**Precedents:** Google Maps shows an unclaimed place with Street View and visitors' photos and a "Claim this business" prompt; the owner's photos then lead. Yelp marks a listing "Unclaimed" beside the name. Nextdoor shows a business page with a generic category image until the owner adds one. (Described from how they work; their pages weren't opened this session.)
+
+**The icon:** one per top label from § 1, drawn in our palette on a plain tile (e.g. a sprout for Farmers markets, a note for Live music, a cup for Food & drink). Twelve, one set, so the cleanup decides which icon a Page gets. Proposal and icon sources: socialus-design `research/icons-and-pins-2026-11-12.md`.
+
+## 5. Map pins by type (look-and-feel: yours)
+
+**Precedents:** Google Maps and Apple Maps tell kinds apart by a glyph in the pin with a colour per family (food, shopping, outdoors). Yelp uses one red pin and puts the difference in the card. [Mapbox's Maki](https://labs.mapbox.com/maki-icons/) is the open icon set built for map pins. Colour alone fails people who can't tell red from green, so shape carries the type and colour supports it.
+
+**The three types** (Pages are already business or group in the database):
+
+- **Business**, a Page that's a business, from farms and bakeries to repair shops: a teardrop pin with its label's glyph.
+- **Group**, a Page that's a group, such as a service club, land trust, choir or birding club: a round pin with its label's glyph.
+- **Everything else**, a member's own post (lost and found, free, ask): a small dot.
+- **Not yet owned:** the same pin, outlined instead of filled, which matches § 4. Claiming fills it.
+
+**Before building:** some seeded nonprofits may be stored as businesses. The pins PR re-checks every unclaimed Page's type against its label from § 1. You approve the look at a live link behind the builders-only flag, then it ships. Filed as socialus-web #1308 (deferred, after the waitlist).
+
 ## Your calls, most-unblocking first
 
 1. **The reward for bringing people in.** F076 (2026-09-14) says no referral mechanic; your words today ask for a reward. Newer wins once you confirm.
@@ -97,10 +122,18 @@ After: Farmers markets 80, Arts & culture 71, Food & drink 56, Volunteering 45, 
    - **A:** Nothing for "skateboards" in Sacramento yet.
    - **B:** Be the one who brings skateboards to Sacramento.
    - **C (recommended):** No skateboards on SocialUs in Sacramento yet. You can change that.
-4. **The eight new label names** (§ 1): keep as drafted, or edit.
+4. **Owned or not yet** (§ 4).
+   - **A (recommended): the label's icon leads while unclaimed.** It's the Page's picture and its card image; the seeded photos stay below in the gallery. The owner's first photo replaces the icon on claim.
+   - **B: icon only.** No photos at all until claimed.
+   - **C: photos as now, plus an "Unclaimed" chip.**
+5. **Pins by type** (§ 5).
+   - **A (recommended): shape for type, glyph for label, outline for not yet owned.**
+   - **B: one shape, colour by type.** Weaker for colour-blind members.
+   - **C: one pin, no type,** like Yelp. The difference lives in the card.
+6. **The eight new label names** (§ 1): keep as drafted, or edit.
 
 ## Verified vs assumed
 
 - **Verified:** the audit, from the seeder's log of 362 Pages (two removed rows excluded) and the code on socialus-web main today: the shared list, the seeder's kind rules, the search logging, the empty-results screen, and the old maker list having no importers.
 - **Assumed:** live labels match the seeder's log. They may not: #1180 re-matched every Page by its words on 2026-11-05, and Pages added after 2026-11-06 aren't counted. Claimed Pages weren't checked. The Issue's PR reads the live database.
-- **Not opened this session:** Thumbtack, Yelp Elite, Waze, OpenStreetMap, Product Hunt and Etsy (described from what's known of them). The linked pages were found by search; not all were read in full.
+- **Not found:** your 2026-10-10 "add pictures" rule as written. It's quoted from the coordinating session, and the repos' text doesn't carry those words. **Not opened this session:** Thumbtack, Yelp Elite, Waze, OpenStreetMap, Product Hunt and Etsy (described from what's known of them). The linked pages were found by search; not all were read in full.
