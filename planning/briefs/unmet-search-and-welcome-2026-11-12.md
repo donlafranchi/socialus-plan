@@ -14,7 +14,7 @@ criteria:
 
 # When a search finds nothing, and welcoming new kinds of business
 
-**As of 2026-11-12** · Source: the PM's words below; the shared list (web #1180), the seeder's log of every Page added, F076, F089, F118, F122, the privacy principle (plan #329) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
+**As of 2026-11-13** · Source: the PM's words below; the shared list (web #1180), the seeder's log of every Page added, F076, F089, F118, F122, the privacy principle (plan #329) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-12:* "I dont need anymore pages or businesses yet. we do need to refine or categorize what we have. I also want to have a response for when someone searches for something new that we don't have. I was thinking I want to find a skateboard shop and if I search for skateboards and nothing comes up what would that look like. i want an approach to give people the permission to go find one and recommend that they sign up. i want to reward people for getting others to sign up and make it a ceremony where we welcome new kinds of businesses."
 
@@ -60,6 +60,12 @@ Most of the parts exist: search already logs what found nothing (counts only); r
 | Grange, senior center | Neighborhood life · Community halls (3) |
 
 After: Farmers markets 80, Arts & culture 71, Food & drink 56, Volunteering 45, Gardening 27, Fitness & outdoors 22, Sustainability 19, Live music 18, Crafts & makers 16, Local business 5, Neighborhood life 3. Filed as socialus-web #1306; its PR shows the per-Page before and after from the live database for you to skim.
+
+## 1b. What shops and makers carry (the PM's list, 2026-11-13)
+
+*The PM, 2026-11-13, his list verbatim (indentation lost; top-level groups, then their items):* Classes & Workshops · Garden · Apparel (Bags; Hats & Scarves; Socks & Footwear) · Apothecary · Candles & Home Fragrances · Food & Drink · Home Goods & Decor (Ceramics; Clocks; Furniture; Kitchen; Stained Glass; Sun Catchers; Trinket Trays; Wood Goods) · Jewelry & Accessories (Bracelets; Earrings; Hair Accessories; Keychains; Necklaces; Rings) · Kids & Baby (Accessories; Bibs; Books; Kids Apparel; Teethers, Loveys & Swaddles; Toys) · Paper & Novelty (Bookmarks; Crafts; Gift Wrapping; Greeting Cards; Local Art & Prints; Stickers, Magnets & Pins) · Pets · Plants & Accessories · Specialty (Tarot & Crystals)
+
+**How it relates to "Listed under"** (web #1306): *Listed under* is what **kind of place** it is (one primary label, section 1); this list is what it **carries**. The same list is the shop menu on The Constellation Marketplace's own site. It is now the starting tag set for item tags that lead search: ruling in `scenario-F092.md` § Rulings (2026-11-13), build Issue socialus-web #1318. #1306 stays scoped to fixing misfiled Pages. First data: the 36 toy and gift shops seeded 2026-11-13 carry a `carries` list (web #1319). Exact grouping of a few items (whether Garden, Apothecary and Pets are top-level) was ambiguous in his message; the names are kept exactly.
 
 ## 2. A search that finds nothing (well-worn shape; words are yours; built after the waitlist)
 
