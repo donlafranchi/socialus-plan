@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **planning** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **99 older decisions carry no tag yet and are not listed** — tagging is required from
+> **98 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-13** · [for now] · waitlist — The waitlist join journey is built as its brief's storyboard: one question per screen, Back everywhere, Skip on optional screens, a fast-then-slow segmented bar, each screen at its own address, builders-only until the PM walks it live (planning/scenario-F076.md)
