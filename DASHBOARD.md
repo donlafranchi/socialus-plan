@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 126, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 152/195 (alongside, not the headline) · updated 2026-11-12 14:28 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 125, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 152/195 (alongside, not the headline) · updated 2026-11-12 18:30 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -23,7 +23,7 @@
 
 **How fast it feels: Red** (3 member screen(s) red, 2 amber); slowest: Explore card → Page [settled] None ms, Header → Explore [settled] 7845 ms, Explore card → Page [quick] 1042 ms
 
-## Your to-do (15)
+## Your to-do (16)
 
 - P1 · Hand the waitlist storyboard to your copywriter
 - P1 · Add socialus.org to Resend
@@ -39,6 +39,7 @@
 - P2 · Open the remaining accounts
 - P2 · Talk with 5 people who have tried SocialUs
 - P2 · Read the wording waiting for you
+- P2 · After the waitlist: pick the reward for bringing people in, and how new kinds of business are welcomed
 - P2 · React to ideas
 
 *Agents: the lanes are `python3 scripts/going.py --list now` (or next, considering, later); the criteria and areas are on the page.*
