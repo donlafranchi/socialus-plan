@@ -12,7 +12,13 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
-None waiting.
+### A category icon on an unclaimed Page, so a photo means an owner (2026-11-12, the PM)
+
+**Claim (the PM):** *"I wouldn't mind giving many of these pages default icons instead of photos to allow users to know which pages have owners."* Then: *"I'm currently thinking that more is less. We have a picture search concept that should help us and we'll roll with that. … photos should indicate a person owns this page and posted photos. We don't need to change anything now but we will adjust at some point."*
+
+**What would make it real:** the PM adjusts the unclaimed-Page photo rule (Pages, 2026-11-12 ruling), or the hyper-local photo search idea starts carrying the photos.
+
+**Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
 ## In the knowledge store
 
