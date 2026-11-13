@@ -1,4 +1,4 @@
-# Landing page copy (from Don's copywriter, 2026-10-31; Don's changes 2026-11-01). Use VERBATIM.
+# Landing page copy (2026-10-31). SUPERSEDED 2026-11-13 by `landing-copy-2026-11-13.md`; kept only for the old pages that cite it.
 
 Navigation
 SocialUs

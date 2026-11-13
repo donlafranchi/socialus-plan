@@ -12,15 +12,15 @@ The PM, 2026-11-12: get the landing page out with a "Join the waitlist" button t
 2. **Add socialus.org to Resend.** The waitlist's invites go by email, and the urgent-report alert too. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
 3. **Join the Apple Developer Program before launch** ($99 a year), your exception to "no new paid tool before go-live". It's what lets members sign in with Apple.
 4. **Set up Google and Apple sign-in:** a Google Cloud sign-in client (free) and Sign in with Apple. Agents send the exact steps.
-5. **Pick the landing headline (parked by you 2026-11-12).** A (recommended): "SocialUs, for the people." B: "SocialUs, a platform for the people." C: "SocialUs, by the people, for the people." Under it: "A place for locals to find and support locals, wherever you are, wherever you go."
+5. **Say where the three landing pictures came from** (town square, main street, park, from your 2026-10-31 concept): no source or licence is recorded, so commercial-use rights are unverified. The new landing keeps them behind the flag until you say; today's public front page already shows them.
 6. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
-7. **Walk the waitlist on your phone** at the live socialus.org link agents send, signed in as operator, and say what felt wrong. Only you and builders see it until you approve.
+7. **Walk the waitlist on your phone:** [socialus.org/join/waitlist](https://socialus.org/join/waitlist), signed in as operator, and say what felt wrong. Only you and builders see it until you approve. Then apply the one migration that keeps name, number, zip and plans with each entry: `gh workflow run apply.yml -R donlafranchi/socialus-web --ref 1299-waitlist-answers -f confirm=apply` (phone: Actions → Apply migrations → Run workflow → branch `1299-waitlist-answers` → type `apply`).
 8. **Open a Twilio account and create a Verify service (no number to buy).** Not needed for the waitlist; needed before the first market opens and people sign up. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
 9. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
 
 Later, not now: whether reported or repeat accounts are asked for a photo ID.
 
-Agents' part: the waitlist journey built behind the flag, one live link per screen; screening every post before it publishes (in shadow first); the safety line and its ⓘ on the number screen.
+Agents' part: the waitlist journey built behind the flag (live), one link per screen; screening every post before it publishes (in shadow first); the safety line and its ⓘ on the number screen.
 
 ## Everything else, in order
 
