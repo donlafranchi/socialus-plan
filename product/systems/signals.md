@@ -45,6 +45,15 @@ Private marks for people who want to find their people but could be targeted if 
 
 **The blue dot** is the first hidden signal. It's playful, not heavy — but the same privacy protection applies.
 
+## Earning the blue dot (Don, 2026-11-13)
+
+A signal and a wink to others about who a Page owner wants to support; owners have to ask how to get one ("Want a blue dot?" in Page creation help is where they ask). Don's words: *"Early on we ask them to take a 'survey' and then we 'review' the survey and decide whether or not the page gets the blue dot. ... The method when the app is more mature is a referral and a vouching method where community members do the referring and the vouching."*
+
+- **Early:** a survey the owner takes, reviewed by us. Survey questions: Don is writing them.
+- **Mature:** referral and vouching by community members. More methods may follow as we learn how well these work; Don will give details on each.
+- **Display:** the dot may or may not show on the Page. Not showing it keeps it known only to certain communities, so other communities can't abuse it.
+- [open-question owner=don raised=2026-11-13] How is a reviewed survey scored, and who reviews it? Waits on Don's survey questions.
+
 ## The help and discovery engine
 
 Members find signals by:
