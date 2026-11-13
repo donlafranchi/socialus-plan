@@ -9,47 +9,43 @@ date: 2026-09-14
 concept: CO-0002
 depends: [F059]
 approved: 2026-09-14 — Don's ruling; threshold 50 creators / 250 patrons, gated on creators, shown as one combined 300
-amended: 2026-11-12 — the waitlist join asks role and zip, and every market waits while SocialUs stays closed (3, 17); a waiting member is told by email only if they leave one. Earlier amendments: git log.
+amended: 2026-11-13 — the join journey brief approved; Join on the front page goes to the waitlist. Earlier amendments: git log.
 ---
 ## Story
 
-Someone in Boise joins the waitlist and sees a number and what is still needed. Boise opens because enough people did this.
+Someone in Boise joins the waitlist and sees a number. Boise opens because enough people did.
 
 ## Acceptance
 
 1. Every US zip resolves to a market, open or waiting (F103). Nothing is picked from a list.
-2. The zip decides which waitlist; the platform **never selects for them** (no IP, default, nearest match or shortlist).
-3. **The waitlist join asks one question per screen, explaining SocialUs along the way:** what the person plans to do (multi-select: discover local businesses, groups and events; be found for a business, a class, a meetup), with being-found answers branching to a few detail screens; a name (never a legal name); a zip; an email; a mobile number. Answers are staff-only, counted per market, and never stored as a type on a member. Storyboard: `planning/briefs/waitlist-join-journey-2026-11-12.md`.
-4. **One person counts once in one market;** re-joining, re-visiting or a second device adds nothing.
+2. The zip decides which waitlist; **never IP, a default, nearest match or a shortlist.**
+3. **The waitlist join asks one question per screen, teaching along the way:** plans (multi-select, discover or be found, being found adds details), a name (never legal), a zip, an email, a mobile number. Staff-only, counted per market, never a type on a member. Storyboard: `planning/briefs/waitlist-join-journey-2026-11-12.md`.
+4. **One person counts once in one market;** re-joining or a second device adds nothing.
 5. Changing the zip moves the count to the new market, never doubled or stranded.
-6. **Creator and patron counts are stored separately** per metro, and both are readable independently of what is displayed.
+6. **Creator and patron counts are stored separately** per market.
 7. After joining, the finish shows the **cached** count and a message, never a figure read in response to the submission.
-8. The popup shows **one combined number**, makers plus supporters, the same figure everywhere; the split never shows.
+8. **One combined number**, makers plus supporters, the same everywhere; the split never shows.
 9. The message says what is still needed, **never a date, a timeline or a promise to open.**
 10. A market is eligible to open only when **both** floors are met (F118: 100 makers, 1,000 supporters).
-11. Thresholds are **configurable per market** without a deploy.
+11. Thresholds are **per market**, changed without a deploy.
 12. **Crossing a threshold never opens a market on its own;** a person opens it.
 13. **Joining the waitlist creates no account and no password.**
-14. **The response is identical whether or not that person was already on the list:** same words, status and number, because the number is the cached figure (criterion 7), not a function of the submission.
+14. **The response is identical whether or not that person was already on the list:** same words, status and number (the cached figure, 7).
 15. **The contact left is used to say the market opened, and for nothing else;** it is discarded once that invite is sent.
 17. **While the PM keeps SocialUs closed, every zip joins a waitlist,** Sacramento included; reading stays open (F134).
 18. **Email and mobile number are asked, neither checked at join** (no Lookup, no code); the phone screen says why ([public-is-draft]); the invite goes by email; checks come at sign-up (F081).
 
 ## Why
 
-### The threshold
-
-**Creators are the real gate:** a market full of patrons and empty of makers teaches a newcomer that SocialUs is empty. The member sees one combined number; the split is how the platform decides. Thresholds are per market and expected to move (F118 sets 100 and 1,000); criterion 9 keeps any number from becoming a promise of a date.
-
-### Leaving an email, and the count
-
-A live count would leak whether an address was already waiting, by differencing (found 2026-09-22 against Postgres). So the count is cached, at most an hour old and shared everywhere, and not a function of the submission (2026-09-23).
+**Creators are the real gate:** a market full of patrons and empty of makers teaches a newcomer that SocialUs is empty. The split decides; the member sees one number. Why the count is cached: the 2026-09-23 ruling.
 
 ## Not this
 
-A market progress bar, a leaderboard or a referral mechanic. Showing who joined. Any use of the contact beyond criterion 15. Opening a market automatically. Selling a place in line.
+A market progress bar, leaderboard or referral mechanic. Showing who joined. Any other use of the contact (15). Opening a market automatically. Selling a place in line.
 
 ## Rulings
+- **2026-11-13 — The waitlist join journey is built as its brief's storyboard: one question per screen, Back everywhere, Skip on optional screens, a fast-then-slow segmented bar, each screen at its own address, builders-only until the PM walks it live.** The PM: *"approve"*. Path: well-worn (Typeform, Headspace, NN/g wizards). [for now] [replaces none] [binds tiers=planning,code surfaces=waitlist build=none] Issue: #1299.
+- **2026-11-13 — While SocialUs stays closed, the front page's Join goes to the waitlist, never straight to sign-up; Look around opens Explore; the headline stays the PM's open pick.** The PM, approving the brief with #1272 folded in. Path: well-worn (Robinhood, Superhuman). [for now] [replaces none] [binds tiers=planning,code surfaces=landing,waitlist build=none] Issue: #1298.
 - **2026-11-12 — No Google or Apple sign-in at the waitlist: the person types an email, a zip and a phone number, and nothing is created.** The PM: *"Ok, so we leave out the Auth until later."*: at the waitlist it would only save typing an email. Path: well-worn. [for now] [replaces none] [binds tiers=planning,code surfaces=waitlist,sign-in build=none]
 - **2026-11-12 — The waitlist collects an email and a mobile number and checks neither at join: no Twilio Lookup, no texted code, no Twilio cost per join. The phone screen explains why we ask (it keeps out bots and spam; only real cell numbers, not internet numbers). The invite goes by email (Resend) when the market opens; Lookup and the code happen at sign-up. Counts padded by fake entries are accepted for now.** The PM: *"I don't want to spend 7 cents until the person is ready to join. … I don't care about padded numbers yet."* No cost until a person is ready to join; the check that matters runs at sign-up. Path: new territory (the PM's pick; option B of the brief, with an email for the invite). [for now] [replaces 2026-11-12: A member who signs up by mobile number in a waiting market is told it opened by email, and only if they leave one on the waiting screen] [binds tiers=planning,code surfaces=waitlist,signup,email build=none]
 - **2026-11-12 — The waitlist collects a mobile number, a name (a first or display name, never a legal name), a zip and what the person plans to do, one question per screen, explaining SocialUs along the way. Plans are multi-select on two sides: discover (local businesses, groups, events) and be found (a business, a class, a meetup), and being-found answers branch into details about what they do. SocialUs stays closed, every zip waiting, until the PM opens a market; zip counts help decide where to launch.** The PM: *"…answer one question at a time and walk though some screens. The goal is to get a phone number and a name (don't ask for a legal name), a zip code and then what they plan on doing in the app. … we need to somewhat inform them along the way."* Answers live on the waitlist entry, never as a type on the member (2026-09-14). Path: new territory (how the number is checked is the PM's pick). [for now] [replaces F076: The waitlist join asks a role (runs a business, store, shop, market or group; or looking for those) and a zip] [replaces 2026-11-12: Whether a person outside an open market is asked if they make or support is reopened, for the end-to-end design of the sign-up journey] [binds tiers=planning,code surfaces=waitlist,landing,signup build=none]

@@ -10,6 +10,8 @@
 > **99 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-13** · [for now] · waitlist — The waitlist join journey is built as its brief's storyboard: one question per screen, Back everywhere, Skip on optional screens, a fast-then-slow segmented bar, each screen at its own address, builders-only until the PM walks it live (planning/scenario-F076.md)
+- **2026-11-13** · [for now] · landing, waitlist — While SocialUs stays closed, the front page's Join goes to the waitlist, never straight to sign-up; Look around opens Explore; the headline stays the PM's open pick (planning/scenario-F076.md)
 - **2026-11-12** · [always] · principles, privacy, names, contact, threads — Sellers decide how and when they are found; the people who come to find and support them can never be tracked in the app, by anyone, signed in or out. [always] (PRINCIPLES.md)
 - **2026-11-12** · [for now] · waitlist, sign-in — No Google or Apple sign-in at the waitlist: the person types an email, a zip and a phone number, and nothing is created (planning/scenario-F076.md)
 - **2026-11-12** · [for now] · waitlist, signup, email — The waitlist collects an email and a mobile number and checks neither at join: no Twilio Lookup, no texted code, no Twilio cost per join. The phone screen explains why we ask (it keeps out bots and spam; only real cell numbers, not internet numbers). The invite goes by email (Resend) when the market opens; Lookup and the code happen at sign-up. Counts padded by fake entries are accepted for now (planning/scenario-F076.md)

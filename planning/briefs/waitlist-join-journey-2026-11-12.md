@@ -1,6 +1,7 @@
 ---
 id: brief-2026-11-12-waitlist-join-journey
-status: awaiting-approval
+status: approved
+approved: 2026-11-13 — the PM, "approve" (as amended through plan #345 and #346; the open front-page PR #1272 folds into this build)
 size: M
 path: well-worn (the PM ruled both calls, 2026-11-12)
 criteria:
@@ -84,7 +85,7 @@ Copy is placeholder ([public-is-draft]); the imagery column is the copywriter's.
 
 ## How you'll see it
 
-Behind a flag on only for builders and you (F128's flags). Each screen has its own address, so every PR posts a live socialus.org link; signed in as operator on your phone you walk it on the real site. When you approve the words and look, it goes on for everyone. Build waits for your yes on this brief.
+Behind a flag on only for builders and you (F128's flags). Each screen has its own address, so every PR posts a live socialus.org link; signed in as operator on your phone you walk it on the real site. When you approve the words and look, it goes on for everyone. **Approved 2026-11-13 (the PM: "approve"); building in socialus-web #1298 and #1299.**
 
 ## What agents decided (well-worn)
 
