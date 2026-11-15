@@ -75,6 +75,14 @@ A search is a member asking. The answer is another member: the maker, the group,
 
 **What ranks the slots:** recency, time (happening soon), the member's declared interests and follows, their own searches. Never time spent, scrolling, payment or follower count (`model.md` § Personalized means interests, not engagement, updated 2026-11-15).
 
+## Chat-first, folded in (CO-0041)
+
+*The PM, 2026-10-26:* "I like being able to chat with an agent." Its near step is the Ask bar (F119); this concept puts that bar at the top of the front door, so search and the assistant are one box. Chat as the whole home (F120) stays later: the front door stays minimal. What a conversation is as a thing is still CO-0041's.
+
+## Bring it to life
+
+*The PM, 2026-11-15:* "I like that name and theme bring it to life. And it's crucial that the search [will] bring this about." Search is the main way members bring things to life together: an unmet search becomes an ask, a welcome, a maker partnership. The theme is a story map in the store; the soul line is `PRINCIPLES.md` § two-halves.
+
 ## Later
 
 - **Assistant chat** that answers in conversation (Yelp Assistant, relaunched April 2026 as its own tab: [Yelp](https://www.yelp-ir.com/news/press-releases/news-release-details/2026/Yelp-Launches-the-New-Yelp-Assistant-Transforming-Local-Discovery-from-Search-to-Answers-and-Actions/default.aspx), [TechCrunch](https://techcrunch.com/2026/04/21/yelps-updated-ai-assistant-can-answer-questions-and-book-a-restaurant-or-service-in-one-conversation/)). Each turn costs a model call; the 2026-11-10 ruling allows no new paid tool before go-live unless it saves PM time. F119's router (one small call, a daily cap, falls back to search) is the step that fits now.
