@@ -65,4 +65,4 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **CO-0041 Chat-first SocialUs.**
 - **CO-0042 Vouching: a member posts about a place they love.** [lane: considering]
 - **CO-0043 Asked for, not here yet.** [lane: considering]
-- **CO-0064 One-off creations: a member with an idea partners with a local maker.** [lane: considering]
+- **CO-0064 One-off creations: a member with an idea partners with a local maker.**
