@@ -12,7 +12,7 @@ depends: [F092, F119, F121, F134]
 
 *The PM, 2026-11-15, verbatim:* "the most important thing is that we connect our members and help them connect with each other and that's kind of what this searches meant to empower"
 
-Rae opens SocialUs in Sacramento for the first time. The front door is a search box and two things: this week's market story and what's on in the next seven days. She searches "cozy coffee with a patio, Midtown". A week later the front door still has three things, and one is the new café that opened near her searches. On You she sees her searches and clears one. Across town, a ceramics studio sees that "pottery class, evenings" was searched by more than ten people in Midtown this month, and adds a Thursday class. Nobody at the studio knows Rae was one of them.
+Rae searches "cozy coffee with a patio, Midtown". Her front door is a search box and two things until it learns from her searches; then it shows the new café near them. A pottery studio sees that more than ten people in Midtown searched "pottery class, evenings" this month and adds one. Nobody at the studio knows Rae was one of them.
 
 ## Acceptance
 
@@ -29,18 +29,13 @@ Rae opens SocialUs in Sacramento for the first time. The front door is a search 
 
 ## Not this
 
-An AI chat assistant that answers in conversation (later; F119's router is the cheap step already approved). A feed, infinite scroll, or ranking by engagement. Distance in ranking (`places.md` holds that for this version). A per-producer dashboard beyond the card that exists. Selling or sharing any of this.
+Chat that answers in conversation (later; F119 is the cheap step). A feed or engagement ranking. Distance in ranking (`places.md`). Selling or sharing any of it.
 
 ## Why
 
-- **Lives somewhere better?** No: Google and Yelp don't know a town's makers, groups and happenings, or what its own people are looking for.
-- **Only locals know?** Yes: what people here want, and who here has it.
-- **Gets people together?** Yes: it is the point. A search is a member asking; the answer is another member.
-- **Stays fresh on its own?** Yes: slots draw from live posts and shelves; history expires on schedule.
-- **Who keeps it current?** The shelf rules and the dictionary agent; the PM rules on names and the slot set.
-- **Better as more people join?** Yes: more searches clear the floor, so producers learn more, and the dictionary grows.
+Search is how members find each other; the answer to a search is another member. Producers learning what many want is how both sides help each other.
 
-**Path: mixed.** Well-worn: Google My Activity (see and delete one or all, auto-delete) for history; Etsy and Shopify search-term reports for producers; Google Trends and Popular times for withholding small counts; Netflix-style rows as data for slots (F121). New territory, the PM's: how long history is kept, and the launch slot set. Brief: `planning/briefs/hyper-specific-search-2026-11-15.md`. [platform none]
+**Path: mixed.** Well-worn: Google My Activity, Etsy and Shopify search reports, Google Trends, rows as data (F121). The PM's: how long history is kept, the launch slot set. Brief: `planning/briefs/hyper-specific-search-2026-11-15.md`. [platform none]
 
 ## Rulings
 
