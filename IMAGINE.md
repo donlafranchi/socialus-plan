@@ -12,14 +12,6 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
-### One-off creations: a member with an idea partners with a local maker (2026-11-15, the PM)
-
-*The PM, 2026-11-15:* "I am thinking of this hat that I saw online for sale and I think it's cool but it's not that cool and I'd wanna make my own version of it and it would be neat if we could help people become a creators, say someone has an idea and it's a one off thing where we help them make something that they don't need to turn into a business cause it's just a one one product item that they have and then we help them build it in someway, shape or form by we I mean either us as the platform or the community maybe someone submits a design to someone who makes clothing or hats and that they can work on the project together that we facilitate things like that … someone who isn't a maker, but wants to make one thing partners with a more established maker and now we have people creating without having to go through the [herculean] effort of starting a business just a way to get people to contribute"
-
-*Analysis, agent:* a member posts an idea for one thing (a hat, a sign, a mug); a local maker who does that craft takes it on; they work it out together and it gets made, with no shop and no business. Nearest in the store: Wonders (F117) let neighbours join a group project in roles such as designer, but for many people, not one; F060 lets someone start something without a shop; Artist collaborations (CO-0020) pair a Page owner with an artist; Asked for, not here yet (CO-0043) and the cooperative engine (CO-0018) are the many-person versions. None covers one member and one maker making one thing. Precedents: Etsy custom orders (a buyer asks a seller for a one-off), Threadless (members submit designs, the platform makes them), Kickstarter (an idea finds backers before it exists), Maker's Row (designers matched with manufacturers). Theme: Bring it to life.
-
-**What would make it real:** two members with an idea and one local maker willing to try it, or a run of "custom" and "make me" searches above the floor of ten.
-
 ### A category icon on an unclaimed Page, so a photo means an owner (2026-11-12, the PM)
 
 **Claim (the PM):** *"I wouldn't mind giving many of these pages default icons instead of photos to allow users to know which pages have owners."* Then: *"I'm currently thinking that more is less. We have a picture search concept that should help us and we'll roll with that. … photos should indicate a person owns this page and posted photos. We don't need to change anything now but we will adjust at some point."*
@@ -73,3 +65,4 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **CO-0041 Chat-first SocialUs.**
 - **CO-0042 Vouching: a member posts about a place they love.** [lane: considering]
 - **CO-0043 Asked for, not here yet.** [lane: considering]
+- **CO-0064 One-off creations: a member with an idea partners with a local maker.**
