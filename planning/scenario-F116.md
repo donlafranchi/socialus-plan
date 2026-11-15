@@ -6,6 +6,7 @@ horizon: considering
 rank: 150
 date: 2026-10-18
 depends: []
+concept: new
 ---
 ## Story
 
@@ -26,7 +27,7 @@ Each bar opens with the capability it grades. All are drafts for the PM to keep,
 
 ## Not this
 
-Ranking by engagement, vouches or payment. Per-member tracking on the card. A weekly email (the audit's question for the PM, not decided here). A badge for every origin.
+Ranking by engagement, vouches or payment. A per-member breakdown on the card. A weekly email (the audit's question for the PM, not decided here). A badge for every origin.
 
 ## Why
 
