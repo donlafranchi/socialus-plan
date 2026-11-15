@@ -7,7 +7,7 @@ rank: 2
 date: 2026-11-10
 approved: 2026-11-10, the PM: "Yes on how we work"; the Claude Project pack carries only what judging a method needs
 depends: [F125]
-concept: new
+concept: CO-0052
 ---
 ## Story
 

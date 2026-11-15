@@ -2,7 +2,7 @@
 id: F136
 title: Hyper-specific search connects members, and feeds a minimal front door and what producers learn
 status: draft
-concept: new
+concept: CO-0063
 horizon: considering
 rank: 7
 date: 2026-11-15

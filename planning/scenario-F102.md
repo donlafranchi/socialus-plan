@@ -8,7 +8,7 @@ gates: launch
 date: 2026-10-05
 depends: [F078, F100, F101]
 approved: 2026-10-05 — the PM's ruling: "we want to track for Reporting abuse and have a plan for that. and we want to put as much back on the creator poster before we have to do anything … I want to do minimal work on my end." The auto-restore question below is open.
-concept: new
+concept: CO-0051
 amended: 2026-11-12 — the PM: new accounts start small; a banned number stays banned (15, 16); the safety package (17–21).
 ---
 ## Story

@@ -8,7 +8,7 @@ date: 2026-10-30
 approved: 2026-10-31 — the PM: "approve"; interest shelves may also appear on Explore
 amended: 2026-11-15 — a member's own searches may also shape their interest shelves (F136, the PM's ruling that searches tailor what we show that member)
 depends: [F098, F119]
-concept: new
+concept: CO-0062
 ---
 ## Story
 

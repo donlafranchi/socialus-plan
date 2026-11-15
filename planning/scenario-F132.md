@@ -7,7 +7,7 @@ rank: 6
 date: 2026-11-11
 approved: 2026-11-11, the PM: "A, write the scenario and start the build"
 depends: [F125, F126, F127, F130]
-concept: new
+concept: CO-0054
 ---
 ## Story
 
