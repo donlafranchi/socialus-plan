@@ -8,7 +8,7 @@ gates: launch
 date: 2026-09-14
 depends: [F058, F077]
 approved: 2026-09-14 — Don's ruling
-concept: new
+concept: CO-0045
 amended: 2026-11-12 — the urgent alert goes by email for now (criterion 5). Earlier amendments: git log.
 ---
 ## Story

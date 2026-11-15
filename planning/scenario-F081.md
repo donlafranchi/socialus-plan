@@ -7,7 +7,7 @@ rank: 100
 gates: launch
 date: 2026-09-14
 depends: [F076, F077]
-concept: new
+concept: CO-0046
 approved: 2026-09-14 — the PM's ruling; legal name, email, zip, display name, zip suggests the metro
 amended: 2026-11-12 — the PM: sign up by mobile number and the anti-bot layers (1, 9, 11–16); the line and look (#1271; 5, 6, 10); the safety line (17); make-or-support moves to the waitlist (6).
 ---

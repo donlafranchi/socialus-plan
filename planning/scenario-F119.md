@@ -8,7 +8,7 @@ date: 2026-10-26
 approved: 2026-10-26 — the PM chose chat-first (option C) as the direction and asked for a near-term plan; build after the current Now work
 amended: 2026-11-15 — criterion 7: a member's own questions join their search history (F136)
 depends: []
-concept: new
+concept: CO-0061
 ---
 ## Story
 

@@ -2,7 +2,7 @@
 id: F092
 title: Narrowing happens in a modal that writes what it did
 status: approved
-concept: new
+concept: CO-0059
 horizon: later
 rank: 90
 date: 2026-09-19
