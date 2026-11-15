@@ -6,7 +6,9 @@ horizon: next
 rank: 2
 date: 2026-10-26
 approved: 2026-10-26 — the PM chose chat-first (option C) as the direction and asked for a near-term plan; build after the current Now work
+amended: 2026-11-15 — criterion 7: a member's own questions join their search history (F136)
 depends: []
+concept: new
 ---
 ## Story
 
@@ -22,7 +24,7 @@ A member types "anything fun this Saturday near Midtown?" into the Ask bar. Expl
 4. **Deep links**: every page and every filter it supports can be reached by URL (Explore by date, category and place; You → Notifications; a post draft with prefilled text).
 5. **One page registry**: a single list in the code describes each page, its URL and its filters. The router reads only that list and can't send a member to a page that isn't on it.
 6. **Nothing is done for the member**: the router only opens pages. A prefilled draft is not posted until the member posts it.
-7. **Questions logged by the search-demand rules** (F089): anonymous, aggregated (a floor of ten members, one metro), raw rows deleted after 30 days, never tied to a member in anything shown.
+7. **Questions logged by the search-demand rules** (F089): anonymous, aggregated (a floor of ten members, one metro), raw rows deleted after 30 days, never tied to a member in anything shown to anyone else; a member's own questions join their own search history (F136), which only they see.
 8. **Opt-out**: one setting stops a member's questions being logged; routing still works for them.
 9. **Cost cap**: a per-member daily limit on model calls, after which the bar falls back to search.
 

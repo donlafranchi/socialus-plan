@@ -6,7 +6,9 @@ horizon: next
 rank: 3
 date: 2026-10-30
 approved: 2026-10-31 — the PM: "approve"; interest shelves may also appear on Explore
+amended: 2026-11-15 — a member's own searches may also shape their interest shelves (F136, the PM's ruling that searches tailor what we show that member)
 depends: [F098, F119]
+concept: new
 ---
 ## Story
 
@@ -22,7 +24,7 @@ Maya opens SocialUs on a Monday in November. First come the farm stand and run c
 4. **Each item shows once per screen:** shelves fill top to bottom, and an item goes in the first shelf it qualifies for.
 5. **An empty shelf is absent**, and a shelf shows about 10 to 12 items and a quiet "See all" text link to its full list (a deep link from the F119 registry).
 6. **The starting shelves**, under the followed shelf, are the list Don approves in this PR: *Next 7 days*; at least three things-to-buy shelves narrower than "home sales" or "maker events"; the current seasonal shelf; and up to three interest shelves per member.
-7. **Interest shelves come from the interests a member declared on You**, one shelf per interest, three at most; none for a signed-out visitor. They may appear on Home, the wide-open ask and Explore.
+7. **Interest shelves come from the interests a member declared on You, and from what they searched for (F136)**, one shelf per interest, three at most; none for a signed-out visitor. They may appear on Home, the wide-open ask and Explore.
 8. **Seasonal shelves run by date:** each has a start and end (Thanksgiving Nov 2–28, 2026, through Small Business Saturday; then a holiday shelf Nov 29–Dec 24), and turns itself on and off with no one touching it.
 9. **A season calendar, kept by an agent:** a scheduled run keeps the season list six weeks ahead and switches dates. A season whose shelf name isn't on Don's approved list is drafted and sent to Don; it doesn't go live without his yes.
 10. **Rotation, not a fixed order:** the followed shelf and *Next 7 days* stay first; the remaining shelves rotate order per member per day, so each spends about equal time in each position. The order holds still within a day.

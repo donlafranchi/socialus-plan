@@ -14,7 +14,7 @@ criteria:
 
 # When a search finds nothing, and welcoming new kinds of business
 
-**As of 2026-11-13** · Source: the PM's words below; the shared list (web #1180), the seeder's log of every Page added, F076, F089, F118, F122, the privacy principle (plan #329) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
+**As of 2026-11-13** · Source: the PM's words below; the shared list (web #1180), the seeder's log of every Page added, F076, F089, F118, F122, the privacy principle (plan #329, reworded around stalking 2026-11-15) · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-12:* "I dont need anymore pages or businesses yet. we do need to refine or categorize what we have. I also want to have a response for when someone searches for something new that we don't have. I was thinking I want to find a skateboard shop and if I search for skateboards and nothing comes up what would that look like. i want an approach to give people the permission to go find one and recommend that they sign up. i want to reward people for getting others to sign up and make it a ceremony where we welcome new kinds of businesses."
 
@@ -80,7 +80,7 @@ After: Farmers markets 80, Arts & culture 71, Food & drink 56, Volunteering 45, 
 - **Try a nearby word**, like Fitness & outdoors or Shops, then **Look at another area** (built).
 - **"You're not the only one looking"** only once ten people have searched it in that market (F089's floor). Never a number, never who.
 
-**Logging:** already built. Each search that settles stores the words, the market and how many results came back, never who; deduped by a hash that expires after 10 minutes; off for anyone who turns it off on You. That fits the privacy principle: no one, staff included, can see who searched. Added: the staff dashboard's "found nothing" list becomes **Wanted here**, the top searches with no results per market, the list scouts and the seeder start from once Pages resume.
+**Logging:** already built. Each search that settles stores the words, the market and how many results came back, never who; deduped by a hash that expires after 10 minutes; off for anyone who turns it off on You. Since 2026-11-15 a member's own searches are also kept on their own profile, for them alone to see and delete (`scenario-F136.md`); the market count stays anonymous, and no Page or other member ever learns who searched. Added: the staff dashboard's "found nothing" list becomes **Wanted here**, the top searches with no results per market, the list scouts and the seeder start from once Pages resume.
 
 ## 3. Rewards and the welcome (new territory: your calls)
 
