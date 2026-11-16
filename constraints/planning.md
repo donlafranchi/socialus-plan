@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **planning** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **99 older decisions carry no tag yet and are not listed** — tagging is required from
+> **98 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-15** · [always] · principles, privacy, names, contact, threads, search — Sellers decide how and when they are found, and no one can stalk a member in the app, signed in or out. [always] (PRINCIPLES.md)

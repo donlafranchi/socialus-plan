@@ -44,7 +44,7 @@ date: 2026-09-17
 | Someone views it | **no** | n/a |
 | It appeared in a search result | **no** | n/a |
 
-**Which events write `last_interaction_at`: the ones that already exist.** Every write goes through a named action handler that commits the data row and its `*_events` row in the same transaction (`action-layer.md`). **The handler sets the date; nothing separate watches for it, and no job runs.** Half the acts above have no handler yet, which is the same list of missing writers already tracked elsewhere.
+**Which events write `last_interaction_at`: the ones that already exist.** Every write goes through a named action handler that commits the data row and its `*_events` row in the same transaction (`socialus-web` `docs/action-layer.md`). **The handler sets the date; nothing separate watches for it, and no job runs.** Half the acts above have no handler yet, which is the same list of missing writers already tracked elsewhere.
 
 **The ordering rule in `surfaces.md` stands unchanged.** Don had raised removing it; his answer here keeps views out of ordering by itself, so nothing needs to change there.
 
