@@ -114,11 +114,11 @@ Good reasons exist and are not weakened by this. A member who has not opted into
 
 **Two inputs, one vocabulary.**  Tags creators create, and searches that returned nothing, both feed the dictionary. **The tag list and the dictionary are one vocabulary, not two**: the tags are what exists, and the dictionary is that plus the words strangers type for it. Nothing builds a third list.
 
-**An LLM agent grows the dictionary, and a human approves what it proposes.** New tags and zero-result searches in; proposed entries out. **The approval gate is a recommendation, not Don's words** — he asked for automation and did not mention a gate. It is written in because an unattended loop that writes its own search vocabulary drifts, and **the failure is invisible**: bad entries do not error, they quietly make search worse, and the thing that reports it is a member who searched and found nothing.
+**An LLM agent grows the dictionary, and a human approves what it proposes.** New tags and zero-result searches in; proposed entries out. **The gate is the agent's, not Don's:** an unattended loop writing its own vocabulary drifts invisibly, and the only report is a member who found nothing.
 
 **A public tag is member-contributed content that other people see**, so [member-content-takedown] applies — no production without a report-and-takedown path — and it is an abuse surface in its own right, not only a data-quality one. `messaging-problem.md`.
 
-**Not embeddings.** `item_embeddings` and `member_embeddings` exist, hold zero rows, and nothing reads them. A curated dictionary is cheaper, controllable, inspectable, and has no model to train or drift. **Revisit when the dictionary stops scaling** — when maintaining it becomes a recurring cost somebody notices, or when searches that should match are missing because nobody thought of the term. Not because the tables happen to be there.
+**Not embeddings.** The embedding tables hold no rows and nothing reads them. A curated dictionary is cheaper and inspectable; **revisit when it stops scaling**, not because the tables exist.
 
 ## Why Home and Browse both exist
 
@@ -136,10 +136,11 @@ Neither can do the other's job. A complete surface that quietly favours your int
 **A hard distinction, because one word covers two things and only one of them is allowed.**
 
 - **Allowed — and the whole point:** the member's own **declared interests**, and where they are. Home surfaces what they said they care about, near them. That is personalization on facts the member volunteered about themselves.
+- **Allowed (2026-11-15):** what the member **searched for**. A search is the member telling us what they want; their searches are kept on their own profile, shown back only to them, and they can see and delete them. Don, of their searches: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
 - **Allowed:** genuine community response. Earned attention is the intended mechanism *(2026-09-12)* — a baker the neighbourhood turns up for should rise.
 - **Never:** what keeps someone scrolling. No watch-time, no dwell-time, no engagement objective. Ranking doesn't favour a member because of payment, size or follower count (2026-09-30).
 
-**"Home is personalized" is not licence for a feed algorithm.** It is licence for exactly one thing: showing a member what they told the platform they like, where they are. Anything reading behaviour back at them is a different product and is refused elsewhere in this tree.
+**"Home is personalized" is not licence for a feed algorithm.** It is licence for one thing: showing a member what they told the platform they want, by declaring it or searching for it, where they are. Reading engagement back at them (time spent, scrolling, what holds their eye) is a different product and is refused elsewhere in this tree.
 
 ## One mechanism: posts
 

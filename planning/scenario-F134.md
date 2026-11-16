@@ -7,7 +7,7 @@ rank: 5
 date: 2026-11-12
 approved: 2026-11-12, the PM picked A: "visitors can read everything; hearting, following, posting and reporting still need an account"
 depends: [F059, F072]
-concept: new
+concept: CO-0055
 ---
 ## Story
 

@@ -16,6 +16,8 @@ last-updated: 2026-10-11
 
 SocialUs exists to serve its members, not shareholders, and to give them a platform to build a better future.
 
+SocialUs is two things: local discovery, and an engine for cooperation, collaboration and community development. Discovery is the way in; bringing things to life together is where it's headed.
+
 ## Three flips
 
 We are trying to flip how technology gets used.

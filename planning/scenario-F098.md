@@ -6,7 +6,7 @@ horizon: later
 rank: 80
 date: 2026-10-04
 depends: [F059, F091, F134]
-concept: new
+concept: CO-0049
 ---
 ## Story
 
@@ -37,5 +37,4 @@ Measure from launch: share of visits reaching the stop card, taps after it, retu
 
 ## Rulings
 - **2026-10-25 — Home's rows are labelled by Page kind then post kind and themed on the categories Pages already declare; "things you saved" at launch means events the member has responded to; F091's time rows move to Home and Explore stays the tool, list and map.** Decided by the agent under the 2026-10-25 decision rights (soul and defaults; well-worn): Airbnb and Eventbrite theme rows on existing categories; no new verb or taxonomy; follows the two-sides principle. [for now] [replaces none] [binds tiers=planning,code surfaces=home,explore build=none]
-- **2026-10-04 — Home returns as rows that keep going: Tonight, This weekend, New this week and a wildcard from outside a member's declared interests. Nothing plays on its own, and the same organization doesn't appear twice in a row. The rows end at a stop card, "You've seen what's new this week", followed by "things you saved are on tonight". Explore stays the research tool. Ranking currently uses time, place, declared interests and curation, and not time spent.** Don chose option B of `socialus-design/research/ENGAGEMENT-OPTIONS.md`: make the app engaging, with natural breaks so nobody loses hours to it. Cards open on a tap; anything older than the stop card shows only on a tap. We currently don't use engagement-ranked sort, streaks or pull-back notifications. Shelf categories are granular enough to tell businesses and group events apart (below). **New launch scope**; F098 drafts it. The model's line that ranking doesn't use what keeps someone scrolling stands. [replaces 2026-09-17: Home is paused: off the site, capability preserved, decision deferred.] [replaces 2026-09-17: Not addicting and not boring is a constraint on ranking, not a slogan] [replaces 2026-09-12: "No engagement optimization, anywhere" and "No engagement-derived ranking" are withdrawn on Don's instruction.] [replaces 2026-09-12: Consequential, unfixed: three docs still refuse engagement-shaped ranking in their own words] [replaces 2026-09-12: no infinite feeds, engagement-ranked sort, streaks, or pull-back notification loops] [binds tiers=planning,code surfaces=home,explore,ranking,notifications]
 - **2026-10-04 — Home's rows use granular categories that tell businesses and group events apart, not broad buckets.** Don: *"for the engagement shelves we'll probably need to be more granular on how we differentiate businesses and group events and not use overly broad categories."* How granular is open in F098. [binds tiers=planning,code surfaces=home,categories,tags]
