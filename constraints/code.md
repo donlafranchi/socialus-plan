@@ -10,6 +10,7 @@
 > **98 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-16** · knowledge — Every department reads the story maps, including departments added later; nothing on a map is public (planning/scenario-F132.md)
 - **2026-11-15** · [always] · principles, privacy, names, contact, threads, search — Sellers decide how and when they are found, and no one can stalk a member in the app, signed in or out. [always] (PRINCIPLES.md)
 - **2026-11-15** · [for now] · search, explore — Search is hyper-specific: specific by location, by item, by vibe, or any mix; local is still true but not the defining word. Its purpose is to connect members and help them connect with each other (planning/scenario-F136.md)
 - **2026-11-15** · [for now] · search, explore — Search is high-powered and timely: what is happening now and soon, near the member, with what places carry leading (planning/scenario-F136.md)

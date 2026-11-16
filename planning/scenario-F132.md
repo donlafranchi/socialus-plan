@@ -44,3 +44,4 @@ Drawing the map as a picture (later, on the phone page). Estimates. Rewriting an
 ## Rulings
 
 - **2026-11-11 — Planning follows Jeff Patton's user story mapping, held in the store as records where smaller items build up to bigger ones, so any item shows its place and a new idea shows where it fits.** The PM, picking A, for F132. [binds tiers=planning,code surfaces=knowledge,roadmap]
+- **2026-11-16 — Every department reads the story maps, including departments added later; nothing on a map is public.** The PM, picking A, for F132. [binds tiers=code surfaces=knowledge]
