@@ -45,7 +45,7 @@ The DM substrate hangs off the Member, but its shape — the same-Group constrai
 
 The temptation will be a `role` enum on the Member row (Maker, Organizer, Founder) so routing is easy. Refuse it — the moment a stored role lands, the primitive collapses back into a directory-of-types, and the same holds for any "is this a business" boolean. A Member who runs a business is captured entirely by their Group memberships and their Items, never by a flag that could drift out of sync with what's actually true.
 
-Business and creator status is a Group-membership fact, never a Member column — how selling, hosting, and organizing derive from that membership is `creator.md`.
+Business and Page-owner status is a Group-membership fact, never a Member column — how selling and hosting derive from it: `page-owner.md`.
 
 The Group member-vs-follower distinction is not re-derived here: it's in `../foundation/verbs.md` and `groups.md`.
 
