@@ -5,7 +5,7 @@ layer: why
 status: retired
 ---
 
-> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — that is the whole point, and the only test any money decision has to pass. Monetization is open to any mechanism that passes it: fees, dues, a producer-sales cut, advertising, anything. The platform takes only what it needs to run and gives back as much as it can to the communities that generated it. Who is paid what, any ownership or investor structure, and incorporation stay open. Priority order for getting to profitable: `product/foundation/monetization.md`.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # Role language — retired 2026-09-14
 

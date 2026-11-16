@@ -1,4 +1,4 @@
-> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — that is the whole point, and the only test any money decision has to pass. Monetization is open to any mechanism that passes it: fees, dues, a producer-sales cut, advertising, anything. The platform takes only what it needs to run and gives back as much as it can to the communities that generated it. Who is paid what, any ownership or investor structure, and incorporation stay open. Priority order for getting to profitable: `product/foundation/monetization.md`.
+> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
 
 # Beta · beta runs until April 2027 · criterion roll-up: 228/345 criteria met (66%), checked 125, reviewed 43, smoked 0, PM looked 0 across 38 features, 3 red, 0 reports stale · Issues closed 153/195 (alongside, not the headline) · updated 2026-11-16 13:17 PT
 
