@@ -22,7 +22,7 @@ Someone in Boise joins the waitlist and sees a number. Boise opens when enough h
 3. **The waitlist join is four or five screens:** plans (multi-select), a business page only for be-found picks, then name (never legal), zip, email, mobile on one page. Staff-only, counted per market, never a member type. Storyboard: the join-journey brief.
 4. **One person counts once in one market;** re-joining or a second device adds nothing.
 5. Changing the zip moves the count to the new market, never doubled or stranded.
-6. **Creator and patron counts are stored separately** per market.
+6. **owner and patron counts are stored separately** per market.
 7. After joining, the finish shows the **cached** count and a message, never a figure read in response to the submission.
 8. **One combined number**, makers plus supporters, the same everywhere; the split never shows.
 9. The message says what is still needed, **never a date, a timeline or a promise to open.**
@@ -37,7 +37,7 @@ Someone in Boise joins the waitlist and sees a number. Boise opens when enough h
 
 ## Why
 
-**Creators are the real gate:** patrons without makers look empty. One number, cached (2026-09-23).
+**owners are the real gate:** patrons without makers look empty. One number, cached (2026-09-23).
 
 ## Not this
 

@@ -44,7 +44,7 @@ A Group never changes kind. A run club that wants to formalize as an LLC ends th
 
 ## What a business Group is called
 
-**Seller** is the generic term; **Producer** is preferred in food/ag contexts; **Maker** survives only where someone specifically self-identifies that way. That selling tools surface from Group and Item state alone, with no maker-mode flag, is `creator.md` — a member with an active business Group has the full toolset surfaced ambiently.
+**Seller** is the generic term; **Producer** is preferred in food/ag contexts; **Maker** survives only where someone specifically self-identifies that way. That selling tools surface from Group and Item state alone, with no maker-mode flag, is `owner.md` — a member with an active business Group has the full toolset surfaced ambiently.
 
 ## Editing an active Page — save is publish
 
