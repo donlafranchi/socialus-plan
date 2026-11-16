@@ -26,7 +26,7 @@ Maya's bakery has nothing to say until Thursday, when the sourdough is back. She
 
 ## Not this
 
-**Recurrence, which is F074** — approved, separate, and not what is being built today. **No announcement renders on the map, dated or not** — the map shows Pages. Replies, threads, comments or any inbox. Scheduling, or sending to a subset. More than one photo per post (one is F099). Responses and any reaction count, which are F063. All-day events or multi-day spans. Timezone *selection* by a creator: times are the metro's, which is what criterion 3 says. An edit history or a visible "edited" marker — not ruled either way.
+**Recurrence, which is F074** — approved, separate, and not what is being built today. **No announcement renders on the map, dated or not** — the map shows Pages. Replies, threads, comments or any inbox. Scheduling, or sending to a subset. More than one photo per post (one is F099). Responses and any reaction count, which are F063. All-day events or multi-day spans. Timezone *selection* by an owner: times are the metro's, which is what criterion 3 says. An edit history or a visible "edited" marker — not ruled either way.
 
 ## Why
 
@@ -36,7 +36,7 @@ Maya's bakery has nothing to say until Thursday, when the sourdough is back. She
 
 **Criterion 4's count is permitted and its roster is not** — Don, 2026-09-07: *a count is shown to the Page owner, never a roster of who reacted.* The open question in `verbs.md` about a Page owner seeing **who** their audience is stays open and is untouched by a count.
 
-**The restricted setting depends on delivery, which is in After beta (cut).** It may be **visible before delivery exists, and not selectable-and-postable** — a creator who addresses forty-two people none of whom receive it has been told something untrue. At launch most Pages have nobody getting updates, so the reason shown is the true one either way. **The anyone setting is complete against what exists.**
+**The restricted setting depends on delivery, which is in After beta (cut).** It may be **visible before delivery exists, and not selectable-and-postable** — an owner who addresses forty-two people none of whom receive it has been told something untrue. At launch most Pages have nobody getting updates, so the reason shown is the true one either way. **The anyone setting is complete against what exists.**
 
 ## Rulings
 - **2026-10-05 — The user-facing noun is "Post" everywhere, not "Announcement".** Don. An announcement stays a kind of post in the model (2026-10-01); every member-facing string says Post, copy still a draft ([public-is-draft]). [replaces 2026-10-01: User-facing copy that says *announcement* is reviewed for *post*] Scenario: F072. [binds tiers=planning,code surfaces=copy,posts,pages,explore]
