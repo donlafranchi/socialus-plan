@@ -62,17 +62,15 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 **Social group** — a named, self-selected set of people. Six Page kinds: five affiliate (`place`, `interest`, `practice`, `event_anchored`, `family`) and one operate (`business`). Never auto-assigned by geography or anything else. Detail: `../systems/groups.md`.
 
-## The two sides — patron and creator *(internal vocabulary)*
+## The two sides — patron and Page owner *(internal vocabulary)*
 
-*(Ratified 2026-09-14, Don: "Creator and patron are shorthand for you and me when discussing the two sides broadly.")*
+*(Ratified 2026-09-14; "creator" became "Page owner" 2026-11-16, Don.)*
 
-**These are our words for talking about the product, not the product's words for talking to a member.** A creator is someone who publishes something other people show up for — sells, hosts, organizes. A patron is everyone on the other side. Use them freely in these docs, in scenarios, in tickets, in conversation.
+**These are our words for talking about the product, not the product's words for talking to a member.** A Page owner is someone with a Page because they organize things that recur: a business, a volunteer group, someone who teaches a class every week. A patron is everyone else. Someone selling at a one-time garage sale is neither: they post an announcement from a person, with no Page.
 
 **Never rendered in a user-facing string.** *(Restores `role-language.md`'s rule: no person-noun in front of a member.)* Not in copy, not as a label under a name, not addressing a set of people. A member is addressed as **you**; a set of people is **people**, or named. Everything a person *does* is a verb — make, sell, host, offer, ask, wonder, show up, back, follow, save.
 
-**What was actually overruled** on 2026-09-14 is narrow: the old doc refused to let *us* name the two sides at all, even internally. That refusal is gone. **Its user-facing rule stands unchanged.**
-
-**Neither is a stored type.** Patron is the default state of being a member, not a column; creator derives from the attestation record plus what the person has authored. The pair is vocabulary, not schema — see the `Member` row's "no type, tier, or stored role," which is unchanged by this ruling.
+**Neither is a stored type.** Patron is the default state of being a member, not a column; a Page owner derives from owner authority on a Page (`group_memberships.role`). The pair is vocabulary, not schema — see the `Member` row's "no type, tier, or stored role," which is unchanged by this ruling.
 
 ### The user-facing string check — because prose rules have not held
 

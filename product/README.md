@@ -27,9 +27,9 @@ One line per doc, then the settled rules with no rationale attached — read the
 - Deeper infrastructure (banking, insurance) spins off to separate federated platforms, never absorbed.
 
 **`foundation/role-language.md`** — **retired 2026-09-14**, a tombstone naming where each rule went. The two sides live in `foundation/nouns.md` § The two sides.
-- **Patron and creator are internal vocabulary** *(2026-09-14, Don)* — our shorthand for the two sides. Free to use in docs, scenarios and tickets.
+- **Patron and Page owner are internal vocabulary** *(2026-09-14; "creator" is now "Page owner", 2026-11-16)* — our shorthand for the two sides. Free in internal docs.
 - **No person-noun in a user-facing string, these two included.** A member is "you"; a group is "people" or named; everything else is a verb. This rule was never overruled.
-- Neither is a stored type — patron is the default state, creator derives from the attestation record plus what the person authored.
+- Neither is a stored type — patron is the default state, a Page owner derives from owner authority on a Page.
 - Functional roles (owner, staff, steward, host, founder) stay scoped to one Group or gathering — never shown as a person-level identity.
 
 **`foundation/voice-and-tone.md`** — **how copy reads: the rules, what we say, how we sound, and the PM's original voice text kept verbatim. Agents edit it only on the PM's explicit instruction, recording what changed and when.**
@@ -74,8 +74,8 @@ One line per doc, then the settled rules with no rationale attached — read the
 - Geography lives in 3 owner-only substrates (locality default, private awareness scope, saved searches) — never a message send-to target.
 - Direct-message and agent-assistance (Delegations) tables exist from day one with no UI yet.
 
-**`systems/creator.md`** *(new)* — the pattern for one-off/ongoing selling and hosting.
-- No stored business/creator entity — status is a Group-membership fact only, never a Member-row flag.
+**`systems/page-owner.md`** *(new)* — the pattern for one-off/ongoing selling and hosting.
+- No stored business/Page-owner entity — status is a Group-membership fact only, never a Member-row flag.
 - No promote-to-recurring flow — a one-off (a garage sale, a single class) never auto-upgrades into a Page; want it permanent, create one yourself.
 - "Archive" = a single flag that drops a Page from map findability. Not a lifecycle state machine, no separate reactivate flow.
 
@@ -165,4 +165,4 @@ Marked for the review pass. Nothing below has been acted on.
 2. **`planning/backlog/` does not exist.** Neither `audit-route-inventory.md` nor `decision-surfaces.md` is in the tree, and `ui/surfaces.md` carries three dead links to them. Decide: restore from git history, or drop the citations and fold what's still needed into `surfaces.md`.
 3. **Six docs sit in `product/` but not in this index** — `foundation/what-this-is.md`, `foundation/metrics.md`, `foundation/monetization.md`, `foundation/impact-diagnostic.md`, `systems/places.md`, `ui/design-language.md`. Add or deliberately exclude each. (`foundation/promises.md` merged into `goals.md`, 2026-09-12, which is now indexed above.)
 4. **Cooperative and federation material is the too-complex-for-now block.** The settled *refusals* stay as index bullets — no Business entity, cooperative governance refused as a feature, federation-not-absorption as the ceiling. The speculative build-out is `foundation/impact-diagnostic.md`'s pool/form/federate stack and its sector-by-sector cooperative plans; `IMAGINE.md` already carries that as **The cooperative engine (5 sketches)**, so it needs no new entry — only a decision on whether the doc stays in `product/`. Deleting anything from `product/` runs through the yes/no pause in `skills/trim/`.
-5. **`systems/member.md`'s split has landed** (commit `c4226d0`): `creator.md` holds selling, standing presence, and archive; the DM shape moved to `foundation/messaging-problem.md`; Social capital moved to `IMAGINE.md`. The bullets above already reflect the post-split file.
+5. **`systems/member.md`'s split has landed** (commit `c4226d0`): `page-owner.md` holds selling and standing presence; the DM shape moved to `foundation/messaging-problem.md`; Social capital moved to `IMAGINE.md`. The bullets above already reflect the post-split file.
