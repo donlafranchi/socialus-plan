@@ -51,7 +51,7 @@ where it is true; the gap is gone when its marker is.
 - **GAP** · no privacy policy or terms page exists anywhere in the app — [product/ui/surfaces.md](product/ui/surfaces.md)
 
 **payments** · App Review 3.1.1: digital goods or features unlocked inside the app go through in-app purchase. Physical goods and services between people are exempt (3.1.3(e)).
-- nothing is sold in the app today, and sales between members happen off it; dues that unlock anything in the app would fall under each store's in-app billing rule — [product/foundation/monetization.md](product/foundation/monetization.md)
+- **NOT ASSESSED.** No marker says how this is met or that it is not.
 
 ## By need
 
