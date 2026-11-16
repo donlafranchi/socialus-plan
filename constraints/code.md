@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to, the newer wins (`[newer-decision-wins]`).
-> **99 older decisions carry no tag yet and are not listed** — tagging is required from
+> **98 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-15** · [always] · principles, privacy, names, contact, threads, search — Sellers decide how and when they are found, and no one can stalk a member in the app, signed in or out. [always] (PRINCIPLES.md)
@@ -104,7 +104,7 @@
 - **2026-10-25** · [always] · principles, map, privacy — In public, locality is coarse; precision stays private (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, explore, discovery — Promotion earns its place by serving members. [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, ai — AI helps people and doesn't stand in for them; what an assistant knows belongs to the member. [always] (PRINCIPLES.md)
-- **2026-10-25** · [always] · principles, fees — What never-extractive rules out: selling member data, a revenue line that works better when a member is stuck, and venture capital (no priced rounds, no plan that only works at venture scale). [always] (PRINCIPLES.md)
+- **2026-10-25** · [always] · principles, fees — What never-extractive rules out: selling member data, and a revenue line that works better when a member is stuck. [always] (PRINCIPLES.md)
 - **2026-10-25** · [always] · principles, metrics — Measure what happens inside the app; the north star is time and money together (PRINCIPLES.md)
 - **2026-10-25** · [for now] · explore, tags — "Free" is a tag: a creator types it like any other tag, and the free-things lens is the tag lens pointed at that one word (planning/scenario-F059.md)
 - **2026-10-25** · [for now] · tags, search, ai — The LLM pass runs as a scheduled job and its proposals land in a queue any operator with the moderation role reviews, not the PM; the dictionary grows from both the tags creators create and logged zero-result searches (planning/scenario-F071.md)
@@ -112,7 +112,6 @@
 - **2026-10-25** · [for now] · home, explore — Home's rows are labelled by Page kind then post kind and themed on the categories Pages already declare; "things you saved" at launch means events the member has responded to; F091's time rows move to Home and Explore stays the tool, list and map (planning/scenario-F098.md)
 - **2026-10-25** · [always] · privacy, you, data — Data collection is option C, tightened: SocialUs collects what it can use to serve members, including usage, searches, device details and coarse location; it says plainly what it collects; it never sells it or lets anyone else profit from it; models trained on it serve only SocialUs members; raw signals expire on the F113 schedule; and one switch ("I don't mind doing this myself") stops learning and deletes raw signals. Members opt out; they never have to opt in (planning/scenario-F113.md)
 - **2026-10-25** · [for now] · wonders, posts, pages — Wonders v1 is option B: a Wonder post with "I'm in" (with a size), "I can help as <role>" from the eight playbook roles with the poster accepting helpers, and a progress bar to the poster's threshold; no money (planning/scenario-F117.md)
-- **2026-10-25** · [always] · explore, discovery, fees — Paid visibility: promotion is allowed on Discover when it is marked as promoted, serves members, sends its surplus back to members and can be turned off; Find is never reordered by payment (product/foundation/monetization.md)
 - **2026-10-25** · [for now] · notifications, following, you — Notifications are web push that members can turn off, kind by kind: new posts from Pages they follow, and a weekly Thursday "this weekend near you" from followed Pages plus their interests and area. Once a member allows push, both kinds start on; every notification lands on a view with one tap to turn that kind off; there are quiet hours and a pause for all. Free web push (VAPID keys, no paid service): Android and desktop from the browser, iPhone on iOS 16.4+ once SocialUs is on the Home Screen. This is how get-updates is delivered; support (the ribbon) still produces nothing. Only aggregate counts are kept per kind per week, used to tune for members and never as a target to raise; nothing is sent because a member has been away. Reviewed monthly; frequency, triggers and words change one change at a time (product/foundation/verbs.md)
 - **2026-10-25** · [always] · explore, discovery, notifications, ranking, ai — The tools other apps use are ours too, used for everyone's benefit: personal and response-aware ranking on Discover and Home, notifications, AI, and marked promotion on Discover are in, each one something a member can turn off; Find stays the plain tool. Only extraction stays out: selling data, and tricks that work by making a member feel stuck (product/foundation/what-this-is.md)
 - **2026-10-25** · [for now] · badges, pages — "Lives near and operates here" is tested in words, not a number: the owner's claim names the town or market where they live and operate, members see that name, and nothing is computed (product/systems/business-jurisdiction.md)
@@ -217,7 +216,6 @@
 - **2026-09-30** · page-publish, copy — The become-a-creator step is fixed statements, framed as rules rather than an attestation (planning/scenario-F082.md)
 - **2026-09-30** · page-publish — The rules agreement comes before every new Page, including an existing owner's next one (planning/scenario-F082.md)
 - **2026-09-30** · process, product, copy — The platform comes first, then its members, and every ruling can be revisited when the situation changes (product/foundation/model.md)
-- **2026-09-30** · fees, ranking, explore — Fees serve the platform and its members, and favour no member over another. The platform doesn't show favouritism (product/foundation/monetization.md)
 - **2026-09-30** · rls, members, pages — The founder and RSVP corrections `socialus-web` #246 flagged are pruned here (product/foundation/nouns.md)
 - **2026-09-30** · rls, rsvp, posts — An RSVP to a gathering currently shows that gathering and the others party to it, not what a member sees. Membership is its own component. An RSVP on a single post, when it exists, covers that post only (product/foundation/nouns.md)
 - **2026-09-30** · rls, groups, follows — A community-only Page can currently have followers; a private Page can't (product/foundation/nouns.md)
