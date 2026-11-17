@@ -26,11 +26,17 @@ Agents' part: the waitlist journey built behind the flag (live), one link per sc
 
 1. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
 2. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
-3. **Open the remaining accounts:** Sentry (error alerts; the code is built and waits for its key), Vercel Speed Insights, a free HUD account (web #849), Cloudflare image safety (child-safety scanning no longer needs an NCMEC account, so it can go on now), and a free UptimeRobot account with two monitors so you hear when the site is down ([steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#12-uptime-monitoring)). Also file the private Supabase support ticket.
-4. **Talk with 5 people who have tried SocialUs,** after the landing page and sign-up are live (the PM, 2026-11-12). Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
-5. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
-6. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
-7. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+3. **Finish monitoring (about 15 minutes, computer).** [Detail](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#11-error-tracking)
+   - **Sentry, add the build key:** on vercel.com, open the Sentry integration page (vercel.com/integrations/sentry) → Add Integration → team socialus, project socialus-web → sign in to Sentry and pick org lafranchi-et-al-llc, project socialus-web → Connect. Then redeploy production once.
+   - **Sentry, alerts:** in Sentry, Alerts → Create Alert → Issues → "A new issue is created" → action "Send a notification to Member: you" → Save. Repeat with "Number of events in an issue is more than 20 in 5 minutes".
+   - **Vercel, spend alert:** vercel.com → team socialus → Settings → Billing → Spend Management → set **$60**, notifications on, leave "Pause production deployments" **off** → Save.
+   - **UptimeRobot (free account):** two keyword monitors, every 5 minutes: `https://www.socialus.org/api/health/db` must contain `"ok":true`, and `https://www.socialus.org/auth/login` must contain `name="email"`. Alerts to your email and to the phone app. Then Status Pages → New → add both monitors → Save, and send the page's link to an agent so it goes in the app's help text.
+   - **Previews, your call (Pro lifted the build cap):** A) keep them off (now); B) previews only for PRs marked for your look, each pointed at a test database, about 3 cents a build (recommended: you see UI before it is live, members' data stays out of it); C) previews for every PR, the same, more builds.
+4. **Open the remaining accounts:** a free HUD account (web #849) and Cloudflare image safety (child-safety scanning no longer needs an NCMEC account, so it can go on now). Also file the private Supabase support ticket.
+5. **Talk with 5 people who have tried SocialUs,** after the landing page and sign-up are live (the PM, 2026-11-12). Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
+6. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
+7. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
+8. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
@@ -41,8 +47,7 @@ Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dash
 | Early 2027 | **Form the company (LLC).** Specifics live in socialus-legal. | Commercial hosting terms, child-safety registration and card payments all need it |
 | After the company, by 2027-04-01 | **Register with the NCMEC CyberTipline** and switch off the manual form. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md) | Required reporting; the beta uses the public form, which can't take images |
 | From 2027-03-01 | **Re-review paid tools now that budget opens:** feature flags, GitHub and Vercel plans. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/go-live-paid-tools.md) | We built our own until there was money |
-| Two weeks before launch, or sooner if a load test shows a plan limit | **Upgrade Vercel to Pro** ($20 a month per person). [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#1-hosting-and-cdn) | The free plan forbids commercial use |
 | Two weeks before launch, or sooner if a load test shows a plan limit | **Upgrade Supabase to Pro** ($25 a month), spend cap on. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#2-database-and-auth) | Free pauses after a quiet week; Pro adds daily backups |
 | Two weeks before launch | **Mapbox production key,** locked to socialus.org. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#4-maps-and-geocoding) | A key anyone can copy bills you |
 
-About $48 a month in all at launch, before usage.
+Vercel Pro is on since 2026-11-16 ($20 a month). About $48 a month in all at launch, before usage.
