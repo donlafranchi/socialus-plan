@@ -1,8 +1,10 @@
 ---
 id: brief-2026-11-11-product-analytics
-status: awaiting-approval
+status: approved
 size: M
 path: new territory
+approved: 2026-11-12, the PM: "A A" (the second A is analytics; his yes also makes the count tables launch prep under the build freeze)
+scenario: F133
 criteria:
   - The PM can read, once a week on the dashboard, how many members came back each week by the week they joined, which parts of the app they used, and where sign-up and first post drop off.
   - Every number is a count; no member id, email, IP address or precise location is stored with a usage count or sent to any outside service.
