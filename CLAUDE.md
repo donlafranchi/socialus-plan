@@ -16,7 +16,7 @@ Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadlin
 - Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
 - When two live records conflict, build to the newer, then retire the older in the store so one remains (table below). Never ask Don which is true.
-- Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; the legal side goes to counsel, never back to the PM. Wealth circulates, it is never extracted.
+- Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
 **Never break**
 - Deploys to main, destructive migrations, deleting data and rewriting history ask Don first. Until the first real member signs up, you may apply migrations yourself, in order, confirming each.
@@ -50,7 +50,7 @@ The knowledge store is the MCP server at `socialus.org/api/knowledge/mcp` (tools
 
 If the store can't be reached, say so and work from the repo docs.
 
-**Where we are:** `STATUS.md` (generated) and `python3 scripts/going.py --list now`. The soul and never-break rules are in `PRINCIPLES.md` and `product/ABSOLUTES.md` until the store holds them in full.
+**Where we are:** `STATUS.md` (generated) and `python3 scripts/going.py --list now`.
 
 ## Where truth lives
 
