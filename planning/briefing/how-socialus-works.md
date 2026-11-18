@@ -7,7 +7,7 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 **SocialUs is a map-based app where the people of one town find and support each other. The message (11-06): "Locals, finding and supporting locals." Businesses are one kind of local among many, never the point.**
 
 - It is never another business listing site. At launch it is "a yellow pages of organizations, not a white pages of people."
-- Members are the investors and the only people paid out. SocialUs takes transaction income. Legal structure lives in the private legal repo, not here.
+- SocialUs is built for the primary benefit of its members; they are not investors or payees, and no return is promised. SocialUs takes transaction income. Legal structure lives in the private legal repo, not here.
 - One market for now: Northern California (11-06; was Sacramento, the counties not yet redrawn). There is no "near you".
 - Build freeze (11-06): no new features until the 2027 launch; refine, clean up, prepare.
 
