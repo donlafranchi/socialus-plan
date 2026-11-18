@@ -4,35 +4,60 @@
 
 Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadline; production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
-## Where files go (Don, 2026-11-01) [for now]
+## Always on (every session)
 
-Only in Don's repos: `~/.claude/CLAUDE.md` § Where files go.
+**Talking to Don**
+- Bullets, one line each. Status first, the next ask last. No preamble, recap or narrating.
+- One topic, one answer. Explain only when asked, and then in one sentence.
+- Plain words; ticket numbers only in brackets after.
+- Options as A/B/C with one-line trade-offs and a recommendation. End with the next action.
 
-## How decisions flow (Don, 2026-11-01)
+**Deciding**
+- Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
+- Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
+- When two live records conflict, build to the newer, then retire the older in the store so one remains (table below). Never ask Don which is true.
+- Never re-raise: members are the investors and the only people paid out; wealth circulates, it is never extracted.
 
-"me as the human I set guidelines and desired outcomes or trajectories or concepts of where I'd like to go as the human decision maker and you are there to try to figure out options and choices. Do the research to help guide me make the best decision based on whatever information is available and that's how this app development should work from top to bottom."
+**Never break**
+- Deploys to main, destructive migrations, deleting data and rewriting history ask Don first. Until the first real member signs up, you may apply migrations yourself, in order, confirming each.
+- Anything public is a draft until Don says otherwise.
+- A check isn't trusted until it has been seen rejecting bad input.
+- Nothing a member contributes goes live without a report-and-takedown path.
+- Member data is never shown beyond what the member chose.
+- A ruling is recorded once, with its date and why.
 
-1. **Don gives direction:** guidelines, desired outcomes, trajectories, concepts.
-2. **Agents research it into options:** evidence, precedents, A/B/C and a recommendation.
-3. **Don decides** ideas, what is in each version, and words and look-and-feel.
+**Where things go:** files live only in Don's repos. Code answers "how"; the store answers "what is live and why". Anything else: the table below.
 
-Agents decide the rest (well-worn and mechanical calls too) by the soul, the defaults and the 2026-10-04 decision rule (`~/.claude/CLAUDE.md`), record a dated ruling where it governs, and report. Only new territory that conflicts with the soul goes to Don. Detail: `ops-pattern/process/PIPELINE.md` § Decision rights.
+## When to ask the store
 
-## Read first, every session
+The knowledge store is the MCP server at `socialus.org/api/knowledge/mcp` (tools: `live`, `search`, `get`, `history`, `as_of`, `precedents`, `why`, `concept`, `how`, `review_method`, `upkeep`, `propose`).
 
-1. `STATUS.md` — what is true now. One screen. **Generated, never hand-edited** — see *Generated files* below.
-2. Now / Next / Later: `python3 scripts/going.py --list now` (or next, considering, later). PM's dashboard: the HTML page.
-3. `ops-pattern/process/ABSOLUTES.md` and `product/ABSOLUTES.md` — the eight absolutes, six process and two product. The four-harms test and the rule that admits another are stated once, in the process file. Cite an absolute by its slug in brackets (`[public-is-draft]`), never by number. Everything else is a guideline; break one if you can say why.
-4. `ops-pattern/process/PIPELINE.md` — the five kinds of work and how each moves.
-5. `constraints/planning.md` — every ratified decision that binds this tier, one line each. Generated from the `[binds …]` tags on the rulings; never edit it.
-6. `product/foundation/what-this-is.md` § Direction — what kind of platform this is. Read it before building anything that collects or uses member data.
+| When | Ask the store |
+|---|---|
+| Starting work in an area | `live` for each concern touched (pages, posts, explore-and-map, search-and-ranking, onboarding, notifications and the like) |
+| Deciding something not covered | `precedents`, then `search`. No well-worn path means A/B/C. |
+| Touching schema, RLS, auth or migrations | `live` for security and privacy, plus `how` building |
+| Opening or merging a PR | `how` reviewing and `how` shipping |
+| Planning, or writing a scenario or ticket | `how` planning |
+| Writing words members will read | `live` words-and-voice, and landing-and-announcements for those pages |
+| Reports, moderation, user content, AI reading content | `live` moderation-and-reports and child-safety |
+| Money, fees, payments | `live` fees-and-income and payments. Legal goes to counsel. |
+| CI, deploys, speed, errors | `live` ci-and-deploys, performance, errors, uptime-and-alerts |
+| Two live records conflict, or "why is it this way" | `get`, `history`, `why`. Build to the newer, then `propose` retiring the older with the reason so one remains. A refusal is kept as a flag for Don. |
+| "What did we decide back then", or how an idea changed | `as_of`, `concept` |
+| Judging a new tool or method | `review_method` |
+| Writing or trimming docs | `how` docs |
+
+If the store can't be reached, say so and work from the repo docs.
+
+**Where we are:** `STATUS.md` (generated) and `python3 scripts/going.py --list now`. The soul and never-break rules are in `PRINCIPLES.md` and `product/ABSOLUTES.md` until the store holds them in full.
 
 ## Where truth lives
 
 - **How the system works:** the code in `socialus-web`. If the code can answer it, read the code, don't write it down.
 - **Where each kind of thing goes:** `ops-pattern/process/WHERE-THINGS-GO.md` — one home per kind, budgets, generated vs maintained. Read it before writing any doc.
 - **Why it is that way:** `PRINCIPLES.md` — the principles behind the Charter, few, reworded in place as they sharpen. Principles only: the lint names the home of anything else.
-- **What was ruled:** under `## Rulings` in the scenario each ruling governs, moving verbatim to the spine or system doc when the scenario ships. One dated line per **live** ruling, words never edited; a superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest ([newer-decision-wins]).
+- **What was ruled:** under `## Rulings` in the scenario each ruling governs, moving verbatim to the spine or system doc when the scenario ships. One dated line per **live** ruling, words never edited; a superseded one is deleted and named in one `[replaces …]` tag on its replacement; git holds the rest.
 - **What is decided but not built:** `planning/` scenarios with `status: approved` (their `horizon` and `rank` order them), and the socialus-web milestones.
 - **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
 - **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `ops-pattern/process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
@@ -69,8 +94,6 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 **Nothing here asks you to remember to run anything**, because a refresh that depends on someone thinking of it goes stale. To refresh by hand anyway: `bash scripts/status.sh`.
 
-**The repos are public for now** (2026-10-01, Actions minutes), so anyone — the workflow included — can read `socialus-web`. If they go private, the workflow needs the `SOCIALUS_WEB_TOKEN` secret. Without it `STATUS.md` still regenerates and says, at the top and at the bottom, exactly what is missing.
-
 ## State
 
 - A scenario's state is its frontmatter `status`: `draft` → `approved` → `building`. Shipped scenarios are deleted at sync.
@@ -87,15 +110,6 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 | Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
 Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. Don sees it only if they disagree.
-
-## How to talk to Don
-
-- Bullets, one line each. No preamble, no recap, no narration.
-- Name things in plain words; a number in brackets after, if useful.
-- Questions reach the PM as A/B/C with one-line trade-offs and a recommendation, and only for ideas, version scope, words and look-and-feel, or new territory that conflicts with the soul. **Never ask which of two rulings is true — the newer wins and work continues** ([newer-decision-wins]); two live rulings that genuinely conflict become a marked open question, not a message.
-- Reports open: `Status: Done | Blocked | Question — one sentence. Next: the ask.` Detail on "expand".
-- Email is not the best route to reach him — in-app is better; faster channels are TBD.
-- End with the next action, not a summary.
 
 ## Commits
 
@@ -121,4 +135,3 @@ Schema names are durable; UI labels translate them. The table is in `product/fou
 - **Branch:** `f060-t142-slug`. **Commit:** `F060/T142: what`.
 - **Bugs/changes/chores carry the Issue number, not a ticket number** — they have no `T###`. Branch `bug-36-slug`, commit `bug #36: what` (likewise `change-`/`chore-`). Process work has no Issue (`ops-pattern/process/PIPELINE.md`), so it dates instead: branch `process-YYYY-MM-DD-slug`, commit `docs: what`. Every branch name carries something unique that needs no central counter — dozens of agents must be able to name a branch without asking anything.
 - **Provenance is git:** `git log --grep F060` is everything built for that scenario.
-- **No hand-maintained indexes.** A file people read to learn what is true goes stale and lies. A file only a script compares is fine: `accepted-risks/` is generated from advisor exports, read by `scripts/advisor-diff.sh`, never consulted to settle a question. The rulings settle questions.

@@ -173,7 +173,7 @@ Real decisions from this repo, and what each asks of the store. "Fixed" means th
 | The same topic, two audiences | "Why can't I post a photo of my kids?" | a member's agent gets the rule and a short why; the moderation detail stays internal | holds: two records, linked by `explains`, different audiences |
 | Deducing from patterns | New question: should a reminder email say "we'll never spam you"? | precedents under no-promises and say-only-what-we-must, with never-extractive as the only exception | holds: the agent proposes "We only send what you asked for" and cites them |
 | An agent's call overturned | A well-worn decision an agent made for the PM, which the PM later reverses | the old record keeps who decided and through which agent; overturned agent calls are countable | holds |
-| Two live rulings that disagree | Neither replaces the other ([newer-decision-wins] does not apply) | found by the drift query and raised as one open question | holds |
+| Two live rulings that disagree | Neither replaces the other (the newer-wins rule does not apply) | found by the drift query and raised as one open question | holds |
 
 ## How agents ask
 
