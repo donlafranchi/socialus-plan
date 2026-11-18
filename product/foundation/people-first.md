@@ -5,7 +5,7 @@ layer: why
 status: active
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # The people-first principle
 
