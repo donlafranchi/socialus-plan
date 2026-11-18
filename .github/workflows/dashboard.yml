@@ -10,7 +10,11 @@ name: dashboard
 # email only, configured in Cloudflare). It lives in this workflow because a commit made with GITHUB_TOKEN triggers no other workflow.
 # GitHub's schedule trigger is best-effort and can start late or not at all (it missed runs on 2026-10-11): if the dashboard
 # header's "updated" time is more than a day old, run Actions > dashboard > Run workflow.
+# The PM, 2026-11-12: "The dashboard html should get updated every time the repo gets updated." So it also runs on
+# every push to main. Its own commit is made with GITHUB_TOKEN, which triggers no workflow, so it cannot loop.
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: '30 11 * * *'
   workflow_dispatch:

@@ -1,4 +1,4 @@
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # IMAGINE
 
@@ -12,7 +12,13 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
-None waiting.
+### A category icon on an unclaimed Page, so a photo means an owner (2026-11-12, the PM)
+
+**Claim (the PM):** *"I wouldn't mind giving many of these pages default icons instead of photos to allow users to know which pages have owners."* Then: *"I'm currently thinking that more is less. We have a picture search concept that should help us and we'll roll with that. … photos should indicate a person owns this page and posted photos. We don't need to change anything now but we will adjust at some point."*
+
+**What would make it real:** the PM adjusts the unclaimed-Page photo rule (Pages, 2026-11-12 ruling), or the hyper-local photo search idea starts carrying the photos.
+
+**Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
 ## In the knowledge store
 
@@ -59,3 +65,4 @@ None waiting.
 - **CO-0041 Chat-first SocialUs.**
 - **CO-0042 Vouching: a member posts about a place they love.** [lane: considering]
 - **CO-0043 Asked for, not here yet.** [lane: considering]
+- **CO-0064 One-off creations: a member with an idea partners with a local maker.**

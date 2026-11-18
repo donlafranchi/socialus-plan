@@ -1,4 +1,4 @@
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # SocialUs — planning repo (`socialus-plan`)
 
@@ -40,7 +40,7 @@ Agents decide the rest (well-worn and mechanical calls too) by the soul, the def
 - **What the product is:** `product/foundation/model.md` — Don's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
 - **The product model:** `product/` — nouns, verbs, surfaces, systems. Must match the code and `model.md`. If it doesn't, fix the doc in the same session you notice.
 - **What may never be broken:** `ops-pattern/process/ABSOLUTES.md` (process) and `product/ABSOLUTES.md` (member-facing). Two files, one test — the test lives in the process file.
-- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (append-only), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`. Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
+- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`. Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
 - **The tooling:** `scripts/` is vendored from `ops-pattern`. A change to how a marker, lint or generated view works is method: make it in `ops-pattern` first, then copy the file here in the same session.
 
 **A concept lives in exactly one place.** Two documents describing the same thing is how this repo has failed before, so routing it is a rule, not a preference:

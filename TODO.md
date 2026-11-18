@@ -4,21 +4,39 @@ Everything only you can do: set-up, accounts, calls and reviews, now and before 
 
 Agents keep this list. When you finish something, say so and the line is deleted; git keeps the history. Steps live behind each link, never here.
 
-## Now, in order
+## Focus: the landing page and the waitlist
 
-1. **Set up Twilio for the phone check.** Unblocks posting without a Page and the sign-up phone check. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
-2. **Create the write token** (`KNOWLEDGE_WRITE_TOKEN`, contents and pull requests read and write, on socialus-plan and socialus-ops). Turns on your three answers page and the nightly packs.
-3. **Create the backup key,** then start the first backup and its restore test. Until then the nightly backup fails and opens a bug each night. [Steps](https://github.com/donlafranchi/socialus-web/issues/1259)
-4. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
-5. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
-6. **Open the remaining accounts:** Sentry (error alerts; the code is built and waits for its key), Vercel Speed Insights, Resend (add socialus.org), a free HUD account (web #849), Cloudflare image safety, and a free UptimeRobot account with two monitors so you hear when the site is down ([steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#12-uptime-monitoring)). Also file the private Supabase support ticket.
-7. **Make your Mac's knowledge key** (`gh workflow run knowledge-keys.yml -R donlafranchi/socialus-web -f action=add -f agent=mac`), then Keychain and `~/.zshrc`.
-8. **Talk with 5 people who have tried SocialUs.** Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
-9. **Say "go" on the new message,** "Locals, finding and supporting locals". Unblocks the landing page and the join page.
-10. **Pick the Northern California counties (A, B or C).** [Options](planning/research/northern-california-2026-11-06.md)
-11. **Review three small PRs:** edit link, meet-up seeding, shelves. [First one](https://github.com/donlafranchi/socialus-web/pull/1071)
-12. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
-13. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+The PM, 2026-11-12: get the landing page out with a "Join the waitlist" button that asks whether someone runs a business, store, shop, market or group or is looking for those, plus their zip; review the whole join journey before it's built; stay closed until everything is set up. Your part, in order:
+
+1. **Hand the waitlist storyboard to your copywriter** for words and imagery. You picked email and phone, with the number checked at sign-up. [Storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md)
+2. **Add socialus.org to Resend.** The waitlist's invites go by email, and the urgent-report alert too. Free tier: 100 a day. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#6-transactional-email)
+3. **Join the Apple Developer Program before launch** ($99 a year), your exception to "no new paid tool before go-live". It's what lets members sign in with Apple.
+4. **Set up Google and Apple sign-in:** a Google Cloud sign-in client (free) and Sign in with Apple. Agents send the exact steps.
+5. **Say where the three landing pictures came from** (town square, main street, park, from your 2026-10-31 concept): no source or licence is recorded, so commercial-use rights are unverified. The new landing keeps them behind the flag until you say; today's public front page already shows them.
+6. **Write the positive posting reminder:** one line that encourages good, decent posts. A marked placeholder holds its place.
+7. **Walk the waitlist on your phone:** [socialus.org/join/waitlist](https://socialus.org/join/waitlist), signed in as operator, and say what felt wrong. Only you and builders see it until you approve. Then apply the one migration that keeps name, number, zip and plans with each entry: `gh workflow run apply.yml -R donlafranchi/socialus-web --ref 1299-waitlist-answers -f confirm=apply` (phone: Actions → Apply migrations → Run workflow → branch `1299-waitlist-answers` → type `apply`).
+8. **Open a Twilio account and create a Verify service (no number to buy).** Not needed for the waitlist; needed before the first market opens and people sign up. [Steps](https://github.com/donlafranchi/socialus-web/issues/707)
+9. **Pick the Northern California counties (A, B or C),** now or once waitlist counts come in. [Options](planning/research/northern-california-2026-11-06.md)
+
+Later, not now: whether reported or repeat accounts are asked for a photo ID.
+
+Agents' part: the waitlist journey built behind the flag (live), one link per screen; screening every post before it publishes (in shadow first); the safety line and its ⓘ on the number screen.
+
+## Everything else, in order
+
+1. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
+2. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
+3. **Finish monitoring (about 15 minutes, computer).** [Detail](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#11-error-tracking)
+   - **Sentry, add the build key:** on vercel.com, open the Sentry integration page (vercel.com/integrations/sentry) → Add Integration → team socialus, project socialus-web → sign in to Sentry and pick org lafranchi-et-al-llc, project socialus-web → Connect. Then redeploy production once.
+   - **Sentry, alerts:** in Sentry, Alerts → Create Alert → Issues → "A new issue is created" → action "Send a notification to Member:" pick yourself → Save. Repeat with "Number of events in an issue is more than 20 in 5 minutes". Then Settings → Account → Notifications: Issue alerts on, sent to the email you read.
+   - **Vercel, spend alert:** vercel.com → team socialus → Settings → Billing → Spend Management → set **$60**, notifications on, leave "Pause production deployments" **off** → Save.
+   - **UptimeRobot (free account):** two keyword monitors, every 5 minutes: `https://www.socialus.org/api/health/db` must contain `"ok":true`, and `https://www.socialus.org/auth/login` must contain `name="email"`. Alerts by email (the free plan). For your phone: in your mail app, mark UptimeRobot's sender as VIP so its emails notify you. Free to try: UptimeRobot's own phone app, which says it works on the free plan with push alerts. Then Status Pages → New → add both monitors → Save, and send the page's link to an agent so it goes in the app's help text.
+   - **Previews, your call (Pro lifted the build cap):** A) keep them off (now); B) previews only for PRs marked for your look, each pointed at a test database, about 3 cents a build (recommended: you see UI before it is live, members' data stays out of it); C) previews for every PR, the same, more builds.
+4. **Open the remaining accounts:** a free HUD account (web #849) and Cloudflare image safety (child-safety scanning no longer needs an NCMEC account, so it can go on now). Also file the private Supabase support ticket.
+5. **Talk with 5 people who have tried SocialUs,** after the landing page and sign-up are live (the PM, 2026-11-12). Real evidence for the next calls. [Plan](planning/research/founding-circle-2026-10-21.md)
+6. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
+7. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
+8. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
@@ -27,10 +45,9 @@ Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dash
 | When | What | Why |
 |---|---|---|
 | Early 2027 | **Form the company (LLC).** Specifics live in socialus-legal. | Commercial hosting terms, child-safety registration and card payments all need it |
-| After the company, by 2027-04-01 | **Register with the NCMEC CyberTipline,** switch off the manual form, turn on Cloudflare child-safety scanning. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md) | Required reporting; the beta uses the public form, which can't take images |
+| After the company, by 2027-04-01 | **Register with the NCMEC CyberTipline** and switch off the manual form. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/staff-safety.md) | Required reporting; the beta uses the public form, which can't take images |
 | From 2027-03-01 | **Re-review paid tools now that budget opens:** feature flags, GitHub and Vercel plans. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/runbooks/go-live-paid-tools.md) | We built our own until there was money |
-| Two weeks before launch | **Upgrade Vercel to Pro** ($20 a month per person). [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#1-hosting-and-cdn) | The free plan forbids commercial use |
-| Two weeks before launch | **Upgrade Supabase to Pro** ($25 a month), spend cap on. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#2-database-and-auth) | Free pauses after a quiet week; Pro adds daily backups |
+| Two weeks before launch, or sooner if a load test shows a plan limit | **Upgrade Supabase to Pro** ($25 a month), spend cap on. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#2-database-and-auth) | Free pauses after a quiet week; Pro adds daily backups |
 | Two weeks before launch | **Mapbox production key,** locked to socialus.org. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#4-maps-and-geocoding) | A key anyone can copy bills you |
 
-About $48 a month in all at launch, before usage.
+Vercel Pro is on since 2026-11-16 ($20 a month). About $48 a month in all at launch, before usage.

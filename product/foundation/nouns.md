@@ -5,7 +5,7 @@ layer: why
 status: active
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # The nouns
 
@@ -62,17 +62,15 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 **Social group** — a named, self-selected set of people. Six Page kinds: five affiliate (`place`, `interest`, `practice`, `event_anchored`, `family`) and one operate (`business`). Never auto-assigned by geography or anything else. Detail: `../systems/groups.md`.
 
-## The two sides — patron and creator *(internal vocabulary)*
+## The two sides — patron and Page owner *(internal vocabulary)*
 
-*(Ratified 2026-09-14, Don: "Creator and patron are shorthand for you and me when discussing the two sides broadly.")*
+*(Ratified 2026-09-14; "creator" became "Page owner" 2026-11-16, Don.)*
 
-**These are our words for talking about the product, not the product's words for talking to a member.** A creator is someone who publishes something other people show up for — sells, hosts, organizes. A patron is everyone on the other side. Use them freely in these docs, in scenarios, in tickets, in conversation.
+**These are our words for talking about the product, not the product's words for talking to a member.** A Page owner is someone with a Page because they organize things that recur: a business, a volunteer group, someone who teaches a class every week. A patron is everyone else. Someone selling at a one-time garage sale is neither: they post an announcement from a person, with no Page.
 
 **Never rendered in a user-facing string.** *(Restores `role-language.md`'s rule: no person-noun in front of a member.)* Not in copy, not as a label under a name, not addressing a set of people. A member is addressed as **you**; a set of people is **people**, or named. Everything a person *does* is a verb — make, sell, host, offer, ask, wonder, show up, back, follow, save.
 
-**What was actually overruled** on 2026-09-14 is narrow: the old doc refused to let *us* name the two sides at all, even internally. That refusal is gone. **Its user-facing rule stands unchanged.**
-
-**Neither is a stored type.** Patron is the default state of being a member, not a column; creator derives from the attestation record plus what the person has authored. The pair is vocabulary, not schema — see the `Member` row's "no type, tier, or stored role," which is unchanged by this ruling.
+**Neither is a stored type.** Patron is the default state of being a member, not a column; a Page owner derives from owner authority on a Page (`group_memberships.role`). The pair is vocabulary, not schema — see the `Member` row's "no type, tier, or stored role," which is unchanged by this ruling.
 
 ### The user-facing string check — because prose rules have not held
 
@@ -226,23 +224,23 @@ Each offered component's explanation, and the way an owner adds one, are new lau
 |---|---|---|---|---|---|---|---|
 | A member's fields: legal name, zip, interests, follows, profile | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
 | A member's interest tags | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
-| Front door, the same for every Page, private ones included: name, default photo, description, withheld-announcements card | ● | ● | ● | ● | ● | ● | ● |
+| Front door, the same for every Page, private ones included: name, default photo, description; withheld card until F134 | ● | ● | ● | ● | ● | ● | ● |
 | The Page's founder or seller, by display name | ✕ | ◐ inside the Page, if its creator shows it | ◐ the same | ◐ the same | ◐ the same | ◐ the same | ● |
 | Website, and the Page's area-level location, by default; any contact field the owner flips to "everyone" (2026-10-07) | ● | ● | ● | ● | ● | ● | ● |
 | Business phone and Contact email, if the owner gives them, by default; any contact field the owner flips to "members" (weekly hours hidden, data kept, 2026-10-05) | ✕ | ● | ● | ● | ● | ● | ● |
-| Contents (location, tags, posts): a Page with no level | ✕ | ◐ what the owner makes visible to the MSA | ◐ the same, plus followers announcements | ● | ◐ as signed in, plus the gathering or post | ◐ as signed in | ● |
-| Contents: public Page | ✕ | ● | ● | ● | ● | ● | ● |
+| Contents (location, tags, posts): a Page with no level | ✕ (F134: as signed in) | ◐ what the owner makes visible to the MSA | ◐ the same, plus followers announcements | ● | ◐ as signed in, plus the gathering or post | ◐ as signed in | ● |
+| Contents: public Page | ✕ (F134: ●) | ● | ● | ● | ● | ● | ● |
 | Contents: community-only Page | ✕ | ✕ | ◐ its announcements | ● | ◐ the gathering or post only | ✕ | ● |
 | Contents: private Page | ✕ | ✕ | — | ● | ◐ the gathering or post only | ✕ | ● |
-| How many RSVP'd | ✕ | ● | ● | ● | ● | ● | ● |
+| How many RSVP'd | ✕ (F134: ●) | ● | ● | ● | ● | ● | ● |
 | Roster: who the members are | ✕ | ✕ | ✕ | ● current members | ✕ | ✕ | ● |
 | Follow graph: who follows whom | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ their own Page's followers, by name |
 | Who RSVP'd | ✕ | ✕ | ✕ | ✕ | ● the others party to that gathering or post | ✕ | ● as host |
 | A one-on-one meeting or transaction | ✕ | ✕ | ✕ | ✕ | ✕ | ◐ the parties see each other, as far as it needs | ◐ as a party |
 | Who bought | — no purchasing in the app yet (After beta) | — | — | — | — | — | — |
 | A member's legal name | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ | ✕ |
-| Public announcement, from any Page | ◐ one withheld card per Page (F093), "Sign in to see what's happening" | ● | ● | ● | ● | ● | ● |
-| Followers announcement | ◐ the same withheld card | ✕ | ● | ● | ✕ | ✕ | ● |
+| Public announcement, from any Page | ◐ withheld (F134: ●) | ● | ● | ● | ● | ● | ● |
+| Followers announcement | ◐ withheld card (F134: ✕) | ✕ | ● | ● | ✕ | ✕ | ● |
 
 **Where each cell comes from** (dated 2026-09-30 unless marked). Member fields and interest tags: nobody reads anything about a member, only what they post; a creator may show their own display name and avatar on their Page. Front door: a business closed for the night, the same for every Page, and it doesn't show the founder or seller. Contents: a signed-in non-member sees the front door plus what the owner makes visible to the MSA; private, community-only and public are levels on group Pages; community-only means the Page's own members and can have followers; a private Page has members, not followers (2026-09-15). Roster: a stranger doesn't see it; current members see each other (2026-09-08). Follow graph: nobody sees who follows whom, and a runner sees who follows their Page. RSVPs: whoever is party to an RSVP sees what that gathering's parties see, and a post RSVP covers that post only; the count is the Response entry above. One-on-one meetings and transactions: only the parties; without a transaction it can be visible; purchasing is deferred. Legal name: **we currently show it to no member**; it is collected for the platform's protection and seen only by Don and operators, and real names between people who dealt with each other are out of scope until counsel (F077). Announcements: the public/followers switch (2026-09-21), no third audience, a public one reaches everyone whatever the Page's level, the signed-out card (F093). Don and operators see what the platform collects for its protection, outside this table.
 
