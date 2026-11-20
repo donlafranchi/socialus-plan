@@ -13,6 +13,8 @@ criteria:
 
 # Three planning answers: what we built, where we are, what's next
 
+**As of 2026-11-11** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-11** · Source: STATUS.md (generated 16:16 UTC), DASHBOARD.md and the dashboard page (2026-11-10), handoff/, the knowledge lookup tool, HumanLayer's public GitHub repos · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-11:* "I need to know what the next few things we need to do are." And: the goal is "to allow me to ask many different kinds of questions with an agent not having to have a search party through documents."

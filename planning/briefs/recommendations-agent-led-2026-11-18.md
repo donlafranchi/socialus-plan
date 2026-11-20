@@ -14,6 +14,8 @@ criteria:
 
 # Recommending in an agent-led app: what members ask, what they do, and what we keep
 
+**As of 2026-11-18** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-18** · Source: the PM's question of 2026-11-18; `PRINCIPLES.md`, `product/foundation/model.md` § Personalized means interests, not engagement, `what-this-is.md` § Rulings, F113, F119, F120, F121, `planning/research/taste-profile-2026-11-01.md`, the hyper-specific-search brief; the MCP Apps spec and the precedents linked below · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-18:* "We want to collect taps from our users to find and deliver to them what's important. We will likely end up using something like MCP UI or MCP Apps and our platform will be natural language requests handled by agents. Would we need analytics if our users are asking us directly what they want using language? Then can we create patterns from users across the platform and recommend things based on similar users and not need analytics at all? Our goal was to be as good as TikTok's recommendation algorithm but we have different interaction patterns and so can't copy much of what TikTok captures."
