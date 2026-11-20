@@ -14,6 +14,8 @@ criteria:
 
 # A values survey: telling people who you are, and choosing who you support
 
+**As of 2026-11-18** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-18** · Source: the PM's words of 2026-11-13; plan PRs #348 (the blue dot) and #364 (where a business's money goes); `product/systems/signals.md`, `member.md`, PRINCIPLES.md; the precedents linked below · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-13:* "we want to be able to allow people to tell others about who they are. and we want consumers to sort based on who they want to support… perhaps its a survey about what kinds of people you want to do business with. this is a political survey… handled with care… likely a behind the scenes feature. We may want a badge… 'we took the survey'… as a wink gesture."
