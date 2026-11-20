@@ -136,11 +136,12 @@ Neither can do the other's job. A complete surface that quietly favours your int
 **A hard distinction, because one word covers two things and only one of them is allowed.**
 
 - **Allowed — and the whole point:** the member's own **declared interests**, and where they are. Home surfaces what they said they care about, near them. That is personalization on facts the member volunteered about themselves.
-- **Allowed (2026-11-15):** what the member **searched for**. A search is the member telling us what they want; their searches are kept on their own profile, shown back only to them, and they can see and delete them. Don, of their searches: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
-- **Allowed:** genuine community response. Earned attention is the intended mechanism *(2026-09-12)* — a baker the neighbourhood turns up for should rise.
-- **Never:** what keeps someone scrolling. No watch-time, no dwell-time, no engagement objective. Ranking doesn't favour a member because of payment, size or follower count (2026-09-30).
+- **Allowed (2026-11-15):** what the member **searched for**, kept on their own profile, shown only to them, deletable. Don: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
+- **Allowed (2026-11-20):** what the member **does on purpose**: saves, Remind me, "I'm coming", "I went", "not for me", follows. Never opens or views (F113 § Rulings).
+- **Allowed:** genuine community response *(2026-09-12)*: a baker the neighbourhood turns up for should rise.
+- **Never:** what keeps someone scrolling: watch-time, dwell-time, an engagement objective. Ranking doesn't favour a member for payment, size or follower count (2026-09-30).
 
-**"Home is personalized" is not licence for a feed algorithm.** It is licence for one thing: showing a member what they told the platform they want, by declaring it or searching for it, where they are. Reading engagement back at them (time spent, scrolling, what holds their eye) is a different product and is refused elsewhere in this tree.
+**"Home is personalized" is not licence for a feed algorithm:** only for showing a member what they told us they want, by declaring, searching or choosing it, where they are.
 
 ## One mechanism: posts
 
