@@ -1,6 +1,7 @@
 ---
 id: brief-2026-11-18-recommendations-agent-led
-status: awaiting-approval
+status: approved
+approved: 2026-11-20, the PM: "A, yes to I went, yes drop opens" (ruled in F113 § Rulings)
 size: L
 path: new territory
 fits: grows from the taste profile (F113, draft) and the Ask bar (F119, approved); held by the 2026-11-06 build freeze until the PM lifts it; the agent-led part waits for chat as home (F120, later)
