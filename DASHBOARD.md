@@ -1,12 +1,12 @@
 > **SETTLED — do not re-raise:** wealth circulates here, it is never extracted — the many benefit, not a few, and that is the only test any money decision has to pass. Monetization is open to any mechanism that passes it (fees, dues, a producer-sales cut, advertising, anything). The platform takes only what it needs to run and gives back the rest to the communities that generated it. Who is paid what, ownership, and incorporation stay open. Priority order: `product/foundation/monetization.md`.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/200 (alongside, not the headline) · updated 2026-11-20 09:48 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/200 (alongside, not the headline) · updated 2026-11-20 11:13 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
 ## The numbers
 
-- 🔴 build: main CI failing or unread
+- 🟢 build: main CI passing
 - 🟢 site: last deploy health run passed
 - 🟢 migrations: repo and database agree (last drift check on main)
 - 🔴 criteria 63%: 299 of 473 met, 4 launch-blocking unmet
@@ -21,7 +21,7 @@
 - Risks and deadlines: 6 due soon
 - Agent safety: 1 things agents removed or weakened
 
-**How fast it feels: Red** (9 member screen(s) red, 3 amber); slowest: Header → Explore [settled] 1620 ms, Creator: own Page → edit [settled] 1175 ms, Explore: ➕ → Show the map [settled] 939 ms
+**How fast it feels: Red** (7 member screen(s) red, 3 amber); slowest: Header → Explore [settled] 1728 ms, Creator: own Page → edit [settled] 1330 ms, Explore: ➕ → Show the map [settled] 833 ms
 
 ## Your to-do (17)
 
