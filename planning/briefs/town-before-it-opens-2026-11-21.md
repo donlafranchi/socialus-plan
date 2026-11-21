@@ -1,5 +1,6 @@
 ---
 id: brief-2026-11-21-town-before-it-opens
+concept: CO-0065
 status: awaiting-approval
 size: L
 path: new territory
@@ -17,7 +18,9 @@ criteria:
 
 **As of 2026-11-21** · Source: the PM's words below; Chat-first SocialUs (CO-0041), Two sides (CO-0035), Asked for (CO-0043), F118, F119, F120, F123, F124, F128, F133, F134, F136, the unmet-search and welcome brief, the producer count rule (D-0402), the build freeze (D-0275), PRINCIPLES · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
-*The PM, 2026-11-21:* "I see this app as a discovery tool and while that's necessary and useful, I don't think it's very engaging so I'm trying to think of ways to make it engaging and then the second topic was about the waitlist people and signing up in basically creating their community through their searches or conversations"
+*The PM, 2026-11-21:* "I have a couple concepts. I want to talk to you about four socialist and one is how to make the app a little bit more interesting to get a little bit of more interaction when I'm thinking is for The people who have joined but can't sign up because they're not in their market that we still allow them to do search and tell them why with the searches for essentially, and that as people do searches, they the searches kind of scroll by similar to how Facebook and TikTok do hearts and emojis when a person taps a heart and that they scroll by on the screen and float from maybe bottom to top or something like that as a way too, have people kind of check in and see what what are people talking about? What are people asking for? What are people saying?"
+
+*Then:* "I think that encompass both concepts and they were a way to make that interesting to use similar to how Instagram and TikTok or interesting to users and not just a discovery tool. I see this app as a discovery tool and while that's necessary and useful, I don't think it's very engaging so I'm trying to think of ways to make it engaging and then the second topic was about the waitlist people and signing up in basically creating their community through their searches or conversations"
 
 *Then, on the map:* "I wonder if this is a good use case for the Matt [map] as well if a person can brings up a map and see what's active in their town this is the idea I mentioned earlier about some kind of dashboard for a market or an area. The dashboard could be how many people are commenting and communicating and how many sign ups and how many people there are that have businesses and maybe what kinds of businesses and I love the different ways that you described with interacting and it doesn't necessarily have to be something I want or something before, but it could be anything related to the town any kind of commentary otherwise I'm not seeing a huge use case for the map outside of this. It's not quite as hopeful as I thought it would be."
 
@@ -28,6 +31,8 @@ criteria:
 **Bottom line: make the front door one box that answers with a fixed library of tested widgets (results, map, what's on, Browse, town pulse, town dashboard, floating wishes, town board). Start with no AI model, rules only, for towns that aren't open yet; add a cheap model to pick widgets at go-live. Explore and the map stop being screens and become widgets.**
 
 **Your call:** which first slice: A, B or C?
+
+*In the store:* this brief names its concept (CO-0065), so each version reaches the store as a dated change on it. The PM's pick is recorded as a dated ruling under `## Rulings` in `product/foundation/what-this-is.md`, where chat-first was ruled, so the import carries it too.
 
 ## The picture
 
