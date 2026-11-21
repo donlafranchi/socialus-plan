@@ -118,6 +118,7 @@ After her first few searches, the chat asks Ana once: "What matters to you when 
 
 <details><summary>How it maps to what exists</summary>
 
+- **The neutral question** carries out a live ruling (D-0142, 2026-10-01): members can rank how they choose what to buy, and add values only if values matter to them.
 - **Hidden signals** (`signals.md`): the dot is the first one; only holders see it.
 - **The town brief's widgets:** the values widget and the "who shares my values" answer.
 - **Hyper-specific search (F136):** the filter in B is one more lens on the same engine.
