@@ -20,26 +20,6 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
-### Shop by your values (2026-11-21, the PM)
-
-Members who care can search, discover and support by their values, and Page owners who care can be found by them; it is opt-in on both sides, so those who care get a rich experience and those who don't never have to think about it. Working name. Earlier, 2026-11-13, the PM: "we want to be able to allow people to tell others about who they are. and we want consumers to sort based on who they want to support. I need a research session to figure out some options for us to build this in the app. perhaps its a survey about what kinds of people you want to do business with. this is a political survey as that is very important to people right now so it needs to be handled with care and will likely be a behind the scenes feature. We may want a badge for people to say "we took the survey" or something along those lines as a wink gesture for others to know it's available." [lane: considering]
-
-*The PM, 2026-11-21:* "So I want to have a theme for this topic about values and how this app is supposed to be different than other apps and allows our members to search and discover and support based on their values and that we need to be able to figure out how to allow certain people to stop [shop] by their values and support page owners, who also believe that supporting people with good values is important. What I'm looking for is a way to approach members about this without diverting what it's for or how it's used and so that those who think it's important can opt in and those who don't think it's important don't ever have to think about it."
-
-*Analysis (agent):* the blue dot is its heart. Related: Badges vs values (CO-0029), Locally Made badge (CO-0008), Reciprocity & goodwill (CO-0013), Discovery that knows what a person is optimizing for (CO-0025), hyper-specific search (F136), the two-halves soul line, Bring it to life (JY-BRING), The town before it opens (CO-0065, values as a chat widget and filter). Options and precedents: `planning/briefs/shop-by-your-values-2026-11-21.md`.
-
-What would make it real: the PM picks the first slice in the brief, after the waitlist and the chat-first first slice.
-
-### The blue dot (2026-11-21, the PM)
-
-A small blue dot on a Page that a viewer sees only when both the viewer and the Page's owner took the values survey and their answers align enough (not a full match); everyone else, including anyone who didn't take it, sees nothing. Part of Shop by your values. [lane: considering]
-
-*The PM, 2026-11-21:* "The blue dot Easter egg is this values concept where if I take the survey about values that they matter to me and others also take the survey about values and it matters to them that if both people have taken that survey then they see a blue dot Santa [on a] page so for example if I take a survey and I care and I like the blue dot concept then I can see every page that has a blue dot because I took that survey and same as the page owner. They took a survey a blue dot will be displayed on their page, but only for those who took the survey and matched essentially and it doesn't have to be 100% match, but it should be some type of alignment and that way it can be a small little thing that certain users see that nobody else does because they both care. There still isn't fully defined, but I do like the part where this little blue dot is only visible if both parties are in alignment on the survey."
-
-*Analysis (agent):* replaces the 2026-11-13 sketch in which a survey reviewed by SocialUs earned the dot (plan PR #348, never merged). Settled: shown per viewer, only when both took the survey and align enough; invisible to everyone else. Open for the PM: what aligned enough means; member to member or member to Page only; whether takers can filter to blue-dot Pages; what the "we took the survey" wink shows. Risk: someone retaking the survey several ways to learn an owner's answers. Options: `planning/briefs/shop-by-your-values-2026-11-21.md`.
-
-What would make it real: the PM writes the survey questions and picks the first slice in the brief.
-
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
@@ -87,3 +67,5 @@ What would make it real: the PM writes the survey questions and picks the first 
 - **CO-0043 Asked for, not here yet.** [lane: considering]
 - **CO-0064 One-off creations: a member with an idea partners with a local maker.**
 - **CO-0065 The town before it opens.** [lane: considering]
+- **CO-0068 Shop by your values.** [lane: considering]
+- **CO-0069 The blue dot.** [lane: considering]

@@ -37,6 +37,7 @@ Agents' part: the waitlist journey built behind the flag (live), one link per sc
 6. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
 7. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
 8. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+9. **After the waitlist and the chat-first first slice: shop by your values and the blue dot, pick the first slice.** [Brief](planning/briefs/shop-by-your-values-2026-11-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
