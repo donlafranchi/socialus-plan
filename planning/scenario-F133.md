@@ -7,7 +7,7 @@ rank: 6
 date: 2026-11-12
 approved: 2026-11-12, the PM: "A A" (the second A is analytics)
 depends: []
-concept: new
+concept: CO-0067
 ---
 ## Story
 
