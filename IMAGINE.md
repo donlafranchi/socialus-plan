@@ -20,6 +20,16 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
+### The town before it opens (2026-11-21, the PM)
+
+People waiting for their market to open can still search, are told why their searches matter, and watch what their town is asking for float by, so a community forms before it opens. Working title; Bring it to life, Ask for it. [lane: considering]
+
+*The PM, 2026-11-21:* "how to make the app a little bit more interesting to get a little bit of more interaction when I'm thinking is for The people who have joined but can't sign up because they're not in their market that we still allow them to do search and tell them why with the searches for essentially, and that as people do searches, they the searches kind of scroll by similar to how Facebook and TikTok do hearts and emojis when a person taps a heart and that they scroll by on the screen and float from maybe bottom to top or something like that as a way too, have people kind of check in and see what what are people talking about? What are people asking for? What are people saying? I think that encompass both concepts and they were a way to make that interesting to use similar to how Instagram and TikTok or interesting to users and not just a discovery tool. I see this app as a discovery tool and while that's necessary and useful, I don't think it's very engaging so I'm trying to think of ways to make it engaging and then the second topic was about the waitlist people and signing up in basically creating their community through their searches or conversations"
+
+*Analysis (agent):* builds on Two sides: Find and Discover (CO-0035), Asked for, not here yet (CO-0043), hyper-specific search (F136), Open your town and Founders (F118), visitors read everything (F134) and the unmet-search and welcome brief. Floating searches must clear the producer count rule (ten different members, 2026-11-15) or show a category, never a raw query. Options and precedents: `planning/briefs/town-before-it-opens-2026-11-21.md`.
+
+What would make it real: the PM picks an option in the brief, and the waitlist journey is live.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
