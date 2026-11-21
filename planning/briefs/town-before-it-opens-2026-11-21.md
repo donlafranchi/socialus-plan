@@ -126,5 +126,3 @@ Assumes about 1,500 tokens in and 150 out to pick a widget ($0.0002 a question) 
 - **Usage:** F133 counts which widgets get used, so the library is pruned by evidence.
 
 </details>
-</content>
-</invoke>
