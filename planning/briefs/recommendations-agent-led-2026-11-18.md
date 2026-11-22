@@ -1,9 +1,10 @@
 ---
 id: brief-2026-11-18-recommendations-agent-led
-status: awaiting-approval
+status: approved
+approved: 2026-11-20, the PM: "A, yes to I went, yes drop opens" (ruled in F113 § Rulings)
 size: L
 path: new territory
-fits: grows from the taste profile (F113, draft) and the Ask bar (F119, approved); held by the 2026-11-06 build freeze until the PM lifts it; the agent-led part waits for chat as home (F120, later)
+fits: grows from the taste profile (F113, draft) and the Ask bar (F119, approved); the agent-led part waits for chat as home (F120, later)
 criteria:
   - A member sees, in one place, everything SocialUs uses to recommend to them (asks, saves, "I went", "not for me"), each with its reason, and can delete one item, delete all, or turn learning off in one step; no other member, Page or visitor can read it (a test proves it, seen failing first).
   - A recommendation shown in chat or on a card says why in plain words ("because you asked for pottery evenings"), and "not for me" on it is never guessed back.
@@ -96,7 +97,7 @@ criteria:
 - **F120 criterion 8** (draft) says chats are not used to profile. F119 criterion 7 (approved, amended 2026-11-15) and `model.md` (2026-11-15) already let a member's own asks feed their own record. The newer wins; F120's line should read "not used to profile for anyone but the member, or sold" at its approval. Not changed here.
 - **F113** (draft taste profile) lists photo opens and Page opens as signals. A drops views and opens; if you pick A, F113 criterion 4 loses them.
 - **F113 vs the search brief:** 90 days versus 18 months for raw acts. Your call on retention in the search brief settles both.
-- **Build freeze** (2026-11-06) holds the build; nothing here is filed.
+- **No build freeze** (2026-11-21): the record and "I went" can be filed as Issues.
 
 ## Your calls, one at a time
 

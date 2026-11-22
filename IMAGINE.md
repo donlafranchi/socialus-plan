@@ -66,3 +66,6 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **CO-0042 Vouching: a member posts about a place they love.** [lane: considering]
 - **CO-0043 Asked for, not here yet.** [lane: considering]
 - **CO-0064 One-off creations: a member with an idea partners with a local maker.**
+- **CO-0065 The town before it opens.** [lane: considering]
+- **CO-0068 Shop by your values.** [lane: considering]
+- **CO-0069 The blue dot.** [lane: considering]

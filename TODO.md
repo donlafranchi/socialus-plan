@@ -27,7 +27,6 @@ Agents' part: the waitlist journey built behind the flag (live), one link per sc
 1. **Run the report test with three accounts.** Proves the AI first read on reports. [Steps](https://github.com/donlafranchi/socialus-web/issues/220)
 2. **Decide the one-strike policy.** How we treat people trying to get over. [Options](planning/research/one-strike-2026-11-06.md)
 3. **Finish monitoring (about 15 minutes, computer).** [Detail](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#11-error-tracking)
-   - **Sentry, add the build key:** on vercel.com, open the Sentry integration page (vercel.com/integrations/sentry) → Add Integration → team socialus, project socialus-web → sign in to Sentry and pick org lafranchi-et-al-llc, project socialus-web → Connect. Then redeploy production once.
    - **Sentry, alerts:** in Sentry, Alerts → Create Alert → Issues → "A new issue is created" → action "Send a notification to Member:" pick yourself → Save. Repeat with "Number of events in an issue is more than 20 in 5 minutes". Then Settings → Account → Notifications: Issue alerts on, sent to the email you read.
    - **Vercel, spend alert:** vercel.com → team socialus → Settings → Billing → Spend Management → set **$60**, notifications on, leave "Pause production deployments" **off** → Save.
    - **UptimeRobot (free account):** two keyword monitors, every 5 minutes: `https://www.socialus.org/api/health/db` must contain `"ok":true`, and `https://www.socialus.org/auth/login` must contain `name="email"`. Alerts by email (the free plan). For your phone: in your mail app, mark UptimeRobot's sender as VIP so its emails notify you. Free to try: UptimeRobot's own phone app, which says it works on the free plan with push alerts. Then Status Pages → New → add both monitors → Save, and send the page's link to an agent so it goes in the app's help text.
@@ -37,6 +36,7 @@ Agents' part: the waitlist journey built behind the flag (live), one link per sc
 6. **Read the wording waiting for you:** decency lines, Remind me, search card. [Wording](planning/research/rules-review-2026-10-25.md)
 7. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
 8. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
+9. **After the waitlist and the chat-first first slice: shop by your values and the blue dot, pick the first slice.** [Brief](planning/briefs/shop-by-your-values-2026-11-21.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
