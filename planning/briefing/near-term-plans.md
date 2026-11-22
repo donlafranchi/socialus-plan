@@ -11,7 +11,7 @@ Briefing for idea chats, written 2026-11-05 from the plan and web repos; directi
 - **Held, not cancelled:** video A [plan #271]; the /join gaps (a link on each post, search-engine visibility, owner names and a note, "where I'll be", private stats); the Jev or Haiku sorting step [plan #273]; the taste scale and Haiku chat [plan #263, #269]; public counts; the Staff link; every approved scenario not yet built (the whole Next lane below).
 - **Continues:** bug fixes, copy, cleanup, performance, the overnight live check, seeding.
 - **Explore order:** what's happening this week, then later, then Pages after the timely posts.
-- **Market:** the beta market is Northern California, not Sacramento. The counties it covers are proposed, not yet changed.
+- **Market:** the town launch is the Sacramento area (the market as it stands in the data), targeting about 2027-01-01 (11-22; Northern California is no longer the frame).
 - **Message:** "Locals, finding and supporting locals." No copy changes yet; the rewrite is a to-do for Don.
 
 ## Live now
@@ -83,7 +83,7 @@ Shipped earlier:
 
 ## Soft launch timing
 
-**No date is set. Ruling (11-06): build freeze, prepare for a 2027 launch; one market, Northern California; production April–May 2027.**
+**No date is set. Ruling (11-06): build freeze, prepare for a 2027 launch; one market, Northern California; production April–May 2027.** *11-22: the freeze was lifted 11-21; the town launch is the Sacramento area for about 2027-01-01.*
 
 - Whether the soft launch has already started is **[unverified]**.
 - Blockers: the seven launch Issues above, Don's keys, test coverage of the launch criteria at 66%, speed red. Latest launch report: 10-30.
