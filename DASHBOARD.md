@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** wealth circulates here, it is never extracted — the many benefit, not a few, and that is the only test any money decision has to pass. Monetization is open to any mechanism that passes it (fees, dues, a producer-sales cut, advertising, anything). The platform takes only what it needs to run and gives back the rest to the communities that generated it. Who is paid what, ownership, and incorporation stay open. Priority order: `product/foundation/monetization.md`.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/200 (alongside, not the headline) · updated 2026-11-22 10:42 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/200 (alongside, not the headline) · updated 2026-11-22 13:44 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -23,17 +23,20 @@
 
 **How fast it feels: Red** (9 member screen(s) red, 3 amber); slowest: Header → Explore [settled] 1796 ms, Creator: own Page → edit [settled] 1191 ms, Explore: ➕ → Show the map [settled] 1030 ms
 
-## Your to-do (18)
+## Your to-do (21)
 
-- P1 · Hand the waitlist storyboard to your copywriter
-- P1 · Add socialus.org to Resend
-- P1 · Join the Apple Developer Program before launch
-- P1 · Set up Google and Apple sign-in
+- P1 · By Nov 25: pick the cut line and the date
+- P1 · By Nov 26: hand your copywriter the words
+- P1 · By Nov 29: open a Twilio account and create a Verify service (no number to buy)
+- P1 · By Nov 29: add socialus.org to Resend
+- P1 · By Dec 4: walk the waitlist on your phone
+- P1 · By Dec 4: ask counsel whether the beta Terms and Privacy hold for real sign-ups
+- P1 · By Dec 11: finish monitoring
+- P1 · By Dec 15: upgrade Supabase to Pro
+- P1 · By Dec 18: say who watches the report queue in opening week
+- P1 · Dec 28–31: the private dry run
 - P1 · Say where the three landing pictures came from
 - P1 · Write the positive posting reminder
-- P1 · Walk the waitlist on your phone
-- P1 · Open a Twilio account and create a Verify service (no number to buy)
-- P1 · Pick the Northern California counties (A, B or C)
 - P2 · Run the report test with three accounts
 - P2 · Decide the one-strike policy
 - P2 · Finish monitoring (about 15 minutes, computer)
