@@ -3,7 +3,7 @@ id: brief-2026-11-22-sacramento-launch-campaign
 status: awaiting-approval
 size: L
 path: new territory
-concept: new
+concept: CO-0070
 fits: the town launch (F076 ruling 2026-11-22); story map JY-LAUNCH; conditions CN-0001 to CN-0016; builds on The town before it opens (CO-0065), F136, F081, F076
 criteria:
   - The Sacramento area opens to real sign-ups only when every must-have part of CN-0001 on the picked cut line is met; nothing below the line holds the opening.
@@ -23,7 +23,7 @@ criteria:
 
 **Your call:** which cut line and date: **B, must-haves and open Wednesday January 6 (recommended)**, A, everything by January 1, or C, the smallest open on January 1 with the new homepage following?
 
-*In the store:* the campaign is a story map (JY-LAUNCH: hear about it → ask the front door → learn what it's for → find out if my town is open → join), each step naming the condition it waits on (CN-0001, "Sacramento is ready to open", and its parts CN-0002 to CN-0016). This brief names a new concept, so the import mints the campaign's concept. Your pick becomes the map's slices.
+*In the store:* the campaign is a story map (JY-LAUNCH: hear about it → ask the front door → learn what it's for → find out if my town is open → join), each step naming the condition it waits on (CN-0001, "Sacramento is ready to open", and its parts CN-0002 to CN-0016). The campaign is its own concept (CO-0070). Your pick becomes the map's slices.
 
 ## The picture
 
