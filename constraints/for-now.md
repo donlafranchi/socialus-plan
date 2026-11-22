@@ -58,7 +58,7 @@
 - **2026-10-16** — The "no score on a person" rule is removed (planning/scenario-F102.md)
 - **2026-11-12** — New accounts start small for 7 days, and a banned number stays banned (as a one-way hash) (planning/scenario-F102.md)
 - **2026-10-27** — Sacramento grows to its 60-minute drive-time reach now (adds Yuba City, Marysville, Vacaville, Dixon, Grass Valley, Nevada City; Lodi and the Tahoe parts stay elsewhere). The method is approved; the F076 goals are 100 makers / 1,000 supporters per market (planning/scenario-F103.md)
-- **2026-11-06** — The beta market is Northern California, not Sacramento. Nothing in the data changes until Don rules which counties it covers (planning/scenario-F103.md)
+- **2026-11-22** — The town launch is the Sacramento area, the market as it stands in the data (the 2026-10-27 drive-time reach), for about 2027-01-01, run as one launch campaign: the chat-search homepage, sample prompts that teach what SocialUs is for, whether a person's market is open, emails to vendors and patrons, and "Find us here" stickers; more may join it (planning/scenario-F103.md)
 - **2026-10-12** — A visitor with no location is prompted to enter a location or choose a market, with an arrow pointing to the market selector (planning/scenario-F105.md)
 - **2026-10-12** — No kindness pause at launch (C). After two weeks of shadow data a pause with a scored draft goes in (A): above a cutoff set from our own log the author sees one kind pause and may post anyway; the draft is scored, not stored. A pause driven by report history (B) is not taken (planning/scenario-F108.md)
 - **2026-10-25** — No driving time is planned; the question comes back only if members ask for it, and the no-distance ruling stands meanwhile (planning/scenario-F109.md)
