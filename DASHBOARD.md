@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** wealth circulates here, it is never extracted — the many benefit, not a few, and that is the only test any money decision has to pass. Monetization is open to any mechanism that passes it (fees, dues, a producer-sales cut, advertising, anything). The platform takes only what it needs to run and gives back the rest to the communities that generated it. Who is paid what, ownership, and incorporation stay open. Priority order: `product/foundation/monetization.md`.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/191 (alongside, not the headline) · updated 2026-11-23 12:13 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/191 (alongside, not the headline) · updated 2026-11-23 12:20 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -14,7 +14,7 @@
 - 🟡 docs: 75 undated (target under 5)
 - 🔴 agent safety: 1 flags
 - Built since last look: 15 PRs merged, 187 criteria newly met, 47 lost, last 7 days, no look recorded yet
-- Upcoming: Now: 24 being built · Next: 17 settled · Considering: 17 · Later: 64
+- Upcoming: Now: 24 being built · Next: 17 settled · Considering: 19 · Later: 64
 - Needs your attention: 1 of 20: Start something without opening a shop (as a member, about 3 min)
 - What to test: Next walk-through: 3 min, as a member. 0 of 26 done
 - Accounts, keys and APIs: 6 to set up before beta
