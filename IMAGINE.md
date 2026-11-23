@@ -22,9 +22,9 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ### Know your Page owner (2026-11-23, the PM)
 
-*The PM, 2026-11-23:* "It's about the person behind the business or the page that's the [know] your seller or know your page owner … this is kind of like the blue dot Easter egg … this is going to be bigger than a one time thing this kinda needs to be a big part of owning a page"
+*The PM, 2026-11-23:* "It's about the person behind the business or the page that's the [know] your seller or know your page owner … this is kind of like the blue dot Easter egg … this is going to be bigger than a one time thing this kinda needs to be a big part of owning a page" Then: "I'm kind of hoping that the Instagram posts and TikTok videos can help support this … I'm hoping that we can help [Page owners] easily import those reels or videos or posts in some shape or form"
 
-*Analysis, agent:* the public half of his 2026-11-13 words ("allow people to tell others about who they are"), whose private half is CO-0068. The owner's card, then an ongoing story; the owner writes it about themself. Part of the theme Who is local here? (JY-LOCAL). Brief: planning/briefs/who-is-local-here-2026-11-23.md.
+*Analysis, agent:* the public half of his 2026-11-13 words ("allow people to tell others about who they are"), whose private half is CO-0068. The owner's card, then an ongoing story; the owner writes it about themself, and brings their own clips by pasting links (CO-0019, CO-0040). Part of the theme Who is local here? (JY-LOCAL). Brief: planning/briefs/who-is-local-here-2026-11-23.md.
 
 **What would make it real:** the PM picks the brief's first slice.
 

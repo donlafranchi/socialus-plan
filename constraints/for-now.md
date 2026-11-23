@@ -64,6 +64,7 @@
 - **2026-09-15** — There is one create flow and it always creates a Page. What the person is told they are doing is chosen up front from a named set (planning/scenario-F087.md)
 - **2026-09-15** — Search tracking is aggregated and sanitized before anything is shown, and its purpose is two-sided (planning/scenario-F089.md)
 - **2026-09-15** — Searches are tracked so creators can be told what people near them are looking for. Written as F089 (`draft`), and it needs a privacy ruling before it can be specced further (planning/scenario-F089.md)
+- **2026-11-05** — Video option A: tap-to-play TikTok and YouTube on the owner's Page, at most 3 clips, the owner's own still picture, nothing loading before a tap, never on Explore shelves, no autoplay and no next video, and a button pointing out to the owner's next event or post. Skip upload, Instagram embeds and posting out (planning/scenario-F090.md)
 - **2026-09-19** — The time-based feature set is called "What's happening…", with the ellipsis, and the heading is a sentence stem the lens completes (planning/scenario-F091.md)
 - **2026-11-06** — Explore leads with time: what is happening this week, then later, then Pages after the timely posts (planning/scenario-F091.md)
 - **2026-09-19** — Filtering lives in a modal that writes its result into the search box as text (planning/scenario-F092.md)

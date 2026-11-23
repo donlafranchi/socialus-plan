@@ -4,12 +4,14 @@ status: awaiting-approval
 size: L
 path: new territory
 concept: new
-fits: after the January 6 must-haves (launch B, CO-0070); theme story map JY-LOCAL; F056, F105, F106, F134, the values theme (CO-0068); CO-0031, CO-0039, CO-0027; plan PR #364
+fits: after the January 6 must-haves (launch B, CO-0070); theme story map JY-LOCAL; F056, F105, F106, F134, the values theme (CO-0068); CO-0019, CO-0040, CO-0031, CO-0039, CO-0027; F080, F090, F096; plan PR #364
 criteria:
   - A Page whose owner added nothing about themself looks and reads exactly as it did before; a test compares both responses for the same fixture, field by field, seen failing first.
   - Nobody but a person themself can put a name, photo or words about that person on a Page; a co-owner's attempt to add or edit another owner's card is refused in SQL, seen failing first.
   - What an owner added disappears from every response in one step, and no response carries a street address, neighbourhood, zip, legal name, phone or any link to the owner's account or other Pages.
   - In slices A and B, no list, search, filter or ranking reads an owner's name, photo or words; a test changes each and gets the same results in the same order.
+  - Opening a Page with clips makes no request to Instagram, TikTok or YouTube until a person taps one; a browser test counts third-party requests, seen failing first.
+  - Only an owner of a claimed Page can add a clip, and its still picture is screened before it shows; an unclaimed Page or a non-owner is refused in SQL, seen failing first.
   - A viewer who hasn't taken the values survey gets no field that says whether an owner has.
 ---
 
@@ -23,9 +25,11 @@ criteria:
 
 *Then:* "So that's what I'm looking for and this is going to be bigger than a one time thing this kinda needs to be a big part of owning a page and that for people to communicate that a person's patronage is supporting someone nearby a neighbor or a local if the person is traveling, and that is going to help. This also ties into a page creator identifying which community that they rebate or refunds or money goes to, and although that is just an idea it is the one that we wanna explore down the road and the all tie into who is local here? Who can I support when my money stays local and where my community gets better"
 
-**Bottom line: your promise is everywhere ("find the local … and the people behind it") and the app doesn't keep it: today a shopper can't see who runs a Page. Give every Page owner a card in their own words, then make it a living part of owning a Page. Start with the card (A), plus a few words in the vendor email by January 6.**
+*Then:* "And one more thing, I'm kind of hoping that the Instagram posts and TikTok videos can help support this and that they can be used to say who the seller is with their business is about if they have those available to them. And then so doing I'm hoping that we can help Paige creators [Page owners], easily import those reels or videos or posts in some shape or form I know yes, before this all ties together under this concept"
 
-**Your call:** the first slice after the January 6 must-haves: **A, the owner's card, with the January 6 words (recommended)**, B, the card plus an ongoing story, or C, both plus finding by people?
+**Bottom line: your promise is everywhere ("find the local … and the people behind it") and the app doesn't keep it: today a shopper can't see who runs a Page. Give every Page owner a card in their own words, with up to three of their own Instagram, TikTok or YouTube clips pasted in as links, then make it a living part of owning a Page. Start with the card and clips (A), plus a few words in the vendor email by January 6.**
+
+**Your call:** the first slice after the January 6 must-haves: **A, the owner's card with pasted clips, and the January 6 words (recommended)**, B, that plus an ongoing story, or C, both plus finding by people?
 
 ## Where you landed before
 
@@ -66,16 +70,35 @@ Ana looks at a bakery's Page. Under About: a photo of two hands in flour and "I'
 | Unclaimed Pages | Nobody, correctly | Must stay so: no one is named by us |
 | Visitors not signed in | No member's name at all (F134) | An owner who wants to be known can't be |
 | Ongoing | Nothing | A one-time bio goes stale |
+| Their own clips | Links out to Instagram, TikTok, YouTube and others (shipped) | Nothing plays or shows on the Page; your 2026-11-05 video ruling isn't built |
 
 ## Options: the first slice
 
-**Tiny, by January 6, with any pick: words only.** No new screen or data: the vendor email asks owners to say who they are; the About box's hint asks for it ("who you are and why you do this", a placeholder until you write it). About an hour, once your words are in. It holds nothing on the must-have line.
+**Tiny, by January 6, with any pick: words only.** No new screen or data: the vendor email asks owners to say who they are; it reminds them to add their Instagram and TikTok links (those work today); the About box's hint asks for it ("who you are and why you do this", a placeholder until you write it). About an hour, once your words are in. It holds nothing on the must-have line.
 
-- **A. The owner's card (recommended).** Each Page owner may add a card about **themself**: the name they go by, one photo if they like, the town they live or work in, since when, and up to three short answers in their own words (*why I do this · what I love about this town · what I wish people knew*; your words to come). All optional; nothing nags. The town line replaces the retired "Claimed local owner". About 25 hours [A]. The thing you asked for, in its smallest honest form.
-- **B. A, plus the story keeps going.** A quiet prompt a few times a year ("what's new with you?"), answers kept as a short timeline on the card, a photo each, and it reaches people who get updates. Makes it part of owning a Page. About 25 hours more [A], and it needs screening like any post.
+- **A. The owner's card (recommended).** Each Page owner may add a card about **themself**: the name they go by, one photo if they like, the town they live or work in, since when, and up to three short answers in their own words (*why I do this · what I love about this town · what I wish people knew*; your words to come). All optional; nothing nags. The town line replaces the retired "Claimed local owner". **Plus up to three clips:** the owner pastes links to their own reels, posts or videos, adds a still picture, and a tap plays it. About 25 hours for the card and 18 for clips [A]; the card can ship first. The thing you asked for, in its smallest honest form.
+- **B. A, plus the story keeps going.** A quiet prompt a few times a year ("what's new with you?"), answers kept as a short timeline on the card, a photo each, and it reaches people who get updates; plus "pick from your latest" by connecting an account, where the platforms allow it. Makes it part of owning a Page. About 25 hours more [A], and weeks of platform review for connecting; it needs screening like any post.
 - **C. B, plus finding by people.** "Meet who runs it" as an Explore shelf and an answer to "who can I support here?", at home or from the vantage when travelling; the neighbor line on a Page. About 30 hours more [A]. Puts faces where people choose, which is where the bias risk below is.
 
 **Why A first:** five to ten real owners writing a card tells us whether people read them, before we build the habit around it. B follows when ten owners have written one [A].
+
+## Bringing their own Instagram and TikTok
+
+**Paste a link; don't copy.** The easy way for the owner is also the only one the platforms allow freely. Found 2026-11-23, on the platforms' own pages unless marked:
+
+| Way | What the owner does | What it takes | Limits | Fit |
+|---|---|---|---|---|
+| **1. Paste a link, tap to play (recommended, in A)** | Pastes up to three links, adds a still picture | No account, token or fee. [TikTok's player](https://developers.tiktok.com/doc/embed-player) needs none listed; [Meta dropped the token](https://developers.facebook.com/docs/graph-api/reference/oembed-video) for Instagram embeds on June 15, 2026 | Instagram: 1,000 requests an hour, no thumbnail, nothing from private, inactive, age-restricted or embed-off accounts, no Stories, and we may not keep its data, so we keep only the link. TikTok may cap use per site | About 18 h [A] |
+| **2. Connect the account, pick from your latest (in B)** | Signs in to TikTok or Instagram once | TikTok: [app review](https://developers.tiktok.com/doc/app-review-guidelines), a working site and a demo video. Instagram: business or creator accounts only, [App Review](https://developers.facebook.com/docs/instagram-platform/app-review), and business verification [third-party guides], so after the company exists | [Meta's policy](https://developers.facebook.com/devpolicy/) bars using Instagram's platform "to simply display User Content, import or backup content" **without its prior permission**. TikTok gives [no video file](https://developers.tiktok.com/doc/tiktok-api-v2-video-object), and its covers expire in 6 hours. We'd hold keys to owners' accounts | 35+ h and weeks of review [A] |
+| **3. Bring the file itself** | Saves their own video, uploads it here | Hosting and video screening we don't have | [Instagram withholds the file](https://developers.facebook.com/docs/instagram-platform/reference/instagram-media) when a clip uses licensed music, even the owner's; music rights travel with the file | Later (CO-0019's option B) |
+
+- **Paste works for both, today, at no cost.** If Instagram's or TikTok's player changes or a clip is taken down there, the Page shows the still picture and a plain link out, so nothing looks broken.
+- **Nothing loads before a tap;** then we say where it plays from. No autoplay, never on Explore shelves, three at most, and a button back to the owner's next post (your 2026-11-05 ruling). No counts of likes or views.
+- **Your 2026-11-05 video ruling** ("option A": TikTok and YouTube, tap to play) was never written into the record or ticketed; this brief's change records it in F090. It skipped Instagram because Meta then wanted App Review, a token and business verification for embeds; **the token and review are gone**, so A adds Instagram. Picking A replaces that part.
+- **Photos already work:** an owner can upload their own pictures to the Page now, and they're screened like any photo.
+- **This isn't seeding.** On a Page nobody has claimed we list public info, links and one credited picture (2026-10-05), and gather nothing from listings without consent (F096). Clips are the owner's own, added by the owner, on a claimed Page, removable in one tap. We never paste one for anybody, and never in a seeding run.
+- **Safety:** we store a link and a still picture, never the video. The still and any words are screened before they show (F080, in shadow first), and the owner confirms the clip is theirs and shows no children. **We can't see inside a clip on another site, and it can change after we check it,** so a clip can be reported by itself and hides at once. A member who taps sends that site their own visit; the Page says so.
+- **One import idea, two shapes:** CO-0040 (bring stock in, then run it here) is the same wish for products: don't do it twice. Same rule: the owner brings it, we link or fill in, nothing is taken.
 
 ## Privacy: no stalking
 
@@ -127,7 +150,7 @@ Kept together so it isn't lost: a Page owner names the community their give-back
 
 - **Unrealistic schedule:** nothing but words before January 6. A lands in late January or February, after the opening settles.
 - **Scope creep:** this is a theme with three parts; A is one. Money, vouching and the survey stay out.
-- **Gold plating:** no video, no interviews, no badges, no verified names.
+- **Gold plating:** no video hosting, no account connections in A, no interviews, no badges, no verified names.
 - **Vague requirements:** the three questions are yours to write; the hours are estimates.
 - **Unclear acceptance:** the criteria above; success is owners writing cards and people opening them, counted per market, ten or more.
 
@@ -144,8 +167,11 @@ Kept together so it isn't lost: a Page owner names the community their give-back
 | No stored role or account type (9-14) | Kept: a card hangs on a Page membership |
 | No stalking (11-15) | The privacy section |
 | A Page with empty fields renders right and never nags (F056.5) | Kept |
+| Video option A: TikTok and YouTube, tap to play, Instagram embeds skipped (11-05) | A builds it and reopens only the Instagram part |
+| Not embedding another company's interface in a Page; nothing depends on a third party's script (F090, draft) | Newer 11-05 ruling holds for tap-to-play; the script rule is kept (nothing loads before a tap, and the link stands alone) |
+| An owner's consented connection counts as links they typed (9-30) | Covers way 2 |
 | A business registration is never displayed (9-29) | Kept: the zip on file is not the card's town |
 
 </details>
 
-**Verified vs assumed:** read 2026-11-23: the store, the repos, the live code for what a Page shows (by code, not by eye on production), Etsy, Airbnb, Kickstarter, the Haifa abstract, phys.org and ILSR pages. Search summaries only: the Airbnb bias figures. Not read: Faire, any farmers' market bio page. Assumed: the hours, and the ten-card trigger.
+**Verified vs assumed:** read 2026-11-23: the store, the repos, the live code for what a Page shows (by code, not by eye on production), Etsy, Airbnb, Kickstarter, Meta's and TikTok's developer pages, the Haifa abstract, phys.org and ILSR pages. Search summaries only: the Airbnb bias figures. Not read: Faire, any farmers' market bio page. Third-party guides only: Instagram's business verification and 60-day keys. Meta's pages give two dates for the dropped token (May 15 and June 15, 2026), both past. Not tried: a live embed of either. Assumed: the hours, and the ten-card trigger.
