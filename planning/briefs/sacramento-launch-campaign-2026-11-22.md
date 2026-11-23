@@ -48,7 +48,7 @@ Five steps, one story. A vendor gets an email and a shopper sees a "Find us here
 | Emails to vendors and patrons, first wave | Copywriter, you, agents | Not started; Resend sends 100 a day free | Words; Resend | Must in B |
 | Out of memory at 1,000 viewers | Agents | Fixed 11-22: it was the test runner's Node; 1,000 signed-out viewers 83% served, no crash | — | Done |
 | The 3-connection pool | Agents | Raised to 10; it never ran dry under load | — | Done |
-| The Sacramento area's edges | — | Settled: the market as it stands (the 10-27 one-hour reach) | — | Done |
+| The Sacramento area's edges | You, then agents | Not settled: the hour was ruled 10-27 but the app still runs the four-county list (web #1101 open). [Brief](sacramento-market-edges-2026-11-23.md) | Your pick, by Dec 4 | Must |
 | "Find us here" stickers | You, copywriter | Not started; printing is new spend | Final words and the scan target | January |
 | Item tags lead search | Agents | Open, needs a fix | nothing | January |
 | Google and Apple to sign in next time | You, agents | No ticket; linking a phone account to Google or Apple needs a trial first | Your Apple account ($99) and a Google client | January |
