@@ -1,6 +1,6 @@
 ---
 id: brief-2026-11-23-sacramento-market-edges
-status: awaiting-approval
+status: approved
 size: M
 path: new territory
 concept: CO-0070
@@ -19,7 +19,7 @@ criteria:
 
 **Bottom line: you already ruled the hour (2026-10-27), it was never built, and the app still runs the older four-county list. Open January 6 on the hour: 114 towns, 2.76 million people. Your wider-for-shoppers idea fits the rulings, and you approved most of it on 2026-10-27: people may choose a market within 75 minutes, and a Page belongs where it is. Add it during the beta, after makers are in.**
 
-**Your call:** which edge opens on January 6: **E, the hour you ruled (recommended)**, A, today's four counties, B, rings of touching towns, C, population centres, or D, the government's commuting zone?
+**Approved 2026-11-23:** the PM, verbatim: "let's approve E for the market opening that way for the next market opening we can use the same parameters". Ruled and written as a reusable method in `product/systems/rings.md`. The wider consumer list (75 minutes, choose Sacramento or wait) is not approved: it stays this brief's recommendation for the beta's second month or 100 makers, an open question for the PM in that doc.
 
 ## Your two questions, answered
 

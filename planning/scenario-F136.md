@@ -8,6 +8,8 @@ rank: 7
 date: 2026-11-15
 depends: [F092, F119, F121, F134]
 ---
+Search widening by result count (hood → town → area → beyond, labelled, 10 results as the default) is ruled in `product/systems/rings.md`.
+
 ## Story
 
 *The PM, 2026-11-15, verbatim:* "the most important thing is that we connect our members and help them connect with each other and that's kind of what this searches meant to empower"
