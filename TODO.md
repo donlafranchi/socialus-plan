@@ -15,7 +15,7 @@ The PM, 2026-11-23: "B." then "Approve launch B". Must-haves only; a private dry
    - **Alert steps:** finish monitoring (Sentry, Vercel spend, UptimeRobot), item 3 under "Everything else" below.
 2. **By Nov 26: hand your copywriter the words:** the homepage (your 11-21 draft [copy brief](planning/briefs/homepage-copy-brief-2026-11-21.md) and [intent brief](planning/briefs/homepage-intent-brief-2026-11-21.md)), the sample prompts, the "is my town open?" answers, the first vendor and patron email wave, and the waitlist storyboard. [Storyboard](planning/briefs/waitlist-join-journey-2026-11-12.md) Words back by Dec 11; you approve by Dec 15. Launch B assumes the homepage's first slice is rules only (A); [brief](planning/briefs/town-before-it-opens-2026-11-21.md).
 3. **By Dec 4: walk the waitlist on your phone:** [socialus.org/join/waitlist](https://socialus.org/join/waitlist), signed in as operator, and say what felt wrong. Then apply the one migration that keeps name, number, zip and plans with each entry: `gh workflow run apply.yml -R donlafranchi/socialus-web --ref 1299-waitlist-answers -f confirm=apply` (phone: Actions → Apply migrations → Run workflow → branch `1299-waitlist-answers` → type `apply`).
-4. **By Dec 4: ask counsel whether the beta Terms and Privacy hold for real sign-ups** before the company exists. The question is written up in your legal repo.
+4. **By Dec 4: pick where the Sacramento market ends** (E recommended: the hour you ruled 10-27, not built yet). [Brief](planning/briefs/sacramento-market-edges-2026-11-23.md) Same day: **ask counsel whether the beta Terms and Privacy hold for real sign-ups** before the company exists. The question is written up in your legal repo.
 5. **By Dec 15: the Mapbox production key,** locked to socialus.org. [Steps](https://github.com/donlafranchi/socialus-web/blob/main/INFRASTRUCTURE.md#4-maps-and-geocoding) Same day: **say where the three landing pictures came from** (town square, main street, park, from your 2026-10-31 concept): no source or licence is recorded, so commercial-use rights are unverified; and **write the positive posting reminder,** one line that encourages good, decent posts (a marked placeholder holds its place).
 6. **By Dec 18: say who watches the report queue in opening week,** and how fast.
 7. **Week of Dec 28: the private dry run** with a few invited testers, not the waitlist.
@@ -49,7 +49,7 @@ Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dash
 
 | When | What | Why |
 |---|---|---|
-| Early 2027 | **Form the company (LLC).** Specifics live in socialus-legal. | Commercial hosting terms, child-safety registration and card payments all need it |
+| January 1, 2027 | **Form the company (LLC).** Specifics live in socialus-legal. | Commercial hosting terms, child-safety registration and card payments all need it |
 | After the company, by 2027-04-01 | **Register with the NCMEC CyberTipline** and switch off the manual form. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/operations/staff-safety.md) | Required reporting; the beta uses the public form, which can't take images |
 | From 2027-03-01 | **Re-review paid tools now that budget opens:** feature flags, GitHub and Vercel plans. [Runbook](https://github.com/donlafranchi/socialus-ops/blob/main/operations/go-live-paid-tools.md) | We built our own until there was money |
 
