@@ -3,7 +3,7 @@ id: brief-2026-11-23-who-is-local-here
 status: awaiting-approval
 size: L
 path: new territory
-concept: new
+concept: CO-0071
 fits: after the January 6 must-haves (launch B, CO-0070); theme story map JY-LOCAL; F056, F105, F106, F134, the values theme (CO-0068); CO-0019, CO-0040, CO-0031, CO-0039, CO-0027; F080, F090, F096; plan PR #364
 criteria:
   - A Page whose owner added nothing about themself looks and reads exactly as it did before; a test compares both responses for the same fixture, field by field, seen failing first.
