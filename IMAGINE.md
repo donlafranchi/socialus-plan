@@ -20,6 +20,22 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
+### Know your Page owner (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "It's about the person behind the business or the page that's the [know] your seller or know your page owner … this is kind of like the blue dot Easter egg … this is going to be bigger than a one time thing this kinda needs to be a big part of owning a page"
+
+*Analysis, agent:* the public half of his 2026-11-13 words ("allow people to tell others about who they are"), whose private half is CO-0068. The owner's card, then an ongoing story; the owner writes it about themself. Part of the theme Who is local here? (JY-LOCAL). Brief: planning/briefs/who-is-local-here-2026-11-23.md.
+
+**What would make it real:** the PM picks the brief's first slice.
+
+### Your patronage supports a neighbor (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "for people to communicate that a person's patronage is supporting someone nearby a neighbor or a local if the person is traveling, and that is going to help … who is local here? Who can I support when my money stays local and where my community gets better"
+
+*Analysis, agent:* said as the owner's own fact, the same from every vantage (F105, F106); no money claim until give-back makes it true (CO-0031, CO-0039, CO-0027; plan PR #364). Part of the theme Who is local here? (JY-LOCAL).
+
+**What would make it real:** owners' cards exist on enough Pages in one market that a neighbor line reaches people.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
