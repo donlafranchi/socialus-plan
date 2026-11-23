@@ -36,6 +36,22 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **What would make it real:** owners' cards exist on enough Pages in one market that a neighbor line reaches people.
 
+### Market rings: where a market ends, and who may sign up when it opens (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "one concern is a market opening and which consumers can also sign up. That is the market three ring … let's approve E for the market opening that way for the next market opening we can use the same parameters"
+
+*Analysis, agent:* approved as option E of the Sacramento market-edges brief; the method and its parameters (hub 50,000; one hour of free-flow drive time from the hub; a town nearer another hub goes there; small leftovers merge in; tie broken by commuting zone; the Tahoe subdivisions stay their own) are in `product/systems/rings.md`. Not the search rings. Belongs to the Sacramento launch campaign (CO-0070), F103, F076.
+
+**What would make it real:** a second market opens on the same parameters, with no new rule.
+
+### Search rings: how wide one person's search widens (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "the other three ring is search for a user or a person and the three ring search is that's how wide we go when we're trying to find a certain number of results for whatever they're looking for"
+
+*Analysis, agent:* per person, centred on their vantage (F105), widening hood, town, area, beyond, labelled, until enough results; 10 by default (Yelp, Google and Airbnb precedent). Not the market rings. Part of hyper-specific search (F136), F104. Rules: `product/systems/rings.md`; build: socialus-web #1425.
+
+**What would make it real:** a search with few nearby results widens and names how far it went.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*

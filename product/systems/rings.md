@@ -15,7 +15,7 @@ The PM, 2026-11-23, verbatim: *"Let's separate these two concerns and one concer
 | Centred on | The market's hub (a place, not a person) | The person's vantage: home by default, movable (F105) |
 | Set | Once, ahead of time, by a script; changes only by a ruling | Per search, by result count |
 | Units | Whole towns and county subdivisions | hood → town → area → beyond |
-| Concept in the store | Market rings, linked to CO-0070 | Search rings, linked to F136 |
+| Concept in the store | Market rings (CO-0070, F103) | Search rings (F136, F104) |
 | Governs | F103 (the market), F076 (the waitlist), F118 (opening goals) | F104 (scope and order), F105 (vantage), F136 (search) |
 
 ## Market rings: the method
