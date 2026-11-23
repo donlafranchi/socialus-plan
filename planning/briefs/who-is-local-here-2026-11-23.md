@@ -9,7 +9,7 @@ criteria:
   - A Page whose owner added nothing about themself looks and reads exactly as it did before; a test compares both responses for the same fixture, field by field, seen failing first.
   - Nobody but a person themself can put a name, photo or words about that person on a Page; a co-owner's attempt to add or edit another owner's card is refused in SQL, seen failing first.
   - What an owner added disappears from every response in one step, and no response carries a street address, neighbourhood, zip, legal name, phone or any link to the owner's account or other Pages.
-  - No list, search, filter or ranking reads an owner's name, photo or words; a test changes each and gets the same results in the same order.
+  - In slices A and B, no list, search, filter or ranking reads an owner's name, photo or words; a test changes each and gets the same results in the same order.
   - A viewer who hasn't taken the values survey gets no field that says whether an owner has.
 ---
 
@@ -52,7 +52,7 @@ criteria:
 
 ## The picture
 
-Ana looks at a bakery's Page. Under About: a photo of two hands in flour and "I'm Lupe. I live in Woodland and I've baked here since 2009. I started because my grandmother's conchas had no shop." A month later there's a new line: why the oven is named Beto. On a Saturday in Grass Valley, Ana looks from there and the Pages lead with the people who live there. A bookstore whose owner added nothing looks just as it does today. Someone who shares Lupe's values sees a blue dot by her name; nobody else could tell there was one.
+Ana looks at a bakery's Page. Under About: a photo of two hands in flour and "I'm Lupe. I live in Woodland and I've baked here since 2009. I started because my grandmother's conchas had no shop." A month later there's a new line: why the oven is named Beto. On a Saturday in Grass Valley, Ana looks from there and sees that town's Pages, with the same kind of card from the people who live there. A bookstore whose owner added nothing looks just as it does today. Someone who shares Lupe's values sees a blue dot by her name; nobody else could tell there was one.
 
 ## What a Page shows about its owner today
 
@@ -97,7 +97,7 @@ Ana looks at a bakery's Page. Under About: a photo of two hands in flour and "I'
 ## Your patronage supports a neighbor
 
 - **Said as the owner's fact, not our arithmetic:** "Run by Lupe, who lives in Woodland" [placeholder]. No "near you", no miles, the same from every vantage (F106).
-- **When travelling (F105):** looking from Grass Valley leads with the people who live there. It already fits "support the people who live where you are visiting".
+- **When travelling (F105):** looking from Grass Valley shows that town's Pages first, and each card names the owner's town. It already fits "support the people who live where you are visiting".
 - **No money claim until one is true.** "Your money stays here" waits for give-back. The reason to want it: in Salt Lake City, independent shops returned 52% of revenue locally against 14% for chains, and restaurants 79% against 30% ([Civic Economics, in ILSR's summary](https://ilsr.org/articles/key-studies-why-local-matters/)); shares vary by city.
 - **Neighbors can vouch** (the 10-27 vouching idea) is a separate piece: theirs, not the owner's.
 
