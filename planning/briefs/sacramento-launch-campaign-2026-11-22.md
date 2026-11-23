@@ -1,6 +1,6 @@
 ---
 id: brief-2026-11-22-sacramento-launch-campaign
-status: awaiting-approval
+status: approved
 size: L
 path: new territory
 concept: CO-0070
@@ -21,7 +21,7 @@ criteria:
 
 **Bottom line: January 1 with everything on the list is not realistic: six weeks, two holidays, about a dozen open build tickets and a new homepage that isn't designed yet. Open Wednesday January 6 with a must-have cut, and let stickers, the second email wave and Google/Apple sign-in follow in January.**
 
-**Your call:** which cut line and date: **B, must-haves and open Wednesday January 6 (recommended)**, A, everything by January 1, or C, the smallest open on January 1 with the new homepage following?
+**Approved 2026-11-23:** the PM, verbatim: "B." then "Approve launch B". Must-haves only, open Wednesday 2027-01-06 as a beta, private dry run with a few invited testers the week of 2026-12-28; stickers, item tags and Google/Apple sign-in follow in January; AI chat, values and the blue dot, the pulse map and floating wishes later. Ruled in F103 (2026-11-23). The options below are what he chose between.
 
 *In the store:* the campaign is a story map (JY-LAUNCH: hear about it → ask the front door → learn what it's for → find out if my town is open → join), each step naming the condition it waits on (CN-0001, "Sacramento is ready to open", and its parts CN-0002 to CN-0016). The campaign is its own concept (CO-0070). Your pick becomes the map's slices.
 
