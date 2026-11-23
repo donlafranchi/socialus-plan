@@ -13,7 +13,7 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 
 ## Ethos: the soul lines
 
-**A short list of [always] lines that every design call is checked against.**
+**A short list of lines that every design call is checked against. Only never-extractive is [always]; the rest can change if we find something better.**
 
 - We assume the best of each other.
 - Everything we do benefits all of us, not a few.

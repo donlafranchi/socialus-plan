@@ -1,5 +1,6 @@
 ---
 id: F126
+concept: CO-0052
 title: Decisions and features wait on exactly the conditions they need
 status: approved
 horizon: now
@@ -43,4 +44,4 @@ Versions and what is in or out of each (a proposal in the F125 brief, stage 2). 
 
 ## Rulings
 
-- **2026-11-10 — Decisions and features wait on conditions, and conditions are fine-grained: a condition has parts, and something unlocks when the parts it needs are met, not the whole.** The PM, for F126. [binds tiers=planning,code surfaces=knowledge] [always]
+- **2026-11-10 — Decisions and features wait on conditions, and conditions are fine-grained: a condition has parts, and something unlocks when the parts it needs are met, not the whole.** The PM, for F126. [binds tiers=planning,code surfaces=knowledge] [for now]
