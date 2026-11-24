@@ -43,7 +43,7 @@ Private marks for people who want to find their people but could be targeted if 
 
 **Examples:** parents who've lost a child, people living with chronic illness, LGBTQ+ folks in areas where it isn't safe, people fleeing harm, political beliefs, religious identity.
 
-**The blue dot** is the first hidden signal. It's playful, not heavy — but the same privacy protection applies.
+**The blue dot** is the first hidden signal. It's playful, not heavy — but the same privacy protection applies. A viewer sees it on a Page only when both the viewer and the Page's owner took the values survey and their answers align enough (not a full match); everyone else sees nothing (the PM, 2026-11-21; concept CO-0069). Options: `planning/briefs/shop-by-your-values-2026-11-21.md`.
 
 ## The help and discovery engine
 
@@ -85,10 +85,9 @@ This is new territory. Counsel and Don must decide:
 
 ### T1 — Beta
 
-- **Blue dot only.** The first hidden signal, playful and lighthearted.
+- **Blue dot only.** The first hidden signal, playful and lighthearted: the values survey, and the dot between aligned takers.
 - Help system: static pages, keyword search, seeker questions (see #534).
-- Unlocked from "Want a blue dot?" in Page creation help.
-- Members who unlock it see the toggle in Edit Page.
+- Found from "Want a blue dot?" in Page help, the quiet entry in You, or asking the chat.
 
 ### T2 — After beta
 

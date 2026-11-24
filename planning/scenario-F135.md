@@ -7,7 +7,7 @@ rank: 6
 date: 2026-11-12
 approved: 2026-11-12, the PM picked A: "every run saves a dated record in the knowledge store, with the numbers, what broke first, what we changed after, and ideas for next time"
 depends: [F125, F128]
-concept: new
+concept: CO-0056
 ---
 ## Story
 
