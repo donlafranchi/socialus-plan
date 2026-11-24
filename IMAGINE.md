@@ -21,6 +21,7 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):**
 - Builds on D-0165 (local means money returns; the owner chooses where it goes), D-0288 (10-16: the badge comes from the owner's claim alone, which this re-thinks), F106 (the give-back badge, approved for later), and `business-jurisdiction.md` (mostly old; its ownership ladder is likely retired once this is designed). Report handling is D-0073 and D-0327.
+- Overlaps `planning/briefs/who-is-local-here-2026-11-23.md` (concepts CO-0071 Know your Page owner, CO-0072 Your patronage supports a neighbor): reconcile before either is built.
 - Levels as a sketch, not a decision: says (owner declares), confirmed (locals or a public record back it), proven (the rebate was actually paid).
 - Risk to settle before it affects ranking: a hidden score about a business, which the owner can't see or contest, touches member trust and possible legal exposure, so owner visibility, appeal and counsel come first.
 - Not decided: what "matters" for a declaring Page beyond ranking, how the survey works, and what the signal is allowed to change.
