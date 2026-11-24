@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to conflict, one is retired in the knowledge store.
-> **98 older decisions carry no tag yet and are not listed** — tagging is required from
+> **97 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-23** · [for now] · launch, markets, waitlist, landing — The town launch is cut B: must-haves only, open Wednesday 2027-01-06 as a beta, after a private dry run with a few invited testers the week of 2026-12-28 (planning/scenario-F103.md)
