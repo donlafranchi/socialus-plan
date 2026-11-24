@@ -12,6 +12,20 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
+### Where a business's money goes: levels, and a private honesty signal
+*2026-11-16, from Don (PM). A concept with the mechanism not yet designed; Don has not chosen an option and is not ready to.*
+
+**Claim (Don, 2026-11-13 to 16):** the point is that patrons know their money ends up back in their community. Before any money is collected, users need some way to know when a business's profits go elsewhere, and the rebate (the give-back actually paid to the community) is the end solution, so this comes in levels. A Page owner chooses where they are local to, with some way for that to matter, and Pages that declare nothing show behind Pages that declare local. He wants something simple, like a tax return, but is not ready to ask for that yet and it may not matter until we collect money. Community members should feel empowered to call out dishonesty without piling on: no cold hard proof required, and the number of reports is never published. Instead keep an unpublished honesty rating handled by the algorithm on the back end, surveying a few members to smell-test a claim, until something more deterministic exists.
+
+**What would make it real:** the first money flowing to a community fund, or the first local badge shipping.
+
+**Analysis (agent):**
+- Builds on D-0165 (local means money returns; the owner chooses where it goes), D-0288 (10-16: the badge comes from the owner's claim alone, which this re-thinks), F106 (the give-back badge, approved for later), and `business-jurisdiction.md` (mostly old; its ownership ladder is likely retired once this is designed). Report handling is D-0073 and D-0327.
+- Overlaps `planning/briefs/who-is-local-here-2026-11-23.md` (concepts CO-0071 Know your Page owner, CO-0072 Your patronage supports a neighbor): reconcile before either is built.
+- Levels as a sketch, not a decision: says (owner declares), confirmed (locals or a public record back it), proven (the rebate was actually paid).
+- Risk to settle before it affects ranking: a hidden score about a business, which the owner can't see or contest, touches member trust and possible legal exposure, so owner visibility, appeal and counsel come first.
+- Not decided: what "matters" for a declaring Page beyond ranking, how the survey works, and what the signal is allowed to change.
+
 ### Hyper-local, photo-aligned search
 *2026-11-13, from Don (PM). Long-term direction, not a build: the small version we build should be a step toward it.*
 
