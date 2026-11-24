@@ -22,6 +22,7 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 **Analysis (agent):**
 - Builds on D-0220 (what locals search for, aggregated and anonymous, shown back to owners), D-0127 (plain-words search built to grow into natural-language), D-0045 (LLM tag proposals; dictionary grows from creator tags and zero-result searches), D-0166 (area-type search) and D-0294 (locals tips, steering toward and away; reworded 2026-11-13 to say a tip is in effect a review but SocialUs is not primarily a review site).
 - Small version first: one shared tag vocabulary across photos, locals tips, search and the owner view, with each search recording which tags it asked for and which results missed.
+- The taste-matched layer overlaps the entry "Narrow it down: taste as specific as the member" (2026-11-24); settle which one carries it when either is built.
 - Taste matching needs enough members and uses member data: infer from what people loved and where they go rather than asking for a profile, and settle visibility and reset before building.
 - Moderation of tips that steer toward or away: a tentative yes (Don, 2026-11-13). Do not raise it again until Don asks how to handle moderation.
 - Image embeddings (pgvector on Supabase) are the later engine step; tags, text and distance come first.
