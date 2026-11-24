@@ -16,7 +16,7 @@ What it is for, both sanctioned by existing rulings:
 
 1. **Seeding the initial tag list.** The 2026-09-13 ruling retired
    "Something else" and ruled *"its rows seed the initial tag list"*. A tag
-   store that opens empty asks the first hundred creators to invent a
+   store that opens empty asks the first hundred Page owners to invent a
    vocabulary from nothing; one that opens with real words gives them something
    to recognise or reject. These are candidate words.
 2. **A working set.** Six sample Pages are not enough to know whether Browse,
@@ -156,7 +156,7 @@ working.
 
 ## What this is not, and what it might become
 
-**Not a dropdown.** A creator writes their own word. If this list ever appears
+**Not a dropdown.** A Page owner writes their own word. If this list ever appears
 in a composer as options, the ratified tag rule has been broken.
 
 **Not an ordering.** `nouns.md` § Tag: *"Never — a tag that orders results."*
@@ -165,8 +165,8 @@ in a composer as options, the ratified tag rule has been broken.
 not an enum** — but not yet, and not on this document's say-so.
 
 - An **enum** is wrong: every addition is a migration, and this list is
-  explicitly expected to grow from what creators write.
-- A **lookup table** seeding the tag store is plausible — rows a creator's tag
+  explicitly expected to grow from what Page owners write.
+- A **lookup table** seeding the tag store is plausible — rows a Page owner's tag
   can match against for search, with no constraint that a tag must be in it.
   That is the shape the rulings already imply when it says the retired
   suggestion rows *"seed the initial tag list"*.
