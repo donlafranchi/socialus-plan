@@ -21,6 +21,14 @@ There are no real users yet. Every category below is a placeholder to keep the w
 
 Discovery converting to relationship (search → landing → follow/save/message). Time-to-first-action for a new member. Repeat-action rate within 30 days. Communities forming vs. going dormant. Cross-community participation. Net retention at 30/60/90 days. Share of Home visits that reach the stop card, and saves and "go" taps after it (2026-10-04). **Session length is watched as a ceiling, not a goal** (2026-10-04): a rising one is a warning, not a win.
 
+## Contributions
+
+- At least 3% of active members contributing at launch.
+- Average contribution.
+- Runway.
+- Churn.
+- Give-back: share of eligible members voting; share of funded recipients who post a report.
+
 ## Anti-metrics — named so they can't install themselves by default
 
 Daily active users as a goal in itself. Time-on-platform or session length as a goal. Scroll depth. Notification open/click-through rate. Streaks or gamified retention. Anything resembling social-media engagement metrics applied to local commerce. Once a number is on a dashboard, "improve the chart" makes the underlying principle unenforceable — naming these here is the only defense. [for now — Find only; newer direction 2026-10-12, see PRINCIPLES.md "two sides"; under review]
