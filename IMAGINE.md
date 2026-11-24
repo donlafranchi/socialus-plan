@@ -36,6 +36,14 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **What would make it real:** a search with few nearby results widens and names how far it went.
 
+### Narrow it down: taste as specific as the member (2026-11-24, the PM)
+
+*The PM, 2026-11-24:* "I like the "narrow it down" part especially. For my purposes I really like riding bicycles except I have very specific bike riding preferences. I enjoy steel frame single speed bikes and hard tail mountain bikes and cruising on the beach bikes … That is more specific than just bicycling. … This theme will inevitably be an ongoing thing so how should we capture this?"
+
+*Analysis, agent:* a theme over the taste record (CO-0066, F113), narrowing (CO-0059, F092), item tags (#1318) and hyper-specific search (F136): facets on everything, narrowing in conversation, "More like this" that isn't kept unless confirmed, interests as a tree. Options: `planning/briefs/narrow-it-down-2026-11-24.md`; proposed story map JY-NARROW.
+
+**What would make it real:** the PM picks the button option and the first slice is scoped as a scenario.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
