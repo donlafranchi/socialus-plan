@@ -15,7 +15,7 @@ The run club meets every Thursday from the Sloppy Moose. Sam sets it up once —
 
 ## Acceptance
 
-1. A series is created once as **weekly on one or more chosen weekdays, with an optional start date and an optional end date**. The creator never enters individual dates, and no other pattern is offered.
+1. A series is created once as **weekly on one or more chosen weekdays, with an optional start date and an optional end date**. The owner never enters individual dates, and no other pattern is offered.
 2. Every occurrence is a real `page_posts` row referencing its parent post — never a date computed at read time.
 3. **Occurrences exist from today to three months ahead, at all times.** Checked on any day, the furthest is no less than three months out.
 4. The job that maintains that window is idempotent: running it twice in succession creates nothing the first run did not.
