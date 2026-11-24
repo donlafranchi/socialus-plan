@@ -1,5 +1,6 @@
 ---
 id: F127
+concept: CO-0052
 title: Versions are plans of feature slices that can change without breaking
 status: approved
 horizon: next
@@ -42,4 +43,4 @@ Estimates or dates per feature. Burndown charts. Building any feature's slices (
 
 ## Rulings
 
-- **2026-11-10 — A version is a plan of feature slices, with what it leaves out and why; changing the plan writes a new version of it with its why, never an edit.** The PM, for F127. [binds tiers=planning,code surfaces=knowledge,roadmap] [always]
+- **2026-11-10 — A version is a plan of feature slices, with what it leaves out and why; changing the plan writes a new version of it with its why, never an edit.** The PM, for F127. [binds tiers=planning,code surfaces=knowledge,roadmap] [for now]

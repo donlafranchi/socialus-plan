@@ -3,6 +3,7 @@ id: F090
 title: A Page carries the work its owner already does elsewhere
 status: draft
 horizon: later
+concept: CO-0019
 rank: 240
 date: 2026-09-18
 depends: [F070]
@@ -24,7 +25,7 @@ Priya already posts her pottery to TikTok and Instagram every week. She is not g
 
 ## Not this
 
-Importing content wholesale. Follower counts, like counts or any borrowed vanity metric. Anything that requires the member to maintain a second presence, or to keep anything here in step with anything there. Embedding another company's interface inside a local business's Page.
+Importing content wholesale. Follower counts, like counts or any borrowed vanity metric. Anything that requires the member to maintain a second presence, or to keep anything here in step with anything there. Embedding another company's interface in a Page, except a clip that loads only on a tap (2026-11-05).
 
 ## Why
 
@@ -49,4 +50,5 @@ Don: *"At the very minimum I'd like to only offer TikTok and Instagram for now o
 The current social-links field takes a full `https://` URL and refuses everything else — a real handle typed into it is rejected. That is a live bug, fixed separately; this scenario is what the field becomes, not the fix.
 
 ## Rulings
+- **2026-11-05 — Video option A: tap-to-play TikTok and YouTube on the owner's Page, at most 3 clips, the owner's own still picture, nothing loading before a tap, never on Explore shelves, no autoplay and no next video, and a button pointing out to the owner's next event or post. Skip upload, Instagram embeds and posting out.** The PM, on plan #271 (a PR comment; moved here 2026-11-23, when it was found in no doc). Instagram's reason has since changed and is on the PM's desk: `planning/briefs/who-is-local-here-2026-11-23.md`. [for now] [replaces none] [binds tiers=planning,code surfaces=pages,video,links build=none]
 - **2026-09-30 — A venue's own consented connection (its Instagram or calendar) counts as links the owner typed.** Don approved, resolving F090 criterion 7 against F096's imports. F090 criterion 7 restated. [replaces F090: because the owner typed it,] [binds tiers=planning surfaces=links,imports]

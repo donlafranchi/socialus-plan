@@ -26,7 +26,7 @@ An owner invites an artist. The artist says yes and uploads the piece, choosing 
 
 - **A) Credit line only.** The owner uploads the artist's work with a credit and link by hand. Nothing new to build; relies on trust, and the artist's consent lives in a chat, not the product.
 - **B) Invite and consent (recommended).** The owner invites a named artist; the artist accepts and uploads, granting a licence to show it on that Page only, revocable. Credit and link are automatic. Small build: one invitation, one consent record, one credit line. No money.
-- **C) B plus payment.** The owner pays the artist through the member side. Most useful to artists, but it touches money and counsel, and members are the investors and the only people paid out; hold it until B shows owners and artists want it.
+- **C) B plus payment.** The owner pays the artist through the member side. Most useful to artists, but it touches money and counsel, and members are not payees for now; hold it until B shows owners and artists want it.
 
 **Recommendation: B.** It is the smallest thing that gets consent and credit right, which is what could go wrong. C waits on evidence.
 
@@ -59,7 +59,7 @@ The common pattern: **credit travels with the work, the artist accepts before it
 
 ### Payment, optional and later
 
-If an owner wants to pay an artist, it goes through the member side, where members are the investors and the only people paid out. SocialUs takes transaction income. Anything that moves money goes to counsel first. B does not need it; C adds it.
+If an owner wants to pay an artist, it goes through the member side, where no payout is promised. SocialUs takes transaction income. Anything that moves money goes to counsel first. B does not need it; C adds it.
 
 ### The smallest pilot
 

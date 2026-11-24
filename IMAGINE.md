@@ -20,6 +20,30 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):** an unclaimed Page leads with its primary label's icon, its seeded photos sit in the gallery, and the owner's first photo replaces the icon on claim. Precedents: Yelp's "Unclaimed" mark, Google Maps' claim prompt. Icon table: socialus-design `research/icons-and-pins-2026-11-12.md`.
 
+### Market rings: where a market ends, and who may sign up when it opens (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "one concern is a market opening and which consumers can also sign up. That is the market three ring … let's approve E for the market opening that way for the next market opening we can use the same parameters"
+
+*Analysis, agent:* approved as option E of the Sacramento market-edges brief; the method and its parameters (hub 50,000; one hour of free-flow drive time from the hub; a town nearer another hub goes there; small leftovers merge in; tie broken by commuting zone; the Tahoe subdivisions stay their own) are in `product/systems/rings.md`. Not the search rings. Belongs to the Sacramento launch campaign (CO-0070), F103, F076.
+
+**What would make it real:** a second market opens on the same parameters, with no new rule.
+
+### Search rings: how wide one person's search widens (2026-11-23, the PM)
+
+*The PM, 2026-11-23:* "the other three ring is search for a user or a person and the three ring search is that's how wide we go when we're trying to find a certain number of results for whatever they're looking for"
+
+*Analysis, agent:* per person, centred on their vantage (F105), widening hood, town, area, beyond, labelled, until enough results; 10 by default (Yelp, Google and Airbnb precedent). Not the market rings. Part of hyper-specific search (F136), F104. Rules: `product/systems/rings.md`; build: socialus-web #1425.
+
+**What would make it real:** a search with few nearby results widens and names how far it went.
+
+### Narrow it down: taste as specific as the member (2026-11-24, the PM)
+
+*The PM, 2026-11-24:* "I like the "narrow it down" part especially. For my purposes I really like riding bicycles except I have very specific bike riding preferences. I enjoy steel frame single speed bikes and hard tail mountain bikes and cruising on the beach bikes … That is more specific than just bicycling. … This theme will inevitably be an ongoing thing so how should we capture this?"
+
+*Analysis, agent:* a theme over the taste record (CO-0066, F113), narrowing (CO-0059, F092), item tags (#1318) and hyper-specific search (F136): facets on everything, narrowing in conversation, "More like this" that isn't kept unless confirmed, interests as a tree. Options: `planning/briefs/narrow-it-down-2026-11-24.md`; proposed story map JY-NARROW.
+
+**What would make it real:** the PM picks the button option and the first slice is scoped as a scenario.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
@@ -66,3 +90,8 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - **CO-0042 Vouching: a member posts about a place they love.** [lane: considering]
 - **CO-0043 Asked for, not here yet.** [lane: considering]
 - **CO-0064 One-off creations: a member with an idea partners with a local maker.**
+- **CO-0065 The town before it opens.** [lane: considering]
+- **CO-0068 Shop by your values.** [lane: considering]
+- **CO-0069 The blue dot.** [lane: considering]
+- **CO-0071 Know your Page owner.** [lane: considering]
+- **CO-0072 Your patronage supports a neighbor.** [lane: considering]

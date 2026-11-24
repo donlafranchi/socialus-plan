@@ -1,5 +1,6 @@
 ---
 id: F125
+concept: CO-0052
 title: Every decision, pattern and why lives in one store that every agent asks
 status: approved
 horizon: now
@@ -51,12 +52,12 @@ The public snapshot and public lookup tool (stage 2). Features, questions and ri
 ## Rulings
 
 - **2026-11-10 — A database is the source of truth for decisions, philosophies, patterns, corrections and the ontology, across every concern of the platform; git keeps a nightly copy for history and review.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
-- **2026-11-10 — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [always]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — An overturned decision is kept with status retired and a pointer to the newer one, never deleted. [for now]** The PM, for F125. [replaces 2026-11-10: never deleted. [always]] [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — Outside agents are served from a published snapshot of public records, never from the live store. [for now]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — The departments to start are building, finance, telemetry and bugs, communications, trust and safety, and legal; a later department is a new value, not a redesign.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — The store starts inside `socialus-db` in its own schema and login, and moves to its own Supabase project before any outside team gets access or the public side goes live.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — Only live decisions move in; an older one is rebuilt from git history when someone asks for it.** The PM. [binds tiers=planning surfaces=knowledge]
-- **2026-11-10 — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for. [always]** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
+- **2026-11-10 — Nothing in the store is written for one model or agent; many models will use it, and each record says what is true or wanted, never which agent it is for. [for now]** The PM, for F125. [replaces 2026-11-10: ent it is for. [always]] [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — Every philosophy, pattern, decision and correction carries a why; the why is versioned and refined as the platform and the times change, and it informs the platform's own why.** The PM, for F125. [binds tiers=planning,code surfaces=knowledge]
 - **2026-11-10 — For stage 1 the store's login reaches no table outside its schema and no more than the public key does; the full wall comes with the move to the store's own project.** The PM, picking A, for F125. [binds tiers=planning,code surfaces=knowledge] [for now]
 - **2026-11-10 — The cloud sessions' key reaches every department but not the PM's right to decide: agents read and propose, the PM rules; this holds until a second person shares deciding. [for now]** The PM, picking A, for #1219. [binds tiers=planning,code surfaces=knowledge]

@@ -3,7 +3,7 @@ id: why-model
 purpose: The model, in Don's words. The document every other document answers to.
 layer: why
 status: active
-under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, Find only] Browse 'not ranked by the member's interests'; 'Never: what keeps someone scrolling'; 'not licence for a feed algorithm'; 'Ranking doesn't favour a member because of payment' and the 'What 'don't sell visibility' actually forbids' section, for paid promotion on Discover"
+under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, Find only] Browse 'not ranked by the member's interests'; 'Never: what keeps someone scrolling'; 'not licence for a feed algorithm'; 'Ranking doesn't favour a member because of payment' and the 'What 'don't sell visibility' forbids' section, for paid promotion on Discover"
 ---
 
 > **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
@@ -23,7 +23,7 @@ A creator offers something of value: something to buy, join, visit, or learn abo
 
 In Don's words (2026-09-12): **a Page is "an organizing entity for something that needs more than one of anything."**
 
-Long-lived, and carrying multiples — multiple meetups, multiple announcements, maybe multiple conversations. That is the test, and it is the one to apply when something new turns up and nobody is sure.
+Long-lived, and carrying multiples, multiple meetups, multiple announcements, maybe multiple conversations. That is the test, and it is the one to apply when something new turns up and nobody is sure.
 
 It replaces the older framing, "a Page is *who*; an Item is *what*." That pairing is retired: it depended on Items, which no longer exist, and it answered the wrong question. *Who is behind this* is a fact about a Page, not the reason one exists.
 
@@ -39,7 +39,7 @@ Two things fall straight out of the test, without needing their own rule:
 - **Persistence lives on the Location, not the organization** — `locations.kind` already carries it. Harlow's is `permanent`. A market taking over a few streets on Saturday mornings is `recurring_temporary`.
 - **Hosting needs nothing new.** A venue's calendar is posts with times, which the post mechanism already gives every organization. What would justify a kind is a *booking* model — somebody asking to be on someone else's calendar — and that is coordination between two organizations, not a property of one.
 
-It follows that anything can host. A bakery that runs a book club one evening is a venue that evening and a bakery the rest of the week, with one Page throughout — which a venue kind would have broken, since a Page never converts into another Page.
+It follows that anything can host. A bakery that runs a book club one evening is a venue that evening and a bakery the rest of the week, with one Page throughout, which a venue kind would have broken, since a Page never converts into another Page.
 
 **Unrecorded:** which `kind` a farmers-market-shaped organization takes. The six are place · interest · practice · event_anchored · family · business, and a market that convenes commercial vendors without selling anything itself fits none of them cleanly. Raised, not ruled.
 
@@ -136,11 +136,12 @@ Neither can do the other's job. A complete surface that quietly favours your int
 **A hard distinction, because one word covers two things and only one of them is allowed.**
 
 - **Allowed — and the whole point:** the member's own **declared interests**, and where they are. Home surfaces what they said they care about, near them. That is personalization on facts the member volunteered about themselves.
-- **Allowed (2026-11-15):** what the member **searched for**. A search is the member telling us what they want; their searches are kept on their own profile, shown back only to them, and they can see and delete them. Don, of their searches: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
-- **Allowed:** genuine community response. Earned attention is the intended mechanism *(2026-09-12)* — a baker the neighbourhood turns up for should rise.
-- **Never:** what keeps someone scrolling. No watch-time, no dwell-time, no engagement objective. Ranking doesn't favour a member because of payment, size or follower count (2026-09-30).
+- **Allowed (2026-11-15):** what the member **searched for**, kept on their own profile, shown only to them, deletable. Don: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
+- **Allowed (2026-11-20):** what the member **does on purpose**: saves, Remind me, "I'm coming", "I went", "not for me", follows. Never opens or views (F113 § Rulings).
+- **Allowed:** genuine community response *(2026-09-12)*: a baker the neighbourhood turns up for should rise.
+- **Never:** what keeps someone scrolling: watch-time, dwell-time, an engagement objective. Ranking doesn't favour a member for payment, size or follower count (2026-09-30).
 
-**"Home is personalized" is not licence for a feed algorithm.** It is licence for one thing: showing a member what they told the platform they want, by declaring it or searching for it, where they are. Reading engagement back at them (time spent, scrolling, what holds their eye) is a different product and is refused elsewhere in this tree.
+**"Home is personalized" is not licence for a feed algorithm:** only for showing a member what they told us they want, by declaring, searching or choosing it, where they are.
 
 ## One mechanism: posts
 
@@ -188,7 +189,7 @@ Responding to an event was cut on the reasoning that occurrences of a recurring 
 
 ## Rulings
 - **2026-10-11 — The Charter is the one-page statement of SocialUs's mission, its three flips (meet in person, spread wealth among the many, design for kindness), real examples and how we help members not feel squeezed. It is generated by `regen-charter` from the rulings tagged `surfaces=charter`, and it stands in for `goals.md`.** The PM, 2026-10-11, option A on plan #64. Kindness line, verbatim: "We help each other be good to one another." Two lines in his words: "We build for meeting in person, and we measure whether neighbours actually met" and "We measure our success by how much we improve our members' lives, financially and socially." Wording rule for every Charter line: "currently" where a ruling is not permanent, the platform first and then its members, and "never" only in "never extractive". The pre-post "Are you sure?" pause is out of the Charter until it has its own ruling (F108). `product/charter.md`. [for now] [replaces none] [binds tiers=planning surfaces=charter,copy build=none]
-- **2026-10-04 — We need to be successful first to help our members, and we want to be successful together.** Don: *"We need to be successful first to help our members. We want to be successful together."* Refines the 2026-09-30 platform-first priority, which stands: the platform comes first because its success is what lets it serve members, and success is shared with them, never extractive. An engaging Home is the first application. [always] [binds tiers=planning,code surfaces=process,product build=none]
+- **2026-10-04 — We need to be successful first to help our members, and we want to be successful together.** Don: *"We need to be successful first to help our members. We want to be successful together."* Refines the 2026-09-30 platform-first priority, which stands: the platform comes first because its success is what lets it serve members, and success is shared with them, never extractive. An engaging Home is the first application. [for now] [binds tiers=planning,code surfaces=process,product build=none]
 - **2026-09-30 — The platform comes first, then its members, and every ruling can be revisited when the situation changes.** Don: *"our first priority is to protect the platform because that's what helps all members; our next priority is to protect our members... we will do what's in the best interest of first the platform because it serves all members and then of members because we're built to serve them."* **A ruling states what we currently do or don't do,** not as a permanent refusal; a change in situation, such as getting legal counsel, reopens it. [replaces 2026-09-30: The first goal of any decision is to bring no legal liability onto the platform.] [binds tiers=planning,code surfaces=process,product,copy build=none]
 - **2026-09-10 — There are no Items. What a creator offers is described on their Page and in its posts; it is not a separately listed thing that browse indexes.** Don's ruling, stated directly. Supersedes the Page-is-*who*/Item-is-*what* pairing and the three-noun spine in `product/foundation/nouns.md`, which are now wrong rather than incomplete. Browse finds Pages, and posts that carry a time. Full statement: `product/foundation/model.md`.
-- **2026-09-07 — Exactly three public promises: surplus returns to the community; every decision weighs member benefit against product benefit; not an extractive platform.** Every other prior commitment (never paying for visibility, etc.) is withdrawn. Nothing is published until the PM says so. [always]
+- **2026-09-07 — Exactly three public promises: surplus returns to the community; every decision weighs member benefit against product benefit; not an extractive platform.** Every other prior commitment (never paying for visibility, etc.) is withdrawn. Nothing is published until the PM says so. [for now]
