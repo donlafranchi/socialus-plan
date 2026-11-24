@@ -147,6 +147,7 @@
 - **2026-10-25** — The ontology spike, when it resumes, models the Page first (product/foundation/nouns.md)
 - **2026-11-01** — The noun is Proposal, in the ontology and in the app, until or unless we find something better; the schema stays `wonder`. "Idea" and "Wonder" are retired (product/foundation/nouns.md)
 - **2026-11-01** — A Proposal (`wonder`) is a market test for any new venture, not only collaborative plans (product/foundation/nouns.md)
+- **2026-11-24** — A member's post without a Page comes in three kinds: Lost & found and Free / for sale as built, and a Local tip, where a local tells the people around them a recommendation or a happening; "Ask a neighbor" is retired as the wrong side of the coin. A tip is never a review (product/foundation/nouns.md)
 - **2026-09-15** — Cross-metro makes the floor sharper, not softer (product/foundation/policy.md)
 - **2026-09-21** — If agent search replaces keyword search, SocialUs becomes the agent for its own domain rather than the free data layer under someone else's (product/foundation/policy.md)
 - **2026-10-01** — Feedback on a Page is like a business review: never published, anonymized and aggregated for the Page's owner. The same holds for all feedback (product/foundation/policy.md)
