@@ -50,7 +50,7 @@ where it is true; the gap is gone when its marker is.
 - **GAP** · no privacy policy or terms page exists anywhere in the app — [product/ui/surfaces.md](product/ui/surfaces.md)
 
 **payments** · Play Payments policy: the same line, with digital goods through Play Billing.
-- nothing is sold in the app today, and sales between members happen off it; dues that unlock anything in the app would fall under each store's in-app billing rule — [product/foundation/monetization.md](product/foundation/monetization.md)
+- **NOT ASSESSED.** No marker says how this is met or that it is not.
 
 ## By need
 
@@ -81,7 +81,7 @@ where it is true; the gap is gone when its marker is.
 
 ## Scenarios not yet assessed
 
-**21 of 44 approved and building scenarios carry no platform marker**, so what they will
+**21 of 45 approved and building scenarios carry no platform marker**, so what they will
 need from a native platform is unknown, not none. Every scenario approved from 2026-09-29 on must carry one;
 the lint fails one that does not. The older ones are the retro-scan deferred in `ops-pattern/process/LIVING-DOCS.md`.
 

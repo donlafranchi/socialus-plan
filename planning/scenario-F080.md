@@ -6,7 +6,7 @@ horizon: now
 rank: 70
 gates: launch
 date: 2026-09-14
-concept: new
+concept: CO-0057
 depends: [F077]
 approved: 2026-09-14 — Don's ruling
 amended: 2026-09-30 — Don: widened from pictures of children to sensitive content (children, animals and pets, anyone who can't fend for themselves), while we grow into a platform with staff. Earlier the same day: no attestation and no detection; a message at posting states the rule; reports are the backstop. (2026-09-27: no unlock; a photo rule, not a topic rule.)
