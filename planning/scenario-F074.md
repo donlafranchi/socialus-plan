@@ -31,7 +31,7 @@ The run club meets every Thursday from the Sloppy Moose. Sam sets it up once —
 
 ## Why
 
-**Don ruled B on 2026-09-20**, against A (full rules) and C (manual reposting). **A is out on a reason, not a size:** exceptions-as-rules means a rule engine and a rule editor, and `model.md` already ratifies that every occurrence is individually editable *because every week differs anyway* — so the expensive half buys something the design does not want. **C is out because it is not the cheap option it looks like:** it builds nothing and produces an empty time lens, which is worse than not naming the set.
+**Don ruled B on 2026-09-20**, against A (full rules) and C (manual reposting). **A is out on a reason, not a size:** exceptions-as-rules means a rule engine and a rule editor, and `model.md` already ratifies that every occurrence is individually editable *because every week differs anyway* — so the expensive half buys something the design does not want.
 
 **The stakes, restated because they are the reason this is in at all.** Every example Don has given for *What's happening…* is recurring — happy hour, trivia, the market, a brewery's regular music slot. **One-offs are the rarest kind of dated content in a local discovery app**, so a time lens fed only by them returns an empty row most afternoons. **Cutting recurrence would not shrink the theme; it would hollow it out** — F091 criterion 3 hides empty rows, so the named set would silently not appear.
 
