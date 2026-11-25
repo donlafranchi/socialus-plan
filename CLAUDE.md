@@ -64,8 +64,8 @@ If the store can't be reached, say so and work from the repo docs.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
 - **What the product is:** `product/foundation/model.md` — Don's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
 - **The product model:** `product/` — nouns, verbs, surfaces, systems. Must match the code and `model.md`. If it doesn't, fix the doc in the same session you notice.
-- **What may never be broken:** `ops-pattern/process/ABSOLUTES.md` (process) and `product/ABSOLUTES.md` (member-facing). Two files, one test — the test lives in the process file.
-- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`. Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
+- **What may never be broken:** the knowledge store (strength: absolute), not a file.
+- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned). Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
 - **The tooling:** `scripts/` is vendored from `ops-pattern`. A change to how a marker, lint or generated view works is method: make it in `ops-pattern` first, then copy the file here in the same session.
 
 **A concept lives in exactly one place.** Two documents describing the same thing is how this repo has failed before, so routing it is a rule, not a preference:
