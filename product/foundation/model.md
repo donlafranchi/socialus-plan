@@ -137,7 +137,7 @@ Neither can do the other's job. A complete surface that quietly favours your int
 
 - **Allowed — and the whole point:** the member's own **declared interests**, and where they are. Home surfaces what they said they care about, near them. That is personalization on facts the member volunteered about themselves.
 - **Allowed (2026-11-15):** what the member **searched for**, kept on their own profile, shown only to them, deletable. Don: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
-- **Allowed (2026-11-20):** what the member **does on purpose**: saves, Remind me, "I'm coming", "I went", "not for me", follows. Never opens or views (F113 § Rulings).
+- **Allowed (2026-11-25):** what the member **does on purpose** ("More like this", saves, messaging, buying, follows); never opens or views (F113).
 - **Allowed:** genuine community response *(2026-09-12)*: a baker the neighbourhood turns up for should rise.
 - **Never:** what keeps someone scrolling: watch-time, dwell-time, an engagement objective. Ranking doesn't favour a member for payment, size or follower count (2026-09-30).
 
