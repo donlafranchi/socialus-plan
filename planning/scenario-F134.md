@@ -18,7 +18,7 @@ A Sacramento visitor opens a friend's link to SacRiver Floaters and reads Thursd
 ## Acceptance
 
 1. **Signed out reads what a signed-in stranger reads.** For every Page and post, a signed-out visitor sees exactly what a signed-in member with no relation to that Page sees: the Page's location and tags, its public posts with body, time, place and photo, and the counts (hearts, how many are going). Checked by comparing the two responses for the same fixtures, field by field.
-2. **Explore and the map are open.** Signed out, Explore lists Pages and posts the same way it does signed in (less the personal rows F059 keeps for members), and the Map pill opens the map with its pins, not sign-in.
+2. **Explore and the map are open.** Signed out, Explore lists Pages and posts the same way it does signed in (less the personal rows F059 keeps for members); a map in an answer shows its pins, not sign-in.
 3. **Places at their public precision.** A Page or post shows the exact place or the neighbourhood, whichever its owner chose; a signed-out map pin sits at that same precision and never closer.
 4. **Every write asks first.** Heart, follow, get updates, RSVP, post, reply, message and report each open the sign-in sheet before anything is saved, and the tap completes after sign-in (deferred registration, 2026-09-18). A control that saves and then asks fails this.
 5. **Enforced in SQL.** A request to the database's REST endpoint with the publishable key from the client bundle returns the public posts with body, `starts_at` and location, and is refused every insert, update and delete on every member table. Checked by calling the endpoint, not by reading the policy or the component.
