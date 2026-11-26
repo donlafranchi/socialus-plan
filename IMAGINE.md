@@ -76,6 +76,14 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **What would make it real:** the PM picks the first slice and it is scoped as a scenario.
 
+### Prove the promises that would hurt most if broken (2026-11-26, the PM)
+
+*The PM, 2026-11-26:* "I've even recently heard how agents can use math proofs to check code to make it more bullet proof."
+
+*Analysis, agent:* the costliest promises (one account per number, a banned number stays banned, never charged twice) checked against every sequence of events, not only the ones a test thought of: random-sequence tests first, a formal proof (TLA+, via pstack) where a model is worth the upkeep. Builds on the absolute that a check must be seen failing first. Review: planning/research/proving-promises-2026-11-26.md.
+
+**What would make it real:** the PM picks a pilot after January 6.
+
 ## In the knowledge store
 
 *Loaded 2026-11-11 by the Knowledge import; listed by concept id so the dashboard's lanes still show them. The words, dates and analysis are in the store. When an idea gets a noun, verb or surface, its scenario names the concept in `concept:` and the line here goes.*
