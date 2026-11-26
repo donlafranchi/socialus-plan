@@ -38,7 +38,7 @@
 - **2026-09-10** — A recurring series generates its occurrences as real rows, on a rolling three-month horizon topped up nightly; cancelling an occurrence is a state on the row, never a deletion (planning/scenario-F074.md)
 - **2026-09-20** — A repeating thing repeats, simply: weekly on chosen weekdays with optional start and end dates, expanded into real rows (planning/scenario-F074.md)
 - **2026-11-25** — A repeating post shows its pattern ("Every Tuesday") on every occurrence; this is what labels it, not a filter (planning/scenario-F074.md)
-- **2026-11-26** — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 sits at rank 195 in Now, after the last blocker's scenario (planning/scenario-F074.md)
+- **2026-11-26** — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 rank 195 (planning/scenario-F074.md)
 - **2026-09-23** — The waitlist count comes back, CACHED rather than live, and metros sort by it (planning/scenario-F076.md)
 - **2026-10-25** — The "market opened" email stays, for the landing list (criteria 13–15 stand); a person opens a market with `scripts/market/open-market.ts`, which sends "SocialUs is open in {town or market}. See what's going on." and then discards each address it reached (planning/scenario-F076.md)
 - **2026-11-12** — No Google or Apple sign-in at the waitlist: the person types an email, a zip and a phone number, and nothing is created (planning/scenario-F076.md)
