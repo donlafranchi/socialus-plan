@@ -18,6 +18,7 @@
 - **2026-10-25** — Measure what happens inside the app; the north star is time and money together (PRINCIPLES.md)
 - **2026-11-01** — SocialUs grows only as fast as it can pay for itself. [for now] (PRINCIPLES.md)
 - **2026-11-15** — Sellers decide how and when they are found, and no one can stalk a member in the app, signed in or out. [for now] (PRINCIPLES.md)
+- **2026-11-12** — The "Make this yours" banner and its sign-in button go away (planning/scenario-F030.md)
 - **2026-09-07** — The producer values declaration is cut from launch (planning/scenario-F056.md)
 - **2026-09-17** — A moderation decision is an event, not a state overwrite, and every one is reversible (planning/scenario-F058.md)
 - **2026-09-12** — The Home/Browse merge is rescinded. Three tabs plus create is the shipping nav: Home, Browse, You (planning/scenario-F059.md)
