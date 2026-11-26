@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to conflict, one is retired in the knowledge store.
-> **97 older decisions carry no tag yet and are not listed** — tagging is required from
+> **98 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-26** · [for now] · you, explore, discovery, ask, posting — The get-specific button is a thumbs up meaning "more like this": it teaches taste, isn't a save and notifies no one. Behind the scenes SocialUs labels each Page, post and listing so a thumbs up can be read as a taste (steel single speed, not just bicycle); members never see or type the labels (planning/scenario-F113.md)
