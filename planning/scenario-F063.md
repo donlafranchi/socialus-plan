@@ -7,6 +7,7 @@ rank: 70
 date: 2026-09-10
 depends: []
 approved: 2026-09-07
+concept: new
 ---
 ## Story
 

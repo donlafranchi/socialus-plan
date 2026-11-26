@@ -2,7 +2,7 @@
 
 # SocialUs — planning repo (`socialus-plan`)
 
-Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadline; production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
+Local discovery app: buy, sell, trade, gather. Sacramento beta opens 2027-01-06; production April–May 2027. This repo holds SocialUs's decisions, scenarios and roadmap — what's next to build. App code lives in the sibling repo `socialus-web` (Vercel deploy on push to main; Supabase project `socialus-db`); palette, screens, mockups and design research in `socialus-design`. **The method — how agents work, the process absolutes, the pipeline, the lessons — is `ops-pattern`**, a sibling checkout; paths written `ops-pattern/…` are there. Which folder holds what: `~/.claude/CLAUDE.md` § The repos.
 
 ## Always on (every session)
 
@@ -15,7 +15,7 @@ Local discovery app: buy, sell, trade, gather. Beta until April 2027, no deadlin
 **Deciding**
 - Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
-- When two live records conflict, build to the newer, then retire the older in the store so one remains (table below). Never ask Don which is true.
+- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling (`git grep '\[direction'`) retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask Don which is true.
 - Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
 **Never break**
@@ -64,8 +64,8 @@ If the store can't be reached, say so and work from the repo docs.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
 - **What the product is:** `product/foundation/model.md` — Don's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
 - **The product model:** `product/` — nouns, verbs, surfaces, systems. Must match the code and `model.md`. If it doesn't, fix the doc in the same session you notice.
-- **What may never be broken:** `ops-pattern/process/ABSOLUTES.md` (process) and `product/ABSOLUTES.md` (member-facing). Two files, one test — the test lives in the process file.
-- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned), `ABSOLUTES.md`. Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
+- **What may never be broken:** the knowledge store (strength: absolute), not a file.
+- **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned). Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
 - **The tooling:** `scripts/` is vendored from `ops-pattern`. A change to how a marker, lint or generated view works is method: make it in `ops-pattern` first, then copy the file here in the same session.
 
 **A concept lives in exactly one place.** Two documents describing the same thing is how this repo has failed before, so routing it is a rule, not a preference:
@@ -121,10 +121,10 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 
 ## Sessions
 
-Two sessions in one working tree collide (lesson 9). Two rules, both cheap:
+Two sessions in one working tree collide (lesson 9).
 
-- **Every session's cwd is its own worktree — never the repo root.** The one-session-per-cwd guard keys on cwd, so a repo root shared by two sessions wedges both. This holds for read-only sessions too: reading is what takes the lock.
-- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`. Inside, they make `.gitignore` load-bearing, bloat tree walks and leave stale metadata (`git worktree prune`).
+- **Every session's cwd is its own worktree — never the repo root,** read-only sessions too: the one-session-per-cwd guard keys on cwd.
+- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`.
 - **A session that isn't committing uses `git --no-optional-locks status`.** Plain `git status` writes `.git/index.lock`, and a sandboxed session may leave it stale.
 
 ## Naming

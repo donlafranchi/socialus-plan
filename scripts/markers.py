@@ -14,6 +14,8 @@ inline markers and one file field:
   `[replaces 2026-09-22: exact old text]`, `[replaces F059: exact old text]`, `[replaces path.md]`
       on a ruling that supersedes something; the old text must be gone and in git
   `[evidence YYYY-MM-DD from=<source>: what was seen]` on a decision a user's action or words changed
+  `[direction replaces=<2-4 plain words>]` on a ruling that sets the path forward; an older ruling about what it
+      replaces is retired on sight, with one line on what it becomes (`newer wins` at the scale of an approach)
   `[derives pitch@YYYY-MM-DD]` in a doc written from PRINCIPLES.md `#pitch`    -> lint fails once `#pitch`'s `changed:` is newer
   accepted-risks/*.json "owner" and "review_by"                     -> lint fails once review_by passes
   `gates: launch` in a scenario's frontmatter                       -> its Issues, or none
@@ -54,6 +56,7 @@ ANY = {
     "ev": re.compile(B + r"evidence\b", re.I),
     "plat": re.compile(B + r"platforms?\b", re.I),
     "derives": re.compile(B + r"derives\b", re.I),
+    "dir": re.compile(B + r"direction\b", re.I),
 }
 LIST = r"[a-z0-9-]+(?:,[a-z0-9-]+)*"
 FULL_OQ = re.compile(B + OQ + r" owner=(\w+) raised=([0-9-]+)\]")
@@ -62,6 +65,7 @@ FULL_BINDS = re.compile(B + r"binds tiers=(" + LIST + r")(?: surfaces=(" + LIST 
 FULL_PLAT = re.compile(B + r"platform (?:(none)|([a-z]+)(?:=([a-z-]+))?( gap)?: ([^\]]+?))\]")
 FULL_REP = re.compile(B + r"replaces (?:(none)|(\d{4}-\d{2}-\d{2}|F\d{3}): ([^\]]+?)|([\w./-]+\.md))\]")
 FULL_EV = re.compile(B + r"evidence (\d{4}-\d{2}-\d{2}) from=(\S+): ([^\]]+?)\]")
+FULL_DIR = re.compile(B + r"direction replaces=([a-z]+(?: [a-z]+){1,3})\]")
 FULL_DERIVES = re.compile(B + r"derives pitch@(\d{4}-\d{2}-\d{2})\]")
 CLAIM = re.compile(r"\b(revers(e|es|ed|ing)|replac(e|es|ed|ing)|supersed(e|es|ed|ing)|overrul\w*)\b", re.I)
 PLATFORM_FROM = datetime.date(2026, 9, 29)  # a scenario approved on or after this carries a platform marker
@@ -81,9 +85,9 @@ TRIGGER = re.compile(r"(?i)\bnever\b|\bwon[’']?t\b|\balways\b|\bno\b[^.]{0,60}
 
 
 def lasts(path, line):
+    m = LASTS.search(re.sub(B + r"replaces [^\]]*\]", "", line))
     if os.path.basename(path) == PRINCIPLES:
-        return "always"
-    m = LASTS.search(line)
+        return m.group(1) if m else "for now"  # only never-extractive is [always]; every other principle can change
     return m.group(1) if m else None
 
 
@@ -98,10 +102,8 @@ def lasts_errors(path):
         if DECISION.match(l):
             close(block)
             block = (n, l, [l])
-            if len(LASTS.findall(l)) > 1:
+            if len(LASTS.findall(re.sub(B + r"replaces [^\]]*\]", "", l))) > 1:
                 errs.append(f"{path}:{n}: a ruling is `[always]` or `[for now]`, not both")
-            if os.path.basename(path) == PRINCIPLES and "[for now]" in l:
-                errs.append(f"{path}:{n}: a principle is always; a `[for now]` decision is a dated ruling in the doc it governs")
         elif block and l.startswith("  "):
             block[2].append(l)
     close(block)
@@ -239,6 +241,13 @@ def parse_line(path, line):
             yield "derives", False, f"derives pitch@{d} is in the future"; continue
         yield "derives", True, d
     dec = rule_home(path)
+    for m in ANY["dir"].finditer(bare):
+        f = FULL_DIR.match(bare, m.start())
+        if not f:
+            yield "dir", False, "not `[direction replaces=<2-4 plain lowercase words>]`"; continue
+        if not dec or not DECISION.match(line):
+            yield "dir", False, "a direction lives on a dated ruling line — it is a ruling"; continue
+        yield "dir", True, f.group(1)
     for m in ANY["rep"].finditer(bare):
         f = FULL_REP.match(bare, m.start())
         if not f:
@@ -271,7 +280,7 @@ def read_lines(path):
 
 def tracked():
     out = subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.split()
-    return [p for p in out if not p.startswith("scripts/fixtures/")]
+    return [p for p in out if not p.startswith(("scripts/fixtures/", "dashboard/"))]
 
 
 def find_code(argv):

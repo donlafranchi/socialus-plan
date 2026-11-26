@@ -113,11 +113,11 @@ One line per doc, then the settled rules with no rationale attached — read the
 - OR-aggregation across all active owners — any one local owner qualifies the whole Group.
 - Never auto-derived from a Member's home location — must be explicitly declared.
 
-**`systems/action-layer.md`** — the one write path.
-- Every write (web, mobile, agents, future federation peers) goes through one named, validated handler — no parallel write paths, ever.
-- Agent capabilities are short-lived, single-scope, minted server-side — the model never sees the credential itself.
-- Publishing or context-changing actions require a fresh human confirmation tap, never minted by an agent or Skill.
-- No long-lived agent credentials, no uncatalogued scopes, no service-role SQL outside the handler library.
+**`systems/assistant.md`** — what the in-app assistant is for a member.
+- Reads can be automated; anything it publishes or changes waits for the member's own confirmation tap.
+- A member grants it scoped, expiring permission (a Delegation); Groups hold none.
+- It acts as the member, on the record; it never holds a member's credentials.
+- The enforcement mechanism lives in `socialus-web` `docs/action-layer.md`.
 
 ## Where things show — ui/
 

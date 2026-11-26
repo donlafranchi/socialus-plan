@@ -50,9 +50,9 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 
 **Content only, never who. Never child-safety content. Never sold, never trained on, and the member owns what an assistant learns.**
 
-- **[always]** AI helps people and doesn't replace them. A person decides anything that affects a member.
-- **[always]** What an assistant knows about a member belongs to the member: visible, exportable, deletable, never sold, never used to train anyone else's model.
-- **[always]** Suspected child-safety content never goes to any AI provider. It is hash-checked through Cloudflare first (Cloudflare setup is still Don's to-do).
+- **[for now]** AI helps people and doesn't replace them. A person decides anything that affects a member.
+- **[for now]** What an assistant knows about a member belongs to the member: visible, exportable, deletable, never sold, never used to train anyone else's model.
+- **[for now]** Suspected child-safety content never goes to any AI provider. It is hash-checked through Cloudflare first (Cloudflare setup is still Don's to-do).
 - Never send names, handles, emails, phone numbers or exact locations. Nothing finer than the market.
 - Never infer health, politics, religion, sexuality or money (planned guardrail for the taste chat and sorting).
 - Each provider must be named on the privacy page. Today it names Anthropic as processor, "only on our behalf and on our instructions." A new provider needs a new line Don approves.

@@ -3,13 +3,12 @@
 # link to a path that doesn't exist, a scenario whose SPEC runs over 40 lines, a
 # scenario section outside Story/Acceptance/Why/Not this, a scenario from F103
 # on that doesn't answer the value test, an absolute cited
-# by a slug that no longer exists, or a marker the markers checker rejects. Run
+# or a marker the markers checker rejects. Run
 # from the repo root.
 #
 # One script for both repos. In the method repo (ops-pattern) the project
 # checks find nothing to check and the fixtures still prove the checkers; in a
-# project repo (socialus-plan, which vendors this copy) everything runs. The
-# process absolutes live in the method repo, so a project finds them there.
+# project repo (socialus-plan, which vendors this copy) everything runs.
 #
 # `## Why` (added 2026-09-17) carries rationale — why this shape, what was
 # rejected, how it relates to a neighbouring scenario. It exists because 12 of
@@ -25,18 +24,6 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT"
 
 fail=0
-
-if [ -f process/ABSOLUTES.md ]; then
-  METHOD="$ROOT"
-else
-  METHOD=""
-  for c in "${METHOD_REPO:-}" "$ROOT/../ops-pattern" "$HOME/Projects/ops-pattern"; do
-    [ -n "$c" ] && [ -f "$c/process/ABSOLUTES.md" ] && { METHOD="$(cd "$c" && pwd)"; break; }
-  done
-  [ -n "$METHOD" ] || { echo "lint: no ops-pattern checkout found — the process absolutes live there; set METHOD_REPO"; exit 1; }
-fi
-absolutes="$METHOD/process/ABSOLUTES.md"
-[ -f product/ABSOLUTES.md ] && absolutes="$absolutes product/ABSOLUTES.md"
 
 # 1. Every planning/*.md carries a status field.
 for f in planning/*.md; do
@@ -173,18 +160,7 @@ for f in CLAUDE.md STATUS.md PRINCIPLES.md UNPLACED.md IMAGINE.md process/*.md p
   fi
 done
 
-# 4. Every bracketed absolute-slug citation resolves to a heading in one of the
-#    two ABSOLUTES files. This is the point of slugs: a renamed or deleted
-#    absolute breaks the build instead of leaving a citation that reads fine and
-#    points at nothing.
-slugs="$(grep -hoE '^### [a-z][a-z0-9-]+$' $absolutes | sed 's/^### //')"
-for hit in $(grep -roE '\[[a-z][a-z0-9]*(-[a-z0-9]+)+\]' --include='*.md' --exclude-dir=fixtures . | sort -u); do
-  slug="${hit##*:[}"; slug="${slug%]}"
-  if ! printf '%s\n' "$slugs" | grep -qx "$slug"; then
-    echo "lint: [$slug] cites an absolute that does not exist — ${hit%%:*}"
-    fail=1
-  fi
-done
+# 4. (Retired 2026-11-25: absolutes live in the knowledge store, which is where a slug is checked.)
 
 # 5. Markers (process/LIVING-DOCS.md in ops-pattern): open
 #    questions, guard claims (full or partial), decision bindings and whether a
@@ -208,6 +184,9 @@ got=$(mk lint "$fx"/platform-bad/product/*.md "$fx"/platform-bad/planning/*.md |
 [ "$got" -eq "$EXPECT_PLAT" ] || { echo "lint: platform marker checker is inert — rejected $got of $EXPECT_PLAT bad fixtures"; fail=1; }
 mk lint "$fx"/platform-good/product/*.md "$fx"/platform-good/planning/*.md >/dev/null ||
   { echo "lint: platform marker checker rejects the good fixture"; fail=1; }
+got=$(mk lint "$fx"/direction-bad/scenario-F988.md | grep -c '^markers:')
+[ "$got" -eq 4 ] || { echo "lint: direction marker checker is inert — rejected $got of 4 bad fixture lines"; fail=1; }
+mk lint "$fx"/direction-good/scenario-F989.md >/dev/null || { echo "lint: direction marker checker rejects the good fixture"; fail=1; }
 cov=$(MARKERS_SOURCES="$fx/good.md" mk coverage F999; MARKERS_SOURCES="$fx/good.md" mk coverage --summary F999)
 echo "$cov" | grep -q '^- \*\*1\*\* — \[' && echo "$cov" | grep -q '^- \*\*2\*\* — \*\*partial\*\*' &&
   echo "$cov" | grep -q '1 of 2 covered · \*\*partial: 2\*\*' ||
@@ -244,8 +223,8 @@ for want in '[for now] · fixtures — Fixture scenario ruling: no badge is show
   '- **2026-10-12** — Fixture scenario ruling: no badge is shown anywhere (planning/scenario-F995.md)'; do
   echo "$ir" | grep -qF -- "$want" || { echo "lint: constraints index misses an inline ruling: $want"; fail=1; }
 done
-got=$(mk lint "$fx/lasts-bad/scenario-F994.md" "$fx/lasts-bad/PRINCIPLES.md" | grep -c '^markers:')
-[ "$got" -eq 4 ] || { echo "lint: [always]/[for now] checker is inert — rejected $got of 4 planted faults"; fail=1; }
+got=$(mk lint "$fx/lasts-bad/scenario-F994.md" | grep -c '^markers:')
+[ "$got" -eq 3 ] || { echo "lint: [always]/[for now] checker is inert — rejected $got of 3 planted faults"; fail=1; }
 got=$(python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current/product/systems/kept.md" | grep -c '^markers:')
 [ "$got" -eq 1 ] || { echo "lint: deleted-scenario guard is inert — caught $got of 1 lost ruling"; fail=1; }
 python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-good/product/systems/kept.md" >/dev/null ||
@@ -254,6 +233,9 @@ python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-goo
 got=$(python3 scripts/markers.py principles "$fx/principles-bad/PRINCIPLES.md" | grep -c '^markers:')
 [ "$got" -eq 6 ] || { echo "lint: principles checker is inert — rejected $got of 6 planted non-principles"; fail=1; }
 python3 scripts/markers.py principles "$fx/principles-good/PRINCIPLES.md" >/dev/null || { echo "lint: principles checker rejects the good fixture"; fail=1; }
+# The generated dashboard quotes PR titles, which may mention a marker; it is output, not a home for one.
+python3 -c 'import sys; sys.path.insert(0, "scripts"); import markers; sys.exit(any(p.startswith("dashboard/") for p in markers.tracked()))' ||
+  { echo "lint: markers lint reads the generated dashboard"; fail=1; }
 if [ -f PRINCIPLES.md ] && ! out="$(python3 scripts/markers.py lint)"; then
   echo "$out" | sed 's/^/lint: /'
   fail=1

@@ -8,12 +8,12 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 
 - It is never another business listing site. At launch it is "a yellow pages of organizations, not a white pages of people."
 - SocialUs is built for the primary benefit of its members; they are not investors or payees, and no return is promised. SocialUs takes transaction income. Legal structure lives in the private legal repo, not here.
-- One market for now: Northern California (11-06; was Sacramento, the counties not yet redrawn). There is no "near you".
-- Build freeze (11-06): no new features until the 2027 launch; refine, clean up, prepare.
+- One market for now: the Sacramento area, opening to sign-ups 2027-01-06 as a beta to about April–May 2027 (11-23). There is no "near you".
+- No build freeze (11-21): approved work builds in its lane order.
 
 ## Ethos: the soul lines
 
-**A short list of [always] lines that every design call is checked against.**
+**A short list of lines that every design call is checked against. Only never-extractive is [always]; the rest can change if we find something better.**
 
 - We assume the best of each other.
 - Everything we do benefits all of us, not a few.

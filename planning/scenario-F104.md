@@ -1,5 +1,6 @@
 ---
 id: F104
+concept: CO-0002
 title: Explore shows the whole market, ordered hood, town, market, online, with towns by adjacency
 status: approved
 horizon: next
@@ -11,6 +12,8 @@ approved: 2026-10-11 — the PM: the three rings replace "local means the whole 
 ## Story
 
 Marcus lives in Granite Bay. His Explore opens on Granite Bay's Pages and posts, then Roseville, Loomis and Folsom, which touch it, then Rocklin and Citrus Heights, then Auburn and Lincoln, and Davis and Placerville after those. Nothing says how far anything is. Tahoe City is in Placer County too, and it never appears: it is a different market. A potter in Kings Beach built her Page last month; nobody sees it in Explore until Tahoe opens, and the day it does she is there without lifting a finger.
+
+Search rings (how far one search widens, ruled 2026-11-23) are separate from the market's edge: `product/systems/rings.md`.
 
 ## Acceptance
 

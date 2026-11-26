@@ -8,6 +8,7 @@ gates: launch
 date: 2026-09-10
 depends: []
 approved: 2026-09-07 — Gate B cleared; hard precondition for any photo upload
+concept: CO-0045
 ---
 ## Story
 
