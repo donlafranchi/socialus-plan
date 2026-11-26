@@ -1,6 +1,6 @@
 > **SETTLED — do not re-raise:** wealth circulates here, it is never extracted — the many benefit, not a few, and that is the only test any money decision has to pass. Monetization is open to any mechanism that passes it (fees, dues, a producer-sales cut, advertising, anything). The platform takes only what it needs to run and gives back the rest to the communities that generated it. Who is paid what, ownership, and incorporation stay open. Priority order: `product/foundation/monetization.md`.
 
-# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/191 (alongside, not the headline) · updated 2026-11-26 09:56 PT
+# Beta · beta runs until April 2027 · criterion roll-up: 299/473 criteria met (63%), checked 191, reviewed 133, smoked 0, PM looked 0 across 49 features, 4 red, 0 reports stale · Issues closed 154/191 (alongside, not the headline) · updated 2026-11-26 10:16 PT
 
 **The dashboard is a web page: [https://socialus-plan-dashboard.pages.dev/](https://socialus-plan-dashboard.pages.dev/)** (generated daily; also `dashboard/status-dashboard.html`). This file only points to it.
 
@@ -35,7 +35,7 @@
 - P1 · Wednesday Jan 6: Sacramento opens
 - P2 · Run the report test with three accounts
 - P2 · Decide the one-strike policy
-- P2 · Finish monitoring (about 20 minutes, computer)
+- P2 · Finish monitoring (about 15 minutes, computer)
 - P2 · Open the remaining accounts
 - P2 · Talk with 5 people who have tried SocialUs
 - P2 · Read the wording waiting for you

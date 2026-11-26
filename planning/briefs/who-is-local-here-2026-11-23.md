@@ -27,6 +27,12 @@ criteria:
 
 *Then:* "And one more thing, I'm kind of hoping that the Instagram posts and TikTok videos can help support this and that they can be used to say who the seller is with their business is about if they have those available to them. And then so doing I'm hoping that we can help Paige creators [Page owners], easily import those reels or videos or posts in some shape or form I know yes, before this all ties together under this concept"
 
+*The PM, 2026-11-24:* "This should be a theme correct? for page owners: let people know who you are, or what you stand for, and conversely for supporters: know who you're supporting. Is this a theme?"
+
+*Then, 2026-11-25:* "what you stand for (e.g. Values) can be either public and private. also what is a story map? a theme could contain many story maps if I'm thinking of it correctly."
+
+**Ruled 2026-11-25 (from the words above):** what an owner stands for can be public or private. **Open:** whether the store gets a theme above its story maps (it has none; a journey is its top level), and whether Shop by your values (JY-VALUES) sits under this theme. Next: the PM answers the theme question.
+
 **Bottom line: your promise is everywhere ("find the local … and the people behind it") and the app doesn't keep it: today a shopper can't see who runs a Page. Give every Page owner a card in their own words, with up to three of their own Instagram, TikTok or YouTube clips pasted in as links, then make it a living part of owning a Page. Start with the card and clips (A), plus a few words in the vendor email by January 6.**
 
 **Your call:** the first slice after the January 6 must-haves: **A, the owner's card with pasted clips, and the January 6 words (recommended)**, B, that plus an ongoing story, or C, both plus finding by people?
