@@ -230,6 +230,9 @@ python3 scripts/markers.py lost-rulings "$fx/lost-deleted" "$fx/lost-current-goo
 got=$(python3 scripts/markers.py principles "$fx/principles-bad/PRINCIPLES.md" | grep -c '^markers:')
 [ "$got" -eq 6 ] || { echo "lint: principles checker is inert — rejected $got of 6 planted non-principles"; fail=1; }
 python3 scripts/markers.py principles "$fx/principles-good/PRINCIPLES.md" >/dev/null || { echo "lint: principles checker rejects the good fixture"; fail=1; }
+# The generated dashboard quotes PR titles, which may mention a marker; it is output, not a home for one.
+python3 -c 'import sys; sys.path.insert(0, "scripts"); import markers; sys.exit(any(p.startswith("dashboard/") for p in markers.tracked()))' ||
+  { echo "lint: markers lint reads the generated dashboard"; fail=1; }
 if [ -f PRINCIPLES.md ] && ! out="$(python3 scripts/markers.py lint)"; then
   echo "$out" | sed 's/^/lint: /'
   fail=1
