@@ -3,7 +3,7 @@ id: F074
 title: A series repeats
 status: approved
 horizon: now
-rank: 3
+rank: 195
 date: 2026-09-13
 concept: CO-0001
 depends: [F072]
@@ -43,7 +43,7 @@ The run club meets every Thursday from the Sloppy Moose. Sam sets it up once —
 
 ## Rulings
 
-- **2026-11-25 — Repeating posts are Code's next build once the overnight smoke and the failing checks on main are fixed; F074 moves to rank 3 in Now.** The PM: "A". Path: well-worn. [for now] [replaces none] [binds tiers=planning surfaces=roadmap build=none]
+- **2026-11-26 — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 rank 195.** The PM: "B"; beta opens 2027-01-06. Path: well-worn. [for now] [replaces 2026-11-25: Repeating posts are Code's next build once the overnight smoke and the failing checks on main are fixed] [binds tiers=planning surfaces=roadmap build=none]
 
 - **2026-11-25 — A repeating post shows its pattern ("Every Tuesday") on every occurrence; this is what labels it, not a filter.** The PM: weekly events are "good enough as long as the page owner can label it that way." Agent's call on the form, well-worn (Meetup, Eventbrite). F074 criterion 9. Path: well-worn. [for now] [replaces none] [binds tiers=planning,code surfaces=posts,series] Issue: #600.
 - **2026-09-20 — A repeating thing repeats, simply: weekly on chosen weekdays with optional start and end dates, expanded into real rows.** Don's ruling (*"sure, let's get building"*), closing the open question raised 2026-09-19. **Resolves and removes** *"Does a repeating thing repeat, and how simply?"* from § Open. **A is rejected on a reason, not a size:** exceptions-as-rules needs a rule engine and a rule editor, and `model.md` already ratifies that every occurrence is individually editable *because every week differs anyway* — the expensive half buys what the design does not want. **C is rejected because it is not cheap:** it builds nothing and produces an empty time lens, which is worse than not naming the set. **Three things ride on the ruling and are conditions of it, not follow-ups:** (1) **the metro timezone column lands before anything expands occurrences** — there is no timezone column anywhere in the schema, and adding a fixed number of hours to a weekly series drifts an hour across a daylight-saving change, which **ends 2026-11-01, two days after launch**; (2) **de-duplication ships with the expansion or the expansion does not ship** — `browse_feed` has no `distinct`, so one daily series returns seven rows in a week window, and *a flooded lens reads as broken, not as incomplete*; (3) **exceptions stay edits to an occurrence row, never rules** — that is the line that keeps B from becoming A, and it is written into F074 § Not this as a line rather than left as an omission. F074 approved the same day. [for now]
