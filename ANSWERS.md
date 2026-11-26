@@ -1,6 +1,6 @@
 # What we built, where we are, what's next
 
-Generated 2026-11-26 17:59 UTC from the knowledge store and GitHub. Never edited by hand.
+Generated 2026-11-26 18:31 UTC from the knowledge store and GitHub. Never edited by hand.
 
 ## What we built
 
@@ -17,18 +17,18 @@ Generated 2026-11-26 17:59 UTC from the knowledge store and GitHub. Never edited
 
 ## Where we are
 
-- Broken: the overnight smoke found a problem. (GitHub)
+- Broken: the overnight smoke found a problem; checks failing on main: review. (GitHub)
 - Slow: taps are slower than budget. (GitHub)
 - In flight: creating a Page asks one question, its kind; Every Page has a face, even without a photo; A non-business Page resolves everywhere, and holding several is ordinary; someone starts something without opening a shop; 2 changes open. (both)
 - Before beta closes: 13 launch blockers, first Reports: a courtesy notice first, a second report hides, the poster is told why. (GitHub)
 - Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 11). (GitHub)
 - Open bugs: 5. (GitHub)
-- GitHub read 2026-11-26 17:59 UTC. (store)
+- GitHub read 2026-11-26 18:31 UTC. (store)
 
 ## What's next
 
 1. Fix: the overnight smoke found a problem. Code. (GitHub)
-2. Criterion 2: the zip's county comes from HUD's residential share, not Census land area. You. (GitHub)
-3. Criteria 2, 3: the invitation on You names local maker categories, with one worked example. You. (GitHub)
-4. Criterion 2: routing: one cheap model call turns a question into a page and its filters. You. (GitHub)
-5. Criterion 7: questions logged by the search-demand rules. You. (GitHub)
+2. Fix: checks failing on main: review. Code. (GitHub)
+3. Criterion 2: the zip's county comes from HUD's residential share, not Census land area. You. (GitHub)
+4. Criteria 2, 3: the invitation on You names local maker categories, with one worked example. You. (GitHub)
+5. Criterion 2: routing: one cheap model call turns a question into a page and its filters. You. (GitHub)
