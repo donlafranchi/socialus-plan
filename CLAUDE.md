@@ -15,6 +15,7 @@ Local discovery app: buy, sell, trade, gather. Sacramento beta opens 2027-01-06;
 **Deciding**
 - Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
+- A ruling tagged `[direction replaces=…]` is the path forward. An older ruling about what it replaces is retired on sight, with one line on what it becomes; rulings that protect members (privacy, safety, legal, money) are never retired by a direction. Find them: `search` "direction".
 - When two live records conflict, build to the newer, then retire the older in the store so one remains (table below). Never ask Don which is true.
 - Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
