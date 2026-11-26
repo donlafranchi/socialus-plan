@@ -1,6 +1,6 @@
 # What we built, where we are, what's next
 
-Generated 2026-11-26 17:26 UTC from the knowledge store and GitHub. Never edited by hand.
+Generated 2026-11-26 17:44 UTC from the knowledge store and GitHub. Never edited by hand.
 
 ## What we built
 
@@ -23,7 +23,7 @@ Generated 2026-11-26 17:26 UTC from the knowledge store and GitHub. Never edited
 - Before beta closes: 13 launch blockers, first Reports: a courtesy notice first, a second report hides, the poster is told why. (GitHub)
 - Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 12). (GitHub)
 - Open bugs: 6. (GitHub)
-- GitHub read 2026-11-26 17:26 UTC. (store)
+- GitHub read 2026-11-26 17:44 UTC. (store)
 
 ## What's next
 
