@@ -1,6 +1,7 @@
 ---
 id: brief-2026-11-24-narrow-it-down
-status: awaiting-approval
+status: approved
+approved: 2026-11-26, the PM: "Ok, good. go" on the first slice (A), with the button as a thumbs up; scenario F113
 named: 2026-11-25, the PM: "the name is get specific"; the button's direction ruled the same day (F113 § Rulings); the first slice awaits his pick
 size: L
 path: new territory
