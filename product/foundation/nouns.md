@@ -66,7 +66,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 *(Ratified 2026-09-14; "creator" became "Page owner" 2026-11-16, Don.)*
 
-**These are our words for talking about the product, not the product's words for talking to a member.** A Page owner is someone with a Page because they organize things that recur: a business, a volunteer group, someone who teaches a class every week. A patron is everyone else. Someone selling at a one-time garage sale is neither: they post an announcement from a person, with no Page.
+**These are our words for talking about the product, not the product's words for talking to a member.** A Page owner (or representative) runs a Page, which organizes around an entity: a business, a meetup group, any organization. A patron (Page supporter) is everyone else. Someone selling at a one-time garage sale is neither: they post as a person, with no Page.
 
 **Never rendered in a user-facing string.** *(Restores `role-language.md`'s rule: no person-noun in front of a member.)* Not in copy, not as a label under a name, not addressing a set of people. A member is addressed as **you**; a set of people is **people**, or named. Everything a person *does* is a verb — make, sell, host, offer, ask, wonder, show up, back, follow, save.
 
