@@ -184,6 +184,9 @@ got=$(mk lint "$fx"/platform-bad/product/*.md "$fx"/platform-bad/planning/*.md |
 [ "$got" -eq "$EXPECT_PLAT" ] || { echo "lint: platform marker checker is inert — rejected $got of $EXPECT_PLAT bad fixtures"; fail=1; }
 mk lint "$fx"/platform-good/product/*.md "$fx"/platform-good/planning/*.md >/dev/null ||
   { echo "lint: platform marker checker rejects the good fixture"; fail=1; }
+got=$(mk lint "$fx"/direction-bad/scenario-F988.md | grep -c '^markers:')
+[ "$got" -eq 4 ] || { echo "lint: direction marker checker is inert — rejected $got of 4 bad fixture lines"; fail=1; }
+mk lint "$fx"/direction-good/scenario-F989.md >/dev/null || { echo "lint: direction marker checker rejects the good fixture"; fail=1; }
 cov=$(MARKERS_SOURCES="$fx/good.md" mk coverage F999; MARKERS_SOURCES="$fx/good.md" mk coverage --summary F999)
 echo "$cov" | grep -q '^- \*\*1\*\* — \[' && echo "$cov" | grep -q '^- \*\*2\*\* — \*\*partial\*\*' &&
   echo "$cov" | grep -q '1 of 2 covered · \*\*partial: 2\*\*' ||

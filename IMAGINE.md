@@ -12,35 +12,46 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
-### Where a business's money goes: levels, and a private honesty signal
-*2026-11-16, from Don (PM). A concept with the mechanism not yet designed; Don has not chosen an option and is not ready to.*
+### Posts by people without an organization (2026-11-26, the PM)
 
-**Claim (Don, 2026-11-13 to 16):** the point is that patrons know their money ends up back in their community. Before any money is collected, users need some way to know when a business's profits go elsewhere, and the rebate (the give-back actually paid to the community) is the end solution, so this comes in levels. A Page owner chooses where they are local to, with some way for that to matter, and Pages that declare nothing show behind Pages that declare local. He wants something simple, like a tax return, but is not ready to ask for that yet and it may not matter until we collect money. Community members should feel empowered to call out dishonesty without piling on: no cold hard proof required, and the number of reports is never published. Instead keep an unpublished honesty rating handled by the algorithm on the back end, surveying a few members to smell-test a claim, until something more deterministic exists.
+*The PM, 2026-11-26:* a post is a mechanism for Pages and, newly, for people who don't have an organization or entity, as a way to ask or offer something to the community. This will need to get built at some point.
+
+**What would make it real:** a member with no Page can ask or offer something to their community from chat.
+
+*Analysis, agent:* an announcement without a Page already exists in the ontology; this adds the person-facing ask and offer. Related: D-0435 (store), D-0430 (chat and generated interface).
+
+### Location by use case (2026-11-26, the PM)
+
+*The PM, 2026-11-26:* how precisely a place is shown needs a theme and a journey per use case: a storefront wants a precise location; a farmers market attendee may want a temporary one; someone who holds classes at various places wants something different; someone who offers things from home may not want it published and only available to certain people on certain occasions.
+
+**What would make it real:** one use case's journey is designed and built, for example the market attendee's temporary location.
+
+*Analysis, agent:* today the owner decides precision, an address or a neighbourhood, and a Page's position is worked out at read time; that is the base to build the journeys on.
+
+### Where a business's money goes: levels, and a private honesty signal
+*2026-11-16, from Don (PM). The mechanism is not designed and Don has chosen no option.*
+
+**Claim (Don):** patrons should know their money ends up back in their community. Before money is collected, they need to know when profits go elsewhere; the rebate actually paid is the end solution, so it comes in levels. A Page owner chooses where they are local to, and Pages that declare nothing show behind those that declare local. Something simple, like a tax return, but not yet. Members may call out dishonesty without piling on: no cold proof required and report counts never published; instead an unpublished honesty rating kept by the algorithm, smell-tested by surveying a few members, until something more deterministic exists.
 
 **What would make it real:** the first money flowing to a community fund, or the first local badge shipping.
 
 **Analysis (agent):**
-- Builds on D-0165 (local means money returns; the owner chooses where it goes), D-0288 (10-16: the badge comes from the owner's claim alone, which this re-thinks), F106 (the give-back badge, approved for later), and `business-jurisdiction.md` (mostly old; its ownership ladder is likely retired once this is designed). Report handling is D-0073 and D-0327.
-- Overlaps `planning/briefs/who-is-local-here-2026-11-23.md` (concepts CO-0071 Know your Page owner, CO-0072 Your patronage supports a neighbor): reconcile before either is built.
-- Levels as a sketch, not a decision: says (owner declares), confirmed (locals or a public record back it), proven (the rebate was actually paid).
-- Risk to settle before it affects ranking: a hidden score about a business, which the owner can't see or contest, touches member trust and possible legal exposure, so owner visibility, appeal and counsel come first.
-- Not decided: what "matters" for a declaring Page beyond ranking, how the survey works, and what the signal is allowed to change.
+- Builds on D-0165, D-0288, F106 and `business-jurisdiction.md`; overlaps `planning/briefs/who-is-local-here-2026-11-23.md` (CO-0071, CO-0072): reconcile first. Report handling is D-0073 and D-0327.
+- Levels sketch: says (owner declares), confirmed (locals or a public record), proven (rebate paid).
+- Risk before it affects ranking: a hidden score the owner cannot see or contest touches member trust and legal exposure.
 
 ### Hyper-local, photo-aligned search
-*2026-11-13, from Don (PM). Long-term direction, not a build: the small version we build should be a step toward it.*
+*2026-11-13, from Don (PM). A long-term direction, not a build: the small version we build should step toward it.*
 
-**Claim (Don, 2026-11-13):** search that matches what a person asks for to what places actually look and feel like. Someone asks for "a nice place for a drink on a patio, not on a busy street, not noisy", and photos of that kind of setting, from anyone who posted one, surface that venue as the proof. Locals say specifics ("welcoming for an afternoon picnic", "cozy and relaxing", "dog-friendly grassy area") instead of rating a whole place, and those specifics become what search matches. Because members value different things, later a member's results lean on people with similar taste, and a venue that matches everything but one thing people keep asking for (dog-friendly) learns what to offer. Photos belong inside this hyper-local, hyper-specific search, so every change touching search, photos or tags should say how it moves toward this or at least does not block it.
+**Claim (Don):** search that matches what someone asks for to what places look and feel like: "a quiet patio, not on a busy street" surfaces venues through photos members posted, shown as proof. Locals say specifics ("cozy", "dog-friendly grassy area") instead of rating a whole place, and those specifics become what search matches. Later, results lean on members with similar taste, and a venue missing one thing people keep asking for learns what to offer. Every change touching search, photos or tags should say how it moves toward this, or at least not block it.
 
-**What would make it real:** a first search where a result shows the member photo that matches the words asked for.
+**What would make it real:** a search result that shows the member photo matching the words asked for.
 
 **Analysis (agent):**
-- Builds on D-0220 (what locals search for, aggregated and anonymous, shown back to owners), D-0127 (plain-words search built to grow into natural-language), D-0045 (LLM tag proposals; dictionary grows from creator tags and zero-result searches), D-0166 (area-type search) and D-0294 (locals tips, steering toward and away; reworded 2026-11-13 to say a tip is in effect a review but SocialUs is not primarily a review site).
-- Small version first: one shared tag vocabulary across photos, locals tips, search and the owner view, with each search recording which tags it asked for and which results missed.
-- The taste-matched layer overlaps the entry "Get specific: taste as specific as the member" (2026-11-24); settle which one carries it when either is built.
-- Taste matching needs enough members and uses member data: infer from what people loved and where they go rather than asking for a profile, and settle visibility and reset before building.
-- Moderation of tips that steer toward or away: a tentative yes (Don, 2026-11-13). Do not raise it again until Don asks how to handle moderation.
-- Image embeddings (pgvector on Supabase) are the later engine step; tags, text and distance come first.
-- Owner insight stays free and informational until a ruling says otherwise, because paying to close a gap touches transaction income and member trust.
+- Builds on D-0220, D-0127, D-0045, D-0166 and D-0294 (a tip steers toward or away; SocialUs is not primarily a review site).
+- Small version first: one shared tag vocabulary across photos, tips, search and owner insight, with each search logging which tags it asked for and which results missed.
+- Taste matching overlaps "Narrow it down: taste as specific as the member" (2026-11-24); settle which carries it. Moderation of tips is a tentative yes (Don, 2026-11-13); do not raise it until he asks.
+- Image embeddings (pgvector on Supabase) are the later engine step. Owner insight stays free and informational until a ruling says otherwise.
 
 ### A category icon on an unclaimed Page, so a photo means an owner (2026-11-12, the PM)
 
@@ -75,6 +86,14 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 *The PM, 2026-11-25:* "the name is get specific." The button: taps the member never manages, kept and fading, summarized once there is enough (F113 § Rulings).
 
 **What would make it real:** the PM picks the first slice and it is scoped as a scenario.
+
+### Prove the promises that would hurt most if broken (2026-11-26, the PM)
+
+*The PM, 2026-11-26:* "I've even recently heard how agents can use math proofs to check code to make it more bullet proof."
+
+*Analysis, agent:* the costliest promises (one account per number, a banned number stays banned, never charged twice) checked against every sequence of events, not only the ones a test thought of: random-sequence tests first, a formal proof (TLA+, via pstack) where a model is worth the upkeep. Builds on the absolute that a check must be seen failing first. Review: planning/research/proving-promises-2026-11-26.md.
+
+**What would make it real:** the PM picks a pilot after January 6.
 
 ## In the knowledge store
 

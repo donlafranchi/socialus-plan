@@ -41,6 +41,8 @@ Agents' part, all milestoned for Jan 6: phone sign-up, new accounts start small,
 7. **After the waitlist: pick the reward for bringing people in, how new kinds of business are welcomed and the map pins.** [Brief](planning/briefs/unmet-search-and-welcome-2026-11-12.md)
 8. **React to ideas:** scouts, artists, outer counties, outreach. [Ideas](planning/research/local-creators-2026-10-21.md)
 9. **After the waitlist and the chat-first first slice: shop by your values and the blue dot, pick the first slice.** [Brief](planning/briefs/shop-by-your-values-2026-11-21.md)
+10. **Who is local here?: pick the first slice** for showing the person behind a Page (A recommended: the owner's card with up to three pasted clips). [Brief](planning/briefs/who-is-local-here-2026-11-23.md)
+11. **After January 6: pick how we prove our costliest promises** (A recommended: random-sequence tests on sign-up and bans, no new plugin). [Review](planning/research/proving-promises-2026-11-26.md)
 
 Low priority: in Cloudflare, delete the leftover Worker named socialus-plan-dashboard.
 
