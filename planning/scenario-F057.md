@@ -7,6 +7,7 @@ rank: 110
 date: 2026-09-10
 depends: [F060]
 approved: 2026-09-07 — PM approved the six table removals and one repurpose
+concept: new
 ---
 ## Story
 

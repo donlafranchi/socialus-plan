@@ -5,6 +5,7 @@ status: draft
 horizon: later
 rank: 290
 date: 2026-10-12
+concept: new
 ---
 ## Story
 

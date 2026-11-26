@@ -7,6 +7,7 @@ rank: 85
 date: 2026-10-12
 depends: []
 approved: 2026-10-12 — the PM: option A, a separate test account in production with about six weeks of made-up history on real Pages, usable on the PM's phone; its activity counts nowhere and one call wipes it.
+concept: new
 ---
 ## Story
 

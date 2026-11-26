@@ -7,6 +7,7 @@ rank: 4
 date: 2026-11-11
 approved: 2026-11-11, the PM picked A of the concepts brief
 depends: [F125, F126, F127]
+concept: CO-0052
 ---
 ## Story
 
