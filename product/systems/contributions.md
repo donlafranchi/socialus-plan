@@ -5,7 +5,7 @@ layer: what
 status: draft
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # Contributions
 
@@ -36,7 +36,7 @@ No login. For each community, for the month: what **came in**, what the **platfo
 
 ## Give-back: the community decides
 
-*"Community" for money means the community's legal entity (`places.md` § Rulings, 2026-10-12): "per community" below reads "per community entity". Ruled 2026-10-11 and written as F106: a Page owner declares one give-back town; the Page's own town makes it local and badged, anywhere else does not.*
+*"Community" for money means the community's legal entity (`places.md` § Rulings, 2026-10-12): "per community" below reads "per community entity". Which Page gives back where: F106.*
 
 Participatory budgeting, per community:
 
@@ -54,11 +54,7 @@ What a vote may fund, and how money is held and paid, wait on counsel.
 
 ## Measures
 
-- At least 3% of active members contributing at launch.
-- Average contribution.
-- Runway.
-- Churn.
-- Give-back: share of eligible members voting; share of funded recipients who post a report.
+In `foundation/metrics.md` § Contributions.
 
 ## Open
 

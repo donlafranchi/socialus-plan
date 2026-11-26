@@ -8,6 +8,7 @@ gates: launch
 date: 2026-10-05
 depends: [F078, F080, F099, F100, F102]
 approved: 2026-10-05 — the PM's ruling: "a clean page of 'Posts' for all flagged and reviewed content … quickly and easily scannable and possible sortable by how serious the allegation is", and the same day, "easy to review and pass or fail with either a swipe or a big button for approve … minimal steps for approve or deny".
+concept: CO-0045
 ---
 ## Story
 

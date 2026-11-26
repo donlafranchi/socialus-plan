@@ -7,6 +7,7 @@ rank: 3
 date: 2026-11-10
 approved: 2026-11-10, the PM: "I'd like a similar pattern for 'What SocialUs Can Do' ... somewhat brief and describe what users can and can't do in the app"
 depends: [F125, F126, F127]
+concept: new
 ---
 ## Story
 

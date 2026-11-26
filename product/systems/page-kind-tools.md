@@ -132,7 +132,7 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 
 **Honestly, three things, and two of them are already solved elsewhere.**
 
-1. **The ability to query "all practice Pages."** **Already solved by tags**, which are ratified as the only vocabulary and are the creator's own words rather than four buckets someone chose for them.
+1. **The ability to query "all practice Pages."** **Already solved by tags**, which are ratified as the only vocabulary and are the owner's own words rather than four buckets someone chose for them.
 2. **A signal at creation about what the Page is for.** **Already solved by the create walkthrough** — F087 asks what you are starting, and the answer selects copy and tools. A person picking between "a neighbourhood group" and "an interest group" is being asked to classify a thing the product then does nothing different with.
 3. **Genuinely lost: four values' worth of historical intent.** Somebody chose those four for reasons, and the reasons are not written down anywhere this document could find. **That is the real cost of merging, and it is an argument for asking rather than assuming.**
 
@@ -176,7 +176,7 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 | A configuration file | a pull request and a deploy | **Rejected** — a deploy per label means labels stop being added, and the list goes stale exactly the way an incomplete list of options does. That is the problem this exists to solve. |
 | Seeded data, edited by migration | a migration and a deploy | **Rejected**, same reason, plus migration history noise. |
 
-**And this shape is already ratified here, so it is not a new pattern.** The search dictionary was settled on 2026-09-13 as **an LLM agent proposing entries and a human approving them**, growing from what creators actually write. **The label mapping is the same mechanism on a different vocabulary, and it should reuse it rather than inventing a second approval queue.**
+**And this shape is already ratified here, so it is not a new pattern.** The search dictionary was settled on 2026-09-13 as **an LLM agent proposing entries and a human approving them**, growing from what owners actually write. **The label mapping is the same mechanism on a different vocabulary, and it should reuse it rather than inventing a second approval queue.**
 
 **The label is member-authored text other people see, so [member-content-takedown] applies** — no production without a report-and-takedown path — exactly as it does for tags.
 
@@ -188,7 +188,7 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 
 **Why that is safe and "Something else" was not.** *"Something else"* was retired on 2026-09-13 because its rows *"sat unread by anything"* — **it mapped to nothing and did nothing.** A label maps to a real Page kind and does real work the moment it is typed: the Page exists, it has tools, it is findable. **The mapping is an improvement to vocabulary, not a prerequisite for the Page working.** That is the whole difference, and it is structural rather than a promise to be diligent.
 
-**One guard worth writing down:** the queue must be read by something. The search-dictionary decision already names the reader — an agent proposes, a human approves — so **the label queue inherits a reader rather than needing a new one.** *(That reader survives the 2026-09-15 ruling that a zero-result search is not a signal: the dictionary still grows from creators' tags, which was always its first and better input.)* A queue with no named reader is how "Something else" died.
+**One guard worth writing down:** the queue must be read by something. The search-dictionary decision already names the reader — an agent proposes, a human approves — so **the label queue inherits a reader rather than needing a new one.** *(That reader survives the 2026-09-15 ruling that a zero-result search is not a signal: the dictionary still grows from owners' tags, which was always its first and better input.)* A queue with no named reader is how "Something else" died.
 
 ## This dissolves the merge argument rather than answering it
 

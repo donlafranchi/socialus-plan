@@ -5,7 +5,7 @@ layer: why
 status: active
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # The verbs
 
@@ -194,7 +194,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 
 A follower of a business is a customer, and customers aren't an audience for each other — following a bakery tells the bakery something, it doesn't put you in a room with its other customers. A member of a social group has joined something, and knowing who else is in it is most of the reason to join.
 
-Former members: you follow a group or you don't. A member leaves, or the Page owner prunes them — a stale membership nobody's cleaned up is tolerated, not a defect. Deferred, recorded not scoped: a group creator accepting/declining members, private groups, private members — see `groups.md` § What doesn't ship at b1.
+Former members: you follow a group or you don't. A member leaves, or the Page owner prunes them — a stale membership nobody's cleaned up is tolerated, not a defect. Deferred, recorded not scoped: a group owner accepting/declining members, private groups, private members — see `groups.md` § What doesn't ship at b1.
 
 ## Rulings
 - **2026-10-25 — Notifications are web push that members can turn off, kind by kind: new posts from Pages they follow, and a weekly Thursday "this weekend near you" from followed Pages plus their interests and area. Once a member allows push, both kinds start on; every notification lands on a view with one tap to turn that kind off; there are quiet hours and a pause for all. Free web push (VAPID keys, no paid service): Android and desktop from the browser, iPhone on iOS 16.4+ once SocialUs is on the Home Screen. This is how get-updates is delivered; support (the ribbon) still produces nothing. Only aggregate counts are kept per kind per week, used to tune for members and never as a target to raise; nothing is sent because a member has been away. Reviewed monthly; frequency, triggers and words change one change at a time.** The ethos reversal, 2026-10-25: members opt out instead of opting in (`#benefit-all`, `#you-choose`). [for now] [replaces 2026-10-18: Notifications are opt-in web push, and members choose each kind] [binds tiers=planning,code surfaces=notifications,following,you build=none]

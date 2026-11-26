@@ -111,5 +111,9 @@ date: 2026-09-15
 3. **`items.category` is still a live column** while categories are retired and *tags are the only vocabulary* (2026-09-13). Nothing in this document uses it; it is named so nobody revives it.
 4. **`groups.kind = 'business'` already gates** — it carries a 1:1 child and the business claim attaches to it. That sits in tension with *"no permanent kind that gates anything"*, and predates this document.
 
+## Archive is a flag, not a lifecycle
+
+"Archive" is a single flag on a Page, surfaced as one button. It removes the Page from map findability — that is the whole of what it does. It does not delete data, does not change ownership, and has no separate reactivate flow: the same button toggles it back. There is no draft/active/paused/archived state machine, no transition rules, and no state a Page can get stuck in.
+
 ## Rulings
 - **2026-09-15 — Don confirmed two mappings: a class is a gathering, tutoring is a service.** Both fall out of the model as written; recorded because they were the test cases.

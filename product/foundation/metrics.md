@@ -5,7 +5,7 @@ layer: why
 status: active
 ---
 
-> **SETTLED — do not re-raise:** members are the investors and the only people paid out. "Ownership, not profit-share" is rejected. Legal/securities questions about this go to `socialus-legal` for counsel and never come back to the PM as a decision. SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** Wealth circulates here; it is never extracted. The many benefit, not a few — the only test any money decision must pass. Any mechanism that passes it is open; who is paid what, ownership and incorporation stay open. Detail: `product/foundation/monetization.md`.
 
 # Metrics
 
@@ -20,6 +20,14 @@ There are no real users yet. Every category below is a placeholder to keep the w
 ## What gets watched, in categories (no thresholds yet)
 
 Discovery converting to relationship (search → landing → follow/save/message). Time-to-first-action for a new member. Repeat-action rate within 30 days. Communities forming vs. going dormant. Cross-community participation. Net retention at 30/60/90 days. Share of Home visits that reach the stop card, and saves and "go" taps after it (2026-10-04). **Session length is watched as a ceiling, not a goal** (2026-10-04): a rising one is a warning, not a win.
+
+## Contributions
+
+- At least 3% of active members contributing at launch.
+- Average contribution.
+- Runway.
+- Churn.
+- Give-back: share of eligible members voting; share of funded recipients who post a report.
 
 ## Anti-metrics — named so they can't install themselves by default
 

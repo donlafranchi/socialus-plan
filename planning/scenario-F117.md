@@ -7,6 +7,7 @@ rank: 5
 date: 2026-10-25
 approved: 2026-10-25 — PM chose option B (interest plus roles)
 depends: []
+concept: new
 ---
 ## Story
 

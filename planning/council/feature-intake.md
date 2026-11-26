@@ -50,7 +50,7 @@ Each role: **Needs** (what it must be true for them), **Cost** (effort or harm t
 
 ### Shared lens (from council-roles.md, unchanged)
 - Bootstrapped, member-funded, no outside capital, no paid acquisition at scale.
-- Settled, never re-raised: members are the investors; SocialUs takes transaction income on member commerce; legal goes to counsel.
+- Settled, never re-raised: SocialUs is built for its members' benefit, and members are not investors; SocialUs takes transaction income on member commerce; legal goes to counsel.
 - Operator is away Tue to Thu.
 
 ### Prior art every Scout checks

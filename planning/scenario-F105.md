@@ -7,6 +7,7 @@ rank: 20
 date: 2026-10-11
 depends: [F104]
 approved: 2026-10-11 — the PM: the rings are a starting point, not a fence; the vantage is session state; a waiting market shows what is waiting, never hidden Pages.
+concept: new
 ---
 ## Story
 
