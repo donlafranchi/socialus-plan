@@ -7,7 +7,7 @@
 > Every ratified decision whose tag binds the **code** tier, newest first. The rulings hold
 > only live decisions — a superseded one is deleted — so nothing below conflicts with anything
 > else here. If two lines ever seem to conflict, one is retired in the knowledge store.
-> **98 older decisions carry no tag yet and are not listed** — tagging is required from
+> **97 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-26** · [for now] · you, explore, discovery, ask, posting — The get-specific button is a thumbs up meaning "more like this": it teaches taste, isn't a save and notifies no one. Behind the scenes SocialUs labels each Page, post and listing so a thumbs up can be read as a taste (steel single speed, not just bicycle); members never see or type the labels (planning/scenario-F113.md)
@@ -263,3 +263,4 @@
 - **2026-09-21** · [for now] · page-location — Where a Page is, is resolved at read time from its Location's geography, never stored on it. Deepest containing Place wins, and "deepest" means the kind rank that already exists (product/systems/location.md)
 - **2026-09-21** · [for now] · page-url — One canonical address per Page, many indexes onto it. The Place in a URL is never part of a Page's identity (product/systems/places.md)
 - **2026-09-18** · explore, signed-out — Signed out is read-only: anything that touches another person requires an account (product/ui/surfaces.md)
+- **2026-09-09** · rls, location — `public.spatial_ref_sys` having RLS disabled is accepted risk and is not ours to fix (product/systems/location.md)
