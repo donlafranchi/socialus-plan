@@ -12,6 +12,7 @@
 
 - **2026-11-26** · [for now] · roadmap — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 rank 195 (planning/scenario-F074.md)
 - **2026-11-26** · [for now] · you, explore, discovery, ask, posting — The get-specific button is a thumbs up meaning "more like this": it teaches taste, isn't a save and notifies no one. Behind the scenes SocialUs labels each Page, post and listing so a thumbs up can be read as a taste (steel single speed, not just bicycle); members never see or type the labels (planning/scenario-F113.md)
+- **2026-11-26** · [for now] · navigation, ask, front-door, explore, map, onboarding — SocialUs is chat and search with a generated interface: a member asks, and the answer is built for that request; Explore, the map and other views are things a request returns, not places to navigate to, and a new member lands in chat (product/foundation/what-this-is.md)
 - **2026-11-25** · [for now] · explore, filters — Explore's filter sheet has no 'Recurring' choice; "what's on every week" is a question a member asks (planning/scenario-F059.md)
 - **2026-11-25** · [for now] · explore, map — Explore is a list: no List | Map switch and no Map pill at any width. A map appears only when a member asks a question a map helps answer, as part of that answer (planning/scenario-F059.md)
 - **2026-11-25** · [for now] · posts, series — A repeating post shows its pattern ("Every Tuesday") on every occurrence; this is what labels it, not a filter (planning/scenario-F074.md)
@@ -116,7 +117,6 @@
 - **2026-10-26** · [for now] · open-your-town — The counting unit is the market (a region), not a town or county; its definition is still being researched (planning/scenario-F118.md)
 - **2026-10-26** · copy, voice, rules, safety — Copy is chill and brief, attitude in the headline and the thanks only: the catch phrase is "Be decent."; the rules open "Be cool. Don't be a jerk."; a rule, toast or error is one line; the child-safety rule stays explicit and plain beneath the headline (product/foundation/voice-and-tone.md)
 - **2026-10-26** · [for now] · copy, about — About carries the dedication, no name: "An old friend always used to remind us... Be decent. We like that and designed this app around that idea." (product/foundation/voice-and-tone.md)
-- **2026-10-26** · [for now] · navigation, ask, ai, explore, you — SocialUs is moving toward chat-first: a member's question opens the right page (product/foundation/what-this-is.md)
 - **2026-10-26** · [for now] · open-your-town — `/open`: a town opens at 100 makers and 1,000 supporters; the first 3 to reach both open this round (product/ui/surfaces.md)
 - **2026-10-25** · [for now] · principles, privacy, data — Data serves the members it comes from. [for now] (PRINCIPLES.md)
 - **2026-10-25** · [for now] · principles, map, privacy — In public, locality is coarse; precision stays private (PRINCIPLES.md)
