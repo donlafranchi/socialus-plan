@@ -15,8 +15,7 @@ Local discovery app: buy, sell, trade, gather. Sacramento beta opens 2027-01-06;
 **Deciding**
 - Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
-- A ruling tagged `[direction replaces=…]` is the path forward. An older ruling about what it replaces is retired on sight, with one line on what it becomes; rulings that protect members (privacy, safety, legal, money) are never retired by a direction. Find them: `search` "direction".
-- When two live records conflict, build to the newer, then retire the older in the store so one remains (table below). Never ask Don which is true.
+- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask Don which is true.
 - Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
 **Never break**
@@ -122,10 +121,10 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 
 ## Sessions
 
-Two sessions in one working tree collide (lesson 9). Two rules, both cheap:
+Two sessions in one working tree collide (lesson 9).
 
 - **Every session's cwd is its own worktree — never the repo root.** The one-session-per-cwd guard keys on cwd, so a repo root shared by two sessions wedges both. This holds for read-only sessions too: reading is what takes the lock.
-- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`. Inside, they make `.gitignore` load-bearing, bloat tree walks and leave stale metadata (`git worktree prune`).
+- **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`.
 - **A session that isn't committing uses `git --no-optional-locks status`.** Plain `git status` writes `.git/index.lock`, and a sandboxed session may leave it stale.
 
 ## Naming
