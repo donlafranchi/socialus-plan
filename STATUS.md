@@ -1,4 +1,4 @@
-> **SETTLED — do not re-raise:** SocialUs is built for the primary benefit of its members, the people who use it. Members are not investors, owners or payees, and no money return is promised; any future financial return is open, and its legal side goes to `socialus-legal` for counsel and never comes back to the PM as a decision (the PM, 2026-11-18, replaces "members are the investors"). SocialUs takes transaction income; any 'no fee' language is retired.
+> **SETTLED — do not re-raise:** SocialUs is built for the primary benefit of its members, the people who use it. Members are not investors, owners or payees, and no money return is promised; any future financial return is open, and its legal side goes to `socialus-legal` for counsel and never comes back to the PM as a decision (Don, 2026-11-18, replaces "members are the investors"). SocialUs takes transaction income; any 'no fee' language is retired.
 
 # STATUS
 
@@ -181,9 +181,9 @@ Every open-question marker, found by scanning — nobody maintains this list.
 Oldest first. Rule and grammar: `ops-pattern/process/PIPELINE.md` § Open questions.
 
 
-**Waiting on the PM** (23)
+**Waiting on Don** (23)
 
-- 68d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — the PM ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:59](product/ui/surfaces.md#L59)
+- 68d · Which ten names are the collections, and does the picker suggest from a Page's tags? *(Narrowed 2026-09-19 — Don ruled membership is owner-set, so what is le… — [product/ui/surfaces.md:59](product/ui/surfaces.md#L59)
 - 50d · Which payment rail takes contributions? A) Stripe Billing — recurring plans, annual option and a per-member ledger built in; we own the member relationship a… — [product/systems/contributions.md:61](product/systems/contributions.md#L61)
 - 49d · Safety guardrails for hidden signals: privacy, membership leaking, and harm prevention — [product/systems/signals.md:75](product/systems/signals.md#L75)
 - 45d · When does the Support page ship? A) Beta, as roadmap and the "tell me when giving opens" action only. B) After beta, once `socialus-legal` has cleared how gi… — [planning/scenario-F110.md:39](planning/scenario-F110.md#L39)
@@ -315,5 +315,5 @@ Reviewing one means reading it against `PRINCIPLES.md` and its rulings and setti
 ## What this run could not verify
 
 - **The 32 drafts.** Status alone does not say which are waiting
-  on the PM and which are simply unfinished.
+  on Don and which are simply unfinished.
 
