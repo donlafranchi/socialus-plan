@@ -9,7 +9,7 @@ date: 2026-09-17
 
 **As of 2026-09-17** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
-**Draft, 2026-09-15.** Don: **"We should date these things and not display things that haven't had any interaction in 90 days. Or show them last."**
+**Draft, 2026-09-15.** The PM: **"We should date these things and not display things that haven't had any interaction in 90 days. Or show them last."**
 
 **A general rule, not a wonder rule.** It answers the same problem for every entry that can go quiet.
 
@@ -17,7 +17,7 @@ date: 2026-09-17
 
 **Everything carries a last-interaction date.** A Page, a post, a product, a service, a gathering, a wonder.
 
-**Nothing quiet for 90 days is hidden. It sorts last.** Don offered both; this is the one to take.
+**Nothing quiet for 90 days is hidden. It sorts last.** The PM offered both; this is the one to take.
 
 - **Hiding something without telling its author is how people find out their listing was invisible for a month.** Sorting last is visible, reversible and honest.
 - **`model.md` already rules the same way:** *"Browse is everything… The default is inclusion. Anything excluded needs a reason, recorded."* **Quiet is not a reason to exclude; it is a reason to rank below things that are not.**
@@ -29,7 +29,7 @@ date: 2026-09-17
 
 ## What counts as interaction — ruled 2026-09-15
 
-**Don: *"If the author updates it. Or a user interacts with the page more than viewing."*** **Two rules: any deliberate act by the author, and any deliberate act by anyone else. Viewing is neither.**
+**The PM: *"If the author updates it. Or a user interacts with the page more than viewing."*** **Two rules: any deliberate act by the author, and any deliberate act by anyone else. Viewing is neither.**
 
 **The enumeration, because "more than viewing" has to be a list someone can implement.**
 
@@ -46,17 +46,17 @@ date: 2026-09-17
 
 **Which events write `last_interaction_at`: the ones that already exist.** Every write goes through a named action handler that commits the data row and its `*_events` row in the same transaction (`socialus-web` `docs/action-layer.md`). **The handler sets the date; nothing separate watches for it, and no job runs.** Half the acts above have no handler yet, which is the same list of missing writers already tracked elsewhere.
 
-**The ordering rule in `surfaces.md` stands unchanged.** Don had raised removing it; his answer here keeps views out of ordering by itself, so nothing needs to change there.
+**The ordering rule in `surfaces.md` stands unchanged.** The PM had raised removing it; his answer here keeps views out of ordering by itself, so nothing needs to change there.
 
 ## It fits the ordering rule
 
 **Confirmed rather than assumed.** `surfaces.md`: *"Ordering is locality and recency, with the Member's own declared interest tags as a boost — and may also carry genuine community response."*
 
-**Last-interaction sorting is permitted twice over** — it is recency, and if interaction means responses it is genuine community response, which Don ratified on 2026-09-12. **The only thing the rule forbids is what keeps you scrolling, which is precisely why views are out.**
+**Last-interaction sorting is permitted twice over** — it is recency, and if interaction means responses it is genuine community response, which the PM ratified on 2026-09-12. **The only thing the rule forbids is what keeps you scrolling, which is precisely why views are out.**
 
 ## It replaces the wonder expiry rather than sitting beside it
 
-**Same idea, done generally and done better.** The expiry Don cut on 2026-09-15 **deleted** a wonder after 90 days. **This demotes it after 90 quiet days and lets the author revive it by doing something ordinary.**
+**Same idea, done generally and done better.** The expiry the PM cut on 2026-09-15 **deleted** a wonder after 90 days. **This demotes it after 90 quiet days and lets the author revive it by doing something ordinary.**
 
 **So the removal stands and this is the better version** — one rule for every entry instead of a mechanism bolted onto one of them, and nothing is destroyed.
 

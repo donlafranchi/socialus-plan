@@ -2,7 +2,7 @@
 
 **As of 2026-11-01** · Source: hand-written · Maintained by: hand
 
-## Bottom line for Don
+## Bottom line for the PM
 
 **Can members like or save posts today? No.**
 - **There's no like, save or thumbs up anywhere.** No post or Page has one.
@@ -29,7 +29,7 @@ Research only. Nothing here is ruled except the soul line (#262) and the 2026-11
 
 **Bottom line: one private tap that means "I like this, keep it for me" does both jobs, the way Eventbrite's heart and Airbnb's wishlist do. Add it to posts and Pages, learn the rest from what members already do, and keep Follow as a quiet "Get updates".** Lasting interest shows up as coming back to a topic or Page over months, the way Pinterest boards, Google Maps lists and repeat RSVPs show it. With little data, the Page's own topic, its distance and its date carry most of the weight, which is what the Meetup research found too. I recommend **A** (part 6).
 
-**Ruling (Don, 2026-11-01): no checkboxes, and no manual strength pickers as the main way in. Follow is too strong; find something lighter. [for now]** Don: "No checkboxes. We need to figure out the TikTok methods for gauging interest that means something between I've always loved this and I love this on occasion. Follow is too strong so we need to find something lighter." Then, 2026-11-02: "Since we're not like TikTok we'll need another method though. Can we like or save posts". This replaces the parts of § 4 and § 7 that made a picker the main way in. A member can still see and correct what was learned in You; that just isn't how it starts.
+**Ruling (the PM, 2026-11-01): no checkboxes, and no manual strength pickers as the main way in. Follow is too strong; find something lighter. [for now]** the PM: "No checkboxes. We need to figure out the TikTok methods for gauging interest that means something between I've always loved this and I love this on occasion. Follow is too strong so we need to find something lighter." Then, 2026-11-02: "Since we're not like TikTok we'll need another method though. Can we like or save posts". This replaces the parts of § 4 and § 7 that made a picker the main way in. A member can still see and correct what was learned in You; that just isn't how it starts.
 
 <details><summary>1. What members can do today (from the code, 2026-11-02)</summary>
 

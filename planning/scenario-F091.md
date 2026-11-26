@@ -6,8 +6,8 @@ horizon: now
 rank: 140
 date: 2026-09-19
 depends: [F059, F072]
-approved: 2026-09-19 — Don named the set and ruled the heading is a sentence stem the lens completes.
-amended: 2026-10-01 — Don: criterion 7, the signed-out today row. 2026-11-12: criterion 7 restated for F134, signed-out visitors read posts.
+approved: 2026-09-19 — the PM named the set and ruled the heading is a sentence stem the lens completes.
+amended: 2026-10-01 — the PM: criterion 7, the signed-out today row. 2026-11-12: criterion 7 restated for F134, signed-out visitors read posts.
 concept: CO-0047
 ---
 ## Story
@@ -26,11 +26,11 @@ Rae opens Browse on a Thursday afternoon with no particular plan. Under a headin
 
 ## Why
 
-**The name is Don's, 2026-09-19, and the ellipsis is load-bearing** — *What's happening…* is a stem each row completes: *today*, *this week*, *this weekend*. Criterion 4 is the cost of that choice. F059's hide-when-empty rule is defined per row, and a stem needs a second rule or it reads as broken rather than as quiet.
+**The name is the PM's, 2026-09-19, and the ellipsis is load-bearing** — *What's happening…* is a stem each row completes: *today*, *this week*, *this weekend*. Criterion 4 is the cost of that choice. F059's hide-when-empty rule is defined per row, and a stem needs a second rule or it reads as broken rather than as quiet.
 
 **Criterion 1 needs no new query — but it does need a caller, and there is none.** `browse_feed` merged 2026-09-19 with `p_starts_from`, `p_starts_before` and `p_sort='soonest'`, so a row is one call with two arguments. **Corrected 2026-09-20: the function is live in production and nothing calls it.** Only its own test file imports `getBrowseFeed`; Explore still reads the old Item-grain view client-side through `createBrowserClient`, and renders `ItemFeedCard`, `KindFilterPills` and `ActiveFilterChips` — the last two being exactly what F092 criterion 1 removes. **So wiring Explore to the new source is real, unbuilt work that this scenario sits on**, and the earlier claim that *the queries exist* was true of the database and false of the product.
 
-**Criterion 6 is the one place that claim breaks, and it is no longer conditional.** `browse_feed` has no de-duplication, so a daily happy hour expanded into occurrence rows returns seven rows in a week window and floods it. **Don ruled recurrence in on 2026-09-20 (F074, simple repeat), so this is live rather than hypothetical** — and he ruled the de-duplication non-optional with it: *a flooded lens reads as broken, not as incomplete.*
+**Criterion 6 is the one place that claim breaks, and it is no longer conditional.** `browse_feed` has no de-duplication, so a daily happy hour expanded into occurrence rows returns seven rows in a week window and floods it. **The PM ruled recurrence in on 2026-09-20 (F074, simple repeat), so this is live rather than hypothetical** — and he ruled the de-duplication non-optional with it: *a flooded lens reads as broken, not as incomplete.*
 
 **Criterion 2, not "today means a calendar day".** Someone asking at four in the afternoon is asking about this evening.
 
@@ -41,5 +41,5 @@ A filter control beside the rows — narrowing is F092, in a modal. A lens for c
 [open-question owner=don raised=2026-11-06] Where do undated posts (news, sales) go in "this week, then later, then Pages": after the dated posts and before Pages (A, recommended), or among the Pages?
 
 ## Rulings
-- **2026-11-06 — Explore leads with time: what is happening this week, then later, then Pages after the timely posts.** Don, verbatim: *"I'm loving the angle of what's happening this week and later and then showing the pages after the timely posts."* Search keeps the same order where it groups results. Reordering what is built is refinement under the 2026-11-06 build freeze (`product/foundation/what-this-is.md`). It replaces "everything mixed: Pages and posts together" (Don, 2026-10-16, `socialus-web` #876) on the main list. [for now] [replaces none] [binds tiers=planning,code surfaces=explore,search,shelves]
-- **2026-09-19 — The time-based feature set is called "What's happening…", with the ellipsis, and the heading is a sentence stem the lens completes.** Don's ruling, rejecting *What's on*, *What's going on* and *Happening*. **The ellipsis is load-bearing, not decoration** — the heading reads *What's happening…* and each lens finishes the sentence: *today*, *this week*, *this weekend*. **One structural consequence, recorded because it is not free:** F059's rule is that **a lens row hides rather than showing an empty row**, and that rule is defined per row. A stem needs a second rule — **the stem hides when every lens under it is empty** — or a reader gets a sentence opened and never finished, which reads as broken rather than as empty. **No collision with `voice.md`:** an ellipsis is not an em dash, the lint checks `—` only, and the phrase is short and verb-led as that document asks. [for now]
+- **2026-11-06 — Explore leads with time: what is happening this week, then later, then Pages after the timely posts.** The PM, verbatim: *"I'm loving the angle of what's happening this week and later and then showing the pages after the timely posts."* Search keeps the same order where it groups results. Reordering what is built is refinement under the 2026-11-06 build freeze (`product/foundation/what-this-is.md`). It replaces "everything mixed: Pages and posts together" (the PM, 2026-10-16, `socialus-web` #876) on the main list. [for now] [replaces none] [binds tiers=planning,code surfaces=explore,search,shelves]
+- **2026-09-19 — The time-based feature set is called "What's happening…", with the ellipsis, and the heading is a sentence stem the lens completes.** The PM's ruling, rejecting *What's on*, *What's going on* and *Happening*. **The ellipsis is load-bearing, not decoration** — the heading reads *What's happening…* and each lens finishes the sentence: *today*, *this week*, *this weekend*. **One structural consequence, recorded because it is not free:** F059's rule is that **a lens row hides rather than showing an empty row**, and that rule is defined per row. A stem needs a second rule — **the stem hides when every lens under it is empty** — or a reader gets a sentence opened and never finished, which reads as broken rather than as empty. **No collision with `voice.md`:** an ellipsis is not an em dash, the lint checks `—` only, and the phrase is short and verb-led as that document asks. [for now]

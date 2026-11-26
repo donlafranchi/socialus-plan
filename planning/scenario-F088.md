@@ -23,7 +23,7 @@ Dana is starting something and none of the labels are hers. She taps Other. Inst
 
 ## Not this
 
-Writing the explainer copy — Don writes it; this scenario says what it must convey. A second signal table. An admin screen for any queue. A public "most requested" surface. Any promise of a reply.
+Writing the explainer copy — the PM writes it; this scenario says what it must convey. A second signal table. An admin screen for any queue. A public "most requested" surface. Any promise of a reply.
 
 ## Why
 
@@ -44,7 +44,7 @@ Writing the explainer copy — Don writes it; this scenario says what it must co
 
 **Two queues with one person behind them is how both stop being read.**
 
-There are two sources: **an unmapped label** and **this**. *(A third — zero-result searches — was proposed and then ruled out on 2026-09-15: Don's position is that there may genuinely be nothing, and saying so is an honest answer rather than a gap.)* **They are one queue with two sources, and the queue already exists** — F064's signal table is approved, ticketed as `socialus-web` #33, and its criterion 5 already gives the operator a ranked list grouped by subject with no screen built. **Adding a source column is smaller than building a second table, and much smaller than building a third.**
+There are two sources: **an unmapped label** and **this**. *(A third — zero-result searches — was proposed and then ruled out on 2026-09-15: the PM's position is that there may genuinely be nothing, and saying so is an honest answer rather than a gap.)* **They are one queue with two sources, and the queue already exists** — F064's signal table is approved, ticketed as `socialus-web` #33, and its criterion 5 already gives the operator a ranked list grouped by subject with no screen built. **Adding a source column is smaller than building a second table, and much smaller than building a third.**
 
 **They share an outcome shape:** each is a person using a word the product does not know yet, and each is resolved by adding vocabulary rather than by building. **The search dictionary's ratified mechanism — an agent proposes, a human approves — is the same mechanism both want**, and it survives the ruling above: the dictionary still grows from the tags creators create, it simply no longer treats an empty search as an input.
 

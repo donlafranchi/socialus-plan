@@ -7,7 +7,7 @@ Oct 1, 2026 · @don
 One shell, nine screen templates and twelve shared components cover all 152 inventoried screens from a 6" phone to a 16" laptop; a 27" monitor gets the same layout capped at 1680px and centred.
 
 - **Mockups:** `socialus-design-language.html`, in `socialus-design/screens/`, not in this repo.
-- **Tokens for Code:** [`socialus-tokens.css`](socialus-tokens.css) beside this file, a Tailwind v4 `@theme` drop-in for `globals.css`. Compiles clean on Tailwind 4.3.3; holds no colours. Not adopted; the Code session picks it up when Don says so.
+- **Tokens for Code:** [`socialus-tokens.css`](socialus-tokens.css) beside this file, a Tailwind v4 `@theme` drop-in for `globals.css`. Compiles clean on Tailwind 4.3.3; holds no colours. Not adopted; the Code session picks it up when the PM says so.
 - **Mapping:** [`screen-template-map.csv`](screen-template-map.csv) beside this file holds the 152-row table in section 6 for filtering.
 - **Built on:** the research doc [SocialUs — Who to Copy & Design Resources](../design-references.md), the screen inventory, `owner-page-spec.md`, `socialus-web` origin/main @ 7a78277, `ops-pattern` DECISIONS.md, `design-language.md` and `surfaces.md` on origin/main.
 - **Verified:** token values, usage counts and component duplication (read in code); contrast ratios (computed); nav order rule (`surfaces.md`: the + sits between the tabs); front-door and "Event" rulings (DECISIONS.md 2026-09-30).
@@ -15,7 +15,7 @@ One shell, nine screen templates and twelve shared components cover all 152 inve
 
 ## 1. Foundations
 
-Foundations are type, spacing, radius, shadows, layers, nav height, breakpoints and the shared components; colour is out of this pass by Don's ruling (2026-10-01). **Source of truth (decision 7 = A):** once `socialus-tokens.css` is adopted, the token values live only in the app's code; the tables below are reference until then, and afterwards this doc keeps only the reasons.
+Foundations are type, spacing, radius, shadows, layers, nav height, breakpoints and the shared components; colour is out of this pass by the PM's ruling (2026-10-01). **Source of truth (decision 7 = A):** once `socialus-tokens.css` is adopted, the token values live only in the app's code; the tables below are reference until then, and afterwards this doc keeps only the reasons.
 
 ### Colour (unchanged)
 
@@ -157,9 +157,9 @@ Nine templates (T9 Text page added by decision 8) hold 128 of the 152 screens; t
 - **Event cards lead with date and time** ("Sat, Oct 4 · 7:30 AM"), then title, place, who's going (never a zero), Add to calendar.
 - Owner never sees Follow or Report on their own Page; their bar and rail are the owner tools (T4).
 
-**What launch is (Don, 2026-10-01):** a rich-context yellow pages of organizations, not people, with pictures. A Page is an organization: a group, a business or an organization. Events are posts a Page makes; there is no separate event page.
+**What launch is (the PM, 2026-10-01):** a rich-context yellow pages of organizations, not people, with pictures. A Page is an organization: a group, a business or an organization. Events are posts a Page makes; there is no separate event page.
 
-**Launch framing (Don, 2026-10-01): "a modern yellow pages with links and contact info."** So the Page leads with a **contact block** for signed-in viewers: address or area (with Get directions), phone (tap to call), website and social links, and hours when the owner has set them. On phone it sits right under the name and description, above Events and Announcements; the floating action bar carries Call and Directions next to Follow. From 1024 it is the top of the rail card. The signed-out front door shows none of it (no location, per the front-door rule) and keeps only name, photo or default art, description and "Sign in to see what's happening".
+**Launch framing (the PM, 2026-10-01): "a modern yellow pages with links and contact info."** So the Page leads with a **contact block** for signed-in viewers: address or area (with Get directions), phone (tap to call), website and social links, and hours when the owner has set them. On phone it sits right under the name and description, above Events and Announcements; the floating action bar carries Call and Directions next to Follow. From 1024 it is the top of the rail card. The signed-out front door shows none of it (no location, per the front-door rule) and keeps only name, photo or default art, description and "Sign in to see what's happening".
 
 - **Today (read in code, origin/main @ 5837e85):** the Page shows its placement as one grey line and social links as a row, both mid-page; website is one of the social-link keys (`groups.social_links`).
 - **Phone on a Page: doesn't exist.** The only phone in the code is the member's, collected at signup and private by ruling. **Hours on a Page: don't exist.** The only `hours` column is on service items (`item_services.hours`), which R2 defers.
@@ -232,7 +232,7 @@ Edit Page also lives in the owner panel's Page settings group at ≥1280; on pho
 | All | PageHeader (h1, "Updated &lt;date>" line), then prose in one 720 column (`body` 16/24, `title-2` section heads, plain links); nav and footer shown | Header only | None |
 
 - One screen type, three routes: `/about`, `/terms`, `/privacy`. Content is Markdown kept beside the copy module so wording changes without touching layout.
-- Copy is Don's and a placeholder ([public-is-draft]); Terms and Privacy likely need legal review before launch, and use "we currently…", never "never".
+- Copy is the PM's and a placeholder ([public-is-draft]); Terms and Privacy likely need legal review before launch, and use "we currently…", never "never".
 
 ## 5. Shared components
 
@@ -467,7 +467,7 @@ L27 Text page covers new rows N003 About, N004 Terms and N005 Privacy (decision 
 
 ### Create: one question (R1, 2026-10-01)
 
-Creation asks only what kind of thing someone is starting. A kind is a preset: it switches on default components, and any component can be added or turned off later. Copy is placeholder ([public-is-draft]); it avoids the word "Page" (Don's ruling in `purpose.ts`), person-nouns and "never".
+Creation asks only what kind of thing someone is starting. A kind is a preset: it switches on default components, and any component can be added or turned off later. Copy is placeholder ([public-is-draft]); it avoids the word "Page" (the PM's ruling in `purpose.ts`), person-nouns and "never".
 
 **Heading:** What are you starting?
 
@@ -483,7 +483,7 @@ Creation asks only what kind of thing someone is starting. A kind is a preset: i
 
 **Button:** Start (creates the draft and opens it).
 
-- The three kinds are the ones in the code today (`src/lib/sell/purpose.ts`). No event kind: Don dropped the one-time event kind (Later, 2026-10-01). A Page is an organization (group, business or organization) and events are posts it makes.
+- The three kinds are the ones in the code today (`src/lib/sell/purpose.ts`). No event kind: the PM dropped the one-time event kind (Later, 2026-10-01). A Page is an organization (group, business or organization) and events are posts it makes.
 - Products & services is not a default yet: whether it is a component is still owner-spec ruling 3.
 - "Joining, with your OK" assumes join approval exists; owner-spec ruling 4 says the code joins immediately today.
 - A draft has no name until the owner adds one, so the owner sees a placeholder such as "Your new shop"; whether the database allows a nameless draft needs checking in code.
@@ -492,7 +492,7 @@ Creation asks only what kind of thing someone is starting. A kind is a preset: i
 
 A Page publishes only with a **name, a location (an address, or an area or neighbourhood) and a description**; a photo is optional. The draft's "Before you publish" checklist shows these three with a tick each, and Publish stays disabled with the missing ones named until all three are in. Then Publish opens the rules agreement (F082).
 
-- **Open question:** does "online" count as a location? The cards treat online as a valid location today (`TileCard`), but Don's list names only an address or an area.
+- **Open question:** does "online" count as a location? The cards treat online as a valid location today (`TileCard`), but the PM's list names only an address or an area.
 
 ### Default art when there's no photo
 
@@ -518,7 +518,7 @@ This follows `design-language.md` ("a neutral field with the kind's glyph — ne
 
 ### Rulings and scenarios this changes
 
-- **`surfaces.md`**: delete "walkthrough stays six steps" (written by an agent, per Don) and the step-specific lines (tag step, collection picker); replace them with R1 and the publishing ruling.
+- **`surfaces.md`**: delete "walkthrough stays six steps" (written by an agent, per the PM) and the step-specific lines (tag step, collection picker); replace them with R1 and the publishing ruling.
 - **F060** (start something without opening a shop): criterion 2 holds (the first question is what they're starting). Criterion 4 now means "start another" is one tap from the draft Page. F060.1's "F082 is made once before this flow" conflicts with F082 (before each publish), so the newer F082 wins and the line is pruned.
 - **F061** (create a Page worth showing people): **this scenario is `building`.** Criteria 1–3 (address resolves with a pin, neighbourhood option, tag) move from create steps to Page settings. Criterion 5 (resume returns to review) is retired: the draft Page is the resume point. Add the publish requirements (name, location, description). **The Code session needs a stop note before more step work.**
 - **F070** (every Page has a face): criterion 1 ("the composer completes without a photo") becomes "a Page publishes without a photo". Criterion 4 gains "a neutral tone and the kind's icon", which needs the kind stored.
@@ -545,7 +545,7 @@ You is currently not visible to others, and there is currently no public member 
 - **Legacy `/following`** S022–S027, S095: shadowed by the redirect; Pages you follow live in You.
 - **Your shops** S132–S134 and the Sell success toast S117: Pages you manage live in You; listings wait (R2).
 - **Saved tab** S151: no Saved list at launch.
-- **Not in Don's list for You:** changing display name and the email-updates toggle (today in the Settings tab). Both are left out at launch unless Don adds them.
+- **Not in the PM's list for You:** changing display name and the email-updates toggle (today in the Settings tab). Both are left out at launch unless the PM adds them.
 
 ### New (2 screens, not in the inventory)
 
@@ -560,9 +560,9 @@ You is currently not visible to others, and there is currently no public member 
 
 Already done today in `socialus-web`: Create opens the create flow (#275) and Edit asks before leaving with unsaved changes (#277).
 
-## 8. Decisions for Don
+## 8. Decisions for the PM
 
-Don ruled on 2026-10-01: colour is out of this pass, and 2–5 are accepted as recommended; 6 is ruled C, 7 is ruled A and 8 is ruled B. R1–R4 are new, from cutting the launch screens.
+The PM ruled on 2026-10-01: colour is out of this pass, and 2–5 are accepted as recommended; 6 is ruled C, 7 is ruled A and 8 is ruled B. R1–R4 are new, from cutting the launch screens.
 
 | # | Decision | Status |
 | --- | --- | --- |
@@ -587,11 +587,11 @@ Don ruled on 2026-10-01: colour is out of this pass, and 2–5 are accepted as r
 
 Also open: whether "online" counts as a location for publishing (section 7).
 
-**Next action:** Don has ruled on everything here; the foundations step (no colour) goes to the Code session as one ticket with `socialus-tokens.css` attached.
+**Next action:** the PM has ruled on everything here; the foundations step (no colour) goes to the Code session as one ticket with `socialus-tokens.css` attached.
 
 ## 9. Built to change
 
-Don will bring in a professional designer and wants them to change and play with the design easily (2026-10-01). Six rules make a change made in one place show up everywhere.
+The PM will bring in a professional designer and wants them to change and play with the design easily (2026-10-01). Six rules make a change made in one place show up everywhere.
 
 | Rule | What it means | Where it stands today (origin/main @ 5837e85) |
 | --- | --- | --- |

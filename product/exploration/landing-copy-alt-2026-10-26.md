@@ -1,30 +1,30 @@
 # Landing copy: alternate version (2026-10-26, "Draft 5")
 
-Kept as an alternate. Don, 2026-10-31: the copywriter's final copy replaced it on the landing page, but some of these lines are funny and silly and worth keeping for later use. Not a ruling; not live.
+Kept as an alternate. The PM, 2026-10-31: the copywriter's final copy replaced it on the landing page, but some of these lines are funny and silly and worth keeping for later use. Not a ruling; not live.
 
 Source: the copy module on PR #1091 (`src/lib/home-landing.ts`) at commit c94f6e4, verbatim below.
 
 ```ts
-// The signed-out home at `/`. Don's approved Draft 5 (2026-10-26), word for word;
+// The signed-out home at `/`. The PM's approved Draft 5 (2026-10-26), word for word;
 // source of truth: socialus-plan planning/briefs/landing-copy-draft5-2026-10-26.md.
-// `TODO(Don)` marks something still pending; nothing else here changes without him.
+// `TODO(the PM)` marks something still pending; nothing else here changes without him.
 
 export const HOME_TODO = {
-  // Don, 2026-10-26: Sacramento and the towns around it.
+  // The PM, 2026-10-26: Sacramento and the towns around it.
   launchMarket: 'Sacramento',
-  // Don, 2026-10-26: one sign-up path for everyone; the zip decides what comes after.
+  // The PM, 2026-10-26: one sign-up path for everyone; the zip decides what comes after.
   primaryCta: 'Join SocialUs',
 }
 
 const T = HOME_TODO
 
-// TODO(Don): Contact waits on the socialus.org mailbox Don is setting up. Null shows the word without a link.
+// TODO(the PM): Contact waits on the socialus.org mailbox the PM is setting up. Null shows the word without a link.
 export const CONTACT_HREF: string | null = null
 
-// TODO(Don): consent line under the last Join button; wording and its Terms/Privacy links pending. Null leaves it off.
+// TODO(the PM): consent line under the last Join button; wording and its Terms/Privacy links pending. Null leaves it off.
 export const CONSENT_LINE: string | null = null
 
-// TODO(Don): final hero art (the "way out" neighbourhood-square illustration) with usage rights; a drawn placeholder stands in.
+// TODO(the PM): final hero art (the "way out" neighbourhood-square illustration) with usage rights; a drawn placeholder stands in.
 export const HERO_ART: { src: string; alt: string } | null = null
 
 export const HOME = {

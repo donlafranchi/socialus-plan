@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""The dashboard's "Where we're going" section: four fixed lanes, generated (Don, 2026-10-12).
+"""The dashboard's "Where we're going" section: four fixed lanes, generated (the PM, 2026-10-12).
   Now          being built (scenario status building/approved)
   Next         settled: approved and sequenced (scenarios only)
   Considering  a likely candidate, not approved or through council
   Later        an eventual part of the platform
 A scenario carries its lane as frontmatter `horizon:` (+ `rank`); an IMAGINE.md entry as one `[lane: considering|later]` marker
-under its `###` heading. Scenarios may sit in any lane; IMAGINE items only in Considering or Later. Considering -> Next needs Don's yes.
+under its `###` heading. Scenarios may sit in any lane; IMAGINE items only in Considering or Later. Considering -> Next needs the PM's yes.
   going.py --check             proves the section on scripts/fixtures/going (run from lint.sh)
   going.py --lint [DIR]        lane rules over DIR (default `.`); --lint-check proves the lint on scripts/fixtures/going-lint
   going.py --list <lane>       one line per scenario in that lane, by rank (README)"""
@@ -58,7 +58,7 @@ def section(scen, now_open, later_issues, now_name='Beta', later_name='After bet
         return [f'- {t} *(IMAGINE)*' for l, t in ideas if l == h]
     n = len(later_issues)
     o = ['## Where we\'re going', '',
-         '*Four fixed lanes, generated from each scenario\'s `horizon` and `rank`, IMAGINE.md\'s `[lane: …]` markers and the socialus-web milestones. To change it, change those; never this section. Moving an item from Considering to Next needs Don\'s yes.*', '',
+         '*Four fixed lanes, generated from each scenario\'s `horizon` and `rank`, IMAGINE.md\'s `[lane: …]` markers and the socialus-web milestones. To change it, change those; never this section. Moving an item from Considering to Next needs the PM\'s yes.*', '',
          f'### Now · {now_name} ({now_open} open Issues) · being built', *(lst('now') or ['- none']), '',
          '### Next · settled: approved and sequenced', *(lst('next') or ['- none']), '',
          '### Considering · a likely candidate, not approved or through council', *(lst('considering') + idea('considering') or ['- none']), '',
@@ -86,7 +86,7 @@ def lint(d, imagine_path):
             if h.strip() not in LANES:
                 errs.append(f'{p}: lane `{h.strip()}` is not one of {", ".join(LANES)}')
             elif h.strip() in ('now', 'next') and st not in ('approved', 'building'):
-                errs.append(f'{p}: lane {h.strip()} needs an approved scenario (status is {st}) — Considering until Don says yes')
+                errs.append(f'{p}: lane {h.strip()} needs an approved scenario (status is {st}) — Considering until the PM says yes')
     if os.path.exists(imagine_path):
         title, seen = None, 0
         for n, l in enumerate(open(imagine_path).read().split('\n'), 1):

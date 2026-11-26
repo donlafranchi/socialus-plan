@@ -3,7 +3,7 @@ id: feature-intake
 title: Feature intake council (V0)
 status: draft
 date: 2026-10-10
-owner: Don
+owner: the PM
 ---
 
 # Feature intake
@@ -77,7 +77,7 @@ Chair also states: which Stage 0 lines were assumed, which role dissented, and w
 2. Every criterion binary, written before tickets.
 3. **Every list defines its zero state**: what clears the bar now, and when nothing does, a refine question or an invitation. Never pad. (Pattern already ruled in F091 criteria 3 and 4.)
 4. Copy for every state, to `voice-and-launch-copy.md` rules.
-5. Guardian: no promise broken, or the conflict is named for Don.
+5. Guardian: no promise broken, or the conflict is named for the PM.
 6. A kill criterion: the number that says stop.
 7. One metric tied to `place-connection-metrics.md`, so we learn whether it worked.
 8. Tickets for the recommended size only, each independently shippable.
@@ -88,14 +88,14 @@ Chair also states: which Stage 0 lines were assumed, which role dissented, and w
 - Feature Brief (`feature-brief-template.md`), one page.
 - Three-size plan.
 - Tickets, recommended size only.
-- Questions for Don as labelled A/B/C, only ones he alone can answer.
+- Questions for the PM as labelled A/B/C, only ones he alone can answer.
 - Scope line: what leaves if this enters, or "After beta".
 
 ## Tiers
 
 - **V0 (now)**: this file as one prompt, nine headings, a person or one agent runs it, output read by hand.
 - **V1**: roles as parallel agents, each writes its section; Guardian blocks on promise conflicts.
-- **V2**: a second round only where roles disagree; disagreements reach Don as A/B/C.
+- **V2**: a second round only where roles disagree; disagreements reach the PM as A/B/C.
 - **V3**: Brief auto-generates the query shape, UI states and tests; live metrics feed back into the next intake.
 
 ## How to judge this process

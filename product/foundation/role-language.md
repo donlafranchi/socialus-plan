@@ -9,9 +9,9 @@ status: retired
 
 # Role language — retired 2026-09-14
 
-**Overruled by Don, 2026-09-14.** His words: *"The other side is patron. That's the closest I think we'll get. This has nothing to do with copy. Also I think this document can go away and the two sides can exist in another doc."*
+**Overruled by the PM, 2026-09-14.** His words: *"The other side is patron. That's the closest I think we'll get. This has nothing to do with copy. Also I think this document can go away and the two sides can exist in another doc."*
 
-**What was actually overruled is narrower than this tombstone first said.** *(Corrected 2026-09-14, same day.)* Don's clarification: *"Creator and patron are shorthand for you and me when discussing the two sides broadly."* He sanctioned **internal** vocabulary — our words for talking about the product. He did not sanction person-nouns in user-facing copy, and the first version of this tombstone recorded the ruling far wider than he made it.
+**What was actually overruled is narrower than this tombstone first said.** *(Corrected 2026-09-14, same day.)* The PM's clarification: *"Creator and patron are shorthand for you and me when discussing the two sides broadly."* He sanctioned **internal** vocabulary — our words for talking about the product. He did not sanction person-nouns in user-facing copy, and the first version of this tombstone recorded the ruling far wider than he made it.
 
 **So rule 2 fell only in its internal half.** The doc refused to let anyone name the two sides at all; that refusal is gone. **Its user-facing rule — no person-noun printed in front of a member — stands, unchanged and unweakened.** The document is retired because the pair now lives in `nouns.md`, not because its core rule was wrong.
 
@@ -29,6 +29,6 @@ status: retired
 
 The full prior text, including the argument against the pair and its copy examples, is in git history: `git log -p -- product/foundation/role-language.md`.
 
-**This document is not a voice or copy guide and never was** — Don is right about that. Its copy examples were illustrations of the naming rules, not a house voice. No voice guide exists yet.
+**This document is not a voice or copy guide and never was** — the PM is right about that. Its copy examples were illustrations of the naming rules, not a house voice. No voice guide exists yet.
 
 **The 2026-09-04 question ("Neighbours, not strangers or creators" against "everyone who posts is a creator") is retired, 2026-10-12.** The PM: the framing is outdated. SocialUs is less about literal neighbours and more about communities, people choosing to gather, and wealth that circulates; the question no longer applies.

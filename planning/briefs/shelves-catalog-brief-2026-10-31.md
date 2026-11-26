@@ -7,7 +7,7 @@ Home: `socialus-plan`. Deliverable: one research doc, `planning/research/shelf-c
 - **2026-10-31:** Find may sort and filter by interests, likes and interaction, so interest shelves can go on Explore too. The ruling is in F059.
 - **Research to build on:** plan #230 (`planning/research/explore-shelves-and-shelf-life-2026-10-27.md`), which gives the shelf-life table and the gap where real posts have no kind field.
 
-## Don, verbatim (2026-10-31)
+## The PM, verbatim (2026-10-31)
 "approve. also have the session look at what's in there? there could be many categories, New and interesting, Something Unique. Play with Farm Animals. There could be dozens. Can you have a session see what we have in there now and see what we could create. Meet up with folks, Go out and play. Move your body. Try something new. How about a class? Want to learn something? Who's got a 'Wonder'. Lastly I don't like the term 'a wonder'. We need something new for that?"
 
 ## Item 2: the shelf catalog
@@ -18,11 +18,11 @@ Home: `socialus-plan`. Deliverable: one research doc, `planning/research/shelf-c
    - The kinds of venue show in the scraped feeds.
    - Seeded themes: samples and market days.
    - Counts of upcoming dated posts, next 7 and 30 days, by kind and collection.
-2. **Propose dozens of shelves** (aim for 30–40). Use warm names in Don's style, like "Meet up with folks", "Go out and play", "Move your body", "Try something new", "How about a class?", "Play with farm animals", "Something unique". Focus on people doing things together, planning ahead and seasonal shelves. Say "locals", never "neighbors". For each shelf give: name | query (kind, collection, tags, interest, date window, season) | lead time | today's count, or what's missing (e.g. it needs a post kind or a tag).
+2. **Propose dozens of shelves** (aim for 30–40). Use warm names in the PM's style, like "Meet up with folks", "Go out and play", "Move your body", "Try something new", "How about a class?", "Play with farm animals", "Something unique". Focus on people doing things together, planning ahead and seasonal shelves. Say "locals", never "neighbors". For each shelf give: name | query (kind, collection, tags, interest, date window, season) | lead time | today's count, or what's missing (e.g. it needs a post kind or a tag).
 3. **Mark the 10–15 strongest for the F121 rotation**, and say why: the data fills it, it's timely, it gets people together.
 
 ## Item 3: a new name for "Wonder"
 - **What it is:** web #1081 and plan #213 (read both). Someone asks "who's in?" before making something happen. People say they're in, with a size or an option. Others offer to help in roles. A progress bar fills toward a goal.
 - **Give 6–8 names.** For each: one line on why, and how it reads in "Post a ___", "12 of 30 in" and "Who's got a ___?". Do a quick trademark and app-name conflict check on each (USPTO search, App Store).
-- **Recommend one.** The words are Don's: present the options as his call.
+- **Recommend one.** The words are the PM's: present the options as his call.
 - "Count me in" is already a draft shelf name in F121, so note any overlap.
