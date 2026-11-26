@@ -11,6 +11,7 @@
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
 - **2026-11-26** · [for now] · roadmap — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 rank 195 (planning/scenario-F074.md)
+- **2026-11-26** · [for now] · you, explore, discovery, ask, posting — The get-specific button is a thumbs up meaning "more like this": it teaches taste, isn't a save and notifies no one. Behind the scenes SocialUs labels each Page, post and listing so a thumbs up can be read as a taste (steel single speed, not just bicycle); members never see or type the labels (planning/scenario-F113.md)
 - **2026-11-25** · [for now] · explore, filters — Explore's filter sheet has no 'Recurring' choice; "what's on every week" is a question a member asks (planning/scenario-F059.md)
 - **2026-11-25** · [for now] · explore, map — Explore is a list: no List | Map switch and no Map pill at any width. A map appears only when a member asks a question a map helps answer, as part of that answer (planning/scenario-F059.md)
 - **2026-11-25** · [for now] · posts, series — A repeating post shows its pattern ("Every Tuesday") on every occurrence; this is what labels it, not a filter (planning/scenario-F074.md)
