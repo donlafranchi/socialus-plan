@@ -269,7 +269,7 @@ def read_lines(path):
 
 def tracked():
     out = subprocess.run(["git", "ls-files"], capture_output=True, text=True).stdout.split()
-    return [p for p in out if not p.startswith("scripts/fixtures/")]
+    return [p for p in out if not p.startswith(("scripts/fixtures/", "dashboard/"))]
 
 
 def find_code(argv):
