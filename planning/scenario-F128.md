@@ -23,7 +23,7 @@ The PM reads about a new way to run coding agents and pastes the link. In one sh
 4. **Review a method in one session:** given one link or pasted text, an agent lists its claims (at most 15) and for each says: we do this, we do the opposite on purpose, a gap, or a clash with a philosophy, each citing the record; it ends with one recommended experiment. It reads only the given material and the store, with no web research.
 5. **Every practice has a ring:** adopt, trial, assess or hold; moving a ring writes a new version with its why.
 6. **Experiments are records:** the practice changed, the baseline, the measure, the verdict date and the verdict (keep, fix, revert); the single-loop plan's changes come in as the first ones.
-7. **The monthly upkeep reads them:** practices not confirmed in 90 days and experiments past their verdict date are listed for the PM.
+7. **The weekly retro reads them:** practices not confirmed in 90 days and experiments past their verdict date are listed for the PM in the Monday retro (web #1521, 2026-11-27; it was a monthly Issue).
 9. **One pack for a chat project:** whenever a practice, its ring or its strength changes, and once a month regardless, the store writes one Markdown pack of how we work to a folder in `socialus-ops`, ready to add to a Claude Project such as "code good". It holds only what judging a tool, process or method against our way of working needs: for each area of the work, each live practice in a line or two with its why, how strict it is and its ring, under 10,000 tokens. It opens with its date and size; a second file holds the review-a-method steps from criterion 4, so a chat review follows the same procedure as an agent.
 8. **Docs follow the store:** after a week side by side, `socialus-ops` `process/` docs are generated from the records.
 
@@ -36,7 +36,7 @@ Keeping the packs in sync with the Claude Project by hand (the project reads the
 - **Lives somewhere better?** No: method docs elsewhere describe their own way of working, not ours with its reasons.
 - **Only locals know?** No: this is the platform's own way of working.
 - **Gets people together?** Indirectly: a method that adapts fast builds what members need sooner.
-- **Stays fresh on its own?** Yes: drift is flagged nightly, and stale practices and overdue experiments surface monthly.
+- **Stays fresh on its own?** Yes: drift is flagged nightly, and stale practices and overdue experiments surface weekly, in the Monday retro.
 - **Who keeps it current?** Agents record practices and experiments as they change them; the PM rules on rings and experiment verdicts.
 - **Better as more people join?** Yes: every new team asks the same store how we work, and every method review adds evidence.
 
