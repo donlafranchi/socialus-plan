@@ -22,7 +22,7 @@
    {"name": "dashboard", "src": "shorthand", "does": "This generated HTML page, with the sidebar. Markdown is only for short to medium text docs. (2026-10-15, replaces plan #146 B.)"}
   ]},
   {"name": "Talking to you", "items": [
-   {"name": "three-line report", "src": "patterns", "does": "Status: Done / Blocked / Question, one sentence. Next: the ask, or none. Then \"Want detail? Say expand.\""},
+   {"name": "talk to the PM", "src": "patterns", "does": "Follow the store's practice.talk-to-the-pm: status first, plain one-line bullets, no code terms, checked vs assumed, the one next action and who does it."},
    {"name": "copy-paste inline", "src": "patterns", "does": "Anything you will copy goes in the message as one code block, never a file or artifact."},
    {"name": "phone / computer", "src": "patterns", "does": "phone (and office days): nothing needing a desktop approval or terminal; queue it. computer: everything."},
    {"name": "safe to close", "src": "shorthand", "does": "Every Code session ends with SAFE TO CLOSE or NOT SAFE TO CLOSE and why, so you know which sessions you can close."}
