@@ -135,6 +135,7 @@
 - **2026-11-15** — The front door is a few slots filled from F121's shelves by simple rules (new member or has history, day and time, what's timely), never a feed (planning/scenario-F136.md)
 - **2026-11-15** — A producer sees a searched term only when at least ten different members searched it in that market in the last 30 days, and an area only when that area alone clears ten; smaller counts are stored and withheld, never shown (planning/scenario-F136.md)
 - **2026-11-15** — Keeping a member's search history and counting their searches anonymously are two switches; turning one off leaves the other. A signed-out visitor keeps no history (planning/scenario-F136.md)
+- **2026-11-27** — Themes in the store (F137) go ahead of hyper-specific search (F136); both stay behind the 6 January launch-blocking work (planning/scenario-F136.md)
 - **2026-10-25** — The flourishing thresholds (40 discretionary hours a week, 1.5× adequacy margin) stay illustrative; no doc treats them as a target until 90 days of real usage set real ones (product/foundation/metrics.md)
 - **2026-09-07** — Exactly three public promises: surplus returns to the community; every decision weighs member benefit against product benefit; not an extractive platform (product/foundation/model.md)
 - **2026-10-04** — We need to be successful first to help our members, and we want to be successful together (product/foundation/model.md)
