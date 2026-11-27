@@ -1,6 +1,6 @@
 # What we built, where we are, what's next
 
-Generated 2026-11-27 21:01 UTC from the knowledge store and GitHub. Never edited by hand.
+Generated 2026-11-27 21:54 UTC from the knowledge store and GitHub. Never edited by hand.
 
 ## What we built
 
@@ -21,9 +21,9 @@ Generated 2026-11-27 21:01 UTC from the knowledge store and GitHub. Never edited
 - Slow: taps are slower than budget. (GitHub)
 - In flight: creating a Page asks one question, its kind; Every Page has a face, even without a photo; A non-business Page resolves everywhere, and holding several is ordinary; someone starts something without opening a shop; 11 changes open. (both)
 - Before beta closes: 13 launch blockers, first Reports: a courtesy notice first, a second report hides, the poster is told why. (GitHub)
-- Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 12). (GitHub)
+- Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 13). (GitHub)
 - Open bugs: 6. (GitHub)
-- GitHub read 2026-11-27 21:01 UTC. (store)
+- GitHub read 2026-11-27 21:54 UTC. (store)
 
 ## What's next
 
