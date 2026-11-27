@@ -12,6 +12,14 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ## Added under the house rules
 
+### Out of one, many: 100,000 Amazons (2026-11-27, the PM)
+
+*The PM, 2026-11-27:* "this concept is one of the apps pillars in that we break down large enterprises and allow locals to operate their own. the concept is "out of one, many" or something along the lines of 100,000 Amazons etc." Instead of one Uber, Airbnb, Amazon or Shopify extracting from every town, SocialUs is the trusted market where locals run their own small versions of those businesses and can grow them into fleets; operators own their brand and customer relationship; SocialUs is the market and trust layer; money stays in the community. Directions raised, none decided: a small transaction fee, cheaper than the incumbents; a widget library members improve and share; agents that interview a seller and set up the shop; a member-powered trust layer that costs more to fake than it pays, leaning hybrid (a basic verification floor, community vouching on top). Approached in layers, smallest first, each unlocked by data from the one before. Not broken down until a feature is chosen to build; then it is walked into its themes, journeys, scenarios and features.
+
+**What would make it real:** the PM picks a first feature to build under it.
+
+*Analysis, agent:* a pillar-sized concept. Ideas already in the store that may become its parts: inventory import, vouching, two-way ratings, evidence of deceit, the cooperative engine.
+
 ### Posts by people without an organization (2026-11-26, the PM)
 
 *The PM, 2026-11-26:* a post is a mechanism for Pages and, newly, for people who don't have an organization or entity, as a way to ask or offer something to the community. This will need to get built at some point.
