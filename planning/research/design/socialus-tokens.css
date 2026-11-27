@@ -1,6 +1,6 @@
 /* SocialUs design tokens — proposed 2026-10-01, not adopted.
  * Tailwind v4: add alongside src/app/globals.css (after @import "tailwindcss").
- * No colours here by Don's ruling (2026-10-01): today's colour tokens stay as they are.
+ * No colours here by the PM's ruling (2026-10-01): today's colour tokens stay as they are.
  * Nav moves to the top at md (744), ruled 2026-10-01.
  * Once adopted this is the single source for visual values (decision 7 = A); screens use no one-off values.
  */
