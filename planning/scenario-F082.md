@@ -9,7 +9,7 @@ date: 2026-09-14
 depends: [F081]
 approved: 2026-09-14 — the PM's ruling; self-attestation only, selling and hosting alike
 amended: 2026-09-30 — the PM: fixed statements framed as rules, and agreeing is the attestation; the rules are one click away and versioned, and members agree again when they change; every new Page asks, including an existing owner's next one. Story and criteria 1, 2, 4 and 6 restated, 7 added. (2026-09-27: at publish, not at draft.) 2026-10-01 — the PM: criterion 8, what publishing requires; photo optional. 2026-10-06 — the PM: criterion 9, the rules include no pictures of children (F080 ruled: the uploader's word).
-concept: new
+concept: CO-0091
 ---
 ## Story
 

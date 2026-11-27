@@ -1,6 +1,6 @@
 ---
 id: F056
-concept: new
+concept: CO-0075
 title: A producer edits a shop that already exists
 status: approved
 horizon: now
