@@ -16,6 +16,8 @@ criteria:
 
 # The town before it opens, through a chat-first front door
 
+**As of 2026-11-21** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-21** · Source: the PM's words below; Chat-first SocialUs (CO-0041), Two sides (CO-0035), Asked for (CO-0043), F118, F119, F120, F123, F124, F128, F133, F134, F136, the unmet-search and welcome brief, the producer count rule (D-0402), the build freeze (D-0275), PRINCIPLES · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-21:* "I have a couple concepts. I want to talk to you about four socialist and one is how to make the app a little bit more interesting to get a little bit of more interaction when I'm thinking is for The people who have joined but can't sign up because they're not in their market that we still allow them to do search and tell them why with the searches for essentially, and that as people do searches, they the searches kind of scroll by similar to how Facebook and TikTok do hearts and emojis when a person taps a heart and that they scroll by on the screen and float from maybe bottom to top or something like that as a way too, have people kind of check in and see what what are people talking about? What are people asking for? What are people saying?"
