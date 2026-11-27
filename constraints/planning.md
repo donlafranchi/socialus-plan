@@ -10,6 +10,7 @@
 > **97 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-28** · [for now] · member-posts, posting, copy — The member-post composer (Lost & found, Free, Ask a neighbor) carries no posting reminder line; reports (F078) stay the backstop there (planning/scenario-F080.md)
 - **2026-11-27** · [for now] · roadmap — The Support page ships after the Sacramento beta, not for it (planning/scenario-F110.md)
 - **2026-11-27** · [for now] · roadmap — Join-the-team ships after the Sacramento beta, not for it (planning/scenario-F111.md)
 - **2026-11-27** · [for now] · roadmap — Themes in the store (F137) go ahead of hyper-specific search (F136); both stay behind the 6 January launch-blocking work (planning/scenario-F136.md)

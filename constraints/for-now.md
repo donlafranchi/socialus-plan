@@ -53,6 +53,7 @@
 - **2026-09-27** — It is a photo rule, not a topic rule (planning/scenario-F080.md)
 - **2026-11-12** — Every photo is checked against known child-abuse hashes, and every post's text and images are screened automatically before they publish; the uploader's confirmation that a photo shows no children and the instant hide on report stay (planning/scenario-F080.md)
 - **2026-11-12** — Where a member posts, a positive reminder encourages good, decent content, never a list of don'ts; a marked placeholder until the PM's words (planning/scenario-F080.md)
+- **2026-11-28** — The member-post composer (Lost & found, Free, Ask a neighbor) carries no posting reminder line; reports (F078) stay the backstop there (planning/scenario-F080.md)
 - **2026-09-14** — Everyone signs up the same way, as a member; "patron" is not an account type and is never stored (planning/scenario-F081.md)
 - **2026-09-30** — The zip is kept. Nobody picks a metro: the zip decides it at signup, and a member who moves changes their zip on `/you` and the metro follows (planning/scenario-F081.md)
 - **2026-09-30** — Signup does not say "we never sell". It says what the app is for (planning/scenario-F081.md)
