@@ -2,8 +2,8 @@
 id: F137
 title: Themes in the store, with journeys that belong to one or more of them
 status: approved
-horizon: later
-rank: 310
+horizon: next
+rank: 7
 date: 2026-11-26
 approved: 2026-11-26, the PM: "A" (a real theme level above story maps), then "yes, approve the themes scenario"
 depends: [F132]
