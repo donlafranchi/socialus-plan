@@ -13,9 +13,9 @@ Local discovery app: buy, sell, trade, gather. Sacramento beta opens 2027-01-06;
 - Options as A/B/C with one-line trade-offs and a recommendation. End with the next action.
 
 **Deciding**
-- The PM decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
+- the PM decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
-- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask the PM which is true.
+- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling (`git grep '\[direction'`) retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask the PM which is true.
 - Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
 **Never break**
@@ -105,11 +105,11 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 | Who | Owns | Never |
 |---|---|---|
-| The PM | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
+| the PM | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
 | Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, PRINCIPLES, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
 | Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
-Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. The PM sees it only if they disagree.
+Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. the PM sees it only if they disagree.
 
 ## Commits
 
@@ -117,13 +117,13 @@ Code is the architect. Any ticket touching schema, RLS, or routes starts with a 
 - Code commits in `socialus-web`, branch per ticket. Who merges and when the PM looks: `ops-pattern/process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
 - **Every change goes by branch and PR** *(2026-10-05)*: main requires the `lint` check (ruleset "main: merges when green"), so a direct push is rejected. Auto-merge is on: `gh pr merge --auto --squash` merges once lint passes. The STATUS workflow earns the same check on its own commits (`.github/workflows/status.yml`).
 - Anything bigger than a doc touch-up goes by branch and PR here. **Whoever does the work merges it, Code or Cowork** — self-merge is fine, and needs no approval and no second reviewer.
-- Never cross-commit (guideline — the repo split enforces it). Never rewrite history ([production-asks-pm]).
+- Never cross-commit (guideline — the repo split enforces it). Never rewrite history ([production-asks-don]).
 
 ## Sessions
 
 Two sessions in one working tree collide (lesson 9).
 
-- **Every session's cwd is its own worktree — never the repo root.** The one-session-per-cwd guard keys on cwd, so a repo root shared by two sessions wedges both. This holds for read-only sessions too: reading is what takes the lock.
+- **Every session's cwd is its own worktree — never the repo root,** read-only sessions too: the one-session-per-cwd guard keys on cwd.
 - **Worktrees live beside the repo, not inside it:** `../worktrees/{repo}/{branch}`.
 - **A session that isn't committing uses `git --no-optional-locks status`.** Plain `git status` writes `.git/index.lock`, and a sandboxed session may leave it stale.
 

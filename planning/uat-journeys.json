@@ -165,7 +165,7 @@
   "launch": true,
   "look": [
    "Posts read in full: what, when and where, at the place precision the owner chose",
-   "The map opens with pins; a Page shows its location and tags",
+   "Signed out near Sacramento, Explore opens on that open market and names it; a Page shows its location and tags",
    "Heart, follow, RSVP or report asks you to sign in before anything is saved, and finishes after",
    "No \"Sign in to see what's happening\" card anywhere",
    "Only display names show; no real full names anywhere, and no member names at all signed out"
@@ -174,12 +174,13 @@
    "F134.1",
    "F134.2",
    "F134.3",
-   "F134.4",
    "F134.7",
    "F134.8",
    "F077.3",
    "F059.2c",
-   "F099.11"
+   "F099.11",
+   "F134.4a",
+   "F059.6b"
   ]
  },
  {
@@ -241,7 +242,7 @@
   "minutes": 3,
   "launch": false,
   "look": [
-   "Explore is its own screen; a Map switch is within reach and works both ways",
+   "Explore is a list at every width, phone or computer; the map opens only from inside a Page",
    "One filter icon, no chip rows, nothing between the cards; a dot shows while a filter is on",
    "Each card shows the name people know that Page by",
    "Search, open a result, go back: same city, same search, same scroll place",
@@ -249,20 +250,17 @@
   ],
   "criteria": [
    "F059.1",
-   "F044.2",
-   "F044.3",
-   "F045.2",
    "F045.9",
    "F092.1a",
    "F059.9",
    "F059.10",
    "F069.1",
-   "F044.1a",
    "F045.3a",
    "F059.4b",
    "F059.5e",
    "F059.3",
-   "F059.5b"
+   "F059.5b",
+   "F059.5"
   ]
  },
  {

@@ -13,6 +13,8 @@ criteria:
 
 # Where the Sacramento market ends, and whether shoppers may come from further out
 
+**As of 2026-11-23** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-23** · Source: the PM's words below; F103 to F106, F076, F118, `product/systems/places.md`, `planning/research/market-resolution-2026-10-26.md`, 2020 Census, EDD commuting maps, NHTS 2022, USDA · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-23, in order:* "And a market opening is now 3 rings from a center point. Which I think means anything within an hour of Sacramento correct?" *Then:* "Can we adapt the three rings for a market? I'm thinking population centers? Perhaps a certain population size?" *Then:* "Also let me clarify that this would be a beta launch so that I can set up my LLC on January 1 and we would test until April or May in this market. Also what I'm wondering is how far away are people driving to a market in the Sacramento area? This would allow more consumers to sign up than businesses?"
