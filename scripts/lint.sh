@@ -204,13 +204,13 @@ fi
 python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
 python3 scripts/cockpit.py --check >/dev/null || { echo "lint: cockpit section does not match its fixture"; fail=1; }
 python3 scripts/safety.py --check >/dev/null || { echo "lint: agent-safety compare does not match its fixture"; fail=1; }
-# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
+# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 3 planted faults (a doc over budget that grew only warns), then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
-[ "$got" -eq 4 ] || { echo "lint: budget checker is inert — rejected $got of 4 bad fixtures"; fail=1; }
+[ "$got" -eq 3 ] || { echo "lint: budget checker is inert — rejected $got of 3 bad fixtures"; fail=1; }
 BUDGETS_BASE_DIR="$bf/good-base" python3 scripts/budgets.py check --root "$bf/good" >/dev/null || { echo "lint: budget checker rejects the good fixture"; fail=1; }
-got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
-[ "$got" -eq 3 ] || { echo "lint: budget checker does not let a docs: move PR grow a doc (got $got of 3)"; fail=1; }
+got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py report --root "$bf/bad" | grep -c 'it grew')
+[ "$got" -eq 1 ] || { echo "lint: budget checker no longer warns when an over-budget doc grew (got $got of 1)"; fail=1; }
 if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi
