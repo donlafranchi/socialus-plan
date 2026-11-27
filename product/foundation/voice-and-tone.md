@@ -68,7 +68,7 @@ Plain, with a subtle California ease: **work to live, not live to work** (the PM
 | You have 3 pending actions. | A few things are waiting when you're ready. |
 | Submit | Post it |
 | Error: request failed. | That didn't go through. Mind trying again? |
-| Please don't post anything sensitive, like content involving children, pets, or anyone who can't speak up for themselves. We rely on each other to keep this place kind and decent. | Be cool, don't be a jerk. Leave out kids, pets and anyone who can't speak up for themselves. Thanks for being decent. |
+| Posting illegal, abusive or harmful content is a violation of our Terms of Service and may result in suspension or termination of your account. | Anything illegal, abusive or harmful is taken very seriously and leads to action on your account. |
 | Maximize your reach. | Let people know it's on. |
 | Nothing found. | Nothing here yet. Maybe try a bit wider. |
 
