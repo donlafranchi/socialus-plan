@@ -17,6 +17,8 @@ criteria:
 
 # Shop by your values: an invitation, never an interruption
 
+**As of 2026-11-21** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-21** · Source: the PM's words below; the values-survey brief of 2026-11-18 (folded in here and deleted); plan PR #348 (the 2026-11-13 blue dot sketch, replaced); `product/systems/signals.md`; Badges vs values (CO-0029), Locally Made badge (CO-0008), Reciprocity & goodwill (CO-0013), Discovery that knows what a person is optimizing for (CO-0025), The town before it opens (CO-0065), F136, JY-BRING, PRINCIPLES · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
 
 *The PM, 2026-11-21:* "So I want to have a theme for this topic about values and how this app is supposed to be different than other apps and allows our members to search and discover and support based on their values and that we need to be able to figure out how to allow certain people to stop [shop] by their values and support page owners, who also believe that supporting people with good values is important. What I'm looking for is a way to approach members about this without diverting what it's for or how it's used and so that those who think it's important can opt in and those who don't think it's important don't ever have to think about it."

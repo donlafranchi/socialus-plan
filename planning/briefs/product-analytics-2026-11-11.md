@@ -15,6 +15,8 @@ criteria:
 
 # Product analytics
 
+**As of 2026-11-20** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-18** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **As of 2026-11-11** · Source: socialus-web INFRASTRUCTURE.md (Product analytics, Error tracking), docs/error-tracking.md, src/lib/observability, the map-tap and search-demand migrations; socialus-ops process/PERFORMANCE.md; vendor docs linked below · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)
