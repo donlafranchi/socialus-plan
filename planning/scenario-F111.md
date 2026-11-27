@@ -36,6 +36,9 @@ A job board, an application tracker, a resume upload, interviews in the app, a p
 
 **Path: new territory.** It collects personal data from visitors and touches employment and ownership questions that go to `socialus-legal`. Nothing is decided about pay or equity.
 
-[open-question owner=don raised=2026-10-12] When does Join-the-team ship? A) Beta, as the role list and the interest note only. B) After beta, once there is capacity to read and answer notes (one operator today). Recommend B: a note nobody answers is worse than no page.
 
 [platform none]
+
+## Rulings
+
+- **2026-11-27 — Join-the-team ships after the Sacramento beta, not for it.** The PM: "b and b"; Code stays on the beta's launch blockers, beta opens 2027-01-06. Path: new territory. [for now] [replaces none] [binds tiers=planning surfaces=roadmap build=none]

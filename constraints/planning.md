@@ -10,6 +10,8 @@
 > **97 older decisions carry no tag yet and are not listed** — tagging is required from
 > 2026-09-21 onward. Absent here is not the same as not binding.
 
+- **2026-11-27** · [for now] · roadmap — The Support page ships after the Sacramento beta, not for it (planning/scenario-F110.md)
+- **2026-11-27** · [for now] · roadmap — Join-the-team ships after the Sacramento beta, not for it (planning/scenario-F111.md)
 - **2026-11-27** · [for now] · roadmap — Themes in the store (F137) go ahead of hyper-specific search (F136); both stay behind the 6 January launch-blocking work (planning/scenario-F136.md)
 - **2026-11-26** · [for now] · roadmap — Code's order: fix main and the overnight smoke, then the beta's launch-blocking Issues, then repeating posts; F074 rank 195 (planning/scenario-F074.md)
 - **2026-11-26** · [for now] · you, explore, discovery, ask, posting — The get-specific button is a thumbs up meaning "more like this": it teaches taste, isn't a save and notifies no one. Behind the scenes SocialUs labels each Page, post and listing so a thumbs up can be read as a taste (steel single speed, not just bicycle); members never see or type the labels (planning/scenario-F113.md)

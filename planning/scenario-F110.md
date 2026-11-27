@@ -36,6 +36,9 @@ A payment form, a donation amount, a tier, a perk, a tax statement or a receipt.
 
 **Path: new territory.** It touches money, legal exposure and member trust; nothing is decided about taking money. Precedents: [Open Collective](https://opencollective.com), [GitHub Sponsors](https://github.com/sponsors), [Wikimedia fundraising](https://donate.wikimedia.org).
 
-[open-question owner=don raised=2026-10-12] When does the Support page ship? A) Beta, as roadmap and the "tell me when giving opens" action only. B) After beta, once `socialus-legal` has cleared how giving works. Recommend A: it carries no money and no legal exposure.
 
 [platform none]
+
+## Rulings
+
+- **2026-11-27 — The Support page ships after the Sacramento beta, not for it.** The PM: "b and b"; Code stays on the beta's launch blockers, beta opens 2027-01-06. Path: new territory. [for now] [replaces none] [binds tiers=planning surfaces=roadmap build=none]
