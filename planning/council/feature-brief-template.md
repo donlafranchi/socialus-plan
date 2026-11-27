@@ -69,4 +69,4 @@ date: 2026-10-10
 | # | What, in a few words | Hours | Depends on |
 |---|---|---|---|
 
-## 9. For Don (A/B/C, only what he alone can answer)
+## 9. For the PM (A/B/C, only what he alone can answer)

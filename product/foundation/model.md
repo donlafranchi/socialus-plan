@@ -1,6 +1,6 @@
 ---
 id: why-model
-purpose: The model, in Don's words. The document every other document answers to.
+purpose: The model, in the PM's words. The document every other document answers to.
 layer: why
 status: active
 under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, Find only] Browse 'not ranked by the member's interests'; 'Never: what keeps someone scrolling'; 'not licence for a feed algorithm'; 'Ranking doesn't favour a member because of payment' and the 'What 'don't sell visibility' forbids' section, for paid promotion on Discover"
@@ -10,7 +10,7 @@ under-review: "2026-10-12, two sides (PRINCIPLES.md, IMAGINE.md). [for now, Find
 
 # The model
 
-Stated by Don, 2026-09-10. Where any other document disagrees with this one, this one is right and the other is the thing to fix.
+Stated by the PM, 2026-09-10. Where any other document disagrees with this one, this one is right and the other is the thing to fix.
 
 ## Two kinds of people
 
@@ -21,7 +21,7 @@ A creator offers something of value: something to buy, join, visit, or learn abo
 
 ## What a Page is
 
-In Don's words (2026-09-12): **a Page is "an organizing entity for something that needs more than one of anything."**
+In the PM's words (2026-09-12): **a Page is "an organizing entity for something that needs more than one of anything."**
 
 Long-lived, and carrying multiples, multiple meetups, multiple announcements, maybe multiple conversations. That is the test, and it is the one to apply when something new turns up and nobody is sure.
 
@@ -33,7 +33,7 @@ Two things fall straight out of the test, without needing their own rule:
 
 ### Venue is not a noun — it is a role
 
-*(Confirmed by Don, 2026-09-12.)* **A venue is an organization hosting at a Location.** Not an entity of its own, and not a kind of Page.
+*(Confirmed by the PM, 2026-09-12.)* **A venue is an organization hosting at a Location.** Not an entity of its own, and not a kind of Page.
 
 - **The Page is justified by what the organization is**, never by the hosting. Harlow's gets one because it is a business. A farmers market gets one because it is an organization that convenes people.
 - **Persistence lives on the Location, not the organization** — `locations.kind` already carries it. Harlow's is `permanent`. A market taking over a few streets on Saturday mornings is `recurring_temporary`.
@@ -66,7 +66,7 @@ Creators post pictures and edit all of it.
 
 A creator can set a location by dropping a pin on the map, for the places that have no street address — a meeting point in West Sacramento, a trailhead, a corner of a park.
 
-**The creator decides the precision. The platform does not snap, round, or coarsen it.** *(Confirmed by Don, 2026-09-12.)*
+**The creator decides the precision. The platform does not snap, round, or coarsen it.** *(Confirmed by the PM, 2026-09-12.)*
 
 That makes the copy the only thing standing between a creator and pinning their own house. So it is not advisory:
 
@@ -83,7 +83,7 @@ A specific occurrence is its own result, not a filter applied to its Page — th
 
 ## Browse is everything
 
-In Don's words (2026-09-12): **"browse is everything, why wouldn't it be all kinds of things?"**
+In the PM's words (2026-09-12): **"browse is everything, why wouldn't it be all kinds of things?"**
 
 Browse is the universal surface. It carries everything the platform holds.
 
@@ -91,7 +91,7 @@ Browse is the universal surface. It carries everything the platform holds.
 
 Good reasons exist and are not weakened by this. A member who has not opted into discoverability is not in search — that is consent, and it is recorded. A draft is not published, so there is nothing to carry. What the principle forbids is the unrecorded exclusion: a thing kept out of browse because an earlier model had no room for it, or because nobody asked.
 
-**Posts appearing in browse is an instance of this, not a separate rule.** Flat — not only the dated ones, not only the ones with a place. An earlier line said browse finds "posts that carry a date and a place"; that came from Don speaking about the map — *"You're right to include anything with a date and a location. We use a map to tell someone where to go."* **It still holds for the map**, where a post needs a place to be a pin and a time to be an event. It was read as a filter on browse, which it never was.
+**Posts appearing in browse is an instance of this, not a separate rule.** Flat — not only the dated ones, not only the ones with a place. An earlier line said browse finds "posts that carry a date and a place"; that came from the PM speaking about the map — *"You're right to include anything with a date and a location. We use a map to tell someone where to go."* **It still holds for the map**, where a post needs a place to be a pin and a time to be an event. It was read as a filter on browse, which it never was.
 
 **What this does not settle.** Browse carrying everything makes a result list a mixture — a Page, an event next Saturday, an undated *"50% off today"*. **How that list reads and how it orders is open.** What is not open, and is not to be reopened, is what may enter it.
 
@@ -114,7 +114,7 @@ Good reasons exist and are not weakened by this. A member who has not opted into
 
 **Two inputs, one vocabulary.**  Tags creators create, and searches that returned nothing, both feed the dictionary. **The tag list and the dictionary are one vocabulary, not two**: the tags are what exists, and the dictionary is that plus the words strangers type for it. Nothing builds a third list.
 
-**An LLM agent grows the dictionary, and a human approves what it proposes.** New tags and zero-result searches in; proposed entries out. **The gate is the agent's, not Don's:** an unattended loop writing its own vocabulary drifts invisibly, and the only report is a member who found nothing.
+**An LLM agent grows the dictionary, and a human approves what it proposes.** New tags and zero-result searches in; proposed entries out. **The gate is the agent's, not the PM's:** an unattended loop writing its own vocabulary drifts invisibly, and the only report is a member who found nothing.
 
 **A public tag is member-contributed content that other people see**, so [member-content-takedown] applies — no production without a report-and-takedown path — and it is an abuse surface in its own right, not only a data-quality one. `messaging-problem.md`.
 
@@ -122,7 +122,7 @@ Good reasons exist and are not weakened by this. A member who has not opted into
 
 ## Why Home and Browse both exist
 
-In Don's words (2026-09-12): **"Browse is everything, Home is personalized so items the member's personal interests don't get buried in browse."**
+In the PM's words (2026-09-12): **"Browse is everything, Home is personalized so items the member's personal interests don't get buried in browse."**
 
 **Two surfaces, two jobs, and the second is the reason the first can afford to be complete.**
 
@@ -136,7 +136,7 @@ Neither can do the other's job. A complete surface that quietly favours your int
 **A hard distinction, because one word covers two things and only one of them is allowed.**
 
 - **Allowed — and the whole point:** the member's own **declared interests**, and where they are. Home surfaces what they said they care about, near them. That is personalization on facts the member volunteered about themselves.
-- **Allowed (2026-11-15):** what the member **searched for**, kept on their own profile, shown only to them, deletable. Don: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
+- **Allowed (2026-11-15):** what the member **searched for**, kept on their own profile, shown only to them, deletable. The PM: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it."*
 - **Allowed (2026-11-25):** what the member **does on purpose** ("More like this", saves, messaging, buying, follows); never opens or views (F113).
 - **Allowed:** genuine community response *(2026-09-12)*: a baker the neighbourhood turns up for should rise.
 - **Never:** what keeps someone scrolling: watch-time, dwell-time, an engagement objective. Ranking doesn't favour a member for payment, size or follower count (2026-09-30).
@@ -167,7 +167,7 @@ The reasoning generalises: **put logic where it can be tested and reviewed; put 
 
 ## Responding to an event
 
-**A thumbs up, or nothing.** There is no declined state and no seen-and-undecided state — those were Don painting the bigger picture, not a spec, and they are not what ships.
+**A thumbs up, or nothing.** There is no declined state and no seen-and-undecided state — those were the PM painting the bigger picture, not a spec, and they are not what ships.
 
 **The organizer sees two lists:** who thumbed up, and who didn't.
 
@@ -175,13 +175,13 @@ The reasoning generalises: **put logic where it can be tested and reviewed; put 
 
 ### What "don't sell visibility" actually forbids
 
-In Don's words (2026-09-12): *"Don't sell visibility means we don't sell visibility to corporations businesses whatever — they haven't earned it. If they're doing well in the community and the community loves them then we need to share that. This is peer pressure for good."*
+In the PM's words (2026-09-12): *"Don't sell visibility means we don't sell visibility to corporations businesses whatever — they haven't earned it. If they're doing well in the community and the community loves them then we need to share that. This is peer pressure for good."*
 
 **The prohibition is on money buying placement. That is the whole of it.**
 
 Genuine community response driving what surfaces is not a loophole in that rule — **it is the intended mechanism.** Earned attention is the product working as designed. A baker the neighbourhood turns up for should rise, and the platform's job is to carry that signal, not to flatten it in the name of fairness.
 
-This has been recorded wrongly twice, both times by an agent narrowing the rule further than Don ever stated it. The first version said a response count must not be "a social signal." The second said displaying a count was fine but ordering by it was forbidden. **The second half of that is also wrong**, and is corrected here: response may drive ordering. What may not is a payment.
+This has been recorded wrongly twice, both times by an agent narrowing the rule further than the PM ever stated it. The first version said a response count must not be "a social signal." The second said displaying a count was fine but ordering by it was forbidden. **The second half of that is also wrong**, and is corrected here: response may drive ordering. What may not is a payment.
 
 ## What this reopened
 
@@ -189,7 +189,7 @@ Responding to an event was cut on the reasoning that occurrences of a recurring 
 
 ## Rulings
 - **2026-10-11 — The Charter is the one-page statement of SocialUs's mission, its three flips (meet in person, spread wealth among the many, design for kindness), real examples and how we help members not feel squeezed. It is generated by `regen-charter` from the rulings tagged `surfaces=charter`, and it stands in for `goals.md`.** The PM, 2026-10-11, option A on plan #64. Kindness line, verbatim: "We help each other be good to one another." Two lines in his words: "We build for meeting in person, and we measure whether neighbours actually met" and "We measure our success by how much we improve our members' lives, financially and socially." Wording rule for every Charter line: "currently" where a ruling is not permanent, the platform first and then its members, and "never" only in "never extractive". The pre-post "Are you sure?" pause is out of the Charter until it has its own ruling (F108). `product/charter.md`. [for now] [replaces none] [binds tiers=planning surfaces=charter,copy build=none]
-- **2026-10-04 — We need to be successful first to help our members, and we want to be successful together.** Don: *"We need to be successful first to help our members. We want to be successful together."* Refines the 2026-09-30 platform-first priority, which stands: the platform comes first because its success is what lets it serve members, and success is shared with them, never extractive. An engaging Home is the first application. [for now] [binds tiers=planning,code surfaces=process,product build=none]
-- **2026-09-30 — The platform comes first, then its members, and every ruling can be revisited when the situation changes.** Don: *"our first priority is to protect the platform because that's what helps all members; our next priority is to protect our members... we will do what's in the best interest of first the platform because it serves all members and then of members because we're built to serve them."* **A ruling states what we currently do or don't do,** not as a permanent refusal; a change in situation, such as getting legal counsel, reopens it. [replaces 2026-09-30: The first goal of any decision is to bring no legal liability onto the platform.] [binds tiers=planning,code surfaces=process,product,copy build=none]
-- **2026-09-10 — There are no Items. What a creator offers is described on their Page and in its posts; it is not a separately listed thing that browse indexes.** Don's ruling, stated directly. Supersedes the Page-is-*who*/Item-is-*what* pairing and the three-noun spine in `product/foundation/nouns.md`, which are now wrong rather than incomplete. Browse finds Pages, and posts that carry a time. Full statement: `product/foundation/model.md`.
+- **2026-10-04 — We need to be successful first to help our members, and we want to be successful together.** The PM: *"We need to be successful first to help our members. We want to be successful together."* Refines the 2026-09-30 platform-first priority, which stands: the platform comes first because its success is what lets it serve members, and success is shared with them, never extractive. An engaging Home is the first application. [for now] [binds tiers=planning,code surfaces=process,product build=none]
+- **2026-09-30 — The platform comes first, then its members, and every ruling can be revisited when the situation changes.** The PM: *"our first priority is to protect the platform because that's what helps all members; our next priority is to protect our members... we will do what's in the best interest of first the platform because it serves all members and then of members because we're built to serve them."* **A ruling states what we currently do or don't do,** not as a permanent refusal; a change in situation, such as getting legal counsel, reopens it. [replaces 2026-09-30: The first goal of any decision is to bring no legal liability onto the platform.] [binds tiers=planning,code surfaces=process,product,copy build=none]
+- **2026-09-10 — There are no Items. What a creator offers is described on their Page and in its posts; it is not a separately listed thing that browse indexes.** The PM's ruling, stated directly. Supersedes the Page-is-*who*/Item-is-*what* pairing and the three-noun spine in `product/foundation/nouns.md`, which are now wrong rather than incomplete. Browse finds Pages, and posts that carry a time. Full statement: `product/foundation/model.md`.
 - **2026-09-07 — Exactly three public promises: surplus returns to the community; every decision weighs member benefit against product benefit; not an extractive platform.** Every other prior commitment (never paying for visibility, etc.) is withdrawn. Nothing is published until the PM says so. [for now]

@@ -14,16 +14,16 @@ Priya wants to convene a Tuesday run. Marcus wants to sell hot sauce. Dana is st
 
 ## Acceptance
 
-1. **Every path through the create flow produces a Page.** An event is a post a Page makes, with no Page of its own (2026-10-01). There is no second entity, no alternative record, and no path that creates something else. *(Confirmed by Don 2026-09-15; `nouns.md`'s "no Page for a single occasion" was overruled the same day.)*
+1. **Every path through the create flow produces a Page.** An event is a post a Page makes, with no Page of its own (2026-10-01). There is no second entity, no alternative record, and no path that creates something else. *(Confirmed by the PM 2026-09-15; `nouns.md`'s "no Page for a single occasion" was overruled the same day.)*
 2. **Purpose is chosen first, from a named set**, before any other field. Nothing is pre-selected and nothing is inferred.
 3. **The words shown to the person differ by purpose** — headings, labels, buttons, and the confirmation. Opening a shop, posting a gathering and starting a group read as three different things.
 4. **The tools offered differ by purpose.** A purpose's flow omits steps its thing does not need, rather than showing them disabled or skippable.
 5. **"Shop" never names the general act.** No string outside the shop purpose calls creating a Page opening a shop, and no person reaches a shop-worded step from a non-shop purpose.
-6. **Every Page is an organization; the chosen type — Business (enterprise) or Social group — is stored and changeable any time in Page settings** (Don, 2026-10-05). Use cases are presets under the two types, and the type sets only the defaults a new Page starts with; any component can still be added to any Page (dispatch-decided 2026-10-05; Don can override). Locally owned is offered to businesses only. It confers no permission.
+6. **Every Page is an organization; the chosen type — Business (enterprise) or Social group — is stored and changeable any time in Page settings** (the PM, 2026-10-05). Use cases are presets under the two types, and the type sets only the defaults a new Page starts with; any component can still be added to any Page (dispatch-decided 2026-10-05; the PM can override). Locally owned is offered to businesses only. It confers no permission.
 
 ## Not this
 
-Converting one Page into another — rejected outright since 2026-09-07 and still rejected. Creating two Pages at once; they are made sequentially. The business claim, which remains the friction gate and is separate from the purpose dropdown. Naming the members of the purpose set — that is Don's, and criterion 2 only requires it be named and closed.
+Converting one Page into another — rejected outright since 2026-09-07 and still rejected. Creating two Pages at once; they are made sequentially. The business claim, which remains the friction gate and is separate from the purpose dropdown. Naming the members of the purpose set — that is the PM's, and criterion 2 only requires it be named and closed.
 
 ## Why
 
@@ -33,7 +33,7 @@ Converting one Page into another — rejected outright since 2026-09-07 and stil
 
 ### Checked against what is already approved — no conflict on self-classification
 
-**The dropdown classifies the thing, not the person, and that is exactly what the existing rules ask for.** F060 criterion 2: *"`/you/create`'s first question is what they're starting, not what they are — no self-classification anywhere in the flow."* Don's dropdown asks what they are starting. **The rules it might have collided with are all about the person:** no stored role on a member, no account type, no umbrella noun for a person. None is touched.
+**The dropdown classifies the thing, not the person, and that is exactly what the existing rules ask for.** F060 criterion 2: *"`/you/create`'s first question is what they're starting, not what they are — no self-classification anywhere in the flow."* The PM's dropdown asks what they are starting. **The rules it might have collided with are all about the person:** no stored role on a member, no account type, no umbrella noun for a person. None is touched.
 
 **And a prior ruling already asked for this.** The 2026-09-07 ruling: *"Different creation flows per type is correct; nothing ever mutates."* F087 is that ruling built.
 
@@ -43,7 +43,7 @@ Converting one Page into another — rejected outright since 2026-09-07 and stil
 
 ### Settled — the one-time gathering
 
-**Don ruled 2026-09-15:** *"We can create a page for every kind. It just doesn't require all of the same tools. It would still require an announcement and perhaps a following list and later messaging etc."*
+**The PM ruled 2026-09-15:** *"We can create a page for every kind. It just doesn't require all of the same tools. It would still require an announcement and perhaps a following list and later messaging etc."*
 
 **What differs between Pages is the tools.** *(The one-off Page went 2026-10-01: an event is a post.)* Every Page gets a baseline — announcing, and a following list — with messaging later. `nouns.md` was amended the same day; criterion 1 stands as written and is no longer in conflict.
 
@@ -51,6 +51,6 @@ Converting one Page into another — rejected outright since 2026-09-07 and stil
 
 ## Rulings
 - **2026-10-05 — Purpose first, type for listing. Every Page has ONE primary purpose, what it mainly accomplishes. Beta's purposes are Create's four answers: Gather (find your people, meet regularly), Sell (make and be found), Offer a service or teach (a local pro, or someone who leads a class), Be creative (start or float something). The type, Business or Social group, follows from the purpose by default and can be changed in settings; it is what member browsing, filters and the Locally owned badge (business only) read.** The PM chose A. Later loops (Share/Ask, Pooling, Federation) get purposes when built; each purpose names the loops it serves in `product/needs/member-journey.md`. Carried forward from the line this replaces: the type sets defaults only, any component can be added to any Page, and Locally owned stays business-only. Existing Pages map business → Sell; place, interest, event_anchored → Gather; practice → Offer; family → Gather, private. `socialus-web` #363. [replaces 2026-10-05: Every Page is an organization. Its two primary types are Business (enterprise) and Social group; the use cases are presets and defaults under those two.] [binds tiers=planning,code surfaces=pages,create,page-settings,badges,explore]
-- **2026-10-05 — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery".** Dispatch-decided 2026-10-05 under Don's delegation (*"knock items off without my help"*), from `socialus-design/research/BADGES-VALUES-KINDS-PLAN.md`; **Don can override.** Scenario: F087. [binds tiers=planning,code surfaces=cards,pages,explore]
-- **2026-09-15 — There is one create flow and it always creates a Page. What the person is told they are doing is chosen up front from a named set.** Don: nothing is ever called "opening a shop" in general — a business is opening a shop, someone hosting is posting a gathering, someone starting a recurring meetup is starting a group, and all three are creating a Page. Copy and tools differ by purpose; the purpose gates nothing afterwards. **This dissolves "hosting requires opening a shop first" as a labelling problem, not a missing substrate.** Written as F087 (`draft`). **No conflict with the no-self-classification rule** — F060 already says the first question is *"what they're starting, not what they are"*, and every rule it might have hit (no stored role, no account type, no umbrella noun) is about the person. **It is the 2026-09-07 ruling "different creation flows per type is correct" finally built.** [for now]
+- **2026-10-05 — A kind line sits under the Page's name on cards and in the Page header: kind icon · kind · main collection, for example "Business · Bakery".** Dispatch-decided 2026-10-05 under the PM's delegation (*"knock items off without my help"*), from `socialus-design/research/BADGES-VALUES-KINDS-PLAN.md`; **The PM can override.** Scenario: F087. [binds tiers=planning,code surfaces=cards,pages,explore]
+- **2026-09-15 — There is one create flow and it always creates a Page. What the person is told they are doing is chosen up front from a named set.** The PM: nothing is ever called "opening a shop" in general — a business is opening a shop, someone hosting is posting a gathering, someone starting a recurring meetup is starting a group, and all three are creating a Page. Copy and tools differ by purpose; the purpose gates nothing afterwards. **This dissolves "hosting requires opening a shop first" as a labelling problem, not a missing substrate.** Written as F087 (`draft`). **No conflict with the no-self-classification rule** — F060 already says the first question is *"what they're starting, not what they are"*, and every rule it might have hit (no stored role, no account type, no umbrella noun) is about the person. **It is the 2026-09-07 ruling "different creation flows per type is correct" finally built.** [for now]
 - **2026-09-07 — Page creation drops the "both sell and host" option; Pages are created sequentially.** A one-line "start another Page" offer at the end of creation is the load-bearing mitigation.

@@ -14,6 +14,8 @@ criteria:
 
 # Hyper-specific search: connecting members, a minimal front door, and what producers learn
 
+**As of 2026-11-20** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
+
 **As of 2026-11-15** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
 **As of 2026-11-15** · Source: the PM's words in one thread, 2026-11-14 to 11-15; socialus-web at `4a45ea5`; a sweep of socialus-plan, socialus-ops and socialus-web; the precedents linked below · Maintained by: hand (brief; deleted at 30 days or once ruled and placed)

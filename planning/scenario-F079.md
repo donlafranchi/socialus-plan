@@ -10,7 +10,7 @@ concept: CO-0045
 ---
 ## Story
 
-Once there's real report volume, opening one item at a time doesn't scale for one person. Don selects a batch in the mobile queue — everything the agent tagged "spam," say — and dismisses or upholds all of them in one tap.
+Once there's real report volume, opening one item at a time doesn't scale for one person. The PM selects a batch in the mobile queue — everything the agent tagged "spam," say — and dismisses or upholds all of them in one tap.
 
 ## Acceptance
 

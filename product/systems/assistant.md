@@ -9,7 +9,7 @@ status: active
 
 *Index of every product doc and its settled rules: [`../README.md`](../README.md).*
 
-The in-app assistant is meant to become a first-class way to use SocialUs, next to browsing and search (Don, 2026-11-13: *"we're moving toward an agent assistant as a first class interaction system"*). This file is what it is for a member. How its permissions are enforced is in `socialus-web` `docs/action-layer.md`, not here.
+The in-app assistant is meant to become a first-class way to use SocialUs, next to browsing and search (the PM, 2026-11-13: *"we're moving toward an agent assistant as a first class interaction system"*). This file is what it is for a member. How its permissions are enforced is in `socialus-web` `docs/action-layer.md`, not here.
 
 ## What a member can count on
 

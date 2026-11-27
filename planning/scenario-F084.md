@@ -10,7 +10,7 @@ concept: new
 ---
 ## Story
 
-Don wants to change a sentence. Today that means finding which of a hundred-odd component files holds it, editing TSX, and hoping it isn't also written slightly differently somewhere else. After this, there is one file. He says which words should change, an agent edits that file, and it deploys. Nothing is hunted for, because there is nowhere else for words to be.
+The PM wants to change a sentence. Today that means finding which of a hundred-odd component files holds it, editing TSX, and hoping it isn't also written slightly differently somewhere else. After this, there is one file. He says which words should change, an agent edits that file, and it deploys. Nothing is hunted for, because there is nowhere else for words to be.
 
 ## Acceptance
 
@@ -23,11 +23,11 @@ Don wants to change a sentence. Today that means finding which of a hundred-odd 
 
 ## Not this
 
-Rewriting, shortening, or improving any string — that is F083 and Don's own writing, and doing it here would hide a copy change inside a mechanical one. Copy in the database with an editing screen — that is option B and was not chosen. Extracting strings from files already slated for deletion. Translation or locale support.
+Rewriting, shortening, or improving any string — that is F083 and the PM's own writing, and doing it here would hide a copy change inside a mechanical one. Copy in the database with an editing screen — that is option B and was not chosen. Extracting strings from files already slated for deletion. Translation or locale support.
 
 ## Why
 
-### What Don's copy covers, and what it does not
+### What the PM's copy covers, and what it does not
 
 *(Mapped 2026-09-15 against `product/ui/surfaces.md`. This is the gap list this scenario's ticket needs.)*
 
@@ -45,7 +45,7 @@ Rewriting, shortening, or improving any string — that is F083 and Don's own wr
 
 **Has copy with no surface to put it on yet:** *"No messages. Say hello to someone nearby"* — **messaging does not exist**, has no substrate at all, and is not in launch scope. **Name sharing** — the two lines belong to F077's counterparty disclosure, which is approved and unbuilt. **Join or start a group** — the join control is the one missing piece of Groups, 0.75 day and unticketed.
 
-**Live surfaces with no copy in the guide:** `/` Home · `/m/[handle]` Member · `/p/[...slug]` the place catch-all · `/you` · `/you/sell` · `/you/following` · Item routes · **`/join`**, which F085 requires be rewritten and whose heading Don has already called too narrow.
+**Live surfaces with no copy in the guide:** `/` Home · `/m/[handle]` Member · `/p/[...slug]` the place catch-all · `/you` · `/you/sell` · `/you/following` · Item routes · **`/join`**, which F085 requires be rewritten and whose heading the PM has already called too narrow.
 
 **Not covered and should not be:** every residue route — `/vendors/[slug]`, `/business/[slug]`, `/register-vendor`, `/you/vendor` and its bulletin screens. They are being deleted, which is the point of doing that first.
 
@@ -57,7 +57,7 @@ Rewriting, shortening, or improving any string — that is F083 and Don's own wr
 
 **Sequence with the lint, don't land them together.** The module first, then the check pointed at it: scanning one typed file is a far simpler and more reliable check than walking every JSX text node and rendered prop. **But if this scenario slips past launch, ship the lint in its broader form anyway** — the person-noun rule has had no hook twice now (`ops-pattern/process/LESSONS.md` 17, 26), and waiting for the easier version is how it goes a third time.
 
-**Launch or right after is Don's call.** It is the enabler for every other copy change, so it wants to be first — but three or four days of mechanical work against a launch plan with ~28% slack is a real bite, and nothing a member sees gets better on the day it lands.
+**Launch or right after is the PM's call.** It is the enabler for every other copy change, so it wants to be first — but three or four days of mechanical work against a launch plan with ~28% slack is a real bite, and nothing a member sees gets better on the day it lands.
 
 ## Rulings
-- **2026-09-15 — Copy lives in one typed module in the repo (option A); the database-plus-editing-screen version is not built.** Don's pick. One file is the only place words live, so a wording change is one edit and a deploy rather than a hunt across ninety-odd component files. Written as F084. **It does not give Don self-service** — an agent still makes the edit — and option B stays available later, since the module's keys become its rows. Sequenced before the person-noun lint, which gets simpler once it only has one file to read.
+- **2026-09-15 — Copy lives in one typed module in the repo (option A); the database-plus-editing-screen version is not built.** The PM's pick. One file is the only place words live, so a wording change is one edit and a deploy rather than a hunt across ninety-odd component files. Written as F084. **It does not give the PM self-service** — an agent still makes the edit — and option B stays available later, since the module's keys become its rows. Sequenced before the person-noun lint, which gets simpler once it only has one file to read.

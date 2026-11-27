@@ -1,16 +1,16 @@
 ---
 id: url-identity
-purpose: What a Page's canonical address is made of. Replaced 2026-11-01 (Don): /<place>-<st>/<page-slug>, frozen at first publish. Earlier rulings (2026-09-21 no geography; 2026-10-06 the ID alone), their consequences and the identity audit stay below as history.
+purpose: What a Page's canonical address is made of. Replaced 2026-11-01 (the PM): /<place>-<st>/<page-slug>, frozen at first publish. Earlier rulings (2026-09-21 no geography; 2026-10-06 the ID alone), their consequences and the identity audit stay below as history.
 status: ruled
 ---
 
 # What a Page's address is made of
 
-**Ruled by Don, 2026-09-21; the address form amended 2026-10-06 by the PM — the ID alone (below). `socialus-web` #175 is unblocked.** The Place-precedence ruling of the same day stands and is still right about *where a Page appears*; this governs what an address is made of, which is a different question.
+**Ruled by the PM, 2026-09-21; the address form amended 2026-10-06 by the PM — the ID alone (below). `socialus-web` #175 is unblocked.** The Place-precedence ruling of the same day stands and is still right about *where a Page appears*; this governs what an address is made of, which is a different question.
 
 ## The ruling
 
-**Replaced 2026-11-01 (Don, chat; `socialus-web` #1139; live rule in `product/ui/surfaces.md` § Rulings): readable addresses.** A Page is `socialus.org/<place>-<st>/<page-slug>` (`/sacramento-ca/plant-foundry`), a post `/<place>-<st>/<page-slug>/<post-slug>`. The place is the home town set at first publish and frozen with the slug, never derived from the current address, so his 2026-09-21 worry (*"addresses/locations will evolve"*) is met by freezing rather than by leaving geography out; a move changes nothing in the URL. Always state-suffixed; the county for two same-named places in a state; unique as the pair; a twin takes its neighbourhood, then `-2`. Place order: our places list, the postal city, the county; never the founder's home, so no member is derivable from it. Old `/g/<id>` forms forward with a 301; the ID still resolves internally. Everything below is the history this replaces.
+**Replaced 2026-11-01 (the PM, chat; `socialus-web` #1139; live rule in `product/ui/surfaces.md` § Rulings): readable addresses.** A Page is `socialus.org/<place>-<st>/<page-slug>` (`/sacramento-ca/plant-foundry`), a post `/<place>-<st>/<page-slug>/<post-slug>`. The place is the home town set at first publish and frozen with the slug, never derived from the current address, so his 2026-09-21 worry (*"addresses/locations will evolve"*) is met by freezing rather than by leaving geography out; a move changes nothing in the URL. Always state-suffixed; the county for two same-named places in a state; unique as the pair; a twin takes its neighbourhood, then `-2`. Place order: our places list, the postal city, the county; never the founder's home, so no member is derivable from it. Old `/g/<id>` forms forward with a 301; the ID still resolves internally. Everything below is the history this replaces.
 
 **Amended 2026-10-06 (the PM, `planning/research/url-plan-2026-10-06.md` §2, §7.1): a Page's address is its ID only — `socialus.org/g/tzsxja`. `groups.slug` is frozen. Old forms are deleted, not redirected (the PM, 2026-10-06, no real members or shared links yet; revisited once real members exist).** Because names go stale on rename and the share preview already carries the name; precedent Airbnb `/rooms/<id>`, Instagram `/p/<code>`. A cosmetic name tail can be added later without breaking links. The 2026-09-21 form was a cosmetic slug plus a short ID (`joes-pizza-7k3x`); where this file still reads that way below, this paragraph governs.
 
@@ -49,7 +49,7 @@ status: ruled
 1. **`member_public_group_memberships` is a view granted to `anon`** (`029_member_public_projections.sql`) projecting **`gm.member_id` joined to `g.id, g.slug, g.name, g.kind`** for every listed Page. It exists to render `/m/<handle>`, but **a view is queryable in both directions**: given a Page slug, it returns the member ids attached to it. This is a public member-to-Page join table.
 2. **`groups.founder_member_id` is `not null` and RLS is row-level, not column-level.** The policy `groups_select_active_or_own_draft` admits any active, listed, non-dissolved row to `anon`. **`browse_feed` is `security invoker` and returns rows to signed-out readers**, which is only possible if `anon` can select `groups` — and no column-level grant narrows that. **So `select founder_member_id from groups` is available to anyone with the public API key.** *(This is inference from the policy and the invoker semantics, not from a query against production — confirming it takes one request, which I cannot make from here. It should be confirmed before anything is designed on top of it.)*
 
-**The consequence for the ruling: a URL change alone does not satisfy Don's second constraint.** It is necessary and nowhere near sufficient. **Any option below is incomplete without closing both of these**, and closing them is independent of which address shape wins.
+**The consequence for the ruling: a URL change alone does not satisfy the PM's second constraint.** It is necessary and nowhere near sufficient. **Any option below is incomplete without closing both of these**, and closing them is independent of which address shape wins.
 
 ## The tension with the ratified place rule
 
@@ -71,7 +71,7 @@ status: ruled
 
 - **Random, from a CSPRNG. Never derived** from a member id, a group id, a timestamp or a sequence. **Derivation is what would reintroduce both enumerability and the member link**, so it is the one property that is not a preference.
 - **Crockford base32** — digits plus letters, minus `i`, `l`, `o` and `u`. That kills the look-alike pairs (`0`/`O`, `1`/`l`/`I`) for anyone reading an address aloud, and dropping `u` blocks most accidental words.
-- **Length: recommend six, not four.** Four characters is 32⁴ ≈ 1.05M values, and a birthday collision becomes likely at roughly 1,200 Pages — which one metro reaches. Six is 32⁶ ≈ 1.07B, likely at roughly 38,000. **Generate-and-retry against a unique index either way**, so a collision is a retry and never a duplicate. *(Don's `joes-pizza-7k3x` example is four. This is the one number worth confirming: four looks better and needs retries sooner.)*
+- **Length: recommend six, not four.** Four characters is 32⁴ ≈ 1.05M values, and a birthday collision becomes likely at roughly 1,200 Pages — which one metro reaches. Six is 32⁶ ≈ 1.07B, likely at roughly 38,000. **Generate-and-retry against a unique index either way**, so a collision is a retry and never a duplicate. *(the PM's `joes-pizza-7k3x` example is four. This is the one number worth confirming: four looks better and needs retries sooner.)*
 - **Case-insensitive on read, lower-case on write.**
 
 ## Slug changes, and slugs that were used before
@@ -91,7 +91,7 @@ status: ruled
 **State, city, metro and neighbourhood are index hierarchies.** Two rules keep them from becoming addresses again:
 
 - **An index links to canonical URLs and never renders a Page inline at an index path.** Rendering is what created the duplicate-address defect described above.
-- **An index path is free to change shape**, because nothing shared points at it. That is the whole benefit of taking geography out of the address: the metro-to-neighbourhood change Don is anticipating becomes an index rewrite with no address churn.
+- **An index path is free to change shape**, because nothing shared points at it. That is the whole benefit of taking geography out of the address: the metro-to-neighbourhood change the PM is anticipating becomes an index rewrite with no address churn.
 
 ## What is not in scope here
 

@@ -1,10 +1,10 @@
 # One strike for taking advantage: research, 2026-11-06
 
-Research only; nothing here is ruled. Don, verbatim:
+Research only; nothing here is ruled. The PM, verbatim:
 - *"a new kind of policy that says, we are not putting up with any nonsense. I'm thinking of having a 1 strike rule for anyone trying to get over."*
 - *"The one strike rule is to discourage anyone from taking advantage. It only applies when someone actually does something against the rules and one of the rules is to not abuse the reporting button. If someone gets reported and it's a false flag then nothing will happen to the person who got reported."*
 
-## Bottom line for Don
+## Bottom line for the PM
 
 **Recommend A: a strike is a confirmed rule break, and it removes the account. Bad-faith reporting is one of those breaks. A false flag clears completely.**
 - **Who confirms:** you, by a tap on the review page, from what the content or our records show. A report alone never confirms anything, and neither does a count of reports or the AI.
@@ -86,7 +86,7 @@ Today (F078, F102):
 | First report, most categories | Post stays up, courtesy notice | Same. If the report is dismissed, the notice shows as cleared and nothing is kept against the poster |
 | Second report, or Threat or Sensitive | Hides until a person decides | Same interim hide, for safety. Dismissed means restored at once, notice cleared, no record on the poster |
 | Your decision on the row | Remove or restore | Restore (false flag) · Remove (content goes, no strike: a mistake) · **Remove and strike the poster** (confirmed break) · **Strike the reporter** (confirmed bad faith) |
-| Reporter warning (F078 criterion 10) | "Each report Don rejects is a strike; after three, reports stop hiding" | "Reporting in bad faith is against the rules, and one confirmed bad-faith report removes your account." Honest wrong reports keep today's cool-down, which is renamed so it isn't called a strike |
+| Reporter warning (F078 criterion 10) | "Each report the PM rejects is a strike; after three, reports stop hiding" | "Reporting in bad faith is against the rules, and one confirmed bad-faith report removes your account." Honest wrong reports keep today's cool-down, which is renamed so it isn't called a strike |
 | Records on the reported person | The report history sits on the review row | A dismissed report is closed and leaves no count, flag or mark on the person. The year-long upload IP log is unchanged; it covers every upload, not reports |
 | The poster's answer (F102) | One answer per hide | Unchanged; it is evidence on the row |
 

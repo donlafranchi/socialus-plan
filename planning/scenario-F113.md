@@ -11,7 +11,7 @@ concept: CO-0066
 ---
 ## Story
 
-Don asks SocialUs for bikes and gives a thumbs up to a steel single speed for sale, then over two weeks to four more steel single speeds, a hardtail mountain bike and a beach cruiser. He never manages anything. Behind the scenes each post carries labels SocialUs gave it (bicycle · single speed · steel frame · used · Midtown). In You a line appears: "Seems you're into: steel single speeds". He taps "That's me". His next bike answers lead with steel single speeds. Bowling, from a few thumbs up for a friend, he marks "Not really", and it doesn't come back.
+The PM asks SocialUs for bikes and gives a thumbs up to a steel single speed for sale, then over two weeks to four more steel single speeds, a hardtail mountain bike and a beach cruiser. He never manages anything. Behind the scenes each post carries labels SocialUs gave it (bicycle · single speed · steel frame · used · Midtown). In You a line appears: "Seems you're into: steel single speeds". He taps "That's me". His next bike answers lead with steel single speeds. Bowling, from a few thumbs up for a friend, he marks "Not really", and it doesn't come back.
 
 ## Acceptance
 

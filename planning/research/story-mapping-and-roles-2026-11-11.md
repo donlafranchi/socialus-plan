@@ -34,9 +34,9 @@
 - Cockburn: the levels are a gradient, not boxes; use cases stop at fish; stories may go to clam. [Cockburn slides PDF](https://alistaircockburn.com/Unifying%20us%20uc%20sm.pdf)
 - Patton: activities sit at kite, user tasks at sea level, details at fish and below; a task can be too high or too low, so altitude matters. [Patton slides](https://courses.cs.northwestern.edu/394/slides/spr12/Patton%20Building%20Better%20Products%20Using.pdf)
 
-**Don's three levels mapped onto Cockburn and Patton (applied)**
+**The PM's three levels mapped onto Cockburn and Patton (applied)**
 
-| Don's level | Cockburn | Patton |
+| The PM's level | Cockburn | Patton |
 |---|---|---|
 | 1. Whole-app capability ("people can gather") | cloud | the scope of a whole map, or an opportunity |
 | *in between: a stage of the journey* | kite | **activity** (backbone row 1) |
@@ -44,7 +44,7 @@
 | *in between: one step a member finishes in one sitting* | **sea level** | **user task** (backbone row 2) |
 | 3. Implementation detail | fish, clam | body details; below clam is code work, which is not on the map |
 
-- The level Don has no name for is **sea level, the user task**: "one member, one sitting, goes away happy". Cockburn calls it the most useful level; it is where acceptance checks belong. **(applied)**
+- The level the PM has no name for is **sea level, the user task**: "one member, one sitting, goes away happy". Cockburn calls it the most useful level; it is where acceptance checks belong. **(applied)**
 - The other missing name is the **activity**, which groups steps inside a journey. **(applied)**
 
 **Dual track: discovery and delivery**
@@ -77,7 +77,7 @@ Journey: "a neighbour finds something happening this weekend and goes."
 - **Why a slice line sits where it does** → `decision`; a later fix to it → `correction`.
 - **How mapping is done here** → `practice`; "minimize output, maximize outcome" → `philosophy`; walking skeleton → `pattern`.
 
-## 3. Roles if Don hires help
+## 3. Roles if the PM hires help
 
 **Sourced practice**
 - **Product trio:** product manager, designer, engineer jointly own discovery, with weekly customer contact; a default, may be a quartet. [Product Talk](https://www.producttalk.org/no-single-right-way-3/), [Product Compass](https://productcompass.pm/p/product-trio)
@@ -91,29 +91,29 @@ Journey: "a neighbour finds something happening this weekend and goes."
 - **Community roles (CMX):** in a community-first company the community person is a very early hire, even at the top table; roles later split into engagement and operations. [CMX career path](https://cmxhub.com/an-introduction-to-the-community-career-path/), [CMX lead role](https://cmxhub.com/blog/what-does-a-lead-community-role-look-like-in-a-community-centric-company)
 - **Trust and safety:** at a small startup it falls to the community manager or support; the first dedicated hire writes policy. [ActiveFence](https://activefence.com/blog/building-a-trust-and-safety-team), [TSPA](https://www.tspa.org/?p=4385)
 
-**Applied recommendation** (my reading, not a source). Premise: AI agents write most code, so the scarce work is judgement, design, people, safety and the local market. Don stays the PM: ideas, versions, words and look.
+**Applied recommendation** (my reading, not a source). Premise: AI agents write most code, so the scarce work is judgement, design, people, safety and the local market. The PM stays the PM: ideas, versions, words and look.
 
 **+1 person**
 
-| Hire | Owns | Don stops | Main risk |
+| Hire | Owns | The PM stops | Main risk |
 |---|---|---|---|
 | Community and launch lead (local) | recruiting organizers and sellers in the metro, member support, first-line moderation, weekly member conversations fed back as evidence | answering members, chasing organizers, judging reports | becomes marketing, not listening; burns out holding safety alone |
 
-**+3 people** (completes Cagan's trio around Don, plus the community lead)
+**+3 people** (completes Cagan's trio around the PM, plus the community lead)
 
-| Hire, in order | Owns | Don stops | Main risk |
+| Hire, in order | Owns | The PM stops | Main risk |
 |---|---|---|---|
 | 1. Community and launch lead | as above | as above | as above |
 | 2. Technical lead (supervises agents) | feasibility, architecture, security, migrations, second-session review, on-call | being the last check on anything technical | becomes a lone coder instead of reviewing agents |
-| 3. Product designer | usability, story maps, prototypes tested with members | sketching screens; designer brings options, Don picks look and words | blurs Don's look-and-feel right; agree who decides |
+| 3. Product designer | usability, story maps, prototypes tested with members | sketching screens; designer brings options, the PM picks look and words | blurs the PM's look-and-feel right; agree who decides |
 
 **+10 people** (two stream-aligned teams, one platform role, specialists)
 
-| Hire, in order | Owns | Don stops | Main risk |
+| Hire, in order | Owns | The PM stops | Main risk |
 |---|---|---|---|
 | 1 to 3. As in the +3 table | team A: "find and gather" | as above | as above |
 | 4. Trust and safety lead | written policy, appeals, law-enforcement requests, safety data | ruling on individual cases | policy drifts from product without a seat in discovery |
-| 5. Second product manager | team B: "buy, sell, trade", its outcomes and slices | running both journeys himself | two PMs pull the soul apart; Don sets outcomes, not features |
+| 5. Second product manager | team B: "buy, sell, trade", its outcomes and slices | running both journeys himself | two PMs pull the soul apart; the PM sets outcomes, not features |
 | 6. Second designer | team B usability | as above | design inconsistency between teams |
 | 7. Second technical lead | team B feasibility and agent review | as above | two codebases in spirit |
 | 8. Platform and agent-ops engineer | CI, agent tooling, data, performance, cost | knowing why the build broke | becomes a gate other teams wait on |
@@ -121,7 +121,7 @@ Journey: "a neighbour finds something happening this weekend and goes."
 | 10. Member operations and support | support queue, organizer success, money flows with the counsel repo | any member-ops ticket | support swamps the community lead without it |
 
 - At +10 the company is about 11 people: under Dunbar's 15, so everyone can still know everyone, but decisions must be written. **(memory on Dunbar)**
-- **Order of hiring and why:** community lead first, because the beta succeeds or fails on local people and agents can't do that work; then technical lead, because agents need a human checking correctness and safety; then designer, because Don's look-and-feel calls deserve real options; specialists only once two journeys run at once. **(applied)**
+- **Order of hiring and why:** community lead first, because the beta succeeds or fails on local people and agents can't do that work; then technical lead, because agents need a human checking correctness and safety; then designer, because the PM's look-and-feel calls deserve real options; specialists only once two journeys run at once. **(applied)**
 
 ## 4. What was not read
 

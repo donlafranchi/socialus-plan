@@ -1,6 +1,6 @@
 # What we built, where we are, what's next
 
-Generated 2026-11-26 20:13 UTC from the knowledge store and GitHub. Never edited by hand.
+Generated 2026-11-27 17:20 UTC from the knowledge store and GitHub. Never edited by hand.
 
 ## What we built
 
@@ -11,19 +11,17 @@ Generated 2026-11-26 20:13 UTC from the knowledge store and GitHub. Never edited
 - Change your zip and your area and home town follow. (store)
 - Agree to the house rules once, then publish your Page. (store)
 - Narrow what you see in plain words, and type the same words again later. (store)
-- Give your Page a picture and add one photo to each post. (store)
-- If your post is hidden, be told why and answer once, or fix it and post again. (store)
-- And 2 more things built: ask can_do (store)
+- Shelves of things to buy and do, including what's on in the next 7 days. (store)
 
 ## Where we are
 
 - Broken: the overnight smoke found a problem. (GitHub)
 - Slow: taps are slower than budget. (GitHub)
-- In flight: creating a Page asks one question, its kind; Every Page has a face, even without a photo; A non-business Page resolves everywhere, and holding several is ordinary; someone starts something without opening a shop; 4 changes open. (both)
+- In flight: creating a Page asks one question, its kind; Every Page has a face, even without a photo; A non-business Page resolves everywhere, and holding several is ordinary; someone starts something without opening a shop; 6 changes open. (both)
 - Before beta closes: 13 launch blockers, first Reports: a courtesy notice first, a second report hides, the poster is told why. (GitHub)
-- Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 11). (GitHub)
+- Waiting on you: criterion 2: the zip's county comes from HUD's residential share, not Census land area (first of 12). (GitHub)
 - Open bugs: 5. (GitHub)
-- GitHub read 2026-11-26 20:13 UTC. (store)
+- GitHub read 2026-11-27 17:20 UTC. (store)
 
 ## What's next
 

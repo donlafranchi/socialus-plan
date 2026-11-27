@@ -8,13 +8,13 @@ reviewed: 2026-10-05
 
 # Member journey
 
-**What changed (2026-10-05):** Sharing and Trade are one family, **Exchange** — swapping, bartering, giving away, lending, trading skills or time, without dollars, then selling (Don: *"the Trade persona is more like exchange or transact without dollars"*); 13 loops in five families became 15 in four; each loop now says who it's for, its steps in the app currently, what's missing and its beta status; maker and provider "profiles" are Pages, since members have no type and no public profile.
+**What changed (2026-10-05):** Sharing and Trade are one family, **Exchange** — swapping, bartering, giving away, lending, trading skills or time, without dollars, then selling (the PM: *"the Trade persona is more like exchange or transact without dollars"*); 13 loops in five families became 15 in four; each loop now says who it's for, its steps in the app currently, what's missing and its beta status; maker and provider "profiles" are Pages, since members have no type and no public profile.
 
 Foundational north star, upstream of every system spec. The platform exists so people can take ownership of their economic and civic future together — not by being an online third place, but by making real-world third places findable, recurring, and economically consequential. It is deliberately not built to grow like Facebook: as communities mature, deeper infrastructure (banking, insurance, shared services) spawns into separate federated platforms rather than being absorbed. This platform stays the foundational coordination layer, indefinitely.
 
 ## What the loops currently run on
 
-- **A Page is what anyone makes.** Its **purpose** comes first: **Gather**, **Sell**, **Offer a service or teach**, or **Be creative** (Don, 2026-10-05). Business or Social group is worked out from the purpose for listing, never picked as an identity.
+- **A Page is what anyone makes.** Its **purpose** comes first: **Gather**, **Sell**, **Offer a service or teach**, or **Be creative** (the PM, 2026-10-05). Business or Social group is worked out from the purpose for listing, never picked as an identity.
 - **A member has no type and no public profile** (2026-10-01). Someone who wants to be found or followed makes a Page. You is private.
 - **A Post is what a Page says** — an update, or a dated one with a time and a place, with tags. **Currently only a Page's managers post on it.**
 - **Follow** links a member to a Page. Delivering posts to followers is cut for beta; a followed Page's posts reach a signed-in reader on Explore (F059 criterion 2b).
@@ -61,7 +61,7 @@ The lightest, most universal loops — no belief required, only the desire to be
 
 ## Family 2 — Exchange (without dollars first, then selling)
 
-Neighbors start recognizing each other as resources: giving away, swapping, bartering, lending, trading skills or time, and buying from each other. Many people want the dollar-free half, by Don's reading of online comments. **The platform currently handles no money, and that holds here:** a swap, a gift or an hour traded happens in person.
+Neighbors start recognizing each other as resources: giving away, swapping, bartering, lending, trading skills or time, and buying from each other. Many people want the dollar-free half, by the PM's reading of online comments. **The platform currently handles no money, and that holds here:** a swap, a gift or an hour traded happens in person.
 
 Precedents for the dollar-free half:
 - **Buy Nothing** (https://buynothingproject.org/) — hyper-local gift groups, one per neighbourhood; give, ask, gratitude; no swaps or sales by rule.

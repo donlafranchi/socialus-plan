@@ -30,7 +30,7 @@ Every tool below exists in the schema, in an approved scenario, or in a ratified
 | **Appearances** | `groups.md` — an appearance at a venue takes precedence over the anchor |
 | **Photo, or art that admits it isn't one** | F070 |
 | **Dormancy** | `groups.md` — 90 days for community kinds, never for business |
-| **Messaging** | nothing. Named because Don's baseline says "later" |
+| **Messaging** | nothing. Named because the PM's baseline says "later" |
 
 ## The mapping
 
@@ -80,9 +80,9 @@ What actually separates them is **what the social group is about** — a neighbo
 2. **Business** — adds selling and the business claim, and is the only kind that never goes dormant.
 3. **Event** — loses recurrence, group membership and everything commercial.
 
-**That is evidence the four community kinds should merge.** Four values that produce one tool set are four ways to get the same Page and one more decision at creation that buys the person nothing — the same argument that retired the twelve categories. **The counter-argument, and it is real:** `event_anchored`'s child table exists and is referenced by a deferred foreign key, and `family`'s private default is load-bearing. **Merging is a recommendation, not a conclusion, and it is Don's call.**
+**That is evidence the four community kinds should merge.** Four values that produce one tool set are four ways to get the same Page and one more decision at creation that buys the person nothing — the same argument that retired the twelve categories. **The counter-argument, and it is real:** `event_anchored`'s child table exists and is referenced by a deferred foreign key, and `family`'s private default is load-bearing. **Merging is a recommendation, not a conclusion, and it is the PM's call.**
 
-## Don's baseline, checked across all seven
+## The PM's baseline, checked across all seven
 
 **The ruling: every Page gets announcing and a following list, with messaging later.** *(2026-09-15.)*
 
@@ -148,7 +148,7 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 
 ## Flagged, not applied: `event_anchored` is now a misleading name
 
-**Independent of the merge.** The value means *a social group that formed out of a gathering people met at* — and if that gathering was recurring, "event" is now precisely the wrong word for it, since **event means one-time as of Don's ruling today.**
+**Independent of the merge.** The value means *a social group that formed out of a gathering people met at* — and if that gathering was recurring, "event" is now precisely the wrong word for it, since **event means one-time as of the PM's ruling today.**
 
 **Recommendation: rename the value to `seeded` and the child table to `group_seeded_by`.** **Not renamed unilaterally** — it is a schema value with a deferred foreign key attached, and the merge above would retire the value anyway. **If the merge happens, this fixes itself; if it does not, the rename is worth doing on its own.**
 
@@ -156,11 +156,11 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 
 # Proposal: a label layer in front of the Page kind
 
-**Draft, 2026-09-15.** Don: *"For all the types that are similar, we should let people choose based on their terms, but then it just directs them to whatever we're calling it behind the scenes so they don't need to guess based on an incomplete list of options."*
+**Draft, 2026-09-15.** The PM: *"For all the types that are similar, we should let people choose based on their terms, but then it just directs them to whatever we're calling it behind the scenes so they don't need to guess based on an incomplete list of options."*
 
 **The person picks a label in their own words — run club, book club, neighbourhood group, farmers market, supper club, congregation. That label maps to a Page kind. They never see our taxonomy and never guess which of our words their thing is.**
 
-**A label names what someone is starting, never what it is about.** *(Guard added 2026-09-15 — Don: "We don't need categories for kinds.")* *Run club* and *supper club* are labels. **"House and home", "Art and artists", "Outdoor goods" are subject matter and are not labels** — subject matter is what tags already carry, freely and without approval. **A subject list entering the label mapping would be a category layer over Page kinds arriving through the back door**, which is the thing the ruling refuses.
+**A label names what someone is starting, never what it is about.** *(Guard added 2026-09-15 — the PM: "We don't need categories for kinds.")* *Run club* and *supper club* are labels. **"House and home", "Art and artists", "Outdoor goods" are subject matter and are not labels** — subject matter is what tags already carry, freely and without approval. **A subject list entering the label mapping would be a category layer over Page kinds arriving through the back door**, which is the thing the ruling refuses.
 
 ## Shape: many labels, one Page kind
 
@@ -212,7 +212,7 @@ Rejected: `social` (a family Page is social too, and family does not merge) · `
 
 **This document is what the explainer must agree with** — F088 criterion 3 forbids the page from showing a tool the mapping does not grant, or omitting one it does.
 
-**Still open — Don rules:** whether a person may type a label freely or picks from a suggested list with free text as the fallback. **Free typing gets the recognition he is after; a suggested list gets a cleaner vocabulary.** The search dictionary faced the same choice and took both — suggestions up front, free text accepted, an agent proposing from what people actually wrote.
+**Still open — the PM rules:** whether a person may type a label freely or picks from a suggested list with free text as the fallback. **Free typing gets the recognition he is after; a suggested list gets a cleaner vocabulary.** The search dictionary faced the same choice and took both — suggestions up front, free text accepted, an agent proposing from what people actually wrote.
 
 ## Rulings
-- **2026-09-16 — Vendors are retired entirely and absorbed by Page kinds; a Page kind carries its own type-specific controls.** Don: *"Vendors go. Those are now absorbed by page types. And the page types gets its various type of control. E.g. map and address control"* **Two halves, and the second is the one that shapes code.** First: the vendor concept is gone — no vendor noun, no vendor route, no vendor dashboard; what a vendor was is a Page of some kind. Second: **a control belongs to the Page kind, not to the app.** The map and address control is his example — a Page kind that has premises gets an address control and appears on the map; one that does not, does not. So controls are a property of the kind rather than a global surface every Page passes through. **Resolves `socialus-web` #95** (the four surfaces awaiting a ruling) and unblocks #91–#94, the vendor-funnel deletions. Retiring the routes is the cheap half; making controls kind-owned is a design change and is not assumed to be small.
+- **2026-09-16 — Vendors are retired entirely and absorbed by Page kinds; a Page kind carries its own type-specific controls.** The PM: *"Vendors go. Those are now absorbed by page types. And the page types gets its various type of control. E.g. map and address control"* **Two halves, and the second is the one that shapes code.** First: the vendor concept is gone — no vendor noun, no vendor route, no vendor dashboard; what a vendor was is a Page of some kind. Second: **a control belongs to the Page kind, not to the app.** The map and address control is his example — a Page kind that has premises gets an address control and appears on the map; one that does not, does not. So controls are a property of the kind rather than a global surface every Page passes through. **Resolves `socialus-web` #95** (the four surfaces awaiting a ruling) and unblocks #91–#94, the vendor-funnel deletions. Retiring the routes is the cheap half; making controls kind-owned is a design change and is not assumed to be small.

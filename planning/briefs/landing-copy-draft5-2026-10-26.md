@@ -7,13 +7,13 @@ date: 2026-10-26
 
 # Landing page copy, Draft 5 (retired)
 
-**Retired 2026-11-01 (Don: the old landing page goes).** The live landing is Don's concept with the copywriter's final copy: `product/ui/landing/landing-copy-final-2026-10-31.md` and `landing-concept-2026-10-31.html`. Kept for history only.
+**Retired 2026-11-01 (the PM: the old landing page goes).** The live landing is the PM's concept with the copywriter's final copy: `product/ui/landing/landing-copy-final-2026-10-31.md` and `landing-concept-2026-10-31.html`. Kept for history only.
 
 **As of 2026-10-26** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
-**The source of truth for the signed-out page at `/`.** Don approved Draft 5 on 2026-10-26. The code holds the same words in socialus-web `src/lib/home-landing.ts` (#1091). Section labels are for reference only; they are not on the page.
+**The source of truth for the signed-out page at `/`.** The PM approved Draft 5 on 2026-10-26. The code holds the same words in socialus-web `src/lib/home-landing.ts` (#1091). Section labels are for reference only; they are not on the page.
 
-This text is the previously approved copy with Don's Draft 5 changes applied, as relayed by Dispatch. If Don's own Draft 5 file differs anywhere, his file wins: replace this one with it.
+This text is the previously approved copy with the PM's Draft 5 changes applied, as relayed by Dispatch. If the PM's own Draft 5 file differs anywhere, his file wins: replace this one with it.
 
 ## Nav
 

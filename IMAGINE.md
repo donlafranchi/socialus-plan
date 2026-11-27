@@ -8,7 +8,7 @@ Nothing here is a commitment, and scenarios may not cite this file. **An intake,
 
 ## House rules, so this doesn't become a graveyard
 
-Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerless idea is one nobody retires); **one line on what would make it real**, an observable fact, not "when we have time"; and **claim separated from analysis**, agent additions marked as analysis. **`Priority: higher`** means Don said it matters more, nothing more; its absence says nothing (2026-09-19). **Retiring is normal**: an entry leaves when it ships, its trigger fires, or it's called dead.
+Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerless idea is one nobody retires); **one line on what would make it real**, an observable fact, not "when we have time"; and **claim separated from analysis**, agent additions marked as analysis. **`Priority: higher`** means the PM said it matters more, nothing more; its absence says nothing (2026-09-19). **Retiring is normal**: an entry leaves when it ships, its trigger fires, or it's called dead.
 
 ## Added under the house rules
 
@@ -29,9 +29,9 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 *Analysis, agent:* today the owner decides precision, an address or a neighbourhood, and a Page's position is worked out at read time; that is the base to build the journeys on.
 
 ### Where a business's money goes: levels, and a private honesty signal
-*2026-11-16, from Don (PM). The mechanism is not designed and Don has chosen no option.*
+*2026-11-16, from the PM (PM). The mechanism is not designed and the PM has chosen no option.*
 
-**Claim (Don):** patrons should know their money ends up back in their community. Before money is collected, they need to know when profits go elsewhere; the rebate actually paid is the end solution, so it comes in levels. A Page owner chooses where they are local to, and Pages that declare nothing show behind those that declare local. Something simple, like a tax return, but not yet. Members may call out dishonesty without piling on: no cold proof required and report counts never published; instead an unpublished honesty rating kept by the algorithm, smell-tested by surveying a few members, until something more deterministic exists.
+**Claim (the PM):** patrons should know their money ends up back in their community. Before money is collected, they need to know when profits go elsewhere; the rebate actually paid is the end solution, so it comes in levels. A Page owner chooses where they are local to, and Pages that declare nothing show behind those that declare local. Something simple, like a tax return, but not yet. Members may call out dishonesty without piling on: no cold proof required and report counts never published; instead an unpublished honesty rating kept by the algorithm, smell-tested by surveying a few members, until something more deterministic exists.
 
 **What would make it real:** the first money flowing to a community fund, or the first local badge shipping.
 
@@ -41,16 +41,16 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 - Risk before it affects ranking: a hidden score the owner cannot see or contest touches member trust and legal exposure.
 
 ### Hyper-local, photo-aligned search
-*2026-11-13, from Don (PM). A long-term direction, not a build: the small version we build should step toward it.*
+*2026-11-13, from the PM (PM). A long-term direction, not a build: the small version we build should step toward it.*
 
-**Claim (Don):** search that matches what someone asks for to what places look and feel like: "a quiet patio, not on a busy street" surfaces venues through photos members posted, shown as proof. Locals say specifics ("cozy", "dog-friendly grassy area") instead of rating a whole place, and those specifics become what search matches. Later, results lean on members with similar taste, and a venue missing one thing people keep asking for learns what to offer. Every change touching search, photos or tags should say how it moves toward this, or at least not block it.
+**Claim (the PM):** search that matches what someone asks for to what places look and feel like: "a quiet patio, not on a busy street" surfaces venues through photos members posted, shown as proof. Locals say specifics ("cozy", "dog-friendly grassy area") instead of rating a whole place, and those specifics become what search matches. Later, results lean on members with similar taste, and a venue missing one thing people keep asking for learns what to offer. Every change touching search, photos or tags should say how it moves toward this, or at least not block it.
 
 **What would make it real:** a search result that shows the member photo matching the words asked for.
 
 **Analysis (agent):**
 - Builds on D-0220, D-0127, D-0045, D-0166 and D-0294 (a tip steers toward or away; SocialUs is not primarily a review site).
 - Small version first: one shared tag vocabulary across photos, tips, search and owner insight, with each search logging which tags it asked for and which results missed.
-- Taste matching overlaps "Narrow it down: taste as specific as the member" (2026-11-24); settle which carries it. Moderation of tips is a tentative yes (Don, 2026-11-13); do not raise it until he asks.
+- Taste matching overlaps "Narrow it down: taste as specific as the member" (2026-11-24); settle which carries it. Moderation of tips is a tentative yes (the PM, 2026-11-13); do not raise it until he asks.
 - Image embeddings (pgvector on Supabase) are the later engine step. Owner insight stays free and informational until a ruling says otherwise.
 
 ### A category icon on an unclaimed Page, so a photo means an owner (2026-11-12, the PM)

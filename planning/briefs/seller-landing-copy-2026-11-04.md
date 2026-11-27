@@ -2,7 +2,7 @@
 
 **As of 2026-11-05** (copywriter's review applied; every [shipped] line checked against the code) · Source: hand-written · Maintained by: hand
 
-## Bottom line for Don
+## Bottom line for the PM
 
 **This copy replaces today's /join page at the same address. Every claim on it was checked against the code on 2026-11-05 and is true for every case, and nothing coming is on the page. It follows voice-and-tone.md:**
 - no people-category words;
@@ -82,7 +82,7 @@ Send them this link. **[Copy link]** [shipped]
 - Same route, `/join`. Keep the copy-link block and the signed-in / signed-out button logic.
 - Remove the "vendor" wording, the em dash, and the "feed, map, searchable by product" and market-updates claims.
 - The "Fair to everyone" search line stays only while the 2026-10-25 Find ruling stands.
-- The headline is new copy, so it's Don's to approve (the copywriter's pick, 2026-11-05; the other option was "Make it here. Let people know.").
+- The headline is new copy, so it's the PM's to approve (the copywriter's pick, 2026-11-05; the other option was "Make it here. Let people know.").
 
 ## Checked against the code, 2026-11-05
 

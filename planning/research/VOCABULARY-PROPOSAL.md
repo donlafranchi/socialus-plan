@@ -11,7 +11,7 @@ date: 2026-09-17
 
 **2026-09-15. A proposal. Nothing renamed, nothing migrated.**
 
-Don's brief: *"Item is too vague of a word. Creators will create pages for whatever Kind they are creating. The page is the organizing entity for other tools and features. If a person has a business where they sell products they could potentially list those as 'Items' etc. What do we need to change to remove this confusion so it never happens again when we have hundreds of employees."*
+The PM's brief: *"Item is too vague of a word. Creators will create pages for whatever Kind they are creating. The page is the organizing entity for other tools and features. If a person has a business where they sell products they could potentially list those as 'Items' etc. What do we need to change to remove this confusion so it never happens again when we have hundreds of employees."*
 
 **Two asks in that, and the second is the bigger one.** The naming is a day's work. Preventing recurrence is a mechanism, and this document argues the mechanism matters more than the words.
 
@@ -23,7 +23,7 @@ Don's brief: *"Item is too vague of a word. Creators will create pages for whate
 |---|---|---|
 | The organizing entity a person creates | **Page** | Settled, `nouns.md`. Unchanged. |
 | What they are starting | **Page kind** | Exists as `groups.kind`. Keep the name. |
-| What a Page kind offers | **Tools** | Don's own word, 2026-09-15. New, and deliberately not a noun in the schema. |
+| What a Page kind offers | **Tools** | The PM's own word, 2026-09-15. New, and deliberately not a noun in the schema. |
 | The typed things under a Page | *(see § 3)* | The word in dispute. |
 | One specific type | **Its own name** — Product, Service, Event, Idea, Offer, Ask, Initiative | Already settled in `item.md` as UI labels. |
 | A product offered for sale | **Item** | **Reserved for this, and only this.** |
@@ -36,7 +36,7 @@ Don's brief: *"Item is too vague of a word. Creators will create pages for whate
 
 ## 2 · "Item" is reserved, not retired
 
-**Don's sense wins: an Item is a product someone lists for sale.** Not a gathering, not an idea, not an ask.
+**The PM's sense wins: an Item is a product someone lists for sale.** Not a gathering, not an idea, not an ask.
 
 **So "item" is banned as an umbrella, in prose and in product language, permanently.** That ban is the whole point — the word is comfortable, which is why it leaked into places where a specific type was meant. **A term that is pleasant to reach for and means seven things is a defect, not a convenience.**
 
@@ -48,7 +48,7 @@ Don's brief: *"Item is too vague of a word. Creators will create pages for whate
 
 | Candidate | Verdict |
 |---|---|
-| **Item** | **Rejected.** Don's own objection, and it is needed for the narrow sense. |
+| **Item** | **Rejected.** The PM's own objection, and it is needed for the narrow sense. |
 | **Listing** | **Rejected — collides with a ratified ruling.** `model.md` says an offering is *"not a separately listed thing that browse indexes."* The word is contested at the model level, and an ask or an idea is not a listing in any ordinary sense. |
 | **Offering** | **Rejected — fatal collision.** `offer` is already one of the seven types. An umbrella that shares a name with one of its members is the exact bug being fixed. |
 | **Declaration** | **Rejected on the cold-read test.** Nobody guesses that "declarations" covers a loaf of sourdough and a run club. It also collides with legal and tax usage in a product that already refuses legal language in copy. |
@@ -70,7 +70,7 @@ Today there are two, and they are not the same kind of thing:
 - **`groups.kind`** — `place · interest · practice · event_anchored · family · business`. What someone is running.
 - **`items.kind`** — `product · service · gathering · wonder · offer · ask · initiative`. What sits under it.
 
-**Merging them would be wrong, and Don's own two rulings say why.** *"We can create a page for every kind. It just doesn't require all of the same tools."* **The Page kind is the classification; the types under it are what the tools produce.** Those are different layers, and collapsing them would mean a business that hosts one gathering has changed kind — which contradicts the ratified refusal that a Page never converts into another Page.
+**Merging them would be wrong, and the PM's own two rulings say why.** *"We can create a page for every kind. It just doesn't require all of the same tools."* **The Page kind is the classification; the types under it are what the tools produce.** Those are different layers, and collapsing them would mean a business that hosts one gathering has changed kind — which contradicts the ratified refusal that a Page never converts into another Page.
 
 **What changes is that the relationship becomes written down and enforced:**
 
@@ -78,7 +78,7 @@ Today there are two, and they are not the same kind of thing:
 
 **Consequences worth stating:**
 
-- **`groups.kind`'s six values need revisiting against Don's ruling that every kind gets a Page.** A one-time gathering fits none of the six cleanly, and `model.md` already records the same gap for a farmers market — *"a market that convenes commercial vendors without selling anything itself fits none of them cleanly. Raised, not ruled."*
+- **`groups.kind`'s six values need revisiting against the PM's ruling that every kind gets a Page.** A one-time gathering fits none of the six cleanly, and `model.md` already records the same gap for a farmers market — *"a market that convenes commercial vendors without selling anything itself fits none of them cleanly. Raised, not ruled."*
 - **`page_posts` gets its answer from this.** Announcing is a tool every Page kind has. Whether an announcement is an entry type or a separate table is then a schema question with a clear frame, not an open model question.
 - **Nothing about the seven types changes.** They keep their sub-tables, their fields and their UI labels.
 

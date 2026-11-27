@@ -105,7 +105,7 @@ def bullets(name):
 
 # --------------------------------------------------------------------- header
 sha = re.search(r"origin/main ([0-9a-f]+) \(([0-9-]+)\)", state)
-w('> **SETTLED — do not re-raise:** SocialUs is built for the primary benefit of its members, the people who use it. Members are not investors, owners or payees, and no money return is promised; any future financial return is open, and its legal side goes to `socialus-legal` for counsel and never comes back to the PM as a decision (Don, 2026-11-18, replaces "members are the investors"). SocialUs takes transaction income; any \'no fee\' language is retired.')
+w('> **SETTLED — do not re-raise:** SocialUs is built for the primary benefit of its members, the people who use it. Members are not investors, owners or payees, and no money return is promised; any future financial return is open, and its legal side goes to `socialus-legal` for counsel and never comes back to the PM as a decision (the PM, 2026-11-18, replaces "members are the investors"). SocialUs takes transaction income; any \'no fee\' language is retired.')
 w()
 w("# STATUS")
 w()
@@ -295,7 +295,7 @@ if risks:
 
 # ------------------------------------------------------------ open questions
 # Generated from inline `[open-question]` markers. Until 2026-09-27 this was a
-# Waiting-on-Don list carried forward verbatim and never re-verified — a
+# Waiting-on-the PM list carried forward verbatim and never re-verified — a
 # register, and it had gone stale. The marker's owner=don rows replace it.
 code_arg = ["--code", os.environ["STATUS_CODE"]] if os.environ.get("STATUS_CODE") else []
 for mode, title in (("index", "Open questions"), ("coverage", "Guard coverage"), ("building", "Is `building` backed by code?"), ("gating", "Gating launch")):
@@ -353,7 +353,7 @@ w()
 if counts.get("draft"):
     unverified.append(
         f"**The {counts['draft']} drafts.** Status alone does not say which are waiting\n"
-        "  on Don and which are simply unfinished.")
+        "  on the PM and which are simply unfinished.")
 if not unverified:
     w("Nothing. Every claim above came from a source this run read.")
 else:
