@@ -1,6 +1,6 @@
 ---
 id: F049
-title: A newcomer picks a hood and a metro at signup
+title: A newcomer picks a hood at signup
 status: draft
 horizon: later
 rank: 120
@@ -10,16 +10,17 @@ concept: CO-0046
 ---
 ## Story
 
-Someone new to Oak Park finishes the account step. Signup asks one geography question in two parts, on one screen: "where's your hood?" (autocomplete), and a metro field that pre-fills from the hood — visibly labelled as where the feed will center — and is editable in one tap without leaving the screen. A member in Truckee, outside every seeded metro, instead picks from a short list of nearby metros — Reno, Sacramento — rather than a coarse or silent fallback.
+Someone new to Oak Park finishes the account step. Their zip has already set their market (F081). Signup then asks "where's your hood?" (autocomplete) inside that market.
 
 ## Acceptance
 
-1. Signup asks for a "hood" (that word) and a metro, both on one screen.
-2. The metro field is pre-filled but overridable without leaving the screen.
-3. A member outside every seeded metro picks from a short list of nearby candidate metros.
-4. An overridden metro is never silently rewritten by a later place-interest change.
-5. Both fields are editable later from the profile.
+1. Signup asks for a "hood" (that word), within the market the zip set.
+2. The hood is editable later from the profile.
+
+*Retired 2026-11-27:* the metro field, its override, and the nearby-metro list for members outside every market. The newer ruling, "everyone signs up the same way, and the zip sets the market" (F081, CO-0046, 2026-11-12), sets the market from the zip, and a zip outside an open market waits (F030).
+
+[open-question owner=don raised=2026-11-27] Does a hood question belong in sign-up at all? A: keep this draft for later, asked after sign-up from the profile, not on the one onboarding screen (recommended: onboarding stays one screen). B: add it to the onboarding screen. C: drop F049; the zip is enough.
 
 ## Not this
 
-The plural saved-hoods set. The metro switcher. Ranking the feed by hierarchy. The rural-candidate sort mechanism (ZIP-distance vs. state vs. map) — decide at ticket time, per the 2026-09-10 ruling.
+The plural saved-hoods set. The metro switcher. Choosing a market (the zip sets it, F081).

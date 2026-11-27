@@ -17,7 +17,7 @@ Rae sees a photo on a listing that doesn't belong on a neighbourhood app. She ta
 ## Acceptance
 
 1. Any signed-in member can send a free-text report to the operator from an item or shop page.
-2. A submitted report changes nothing visible to anyone, including the reported party.
+2. A first report sends the owner a courtesy notice and leaves the post up; a second report on the same item hides it and sends it to a person on our team (D-0076). *(Amended 2026-11-27: was "a submitted report changes nothing visible to anyone, including the reported party"; the newer ruling of 2026-10-11, D-0076, and this scenario's concept, CO-0045, tell the poster.)*
 3. Only the operator sees or can invoke "Remove photo"; a direct call from anyone else is rejected by the handler.
 4. Removing a photo stops every surface serving it and writes a decision row naming who decided, when, and why — the listing itself survives untouched. **The URL and the storage object are deliberately left intact, which is what makes the removal reversible.**
 5. The report is actually delivered somewhere a person reads it, not just stored in a table.
@@ -44,9 +44,7 @@ It used to read *"nulls the URL, deletes the storage object"*.
 
 This scenario says *"the operator"* throughout, and criterion 3 turns on it. **Delegated reviewers are an amendment to this scenario, not a ticket under it** — flagged 2026-09-17 and not yet made.
 
-### Still open: is the member told?
-
-Criterion 2 says a *report* changes nothing visible to the reported party. **It says nothing about the outcome.** Every preset reason is written so it could be sent to the member in plain words, because a reason nobody can be told is a reason that cannot be appealed — but whether they are told is unruled and needs the PM.
+*Answered 2026-10-11:* the poster is told — a courtesy notice on a first report, and why when it hides (D-0076, built by F078).
 
 ## Rulings
 - **2026-09-17 — A moderation decision is an event, not a state overwrite, and every one is reversible** *(the reversible review, #12)*. The PM: *"We actually want two buttons. And perhaps a record of what happened in order to reverse."* **Two buttons, both always present**; free text is the exception, not the path. **`report_decisions` is append-only and authoritative**; reversing inserts a new row pointing at what it undid, and nothing is ever edited or deleted to take something back. The reviewer sees the history on the item, because a reversal made blind is how two reviewers ping-pong. **No confirm dialog and no undo window**, deliberately: a confirm that fires every time is one people learn to dismiss, and a timed window is strictly weaker than permanent reversibility. **This forced a change to what removal DOES** — it used to null `photo_url`, which destroyed the URL and made reversal impossible; it now sets `photo_removed_at`, the same projection pattern hiding already used. **Amends F058 criterion 4, which was wrong in both halves** — the storage delete it described was never possible under the bucket's own policy. **The cost, accepted and recorded: removed content stays fetchable by direct storage URL, permanently.** That is the right trade for ordinary bad content and the wrong one for illegal content, which is why an irreversible **purge** is specified in `socialus-web docs/purge-proposal.md` and deliberately not built — it needs a storage policy migration the PM should run knowingly. [for now]
