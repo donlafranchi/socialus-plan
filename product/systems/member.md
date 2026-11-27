@@ -47,7 +47,7 @@ The temptation will be a `role` enum on the Member row (Maker, Organizer, Founde
 
 Business and Page-owner status is a Group-membership fact, never a Member column — how selling and hosting derive from it: `page-owner.md`.
 
-The Group member-vs-follower distinction is not re-derived here: it's in `../foundation/verbs.md` and `groups.md`.
+The Group member-vs-follower distinction is not re-derived here: it's in `../foundation/verbs.md`.
 
 ## Substrate reserved at launch for agent assistance, with no surface yet
 

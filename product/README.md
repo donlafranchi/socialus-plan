@@ -79,14 +79,7 @@ One line per doc, then the settled rules with no rationale attached — read the
 - No promote-to-recurring flow — a one-off (a garage sale, a single class) never auto-upgrades into a Page; want it permanent, create one yourself.
 - "Archive" = a single flag that drops a Page from map findability. Not a lifecycle state machine, no separate reactivate flow.
 
-**`systems/groups.md`** — the Group/Page entity.
-- A business Group needs ≥1 active owner; owners are co-equal — no "operating owner" or succession concept anywhere.
-- Locally-Owned badge is computed fresh every time, OR-aggregated across all active owners — never a stored flag.
-- No kind transitions — a Group that wants to formalize dissolves and a new one is created; items re-file at the member's discretion.
-- No auto-dormancy, no auto-dissolution — inactivity only demotes surfacing, never changes lifecycle state or adds a public label.
-- Reputation follows the person, never the Group.
-- Business names are scoped to a hood/metro — no global namespace.
-- Members are never auto-assigned to a Group; joining is always explicit.
+**Groups (Pages)** — in the knowledge store, concern pages: PH-0047 (a Page is people showing up) and PH-0048 (prefer inclusion and choice), with their mechanics.
 
 **`systems/contributions.md`** *(new, draft)* — how members contribute to keep the lights on, and the public cost-vs-raised page.
 

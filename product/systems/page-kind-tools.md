@@ -27,9 +27,9 @@ Every tool below exists in the schema, in an approved scenario, or in a ratified
 | **Business claim** | `group_businesses`, `member_business_jurisdictions`, the Locally-Owned badge |
 | **Tags** | the `page_tags` migration; *"tags are the only vocabulary"* |
 | **Location anchor** | `groups.anchor_location_id`, address or neighbourhood |
-| **Appearances** | `groups.md` — an appearance at a venue takes precedence over the anchor |
+| **Appearances** | the store (D-0457) — an appearance at a venue takes precedence over the anchor |
 | **Photo, or art that admits it isn't one** | F070 |
-| **Dormancy** | `groups.md` — 90 days for community kinds, never for business |
+| **Dormancy** | the store (D-0458, D-0438) — 90 days for community kinds, never for business |
 | **Messaging** | nothing. Named because the PM's baseline says "later" |
 
 ## The mapping
@@ -114,7 +114,7 @@ What actually separates them is **what the social group is about** — a neighbo
 
 ## What the merged Page kind is called
 
-**`community`.** Not invented — `groups.md` already calls these four *"community kinds"* in prose, and `discovery.md` and the dormancy rule both use the term. **The word is already doing the job informally; this makes it the value.**
+**`community`.** Not invented — the store already calls these four *"community kinds"* in prose, and `discovery.md` and the dormancy rule both use the term. **The word is already doing the job informally; this makes it the value.**
 
 Rejected: `social` (a family Page is social too, and family does not merge) · `group` (a listed vague term, and the `groups` table holds every Page kind) · `interest` (promoting one of the four over its siblings).
 

@@ -60,7 +60,7 @@ Three core nouns carry every loop: **Person, Item, Location.** A fourth — **so
 
 **Location** — a physical place (permanent, recurring-temporary, or area). No members of its own — for members, you need a social group. Detail: `../systems/location.md`.
 
-**Social group** — a named, self-selected set of people. Six Page kinds: five affiliate (`place`, `interest`, `practice`, `event_anchored`, `family`) and one operate (`business`). Never auto-assigned by geography or anything else. Detail: `../systems/groups.md`.
+**Social group** — a named, self-selected set of people. Six Page kinds: five affiliate (`place`, `interest`, `practice`, `event_anchored`, `family`) and one operate (`business`). Never auto-assigned by geography or anything else. Detail: the store, concern pages.
 
 ## The two sides — patron and Page owner *(internal vocabulary)*
 
