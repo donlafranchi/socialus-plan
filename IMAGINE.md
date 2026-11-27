@@ -14,11 +14,46 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 ### Out of one, many: 100,000 Amazons (2026-11-27, the PM)
 
-*The PM, 2026-11-27:* "this concept is one of the apps pillars in that we break down large enterprises and allow locals to operate their own. the concept is "out of one, many" or something along the lines of 100,000 Amazons etc." Instead of one Uber, Airbnb, Amazon or Shopify extracting from every town, SocialUs is the trusted market where locals run their own small versions of those businesses and can grow them into fleets; operators own their brand and customer relationship; SocialUs is the market and trust layer; money stays in the community. Directions raised, none decided: a small transaction fee, cheaper than the incumbents; a widget library members improve and share; agents that interview a seller and set up the shop; a member-powered trust layer that costs more to fake than it pays, leaning hybrid (a basic verification floor, community vouching on top). Approached in layers, smallest first, each unlocked by data from the one before. Not broken down until a feature is chosen to build; then it is walked into its themes, journeys, scenarios and features.
+Give local businesses a fair chance to compete with the big apps, like DoorDash, Uber and Airbnb, with the customers and the money staying local.
+
+*The PM, 2026-11-27:* "I want it to be more aligned with giving local players a chance to compete." "I want it in the store. Nothing should be locked in." Locals run their own small versions of those businesses and can grow them into fleets; they own their brand and customer relationship; SocialUs is the market and the trust layer. Nothing here is decided or ranked.
+
+Its parts, each an open idea of its own below: a small transaction fee; a widget library; an agent that sets up the shop; a trust layer. It is approached in layers, smallest first, each unlocked by data from the one before: each layer is a condition with no threshold set. Money in it answers to the settled never-extractive principle (PH-0027), linked, not restated.
 
 **What would make it real:** the PM picks a first feature to build under it.
 
-*Analysis, agent:* a pillar-sized concept. Ideas already in the store that may become its parts: inventory import, vouching, two-way ratings, evidence of deceit, the cooperative engine.
+[open-question owner=don raised=2026-11-27] When could a transaction fee come, given purchasing is deferred (D-0240)?
+[open-question owner=don raised=2026-11-27] Is there a verification floor for operators, given no stronger verification is being built (D-0087)?
+[open-question owner=don raised=2026-11-27] Which layer comes first?
+[open-question owner=don raised=2026-11-27] Which trust signals, if any, are public?
+
+*Analysis, agent:* ideas already in the store that may become its parts: inventory import (CO-0040), vouching (CO-0042), two-way ratings (CO-0036), evidence of deceit (CO-0032), a private honesty signal (CO-0076), the cooperative engine (CO-0018).
+
+### A small transaction fee, cheaper than the big apps (2026-11-27, the PM)
+
+Part of Out of one, many: 100,000 Amazons. A direction raised, not decided: a small fee on a transaction, cheaper than the big apps charge.
+
+**What would make it real:** the PM picks selling through SocialUs as a layer to build.
+
+### A widget library members improve and share (2026-11-27, the PM)
+
+Part of Out of one, many: 100,000 Amazons. A direction raised, not decided: shop widgets that members improve and share with each other.
+
+**What would make it real:** the PM picks a first widget to build.
+
+*Analysis, agent:* the front door already plans a fixed library of tested widgets (CN-0010).
+
+### An agent that interviews a seller and sets up the shop (2026-11-27, the PM)
+
+Part of Out of one, many: 100,000 Amazons. A direction raised, not decided: an agent asks a seller about their business and sets up their shop.
+
+**What would make it real:** the PM picks shop setup as a layer to build.
+
+### A trust layer members power (2026-11-27, the PM)
+
+Part of Out of one, many: 100,000 Amazons. A direction raised, not decided: trust that costs more to fake than it pays, leaning hybrid, a basic verification floor with community vouching on top.
+
+**What would make it real:** the PM picks how a new operator earns trust.
 
 ### Posts by people without an organization (2026-11-26, the PM)
 
