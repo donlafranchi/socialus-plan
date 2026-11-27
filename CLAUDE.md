@@ -6,27 +6,23 @@ Local discovery app: buy, sell, trade, gather. Sacramento beta opens 2027-01-06;
 
 ## Always on (every session)
 
-**Talking to Don**
-- Bullets, one line each. Status first, the next ask last. No preamble, recap or narrating.
-- One topic, one answer. Explain only when asked, and then in one sentence.
-- Plain words; ticket numbers only in brackets after.
-- Options as A/B/C with one-line trade-offs and a recommendation. End with the next action.
+**Talking to the PM:** the rule's one home is the store's `practice.talk-to-the-pm`; `get` it before your first reply to the PM or to Dispatch, and follow it in every reply.
 
 **Deciding**
-- Don decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
+- the PM decides ideas, what is in each version, and words and look-and-feel. You decide the rest, record it and report it.
 - Look first: name 2–3 precedents with links. Well-worn path: decide and build. New territory (touches a ruling, legal or privacy exposure, money or member trust): A/B/C before building.
-- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling (`git grep '\[direction'`) retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask Don which is true.
+- Newer wins: build to the newer record and retire the older in the store. A `[direction replaces=…]` ruling (`git grep '\[direction'`) retires older ones about what it replaces on sight, one line on what each becomes; never member protections. Never ask the PM which is true.
 - Never re-raise: SocialUs is built for the primary benefit of its members. Members are not investors, owners or payees, and no return is promised; legal goes to counsel, never the PM. Wealth circulates, it is never extracted.
 
 **Never break**
-- Deploys to main, destructive migrations, deleting data and rewriting history ask Don first. Until the first real member signs up, you may apply migrations yourself, in order, confirming each.
-- Anything public is a draft until Don says otherwise.
+- Deploys to main, destructive migrations, deleting data and rewriting history ask the PM first. Until the first real member signs up, you may apply migrations yourself, in order, confirming each.
+- Anything public is a draft until the PM says otherwise.
 - A check isn't trusted until it has been seen rejecting bad input.
 - Nothing a member contributes goes live without a report-and-takedown path.
 - Member data is never shown beyond what the member chose.
 - A ruling is recorded once, with its date and why.
 
-**Where things go:** files live only in Don's repos. Code answers "how"; the store answers "what is live and why". Anything else: the table below.
+**Where things go:** files live only in the PM's repos. Code answers "how"; the store answers "what is live and why". Anything else: the table below.
 
 ## When to ask the store
 
@@ -43,7 +39,7 @@ The knowledge store is the MCP server at `socialus.org/api/knowledge/mcp` (tools
 | Reports, moderation, user content, AI reading content | `live` moderation-and-reports and child-safety |
 | Money, fees, payments | `live` fees-and-income and payments. Legal goes to counsel. |
 | CI, deploys, speed, errors | `live` ci-and-deploys, performance, errors, uptime-and-alerts |
-| Two live records conflict, or "why is it this way" | `get`, `history`, `why`. Build to the newer, then `propose` retiring the older with the reason so one remains. A refusal is kept as a flag for Don. |
+| Two live records conflict, or "why is it this way" | `get`, `history`, `why`. Build to the newer, then `propose` retiring the older with the reason so one remains. A refusal is kept as a flag for the PM. |
 | "What did we decide back then", or how an idea changed | `as_of`, `concept` |
 | Judging a new tool or method | `review_method` |
 | Writing or trimming docs | `how` docs |
@@ -62,7 +58,7 @@ If the store can't be reached, say so and work from the repo docs.
 - **Anything that spans the project** — open questions, which check guards which criterion, which ruling binds which tier, which risk is due — **is generated from inline markers, never maintained.** The pattern, and what it refuses: `ops-pattern/process/LIVING-DOCS.md`.
 - **What is not yet decided:** an `[open-question owner=… raised=…]` marker, inline where the question was raised — in the file its answer will change. Never a list: the index is `STATUS.md` § Open questions, generated. Grammar, placement and what closes one: `ops-pattern/process/PIPELINE.md` § Open questions; `scripts/lint.sh` enforces it.
 - **What might be built someday:** `IMAGINE.md`. Nothing there is a commitment. Scenarios may not cite it.
-- **What the product is:** `product/foundation/model.md` — Don's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
+- **What the product is:** `product/foundation/model.md` — the PM's own statement of the model. Every other product document answers to it; where one disagrees, the other is the thing to fix.
 - **The product model:** `product/` — nouns, verbs, surfaces, systems. Must match the code and `model.md`. If it doesn't, fix the doc in the same session you notice.
 - **What may never be broken:** the knowledge store (strength: absolute), not a file.
 - **How work moves, and what went wrong before:** `ops-pattern/process/` — `PIPELINE.md` (the five kinds), `LESSONS.md` (condensed, never just grown), `LIVING-DOCS.md` (the pattern behind the generated docs, and why authored docs are pruned). Only `process/SETUP.md` (standing up a second machine; read once per machine, never per session) lives here.
@@ -105,16 +101,16 @@ If a directory isn't listed here, don't read it. Anything not in the tree is not
 
 | Who | Owns | Never |
 |---|---|---|
-| Don | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
+| the PM | rulings, judgment, domain knowledge — may open Issues in `socialus-web` directly | reads more than the dashboard unless he asks |
 | Cowork — `scope-scenario` `review-draft-scenario` `sync-roadmap` `trim-product-docs` `plan-feature` | this repo: scenarios, STATUS, PRINCIPLES, `product/`; may open Issues in `socialus-web` | commits code to `socialus-web`; hand-edits `README.md` |
 | Code — `write-tickets` `build-ticket` `run-feature-pipeline` | `socialus-web`: architecture notes, issues, code, PRs; branches, PRs and merges here too | writes scenarios, STATUS, ROADMAP or rulings here |
 
-Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. Don sees it only if they disagree.
+Code is the architect. Any ticket touching schema, RLS, or routes starts with a ≤20-line architecture note in the Issue. Cowork reviews it in a comment. the PM sees it only if they disagree.
 
 ## Commits
 
 - Cowork commits its own doc changes here, on a branch. Message: `docs: what`.
-- Code commits in `socialus-web`, branch per ticket. Who merges and when Don looks: `ops-pattern/process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
+- Code commits in `socialus-web`, branch per ticket. Who merges and when the PM looks: `ops-pattern/process/PIPELINE.md` § Who checks what. A merge to main there deploys to production.
 - **Every change goes by branch and PR** *(2026-10-05)*: main requires the `lint` check (ruleset "main: merges when green"), so a direct push is rejected. Auto-merge is on: `gh pr merge --auto --squash` merges once lint passes. The STATUS workflow earns the same check on its own commits (`.github/workflows/status.yml`).
 - Anything bigger than a doc touch-up goes by branch and PR here. **Whoever does the work merges it, Code or Cowork** — self-merge is fine, and needs no approval and no second reviewer.
 - Never cross-commit (guideline — the repo split enforces it). Never rewrite history ([production-asks-don]).

@@ -4,7 +4,7 @@ title: Hyper-specific search connects members, and feeds a minimal front door an
 status: draft
 concept: CO-0063
 horizon: considering
-rank: 7
+rank: 8
 date: 2026-11-15
 depends: [F092, F119, F121, F134]
 ---
@@ -46,6 +46,7 @@ Chat that answers in conversation (later; F119 is the cheap step). A feed or eng
 
 ## Rulings
 
+- **2026-11-27 — Themes in the store (F137) go ahead of hyper-specific search (F136); both stay behind the 6 January launch-blocking work.** The PM, verbatim: *"B"*, picking themes first. F137 is next, rank 7; F136 is considering, rank 8. [for now] [replaces none] [binds tiers=planning surfaces=roadmap]
 - **2026-11-15 — Search is hyper-specific: specific by location, by item, by vibe, or any mix; local is still true but not the defining word. Its purpose is to connect members and help them connect with each other.** The PM, verbatim: *"I don't know that it's a [hyper] local search although it is local but it's probably hyper specific and hyper specific can mean anything they can be location they can mean items that can mean vibes … the most important thing is that we connect our members and help them connect with each other and that's kind of what this searches meant to empower."* [for now] [replaces none] [binds tiers=planning,code surfaces=search,explore] Issue: #1329.
 - **2026-11-15 — Search is high-powered and timely: what is happening now and soon, near the member, with what places carry leading.** The PM, verbatim: *"this needs to be high-powered … search and also timely."* [for now] [replaces none] [binds tiers=planning,code surfaces=search,explore] Issue: #1329.
 - **2026-11-15 — Each member's searches are kept on their own profile to tailor what we show that member; they can see and delete them.** The PM, verbatim: *"that is supposed to be used to feed their personal profile so that we learn what to show them. They can ask us to delete it but we are collecting that … to give them a better user experience."* [for now] [replaces none] [binds tiers=planning,code surfaces=search,you,home,privacy] Issue: #1326.

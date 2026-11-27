@@ -52,7 +52,7 @@ for f in planning/scenario-*.md; do
   fi
 done
 
-# 1c. The value test (Don, 2026-10-05): every scenario from F103 on answers its
+# 1c. The value test (the PM, 2026-10-05): every scenario from F103 on answers its
 #     six questions in `## Why`, one line each, led by these exact labels.
 #     F102 and earlier are grandfathered — they were approved before the test.
 VALUE_TEST_FROM=103
@@ -195,7 +195,7 @@ mk lint "$fx/good.md" "$fx/binds-good/PRINCIPLES.md" "$fx/binds-good/scenario-F9
   { echo "lint: marker checker rejects a good fixture"; fail=1; }
 # Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
 python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
-# Lanes: four fixed words, one lane per item (Don, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
+# Lanes: four fixed words, one lane per item (the PM, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
 python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is inert or rejects its good fixture"; fail=1; }
 if ! out="$(python3 scripts/going.py --lint)"; then
   echo "$out" | sed 's/^/lint: lanes: /'; fail=1
@@ -204,13 +204,13 @@ fi
 python3 scripts/lost.py --check >/dev/null || { echo "lint: lost-since-last-look section does not match its fixture"; fail=1; }
 python3 scripts/cockpit.py --check >/dev/null || { echo "lint: cockpit section does not match its fixture"; fail=1; }
 python3 scripts/safety.py --check >/dev/null || { echo "lint: agent-safety compare does not match its fixture"; fail=1; }
-# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 4 planted faults, then checks this repo.
+# Doc budgets (ops-pattern/process/WHERE-THINGS-GO.md): the checker proves itself on 3 planted faults (a doc over budget that grew only warns), then checks this repo.
 bf=scripts/fixtures/budgets
 got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
-[ "$got" -eq 4 ] || { echo "lint: budget checker is inert — rejected $got of 4 bad fixtures"; fail=1; }
+[ "$got" -eq 3 ] || { echo "lint: budget checker is inert — rejected $got of 3 bad fixtures"; fail=1; }
 BUDGETS_BASE_DIR="$bf/good-base" python3 scripts/budgets.py check --root "$bf/good" >/dev/null || { echo "lint: budget checker rejects the good fixture"; fail=1; }
-got=$(BUDGETS_MOVE=1 BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py check --root "$bf/bad" | grep -c '^budgets:')
-[ "$got" -eq 3 ] || { echo "lint: budget checker does not let a docs: move PR grow a doc (got $got of 3)"; fail=1; }
+got=$(BUDGETS_BASE_DIR="$bf/bad-base" python3 scripts/budgets.py report --root "$bf/bad" | grep -c 'it grew')
+[ "$got" -eq 1 ] || { echo "lint: budget checker no longer warns when an over-budget doc grew (got $got of 1)"; fail=1; }
 if [ -f scripts/budgets.tsv ] && ! out="$(python3 scripts/budgets.py check)"; then
   echo "$out" | sed 's/^/lint: /'; fail=1
 fi

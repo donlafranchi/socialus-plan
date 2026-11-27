@@ -611,7 +611,7 @@ if BASELINE_NEW and _now is not None and not os.path.exists(_cap):
 COCKPIT = cockpit.build(cockpit_facts())
 _pi = next(i for i, l in enumerate(out) if l.startswith('**As of'))
 out[_pi + 1:_pi + 1] = [''] + cockpit.md(COCKPIT) + pipeline_health()
-# Don, 2026-10-15: "when I say dashboard I want html not markdown." The page is the dashboard; this file is a pointer and the numbers.
+# The PM, 2026-10-15: "when I say dashboard I want html not markdown." The page is the dashboard; this file is a pointer and the numbers.
 PAGE_URL = 'https://socialus-plan-dashboard.pages.dev/'
 import todo  # TODO.md is the PM's to-do list (2026-11-11); don-todos.json is retired
 _todos = todo.load(root)
@@ -628,7 +628,7 @@ def _safe(fn, default=None):
 
 
 def _speed():
-    """#536 (Don: "Where can I see... how well the app is responding?"). The nightly tap-speed run (socialus-web,
+    """#536 (the PM: "Where can I see... how well the app is responding?"). The nightly tap-speed run (socialus-web,
     a mid-range phone on 4G against production) writes latest.json and history/YYYY-MM-DD.json to the perf-history
     branch; read with git show, like the criterion reports. Red only when a member-facing (consumer) screen is red."""
     code = os.environ.get('STATUS_CODE') or os.path.expanduser('~/Projects/socialus-web')
@@ -652,7 +652,7 @@ def _speed():
 
 
 def _notifications():
-    """#904 (Don, 2026-10-18: "constantly reviewed and updated"). The weekly notify job (socialus-web) writes counts only
+    """#904 (the PM, 2026-10-18: "constantly reviewed and updated"). The weekly notify job (socialus-web) writes counts only
     to latest.json on the notify-history branch: per kind per week, sends, opens, turn-offs, pauses and the opt-in share.
     Red when turn-offs plus pauses spike; the rule lives in src/lib/notify/push/review.ts, not here."""
     code = os.environ.get('STATUS_CODE') or os.path.expanduser('~/Projects/socialus-web')
@@ -677,10 +677,10 @@ data = {
     'cockpit': COCKPIT,
     'speed': _safe(_speed, {}),
     'notify': _safe(_notifications, {}),
-    # Don, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
+    # The PM, 2026-10-15: "If I ever ask what I need to do then add it to my dashboard." Agents append and remove; P1 first.
     'todos': _todos[:1],   # one at a time (the PM, 2026-10-26): Do next is TODO.md's first item; the rest are under Your open calls
     'shorthand': {'groups': _json('shorthand.json', 'groups', []), 'checked': _json('shorthand.json', 'checked', '')},
-    # Don, 2026-10-16: "Where can I see what we have left to build… what else needs to be done before soft launch?"
+    # The PM, 2026-10-16: "Where can I see what we have left to build… what else needs to be done before soft launch?"
     'launch_left': {
         'issues': [{'n': i['number'], 'title': i['title'], 'url': i['url']} for i in sorted(_safe(lambda: gh('issue', 'list', '-R', REPO, '--milestone', MILESTONE, '--label', 'launch-blocking', '--state', 'open', '--limit', '200', '--json', 'number,title,url')), key=lambda i: i['number'])],
         # The pitch grade card (F116) once it exists: one row per criterion, pass when built. Until then, not yet set.
@@ -766,7 +766,7 @@ const areaCards=D.areas.map(a=>{
  const bar=segBar(hue(a.name),critsOf(a.name));
  const rows=waitList(a.name);
  const cm=a.crit&&a.crit.total?a.crit.met/a.crit.total:null;const mean=cm!==null?cm:(a.total?a.counts.reduce((x,y)=>x+y,0)/(6*a.total):0);return `<details id="card-${slug(a.name)}" style="border-left-color:${a.crit&&a.crit.red?'#b91c1c':tint(hue(a.name),mean)}"><summary><span class="name">${esc(a.name)}</span>${bar||'<span class="note">no criterion reports yet</span>'}<span class="note"><b>Waiting on you (${(D.waiting[a.name]||[]).length})</b> · ${cm!==null?`${a.crit.met}/${a.crit.total} criteria met (${Math.round(cm*100)}%)${a.crit.red?` · ${a.crit.red} red`:''}`:`${Math.round(mean*100)}% of Issue stages (no criterion reports)`} · ${D.stages.map((n,k)=>n+' '+a.counts[k]+'/'+a.total).join(' · ')} · ${esc(a.note)} · ${a.shift.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${rows}</div></details>`}).join('')+waitCard(D.wait_areas[D.wait_areas.length-1])+testSection+(D.noarea.length?`<details><summary><span class="name">No area</span><span class="note">${D.noarea.length} event(s) in the past ${D.since}h</span></summary><div class="rows">${shiftBox(D.noarea)}</div></details>`:'');
-// Don, 2026-10-15: the HTML page is the dashboard. Each section: a bold overview, the detail folded; a sidebar lists them.
+// The PM, 2026-10-15: the HTML page is the dashboard. Each section: a bold overview, the detail folded; a sidebar lists them.
 const sec=(id,title,lede,body,open)=>`<section class="sec" id="${id}" data-toc="${esc(title)}"><h2>${esc(title)}</h2><p class="lede"><b>${lede}</b></p>${open?body:`<details><summary><span class="name">Details</span></summary><div class="rows">${body}</div></details>`}</section>`;
 const PR=['','p1','p2','p3'];const DAY=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 const today=new Date().toISOString().slice(0,10);
@@ -793,7 +793,7 @@ const NT=D.notify||{};const NTN={follow_posts:'New posts from Pages I follow',we
 const pc=x=>x==null?'–':`${Math.round(x*100)}%`;const NTS={green:STC.green,red:STC.red,quiet:['#64748b','Quiet']};
 const notifyLede=NT.state?`${(NTS[NT.state]||NTS.quiet)[1]}: ${NT.kinds.map(k=>`${NTN[k.kind]} ${pc(k.optInRate)} opted in`).join(' · ')}`:'No notification counts yet (the first weekly run writes them).';
 const notifyBody=NT.state?NT.kinds.map(k=>{const w=k.weeks.slice(-8);const sum=f=>w.slice(-4).reduce((a,x)=>a+x[f],0);return `<div class="row speed"><span class="pri" style="background:${(NTS[k.state]||NTS.quiet)[0]};color:#fff">${esc((NTS[k.state]||NTS.quiet)[1])}</span><div class="title"><b>${esc(NTN[k.kind]||k.kind)}</b> · ${pc(k.optInRate)} of members opted in · ${pc(k.openRate)} opened${k.why?` · <b>${esc(k.why)}</b>`:''}<br><span class="sub">Last 4 weeks: ${sum('sends')} sent, ${sum('opens')} opened, ${sum('unsubscribes')} turned off, ${sum('mutes')} paused, ${sum('opt_ins')} turned on. Sent per week: ${w.map(x=>x.sends).join(' → ')||'–'}</span></div></div>`}).join('')+`<p class="sub">Counts only: no member is named. Reviewed monthly and at each release; a review proposes one change at a time. <a href="${esc(NT.runs)}">runs</a></p>`:'<p class="sub">The weekly notification counts could not be read yet.</p>';
-// Don, 2026-11-06: "I only need to know what's next to do and other issues as fyi's"; "I don't want the instructions in the dashboard."
+// The PM, 2026-11-06: "I only need to know what's next to do and other issues as fyi's"; "I don't want the instructions in the dashboard."
 // Do next is the first item of TODO.md (the focus section's first, if there is one); everything else folds under FYI, each group named for the problem or state, with its count.
 const CK=Object.fromEntries(D.cockpit.map(x=>[x.id,x]));const its=id=>(CK[id]&&CK[id].items)||[];
 const li=(t,u)=>`<li>${u?`<a href="${esc(u)}">${esc(t)}</a>`:esc(t)}</li>`;

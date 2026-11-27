@@ -17,11 +17,11 @@ Priya repairs bikes at weekends and has never listed anything. She opens the cre
 1. **A search is recorded as a term, a metro, and a month. Nothing else.** No member id, no session id, no device, no IP, no ordering or timestamp finer than the month that could re-associate a row with a person.
 2. **Nothing is shown below a floor of ten distinct members** having searched that term in that metro. The floor is a stored number, not a judgement made at read time, and **it is never lowered to make a surface less empty**.
 3. **A term is never shown if the term itself identifies someone**, whatever its count — one containing a personal name, a street address, a phone number, or matching any member's display name or handle. **The count is not the only way a person is identified.**
-4. **Trends roll up across metros.** The stored grain is one metro, but the shape supports summing across any set of them — a region, a similarity cohort, everywhere. **No drill-down narrower than a metro, ever.** *(Amended 2026-09-15 — this read "scoped to one metro, no cross-metro view, no national aggregate". Don: "we want to know all the trends everywhere… one community's trend could help a similar community.")*
+4. **Trends roll up across metros.** The stored grain is one metro, but the shape supports summing across any set of them — a region, a similarity cohort, everywhere. **No drill-down narrower than a metro, ever.** *(Amended 2026-09-15 — this read "scoped to one metro, no cross-metro view, no national aggregate". The PM: "we want to know all the trends everywhere… one community's trend could help a similar community.")*
 5. **What is shown is a term and a coarse band** — *a few people · dozens · more* — never an exact count, never a date. **The exact count is stored; the band is computed at read time.** Storing the band would make every rollup impossible.
 6. **The floor applies at every level that is shown, not only the top**, and a rollup is never displayed alongside a complete enumeration of its parts. See § The floor under rollup.
 7. **No creator sees anything scoped to their own Page.** Not who searched for them, not who found them, not who looked and left.
-8. **The aggregates are kept indefinitely** — a count per term, per metro, per month, forever. *(Don, 2026-09-15: "Retention is forever. We want trends.")* **How long a raw row lives before it is counted and dropped is open — see below.**
+8. **The aggregates are kept indefinitely** — a count per term, per metro, per month, forever. *(the PM, 2026-09-15: "Retention is forever. We want trends.")* **How long a raw row lives before it is counted and dropped is open — see below.**
 9. **Nothing here is ever sold, licensed, or shared off-platform.**
 
 ## Not this
@@ -34,7 +34,7 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 **A count of one is a person. A count of two in a launch metro is very nearly one** — a metro opens at 50 creators and 250 patrons, so two searchers out of 300 is a small enough set that anyone who knows two neighbours can guess. **Ten distinct members is the smallest floor that survives that arithmetic at launch volumes.**
 
-**At launch this will show almost nothing, and that is correct rather than broken.** Don already ruled the principle on 2026-09-15: a search that returns nothing is an honest answer. **The same logic applies here — a surface with nothing to show should say nothing, not lower its floor.** A floor that moves to fill a screen is not a floor.
+**At launch this will show almost nothing, and that is correct rather than broken.** The PM already ruled the principle on 2026-09-15: a search that returns nothing is an honest answer. **The same logic applies here — a surface with nothing to show should say nothing, not lower its floor.** A floor that moves to fill a screen is not a floor.
 
 ### Indefinite retention makes the threshold and the term rule permanent
 
@@ -66,7 +66,7 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 **Criterion 2 requires a floor of ten *distinct members*. Criterion 1 forbids recording a member id. As written, both cannot hold** — distinct counting needs something that distinguishes people.
 
-**Three ways out, and the choice is a collection decision, so it is Don's:**
+**Three ways out, and the choice is a collection decision, so it is the PM's:**
 
 - **Count searches rather than people.** No identifier at all, but one person searching ten times clears the floor, which makes the floor much weaker than it reads.
 - **A salted hash of the member id, scoped to one term, metro and month, used only to deduplicate and dropped when the month closes.** Gives true distinct counting with no cross-month linkage and nothing that survives. **Recommended**, but it is still a per-person value existing for a month.
@@ -74,7 +74,7 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 **Flagged rather than decided, because criterion 1 is the criterion the whole privacy posture rests on and it should not be weakened silently.**
 
-### "A similar community" needs a definition, and it is Don's
+### "A similar community" needs a definition, and it is the PM's
 
 **The phrase is doing real work in his sentence and is defined nowhere.** Candidates, each giving different answers: **population or member count** · **density** — urban, suburban, rural · **region or geography** · **the mix of what already exists there**, from the tag distribution · **economic profile**.
 
@@ -90,17 +90,17 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 ### Purpose limitation — what it must never become
 
-**Don's frame, widened 2026-09-15: *"the point is to help creators create and to help our members find what they need locally"*, and *"one community's trend could help a similar community… this is for the good of all the members. We want this to grow and to help our members become creators and earn money."*** **Three purposes now, all about matching a need to a person who could meet it:** helping somebody decide what to start · helping somebody find what they need nearby · **showing somebody that a thing works elsewhere and could work here.**
+**The PM's frame, widened 2026-09-15: *"the point is to help creators create and to help our members find what they need locally"*, and *"one community's trend could help a similar community… this is for the good of all the members. We want this to grow and to help our members become creators and earn money."*** **Three purposes now, all about matching a need to a person who could meet it:** helping somebody decide what to start · helping somebody find what they need nearby · **showing somebody that a thing works elsewhere and could work here.**
 
 **It must not become:** a measure of engagement · anything with the word *trending* on it · a ranked list read for its own sake · an input to ordering, which `model.md` already forbids from carrying anything but locality, recency and declared interest · a reason to send anyone a notification, which the pull-back-notification refusal already covers · a product sold to anyone.
 
 **The test for any future change: does this help somebody decide what to start, help somebody find what they need nearby, or show them a thing that works elsewhere and could work here?** If none of the three, it is out, whatever else it would be good for.
 
-**One line the copy must not cross.** Don has now described this as helping members earn money. **Showing someone unmet demand is not a promise that acting on it pays** — forty searches are forty searches, not forty customers. **No copy on this surface may imply income, and `voice.md` already forbids promises the product cannot back.**
+**One line the copy must not cross.** The PM has now described this as helping members earn money. **Showing someone unmet demand is not a promise that acting on it pays** — forty searches are forty searches, not forty customers. **No copy on this surface may imply income, and `voice.md` already forbids promises the product cannot back.**
 
-### Retention — aggregates forever; raw rows are Don's call
+### Retention — aggregates forever; raw rows are the PM's call
 
-**Settled. Don, 2026-09-15: *"Retention is forever. We want trends."*** **The aggregates are kept indefinitely**, which is what a trend is made of. **There is no privacy cost in that**: an aggregate only exists once it has passed the floor of ten and the term rule, so by construction it contains nothing that identifies anyone.
+**Settled. The PM, 2026-09-15: *"Retention is forever. We want trends."*** **The aggregates are kept indefinitely**, which is what a trend is made of. **There is no privacy cost in that**: an aggregate only exists once it has passed the floor of ten and the term rule, so by construction it contains nothing that identifies anyone.
 
 ### The open half, in two lines
 
@@ -114,7 +114,7 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 ### The case for keeping them, stated properly rather than stacked
 
-**These are real arguments and Don should hear them before ruling.**
+**These are real arguments and the PM should hear them before ruling.**
 
 - **Re-aggregating at a different granularity.** The aggregate is monthly. If a weekly or seasonal view is ever wanted, only raw rows can produce it, and only for the period they still exist. **Deleted history cannot be recovered later.**
 - **Correcting a bad aggregation job.** A bug in the aggregator writes wrong counts. With raw rows you recompute; without them the error is permanent and silent.
@@ -125,7 +125,7 @@ Any per-creator dashboard. A leaderboard, a "trending" surface, or anything rank
 
 **A middle option, named because it is the obvious one:** keep raw rows for a bounded window long enough to re-aggregate — twelve months, matching the interaction-record rule — then drop them, keeping the aggregates forever. **That buys most of the correction value with a surface that stops growing.**
 
-**Recommendation: the middle option.** But this is a judgement about how much of our own fallibility to insure against, and that is Don's, not a design question.
+**Recommendation: the middle option.** But this is a judgement about how much of our own fallibility to insure against, and that is the PM's, not a design question.
 
 ### Is this the same mechanism as the signal queue? No.
 
@@ -135,18 +135,18 @@ The signal queue (F064, F088) captures **a person using a word the product does 
 
 This captures **a person looking for a thing that does not exist near them.** **It is resolved by somebody starting that thing**, which no operator can do. There is no queue and nobody approves anything.
 
-**And folding them would undo a ruling made today.** Don removed zero-result searches from the signal queue on the grounds that nothing being there is an honest answer. **Routing search demand back into that queue would reintroduce exactly what he cut** — under a different name.
+**And folding them would undo a ruling made today.** The PM removed zero-result searches from the signal queue on the grounds that nothing being there is an honest answer. **Routing search demand back into that queue would reintroduce exactly what he cut** — under a different name.
 
-### Still open — Don rules
+### Still open — the PM rules
 
 - **Where it is shown.** The create flow serves the first purpose; a thin search result or an empty state serves the second. **Both are user-facing copy and are his under [public-is-draft].**
 - **The bands.** *A few people · dozens · more* is a proposal; the words are his.
 - **Whether members are told this is happening**, and where. `policy.md`'s posture argues yes; nothing yet says how.
 
 ## Rulings
-- **2026-09-15 — Search trends roll up across metros; cross-metro is a requirement, not a later nice-to-have.** Don: *"we want to know all the trends everywhere. Don't make them hard to aggregate and analyze. One community's trend could help a similar community… this is for the good of all the members. We want this to grow and to help our members become creators and earn money."* **Supersedes the same-day "scoped to one metro, no cross-metro view".** Grain stays one term per metro per month holding an **exact count**; a region, a cohort and everywhere are all sets of metros. **Three things would break rollup and are cheap to avoid now: storing the display band instead of the count, dropping sub-threshold rows at write time, and normalising terms per metro.** The purpose test widens to three: decide what to start · find what you need nearby · **see that a thing works elsewhere and could work here.** Refusals unchanged.
-- **2026-09-15 — One line the copy must not cross: showing unmet demand is not a promise that acting on it pays.** Don now describes this as helping members earn money. Forty searches are forty searches, not forty customers, and `voice.md` already forbids promises the product cannot back.
-- **2026-09-15 — Search aggregates are kept forever. Don: *"Retention is forever. We want trends."*** Supersedes the same-day 30-day proposal. **No privacy cost in the aggregate half**: an aggregate exists only once it has passed the floor of ten distinct members and the identifying-term rule, so by construction it holds nothing that identifies anyone. **Consequence stated in F089: nothing ages out, so every protection must hold on the day the row is written** — which raises the stakes on the term rule, already the criterion most likely to be dropped as an edge case.
-- **2026-09-15 — Search tracking is aggregated and sanitized before anything is shown, and its purpose is two-sided.** Don: *"The search tracking is aggregated and will be sanitized before sharing. But the point is to help creators create and to help our members find what they need locally."* **Not an analytics product and not surveillance.** F089 rewritten with the privacy properties as binary criteria: a term, a metro and a month and nothing else · **a floor of ten distinct members, never lowered to fill a surface** · a term that identifies someone is never shown whatever its count · one metro only · coarse bands, no exact counts · no creator sees anything scoped to their own Page · **raw rows deleted after 30 days**. [for now]
-- **2026-09-15 — Search demand and the signal queue are two mechanisms, not one.** The queue captures a person using a word the product does not know, resolved by adding vocabulary, with a reader. Search demand captures a person looking for a thing that does not exist near them, resolved by somebody starting it, with no queue and nobody approving. **Folding them would reintroduce the zero-result signal Don cut the same day, under a different name.**
-- **2026-09-15 — Searches are tracked so creators can be told what people near them are looking for. Written as F089 (`draft`), and it needs a privacy ruling before it can be specced further.** Don's ask is a capability, not a fix. **Moved out of `IMAGINE.md`, where it sat as "Market intelligence"** — it now has a noun, a verb and a surface. **The tension is real and is stated rather than skated past:** `ROADMAP.md` § Won't already refuses *"individual visitor-tracking analytics for a producer"*, and `policy.md`'s opt-out default makes non-essential collection off by default. **Three questions are Don's: whether a term plus a metro plus a time counts as member data, what the display threshold is, and where the aggregate line sits.** [for now]
+- **2026-09-15 — Search trends roll up across metros; cross-metro is a requirement, not a later nice-to-have.** The PM: *"we want to know all the trends everywhere. Don't make them hard to aggregate and analyze. One community's trend could help a similar community… this is for the good of all the members. We want this to grow and to help our members become creators and earn money."* **Supersedes the same-day "scoped to one metro, no cross-metro view".** Grain stays one term per metro per month holding an **exact count**; a region, a cohort and everywhere are all sets of metros. **Three things would break rollup and are cheap to avoid now: storing the display band instead of the count, dropping sub-threshold rows at write time, and normalising terms per metro.** The purpose test widens to three: decide what to start · find what you need nearby · **see that a thing works elsewhere and could work here.** Refusals unchanged.
+- **2026-09-15 — One line the copy must not cross: showing unmet demand is not a promise that acting on it pays.** The PM now describes this as helping members earn money. Forty searches are forty searches, not forty customers, and `voice.md` already forbids promises the product cannot back.
+- **2026-09-15 — Search aggregates are kept forever. The PM: *"Retention is forever. We want trends."*** Supersedes the same-day 30-day proposal. **No privacy cost in the aggregate half**: an aggregate exists only once it has passed the floor of ten distinct members and the identifying-term rule, so by construction it holds nothing that identifies anyone. **Consequence stated in F089: nothing ages out, so every protection must hold on the day the row is written** — which raises the stakes on the term rule, already the criterion most likely to be dropped as an edge case.
+- **2026-09-15 — Search tracking is aggregated and sanitized before anything is shown, and its purpose is two-sided.** The PM: *"The search tracking is aggregated and will be sanitized before sharing. But the point is to help creators create and to help our members find what they need locally."* **Not an analytics product and not surveillance.** F089 rewritten with the privacy properties as binary criteria: a term, a metro and a month and nothing else · **a floor of ten distinct members, never lowered to fill a surface** · a term that identifies someone is never shown whatever its count · one metro only · coarse bands, no exact counts · no creator sees anything scoped to their own Page · **raw rows deleted after 30 days**. [for now]
+- **2026-09-15 — Search demand and the signal queue are two mechanisms, not one.** The queue captures a person using a word the product does not know, resolved by adding vocabulary, with a reader. Search demand captures a person looking for a thing that does not exist near them, resolved by somebody starting it, with no queue and nobody approving. **Folding them would reintroduce the zero-result signal the PM cut the same day, under a different name.**
+- **2026-09-15 — Searches are tracked so creators can be told what people near them are looking for. Written as F089 (`draft`), and it needs a privacy ruling before it can be specced further.** The PM's ask is a capability, not a fix. **Moved out of `IMAGINE.md`, where it sat as "Market intelligence"** — it now has a noun, a verb and a surface. **The tension is real and is stated rather than skated past:** `ROADMAP.md` § Won't already refuses *"individual visitor-tracking analytics for a producer"*, and `policy.md`'s opt-out default makes non-essential collection off by default. **Three questions are the PM's: whether a term plus a metro plus a time counts as member data, what the display threshold is, and where the aggregate line sits.** [for now]

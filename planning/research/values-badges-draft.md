@@ -1,11 +1,11 @@
 ---
 id: values-badges-draft
-purpose: Draft list of values badge categories, from research into what people use in the wild, for Don to edit. Not ratified. Deleted once edited, like search-dictionary-draft.md.
+purpose: Draft list of values badge categories, from research into what people use in the wild, for the PM to edit. Not ratified. Deleted once edited, like search-dictionary-draft.md.
 status: draft
 date: 2026-10-01
 ---
 
-**Answered 2026-10-01:** owner-identity badges are allowed — Don: *"we don't want to limit how people want to communicate what they're about so identity is fine."* Added as category 15 in `product/foundation/nouns.md` § Badge.
+**Answered 2026-10-01:** owner-identity badges are allowed — the PM: *"we don't want to limit how people want to communicate what they're about so identity is fine."* Added as category 15 in `product/foundation/nouns.md` § Badge.
 
 # Values badge categories — research for SocialUs
 
@@ -64,7 +64,7 @@ SocialUs rules this research assumes:
 - It also removes the main benefit platforms claim — search and discovery. A badge shown only on the Page itself still exposes the owner to anyone who visits.
 - Identity is a fact about a person, not a practice. Every other proposed category is something a business *does*.
 
-**Question for Don (not a decision)**
+**Question for the PM (not a decision)**
 - A — No identity badges. Values tags may still hold them privately. Trade-off: cleanest fit with "practices, not people"; some owners want to say it publicly and can still do so in their own Page text.
 - B — One opt-in identity badge category ("Says owned by …", owner picks the group). Trade-off: meets owner demand; brings the exposure and the review/moderation load Yelp had to build.
 - C — Defer to after launch; watch whether owners write identity words in values tags. Trade-off: no build or moderation cost now; data informs the call.
@@ -76,7 +76,7 @@ Related open point: can a *badge* (not the tag) be filtered or searched? The rul
 
 ## 3. Proposed badge categories (14)
 
-Practices, not product type. Every badge reads as an owner claim: "Says …". **Priority** column = which member purchasing priority it lines up with. I only know four of Don's priorities (price, eco-responsible, fair trade, employee care); "local" and "quality" are marked *if listed*.
+Practices, not product type. Every badge reads as an owner claim: "Says …". **Priority** column = which member purchasing priority it lines up with. I only know four of the PM's priorities (price, eco-responsible, fair trade, employee care); "local" and "quality" are marked *if listed*.
 
 | # | Badge name | Means | Example values tags that roll up | Priority |
 |---|---|---|---|---|
@@ -90,7 +90,7 @@ Practices, not product type. Every badge reads as an owner claim: "Says …". **
 | 8 | **Secondhand and repair** | Gives things a second life. | #secondhand #thrifted #vintage #repair #fixitdontditchit #resale #refurbished #consignment #rental #swap | Eco-responsible |
 | 9 | **Grown without harsh chemicals** | Avoids sprays and harsh chemicals. | #nospray #organic #pesticidefree #regenerative #nontoxic #nongmo #chemicalfree #naturaldyes #cleaningredients #notreatment | Eco-responsible |
 | 10 | **Clean energy** | Uses less fuel and cleaner power. | #solarpowered #renewableenergy #bikedelivery #evcharging #lowcarbon #energyefficient #carbonneutral* #electricfleet | Eco-responsible |
-| 11 | **Kind to animals** | Cares about how animals are treated, or uses none. | #crueltyfree #vegan #pastureraised #grassfed #humanelyraised #freerange #leapingbunny #rescue #nofur #plantbased | Eco-responsible *(partly; check whether Don's list has a separate animal priority)* |
+| 11 | **Kind to animals** | Cares about how animals are treated, or uses none. | #crueltyfree #vegan #pastureraised #grassfed #humanelyraised #freerange #leapingbunny #rescue #nofur #plantbased | Eco-responsible *(partly; check whether the PM's list has a separate animal priority)* |
 | 12 | **Gives back** | Shares money or time with the community. | #givesback #donates #onepercentfortheplanet #volunteers #payitforward #buyonegiveone #communityfund #sponsorslocalteams #fundraisers | — |
 | 13 | **Everyone welcome** | Easy for everyone to use and feel safe in. | #wheelchairaccessible #accessible #sensoryfriendly #allgenderrestroom #familyfriendly #allwelcome #bilingual #lgbtqfriendly #servicedogswelcome #quiethours | — |
 | 14 | **Honest prices** | Clear, fair prices with no surprises. | #transparentpricing #nohiddenfees #slidingscale #paywhatyoucan #nosurcharge #pricematch #studentdiscount #seniordiscount #ebtaccepted | **Price** |

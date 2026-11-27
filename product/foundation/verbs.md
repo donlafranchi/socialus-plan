@@ -9,7 +9,7 @@ status: active
 
 # The verbs
 
-> **Superseded in part by [`model.md`](model.md) (2026-09-10).** Don restated the model directly: there are no Items, and a post carries a time or it doesn't. The conflicts below are known and unfixed — this document has not yet been reconciled. Where the two disagree, `model.md` is right.
+> **Superseded in part by [`model.md`](model.md) (2026-09-10).** The PM restated the model directly: there are no Items, and a post carries a time or it doesn't. The conflicts below are known and unfixed — this document has not yet been reconciled. Where the two disagree, `model.md` is right.
 
 A verb is not one rule — it's a rule per noun it acts on. Following a Page, a person, and a venue are three different things. The forbidden column is the point: a verb list says what you can do, the matrix says what you can't and why — that's the discipline that stopped "selling" from quietly acquiring business-ness.
 
@@ -148,7 +148,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 ## The forbidden cells, with reasons
 
 - **Follow a product or service.** Ruled 2026-09-07 — people don't follow products. Removed as a concept, not deferred.
-- **~~Edit or delete an announcement after posting.~~ Editing is now allowed** *(ruled 2026-09-13, Don: "they can both be edited or replaced entirely")*. The reason this line gave — *a broadcast rewritable after people read it isn't a broadcast* — **is set aside, not satisfied**; it is left visible so the rule is not re-derived from it. **Deleting is still refused** and was not ruled on.
+- **~~Edit or delete an announcement after posting.~~ Editing is now allowed** *(ruled 2026-09-13, the PM: "they can both be edited or replaced entirely")*. The reason this line gave — *a broadcast rewritable after people read it isn't a broadcast* — **is set aside, not satisfied**; it is left visible so the rule is not re-derived from it. **Deleting is still refused** and was not ruled on.
 - **Rename an active Page's slug.** It is frozen at creation (first publish, with its home town; 2026-11-01): the name may change, the address doesn't follow it — a moved public URL is a broken link someone already shared.
 - **Overlapping appearances.** A Page can't be in two places at once.
 - **Message anyone, about anything, at large.** Replaced 2026-09-09 by the message-board ruling: conversation is forbidden between people at large, available inside a Page you've joined. No messages, threads, or comments exist anywhere in the product today — postponed with a settled shape, not refused. Why the cell stays forbidden while the board is built: `messaging-problem.md`.
@@ -156,7 +156,7 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 
 ## Support and get-updates — two links, and the difference is the inbox
 
-*(Ruled by Don, 2026-09-17.)* **"Support is a like or a follow. I don't know if there's a difference yet."** / **"There could be a get updates button. This should be in place of emails from vendors with offers etc."** / **"Where a support is perhaps a softer signal."**
+*(Ruled by the PM, 2026-09-17.)* **"Support is a like or a follow. I don't know if there's a difference yet."** / **"There could be a get updates button. This should be in place of emails from vendors with offers etc."** / **"Where a support is perhaps a softer signal."**
 
 **Two distinct link types between the same pair of nouns — a Member and a Page.** That is the whole point, and it is why one `relationship` value cannot carry both: a person may do either, both, or neither.
 
@@ -172,11 +172,11 @@ A verb is not one rule — it's a rule per noun it acts on. Following a Page, a 
 
 **Get-updates is a privacy posture as much as a feature.** Its purpose is that a Page owner reaches subscribers **without holding their email address** — which answers the hatch `messaging-problem.md` names, an organizer publishing a contact address that is *"scrapeable, not revocable."*
 
-**Open, and Don has to settle it:** the 2026-09-08 ruling says a business *"may see its own audience"*; F067's implementation writes followers as `source = 'soft_via_follow'` so the list is unreadable **by anyone, the owner included**. *Without their email* and *without knowing who they are* are different promises.
+**Open, and the PM has to settle it:** the 2026-09-08 ruling says a business *"may see its own audience"*; F067's implementation writes followers as `source = 'soft_via_follow'` so the list is unreadable **by anyone, the owner included**. *Without their email* and *without knowing who they are* are different promises.
 
 ## Privacy decides the relationship — following versus joining
 
-*(Ruled by Don, 2026-09-15.)* **"Anything private wouldn't have followers, they have members because you can't follow something. You'd have to become a member in order to see what's in it."**
+*(Ruled by the PM, 2026-09-15.)* **"Anything private wouldn't have followers, they have members because you can't follow something. You'd have to become a member in order to see what's in it."**
 
 **The rule, generalised: the relationship follows from the Page's discoverability, not from its Page kind.**
 

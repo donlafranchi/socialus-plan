@@ -12,10 +12,10 @@ owns:
 
 # Place connection metrics
 
-> **Later: revisit at 250 signups in the market or when RSVP/attendance ships.** (Don, 2026-11-01)
+> **Later: revisit at 250 signups in the market or when RSVP/attendance ships.** (the PM, 2026-11-01)
 >
 > Stale, fix when revisited:
-> - "neighbor-help" and other "neighbor" wording → **locals** (Don, 2026-10-31).
+> - "neighbor-help" and other "neighbor" wording → **locals** (the PM, 2026-10-31).
 > - The small-number floor (Guardrails, "minimum counts") protects members; it does **not** apply to staff readouts.
 > - "The place" / "a place" here means **the market: the 60-minute reach** (plan #223 ruling B), not a town.
 

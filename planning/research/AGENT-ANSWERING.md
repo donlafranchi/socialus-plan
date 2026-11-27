@@ -10,13 +10,13 @@ horizon: the version after launch (after the beta, which runs until April 2027)
 
 **As of 2026-09-30** · Source: hand-written · Maintained by: hand (set by tend-docs from the last commit date; the owner confirms on next edit)
 
-> **Not for launch.** Don, 2026-09-21, verbatim: *"This isn't something we're adding for [launch], but it is something I'd like to prepare for for the next version after [launch]."* And on why it is written down at all: *"I also want the information captured so we can build off of it when the time comes. Lastly date it so we have a reference for where we were when it was discussed."*
+> **Not for launch.** The PM, 2026-09-21, verbatim: *"This isn't something we're adding for [launch], but it is something I'd like to prepare for for the next version after [launch]."* And on why it is written down at all: *"I also want the information captured so we can build off of it when the time comes. Lastly date it so we have a reference for where we were when it was discussed."*
 >
 > **The version after the beta, and not backlog for it.** Nothing here is a ticket and nothing here competes for the launch list. **The post-launch milestone in `socialus-web` is where the work will hang; its name is pending and belongs in this line once it exists.**
 
 ## The argument, so a later reader can disagree with it
 
-**Written out as premises rather than as a conclusion, because the premises are the part that may stop being true.** Don's words are quoted; the chain is his, stated in steps.
+**Written out as premises rather than as a conclusion, because the premises are the part that may stop being true.** The PM's words are quoted; the chain is his, stated in steps.
 
 1. **Premise — agent search is replacing keyword search.** *"My hypothesis is that Google and Bing search are being replaced by agent search."* **He calls it a hypothesis and it is one.** Nothing in this document tests it, and if it is wrong the rest does not follow: a product that blocks crawlers in a world where crawlers still send the traffic has simply taken itself off the map.
 2. **Premise — being the data layer under someone else's agent is not a business.** *"I don't want the large language model creators to replace what we're doing and to take what we've gathered and give it away for free."* The claim is that a model answering from SocialUs data substitutes for SocialUs rather than referring to it.

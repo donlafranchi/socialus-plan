@@ -22,7 +22,7 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 
 **Five ideas in the plan, none built. All assume a small Claude model.**
 
-- **Auto-sorting posts into labels** [#1182, plan #273]. **Held by the 11-06 build freeze.** Ruled B on 11-05: a 100-post test of Jev (from TypeSafe) against Haiku 5.5, 90 of 100 right to pass, sending only the words and one small photo. Jev can't see member posts until TypeSafe confirms its data retention in writing and Don approves a privacy line. Otherwise Haiku; the word match stays as the fallback.
+- **Auto-sorting posts into labels** [#1182, plan #273]. **Held by the 11-06 build freeze.** Ruled B on 11-05: a 100-post test of Jev (from TypeSafe) against Haiku 5.5, 90 of 100 right to pass, sending only the words and one small photo. Jev can't see member posts until TypeSafe confirms its data retention in writing and the PM approves a privacy line. Otherwise Haiku; the word match stays as the fallback.
 - **Taste chat.** **Held by the 11-06 build freeze**, with the taste scale. An optional short chat to correct your interest profile. The profile itself is weighted counts computed nightly, not a trained model. Research only.
 - **Ask bar** (F119, approved, not built). One call to the smallest Claude model routes a question to the right page, with a daily cap per member and a fallback to search.
 - **Chat-first** (F120, draft, later). Actions only on a confirm tap; memory the member can see; never sold or trained on.
@@ -43,7 +43,7 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 - Moderation: about $1 per 1,000 reports (plan estimate).
 - Auto-sorting: about $0.00014 a post with Haiku 5.5, about $0.0001 with Jev (photo pricing unknown).
 - Taste chat: about $0.01 per member per month, about $11/month at 1,000 weekly users (estimate).
-- The whole platform was budgeted at about $48/month at launch, with a Vercel spend alert at $60. No AI budget figure has been set by Don.
+- The whole platform was budgeted at about $48/month at launch, with a Vercel spend alert at $60. No AI budget figure has been set by the PM.
 - **Mismatch:** the code calls Haiku 4.5, while the plan's cost estimates assume Haiku 5.5.
 
 ## Privacy rules any model must follow
@@ -52,10 +52,10 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 
 - **[for now]** AI helps people and doesn't replace them. A person decides anything that affects a member.
 - **[for now]** What an assistant knows about a member belongs to the member: visible, exportable, deletable, never sold, never used to train anyone else's model.
-- **[for now]** Suspected child-safety content never goes to any AI provider. It is hash-checked through Cloudflare first (Cloudflare setup is still Don's to-do).
+- **[for now]** Suspected child-safety content never goes to any AI provider. It is hash-checked through Cloudflare first (Cloudflare setup is still the PM's to-do).
 - Never send names, handles, emails, phone numbers or exact locations. Nothing finer than the market.
 - Never infer health, politics, religion, sexuality or money (planned guardrail for the taste chat and sorting).
-- Each provider must be named on the privacy page. Today it names Anthropic as processor, "only on our behalf and on our instructions." A new provider needs a new line Don approves.
+- Each provider must be named on the privacy page. Today it names Anthropic as processor, "only on our behalf and on our instructions." A new provider needs a new line the PM approves.
 - Retention matters: Anthropic's API keeps inputs 30 days (up to 2 years if flagged) per the plan research **[unverified]**. Jev's terms state no retention period and keep telemetry "in perpetuity."
 - A processor agreement with Anthropic is not yet signed; it's on the counsel list.
 - Question logs for the Ask bar would be anonymous, shown only for 10+ members, raw rows deleted after 30 days.
@@ -71,7 +71,7 @@ Not AI: the seeders, importers, test accounts, search, shelves and label suggest
 
 ## Seed: on-demand open-weight models
 
-**Don's idea, 11-05: spin up an open-weight model only when needed to help members who need assistance, and use free models alongside paid ones. Facts and open questions only; no recommendation.**
+**The PM's idea, 11-05: spin up an open-weight model only when needed to help members who need assistance, and use free models alongside paid ones. Facts and open questions only; no recommendation.**
 
 Facts from the repos:
 - Nothing open-weight, self-hosted or GPU-based exists or is mentioned anywhere in plan or ops.
@@ -88,7 +88,7 @@ Open questions:
 4. Which uses are allowed to be free-and-slower and which need the best answer? Should a member ever choose?
 5. Where would the model run, and does that host keep what it's sent? It would need a privacy-page line.
 6. Does running our own model fit "never extractive" and member ownership better than a paid API, for example by keeping member text off third parties entirely?
-7. What's the monthly ceiling Don will set for AI, and per-member daily caps?
+7. What's the monthly ceiling the PM will set for AI, and per-member daily caps?
 8. How do we test quality? The sorting test (100 posts, 90 right) is a template.
 9. Does it change the Hobby/Free hosting plan, which forbids commercial use on Vercel?
 10. Who watches it? Today's AI work has no live run recorded yet.

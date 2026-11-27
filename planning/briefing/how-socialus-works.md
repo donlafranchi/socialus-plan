@@ -20,7 +20,7 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 - You choose. It works for you. Never extractive.
 - We build the system, then get out of the way.
 - Locals supporting locals.
-- We evolve with our members however they evolve. Don: "I only plan one day ahead whereas someone else may plan a year ahead."
+- We evolve with our members however they evolve. The PM: "I only plan one day ahead whereas someone else may plan a year ahead."
 - Defaults: trust first, offer a choice, share the benefit, make it self-serve, pick the well-worn path.
 - Data serves the members it comes from. Never sold; opting out is one step.
 - AI helps people and doesn't replace them. What an assistant knows belongs to the member, can be exported and deleted, and never trains anyone else's model.
@@ -80,7 +80,7 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 - **Migrations:** about 154 SQL files, applied by a manual GitHub workflow, with a daily drift check.
 - **Scheduled jobs** (all GitHub Actions): push for followed Pages every 15 minutes, a Thursday "this weekend" push, bug-report filing every 30 minutes, nightly tests, a daily read-only check of production, tap-speed checks, daily venue-events import, daily test-account activity, and data purges (deleted Pages after 14 days, IP records after 1 year).
 - **Seeders and importers:** test personas for local tests only; hand-researched lists of real businesses loaded as unclaimed Pages; a daily reader of venues' own event pages (obeys robots.txt). None of them call a model.
-- **Other services:** Resend for email (free tier), Web Push with our own keys, Mapbox maps (free tier), Sentry wired but off until a key is set, Twilio parked until Don adds keys.
+- **Other services:** Resend for email (free tier), Web Push with our own keys, Mapbox maps (free tier), Sentry wired but off until a key is set, Twilio parked until the PM adds keys.
 - **AI in use today:** two places, both Anthropic, both only when a key is set. A first read of reported posts (shadow mode: it records, a person decides) and labelling members' bug reports. See the AI briefing for detail.
 
 ## Privacy and data rules
@@ -96,12 +96,12 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 
 ## How decisions flow
 
-**Don gives direction; agents research options with a recommendation; Don decides. Well-worn calls the agents make themselves.**
+**The PM gives direction; agents research options with a recommendation; the PM decides. Well-worn calls the agents make themselves.**
 
-- **Decision rule:** look at 2–3 precedents first. If there's a clear, established pattern, the agent decides and builds it ("Path: well-worn"). Anything that touches a ruling, legal, privacy, money or member trust goes to Don as A/B/C with a recommendation ("Path: new territory").
-- **Don decides** ideas, what goes in each version, and the words and look. Agents decide the rest. New user-facing copy and anything reaching production go to Don.
-- **Roles:** Don is the PM. Cowork plans in the plan repo. Code agents build. Dispatch is Don's phone-side agent: each ask becomes a web Issue, and one build loop runs per Issue.
-- **The pipeline:** Issue → tests written first and seen failing → PR → a separate reviewer agent's first pass → self-merge when green → production. A PR either says "Don doesn't need to look" or gives three steps to check it on a phone.
+- **Decision rule:** look at 2–3 precedents first. If there's a clear, established pattern, the agent decides and builds it ("Path: well-worn"). Anything that touches a ruling, legal, privacy, money or member trust goes to the PM as A/B/C with a recommendation ("Path: new territory").
+- **The PM decides** ideas, what goes in each version, and the words and look. Agents decide the rest. New user-facing copy and anything reaching production go to the PM.
+- **Roles:** the PM is the PM. Cowork plans in the plan repo. Code agents build. Dispatch is the PM's phone-side agent: each ask becomes a web Issue, and one build loop runs per Issue.
+- **The pipeline:** Issue → tests written first and seen failing → PR → a separate reviewer agent's first pass → self-merge when green → production. A PR either says "PM doesn't need to review" or gives three steps to check it on a phone.
 - **The record:** each ruling is dated and lives in the doc it governs. STATUS is generated, never hand-written.
 
 ## Known gaps between rulings and the app
@@ -109,4 +109,4 @@ Briefing for idea chats, written 2026-11-05 from the plan, ops and web repos; 20
 **[verified in code 2026-11-05]**
 - "Near you" wording is still live in the app title, share image and weekend push.
 - The /join page still says "vendor."
-- "Neighbor" wording is live (Ask a neighbor, /neighbors) though Don asked for "locals" on 10-31.
+- "Neighbor" wording is live (Ask a neighbor, /neighbors) though the PM asked for "locals" on 10-31.

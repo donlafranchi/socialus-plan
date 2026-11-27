@@ -6,7 +6,7 @@ horizon: later
 rank: 200
 date: 2026-09-15
 depends: [F069, F081]
-concept: new
+concept: CO-0094
 ---
 ## Story
 
@@ -38,4 +38,4 @@ Editing anything. This scenario makes `/you` say who you are; it does not make i
 - **Saved and Following.** Both are tabs on `/you` today, both fed by dead reads. Whether they survive here is tied up with the `/you/sell` and `/you/following` question, which is an options note, not a ruling.
 
 ## Rulings
-- **2026-09-15 — `/you` is the signed-in identity surface: who you are, where you are, what you have made.** Don: nothing in the app tells a person they are in — no name, no profile photo, no metro. Written as F086 (`draft`). Answers item 1 of `socialus-web` #95 in principle: the retired half of `/you` goes, because criterion 5 forbids reading a table that does not exist, and that retires the four vendor-era components the page is the last thing keeping alive.
+- **2026-09-15 — `/you` is the signed-in identity surface: who you are, where you are, what you have made.** The PM: nothing in the app tells a person they are in — no name, no profile photo, no metro. Written as F086 (`draft`). Answers item 1 of `socialus-web` #95 in principle: the retired half of `/you` goes, because criterion 5 forbids reading a table that does not exist, and that retires the four vendor-era components the page is the last thing keeping alive.

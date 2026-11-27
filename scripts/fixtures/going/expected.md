@@ -1,6 +1,6 @@
 ## Where we're going
 
-*Four fixed lanes, generated from each scenario's `horizon` and `rank`, IMAGINE.md's `[lane: …]` markers and the socialus-web milestones. To change it, change those; never this section. Moving an item from Considering to Next needs Don's yes.*
+*Four fixed lanes, generated from each scenario's `horizon` and `rank`, IMAGINE.md's `[lane: …]` markers and the socialus-web milestones. To change it, change those; never this section. Moving an item from Considering to Next needs the PM's yes.*
 
 ### Now · Beta (3 open Issues) · being built
 1. F902 First now *(building)*

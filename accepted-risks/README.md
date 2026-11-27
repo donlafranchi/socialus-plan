@@ -10,7 +10,7 @@ One JSON file per finding ruled acceptable. Read by scripts, not by people — t
 
 **`revisit_if` must be checkable.** Not "before launch". A named event ("the first report of illegal content reaches the review queue"), or a date, or both. `review_by` is the date a human argues it again.
 
-**Where they surface:** `scripts/risks-due.sh` prints anything overdue or due within 21 days and is **silent when nothing is** — a list that prints daily is a list nobody reads. `scripts/view.sh` renders every project risk into the generated `README.md`, which is how Don reads them on a phone without a checkout.
+**Where they surface:** `scripts/risks-due.sh` prints anything overdue or due within 21 days and is **silent when nothing is** — a list that prints daily is a list nobody reads. `scripts/view.sh` renders every project risk into the generated `README.md`, which is how the PM reads them on a phone without a checkout.
 
 **Filename is the identity.** `<cache_key>.json` when the advisor has given one; otherwise `<lint>__<object>.json`, sanitised to `[a-z0-9_]`. Either way it is derived from the finding, so two agents ruling the same finding write the same filename and collide in git — which is the argument you want to have, out loud, instead of two rulings landing side by side.
 

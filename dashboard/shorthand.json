@@ -1,5 +1,5 @@
 {
- "_how": "Don's shorthand: say the name, the agent applies it in full. Source of truth: ~/.claude/templates/patterns.md (\"patterns\"); entries marked \"shorthand\" come only from the shorthand memory note. Where the two differed on 2026-10-15, patterns won; \"checked\" says what changed. Refresh this file whenever patterns.md changes.",
+ "_how": "The PM's shorthand: say the name, the agent applies it in full. Source of truth: ~/.claude/templates/patterns.md (\"patterns\"); entries marked \"shorthand\" come only from the shorthand memory note. Where the two differed on 2026-10-15, patterns won; \"checked\" says what changed. Refresh this file whenever patterns.md changes.",
  "checked": "2026-10-15 against patterns.md. Patterns won on: [always]/[for now] (the old \"we currently…\" and only-\"never extractive\" wording was retired 2026-10-12), three-line report (Status / Next / \"say expand\"), cheapest that works (always name a model; at most 2 builds at once), verified or not (name the check; a new check is first seen failing), record every ruling (on the Issue or PR and inline in the doc it governs).",
  "groups": [
   {"name": "Deciding", "items": [
@@ -16,13 +16,13 @@
    {"name": "record every ruling", "src": "patterns", "does": "The moment you decide, write it on its Issue or PR and inline in the doc it governs; search that record before asking you anything."},
    {"name": "save open threads", "src": "patterns", "does": "During a back-and-forth, save your words, where we got to and the next step after each substantive message."},
    {"name": "do the mechanical work", "src": "patterns", "does": "Anything with no judgement (merges, env vars, Issues, labels, reruns, migrations while allowed) gets done, not handed to you."},
-   {"name": "Don directs, agents edit", "src": "patterns", "does": "You say what to change; agents change it. Never ask you to edit or paste into a file."},
+   {"name": "The PM directs, agents edit", "src": "patterns", "does": "You say what to change; agents change it. Never ask you to edit or paste into a file."},
    {"name": "say it once", "src": "patterns", "does": "Name a real cost or collision once, plainly, then do what you asked."},
    {"name": "what do I need to do", "src": "shorthand", "does": "The answer lands in Your to-do at the top of this dashboard, each with priority 1–3, due by and/or what it unlocks, and comes off when done; also said in chat."},
    {"name": "dashboard", "src": "shorthand", "does": "This generated HTML page, with the sidebar. Markdown is only for short to medium text docs. (2026-10-15, replaces plan #146 B.)"}
   ]},
   {"name": "Talking to you", "items": [
-   {"name": "three-line report", "src": "patterns", "does": "Status: Done / Blocked / Question, one sentence. Next: the ask, or none. Then \"Want detail? Say expand.\""},
+   {"name": "talk to the PM", "src": "patterns", "does": "Follow the store's practice.talk-to-the-pm: status first, plain one-line bullets, no code terms, checked vs assumed, the one next action and who does it."},
    {"name": "copy-paste inline", "src": "patterns", "does": "Anything you will copy goes in the message as one code block, never a file or artifact."},
    {"name": "phone / computer", "src": "patterns", "does": "phone (and office days): nothing needing a desktop approval or terminal; queue it. computer: everything."},
    {"name": "safe to close", "src": "shorthand", "does": "Every Code session ends with SAFE TO CLOSE or NOT SAFE TO CLOSE and why, so you know which sessions you can close."}
