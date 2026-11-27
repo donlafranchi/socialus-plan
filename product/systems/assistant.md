@@ -14,7 +14,7 @@ The in-app assistant is meant to become a first-class way to use SocialUs, next 
 ## What a member can count on
 
 - **Reads can be automated; writes need a tap.** The assistant may look things up for a member, but anything it would publish or change waits for the member's own confirmation tap, never one the assistant mints.
-- **A member grants it, scoped and expiring.** A Delegation is a permission a member gives a non-human actor, narrow and short-lived. Only a member can grant or withdraw one; Groups hold none, and Group-coordination agents are platform-curated (`groups.md`).
+- **A member grants it, scoped and expiring.** A Delegation is a permission a member gives a non-human actor, narrow and short-lived. Only a member can grant or withdraw one; Groups hold none, and Group-coordination agents are platform-curated.
 - **It acts as the member, on the record.** Every write it makes is attributed to the member and to the Delegation that allowed it.
 - **It never holds a member's credentials,** and nothing it reads can make it act as someone else.
 - **Refusals are by absence:** an action that is not in the catalog cannot be asked for. Whether an action should exist runs through the three-filter test in `foundation/policy.md`.
