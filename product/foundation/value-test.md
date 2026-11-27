@@ -10,7 +10,7 @@ reviewed: 2026-10-05
 
 # The value test
 
-**Don, 2026-10-05: "go."** Every new scenario answers these in its `## Why`, one line each, before anyone writes acceptance criteria (from F103 on; `scripts/lint.sh` checks it). They ask whether a thing belongs on SocialUs at all, not how to build it.
+**The PM, 2026-10-05: "go."** Every new scenario answers these in its `## Why`, one line each, before anyone writes acceptance criteria (from F103 on; `scripts/lint.sh` checks it). They ask whether a thing belongs on SocialUs at all, not how to build it.
 
 ## The six questions
 
@@ -42,4 +42,4 @@ So hours are currently hidden (2026-10-05), and when shown at all they link out 
 - **Moneyless exchange** — giving, swapping, lending and skill trades: only locals, in person, better with every neighbour who joins (`product/needs/member-journey.md`, Exchange).
 
 ## Rulings
-- **2026-10-05 — Every feature and field passes a value test before it is built: does it already live somewhere better (then link out), is it something only locals know, does it get people together in person (counts double), does it stay fresh on its own, who keeps it current, and does it get better as more people join. Every new scenario — numbered after F102 — answers the six in `## Why`, one line each, and lint checks it; earlier ones are grandfathered.** Don: "go". The questions and a worked example: `product/foundation/value-test.md`; method: `ops-pattern/process/PIPELINE.md`. [binds tiers=planning surfaces=scenarios build=none]
+- **2026-10-05 — Every feature and field passes a value test before it is built: does it already live somewhere better (then link out), is it something only locals know, does it get people together in person (counts double), does it stay fresh on its own, who keeps it current, and does it get better as more people join. Every new scenario — numbered after F102 — answers the six in `## Why`, one line each, and lint checks it; earlier ones are grandfathered.** The PM: "go". The questions and a worked example: `product/foundation/value-test.md`; method: `ops-pattern/process/PIPELINE.md`. [binds tiers=planning surfaces=scenarios build=none]

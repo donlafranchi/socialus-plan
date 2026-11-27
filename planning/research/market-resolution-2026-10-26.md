@@ -4,7 +4,7 @@
 
 **Bottom line: a sign-up never resolves a zip on the fly. A script assigns every town once, ahead of time: if it is within 60 minutes' drive of a market's hub, it goes to the nearest one; beyond that, it goes to a waiting region seeded by the government's commuting zones; regions under about 100,000 people merge with their nearest neighbour; and a short hand-written list (the Tahoe basin) overrides it. The result is stored in the market tables that already exist, so tens of thousands of zips collapse to a few hundred county subdivisions per state, which a person can check in one sitting. At sign-up the person sees their market and may pick another one within 75 minutes, and they count where they pick.**
 
-**Ruled 2026-10-27, Don: B.** Sacramento grows to its 60-minute reach now; § 5. *(Was: Don's one call.)* How far the open Sacramento market reaches: **A (recommended):** it stays as ruled, and people in Vacaville, Yuba City, Lodi or Grass Valley may choose Sacramento at sign-up. **B:** it grows to everything within 60 minutes. **C:** it stays as ruled with no choosing in. Details in § 5.
+**Ruled 2026-10-27, the PM: B.** Sacramento grows to its 60-minute reach now; § 5. *(Was: the PM's one call.)* How far the open Sacramento market reaches: **A (recommended):** it stays as ruled, and people in Vacaville, Yuba City, Lodi or Grass Valley may choose Sacramento at sign-up. **B:** it grows to everything within 60 minutes. **C:** it stays as ruled with no choosing in. Details in § 5.
 
 Method: drive times are from OSRM (the free, open-source router behind many map apps), car profile, free-flow with no traffic, from downtown to downtown, pulled from OSRM's public demo server on 2026-10-26. Real Friday-evening times on I-80 and US-50 run longer. **V** = seen on 2026-10-26; **A** = from memory or estimated, not checked this session.
 
@@ -20,7 +20,7 @@ Method: drive times are from OSRM (the free, open-source router behind many map 
 | Drive-time Voronoi (every point to its nearest hub, no cap) | good near hubs, bad far away | same | with no cap, Bishop "belongs" to Carson City, 3¾ hours away | free |
 | USDA ERS 2020 commuting zones | good: built from where people commute for work | the government updates it each Census | whole counties only: puts Placerville and South Lake Tahoe in **Reno**, and Chico in **Redding** | free (V) |
 | ERS labor market areas | commuting zones merged until each has 100,000 people | same | the same county problem; the 100,000 floor is the useful idea | free (A) |
-| Census metro areas (CBSA) and combined areas (CSA) | weak: built for statistics; Don retired them for members (2026-10-16) | yearly OMB updates | the combined Sacramento area takes in Truckee; the Bay Area's takes in Stockton and Modesto | free (A) |
+| Census metro areas (CBSA) and combined areas (CSA) | weak: built for statistics; the PM retired them for members (2026-10-16) | yearly OMB updates | the combined Sacramento area takes in Truckee; the Bay Area's takes in Stockton and Modesto | free (A) |
 | Nielsen TV markets (DMAs) | weak: drawn for TV signals and ad sales | Nielsen updates yearly | Sacramento's TV market runs from Modesto to Truckee | **licensed**: a paid Nielsen licence to use the boundaries (A) |
 | Whole counties | weak in the mountains | none | El Dorado County runs from El Dorado Hills to South Lake Tahoe; Placer from Roseville to Tahoe City | free; what the code does today for waiting markets |
 | HUD zip→county crosswalk | a lookup, not a method | quarterly | useful for PO-box zips the Census doesn't map | free, with a free sign-up token (A) |
@@ -95,7 +95,7 @@ El Dorado in Reno, Butte in Redding and Inyo in Bakersfield are the three that a
 
 </details>
 
-**On Don's three examples.** Arcata is not Redding's or the Bay Area's: it is 2¾ hours from Redding and every source (commuting zone, Craigslist, metro area) treats Humboldt as its own place. South Lake Tahoe is closer to Carson City (49 minutes) than to Truckee (74), which supports Don's instinct; F103 already ruled the Tahoe basin one market, and the choice at sign-up lets anyone in South Lake who lives toward Carson pick Reno–Carson. Truckee is 23 minutes from Tahoe City and 40 from Reno, so it is Tahoe's, with Reno as its choice.
+**On the PM's three examples.** Arcata is not Redding's or the Bay Area's: it is 2¾ hours from Redding and every source (commuting zone, Craigslist, metro area) treats Humboldt as its own place. South Lake Tahoe is closer to Carson City (49 minutes) than to Truckee (74), which supports the PM's instinct; F103 already ruled the Tahoe basin one market, and the choice at sign-up lets anyone in South Lake who lives toward Carson pick Reno–Carson. Truckee is 23 minutes from Tahoe City and 40 from Reno, so it is Tahoe's, with Reno as its choice.
 
 ## 3. The roll-up: tens of thousands of zips to a few dozen markets
 
@@ -117,7 +117,7 @@ El Dorado in Reno, Butte in Redding and Inyo in Bakersfield are the three that a
 - **A town to market:** the places table already knows each town's county subdivision; `market_key()` answers.
 - **A zip to a town:** the Census ZCTA-to-place relationship file (free), taking the town with the largest share of the zip's people, and the person confirms the town at sign-up. A PO-box zip has no Census area, so it falls back to HUD's zip-to-county crosswalk, or the person just types the town.
 - **Each row records how it was placed** (nearest hub, commuting zone, merged, override) and its minutes, so the review is reading a table, not redoing the maths.
-- **Reruns** happen when a hub is added or Don rules on an edge, never on a timer. The script's output is a diff a person approves.
+- **Reruns** happen when a hub is added or the PM rules on an edge, never on a timer. The script's output is a diff a person approves.
 
 </details>
 
@@ -143,7 +143,7 @@ El Dorado in Reno, Butte in Redding and Inyo in Bakersfield are the three that a
 
 **At sign-up the person sees the market their town resolved to and may pick a different one whose hub is within 75 minutes, at most three choices. They count where they choose. Precedents: Craigslist lets you post where you like; Patch lets you follow several towns; Nextdoor's lock is the one we avoid.**
 
-- **The screen:** their town, the market it resolved to, and up to two nearby alternatives, closest first. A Truckee resident sees Lake Tahoe, with Reno–Carson offered. A Vacaville resident sees Solano, with Sacramento and the Bay Area offered. (The words here are placeholders; the copy is Don's.)
+- **The screen:** their town, the market it resolved to, and up to two nearby alternatives, closest first. A Truckee resident sees Lake Tahoe, with Reno–Carson offered. A Vacaville resident sees Solano, with Sacramento and the Bay Area offered. (The words here are placeholders; the copy is the PM's.)
 - **Counting:** a person counts once, toward the market they chose; changing their choice moves their count. This fits F118 (a supporter is a member "whose town it is, by zip or by choosing it").
 - **Choosing an open market gets the person in now.** A Vacaville resident who picks Sacramento uses the full app today. The cost: their count leaves Solano, so fringe regions fill more slowly. That is the trade in option A.
 - **The 75-minute list stops gaming:** nobody in Sacramento can pick Humboldt to push its count.
@@ -151,16 +151,16 @@ El Dorado in Reno, Butte in Redding and Inyo in Bakersfield are the three that a
 - **Looking elsewhere is not choosing.** Typing South Lake Tahoe to browse for the day is the vantage (F105) and changes nothing about home or counts.
 - **Stored as** the chosen market on the member, empty when they kept the resolved one; counts read the choice first.
 
-## 5. Recommendation and Don's call
+## 5. Recommendation and the PM's call
 
-**Ruled 2026-10-27, Don: B** (comment on plan #223). The open Sacramento market grows to its 60-minute drive-time reach now. That adds Yuba City, Marysville, Vacaville, Dixon and, by the merge, Grass Valley and Nevada City. Lodi stays with Stockton–Modesto, which is nearer. The Tahoe parts stay with Lake Tahoe (F103). The rest of the method in § 3–4 is approved as well-worn. F118's Solano and Yuba–Sutter waiting regions go away, and the F076 goals (100 makers / 1,000 supporters) apply per market. Built by web #1101, its output reviewed as a diff before any row lands; the sign-up choice screen's words go to Don first. [for now]
+**Ruled 2026-10-27, the PM: B** (comment on plan #223). The open Sacramento market grows to its 60-minute drive-time reach now. That adds Yuba City, Marysville, Vacaville, Dixon and, by the merge, Grass Valley and Nevada City. Lodi stays with Stockton–Modesto, which is nearer. The Tahoe parts stay with Lake Tahoe (F103). The rest of the method in § 3–4 is approved as well-worn. F118's Solano and Yuba–Sutter waiting regions go away, and the F076 goals (100 makers / 1,000 supporters) apply per market. Built by web #1101, its output reviewed as a diff before any row lands; the sign-up choice screen's words go to the PM first. [for now]
 
-**Recommended: drive time proposes, commuting zones group the far towns, county subdivisions store it, a short override list settles the exceptions, and the person chooses among nearby markets. The method is well-worn and agents can build it without a further ruling. Sacramento's reach is Don's call.**
+**Recommended: drive time proposes, commuting zones group the far towns, county subdivisions store it, a short override list settles the exceptions, and the person chooses among nearby markets. The method is well-worn and agents can build it without a further ruling. Sacramento's reach is the PM's call.**
 
-**Don's call: how far does the open Sacramento market reach?**
+**The PM's call: how far does the open Sacramento market reach?**
 
 - **A. As ruled, and nearby people may choose Sacramento (recommended).** Sacramento stays Sacramento and Yolo counties, Placer and El Dorado without their Tahoe parts. Yuba–Sutter, Solano and western Nevada County are their own waiting regions (Lodi is Stockton–Modesto's); anyone there may pick Sacramento at sign-up and get in. Keeps today's F118 story (Vacaville is waiting) and the "you choose" ethos. Trade-off: those regions fill more slowly.
-- **B. Sacramento grows to its 60-minute reach now.** Adds Yuba City, Marysville, Vacaville, Dixon and, by the merge, Grass Valley and Nevada City; roughly 400,000 more people (A). Lodi still goes to Stockton, which is nearer. Matches the 45–60 minute area Don asked Explore to cover on 2026-10-13. Trade-off: F118's Vacaville story changes, and those towns never get their own opening.
+- **B. Sacramento grows to its 60-minute reach now.** Adds Yuba City, Marysville, Vacaville, Dixon and, by the merge, Grass Valley and Nevada City; roughly 400,000 more people (A). Lodi still goes to Stockton, which is nearer. Matches the 45–60 minute area the PM asked Explore to cover on 2026-10-13. Trade-off: F118's Vacaville story changes, and those towns never get their own opening.
 - **C. As ruled, no choosing in.** Fringe towns wait for their own region. Cleanest counts. Trade-off: someone 43 minutes from Sacramento can't use it.
 
 **The first markets and waiting regions in Northern California and Nevada, under the rule:**
@@ -197,4 +197,4 @@ Numbers are free-flow drive minutes between the towns on each line.
 
 </details>
 
-**What happens next, if Don picks A:** an agent opens a well-worn Issue in `socialus-web` for the script and the override file, its output reviewed as a diff before any row lands; the sign-up choice screen goes through Don for its words.
+**What happens next, if the PM picks A:** an agent opens a well-worn Issue in `socialus-web` for the script and the override file, its output reviewed as a diff before any row lands; the sign-up choice screen goes through the PM for its words.

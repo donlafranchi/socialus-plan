@@ -6,13 +6,13 @@ Briefing for idea chats, written 2026-11-05 from the plan and web repos; directi
 
 ## Direction, 2026-11-06
 
-**Build freeze: no new features. Refine what is built, clean up, and prepare for a 2027 launch.** Don: *"I don't want to build anything else only refine what we've built."*
+**Build freeze: no new features. Refine what is built, clean up, and prepare for a 2027 launch.** The PM: *"I don't want to build anything else only refine what we've built."*
 
 - **Held, not cancelled:** video A [plan #271]; the /join gaps (a link on each post, search-engine visibility, owner names and a note, "where I'll be", private stats); the Jev or Haiku sorting step [plan #273]; the taste scale and Haiku chat [plan #263, #269]; public counts; the Staff link; every approved scenario not yet built (the whole Next lane below).
 - **Continues:** bug fixes, copy, cleanup, performance, the overnight live check, seeding.
 - **Explore order:** what's happening this week, then later, then Pages after the timely posts.
 - **Market:** the Sacramento area, opening 2027-01-06 as a beta (11-23); its edge is the PM's open call.
-- **Message:** "Locals, finding and supporting locals." No copy changes yet; the rewrite is a to-do for Don.
+- **Message:** "Locals, finding and supporting locals." No copy changes yet; the rewrite is a to-do for the PM.
 
 ## Live now
 
@@ -38,11 +38,11 @@ Shipped earlier:
 
 ## Being built
 
-**Mostly seeding, a few fixes, and the launch blockers that wait on Don's keys and tests.**
+**Mostly seeding, a few fixes, and the launch blockers that wait on the PM's keys and tests.**
 
 - Open PRs: an Edit link [#1071] and rotating the seeding themes [#1128]. The daily seed PRs through 11-06 merged; they load into production on the next write run.
 - Launch blockers:
-  - Report flow and the AI first read in shadow: needs Don's three-account test and the Anthropic key [#220, #486].
+  - Report flow and the AI first read in shadow: needs the PM's three-account test and the Anthropic key [#220, #486].
   - Waitlist message [#616, #1118]; [#1112]; a failing production check [#1166].
   - A Vercel build Issue that is likely closable [#1121].
 - Speed is red: tapping from the header to Explore took about 4 seconds [#978].
@@ -51,7 +51,7 @@ Shipped earlier:
 
 ## Decided, queued (held by the freeze)
 
-**Ruled and waiting their turn, held until the freeze lifts. Nothing here needs Don again unless it changes.**
+**Ruled and waiting their turn, held until the freeze lifts. Nothing here needs the PM again unless it changes.**
 
 - Video: option A ruled 11-05 [plan #271]; no web Issue yet.
 - AI sorting of posts into labels: a 100-post test of Jev against Haiku first, 90 of 100 right to pass, and Jev's data retention confirmed in writing [#1182, plan #273].
@@ -62,16 +62,16 @@ Shipped earlier:
 - Place pages before production. Native apps later.
 - A plan PR is blocked on a doc size limit [plan #257].
 
-## Researched, awaiting Don
+## Researched, awaiting the PM
 
-**Calls only Don can make: copy, money, and the open questions in STATUS.**
+**Calls only the PM can make: copy, money, and the open questions in STATUS.**
 
 - The /join page copy [plan #274].
 - Sellers research: paid promotion, the fee rate and when it starts, public counts [plan #269].
 - Draft words in the person-posts and Listed-under work [#1184, #1181].
 - Open plan PRs: chat-first [plan #228] and lifecycle email [plan #227].
 - 13 open questions in STATUS, including F122/F123/F124, the payment rail, F110/F111, scouts and surplus.
-- Don's to-dos: the rules list, the three-account report test, founding-circle interviews (11-06), and accounts for Sentry, Speed Insights, the Resend domain, HUD and Cloudflare [#981, #787].
+- The PM's to-dos: the rules list, the three-account report test, founding-circle interviews (11-06), and accounts for Sentry, Speed Insights, the Resend domain, HUD and Cloudflare [#981, #787].
 
 ## Parked
 
@@ -86,7 +86,7 @@ Shipped earlier:
 **The Sacramento area opens 2027-01-06 as a beta (11-23), to about April–May 2027, then production. The freeze was lifted 11-21.**
 
 - Whether the soft launch has already started is **[unverified]**.
-- Blockers: the seven launch Issues above, Don's keys, test coverage of the launch criteria at 66%, speed red. Latest launch report: 10-30.
+- Blockers: the seven launch Issues above, the PM's keys, test coverage of the launch criteria at 66%, speed red. Latest launch report: 10-30.
 - The launch checklist's one open item: child-safety hash checking through Cloudflare at entity setup.
 
 ## Out of scope before launch

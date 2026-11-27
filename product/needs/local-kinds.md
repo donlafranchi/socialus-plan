@@ -23,7 +23,7 @@ What it is for, both sanctioned by existing rulings:
    the map or a card holds up. This is the variety a real metro has.
 
 **Status is `draft` because half of it is proposed rather than observed.** Every
-row below is marked. Don can accept or cut the proposed half without touching
+row below is marked. The PM can accept or cut the proposed half without touching
 the borrowed half.
 
 ---
@@ -97,7 +97,7 @@ than a tag.
 
 ## Proposed — added here, observed nowhere
 
-**Everything below is mine, not Don's and not the code's.** The borrowed list is
+**Everything below is mine, not the PM's and not the code's.** The borrowed list is
 a farmers market; a metro is not. These extend the recruitment groupings to what
 a city actually holds, keeping that structure because it is the part that was
 working.

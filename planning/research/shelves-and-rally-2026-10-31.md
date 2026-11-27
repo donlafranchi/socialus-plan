@@ -1,6 +1,6 @@
 # Shelf catalog, and a new name for "Wonder" (2026-10-31)
 
-**As of 2026-10-31** · Source: hand-written research, product lane, from the live app's data · Path: well-worn for the method (shelves as data, F121); the names are Don's · Research only; nothing here is ruled. · Maintained by: hand (the owner confirms on next edit)
+**As of 2026-10-31** · Source: hand-written research, product lane, from the live app's data · Path: well-worn for the method (shelves as data, F121); the names are the PM's · Research only; nothing here is ruled. · Maintained by: hand (the owner confirms on next edit)
 
 **Bottom line: About 40 shelves are drafted below, in your style. Fifteen are strong enough to rotate now. Most can be filled today only by Sample posts: the real upcoming posts are about 245, and 207 of them are live music. The importer in the post-once research is what fills them for real. For "Wonder", the recommended name is *Rally*: "Start a rally", "12 of 30 in", "Who's got a rally?", with "Count me in" kept as the button.**
 
@@ -29,7 +29,7 @@
 
 **Each shelf is one row: a name, a query, and a window. "Fills today" counts real upcoming posts in its window and the Pages that match it. Sample posts are shown separately because they disappear as real ones arrive. Counts use keyword matches on names and descriptions, so read them as ±20%.**
 
-<details><summary>Doing things together (Don's own list first)</summary>
+<details><summary>Doing things together (the PM's own list first)</summary>
 
 | | Shelf | What it shows | Pages | Real posts | Samples | Missing |
 |---|---|---|---|---|---|---|

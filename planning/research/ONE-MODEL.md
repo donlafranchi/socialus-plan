@@ -7,7 +7,7 @@ date: 2026-09-17
 
 # Getting to one model
 
-> **ON HOLD, 2026-09-15.** Everything below rests on the reading that `model.md` retired Items. **Don disputes that reading and it is unsettled** — see `ITEMS-QUESTION.md`. Do not act on this document until he rules.
+> **ON HOLD, 2026-09-15.** Everything below rests on the reading that `model.md` retired Items. **The PM disputes that reading and it is unsettled** — see `ITEMS-QUESTION.md`. Do not act on this document until he rules.
 
 
 **2026-09-15. The biggest open thing in the project.** Two models are live on `main` at once. This says what has to happen to end up with one, in what order, and what breaks if the order is wrong.
@@ -32,7 +32,7 @@ date: 2026-09-17
 **An incremental path exists. Do not big-bang this.** A rewrite would have to move composers, reads, the map, search, and seeded data in one change, with no working state in between — against a 30 October launch.
 
 **1. Give Pages the baseline first — announcing, then following.** *(F072 for posting; the follow column below.)*
-Nothing else can proceed while `page_posts` has no writer. This is also Don's ruling of 2026-09-15 made real: a Page for every kind, each with announcing and a following list.
+Nothing else can proceed while `page_posts` has no writer. This is also the PM's ruling of 2026-09-15 made real: a Page for every kind, each with announcing and a following list.
 
 **2. Then the one-create-flow walkthrough.** *(F087, with `/you/create` — #25.)*
 Once a Page can announce, "post a gathering" can create a Page plus its first post, which is what the ruling describes. Doing this before step 1 produces Pages that can hold nothing.
@@ -50,14 +50,14 @@ Seeded content is 16 items. **Confirm the real row count against production befo
 
 - **Retiring `items` before step 4** takes down every listing route and the whole of Browse.
 - **Moving the gathering composer before step 3** silently drops recurrence — the composer collects a rule the destination table has no column for. **This is the most likely real loss.**
-- **Building the walkthrough before step 1** creates Pages with no way to say anything, which is the thing Don's baseline ruling exists to prevent.
+- **Building the walkthrough before step 1** creates Pages with no way to say anything, which is the thing the PM's baseline ruling exists to prevent.
 - **Deleting the `item_*` child tables before migrating** loses per-kind fields with no equivalent on a post: price, rate model, service area, capacity, what-to-bring.
 
 ---
 
 ## The baseline, concretely
 
-**Don, 2026-09-15:** *"It would still require an announcement and perhaps a following list and later messaging etc."* Against the current schema, **neither half of the baseline works today.**
+**The PM, 2026-09-15:** *"It would still require an announcement and perhaps a following list and later messaging etc."* Against the current schema, **neither half of the baseline works today.**
 
 **Announcing — the table exists, nothing writes to it.** `page_posts` shipped in PR #85 with body, optional `starts_at`, optional own location, lifecycle and discoverability. What is missing is a composer and a write path. **F072 is the scenario and it is `draft`.**
 
@@ -73,7 +73,7 @@ Seeded content is 16 items. **Confirm the real row count against production befo
 
 **`page_posts` has `starts_at` and no recurrence rule.** `item_gatherings` has `recurrence_rule`, and `item.md` § Recurring gatherings designs the behaviour properly: one row whose `starts_at` always holds the *next* occurrence, advanced by a rotation process once the current one passes, so the item stays discoverable without showing a stale date and a follow on the series survives every rotation.
 
-**So a recurring gathering — Don's own named durable kind — cannot be expressed in the ratified model today.**
+**So a recurring gathering — the PM's own named durable kind — cannot be expressed in the ratified model today.**
 
 **What it takes to close it:**
 

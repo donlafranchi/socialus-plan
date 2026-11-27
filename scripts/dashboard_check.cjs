@@ -10,7 +10,7 @@ const d = dom.window.document
 const D = JSON.parse(d.getElementById('data').textContent)
 const crit = D.features.reduce((n, f) => n + f.criteria.length, 0)
 const cards = d.querySelectorAll('details').length
-// Don, 2026-11-06: the page is "Do next" (one item) and FYI groups, folded, each with a count; no instructions on it.
+// The PM, 2026-11-06: the page is "Do next" (one item) and FYI groups, folded, each with a count; no instructions on it.
 const fyi = [...d.querySelectorAll('details.fyi')]
 const grp = (id) => d.getElementById(id)
 const cnt = (id) => grp(id)?.querySelector(':scope > summary .cnt')?.textContent

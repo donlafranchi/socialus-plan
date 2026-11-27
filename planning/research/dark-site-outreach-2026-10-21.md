@@ -4,7 +4,7 @@
 
 **Bottom line: of the 59 candidates, 23 are open with a dark site or no site and are worth reaching. 15 are actually current and belong in the normal daily job, 1 is closed for the season, and 20 could not be found (mostly names from the 10-09 pass that don't match a real business). Recommend B: ask first and publish the Page only on the owner's yes. Primary channel: a mailed postcard whose QR code doubles as proof of ownership. Backup: the same card handed over at a stand. Pilot: 10 farms and bakeries over two weeks, postcard only.**
 
-**Don's three calls (one at a time):** (1) A or B for the Page-rule conflict; (2) the channel, postcard plus in-person backup; (3) the 10-business pilot list. Nothing has been sent and no one has been contacted.
+**The PM's three calls (one at a time):** (1) A or B for the Page-rule conflict; (2) the channel, postcard plus in-person backup; (3) the 10-business pilot list. Nothing has been sent and no one has been contacted.
 
 Research only. Method: each own site was rendered in a real browser (Playwright Chromium), then checked against public listings: Apple Hill growers 2026, Visit Placer, Visit Lodi, LocalHarvest, CCOF, county and market directories. **V** = seen on 2026-10-21. **A** = assumed. Only contact details the business or its directory listing publishes are recorded; no owner names, personal numbers or home addresses.
 
@@ -99,7 +99,7 @@ These failed the 10-09 fetch but load fine in a real browser. They can go throug
 
 <details><summary>Why not A, in one more line</summary>
 
-The only sources A could use without breaking THEMES rule 6 (never Yelp, Google or another directory) are county ag directories and market vendor lists, and those are directories too. A needs Don to change the #353 source ruling; B does not.
+The only sources A could use without breaking THEMES rule 6 (never Yelp, Google or another directory) are county ag directories and market vendor lists, and those are directories too. A needs the PM to change the #353 source ruling; B does not.
 </details>
 
 ## 3. How claiming works today, and the QR flow designed against it
@@ -139,7 +139,7 @@ The only sources A could use without breaking THEMES rule 6 (never Yelp, Google 
 | Rank | Channel | Effort for the business | Our cost | Fits self-serve | Risk |
 |---|---|---|---|---|---|
 | 1 | **Postcard** to published address | Scan, one tap | ~$1/card incl. postage (A) | Best: the card is the proof | Card lost in the pile; slow (5–10 days) |
-| 2 | **In person**, card at stand or booth | Talk 1 minute, scan later | Someone's time, gas | Good: same card, same code | Needs a named person (Don's call); seasonal stands close in winter |
+| 2 | **In person**, card at stand or booth | Talk 1 minute, scan later | Someone's time, gas | Good: same card, same code | Needs a named person (the PM's call); seasonal stands close in winter |
 | 3 | **Call** the published phone | 30 seconds on the phone | Minutes | Weak: a person records the yes | High hang-up; feels like a sales call |
 | 4 | **Contact form** on own site | Read an email | Minutes | Weak | Dark sites' forms often unwatched or broken |
 | — | Cold texts, scraped emails, DMs, home addresses | — | — | — | **Not allowed** |
@@ -151,7 +151,7 @@ The only sources A could use without breaking THEMES rule 6 (never Yelp, Google 
 - For home-based bakers with no storefront, there is no published business address to mail; they are left out of the postcard pilot (see pilot list).
 </details>
 
-## 6. Drafted copy (for Don's approval; nothing sent)
+## 6. Drafted copy (for the PM's approval; nothing sent)
 
 **One-line pitch:** *SocialUs is a free way for neighbors to find your farm or shop: no posting, no followers, no ads.*
 
@@ -208,7 +208,7 @@ Never ask for an owner's name, a personal number or a home address. Log every no
 
 ## 7. Pilot plan
 
-**10 businesses, postcard only, two weeks from the day the cards land. It starts only after Don approves the channel, the copy, the list and the A/B call, and after the opt-out list and the `/hello` page are built.**
+**10 businesses, postcard only, two weeks from the day the cards land. It starts only after the PM approves the channel, the copy, the list and the A/B call, and after the opt-out list and the `/hello` page are built.**
 
 | # | Business | Town | Kind | Why it's in |
 |---|---|---|---|---|
@@ -238,4 +238,4 @@ Alternates: O'Halloran's (Camino), The Cake Depot (Sacramento), Say Hay Farms (E
 
 - socialus-web #981 (filed with this doc): the A/B call, the opt-out list the loader reads, and a claim that completes by postcard code.
 - `THEMES.md` gets one line once the list exists: read `opt-outs.json` before adding any business.
-- Not in scope until Don signs off: printing, mailing, phoning or visiting anyone.
+- Not in scope until the PM signs off: printing, mailing, phoning or visiting anyone.

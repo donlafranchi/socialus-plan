@@ -351,7 +351,7 @@ Generated from the criterion reports (`scripts/criteria.py --capabilities`). Nev
 - Can: A Threat of harm or Sensitive content report hides at once, on the first report, at any bar
 - Can: A report cannot be sent without a reason the reporter chose
 - Can: Before sending, the reporter is told misuse has consequences; rejected reports are strikes and after three stop hiding
-- Can: Every string in the report path is kind and gracious; wording is Don's
+- Can: Every string in the report path is kind and gracious; wording is the PM's
 - Can: The second report that hides an item must come from a different member than the first
 - Cannot yet: Submitting an explanation is the only thing that creates work for a person
 

@@ -6,7 +6,7 @@ horizon: now
 rank: 160
 date: 2026-10-05
 depends: [F070, F072, F078, F080, F134]
-approved: 2026-10-05 — Don's answers, "keep it simple": one Page picture for every kind; the kind placeholder when none is set; the beta slice, gallery after beta; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty. Same fields, flow and copy for every kind.
+approved: 2026-10-05 — the PM's answers, "keep it simple": one Page picture for every kind; the kind placeholder when none is set; the beta slice, gallery after beta; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty. Same fields, flow and copy for every kind.
 amended: 2026-11-12 — criterion 11 restated for F134: signed-out visitors read posts, photos included.
 concept: CO-0050
 ---
@@ -36,7 +36,7 @@ More than one photo on a Page or a post, and any gallery: after beta, its own sc
 
 ## Why
 
-**Don, 2026-10-05:** *"A page should have a logo option and a few photos. and then posts get at least one photo per post and perhaps a post has a logo from the page or an avatar if it isn't a business or doesn't have a logo and the post can have it's own image that will not necessarily be saved with on the page."* His answers the same day closed the four questions this draft raised: keep it simple; a logo and a Page avatar are one image, for every kind; no image means the kind's placeholder; the beta slice, gallery after; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty.
+**The PM, 2026-10-05:** *"A page should have a logo option and a few photos. and then posts get at least one photo per post and perhaps a post has a logo from the page or an avatar if it isn't a business or doesn't have a logo and the post can have it's own image that will not necessarily be saved with on the page."* His answers the same day closed the four questions this draft raised: keep it simple; a logo and a Page avatar are one image, for every kind; no image means the kind's placeholder; the beta slice, gallery after; one photo per post; today's Page photo stays the Page's photo and the Page picture starts empty.
 
 **The word is "Page picture",** one term for every kind. Facebook calls a Page's image its profile picture for businesses and groups alike ([help](https://www.facebook.com/help/284445998278828)); "logo" reads as business-only and "avatar" as a person. "Page picture" says whose picture it is in plain words, and is still draft copy ([public-is-draft]).
 

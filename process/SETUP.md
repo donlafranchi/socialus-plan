@@ -39,7 +39,7 @@ Never paste a secret into a doc, a scenario, an Issue or a chat. `SUPABASE_SECRE
 
 `npm run dev` reads the hosted project (`NEXT_PUBLIC_SUPABASE_URL` is a `https://<ref>.supabase.co` host). A local stack is only for the write-bound suites, which refuse any database not marked disposable: `supabase start`, `supabase status -o env` for the keys, `SUPABASE_TEST_EPHEMERAL=1` in `.env.test.local`; ports are in `supabase/config.toml` (API 54321, database 54322).
 
-Migrations are applied through `apply.yml` before the merge, never by the merge [production-asks-don]: a merge that landed ahead of its migration took production down (2026-09-21).
+Migrations are applied through `apply.yml` before the merge, never by the merge [production-asks-pm]: a merge that landed ahead of its migration took production down (2026-09-21).
 
 ## 5. Windows
 

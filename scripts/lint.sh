@@ -52,7 +52,7 @@ for f in planning/scenario-*.md; do
   fi
 done
 
-# 1c. The value test (Don, 2026-10-05): every scenario from F103 on answers its
+# 1c. The value test (the PM, 2026-10-05): every scenario from F103 on answers its
 #     six questions in `## Why`, one line each, led by these exact labels.
 #     F102 and earlier are grandfathered — they were approved before the test.
 VALUE_TEST_FROM=103
@@ -195,7 +195,7 @@ mk lint "$fx/good.md" "$fx/binds-good/PRINCIPLES.md" "$fx/binds-good/scenario-F9
   { echo "lint: marker checker rejects a good fixture"; fail=1; }
 # Where we're going (the dashboard section that replaced ROADMAP.md) proves itself on its fixture.
 python3 scripts/going.py --check >/dev/null || { echo "lint: where-we're-going section does not match its fixture"; fail=1; }
-# Lanes: four fixed words, one lane per item (Don, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
+# Lanes: four fixed words, one lane per item (the PM, 2026-10-12). The lint proves itself on a planted-fault fixture, then checks this repo.
 python3 scripts/going.py --lint-check >/dev/null || { echo "lint: lane lint is inert or rejects its good fixture"; fail=1; }
 if ! out="$(python3 scripts/going.py --lint)"; then
   echo "$out" | sed 's/^/lint: lanes: /'; fail=1

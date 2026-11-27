@@ -17,17 +17,17 @@ Maya signs up and reads two sentences about why this exists. She doesn't read th
 1. No single surface carries more than **three sentences and fifty words** of premise copy.
 2. Premise copy appears on **at least four distinct surfaces**, and the same string never appears on two of them.
 3. **No surface exists whose purpose is to explain the premise** — no manifesto, no about page, no values page, no interstitial, no modal.
-4. Every premise string is Don's own written language. No agent writes premise copy, and no string is paraphrased from the raw material below.
+4. Every premise string is the PM's own written language. No agent writes premise copy, and no string is paraphrased from the raw material below.
 5. Changing any premise string is **one edit in one place**, touching no component file.
 6. No premise string explains the name or the domain.
 
 ## Not this
 
-Writing the premise copy — Don writes it himself, from audio being transcribed separately. Deciding where the strings live: three options are in § Why § Open — Don rules, unresolved. Migrating the app's other copy; this scenario covers premise copy only. Any surface that argues at length, however well.
+Writing the premise copy — the PM writes it himself, from audio being transcribed separately. Deciding where the strings live: three options are in § Why § Open — the PM rules, unresolved. Migrating the app's other copy; this scenario covers premise copy only. Any surface that argues at length, however well.
 
 ## Why
 
-### Raw material — Don's premise, NOT copy
+### Raw material — the PM's premise, NOT copy
 
 *His words, 2026-09-15, recorded verbatim as source material. **This is not final copy and may not be shipped as written** — criterion 4 requires his own written language, which this is not yet.*
 

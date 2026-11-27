@@ -5,9 +5,9 @@ status: open
 date: 2026-09-17
 ---
 
-# The Items question — for Don to settle
+# The Items question — for the PM to settle
 
-**2026-09-15. Nothing has been changed in code. This document exists so Don can read his own words and rule.**
+**2026-09-15. Nothing has been changed in code. This document exists so the PM can read his own words and rule.**
 
 ## What actually happened, precisely
 
@@ -15,13 +15,13 @@ date: 2026-09-17
 
 **Only planning documents were touched, and all of it is restored:** `page-kinds.md` was deleted and is back; `nouns.md`'s amendment is reverted to its prior wording; `item.md`'s "superseded" banner now reads "in dispute". **Everything downstream of the retired-Items reading is pending, not settled.**
 
-**Don's ruling that a Page can exist for every kind is NOT in dispute** — he gave it directly, it stands, and it is recorded in `nouns.md` and F087.
+**The PM's ruling that a Page can exist for every kind is NOT in dispute** — he gave it directly, it stands, and it is recorded in `nouns.md` and F087.
 
 ---
 
-## The text, in full — Don's own words, 2026-09-10
+## The text, in full — the PM's own words, 2026-09-10
 
-> *From `product/foundation/model.md`, whose header reads: "The model, in Don's words. The document every other document answers to. Stated by Don, 2026-09-10. Where any other document disagrees with this one, this one is right and the other is the thing to fix."*
+> *From `product/foundation/model.md`, whose header reads: "The model, in the PM's words. The document every other document answers to. Stated by the PM, 2026-09-10. Where any other document disagrees with this one, this one is right and the other is the thing to fix."*
 
 ### The section itself
 
@@ -35,7 +35,7 @@ date: 2026-09-17
 
 **From § What a Page is:**
 
-> In Don's words (2026-09-12): **a Page is "an organizing entity for something that needs more than one of anything."**
+> In the PM's words (2026-09-12): **a Page is "an organizing entity for something that needs more than one of anything."**
 >
 > It replaces the older framing, "a Page is *who*; an Item is *what*." That pairing is retired: it depended on Items, which no longer exist, and it answered the wrong question.
 
@@ -43,13 +43,13 @@ date: 2026-09-17
 
 > **Hosting needs nothing new.** A venue's calendar is posts with times, which the post mechanism already gives every organization.
 
-**And the banner at the top of `nouns.md`, written by an agent, not by Don:**
+**And the banner at the top of `nouns.md`, written by an agent, not by the PM:**
 
-> **Superseded in part by `model.md` (2026-09-10).** Don restated the model directly: there are no Items, and a post carries a time or it doesn't.
+> **Superseded in part by `model.md` (2026-09-10).** The PM restated the model directly: there are no Items, and a post carries a time or it doesn't.
 
 ---
 
-## Don's model, stated 2026-09-15
+## The PM's model, stated 2026-09-15
 
 > **"Pages are built from kind.items"**
 
@@ -75,7 +75,7 @@ date: 2026-09-17
 
 **Correction to an earlier report:** I described `page_posts` as having "a table, a read path, and no writer." **It has neither a reader nor a writer.** The read path I counted was a comment saying the table did not exist.
 
-**What `page_posts` says about itself**, from its migration, so Don can judge the intent behind it:
+**What `page_posts` says about itself**, from its migration, so the PM can judge the intent behind it:
 
 > *"OPTIONAL start time. Nullable is the point: an undated post is a first-class post, not a degraded event."*
 
@@ -100,18 +100,18 @@ date: 2026-09-17
 
 ### Genuinely contradicting — these are substrate claims
 
-- **"That pairing is retired: it depended on Items, which no longer exist."** *(§ What a Page is, 2026-09-12.)* **This is the one sentence in Don's own words that asserts the substrate is gone.** It is an existence claim, not a browse claim, and it is the sharpest evidence for the wider reading. Everything downstream rested on it.
+- **"That pairing is retired: it depended on Items, which no longer exist."** *(§ What a Page is, 2026-09-12.)* **This is the one sentence in the PM's own words that asserts the substrate is gone.** It is an existence claim, not a browse claim, and it is the sharpest evidence for the wider reading. Everything downstream rested on it.
 - **"Hosting needs nothing new. A venue's calendar is posts with times, which the post mechanism already gives every organization."** *(§ Venue is not a noun.)* This competes at the mechanism level with `items.kind='gathering'` and `item_gatherings`. Not fatal — a calendar of posts and a gathering item could coexist — but it proposes posts where the kind system already has an answer.
 
-### Not Don's words at all
+### Not the PM's words at all
 
-- The banner atop `nouns.md` — *"there are no Items, and a post carries a time or it doesn't"* — **was written by an agent summarising `model.md`, not by Don.** It is the most absolute statement of the wider reading anywhere in the repo, and it has no authority behind it beyond the summary it was making.
+- The banner atop `nouns.md` — *"there are no Items, and a post carries a time or it doesn't"* — **was written by an agent summarising `model.md`, not by the PM.** It is the most absolute statement of the wider reading anywhere in the repo, and it has no authority behind it beyond the summary it was making.
 
 ---
 
 ## What each document claims
 
-| | `model.md` (Don, 2026-09-10) | `item.md` (undated, pre-09-10) |
+| | `model.md` (the PM, 2026-09-10) | `item.md` (undated, pre-09-10) |
 |---|---|---|
 | **The unit** | Pages and posts. "Browse indexes Pages and posts, not a catalogue of listings." | One `items` row varying by `kind`. |
 | **Kinds** | Not mentioned. The word "kind" appears about `groups.kind` only. | Seven, each with a schema name, a UI label and a UI verb. |
@@ -127,9 +127,9 @@ date: 2026-09-17
 
 **What would have to be true for both to stand:** that "Items" in `model.md` means *separately-indexed listing rows* — the catalogue — and not *the kinds foundation*. Under that reading, `model.md` retires the catalogue and says an offering is described rather than listed, while `item.md`'s kind vocabulary survives and attaches to whatever the durable thing turns out to be. **The sentence "it depended on Items, which no longer exist" is the line that reading has to account for**, and it is the sharpest evidence for the wider reading.
 
-**The honest summary: the wider reading is defensible from the text, and the narrower one is defensible from what the text is arguing about.** Only Don knows which he meant.
+**The honest summary: the wider reading is defensible from the text, and the narrower one is defensible from what the text is arguing about.** Only the PM knows which he meant.
 
-## What Don has to settle — three questions, not one
+## What the PM has to settle — three questions, not one
 
 **1. Does "which no longer exist" mean the substrate, or the catalogue?** His 2026-09-15 statement says the substrate stands. If that is what he meant all along, `model.md` § What a Page is needs one clarifying line and the rest of that document is untouched — everything else in it is about browse, and browse and substrate do not conflict.
 

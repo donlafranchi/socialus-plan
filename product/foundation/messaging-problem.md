@@ -13,7 +13,7 @@ Anonymous messaging between strangers produces vitriol — not as an edge case, 
 
 ## Direct messaging is coming — ruled, not speculated
 
-*(Don, 2026-09-12.)* Direct messaging **will** be built: between Page owners and their followers, and within the community. He was explicit that it carries safeguards, and equally explicit that it is not a question of whether.
+*(the PM, 2026-09-12.)* Direct messaging **will** be built: between Page owners and their followers, and within the community. He was explicit that it carries safeguards, and equally explicit that it is not a question of whether.
 
 That changes how the rest of this document should be read. The upper rungs of the ladder below are **stated intent**, not a hypothetical the platform might refuse — the refusal option is off the table, and what remains is when, and with what protections. Nothing here designs those protections; the point is only that "we might never build this" is no longer an available answer.
 
@@ -39,7 +39,7 @@ A state column on every utterance (not a boolean — the platform must distingui
 
 **The substrate lands at launch; no surface does.** The message tables exist so a later surface isn't a retrofit, but no UI ships, and the schema is constrained to same-Group threads only — relaxed later with an explicit opt-in for messages from outside a Member's Groups. That constraint is what keeps the moderation surface area at zero for a solo team while the schema is still landing, which is the only reason it's safe to land the tables before any of the controls above are decided. The tables hang off the Member; their shape is specified here, not in `../systems/member.md`.
 
-## Open — Don rules
+## Open — the PM rules
 
 - **AND, a score, or split the mechanisms** (proximity gates who may speak; flags govern relief after; neither judges politeness)? *No recommendation — the AND as proposed doesn't cover in-neighborhood vitriol, which is the more damaging case.*
 - **Who may initiate contact with a stranger at launch** — nobody (all contact runs through a public Item/Page), anyone in-metro, or a request the recipient must accept? *Recommend: nobody, for launch — matches the current shape and costs nothing today.*
@@ -47,4 +47,4 @@ A state column on every utterance (not a boolean — the platform must distingui
 - **Is an operator concept in scope before rung 3 (member-initiated posts)?** If not, is "Page managers moderate their own boards" the ruling?
 
 ## Rulings
-- **2026-09-12 — Direct messaging is coming, with safeguards, between creators and followers and within the community.** Don, explicitly. No longer hypothetical and no longer to be written about as merely possible; still unscheduled and undesigned. The safeguards are required, not optional — `product/foundation/messaging-problem.md` is where the reasoning lives.
+- **2026-09-12 — Direct messaging is coming, with safeguards, between creators and followers and within the community.** The PM, explicitly. No longer hypothetical and no longer to be written about as merely possible; still unscheduled and undesigned. The safeguards are required, not optional — `product/foundation/messaging-problem.md` is where the reasoning lives.

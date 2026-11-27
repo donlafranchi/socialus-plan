@@ -31,10 +31,10 @@ A vertical one-card-at-a-time feed. Ranking on behaviour read back at the member
 
 ## Why
 
-**New launch scope, 2026-10-04.** Don chose option B in `socialus-design/research/ENGAGEMENT-OPTIONS.md`: engaging, with stops where the research says they work, at a real end that turns into going somewhere. The windows reuse F091's *today / this week / this weekend*, computed the same way.
+**New launch scope, 2026-10-04.** The PM chose option B in `socialus-design/research/ENGAGEMENT-OPTIONS.md`: engaging, with stops where the research says they work, at a real end that turns into going somewhere. The windows reuse F091's *today / this week / this weekend*, computed the same way.
 
 Measure from launch: share of visits reaching the stop card, taps after it, return at 7 and 30 days; session length as a ceiling, not a goal (`product/foundation/metrics.md`). Counsel should confirm before launch that ranking on declared interests keeps Home outside California's SB 976 addictive-feed definition. [platform none]
 
 ## Rulings
 - **2026-10-25 — Home's rows are labelled by Page kind then post kind and themed on the categories Pages already declare; "things you saved" at launch means events the member has responded to; F091's time rows move to Home and Explore stays the tool, list and map.** Decided by the agent under the 2026-10-25 decision rights (soul and defaults; well-worn): Airbnb and Eventbrite theme rows on existing categories; no new verb or taxonomy; follows the two-sides principle. [for now] [replaces none] [binds tiers=planning,code surfaces=home,explore build=none]
-- **2026-10-04 — Home's rows use granular categories that tell businesses and group events apart, not broad buckets.** Don: *"for the engagement shelves we'll probably need to be more granular on how we differentiate businesses and group events and not use overly broad categories."* How granular is open in F098. [binds tiers=planning,code surfaces=home,categories,tags]
+- **2026-10-04 — Home's rows use granular categories that tell businesses and group events apart, not broad buckets.** The PM: *"for the engagement shelves we'll probably need to be more granular on how we differentiate businesses and group events and not use overly broad categories."* How granular is open in F098. [binds tiers=planning,code surfaces=home,categories,tags]

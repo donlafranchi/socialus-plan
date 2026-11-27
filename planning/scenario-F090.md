@@ -21,7 +21,7 @@ Priya already posts her pottery to TikTok and Instagram every week. She is not g
 5. Nothing on the Page depends on a third party's script, and nothing breaks visibly when a third party changes or fails.
 6. Removing a destination is one action and leaves nothing behind.
 7. Every rendered destination is an https URL — the value reaches an `href` on a public page, so anything else is a script injection wearing a platform label. `[member-data-disclosure]`: a destination is published only because the owner typed it — and a venue's own consented connection (its Instagram or calendar, F096) counts as typed (2026-09-30). Nothing is inferred.
-8. Copy names platforms in the member's words and never says "creator". `[public-is-draft]` — wording here is Don's.
+8. Copy names platforms in the member's words and never says "creator". `[public-is-draft]` — wording here is the PM's.
 
 ## Not this
 
@@ -39,11 +39,11 @@ Importing content wholesale. Follower counts, like counts or any borrowed vanity
 
 ### The open choice, recorded and NOT decided
 
-Don: *"At the very minimum I'd like to only offer TikTok and Instagram for now or we leave it open and let them paste their own URLs etc."*
+The PM: *"At the very minimum I'd like to only offer TikTok and Instagram for now or we leave it open and let them paste their own URLs etc."*
 
 **A fixed short list versus open URL paste.** A list makes the field cheap — prefix shown, handle typed — and excludes the shop, the newsletter, the personal site. Open paste accepts anything and costs the member a full URL.
 
-**The recommendation put to Don was both:** pre-filled handle fields for TikTok and Instagram, plus one generic other-link field. **That is a recommendation, not a ruling.** `[don-decides]`.
+**The recommendation put to the PM was both:** pre-filled handle fields for TikTok and Instagram, plus one generic other-link field. **That is a recommendation, not a ruling.** `[don-decides]`.
 
 ### What this supersedes
 
@@ -51,4 +51,4 @@ The current social-links field takes a full `https://` URL and refuses everythin
 
 ## Rulings
 - **2026-11-05 — Video option A: tap-to-play TikTok and YouTube on the owner's Page, at most 3 clips, the owner's own still picture, nothing loading before a tap, never on Explore shelves, no autoplay and no next video, and a button pointing out to the owner's next event or post. Skip upload, Instagram embeds and posting out.** The PM, on plan #271 (a PR comment; moved here 2026-11-23, when it was found in no doc). Instagram's reason has since changed and is on the PM's desk: `planning/briefs/who-is-local-here-2026-11-23.md`. [for now] [replaces none] [binds tiers=planning,code surfaces=pages,video,links build=none]
-- **2026-09-30 — A venue's own consented connection (its Instagram or calendar) counts as links the owner typed.** Don approved, resolving F090 criterion 7 against F096's imports. F090 criterion 7 restated. [replaces F090: because the owner typed it,] [binds tiers=planning surfaces=links,imports]
+- **2026-09-30 — A venue's own consented connection (its Instagram or calendar) counts as links the owner typed.** The PM approved, resolving F090 criterion 7 against F096's imports. F090 criterion 7 restated. [replaces F090: because the owner typed it,] [binds tiers=planning surfaces=links,imports]

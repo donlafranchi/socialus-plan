@@ -2,7 +2,7 @@
 
 **As of 2026-11-05** · Source: hand-written · Maintained by: hand
 
-## Bottom line for Don
+## Bottom line for the PM
 
 **Ask one question when someone posts: what kind is it? Everything else (the category and a few labels) is suggested for them, and they change it with one tap. Today the suggestion comes from a simple word match on one shared list. Later a small model reads the words and the photo instead, at about $0.0002 a post: Jev from TypeSafe (you named it), with Claude Haiku as the fallback.** It's how Facebook Marketplace, eBay, Shopify and Nextdoor's For Sale & Free work. Facebook built it because 7–9% of people gave up listing when they had to pick a category themselves.
 
@@ -19,7 +19,7 @@
   - Give person posts their 3 kinds.
   - The AI step slots in later behind the same line.
 - **Which AI (correction, 2026-11-05):** Jev is TypeSafe's model, not Haiku. It's built for exactly this: it answers "pick one of these" with odds for each, and costs about the same. But it's 7 weeks out of stealth, promises no retention period, and calls photos "Danger Zone". **I recommend Jev, if it passes the same 100-post test and TypeSafe answers in writing how long it keeps posts. Haiku stays as the fallback.** See part 3.
-- *Don, 2026-11-04 (plan #270, option B):* "B is good for now although we need a way to help people organize what they're posting that is simple and flexible. Let's figure that out before implementing. Also in the end this would hopefully be auto categorized by something like Jev". Don, 2026-11-05: "Jev is an ai model from https://typesafe.ai" (I first read it as Claude Haiku; corrected).
+- *The PM, 2026-11-04 (plan #270, option B):* "B is good for now although we need a way to help people organize what they're posting that is simple and flexible. Let's figure that out before implementing. Also in the end this would hopefully be auto categorized by something like Jev". The PM, 2026-11-05: "Jev is an ai model from https://typesafe.ai" (I first read it as Claude Haiku; corrected).
 
 Research only, no rulings. Person posts aren't built until you pick.
 

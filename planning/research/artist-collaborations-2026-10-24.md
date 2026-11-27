@@ -8,7 +8,7 @@ last-updated: 2026-10-24
 
 # Artist collaborations on Pages
 
-**As of 2026-10-24** · Source: Don's idea, 2026-10-24 · Path: new territory (image rights and member trust; the pilot touches who may post on a Page).
+**As of 2026-10-24** · Source: the PM's idea, 2026-10-24 · Path: new territory (image rights and member trust; the pilot touches who may post on a Page).
 
 **Bottom line: yes, but as original commissioned art, not fan art.** A Page owner invites a local artist; the artist makes a piece for that Page; the Page shows it with the artist's name and a link. Fan art is the wrong base: it copies someone else's trademarks, logos and player likenesses (the Kings, the NBA), which we won't host and the artist can't license.
 

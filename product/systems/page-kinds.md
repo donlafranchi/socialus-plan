@@ -8,21 +8,21 @@ date: 2026-09-15
 
 # What a person can start
 
-> **Restored 2026-09-15 after deletion the same day. Status: pending, not superseded.** This document was deleted on the reading that `model.md` retired Items. **That reading is disputed by Don and is not settled** — see `research/ITEMS-QUESTION.md`. Nothing about the Item kinds was ever changed in code: all seven kinds and all four sub-tables are intact on `origin/main`.
+> **Restored 2026-09-15 after deletion the same day. Status: pending, not superseded.** This document was deleted on the reading that `model.md` retired Items. **That reading is disputed by the PM and is not settled** — see `research/ITEMS-QUESTION.md`. Nothing about the Item kinds was ever changed in code: all seven kinds and all four sub-tables are intact on `origin/main`.
 >
 > **One criticism of this document stands on its own and is unrelated to the dispute:** its kind-vocabulary table duplicates `item.md` § The kind vocabulary, and its schema section recommends a pattern the schema already uses. Those parts should be cut whichever way the Items question goes.
 
-**Draft, not approved.** Written for Don's ruling of 2026-09-15: two durable kinds — someone selling, and someone with a recurring gathering — plus a deliberately thinner one-time gathering. Cross-references `../../planning/scenario-F087.md`, the one-create-flow scenario.
+**Draft, not approved.** Written for the PM's ruling of 2026-09-15: two durable kinds — someone selling, and someone with a recurring gathering — plus a deliberately thinner one-time gathering. Cross-references `../../planning/scenario-F087.md`, the one-create-flow scenario.
 
 ## First, the vocabulary — it does not mean what the ask assumed
 
-**Don said "item kind." The three choices he described are Page purposes, not Item kinds.** The distinction is already ratified and both nouns already exist:
+**The PM said "item kind." The three choices he described are Page purposes, not Item kinds.** The distinction is already ratified and both nouns already exist:
 
 - **`nouns.md`: "A Page is the person or people behind the listing. Page is *who*; Item is *what*."**
 - `groups.kind` exists: `place · interest · practice · event_anchored · family · business`, with typed child tables `group_businesses` and `group_event_anchored`.
 - `items.kind` exists: `product · service · gathering · wonder · offer · ask · initiative`, with typed children `item_products`, `item_services`, `item_gatherings`, `item_wonders`.
 
-**So "opening a shop" and "a group for meetups" are Page purposes. "Offering a service" is not** — a service is an Item filed under a Page. Don's own grouping already resolves this: his first durable kind is *"a person selling an item or service"*, one purpose covering both. **Nothing new is needed; the existing split carries it.**
+**So "opening a shop" and "a group for meetups" are Page purposes. "Offering a service" is not** — a service is an Item filed under a Page. The PM's own grouping already resolves this: his first durable kind is *"a person selling an item or service"*, one purpose covering both. **Nothing new is needed; the existing split carries it.**
 
 **One correction to the brief: `code_kind` is unrelated.** It is a column on `metro_polygons` recording which census code a metro uses (CSA or CBSA). It has nothing to do with Pages, Items, or purposes.
 
@@ -84,7 +84,7 @@ date: 2026-09-15
 8. **No business claim, jurisdiction, or locality badge.**
 9. **No editing lifecycle** beyond an Item's own `state` — no archive, no dormancy, no retirement.
 
-**Whether this is acceptable is Don's call.** Items 1, 2 and 4 are the ones a host is most likely to notice and mind.
+**Whether this is acceptable is the PM's call.** Items 1, 2 and 4 are the ones a host is most likely to notice and mind.
 
 ---
 
@@ -104,7 +104,7 @@ date: 2026-09-15
 
 ---
 
-## What this contradicts, for Don to rule on
+## What this contradicts, for the PM to rule on
 
 1. **The one-time gathering versus F087 criterion 1.** F087 says *every path through the create flow produces a Page*. This document says the thin one is an Item. **`nouns.md`: "No Page for a single occasion"**, and the 2026-09-07 ruling gives the reason — browse and the map would index listings as if they were people, and a follower graph on something ephemeral is worthless. **Either F087 criterion 1 narrows, or the rule reverses.**
 2. **If a container Page is created silently** to hold a one-off, it collides with **F069 criterion 3**: *"A Member holding several Pages sees every one on any producer surface — none silently chosen for them."* A silent container is a Page the person never knew they made. Either it is hidden from producer surfaces too, narrowing an approved criterion, or the person is told, which breaks the point of it being silent.
@@ -116,4 +116,4 @@ date: 2026-09-15
 "Archive" is a single flag on a Page, surfaced as one button. It removes the Page from map findability — that is the whole of what it does. It does not delete data, does not change ownership, and has no separate reactivate flow: the same button toggles it back. There is no draft/active/paused/archived state machine, no transition rules, and no state a Page can get stuck in.
 
 ## Rulings
-- **2026-09-15 — Don confirmed two mappings: a class is a gathering, tutoring is a service.** Both fall out of the model as written; recorded because they were the test cases.
+- **2026-09-15 — the PM confirmed two mappings: a class is a gathering, tutoring is a service.** Both fall out of the model as written; recorded because they were the test cases.
