@@ -6,7 +6,7 @@ horizon: later
 rank: 130
 date: 2026-09-10
 depends: [F065]
-concept: new
+concept: CO-0086
 ---
 ## Story
 

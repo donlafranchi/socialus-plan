@@ -9,7 +9,7 @@ depends: []
 approved: 2026-09-14 — the PM's ruling, replaces member.md "real names encouraged, never required"
 amended: 2026-09-14 — the PM's ruling: public-surface ban plus mutual counterparty disclosure, with interaction as the only path to a name
 out-of-scope: 2026-09-30 — the PM: real names between people who dealt with each other are out of scope, with `socialus-web` #219; revisit with legal counsel.
-concept: new
+concept: CO-0090
 ---
 ## Story
 

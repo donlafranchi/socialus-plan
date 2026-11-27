@@ -6,7 +6,7 @@ horizon: considering
 rank: 125
 date: 2026-10-12
 depends: [F059, F104]
-concept: new
+concept: CO-0104
 ---
 ## Story
 

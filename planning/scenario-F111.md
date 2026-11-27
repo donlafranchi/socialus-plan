@@ -5,7 +5,7 @@ status: draft
 horizon: later
 rank: 300
 date: 2026-10-12
-concept: new
+concept: CO-0103
 ---
 ## Story
 
