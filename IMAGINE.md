@@ -45,6 +45,7 @@ Every entry since 2026-09-12 carries: **a date and who it came from** (an ownerl
 
 **Analysis (agent):**
 - Builds on D-0165, D-0288, F106 and `business-jurisdiction.md`; overlaps `planning/briefs/who-is-local-here-2026-11-23.md` (CO-0071, CO-0072): reconcile first. Report handling is D-0073 and D-0327.
+- Owner tools (Don, 2026-11-26): how an owning entity (private equity, foreign owner) and the person behind a Page are shown is up to the Page owner. SocialUs needs to give owners tools to show who they are and that they are local, preferably by introducing themselves on their Page. A concept without a mechanism; overlaps CO-0071 Know your Page owner.
 - Levels sketch: says (owner declares), confirmed (locals or a public record), proven (rebate paid).
 - Risk before it affects ranking: a hidden score the owner cannot see or contest touches member trust and legal exposure.
 
